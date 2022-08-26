@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_s3control.paginator import ListAccessPointsForObjectLambdaPaginator
 
 session = get_session()
-async with session.create_client("s3control") as client:
-    client: S3ControlClient
-    paginator: ListAccessPointsForObjectLambdaPaginator = client.get_paginator("list_access_points_for_object_lambda")
+async with session.create_client("s3control") as client:  # (1)
+    paginator: ListAccessPointsForObjectLambdaPaginator = client.get_paginator("list_access_points_for_object_lambda")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAccessPointsForObjectLambdaResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [S3ControlClient](./client.md)
+2. paginator: [ListAccessPointsForObjectLambdaPaginator](./paginators.md#listaccesspointsforobjectlambdapaginator)
+3. item: [:material-code-braces: ListAccessPointsForObjectLambdaResultTypeDef](./type_defs.md#listaccesspointsforobjectlambdaresulttypedef) 
 
 
 ### paginate

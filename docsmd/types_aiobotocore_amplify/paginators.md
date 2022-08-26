@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_amplify.paginator import ListAppsPaginator
 
 session = get_session()
-async with session.create_client("amplify") as client:
-    client: AmplifyClient
-    paginator: ListAppsPaginator = client.get_paginator("list_apps")
+async with session.create_client("amplify") as client:  # (1)
+    paginator: ListAppsPaginator = client.get_paginator("list_apps")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAppsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AmplifyClient](./client.md)
+2. paginator: [ListAppsPaginator](./paginators.md#listappspaginator)
+3. item: [:material-code-braces: ListAppsResultTypeDef](./type_defs.md#listappsresulttypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_amplify.paginator import ListBranchesPaginator
 
 session = get_session()
-async with session.create_client("amplify") as client:
-    client: AmplifyClient
-    paginator: ListBranchesPaginator = client.get_paginator("list_branches")
+async with session.create_client("amplify") as client:  # (1)
+    paginator: ListBranchesPaginator = client.get_paginator("list_branches")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBranchesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AmplifyClient](./client.md)
+2. paginator: [ListBranchesPaginator](./paginators.md#listbranchespaginator)
+3. item: [:material-code-braces: ListBranchesResultTypeDef](./type_defs.md#listbranchesresulttypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_amplify.paginator import ListDomainAssociationsPaginator
 
 session = get_session()
-async with session.create_client("amplify") as client:
-    client: AmplifyClient
-    paginator: ListDomainAssociationsPaginator = client.get_paginator("list_domain_associations")
+async with session.create_client("amplify") as client:  # (1)
+    paginator: ListDomainAssociationsPaginator = client.get_paginator("list_domain_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDomainAssociationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AmplifyClient](./client.md)
+2. paginator: [ListDomainAssociationsPaginator](./paginators.md#listdomainassociationspaginator)
+3. item: [:material-code-braces: ListDomainAssociationsResultTypeDef](./type_defs.md#listdomainassociationsresulttypedef) 
 
 
 ### paginate
@@ -149,10 +167,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_amplify.paginator import ListJobsPaginator
 
 session = get_session()
-async with session.create_client("amplify") as client:
-    client: AmplifyClient
-    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
+async with session.create_client("amplify") as client:  # (1)
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListJobsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AmplifyClient](./client.md)
+2. paginator: [ListJobsPaginator](./paginators.md#listjobspaginator)
+3. item: [:material-code-braces: ListJobsResultTypeDef](./type_defs.md#listjobsresulttypedef) 
 
 
 ### paginate

@@ -266,6 +266,21 @@ RelevanceLevelType = Literal[
     "MEDIUM",
 ]
 ```
+## RelevanceType
+
+```python title="Usage Example"
+from types_aiobotocore_wisdom.literals import RelevanceType
+
+def get_value() -> RelevanceType:
+    return "HELPFUL"
+```
+
+```python title="Definition"
+RelevanceType = Literal[
+    "HELPFUL",
+    "NOT_HELPFUL",
+]
+```
 ## SearchContentPaginatorName
 
 ```python title="Usage Example"
@@ -292,6 +307,21 @@ def get_value() -> SearchSessionsPaginatorName:
 ```python title="Definition"
 SearchSessionsPaginatorName = Literal[
     "search_sessions",
+]
+```
+## TargetTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_wisdom.literals import TargetTypeType
+
+def get_value() -> TargetTypeType:
+    return "RECOMMENDATION"
+```
+
+```python title="Definition"
+TargetTypeType = Literal[
+    "RECOMMENDATION",
+    "RESULT",
 ]
 ```
 ## ConnectWisdomServiceServiceName
@@ -348,6 +378,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -493,6 +524,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -546,6 +578,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -556,11 +589,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -606,6 +641,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

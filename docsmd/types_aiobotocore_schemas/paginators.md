@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_schemas.paginator import ListDiscoverersPaginator
 
 session = get_session()
-async with session.create_client("schemas") as client:
-    client: SchemasClient
-    paginator: ListDiscoverersPaginator = client.get_paginator("list_discoverers")
+async with session.create_client("schemas") as client:  # (1)
+    paginator: ListDiscoverersPaginator = client.get_paginator("list_discoverers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDiscoverersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SchemasClient](./client.md)
+2. paginator: [ListDiscoverersPaginator](./paginators.md#listdiscovererspaginator)
+3. item: [:material-code-braces: ListDiscoverersResponseTypeDef](./type_defs.md#listdiscoverersresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_schemas.paginator import ListRegistriesPaginator
 
 session = get_session()
-async with session.create_client("schemas") as client:
-    client: SchemasClient
-    paginator: ListRegistriesPaginator = client.get_paginator("list_registries")
+async with session.create_client("schemas") as client:  # (1)
+    paginator: ListRegistriesPaginator = client.get_paginator("list_registries")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRegistriesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SchemasClient](./client.md)
+2. paginator: [ListRegistriesPaginator](./paginators.md#listregistriespaginator)
+3. item: [:material-code-braces: ListRegistriesResponseTypeDef](./type_defs.md#listregistriesresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_schemas.paginator import ListSchemaVersionsPaginator
 
 session = get_session()
-async with session.create_client("schemas") as client:
-    client: SchemasClient
-    paginator: ListSchemaVersionsPaginator = client.get_paginator("list_schema_versions")
+async with session.create_client("schemas") as client:  # (1)
+    paginator: ListSchemaVersionsPaginator = client.get_paginator("list_schema_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSchemaVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SchemasClient](./client.md)
+2. paginator: [ListSchemaVersionsPaginator](./paginators.md#listschemaversionspaginator)
+3. item: [:material-code-braces: ListSchemaVersionsResponseTypeDef](./type_defs.md#listschemaversionsresponsetypedef) 
 
 
 ### paginate
@@ -154,10 +172,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_schemas.paginator import ListSchemasPaginator
 
 session = get_session()
-async with session.create_client("schemas") as client:
-    client: SchemasClient
-    paginator: ListSchemasPaginator = client.get_paginator("list_schemas")
+async with session.create_client("schemas") as client:  # (1)
+    paginator: ListSchemasPaginator = client.get_paginator("list_schemas")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSchemasResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SchemasClient](./client.md)
+2. paginator: [ListSchemasPaginator](./paginators.md#listschemaspaginator)
+3. item: [:material-code-braces: ListSchemasResponseTypeDef](./type_defs.md#listschemasresponsetypedef) 
 
 
 ### paginate
@@ -199,10 +223,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_schemas.paginator import SearchSchemasPaginator
 
 session = get_session()
-async with session.create_client("schemas") as client:
-    client: SchemasClient
-    paginator: SearchSchemasPaginator = client.get_paginator("search_schemas")
+async with session.create_client("schemas") as client:  # (1)
+    paginator: SearchSchemasPaginator = client.get_paginator("search_schemas")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchSchemasResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SchemasClient](./client.md)
+2. paginator: [SearchSchemasPaginator](./paginators.md#searchschemaspaginator)
+3. item: [:material-code-braces: SearchSchemasResponseTypeDef](./type_defs.md#searchschemasresponsetypedef) 
 
 
 ### paginate

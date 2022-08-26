@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `DatabaseMigrationService`.
 
 ### From PyPI with pip
 
@@ -294,6 +289,7 @@ def get_value() -> AccountQuotaTypeDef:
 - [StartReplicationTaskMessageRequestTypeDef](./type_defs.md#startreplicationtaskmessagerequesttypedef)
 - [StopReplicationTaskMessageRequestTypeDef](./type_defs.md#stopreplicationtaskmessagerequesttypedef)
 - [TestConnectionMessageRequestTypeDef](./type_defs.md#testconnectionmessagerequesttypedef)
+- [UpdateSubscriptionsToEventBridgeMessageRequestTypeDef](./type_defs.md#updatesubscriptionstoeventbridgemessagerequesttypedef)
 - [AddTagsToResourceMessageRequestTypeDef](./type_defs.md#addtagstoresourcemessagerequesttypedef)
 - [CreateEventSubscriptionMessageRequestTypeDef](./type_defs.md#createeventsubscriptionmessagerequesttypedef)
 - [CreateReplicationInstanceMessageRequestTypeDef](./type_defs.md#createreplicationinstancemessagerequesttypedef)
@@ -309,6 +305,7 @@ def get_value() -> AccountQuotaTypeDef:
 - [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
 - [ReloadTablesResponseTypeDef](./type_defs.md#reloadtablesresponsetypedef)
 - [RunFleetAdvisorLsaAnalysisResponseTypeDef](./type_defs.md#runfleetadvisorlsaanalysisresponsetypedef)
+- [UpdateSubscriptionsToEventBridgeResponseTypeDef](./type_defs.md#updatesubscriptionstoeventbridgeresponsetypedef)
 - [SubnetTypeDef](./type_defs.md#subnettypedef)
 - [DeleteCertificateResponseTypeDef](./type_defs.md#deletecertificateresponsetypedef)
 - [DescribeCertificatesResponseTypeDef](./type_defs.md#describecertificatesresponsetypedef)

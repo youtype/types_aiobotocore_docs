@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cognito_idp.paginator import AdminListGroupsForUserPaginator
 
 session = get_session()
-async with session.create_client("cognito-idp") as client:
-    client: CognitoIdentityProviderClient
-    paginator: AdminListGroupsForUserPaginator = client.get_paginator("admin_list_groups_for_user")
+async with session.create_client("cognito-idp") as client:  # (1)
+    paginator: AdminListGroupsForUserPaginator = client.get_paginator("admin_list_groups_for_user")  # (2)
+    async for item in paginator.paginate(...):
+        item: AdminListGroupsForUserResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CognitoIdentityProviderClient](./client.md)
+2. paginator: [AdminListGroupsForUserPaginator](./paginators.md#adminlistgroupsforuserpaginator)
+3. item: [:material-code-braces: AdminListGroupsForUserResponseTypeDef](./type_defs.md#adminlistgroupsforuserresponsetypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cognito_idp.paginator import AdminListUserAuthEventsPaginator
 
 session = get_session()
-async with session.create_client("cognito-idp") as client:
-    client: CognitoIdentityProviderClient
-    paginator: AdminListUserAuthEventsPaginator = client.get_paginator("admin_list_user_auth_events")
+async with session.create_client("cognito-idp") as client:  # (1)
+    paginator: AdminListUserAuthEventsPaginator = client.get_paginator("admin_list_user_auth_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: AdminListUserAuthEventsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CognitoIdentityProviderClient](./client.md)
+2. paginator: [AdminListUserAuthEventsPaginator](./paginators.md#adminlistuserautheventspaginator)
+3. item: [:material-code-braces: AdminListUserAuthEventsResponseTypeDef](./type_defs.md#adminlistuserautheventsresponsetypedef) 
 
 
 ### paginate
@@ -110,10 +122,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cognito_idp.paginator import ListGroupsPaginator
 
 session = get_session()
-async with session.create_client("cognito-idp") as client:
-    client: CognitoIdentityProviderClient
-    paginator: ListGroupsPaginator = client.get_paginator("list_groups")
+async with session.create_client("cognito-idp") as client:  # (1)
+    paginator: ListGroupsPaginator = client.get_paginator("list_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CognitoIdentityProviderClient](./client.md)
+2. paginator: [ListGroupsPaginator](./paginators.md#listgroupspaginator)
+3. item: [:material-code-braces: ListGroupsResponseTypeDef](./type_defs.md#listgroupsresponsetypedef) 
 
 
 ### paginate
@@ -154,10 +172,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cognito_idp.paginator import ListIdentityProvidersPaginator
 
 session = get_session()
-async with session.create_client("cognito-idp") as client:
-    client: CognitoIdentityProviderClient
-    paginator: ListIdentityProvidersPaginator = client.get_paginator("list_identity_providers")
+async with session.create_client("cognito-idp") as client:  # (1)
+    paginator: ListIdentityProvidersPaginator = client.get_paginator("list_identity_providers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListIdentityProvidersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CognitoIdentityProviderClient](./client.md)
+2. paginator: [ListIdentityProvidersPaginator](./paginators.md#listidentityproviderspaginator)
+3. item: [:material-code-braces: ListIdentityProvidersResponseTypeDef](./type_defs.md#listidentityprovidersresponsetypedef) 
 
 
 ### paginate
@@ -198,10 +222,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cognito_idp.paginator import ListResourceServersPaginator
 
 session = get_session()
-async with session.create_client("cognito-idp") as client:
-    client: CognitoIdentityProviderClient
-    paginator: ListResourceServersPaginator = client.get_paginator("list_resource_servers")
+async with session.create_client("cognito-idp") as client:  # (1)
+    paginator: ListResourceServersPaginator = client.get_paginator("list_resource_servers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResourceServersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CognitoIdentityProviderClient](./client.md)
+2. paginator: [ListResourceServersPaginator](./paginators.md#listresourceserverspaginator)
+3. item: [:material-code-braces: ListResourceServersResponseTypeDef](./type_defs.md#listresourceserversresponsetypedef) 
 
 
 ### paginate
@@ -242,10 +272,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cognito_idp.paginator import ListUserPoolClientsPaginator
 
 session = get_session()
-async with session.create_client("cognito-idp") as client:
-    client: CognitoIdentityProviderClient
-    paginator: ListUserPoolClientsPaginator = client.get_paginator("list_user_pool_clients")
+async with session.create_client("cognito-idp") as client:  # (1)
+    paginator: ListUserPoolClientsPaginator = client.get_paginator("list_user_pool_clients")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUserPoolClientsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CognitoIdentityProviderClient](./client.md)
+2. paginator: [ListUserPoolClientsPaginator](./paginators.md#listuserpoolclientspaginator)
+3. item: [:material-code-braces: ListUserPoolClientsResponseTypeDef](./type_defs.md#listuserpoolclientsresponsetypedef) 
 
 
 ### paginate
@@ -286,10 +322,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cognito_idp.paginator import ListUserPoolsPaginator
 
 session = get_session()
-async with session.create_client("cognito-idp") as client:
-    client: CognitoIdentityProviderClient
-    paginator: ListUserPoolsPaginator = client.get_paginator("list_user_pools")
+async with session.create_client("cognito-idp") as client:  # (1)
+    paginator: ListUserPoolsPaginator = client.get_paginator("list_user_pools")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUserPoolsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CognitoIdentityProviderClient](./client.md)
+2. paginator: [ListUserPoolsPaginator](./paginators.md#listuserpoolspaginator)
+3. item: [:material-code-braces: ListUserPoolsResponseTypeDef](./type_defs.md#listuserpoolsresponsetypedef) 
 
 
 ### paginate
@@ -329,10 +371,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cognito_idp.paginator import ListUsersPaginator
 
 session = get_session()
-async with session.create_client("cognito-idp") as client:
-    client: CognitoIdentityProviderClient
-    paginator: ListUsersPaginator = client.get_paginator("list_users")
+async with session.create_client("cognito-idp") as client:  # (1)
+    paginator: ListUsersPaginator = client.get_paginator("list_users")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUsersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CognitoIdentityProviderClient](./client.md)
+2. paginator: [ListUsersPaginator](./paginators.md#listuserspaginator)
+3. item: [:material-code-braces: ListUsersResponseTypeDef](./type_defs.md#listusersresponsetypedef) 
 
 
 ### paginate
@@ -375,10 +423,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cognito_idp.paginator import ListUsersInGroupPaginator
 
 session = get_session()
-async with session.create_client("cognito-idp") as client:
-    client: CognitoIdentityProviderClient
-    paginator: ListUsersInGroupPaginator = client.get_paginator("list_users_in_group")
+async with session.create_client("cognito-idp") as client:  # (1)
+    paginator: ListUsersInGroupPaginator = client.get_paginator("list_users_in_group")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUsersInGroupResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CognitoIdentityProviderClient](./client.md)
+2. paginator: [ListUsersInGroupPaginator](./paginators.md#listusersingrouppaginator)
+3. item: [:material-code-braces: ListUsersInGroupResponseTypeDef](./type_defs.md#listusersingroupresponsetypedef) 
 
 
 ### paginate

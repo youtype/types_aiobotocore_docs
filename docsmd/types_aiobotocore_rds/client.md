@@ -733,6 +733,7 @@ await def create_db_cluster(
     PerformanceInsightsKMSKeyId: str = ...,
     PerformanceInsightsRetentionPeriod: int = ...,
     ServerlessV2ScalingConfiguration: ServerlessV2ScalingConfigurationTypeDef = ...,  # (3)
+    NetworkType: str = ...,
     SourceRegion: str = ...,
 ) -> CreateDBClusterResultTypeDef:  # (4)
     ...
@@ -3314,6 +3315,38 @@ parent.list_tags_for_resource(**kwargs)
 
 1. See [:material-code-braces: ListTagsForResourceMessageRequestTypeDef](./type_defs.md#listtagsforresourcemessagerequesttypedef) 
 
+### modify\_activity\_stream
+
+Changes the audit policy state of a database activity stream to either locked
+(default) or unlocked.
+
+Type annotations and code completion for `#!python session.create_client("rds").modify_activity_stream` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_activity_stream)
+
+```python title="Method definition"
+await def modify_activity_stream(
+    self,
+    *,
+    ResourceArn: str = ...,
+    AuditPolicyState: AuditPolicyStateType = ...,  # (1)
+) -> ModifyActivityStreamResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: AuditPolicyStateType](./literals.md#auditpolicystatetype) 
+2. See [:material-code-braces: ModifyActivityStreamResponseTypeDef](./type_defs.md#modifyactivitystreamresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ModifyActivityStreamRequestRequestTypeDef = {  # (1)
+    "ResourceArn": ...,
+}
+
+parent.modify_activity_stream(**kwargs)
+```
+
+1. See [:material-code-braces: ModifyActivityStreamRequestRequestTypeDef](./type_defs.md#modifyactivitystreamrequestrequesttypedef) 
+
 ### modify\_certificates
 
 Override the system-default Secure Sockets Layer/Transport Layer Security
@@ -3458,6 +3491,7 @@ await def modify_db_cluster(
     PerformanceInsightsKMSKeyId: str = ...,
     PerformanceInsightsRetentionPeriod: int = ...,
     ServerlessV2ScalingConfiguration: ServerlessV2ScalingConfigurationTypeDef = ...,  # (3)
+    NetworkType: str = ...,
 ) -> ModifyDBClusterResultTypeDef:  # (4)
     ...
 ```
@@ -4440,6 +4474,7 @@ await def restore_db_cluster_from_s3(
     Domain: str = ...,
     DomainIAMRoleName: str = ...,
     ServerlessV2ScalingConfiguration: ServerlessV2ScalingConfigurationTypeDef = ...,  # (2)
+    NetworkType: str = ...,
 ) -> RestoreDBClusterFromS3ResultTypeDef:  # (3)
     ...
 ```
@@ -4504,6 +4539,7 @@ await def restore_db_cluster_from_snapshot(
     Iops: int = ...,
     PubliclyAccessible: bool = ...,
     ServerlessV2ScalingConfiguration: ServerlessV2ScalingConfigurationTypeDef = ...,  # (3)
+    NetworkType: str = ...,
 ) -> RestoreDBClusterFromSnapshotResultTypeDef:  # (4)
     ...
 ```
@@ -4563,6 +4599,7 @@ await def restore_db_cluster_to_point_in_time(
     PubliclyAccessible: bool = ...,
     Iops: int = ...,
     ServerlessV2ScalingConfiguration: ServerlessV2ScalingConfigurationTypeDef = ...,  # (3)
+    NetworkType: str = ...,
 ) -> RestoreDBClusterToPointInTimeResultTypeDef:  # (4)
     ...
 ```
@@ -5119,6 +5156,36 @@ parent.stop_db_instance_automated_backups_replication(**kwargs)
 
 1. See [:material-code-braces: StopDBInstanceAutomatedBackupsReplicationMessageRequestTypeDef](./type_defs.md#stopdbinstanceautomatedbackupsreplicationmessagerequesttypedef) 
 
+### switchover\_read\_replica
+
+Switches over an Oracle standby database in an Oracle Data Guard environment,
+making it the new primary database.
+
+Type annotations and code completion for `#!python session.create_client("rds").switchover_read_replica` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.switchover_read_replica)
+
+```python title="Method definition"
+await def switchover_read_replica(
+    self,
+    *,
+    DBInstanceIdentifier: str,
+) -> SwitchoverReadReplicaResultTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: SwitchoverReadReplicaResultTypeDef](./type_defs.md#switchoverreadreplicaresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: SwitchoverReadReplicaMessageRequestTypeDef = {  # (1)
+    "DBInstanceIdentifier": ...,
+}
+
+parent.switchover_read_replica(**kwargs)
+```
+
+1. See [:material-code-braces: SwitchoverReadReplicaMessageRequestTypeDef](./type_defs.md#switchoverreadreplicamessagerequesttypedef) 
+
 ### \_\_aenter\_\_
 
 
@@ -5200,6 +5267,8 @@ Type annotations and code completion for `#!python session.create_client("rds").
 
 Type annotations and code completion for `#!python session.create_client("rds").get_waiter` method with overloads.
 
+- `client.get_waiter("db_cluster_available")` -> [DBClusterAvailableWaiter](./waiters.md#dbclusteravailablewaiter)
+- `client.get_waiter("db_cluster_deleted")` -> [DBClusterDeletedWaiter](./waiters.md#dbclusterdeletedwaiter)
 - `client.get_waiter("db_cluster_snapshot_available")` -> [DBClusterSnapshotAvailableWaiter](./waiters.md#dbclustersnapshotavailablewaiter)
 - `client.get_waiter("db_cluster_snapshot_deleted")` -> [DBClusterSnapshotDeletedWaiter](./waiters.md#dbclustersnapshotdeletedwaiter)
 - `client.get_waiter("db_instance_available")` -> [DBInstanceAvailableWaiter](./waiters.md#dbinstanceavailablewaiter)

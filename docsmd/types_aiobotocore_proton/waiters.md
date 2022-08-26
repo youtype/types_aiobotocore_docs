@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_proton.waiter import ComponentDeletedWaiter
 
-def get_component_deleted_waiter() -> ComponentDeletedWaiter:
-    return Session().client("proton").get_waiter("component_deleted")
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: ComponentDeletedWaiter = client.get_waiter("component_deleted")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [ComponentDeletedWaiter](./waiters.md#componentdeletedwaiter)
 
 
 ### wait
@@ -58,9 +63,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_proton.waiter import ComponentDeployedWaiter
 
-def get_component_deployed_waiter() -> ComponentDeployedWaiter:
-    return Session().client("proton").get_waiter("component_deployed")
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: ComponentDeployedWaiter = client.get_waiter("component_deployed")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [ComponentDeployedWaiter](./waiters.md#componentdeployedwaiter)
 
 
 ### wait
@@ -99,9 +109,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_proton.waiter import EnvironmentDeployedWaiter
 
-def get_environment_deployed_waiter() -> EnvironmentDeployedWaiter:
-    return Session().client("proton").get_waiter("environment_deployed")
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: EnvironmentDeployedWaiter = client.get_waiter("environment_deployed")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [EnvironmentDeployedWaiter](./waiters.md#environmentdeployedwaiter)
 
 
 ### wait
@@ -140,9 +155,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_proton.waiter import EnvironmentTemplateVersionRegisteredWaiter
 
-def get_environment_template_version_registered_waiter() -> EnvironmentTemplateVersionRegisteredWaiter:
-    return Session().client("proton").get_waiter("environment_template_version_registered")
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: EnvironmentTemplateVersionRegisteredWaiter = client.get_waiter("environment_template_version_registered")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [EnvironmentTemplateVersionRegisteredWaiter](./waiters.md#environmenttemplateversionregisteredwaiter)
 
 
 ### wait
@@ -185,9 +205,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_proton.waiter import ServiceCreatedWaiter
 
-def get_service_created_waiter() -> ServiceCreatedWaiter:
-    return Session().client("proton").get_waiter("service_created")
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: ServiceCreatedWaiter = client.get_waiter("service_created")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [ServiceCreatedWaiter](./waiters.md#servicecreatedwaiter)
 
 
 ### wait
@@ -226,9 +251,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_proton.waiter import ServiceDeletedWaiter
 
-def get_service_deleted_waiter() -> ServiceDeletedWaiter:
-    return Session().client("proton").get_waiter("service_deleted")
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: ServiceDeletedWaiter = client.get_waiter("service_deleted")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [ServiceDeletedWaiter](./waiters.md#servicedeletedwaiter)
 
 
 ### wait
@@ -267,9 +297,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_proton.waiter import ServiceInstanceDeployedWaiter
 
-def get_service_instance_deployed_waiter() -> ServiceInstanceDeployedWaiter:
-    return Session().client("proton").get_waiter("service_instance_deployed")
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: ServiceInstanceDeployedWaiter = client.get_waiter("service_instance_deployed")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [ServiceInstanceDeployedWaiter](./waiters.md#serviceinstancedeployedwaiter)
 
 
 ### wait
@@ -310,9 +345,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_proton.waiter import ServicePipelineDeployedWaiter
 
-def get_service_pipeline_deployed_waiter() -> ServicePipelineDeployedWaiter:
-    return Session().client("proton").get_waiter("service_pipeline_deployed")
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: ServicePipelineDeployedWaiter = client.get_waiter("service_pipeline_deployed")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [ServicePipelineDeployedWaiter](./waiters.md#servicepipelinedeployedwaiter)
 
 
 ### wait
@@ -351,9 +391,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_proton.waiter import ServiceTemplateVersionRegisteredWaiter
 
-def get_service_template_version_registered_waiter() -> ServiceTemplateVersionRegisteredWaiter:
-    return Session().client("proton").get_waiter("service_template_version_registered")
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: ServiceTemplateVersionRegisteredWaiter = client.get_waiter("service_template_version_registered")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [ServiceTemplateVersionRegisteredWaiter](./waiters.md#servicetemplateversionregisteredwaiter)
 
 
 ### wait
@@ -396,9 +441,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_proton.waiter import ServiceUpdatedWaiter
 
-def get_service_updated_waiter() -> ServiceUpdatedWaiter:
-    return Session().client("proton").get_waiter("service_updated")
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: ServiceUpdatedWaiter = client.get_waiter("service_updated")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [ServiceUpdatedWaiter](./waiters.md#serviceupdatedwaiter)
 
 
 ### wait

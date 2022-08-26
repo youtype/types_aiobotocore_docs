@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `SagemakerEdgeManager`.
 
 ### From PyPI with pip
 
@@ -75,15 +70,21 @@ async with session.create_client("sagemaker-edge") as client:
 Type annotations for [literals](./literals.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_sagemaker_edge.literals import SagemakerEdgeManagerServiceName
+from types_aiobotocore_sagemaker_edge.literals import ChecksumTypeType
 
-def get_value() -> SagemakerEdgeManagerServiceName:
-    return "sagemaker-edge"
+def get_value() -> ChecksumTypeType:
+    return "SHA1"
 ```
 
+- [ChecksumTypeType](./literals.md#checksumtypetype)
+- [DeploymentStatusType](./literals.md#deploymentstatustype)
+- [DeploymentTypeType](./literals.md#deploymenttypetype)
+- [FailureHandlingPolicyType](./literals.md#failurehandlingpolicytype)
+- [ModelStateType](./literals.md#modelstatetype)
 - [SagemakerEdgeManagerServiceName](./literals.md#sagemakeredgemanagerservicename)
 - [ServiceName](./literals.md#servicename)
 - [ResourceServiceName](./literals.md#resourceservicename)
+- [RegionName](./literals.md#regionname)
 
 
 
@@ -93,19 +94,26 @@ def get_value() -> SagemakerEdgeManagerServiceName:
 Type annotations for [typed dictionaries](./type_defs.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_sagemaker_edge.type_defs import EdgeMetricTypeDef
+from types_aiobotocore_sagemaker_edge.type_defs import ChecksumTypeDef
 
-def get_value() -> EdgeMetricTypeDef:
+def get_value() -> ChecksumTypeDef:
     return {
-        "Dimension": ...,
+        "Type": ...,
     }
 ```
 
+- [ChecksumTypeDef](./type_defs.md#checksumtypedef)
+- [DeploymentModelTypeDef](./type_defs.md#deploymentmodeltypedef)
 - [EdgeMetricTypeDef](./type_defs.md#edgemetrictypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [GetDeploymentsRequestRequestTypeDef](./type_defs.md#getdeploymentsrequestrequesttypedef)
 - [GetDeviceRegistrationRequestRequestTypeDef](./type_defs.md#getdeviceregistrationrequestrequesttypedef)
+- [DefinitionTypeDef](./type_defs.md#definitiontypedef)
+- [DeploymentResultTypeDef](./type_defs.md#deploymentresulttypedef)
 - [ModelTypeDef](./type_defs.md#modeltypedef)
 - [EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef)
 - [GetDeviceRegistrationResultTypeDef](./type_defs.md#getdeviceregistrationresulttypedef)
+- [EdgeDeploymentTypeDef](./type_defs.md#edgedeploymenttypedef)
 - [SendHeartbeatRequestRequestTypeDef](./type_defs.md#sendheartbeatrequestrequesttypedef)
+- [GetDeploymentsResultTypeDef](./type_defs.md#getdeploymentsresulttypedef)
 

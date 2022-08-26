@@ -22,6 +22,25 @@ AdminStatusType = Literal[
     "ENABLED",
 ]
 ```
+## CriterionKeyType
+
+```python title="Usage Example"
+from types_aiobotocore_guardduty.literals import CriterionKeyType
+
+def get_value() -> CriterionKeyType:
+    return "ACCOUNT_ID"
+```
+
+```python title="Definition"
+CriterionKeyType = Literal[
+    "ACCOUNT_ID",
+    "EC2_INSTANCE_ARN",
+    "GUARDDUTY_FINDING_ID",
+    "SCAN_ID",
+    "SCAN_START_TIME",
+    "SCAN_STATUS",
+]
+```
 ## DataSourceStatusType
 
 ```python title="Usage Example"
@@ -50,9 +69,24 @@ def get_value() -> DataSourceType:
 DataSourceType = Literal[
     "CLOUD_TRAIL",
     "DNS_LOGS",
+    "EC2_MALWARE_SCAN",
     "FLOW_LOGS",
     "KUBERNETES_AUDIT_LOGS",
     "S3_LOGS",
+]
+```
+## DescribeMalwareScansPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_guardduty.literals import DescribeMalwareScansPaginatorName
+
+def get_value() -> DescribeMalwareScansPaginatorName:
+    return "describe_malware_scans"
+```
+
+```python title="Definition"
+DescribeMalwareScansPaginatorName = Literal[
+    "describe_malware_scans",
 ]
 ```
 ## DestinationTypeType
@@ -82,6 +116,21 @@ def get_value() -> DetectorStatusType:
 DetectorStatusType = Literal[
     "DISABLED",
     "ENABLED",
+]
+```
+## EbsSnapshotPreservationType
+
+```python title="Usage Example"
+from types_aiobotocore_guardduty.literals import EbsSnapshotPreservationType
+
+def get_value() -> EbsSnapshotPreservationType:
+    return "NO_RETENTION"
+```
+
+```python title="Definition"
+EbsSnapshotPreservationType = Literal[
+    "NO_RETENTION",
+    "RETENTION_WITH_FINDING",
 ]
 ```
 ## FeedbackType
@@ -327,6 +376,51 @@ PublishingStatusType = Literal[
     "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY",
 ]
 ```
+## ScanCriterionKeyType
+
+```python title="Usage Example"
+from types_aiobotocore_guardduty.literals import ScanCriterionKeyType
+
+def get_value() -> ScanCriterionKeyType:
+    return "EC2_INSTANCE_TAG"
+```
+
+```python title="Definition"
+ScanCriterionKeyType = Literal[
+    "EC2_INSTANCE_TAG",
+]
+```
+## ScanResultType
+
+```python title="Usage Example"
+from types_aiobotocore_guardduty.literals import ScanResultType
+
+def get_value() -> ScanResultType:
+    return "CLEAN"
+```
+
+```python title="Definition"
+ScanResultType = Literal[
+    "CLEAN",
+    "INFECTED",
+]
+```
+## ScanStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_guardduty.literals import ScanStatusType
+
+def get_value() -> ScanStatusType:
+    return "COMPLETED"
+```
+
+```python title="Definition"
+ScanStatusType = Literal[
+    "COMPLETED",
+    "FAILED",
+    "RUNNING",
+]
+```
 ## ThreatIntelSetFormatType
 
 ```python title="Usage Example"
@@ -437,6 +531,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -582,6 +677,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -635,6 +731,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -645,11 +742,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -695,6 +794,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -747,11 +847,12 @@ ResourceServiceName = Literal[
 from types_aiobotocore_guardduty.literals import PaginatorName
 
 def get_value() -> PaginatorName:
-    return "list_detectors"
+    return "describe_malware_scans"
 ```
 
 ```python title="Definition"
 PaginatorName = Literal[
+    "describe_malware_scans",
     "list_detectors",
     "list_filters",
     "list_findings",

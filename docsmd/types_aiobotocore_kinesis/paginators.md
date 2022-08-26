@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kinesis.paginator import DescribeStreamPaginator
 
 session = get_session()
-async with session.create_client("kinesis") as client:
-    client: KinesisClient
-    paginator: DescribeStreamPaginator = client.get_paginator("describe_stream")
+async with session.create_client("kinesis") as client:  # (1)
+    paginator: DescribeStreamPaginator = client.get_paginator("describe_stream")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeStreamOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KinesisClient](./client.md)
+2. paginator: [DescribeStreamPaginator](./paginators.md#describestreampaginator)
+3. item: [:material-code-braces: DescribeStreamOutputTypeDef](./type_defs.md#describestreamoutputtypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kinesis.paginator import ListShardsPaginator
 
 session = get_session()
-async with session.create_client("kinesis") as client:
-    client: KinesisClient
-    paginator: ListShardsPaginator = client.get_paginator("list_shards")
+async with session.create_client("kinesis") as client:  # (1)
+    paginator: ListShardsPaginator = client.get_paginator("list_shards")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListShardsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KinesisClient](./client.md)
+2. paginator: [ListShardsPaginator](./paginators.md#listshardspaginator)
+3. item: [:material-code-braces: ListShardsOutputTypeDef](./type_defs.md#listshardsoutputtypedef) 
 
 
 ### paginate
@@ -110,10 +122,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kinesis.paginator import ListStreamConsumersPaginator
 
 session = get_session()
-async with session.create_client("kinesis") as client:
-    client: KinesisClient
-    paginator: ListStreamConsumersPaginator = client.get_paginator("list_stream_consumers")
+async with session.create_client("kinesis") as client:  # (1)
+    paginator: ListStreamConsumersPaginator = client.get_paginator("list_stream_consumers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStreamConsumersOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KinesisClient](./client.md)
+2. paginator: [ListStreamConsumersPaginator](./paginators.md#liststreamconsumerspaginator)
+3. item: [:material-code-braces: ListStreamConsumersOutputTypeDef](./type_defs.md#liststreamconsumersoutputtypedef) 
 
 
 ### paginate
@@ -155,10 +173,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kinesis.paginator import ListStreamsPaginator
 
 session = get_session()
-async with session.create_client("kinesis") as client:
-    client: KinesisClient
-    paginator: ListStreamsPaginator = client.get_paginator("list_streams")
+async with session.create_client("kinesis") as client:  # (1)
+    paginator: ListStreamsPaginator = client.get_paginator("list_streams")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStreamsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KinesisClient](./client.md)
+2. paginator: [ListStreamsPaginator](./paginators.md#liststreamspaginator)
+3. item: [:material-code-braces: ListStreamsOutputTypeDef](./type_defs.md#liststreamsoutputtypedef) 
 
 
 ### paginate

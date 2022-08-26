@@ -260,6 +260,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -405,6 +406,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -458,6 +460,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -468,11 +471,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -518,6 +523,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -585,11 +591,12 @@ PaginatorName = Literal[
 from types_aiobotocore_kinesisvideo.literals import RegionName
 
 def get_value() -> RegionName:
-    return "ap-east-1"
+    return "af-south-1"
 ```
 
 ```python title="Definition"
 RegionName = Literal[
+    "af-south-1",
     "ap-east-1",
     "ap-northeast-1",
     "ap-northeast-2",

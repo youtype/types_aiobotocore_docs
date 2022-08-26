@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appstream.paginator import DescribeDirectoryConfigsPaginator
 
 session = get_session()
-async with session.create_client("appstream") as client:
-    client: AppStreamClient
-    paginator: DescribeDirectoryConfigsPaginator = client.get_paginator("describe_directory_configs")
+async with session.create_client("appstream") as client:  # (1)
+    paginator: DescribeDirectoryConfigsPaginator = client.get_paginator("describe_directory_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeDirectoryConfigsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppStreamClient](./client.md)
+2. paginator: [DescribeDirectoryConfigsPaginator](./paginators.md#describedirectoryconfigspaginator)
+3. item: [:material-code-braces: DescribeDirectoryConfigsResultTypeDef](./type_defs.md#describedirectoryconfigsresulttypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appstream.paginator import DescribeFleetsPaginator
 
 session = get_session()
-async with session.create_client("appstream") as client:
-    client: AppStreamClient
-    paginator: DescribeFleetsPaginator = client.get_paginator("describe_fleets")
+async with session.create_client("appstream") as client:  # (1)
+    paginator: DescribeFleetsPaginator = client.get_paginator("describe_fleets")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeFleetsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppStreamClient](./client.md)
+2. paginator: [DescribeFleetsPaginator](./paginators.md#describefleetspaginator)
+3. item: [:material-code-braces: DescribeFleetsResultTypeDef](./type_defs.md#describefleetsresulttypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appstream.paginator import DescribeImageBuildersPaginator
 
 session = get_session()
-async with session.create_client("appstream") as client:
-    client: AppStreamClient
-    paginator: DescribeImageBuildersPaginator = client.get_paginator("describe_image_builders")
+async with session.create_client("appstream") as client:  # (1)
+    paginator: DescribeImageBuildersPaginator = client.get_paginator("describe_image_builders")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeImageBuildersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppStreamClient](./client.md)
+2. paginator: [DescribeImageBuildersPaginator](./paginators.md#describeimagebuilderspaginator)
+3. item: [:material-code-braces: DescribeImageBuildersResultTypeDef](./type_defs.md#describeimagebuildersresulttypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appstream.paginator import DescribeImagesPaginator
 
 session = get_session()
-async with session.create_client("appstream") as client:
-    client: AppStreamClient
-    paginator: DescribeImagesPaginator = client.get_paginator("describe_images")
+async with session.create_client("appstream") as client:  # (1)
+    paginator: DescribeImagesPaginator = client.get_paginator("describe_images")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeImagesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppStreamClient](./client.md)
+2. paginator: [DescribeImagesPaginator](./paginators.md#describeimagespaginator)
+3. item: [:material-code-braces: DescribeImagesResultTypeDef](./type_defs.md#describeimagesresulttypedef) 
 
 
 ### paginate
@@ -197,10 +221,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appstream.paginator import DescribeSessionsPaginator
 
 session = get_session()
-async with session.create_client("appstream") as client:
-    client: AppStreamClient
-    paginator: DescribeSessionsPaginator = client.get_paginator("describe_sessions")
+async with session.create_client("appstream") as client:  # (1)
+    paginator: DescribeSessionsPaginator = client.get_paginator("describe_sessions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSessionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppStreamClient](./client.md)
+2. paginator: [DescribeSessionsPaginator](./paginators.md#describesessionspaginator)
+3. item: [:material-code-braces: DescribeSessionsResultTypeDef](./type_defs.md#describesessionsresulttypedef) 
 
 
 ### paginate
@@ -246,10 +276,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appstream.paginator import DescribeStacksPaginator
 
 session = get_session()
-async with session.create_client("appstream") as client:
-    client: AppStreamClient
-    paginator: DescribeStacksPaginator = client.get_paginator("describe_stacks")
+async with session.create_client("appstream") as client:  # (1)
+    paginator: DescribeStacksPaginator = client.get_paginator("describe_stacks")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeStacksResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppStreamClient](./client.md)
+2. paginator: [DescribeStacksPaginator](./paginators.md#describestackspaginator)
+3. item: [:material-code-braces: DescribeStacksResultTypeDef](./type_defs.md#describestacksresulttypedef) 
 
 
 ### paginate
@@ -290,10 +326,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appstream.paginator import DescribeUserStackAssociationsPaginator
 
 session = get_session()
-async with session.create_client("appstream") as client:
-    client: AppStreamClient
-    paginator: DescribeUserStackAssociationsPaginator = client.get_paginator("describe_user_stack_associations")
+async with session.create_client("appstream") as client:  # (1)
+    paginator: DescribeUserStackAssociationsPaginator = client.get_paginator("describe_user_stack_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeUserStackAssociationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppStreamClient](./client.md)
+2. paginator: [DescribeUserStackAssociationsPaginator](./paginators.md#describeuserstackassociationspaginator)
+3. item: [:material-code-braces: DescribeUserStackAssociationsResultTypeDef](./type_defs.md#describeuserstackassociationsresulttypedef) 
 
 
 ### paginate
@@ -337,10 +379,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appstream.paginator import DescribeUsersPaginator
 
 session = get_session()
-async with session.create_client("appstream") as client:
-    client: AppStreamClient
-    paginator: DescribeUsersPaginator = client.get_paginator("describe_users")
+async with session.create_client("appstream") as client:  # (1)
+    paginator: DescribeUsersPaginator = client.get_paginator("describe_users")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeUsersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppStreamClient](./client.md)
+2. paginator: [DescribeUsersPaginator](./paginators.md#describeuserspaginator)
+3. item: [:material-code-braces: DescribeUsersResultTypeDef](./type_defs.md#describeusersresulttypedef) 
 
 
 ### paginate
@@ -382,10 +430,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appstream.paginator import ListAssociatedFleetsPaginator
 
 session = get_session()
-async with session.create_client("appstream") as client:
-    client: AppStreamClient
-    paginator: ListAssociatedFleetsPaginator = client.get_paginator("list_associated_fleets")
+async with session.create_client("appstream") as client:  # (1)
+    paginator: ListAssociatedFleetsPaginator = client.get_paginator("list_associated_fleets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssociatedFleetsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppStreamClient](./client.md)
+2. paginator: [ListAssociatedFleetsPaginator](./paginators.md#listassociatedfleetspaginator)
+3. item: [:material-code-braces: ListAssociatedFleetsResultTypeDef](./type_defs.md#listassociatedfleetsresulttypedef) 
 
 
 ### paginate
@@ -426,10 +480,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appstream.paginator import ListAssociatedStacksPaginator
 
 session = get_session()
-async with session.create_client("appstream") as client:
-    client: AppStreamClient
-    paginator: ListAssociatedStacksPaginator = client.get_paginator("list_associated_stacks")
+async with session.create_client("appstream") as client:  # (1)
+    paginator: ListAssociatedStacksPaginator = client.get_paginator("list_associated_stacks")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssociatedStacksResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppStreamClient](./client.md)
+2. paginator: [ListAssociatedStacksPaginator](./paginators.md#listassociatedstackspaginator)
+3. item: [:material-code-braces: ListAssociatedStacksResultTypeDef](./type_defs.md#listassociatedstacksresulttypedef) 
 
 
 ### paginate

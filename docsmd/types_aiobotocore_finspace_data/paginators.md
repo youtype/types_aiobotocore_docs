@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_finspace_data.paginator import ListChangesetsPaginator
 
 session = get_session()
-async with session.create_client("finspace-data") as client:
-    client: FinSpaceDataClient
-    paginator: ListChangesetsPaginator = client.get_paginator("list_changesets")
+async with session.create_client("finspace-data") as client:  # (1)
+    paginator: ListChangesetsPaginator = client.get_paginator("list_changesets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListChangesetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [FinSpaceDataClient](./client.md)
+2. paginator: [ListChangesetsPaginator](./paginators.md#listchangesetspaginator)
+3. item: [:material-code-braces: ListChangesetsResponseTypeDef](./type_defs.md#listchangesetsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_finspace_data.paginator import ListDataViewsPaginator
 
 session = get_session()
-async with session.create_client("finspace-data") as client:
-    client: FinSpaceDataClient
-    paginator: ListDataViewsPaginator = client.get_paginator("list_data_views")
+async with session.create_client("finspace-data") as client:  # (1)
+    paginator: ListDataViewsPaginator = client.get_paginator("list_data_views")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDataViewsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [FinSpaceDataClient](./client.md)
+2. paginator: [ListDataViewsPaginator](./paginators.md#listdataviewspaginator)
+3. item: [:material-code-braces: ListDataViewsResponseTypeDef](./type_defs.md#listdataviewsresponsetypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_finspace_data.paginator import ListDatasetsPaginator
 
 session = get_session()
-async with session.create_client("finspace-data") as client:
-    client: FinSpaceDataClient
-    paginator: ListDatasetsPaginator = client.get_paginator("list_datasets")
+async with session.create_client("finspace-data") as client:  # (1)
+    paginator: ListDatasetsPaginator = client.get_paginator("list_datasets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDatasetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [FinSpaceDataClient](./client.md)
+2. paginator: [ListDatasetsPaginator](./paginators.md#listdatasetspaginator)
+3. item: [:material-code-braces: ListDatasetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef) 
 
 
 ### paginate
@@ -149,10 +167,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_finspace_data.paginator import ListPermissionGroupsPaginator
 
 session = get_session()
-async with session.create_client("finspace-data") as client:
-    client: FinSpaceDataClient
-    paginator: ListPermissionGroupsPaginator = client.get_paginator("list_permission_groups")
+async with session.create_client("finspace-data") as client:  # (1)
+    paginator: ListPermissionGroupsPaginator = client.get_paginator("list_permission_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPermissionGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [FinSpaceDataClient](./client.md)
+2. paginator: [ListPermissionGroupsPaginator](./paginators.md#listpermissiongroupspaginator)
+3. item: [:material-code-braces: ListPermissionGroupsResponseTypeDef](./type_defs.md#listpermissiongroupsresponsetypedef) 
 
 
 ### paginate
@@ -192,10 +216,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_finspace_data.paginator import ListUsersPaginator
 
 session = get_session()
-async with session.create_client("finspace-data") as client:
-    client: FinSpaceDataClient
-    paginator: ListUsersPaginator = client.get_paginator("list_users")
+async with session.create_client("finspace-data") as client:  # (1)
+    paginator: ListUsersPaginator = client.get_paginator("list_users")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUsersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [FinSpaceDataClient](./client.md)
+2. paginator: [ListUsersPaginator](./paginators.md#listuserspaginator)
+3. item: [:material-code-braces: ListUsersResponseTypeDef](./type_defs.md#listusersresponsetypedef) 
 
 
 ### paginate

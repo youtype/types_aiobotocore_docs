@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `WellArchitected`.
 
 ### From PyPI with pip
 
@@ -91,6 +86,7 @@ def get_value() -> AdditionalResourceTypeType:
 - [LensStatusTypeType](./literals.md#lensstatustypetype)
 - [LensTypeType](./literals.md#lenstypetype)
 - [NotificationTypeType](./literals.md#notificationtypetype)
+- [OrganizationSharingStatusType](./literals.md#organizationsharingstatustype)
 - [PermissionTypeType](./literals.md#permissiontypetype)
 - [RiskType](./literals.md#risktype)
 - [ShareInvitationActionType](./literals.md#shareinvitationactiontype)
@@ -171,6 +167,7 @@ def get_value() -> ChoiceContentTypeDef:
 - [ShareInvitationTypeDef](./type_defs.md#shareinvitationtypedef)
 - [TagResourceInputRequestTypeDef](./type_defs.md#tagresourceinputrequesttypedef)
 - [UntagResourceInputRequestTypeDef](./type_defs.md#untagresourceinputrequesttypedef)
+- [UpdateGlobalSettingsInputRequestTypeDef](./type_defs.md#updateglobalsettingsinputrequesttypedef)
 - [UpdateLensReviewInputRequestTypeDef](./type_defs.md#updatelensreviewinputrequesttypedef)
 - [UpdateShareInvitationInputRequestTypeDef](./type_defs.md#updateshareinvitationinputrequesttypedef)
 - [UpdateWorkloadInputRequestTypeDef](./type_defs.md#updateworkloadinputrequesttypedef)

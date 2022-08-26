@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `FMS`.
 
 ### From PyPI with pip
 
@@ -116,6 +111,7 @@ def get_value() -> AccountRoleStatusType:
 - [MarketplaceSubscriptionOnboardingStatusType](./literals.md#marketplacesubscriptiononboardingstatustype)
 - [PolicyComplianceStatusTypeType](./literals.md#policycompliancestatustypetype)
 - [RemediationActionTypeType](./literals.md#remediationactiontypetype)
+- [RuleOrderType](./literals.md#ruleordertype)
 - [SecurityServiceTypeType](./literals.md#securityservicetypetype)
 - [TargetTypeType](./literals.md#targettypetype)
 - [ThirdPartyFirewallAssociationStatusType](./literals.md#thirdpartyfirewallassociationstatustype)
@@ -187,6 +183,7 @@ def get_value() -> ActionTargetTypeDef:
 - [NetworkFirewallMissingExpectedRTViolationTypeDef](./type_defs.md#networkfirewallmissingexpectedrtviolationtypedef)
 - [NetworkFirewallMissingFirewallViolationTypeDef](./type_defs.md#networkfirewallmissingfirewallviolationtypedef)
 - [NetworkFirewallMissingSubnetViolationTypeDef](./type_defs.md#networkfirewallmissingsubnetviolationtypedef)
+- [StatefulEngineOptionsTypeDef](./type_defs.md#statefulengineoptionstypedef)
 - [StatefulRuleGroupTypeDef](./type_defs.md#statefulrulegrouptypedef)
 - [StatelessRuleGroupTypeDef](./type_defs.md#statelessrulegrouptypedef)
 - [NetworkFirewallPolicyTypeDef](./type_defs.md#networkfirewallpolicytypedef)

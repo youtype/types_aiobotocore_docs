@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeActivationsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeActivationsPaginator = client.get_paginator("describe_activations")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeActivationsPaginator = client.get_paginator("describe_activations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeActivationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeActivationsPaginator](./paginators.md#describeactivationspaginator)
+3. item: [:material-code-braces: DescribeActivationsResultTypeDef](./type_defs.md#describeactivationsresulttypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeAssociationExecutionTargetsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeAssociationExecutionTargetsPaginator = client.get_paginator("describe_association_execution_targets")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeAssociationExecutionTargetsPaginator = client.get_paginator("describe_association_execution_targets")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAssociationExecutionTargetsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeAssociationExecutionTargetsPaginator](./paginators.md#describeassociationexecutiontargetspaginator)
+3. item: [:material-code-braces: DescribeAssociationExecutionTargetsResultTypeDef](./type_defs.md#describeassociationexecutiontargetsresulttypedef) 
 
 
 ### paginate
@@ -111,10 +123,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeAssociationExecutionsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeAssociationExecutionsPaginator = client.get_paginator("describe_association_executions")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeAssociationExecutionsPaginator = client.get_paginator("describe_association_executions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAssociationExecutionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeAssociationExecutionsPaginator](./paginators.md#describeassociationexecutionspaginator)
+3. item: [:material-code-braces: DescribeAssociationExecutionsResultTypeDef](./type_defs.md#describeassociationexecutionsresulttypedef) 
 
 
 ### paginate
@@ -157,10 +175,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeAutomationExecutionsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeAutomationExecutionsPaginator = client.get_paginator("describe_automation_executions")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeAutomationExecutionsPaginator = client.get_paginator("describe_automation_executions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAutomationExecutionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeAutomationExecutionsPaginator](./paginators.md#describeautomationexecutionspaginator)
+3. item: [:material-code-braces: DescribeAutomationExecutionsResultTypeDef](./type_defs.md#describeautomationexecutionsresulttypedef) 
 
 
 ### paginate
@@ -202,10 +226,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeAutomationStepExecutionsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeAutomationStepExecutionsPaginator = client.get_paginator("describe_automation_step_executions")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeAutomationStepExecutionsPaginator = client.get_paginator("describe_automation_step_executions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAutomationStepExecutionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeAutomationStepExecutionsPaginator](./paginators.md#describeautomationstepexecutionspaginator)
+3. item: [:material-code-braces: DescribeAutomationStepExecutionsResultTypeDef](./type_defs.md#describeautomationstepexecutionsresulttypedef) 
 
 
 ### paginate
@@ -249,10 +279,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeAvailablePatchesPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeAvailablePatchesPaginator = client.get_paginator("describe_available_patches")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeAvailablePatchesPaginator = client.get_paginator("describe_available_patches")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAvailablePatchesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeAvailablePatchesPaginator](./paginators.md#describeavailablepatchespaginator)
+3. item: [:material-code-braces: DescribeAvailablePatchesResultTypeDef](./type_defs.md#describeavailablepatchesresulttypedef) 
 
 
 ### paginate
@@ -294,10 +330,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeEffectiveInstanceAssociationsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeEffectiveInstanceAssociationsPaginator = client.get_paginator("describe_effective_instance_associations")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeEffectiveInstanceAssociationsPaginator = client.get_paginator("describe_effective_instance_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeEffectiveInstanceAssociationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeEffectiveInstanceAssociationsPaginator](./paginators.md#describeeffectiveinstanceassociationspaginator)
+3. item: [:material-code-braces: DescribeEffectiveInstanceAssociationsResultTypeDef](./type_defs.md#describeeffectiveinstanceassociationsresulttypedef) 
 
 
 ### paginate
@@ -338,10 +380,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeEffectivePatchesForPatchBaselinePaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeEffectivePatchesForPatchBaselinePaginator = client.get_paginator("describe_effective_patches_for_patch_baseline")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeEffectivePatchesForPatchBaselinePaginator = client.get_paginator("describe_effective_patches_for_patch_baseline")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeEffectivePatchesForPatchBaselineResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeEffectivePatchesForPatchBaselinePaginator](./paginators.md#describeeffectivepatchesforpatchbaselinepaginator)
+3. item: [:material-code-braces: DescribeEffectivePatchesForPatchBaselineResultTypeDef](./type_defs.md#describeeffectivepatchesforpatchbaselineresulttypedef) 
 
 
 ### paginate
@@ -382,10 +430,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeInstanceAssociationsStatusPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeInstanceAssociationsStatusPaginator = client.get_paginator("describe_instance_associations_status")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeInstanceAssociationsStatusPaginator = client.get_paginator("describe_instance_associations_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeInstanceAssociationsStatusResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeInstanceAssociationsStatusPaginator](./paginators.md#describeinstanceassociationsstatuspaginator)
+3. item: [:material-code-braces: DescribeInstanceAssociationsStatusResultTypeDef](./type_defs.md#describeinstanceassociationsstatusresulttypedef) 
 
 
 ### paginate
@@ -426,10 +480,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeInstanceInformationPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeInstanceInformationPaginator = client.get_paginator("describe_instance_information")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeInstanceInformationPaginator = client.get_paginator("describe_instance_information")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeInstanceInformationResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeInstanceInformationPaginator](./paginators.md#describeinstanceinformationpaginator)
+3. item: [:material-code-braces: DescribeInstanceInformationResultTypeDef](./type_defs.md#describeinstanceinformationresulttypedef) 
 
 
 ### paginate
@@ -473,10 +533,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeInstancePatchStatesPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeInstancePatchStatesPaginator = client.get_paginator("describe_instance_patch_states")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeInstancePatchStatesPaginator = client.get_paginator("describe_instance_patch_states")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeInstancePatchStatesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeInstancePatchStatesPaginator](./paginators.md#describeinstancepatchstatespaginator)
+3. item: [:material-code-braces: DescribeInstancePatchStatesResultTypeDef](./type_defs.md#describeinstancepatchstatesresulttypedef) 
 
 
 ### paginate
@@ -517,10 +583,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeInstancePatchStatesForPatchGroupPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeInstancePatchStatesForPatchGroupPaginator = client.get_paginator("describe_instance_patch_states_for_patch_group")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeInstancePatchStatesForPatchGroupPaginator = client.get_paginator("describe_instance_patch_states_for_patch_group")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeInstancePatchStatesForPatchGroupResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeInstancePatchStatesForPatchGroupPaginator](./paginators.md#describeinstancepatchstatesforpatchgrouppaginator)
+3. item: [:material-code-braces: DescribeInstancePatchStatesForPatchGroupResultTypeDef](./type_defs.md#describeinstancepatchstatesforpatchgroupresulttypedef) 
 
 
 ### paginate
@@ -563,10 +635,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeInstancePatchesPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeInstancePatchesPaginator = client.get_paginator("describe_instance_patches")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeInstancePatchesPaginator = client.get_paginator("describe_instance_patches")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeInstancePatchesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeInstancePatchesPaginator](./paginators.md#describeinstancepatchespaginator)
+3. item: [:material-code-braces: DescribeInstancePatchesResultTypeDef](./type_defs.md#describeinstancepatchesresulttypedef) 
 
 
 ### paginate
@@ -609,10 +687,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeInventoryDeletionsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeInventoryDeletionsPaginator = client.get_paginator("describe_inventory_deletions")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeInventoryDeletionsPaginator = client.get_paginator("describe_inventory_deletions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeInventoryDeletionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeInventoryDeletionsPaginator](./paginators.md#describeinventorydeletionspaginator)
+3. item: [:material-code-braces: DescribeInventoryDeletionsResultTypeDef](./type_defs.md#describeinventorydeletionsresulttypedef) 
 
 
 ### paginate
@@ -653,10 +737,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeMaintenanceWindowExecutionTaskInvocationsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeMaintenanceWindowExecutionTaskInvocationsPaginator = client.get_paginator("describe_maintenance_window_execution_task_invocations")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeMaintenanceWindowExecutionTaskInvocationsPaginator = client.get_paginator("describe_maintenance_window_execution_task_invocations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeMaintenanceWindowExecutionTaskInvocationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeMaintenanceWindowExecutionTaskInvocationsPaginator](./paginators.md#describemaintenancewindowexecutiontaskinvocationspaginator)
+3. item: [:material-code-braces: DescribeMaintenanceWindowExecutionTaskInvocationsResultTypeDef](./type_defs.md#describemaintenancewindowexecutiontaskinvocationsresulttypedef) 
 
 
 ### paginate
@@ -701,10 +791,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeMaintenanceWindowExecutionTasksPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeMaintenanceWindowExecutionTasksPaginator = client.get_paginator("describe_maintenance_window_execution_tasks")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeMaintenanceWindowExecutionTasksPaginator = client.get_paginator("describe_maintenance_window_execution_tasks")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeMaintenanceWindowExecutionTasksResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeMaintenanceWindowExecutionTasksPaginator](./paginators.md#describemaintenancewindowexecutiontaskspaginator)
+3. item: [:material-code-braces: DescribeMaintenanceWindowExecutionTasksResultTypeDef](./type_defs.md#describemaintenancewindowexecutiontasksresulttypedef) 
 
 
 ### paginate
@@ -747,10 +843,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeMaintenanceWindowExecutionsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeMaintenanceWindowExecutionsPaginator = client.get_paginator("describe_maintenance_window_executions")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeMaintenanceWindowExecutionsPaginator = client.get_paginator("describe_maintenance_window_executions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeMaintenanceWindowExecutionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeMaintenanceWindowExecutionsPaginator](./paginators.md#describemaintenancewindowexecutionspaginator)
+3. item: [:material-code-braces: DescribeMaintenanceWindowExecutionsResultTypeDef](./type_defs.md#describemaintenancewindowexecutionsresulttypedef) 
 
 
 ### paginate
@@ -793,10 +895,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeMaintenanceWindowSchedulePaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeMaintenanceWindowSchedulePaginator = client.get_paginator("describe_maintenance_window_schedule")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeMaintenanceWindowSchedulePaginator = client.get_paginator("describe_maintenance_window_schedule")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeMaintenanceWindowScheduleResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeMaintenanceWindowSchedulePaginator](./paginators.md#describemaintenancewindowschedulepaginator)
+3. item: [:material-code-braces: DescribeMaintenanceWindowScheduleResultTypeDef](./type_defs.md#describemaintenancewindowscheduleresulttypedef) 
 
 
 ### paginate
@@ -843,10 +951,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeMaintenanceWindowTargetsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeMaintenanceWindowTargetsPaginator = client.get_paginator("describe_maintenance_window_targets")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeMaintenanceWindowTargetsPaginator = client.get_paginator("describe_maintenance_window_targets")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeMaintenanceWindowTargetsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeMaintenanceWindowTargetsPaginator](./paginators.md#describemaintenancewindowtargetspaginator)
+3. item: [:material-code-braces: DescribeMaintenanceWindowTargetsResultTypeDef](./type_defs.md#describemaintenancewindowtargetsresulttypedef) 
 
 
 ### paginate
@@ -889,10 +1003,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeMaintenanceWindowTasksPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeMaintenanceWindowTasksPaginator = client.get_paginator("describe_maintenance_window_tasks")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeMaintenanceWindowTasksPaginator = client.get_paginator("describe_maintenance_window_tasks")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeMaintenanceWindowTasksResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeMaintenanceWindowTasksPaginator](./paginators.md#describemaintenancewindowtaskspaginator)
+3. item: [:material-code-braces: DescribeMaintenanceWindowTasksResultTypeDef](./type_defs.md#describemaintenancewindowtasksresulttypedef) 
 
 
 ### paginate
@@ -935,10 +1055,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeMaintenanceWindowsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeMaintenanceWindowsPaginator = client.get_paginator("describe_maintenance_windows")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeMaintenanceWindowsPaginator = client.get_paginator("describe_maintenance_windows")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeMaintenanceWindowsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeMaintenanceWindowsPaginator](./paginators.md#describemaintenancewindowspaginator)
+3. item: [:material-code-braces: DescribeMaintenanceWindowsResultTypeDef](./type_defs.md#describemaintenancewindowsresulttypedef) 
 
 
 ### paginate
@@ -980,10 +1106,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeMaintenanceWindowsForTargetPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeMaintenanceWindowsForTargetPaginator = client.get_paginator("describe_maintenance_windows_for_target")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeMaintenanceWindowsForTargetPaginator = client.get_paginator("describe_maintenance_windows_for_target")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeMaintenanceWindowsForTargetResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeMaintenanceWindowsForTargetPaginator](./paginators.md#describemaintenancewindowsfortargetpaginator)
+3. item: [:material-code-braces: DescribeMaintenanceWindowsForTargetResultTypeDef](./type_defs.md#describemaintenancewindowsfortargetresulttypedef) 
 
 
 ### paginate
@@ -1028,10 +1160,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeOpsItemsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeOpsItemsPaginator = client.get_paginator("describe_ops_items")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeOpsItemsPaginator = client.get_paginator("describe_ops_items")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeOpsItemsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeOpsItemsPaginator](./paginators.md#describeopsitemspaginator)
+3. item: [:material-code-braces: DescribeOpsItemsResponseTypeDef](./type_defs.md#describeopsitemsresponsetypedef) 
 
 
 ### paginate
@@ -1073,10 +1211,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeParametersPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeParametersPaginator = client.get_paginator("describe_parameters")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeParametersPaginator = client.get_paginator("describe_parameters")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeParametersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeParametersPaginator](./paginators.md#describeparameterspaginator)
+3. item: [:material-code-braces: DescribeParametersResultTypeDef](./type_defs.md#describeparametersresulttypedef) 
 
 
 ### paginate
@@ -1120,10 +1264,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribePatchBaselinesPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribePatchBaselinesPaginator = client.get_paginator("describe_patch_baselines")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribePatchBaselinesPaginator = client.get_paginator("describe_patch_baselines")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribePatchBaselinesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribePatchBaselinesPaginator](./paginators.md#describepatchbaselinespaginator)
+3. item: [:material-code-braces: DescribePatchBaselinesResultTypeDef](./type_defs.md#describepatchbaselinesresulttypedef) 
 
 
 ### paginate
@@ -1165,10 +1315,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribePatchGroupsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribePatchGroupsPaginator = client.get_paginator("describe_patch_groups")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribePatchGroupsPaginator = client.get_paginator("describe_patch_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribePatchGroupsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribePatchGroupsPaginator](./paginators.md#describepatchgroupspaginator)
+3. item: [:material-code-braces: DescribePatchGroupsResultTypeDef](./type_defs.md#describepatchgroupsresulttypedef) 
 
 
 ### paginate
@@ -1210,10 +1366,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribePatchPropertiesPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribePatchPropertiesPaginator = client.get_paginator("describe_patch_properties")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribePatchPropertiesPaginator = client.get_paginator("describe_patch_properties")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribePatchPropertiesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribePatchPropertiesPaginator](./paginators.md#describepatchpropertiespaginator)
+3. item: [:material-code-braces: DescribePatchPropertiesResultTypeDef](./type_defs.md#describepatchpropertiesresulttypedef) 
 
 
 ### paginate
@@ -1260,10 +1422,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import DescribeSessionsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: DescribeSessionsPaginator = client.get_paginator("describe_sessions")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: DescribeSessionsPaginator = client.get_paginator("describe_sessions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSessionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [DescribeSessionsPaginator](./paginators.md#describesessionspaginator)
+3. item: [:material-code-braces: DescribeSessionsResponseTypeDef](./type_defs.md#describesessionsresponsetypedef) 
 
 
 ### paginate
@@ -1307,10 +1475,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import GetInventoryPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: GetInventoryPaginator = client.get_paginator("get_inventory")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: GetInventoryPaginator = client.get_paginator("get_inventory")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetInventoryResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [GetInventoryPaginator](./paginators.md#getinventorypaginator)
+3. item: [:material-code-braces: GetInventoryResultTypeDef](./type_defs.md#getinventoryresulttypedef) 
 
 
 ### paginate
@@ -1356,10 +1530,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import GetInventorySchemaPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: GetInventorySchemaPaginator = client.get_paginator("get_inventory_schema")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: GetInventorySchemaPaginator = client.get_paginator("get_inventory_schema")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetInventorySchemaResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [GetInventorySchemaPaginator](./paginators.md#getinventoryschemapaginator)
+3. item: [:material-code-braces: GetInventorySchemaResultTypeDef](./type_defs.md#getinventoryschemaresulttypedef) 
 
 
 ### paginate
@@ -1402,10 +1582,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import GetOpsSummaryPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: GetOpsSummaryPaginator = client.get_paginator("get_ops_summary")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: GetOpsSummaryPaginator = client.get_paginator("get_ops_summary")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetOpsSummaryResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [GetOpsSummaryPaginator](./paginators.md#getopssummarypaginator)
+3. item: [:material-code-braces: GetOpsSummaryResultTypeDef](./type_defs.md#getopssummaryresulttypedef) 
 
 
 ### paginate
@@ -1452,10 +1638,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import GetParameterHistoryPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: GetParameterHistoryPaginator = client.get_paginator("get_parameter_history")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: GetParameterHistoryPaginator = client.get_paginator("get_parameter_history")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetParameterHistoryResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [GetParameterHistoryPaginator](./paginators.md#getparameterhistorypaginator)
+3. item: [:material-code-braces: GetParameterHistoryResultTypeDef](./type_defs.md#getparameterhistoryresulttypedef) 
 
 
 ### paginate
@@ -1497,10 +1689,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import GetParametersByPathPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: GetParametersByPathPaginator = client.get_paginator("get_parameters_by_path")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: GetParametersByPathPaginator = client.get_paginator("get_parameters_by_path")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetParametersByPathResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [GetParametersByPathPaginator](./paginators.md#getparametersbypathpaginator)
+3. item: [:material-code-braces: GetParametersByPathResultTypeDef](./type_defs.md#getparametersbypathresulttypedef) 
 
 
 ### paginate
@@ -1545,10 +1743,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import ListAssociationVersionsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: ListAssociationVersionsPaginator = client.get_paginator("list_association_versions")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: ListAssociationVersionsPaginator = client.get_paginator("list_association_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssociationVersionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [ListAssociationVersionsPaginator](./paginators.md#listassociationversionspaginator)
+3. item: [:material-code-braces: ListAssociationVersionsResultTypeDef](./type_defs.md#listassociationversionsresulttypedef) 
 
 
 ### paginate
@@ -1589,10 +1793,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import ListAssociationsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: ListAssociationsPaginator = client.get_paginator("list_associations")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: ListAssociationsPaginator = client.get_paginator("list_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssociationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [ListAssociationsPaginator](./paginators.md#listassociationspaginator)
+3. item: [:material-code-braces: ListAssociationsResultTypeDef](./type_defs.md#listassociationsresulttypedef) 
 
 
 ### paginate
@@ -1634,10 +1844,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import ListCommandInvocationsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: ListCommandInvocationsPaginator = client.get_paginator("list_command_invocations")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: ListCommandInvocationsPaginator = client.get_paginator("list_command_invocations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCommandInvocationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [ListCommandInvocationsPaginator](./paginators.md#listcommandinvocationspaginator)
+3. item: [:material-code-braces: ListCommandInvocationsResultTypeDef](./type_defs.md#listcommandinvocationsresulttypedef) 
 
 
 ### paginate
@@ -1682,10 +1898,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import ListCommandsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: ListCommandsPaginator = client.get_paginator("list_commands")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: ListCommandsPaginator = client.get_paginator("list_commands")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCommandsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [ListCommandsPaginator](./paginators.md#listcommandspaginator)
+3. item: [:material-code-braces: ListCommandsResultTypeDef](./type_defs.md#listcommandsresulttypedef) 
 
 
 ### paginate
@@ -1729,10 +1951,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import ListComplianceItemsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: ListComplianceItemsPaginator = client.get_paginator("list_compliance_items")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: ListComplianceItemsPaginator = client.get_paginator("list_compliance_items")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListComplianceItemsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [ListComplianceItemsPaginator](./paginators.md#listcomplianceitemspaginator)
+3. item: [:material-code-braces: ListComplianceItemsResultTypeDef](./type_defs.md#listcomplianceitemsresulttypedef) 
 
 
 ### paginate
@@ -1776,10 +2004,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import ListComplianceSummariesPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: ListComplianceSummariesPaginator = client.get_paginator("list_compliance_summaries")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: ListComplianceSummariesPaginator = client.get_paginator("list_compliance_summaries")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListComplianceSummariesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [ListComplianceSummariesPaginator](./paginators.md#listcompliancesummariespaginator)
+3. item: [:material-code-braces: ListComplianceSummariesResultTypeDef](./type_defs.md#listcompliancesummariesresulttypedef) 
 
 
 ### paginate
@@ -1821,10 +2055,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import ListDocumentVersionsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: ListDocumentVersionsPaginator = client.get_paginator("list_document_versions")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: ListDocumentVersionsPaginator = client.get_paginator("list_document_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDocumentVersionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [ListDocumentVersionsPaginator](./paginators.md#listdocumentversionspaginator)
+3. item: [:material-code-braces: ListDocumentVersionsResultTypeDef](./type_defs.md#listdocumentversionsresulttypedef) 
 
 
 ### paginate
@@ -1865,10 +2105,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import ListDocumentsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: ListDocumentsPaginator = client.get_paginator("list_documents")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: ListDocumentsPaginator = client.get_paginator("list_documents")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDocumentsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [ListDocumentsPaginator](./paginators.md#listdocumentspaginator)
+3. item: [:material-code-braces: ListDocumentsResultTypeDef](./type_defs.md#listdocumentsresulttypedef) 
 
 
 ### paginate
@@ -1912,10 +2158,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import ListOpsItemEventsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: ListOpsItemEventsPaginator = client.get_paginator("list_ops_item_events")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: ListOpsItemEventsPaginator = client.get_paginator("list_ops_item_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListOpsItemEventsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [ListOpsItemEventsPaginator](./paginators.md#listopsitemeventspaginator)
+3. item: [:material-code-braces: ListOpsItemEventsResponseTypeDef](./type_defs.md#listopsitemeventsresponsetypedef) 
 
 
 ### paginate
@@ -1957,10 +2209,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import ListOpsItemRelatedItemsPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: ListOpsItemRelatedItemsPaginator = client.get_paginator("list_ops_item_related_items")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: ListOpsItemRelatedItemsPaginator = client.get_paginator("list_ops_item_related_items")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListOpsItemRelatedItemsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [ListOpsItemRelatedItemsPaginator](./paginators.md#listopsitemrelateditemspaginator)
+3. item: [:material-code-braces: ListOpsItemRelatedItemsResponseTypeDef](./type_defs.md#listopsitemrelateditemsresponsetypedef) 
 
 
 ### paginate
@@ -2003,10 +2261,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import ListOpsMetadataPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: ListOpsMetadataPaginator = client.get_paginator("list_ops_metadata")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: ListOpsMetadataPaginator = client.get_paginator("list_ops_metadata")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListOpsMetadataResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [ListOpsMetadataPaginator](./paginators.md#listopsmetadatapaginator)
+3. item: [:material-code-braces: ListOpsMetadataResultTypeDef](./type_defs.md#listopsmetadataresulttypedef) 
 
 
 ### paginate
@@ -2048,10 +2312,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import ListResourceComplianceSummariesPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: ListResourceComplianceSummariesPaginator = client.get_paginator("list_resource_compliance_summaries")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: ListResourceComplianceSummariesPaginator = client.get_paginator("list_resource_compliance_summaries")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResourceComplianceSummariesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [ListResourceComplianceSummariesPaginator](./paginators.md#listresourcecompliancesummariespaginator)
+3. item: [:material-code-braces: ListResourceComplianceSummariesResultTypeDef](./type_defs.md#listresourcecompliancesummariesresulttypedef) 
 
 
 ### paginate
@@ -2093,10 +2363,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm.paginator import ListResourceDataSyncPaginator
 
 session = get_session()
-async with session.create_client("ssm") as client:
-    client: SSMClient
-    paginator: ListResourceDataSyncPaginator = client.get_paginator("list_resource_data_sync")
+async with session.create_client("ssm") as client:  # (1)
+    paginator: ListResourceDataSyncPaginator = client.get_paginator("list_resource_data_sync")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResourceDataSyncResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMClient](./client.md)
+2. paginator: [ListResourceDataSyncPaginator](./paginators.md#listresourcedatasyncpaginator)
+3. item: [:material-code-braces: ListResourceDataSyncResultTypeDef](./type_defs.md#listresourcedatasyncresulttypedef) 
 
 
 ### paginate

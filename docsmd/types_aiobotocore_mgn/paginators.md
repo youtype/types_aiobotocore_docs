@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mgn.paginator import DescribeJobLogItemsPaginator
 
 session = get_session()
-async with session.create_client("mgn") as client:
-    client: mgnClient
-    paginator: DescribeJobLogItemsPaginator = client.get_paginator("describe_job_log_items")
+async with session.create_client("mgn") as client:  # (1)
+    paginator: DescribeJobLogItemsPaginator = client.get_paginator("describe_job_log_items")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeJobLogItemsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [mgnClient](./client.md)
+2. paginator: [DescribeJobLogItemsPaginator](./paginators.md#describejoblogitemspaginator)
+3. item: [:material-code-braces: DescribeJobLogItemsResponseTypeDef](./type_defs.md#describejoblogitemsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mgn.paginator import DescribeJobsPaginator
 
 session = get_session()
-async with session.create_client("mgn") as client:
-    client: mgnClient
-    paginator: DescribeJobsPaginator = client.get_paginator("describe_jobs")
+async with session.create_client("mgn") as client:  # (1)
+    paginator: DescribeJobsPaginator = client.get_paginator("describe_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [mgnClient](./client.md)
+2. paginator: [DescribeJobsPaginator](./paginators.md#describejobspaginator)
+3. item: [:material-code-braces: DescribeJobsResponseTypeDef](./type_defs.md#describejobsresponsetypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mgn.paginator import DescribeLaunchConfigurationTemplatesPaginator
 
 session = get_session()
-async with session.create_client("mgn") as client:
-    client: mgnClient
-    paginator: DescribeLaunchConfigurationTemplatesPaginator = client.get_paginator("describe_launch_configuration_templates")
+async with session.create_client("mgn") as client:  # (1)
+    paginator: DescribeLaunchConfigurationTemplatesPaginator = client.get_paginator("describe_launch_configuration_templates")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeLaunchConfigurationTemplatesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [mgnClient](./client.md)
+2. paginator: [DescribeLaunchConfigurationTemplatesPaginator](./paginators.md#describelaunchconfigurationtemplatespaginator)
+3. item: [:material-code-braces: DescribeLaunchConfigurationTemplatesResponseTypeDef](./type_defs.md#describelaunchconfigurationtemplatesresponsetypedef) 
 
 
 ### paginate
@@ -151,10 +169,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mgn.paginator import DescribeReplicationConfigurationTemplatesPaginator
 
 session = get_session()
-async with session.create_client("mgn") as client:
-    client: mgnClient
-    paginator: DescribeReplicationConfigurationTemplatesPaginator = client.get_paginator("describe_replication_configuration_templates")
+async with session.create_client("mgn") as client:  # (1)
+    paginator: DescribeReplicationConfigurationTemplatesPaginator = client.get_paginator("describe_replication_configuration_templates")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeReplicationConfigurationTemplatesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [mgnClient](./client.md)
+2. paginator: [DescribeReplicationConfigurationTemplatesPaginator](./paginators.md#describereplicationconfigurationtemplatespaginator)
+3. item: [:material-code-braces: DescribeReplicationConfigurationTemplatesResponseTypeDef](./type_defs.md#describereplicationconfigurationtemplatesresponsetypedef) 
 
 
 ### paginate
@@ -195,10 +219,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mgn.paginator import DescribeSourceServersPaginator
 
 session = get_session()
-async with session.create_client("mgn") as client:
-    client: mgnClient
-    paginator: DescribeSourceServersPaginator = client.get_paginator("describe_source_servers")
+async with session.create_client("mgn") as client:  # (1)
+    paginator: DescribeSourceServersPaginator = client.get_paginator("describe_source_servers")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSourceServersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [mgnClient](./client.md)
+2. paginator: [DescribeSourceServersPaginator](./paginators.md#describesourceserverspaginator)
+3. item: [:material-code-braces: DescribeSourceServersResponseTypeDef](./type_defs.md#describesourceserversresponsetypedef) 
 
 
 ### paginate
@@ -240,10 +270,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mgn.paginator import DescribeVcenterClientsPaginator
 
 session = get_session()
-async with session.create_client("mgn") as client:
-    client: mgnClient
-    paginator: DescribeVcenterClientsPaginator = client.get_paginator("describe_vcenter_clients")
+async with session.create_client("mgn") as client:  # (1)
+    paginator: DescribeVcenterClientsPaginator = client.get_paginator("describe_vcenter_clients")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeVcenterClientsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [mgnClient](./client.md)
+2. paginator: [DescribeVcenterClientsPaginator](./paginators.md#describevcenterclientspaginator)
+3. item: [:material-code-braces: DescribeVcenterClientsResponseTypeDef](./type_defs.md#describevcenterclientsresponsetypedef) 
 
 
 ### paginate

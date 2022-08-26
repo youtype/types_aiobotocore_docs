@@ -183,7 +183,7 @@ await def copy(
     Key: str,
     ExtraArgs: Dict[str, Any] = ...,
     Callback: Callable[..., Any] = ...,
-    SourceClient: BaseClient = ...,
+    SourceClient: AioBaseClient = ...,
     Config: TransferConfig = ...,
 ) -> None:
     ...

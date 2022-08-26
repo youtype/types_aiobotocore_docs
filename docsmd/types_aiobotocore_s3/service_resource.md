@@ -897,7 +897,7 @@ await def copy(
     Key: str,
     ExtraArgs: Dict[str, Any] = ...,
     Callback: Callable[..., Any] = ...,
-    SourceClient: BaseClient = ...,
+    SourceClient: AioBaseClient = ...,
     Config: TransferConfig = ...,
 ) -> None:
     ...
@@ -3382,7 +3382,7 @@ await def copy(
     CopySource: CopySourceTypeDef,  # (1)
     ExtraArgs: Dict[str, Any] = ...,
     Callback: Callable[..., Any] = ...,
-    SourceClient: BaseClient = ...,
+    SourceClient: AioBaseClient = ...,
     Config: TransferConfig = ...,
 ) -> None:
     ...

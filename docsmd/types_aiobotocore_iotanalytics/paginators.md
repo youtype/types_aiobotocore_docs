@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotanalytics.paginator import ListChannelsPaginator
 
 session = get_session()
-async with session.create_client("iotanalytics") as client:
-    client: IoTAnalyticsClient
-    paginator: ListChannelsPaginator = client.get_paginator("list_channels")
+async with session.create_client("iotanalytics") as client:  # (1)
+    paginator: ListChannelsPaginator = client.get_paginator("list_channels")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListChannelsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTAnalyticsClient](./client.md)
+2. paginator: [ListChannelsPaginator](./paginators.md#listchannelspaginator)
+3. item: [:material-code-braces: ListChannelsResponseTypeDef](./type_defs.md#listchannelsresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotanalytics.paginator import ListDatasetContentsPaginator
 
 session = get_session()
-async with session.create_client("iotanalytics") as client:
-    client: IoTAnalyticsClient
-    paginator: ListDatasetContentsPaginator = client.get_paginator("list_dataset_contents")
+async with session.create_client("iotanalytics") as client:  # (1)
+    paginator: ListDatasetContentsPaginator = client.get_paginator("list_dataset_contents")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDatasetContentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTAnalyticsClient](./client.md)
+2. paginator: [ListDatasetContentsPaginator](./paginators.md#listdatasetcontentspaginator)
+3. item: [:material-code-braces: ListDatasetContentsResponseTypeDef](./type_defs.md#listdatasetcontentsresponsetypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotanalytics.paginator import ListDatasetsPaginator
 
 session = get_session()
-async with session.create_client("iotanalytics") as client:
-    client: IoTAnalyticsClient
-    paginator: ListDatasetsPaginator = client.get_paginator("list_datasets")
+async with session.create_client("iotanalytics") as client:  # (1)
+    paginator: ListDatasetsPaginator = client.get_paginator("list_datasets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDatasetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTAnalyticsClient](./client.md)
+2. paginator: [ListDatasetsPaginator](./paginators.md#listdatasetspaginator)
+3. item: [:material-code-braces: ListDatasetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotanalytics.paginator import ListDatastoresPaginator
 
 session = get_session()
-async with session.create_client("iotanalytics") as client:
-    client: IoTAnalyticsClient
-    paginator: ListDatastoresPaginator = client.get_paginator("list_datastores")
+async with session.create_client("iotanalytics") as client:  # (1)
+    paginator: ListDatastoresPaginator = client.get_paginator("list_datastores")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDatastoresResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTAnalyticsClient](./client.md)
+2. paginator: [ListDatastoresPaginator](./paginators.md#listdatastorespaginator)
+3. item: [:material-code-braces: ListDatastoresResponseTypeDef](./type_defs.md#listdatastoresresponsetypedef) 
 
 
 ### paginate
@@ -193,10 +217,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotanalytics.paginator import ListPipelinesPaginator
 
 session = get_session()
-async with session.create_client("iotanalytics") as client:
-    client: IoTAnalyticsClient
-    paginator: ListPipelinesPaginator = client.get_paginator("list_pipelines")
+async with session.create_client("iotanalytics") as client:  # (1)
+    paginator: ListPipelinesPaginator = client.get_paginator("list_pipelines")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPipelinesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTAnalyticsClient](./client.md)
+2. paginator: [ListPipelinesPaginator](./paginators.md#listpipelinespaginator)
+3. item: [:material-code-braces: ListPipelinesResponseTypeDef](./type_defs.md#listpipelinesresponsetypedef) 
 
 
 ### paginate

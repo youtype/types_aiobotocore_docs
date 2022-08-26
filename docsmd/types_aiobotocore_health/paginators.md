@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_health.paginator import DescribeAffectedAccountsForOrganizationPaginator
 
 session = get_session()
-async with session.create_client("health") as client:
-    client: HealthClient
-    paginator: DescribeAffectedAccountsForOrganizationPaginator = client.get_paginator("describe_affected_accounts_for_organization")
+async with session.create_client("health") as client:  # (1)
+    paginator: DescribeAffectedAccountsForOrganizationPaginator = client.get_paginator("describe_affected_accounts_for_organization")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAffectedAccountsForOrganizationResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [HealthClient](./client.md)
+2. paginator: [DescribeAffectedAccountsForOrganizationPaginator](./paginators.md#describeaffectedaccountsfororganizationpaginator)
+3. item: [:material-code-braces: DescribeAffectedAccountsForOrganizationResponseTypeDef](./type_defs.md#describeaffectedaccountsfororganizationresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_health.paginator import DescribeAffectedEntitiesPaginator
 
 session = get_session()
-async with session.create_client("health") as client:
-    client: HealthClient
-    paginator: DescribeAffectedEntitiesPaginator = client.get_paginator("describe_affected_entities")
+async with session.create_client("health") as client:  # (1)
+    paginator: DescribeAffectedEntitiesPaginator = client.get_paginator("describe_affected_entities")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAffectedEntitiesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [HealthClient](./client.md)
+2. paginator: [DescribeAffectedEntitiesPaginator](./paginators.md#describeaffectedentitiespaginator)
+3. item: [:material-code-braces: DescribeAffectedEntitiesResponseTypeDef](./type_defs.md#describeaffectedentitiesresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_health.paginator import DescribeAffectedEntitiesForOrganizationPaginator
 
 session = get_session()
-async with session.create_client("health") as client:
-    client: HealthClient
-    paginator: DescribeAffectedEntitiesForOrganizationPaginator = client.get_paginator("describe_affected_entities_for_organization")
+async with session.create_client("health") as client:  # (1)
+    paginator: DescribeAffectedEntitiesForOrganizationPaginator = client.get_paginator("describe_affected_entities_for_organization")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAffectedEntitiesForOrganizationResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [HealthClient](./client.md)
+2. paginator: [DescribeAffectedEntitiesForOrganizationPaginator](./paginators.md#describeaffectedentitiesfororganizationpaginator)
+3. item: [:material-code-braces: DescribeAffectedEntitiesForOrganizationResponseTypeDef](./type_defs.md#describeaffectedentitiesfororganizationresponsetypedef) 
 
 
 ### paginate
@@ -154,10 +172,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_health.paginator import DescribeEventAggregatesPaginator
 
 session = get_session()
-async with session.create_client("health") as client:
-    client: HealthClient
-    paginator: DescribeEventAggregatesPaginator = client.get_paginator("describe_event_aggregates")
+async with session.create_client("health") as client:  # (1)
+    paginator: DescribeEventAggregatesPaginator = client.get_paginator("describe_event_aggregates")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeEventAggregatesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [HealthClient](./client.md)
+2. paginator: [DescribeEventAggregatesPaginator](./paginators.md#describeeventaggregatespaginator)
+3. item: [:material-code-braces: DescribeEventAggregatesResponseTypeDef](./type_defs.md#describeeventaggregatesresponsetypedef) 
 
 
 ### paginate
@@ -201,10 +225,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_health.paginator import DescribeEventTypesPaginator
 
 session = get_session()
-async with session.create_client("health") as client:
-    client: HealthClient
-    paginator: DescribeEventTypesPaginator = client.get_paginator("describe_event_types")
+async with session.create_client("health") as client:  # (1)
+    paginator: DescribeEventTypesPaginator = client.get_paginator("describe_event_types")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeEventTypesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [HealthClient](./client.md)
+2. paginator: [DescribeEventTypesPaginator](./paginators.md#describeeventtypespaginator)
+3. item: [:material-code-braces: DescribeEventTypesResponseTypeDef](./type_defs.md#describeeventtypesresponsetypedef) 
 
 
 ### paginate
@@ -247,10 +277,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_health.paginator import DescribeEventsPaginator
 
 session = get_session()
-async with session.create_client("health") as client:
-    client: HealthClient
-    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")
+async with session.create_client("health") as client:  # (1)
+    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeEventsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [HealthClient](./client.md)
+2. paginator: [DescribeEventsPaginator](./paginators.md#describeeventspaginator)
+3. item: [:material-code-braces: DescribeEventsResponseTypeDef](./type_defs.md#describeeventsresponsetypedef) 
 
 
 ### paginate
@@ -293,10 +329,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_health.paginator import DescribeEventsForOrganizationPaginator
 
 session = get_session()
-async with session.create_client("health") as client:
-    client: HealthClient
-    paginator: DescribeEventsForOrganizationPaginator = client.get_paginator("describe_events_for_organization")
+async with session.create_client("health") as client:  # (1)
+    paginator: DescribeEventsForOrganizationPaginator = client.get_paginator("describe_events_for_organization")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeEventsForOrganizationResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [HealthClient](./client.md)
+2. paginator: [DescribeEventsForOrganizationPaginator](./paginators.md#describeeventsfororganizationpaginator)
+3. item: [:material-code-braces: DescribeEventsForOrganizationResponseTypeDef](./type_defs.md#describeeventsfororganizationresponsetypedef) 
 
 
 ### paginate

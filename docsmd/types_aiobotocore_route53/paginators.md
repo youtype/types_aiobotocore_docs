@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53.paginator import ListCidrBlocksPaginator
 
 session = get_session()
-async with session.create_client("route53") as client:
-    client: Route53Client
-    paginator: ListCidrBlocksPaginator = client.get_paginator("list_cidr_blocks")
+async with session.create_client("route53") as client:  # (1)
+    paginator: ListCidrBlocksPaginator = client.get_paginator("list_cidr_blocks")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCidrBlocksResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53Client](./client.md)
+2. paginator: [ListCidrBlocksPaginator](./paginators.md#listcidrblockspaginator)
+3. item: [:material-code-braces: ListCidrBlocksResponseTypeDef](./type_defs.md#listcidrblocksresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53.paginator import ListCidrCollectionsPaginator
 
 session = get_session()
-async with session.create_client("route53") as client:
-    client: Route53Client
-    paginator: ListCidrCollectionsPaginator = client.get_paginator("list_cidr_collections")
+async with session.create_client("route53") as client:  # (1)
+    paginator: ListCidrCollectionsPaginator = client.get_paginator("list_cidr_collections")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCidrCollectionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53Client](./client.md)
+2. paginator: [ListCidrCollectionsPaginator](./paginators.md#listcidrcollectionspaginator)
+3. item: [:material-code-braces: ListCidrCollectionsResponseTypeDef](./type_defs.md#listcidrcollectionsresponsetypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53.paginator import ListCidrLocationsPaginator
 
 session = get_session()
-async with session.create_client("route53") as client:
-    client: Route53Client
-    paginator: ListCidrLocationsPaginator = client.get_paginator("list_cidr_locations")
+async with session.create_client("route53") as client:  # (1)
+    paginator: ListCidrLocationsPaginator = client.get_paginator("list_cidr_locations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCidrLocationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53Client](./client.md)
+2. paginator: [ListCidrLocationsPaginator](./paginators.md#listcidrlocationspaginator)
+3. item: [:material-code-braces: ListCidrLocationsResponseTypeDef](./type_defs.md#listcidrlocationsresponsetypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53.paginator import ListHealthChecksPaginator
 
 session = get_session()
-async with session.create_client("route53") as client:
-    client: Route53Client
-    paginator: ListHealthChecksPaginator = client.get_paginator("list_health_checks")
+async with session.create_client("route53") as client:  # (1)
+    paginator: ListHealthChecksPaginator = client.get_paginator("list_health_checks")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListHealthChecksResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53Client](./client.md)
+2. paginator: [ListHealthChecksPaginator](./paginators.md#listhealthcheckspaginator)
+3. item: [:material-code-braces: ListHealthChecksResponseTypeDef](./type_defs.md#listhealthchecksresponsetypedef) 
 
 
 ### paginate
@@ -193,10 +217,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53.paginator import ListHostedZonesPaginator
 
 session = get_session()
-async with session.create_client("route53") as client:
-    client: Route53Client
-    paginator: ListHostedZonesPaginator = client.get_paginator("list_hosted_zones")
+async with session.create_client("route53") as client:  # (1)
+    paginator: ListHostedZonesPaginator = client.get_paginator("list_hosted_zones")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListHostedZonesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53Client](./client.md)
+2. paginator: [ListHostedZonesPaginator](./paginators.md#listhostedzonespaginator)
+3. item: [:material-code-braces: ListHostedZonesResponseTypeDef](./type_defs.md#listhostedzonesresponsetypedef) 
 
 
 ### paginate
@@ -237,10 +267,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53.paginator import ListQueryLoggingConfigsPaginator
 
 session = get_session()
-async with session.create_client("route53") as client:
-    client: Route53Client
-    paginator: ListQueryLoggingConfigsPaginator = client.get_paginator("list_query_logging_configs")
+async with session.create_client("route53") as client:  # (1)
+    paginator: ListQueryLoggingConfigsPaginator = client.get_paginator("list_query_logging_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListQueryLoggingConfigsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53Client](./client.md)
+2. paginator: [ListQueryLoggingConfigsPaginator](./paginators.md#listqueryloggingconfigspaginator)
+3. item: [:material-code-braces: ListQueryLoggingConfigsResponseTypeDef](./type_defs.md#listqueryloggingconfigsresponsetypedef) 
 
 
 ### paginate
@@ -281,10 +317,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53.paginator import ListResourceRecordSetsPaginator
 
 session = get_session()
-async with session.create_client("route53") as client:
-    client: Route53Client
-    paginator: ListResourceRecordSetsPaginator = client.get_paginator("list_resource_record_sets")
+async with session.create_client("route53") as client:  # (1)
+    paginator: ListResourceRecordSetsPaginator = client.get_paginator("list_resource_record_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResourceRecordSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53Client](./client.md)
+2. paginator: [ListResourceRecordSetsPaginator](./paginators.md#listresourcerecordsetspaginator)
+3. item: [:material-code-braces: ListResourceRecordSetsResponseTypeDef](./type_defs.md#listresourcerecordsetsresponsetypedef) 
 
 
 ### paginate
@@ -325,10 +367,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53.paginator import ListVPCAssociationAuthorizationsPaginator
 
 session = get_session()
-async with session.create_client("route53") as client:
-    client: Route53Client
-    paginator: ListVPCAssociationAuthorizationsPaginator = client.get_paginator("list_vpc_association_authorizations")
+async with session.create_client("route53") as client:  # (1)
+    paginator: ListVPCAssociationAuthorizationsPaginator = client.get_paginator("list_vpc_association_authorizations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListVPCAssociationAuthorizationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53Client](./client.md)
+2. paginator: [ListVPCAssociationAuthorizationsPaginator](./paginators.md#listvpcassociationauthorizationspaginator)
+3. item: [:material-code-braces: ListVPCAssociationAuthorizationsResponseTypeDef](./type_defs.md#listvpcassociationauthorizationsresponsetypedef) 
 
 
 ### paginate

@@ -54,6 +54,25 @@ ListWorkspacesPaginatorName = Literal[
     "list_workspaces",
 ]
 ```
+## LoggingConfigurationStatusCodeType
+
+```python title="Usage Example"
+from types_aiobotocore_amp.literals import LoggingConfigurationStatusCodeType
+
+def get_value() -> LoggingConfigurationStatusCodeType:
+    return "ACTIVE"
+```
+
+```python title="Definition"
+LoggingConfigurationStatusCodeType = Literal[
+    "ACTIVE",
+    "CREATING",
+    "CREATION_FAILED",
+    "DELETING",
+    "UPDATE_FAILED",
+    "UPDATING",
+]
+```
 ## RuleGroupsNamespaceStatusCodeType
 
 ```python title="Usage Example"
@@ -173,6 +192,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -318,6 +338,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -371,6 +392,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -381,11 +403,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -431,6 +455,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

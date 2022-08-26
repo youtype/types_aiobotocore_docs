@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudtrail.paginator import ListPublicKeysPaginator
 
 session = get_session()
-async with session.create_client("cloudtrail") as client:
-    client: CloudTrailClient
-    paginator: ListPublicKeysPaginator = client.get_paginator("list_public_keys")
+async with session.create_client("cloudtrail") as client:  # (1)
+    paginator: ListPublicKeysPaginator = client.get_paginator("list_public_keys")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPublicKeysResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudTrailClient](./client.md)
+2. paginator: [ListPublicKeysPaginator](./paginators.md#listpublickeyspaginator)
+3. item: [:material-code-braces: ListPublicKeysResponseTypeDef](./type_defs.md#listpublickeysresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudtrail.paginator import ListTagsPaginator
 
 session = get_session()
-async with session.create_client("cloudtrail") as client:
-    client: CloudTrailClient
-    paginator: ListTagsPaginator = client.get_paginator("list_tags")
+async with session.create_client("cloudtrail") as client:  # (1)
+    paginator: ListTagsPaginator = client.get_paginator("list_tags")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudTrailClient](./client.md)
+2. paginator: [ListTagsPaginator](./paginators.md#listtagspaginator)
+3. item: [:material-code-braces: ListTagsResponseTypeDef](./type_defs.md#listtagsresponsetypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudtrail.paginator import ListTrailsPaginator
 
 session = get_session()
-async with session.create_client("cloudtrail") as client:
-    client: CloudTrailClient
-    paginator: ListTrailsPaginator = client.get_paginator("list_trails")
+async with session.create_client("cloudtrail") as client:  # (1)
+    paginator: ListTrailsPaginator = client.get_paginator("list_trails")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTrailsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudTrailClient](./client.md)
+2. paginator: [ListTrailsPaginator](./paginators.md#listtrailspaginator)
+3. item: [:material-code-braces: ListTrailsResponseTypeDef](./type_defs.md#listtrailsresponsetypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudtrail.paginator import LookupEventsPaginator
 
 session = get_session()
-async with session.create_client("cloudtrail") as client:
-    client: CloudTrailClient
-    paginator: LookupEventsPaginator = client.get_paginator("lookup_events")
+async with session.create_client("cloudtrail") as client:  # (1)
+    paginator: LookupEventsPaginator = client.get_paginator("lookup_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: LookupEventsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudTrailClient](./client.md)
+2. paginator: [LookupEventsPaginator](./paginators.md#lookupeventspaginator)
+3. item: [:material-code-braces: LookupEventsResponseTypeDef](./type_defs.md#lookupeventsresponsetypedef) 
 
 
 ### paginate

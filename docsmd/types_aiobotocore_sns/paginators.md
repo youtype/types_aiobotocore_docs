@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sns.paginator import ListEndpointsByPlatformApplicationPaginator
 
 session = get_session()
-async with session.create_client("sns") as client:
-    client: SNSClient
-    paginator: ListEndpointsByPlatformApplicationPaginator = client.get_paginator("list_endpoints_by_platform_application")
+async with session.create_client("sns") as client:  # (1)
+    paginator: ListEndpointsByPlatformApplicationPaginator = client.get_paginator("list_endpoints_by_platform_application")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEndpointsByPlatformApplicationResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SNSClient](./client.md)
+2. paginator: [ListEndpointsByPlatformApplicationPaginator](./paginators.md#listendpointsbyplatformapplicationpaginator)
+3. item: [:material-code-braces: ListEndpointsByPlatformApplicationResponseTypeDef](./type_defs.md#listendpointsbyplatformapplicationresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sns.paginator import ListOriginationNumbersPaginator
 
 session = get_session()
-async with session.create_client("sns") as client:
-    client: SNSClient
-    paginator: ListOriginationNumbersPaginator = client.get_paginator("list_origination_numbers")
+async with session.create_client("sns") as client:  # (1)
+    paginator: ListOriginationNumbersPaginator = client.get_paginator("list_origination_numbers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListOriginationNumbersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SNSClient](./client.md)
+2. paginator: [ListOriginationNumbersPaginator](./paginators.md#listoriginationnumberspaginator)
+3. item: [:material-code-braces: ListOriginationNumbersResultTypeDef](./type_defs.md#listoriginationnumbersresulttypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sns.paginator import ListPhoneNumbersOptedOutPaginator
 
 session = get_session()
-async with session.create_client("sns") as client:
-    client: SNSClient
-    paginator: ListPhoneNumbersOptedOutPaginator = client.get_paginator("list_phone_numbers_opted_out")
+async with session.create_client("sns") as client:  # (1)
+    paginator: ListPhoneNumbersOptedOutPaginator = client.get_paginator("list_phone_numbers_opted_out")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPhoneNumbersOptedOutResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SNSClient](./client.md)
+2. paginator: [ListPhoneNumbersOptedOutPaginator](./paginators.md#listphonenumbersoptedoutpaginator)
+3. item: [:material-code-braces: ListPhoneNumbersOptedOutResponseTypeDef](./type_defs.md#listphonenumbersoptedoutresponsetypedef) 
 
 
 ### paginate
@@ -148,10 +166,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sns.paginator import ListPlatformApplicationsPaginator
 
 session = get_session()
-async with session.create_client("sns") as client:
-    client: SNSClient
-    paginator: ListPlatformApplicationsPaginator = client.get_paginator("list_platform_applications")
+async with session.create_client("sns") as client:  # (1)
+    paginator: ListPlatformApplicationsPaginator = client.get_paginator("list_platform_applications")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPlatformApplicationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SNSClient](./client.md)
+2. paginator: [ListPlatformApplicationsPaginator](./paginators.md#listplatformapplicationspaginator)
+3. item: [:material-code-braces: ListPlatformApplicationsResponseTypeDef](./type_defs.md#listplatformapplicationsresponsetypedef) 
 
 
 ### paginate
@@ -191,10 +215,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sns.paginator import ListSMSSandboxPhoneNumbersPaginator
 
 session = get_session()
-async with session.create_client("sns") as client:
-    client: SNSClient
-    paginator: ListSMSSandboxPhoneNumbersPaginator = client.get_paginator("list_sms_sandbox_phone_numbers")
+async with session.create_client("sns") as client:  # (1)
+    paginator: ListSMSSandboxPhoneNumbersPaginator = client.get_paginator("list_sms_sandbox_phone_numbers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSMSSandboxPhoneNumbersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SNSClient](./client.md)
+2. paginator: [ListSMSSandboxPhoneNumbersPaginator](./paginators.md#listsmssandboxphonenumberspaginator)
+3. item: [:material-code-braces: ListSMSSandboxPhoneNumbersResultTypeDef](./type_defs.md#listsmssandboxphonenumbersresulttypedef) 
 
 
 ### paginate
@@ -234,10 +264,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sns.paginator import ListSubscriptionsPaginator
 
 session = get_session()
-async with session.create_client("sns") as client:
-    client: SNSClient
-    paginator: ListSubscriptionsPaginator = client.get_paginator("list_subscriptions")
+async with session.create_client("sns") as client:  # (1)
+    paginator: ListSubscriptionsPaginator = client.get_paginator("list_subscriptions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSubscriptionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SNSClient](./client.md)
+2. paginator: [ListSubscriptionsPaginator](./paginators.md#listsubscriptionspaginator)
+3. item: [:material-code-braces: ListSubscriptionsResponseTypeDef](./type_defs.md#listsubscriptionsresponsetypedef) 
 
 
 ### paginate
@@ -277,10 +313,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sns.paginator import ListSubscriptionsByTopicPaginator
 
 session = get_session()
-async with session.create_client("sns") as client:
-    client: SNSClient
-    paginator: ListSubscriptionsByTopicPaginator = client.get_paginator("list_subscriptions_by_topic")
+async with session.create_client("sns") as client:  # (1)
+    paginator: ListSubscriptionsByTopicPaginator = client.get_paginator("list_subscriptions_by_topic")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSubscriptionsByTopicResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SNSClient](./client.md)
+2. paginator: [ListSubscriptionsByTopicPaginator](./paginators.md#listsubscriptionsbytopicpaginator)
+3. item: [:material-code-braces: ListSubscriptionsByTopicResponseTypeDef](./type_defs.md#listsubscriptionsbytopicresponsetypedef) 
 
 
 ### paginate
@@ -321,10 +363,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sns.paginator import ListTopicsPaginator
 
 session = get_session()
-async with session.create_client("sns") as client:
-    client: SNSClient
-    paginator: ListTopicsPaginator = client.get_paginator("list_topics")
+async with session.create_client("sns") as client:  # (1)
+    paginator: ListTopicsPaginator = client.get_paginator("list_topics")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTopicsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SNSClient](./client.md)
+2. paginator: [ListTopicsPaginator](./paginators.md#listtopicspaginator)
+3. item: [:material-code-braces: ListTopicsResponseTypeDef](./type_defs.md#listtopicsresponsetypedef) 
 
 
 ### paginate

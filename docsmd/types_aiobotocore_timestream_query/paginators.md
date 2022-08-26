@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_timestream_query.paginator import ListScheduledQueriesPaginator
 
 session = get_session()
-async with session.create_client("timestream-query") as client:
-    client: TimestreamQueryClient
-    paginator: ListScheduledQueriesPaginator = client.get_paginator("list_scheduled_queries")
+async with session.create_client("timestream-query") as client:  # (1)
+    paginator: ListScheduledQueriesPaginator = client.get_paginator("list_scheduled_queries")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListScheduledQueriesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [TimestreamQueryClient](./client.md)
+2. paginator: [ListScheduledQueriesPaginator](./paginators.md#listscheduledqueriespaginator)
+3. item: [:material-code-braces: ListScheduledQueriesResponseTypeDef](./type_defs.md#listscheduledqueriesresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_timestream_query.paginator import ListTagsForResourcePaginator
 
 session = get_session()
-async with session.create_client("timestream-query") as client:
-    client: TimestreamQueryClient
-    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
+async with session.create_client("timestream-query") as client:  # (1)
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsForResourceResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [TimestreamQueryClient](./client.md)
+2. paginator: [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
+3. item: [:material-code-braces: ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_timestream_query.paginator import QueryPaginator
 
 session = get_session()
-async with session.create_client("timestream-query") as client:
-    client: TimestreamQueryClient
-    paginator: QueryPaginator = client.get_paginator("query")
+async with session.create_client("timestream-query") as client:  # (1)
+    paginator: QueryPaginator = client.get_paginator("query")  # (2)
+    async for item in paginator.paginate(...):
+        item: QueryResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [TimestreamQueryClient](./client.md)
+2. paginator: [QueryPaginator](./paginators.md#querypaginator)
+3. item: [:material-code-braces: QueryResponseTypeDef](./type_defs.md#queryresponsetypedef) 
 
 
 ### paginate

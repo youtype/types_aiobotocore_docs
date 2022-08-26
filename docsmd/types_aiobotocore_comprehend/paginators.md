@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_comprehend.paginator import ListDocumentClassificationJobsPaginator
 
 session = get_session()
-async with session.create_client("comprehend") as client:
-    client: ComprehendClient
-    paginator: ListDocumentClassificationJobsPaginator = client.get_paginator("list_document_classification_jobs")
+async with session.create_client("comprehend") as client:  # (1)
+    paginator: ListDocumentClassificationJobsPaginator = client.get_paginator("list_document_classification_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDocumentClassificationJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ComprehendClient](./client.md)
+2. paginator: [ListDocumentClassificationJobsPaginator](./paginators.md#listdocumentclassificationjobspaginator)
+3. item: [:material-code-braces: ListDocumentClassificationJobsResponseTypeDef](./type_defs.md#listdocumentclassificationjobsresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_comprehend.paginator import ListDocumentClassifiersPaginator
 
 session = get_session()
-async with session.create_client("comprehend") as client:
-    client: ComprehendClient
-    paginator: ListDocumentClassifiersPaginator = client.get_paginator("list_document_classifiers")
+async with session.create_client("comprehend") as client:  # (1)
+    paginator: ListDocumentClassifiersPaginator = client.get_paginator("list_document_classifiers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDocumentClassifiersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ComprehendClient](./client.md)
+2. paginator: [ListDocumentClassifiersPaginator](./paginators.md#listdocumentclassifierspaginator)
+3. item: [:material-code-braces: ListDocumentClassifiersResponseTypeDef](./type_defs.md#listdocumentclassifiersresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_comprehend.paginator import ListDominantLanguageDetectionJobsPaginator
 
 session = get_session()
-async with session.create_client("comprehend") as client:
-    client: ComprehendClient
-    paginator: ListDominantLanguageDetectionJobsPaginator = client.get_paginator("list_dominant_language_detection_jobs")
+async with session.create_client("comprehend") as client:  # (1)
+    paginator: ListDominantLanguageDetectionJobsPaginator = client.get_paginator("list_dominant_language_detection_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDominantLanguageDetectionJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ComprehendClient](./client.md)
+2. paginator: [ListDominantLanguageDetectionJobsPaginator](./paginators.md#listdominantlanguagedetectionjobspaginator)
+3. item: [:material-code-braces: ListDominantLanguageDetectionJobsResponseTypeDef](./type_defs.md#listdominantlanguagedetectionjobsresponsetypedef) 
 
 
 ### paginate
@@ -153,10 +171,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_comprehend.paginator import ListEntitiesDetectionJobsPaginator
 
 session = get_session()
-async with session.create_client("comprehend") as client:
-    client: ComprehendClient
-    paginator: ListEntitiesDetectionJobsPaginator = client.get_paginator("list_entities_detection_jobs")
+async with session.create_client("comprehend") as client:  # (1)
+    paginator: ListEntitiesDetectionJobsPaginator = client.get_paginator("list_entities_detection_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEntitiesDetectionJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ComprehendClient](./client.md)
+2. paginator: [ListEntitiesDetectionJobsPaginator](./paginators.md#listentitiesdetectionjobspaginator)
+3. item: [:material-code-braces: ListEntitiesDetectionJobsResponseTypeDef](./type_defs.md#listentitiesdetectionjobsresponsetypedef) 
 
 
 ### paginate
@@ -198,10 +222,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_comprehend.paginator import ListEntityRecognizersPaginator
 
 session = get_session()
-async with session.create_client("comprehend") as client:
-    client: ComprehendClient
-    paginator: ListEntityRecognizersPaginator = client.get_paginator("list_entity_recognizers")
+async with session.create_client("comprehend") as client:  # (1)
+    paginator: ListEntityRecognizersPaginator = client.get_paginator("list_entity_recognizers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEntityRecognizersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ComprehendClient](./client.md)
+2. paginator: [ListEntityRecognizersPaginator](./paginators.md#listentityrecognizerspaginator)
+3. item: [:material-code-braces: ListEntityRecognizersResponseTypeDef](./type_defs.md#listentityrecognizersresponsetypedef) 
 
 
 ### paginate
@@ -243,10 +273,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_comprehend.paginator import ListKeyPhrasesDetectionJobsPaginator
 
 session = get_session()
-async with session.create_client("comprehend") as client:
-    client: ComprehendClient
-    paginator: ListKeyPhrasesDetectionJobsPaginator = client.get_paginator("list_key_phrases_detection_jobs")
+async with session.create_client("comprehend") as client:  # (1)
+    paginator: ListKeyPhrasesDetectionJobsPaginator = client.get_paginator("list_key_phrases_detection_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListKeyPhrasesDetectionJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ComprehendClient](./client.md)
+2. paginator: [ListKeyPhrasesDetectionJobsPaginator](./paginators.md#listkeyphrasesdetectionjobspaginator)
+3. item: [:material-code-braces: ListKeyPhrasesDetectionJobsResponseTypeDef](./type_defs.md#listkeyphrasesdetectionjobsresponsetypedef) 
 
 
 ### paginate
@@ -288,10 +324,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_comprehend.paginator import ListSentimentDetectionJobsPaginator
 
 session = get_session()
-async with session.create_client("comprehend") as client:
-    client: ComprehendClient
-    paginator: ListSentimentDetectionJobsPaginator = client.get_paginator("list_sentiment_detection_jobs")
+async with session.create_client("comprehend") as client:  # (1)
+    paginator: ListSentimentDetectionJobsPaginator = client.get_paginator("list_sentiment_detection_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSentimentDetectionJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ComprehendClient](./client.md)
+2. paginator: [ListSentimentDetectionJobsPaginator](./paginators.md#listsentimentdetectionjobspaginator)
+3. item: [:material-code-braces: ListSentimentDetectionJobsResponseTypeDef](./type_defs.md#listsentimentdetectionjobsresponsetypedef) 
 
 
 ### paginate
@@ -333,10 +375,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_comprehend.paginator import ListTopicsDetectionJobsPaginator
 
 session = get_session()
-async with session.create_client("comprehend") as client:
-    client: ComprehendClient
-    paginator: ListTopicsDetectionJobsPaginator = client.get_paginator("list_topics_detection_jobs")
+async with session.create_client("comprehend") as client:  # (1)
+    paginator: ListTopicsDetectionJobsPaginator = client.get_paginator("list_topics_detection_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTopicsDetectionJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ComprehendClient](./client.md)
+2. paginator: [ListTopicsDetectionJobsPaginator](./paginators.md#listtopicsdetectionjobspaginator)
+3. item: [:material-code-braces: ListTopicsDetectionJobsResponseTypeDef](./type_defs.md#listtopicsdetectionjobsresponsetypedef) 
 
 
 ### paginate

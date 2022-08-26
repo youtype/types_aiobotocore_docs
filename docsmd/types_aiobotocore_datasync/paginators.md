@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_datasync.paginator import ListAgentsPaginator
 
 session = get_session()
-async with session.create_client("datasync") as client:
-    client: DataSyncClient
-    paginator: ListAgentsPaginator = client.get_paginator("list_agents")
+async with session.create_client("datasync") as client:  # (1)
+    paginator: ListAgentsPaginator = client.get_paginator("list_agents")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAgentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DataSyncClient](./client.md)
+2. paginator: [ListAgentsPaginator](./paginators.md#listagentspaginator)
+3. item: [:material-code-braces: ListAgentsResponseTypeDef](./type_defs.md#listagentsresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_datasync.paginator import ListLocationsPaginator
 
 session = get_session()
-async with session.create_client("datasync") as client:
-    client: DataSyncClient
-    paginator: ListLocationsPaginator = client.get_paginator("list_locations")
+async with session.create_client("datasync") as client:  # (1)
+    paginator: ListLocationsPaginator = client.get_paginator("list_locations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLocationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DataSyncClient](./client.md)
+2. paginator: [ListLocationsPaginator](./paginators.md#listlocationspaginator)
+3. item: [:material-code-braces: ListLocationsResponseTypeDef](./type_defs.md#listlocationsresponsetypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_datasync.paginator import ListTagsForResourcePaginator
 
 session = get_session()
-async with session.create_client("datasync") as client:
-    client: DataSyncClient
-    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
+async with session.create_client("datasync") as client:  # (1)
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsForResourceResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DataSyncClient](./client.md)
+2. paginator: [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
+3. item: [:material-code-braces: ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_datasync.paginator import ListTaskExecutionsPaginator
 
 session = get_session()
-async with session.create_client("datasync") as client:
-    client: DataSyncClient
-    paginator: ListTaskExecutionsPaginator = client.get_paginator("list_task_executions")
+async with session.create_client("datasync") as client:  # (1)
+    paginator: ListTaskExecutionsPaginator = client.get_paginator("list_task_executions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTaskExecutionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DataSyncClient](./client.md)
+2. paginator: [ListTaskExecutionsPaginator](./paginators.md#listtaskexecutionspaginator)
+3. item: [:material-code-braces: ListTaskExecutionsResponseTypeDef](./type_defs.md#listtaskexecutionsresponsetypedef) 
 
 
 ### paginate
@@ -194,10 +218,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_datasync.paginator import ListTasksPaginator
 
 session = get_session()
-async with session.create_client("datasync") as client:
-    client: DataSyncClient
-    paginator: ListTasksPaginator = client.get_paginator("list_tasks")
+async with session.create_client("datasync") as client:  # (1)
+    paginator: ListTasksPaginator = client.get_paginator("list_tasks")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTasksResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DataSyncClient](./client.md)
+2. paginator: [ListTasksPaginator](./paginators.md#listtaskspaginator)
+3. item: [:material-code-braces: ListTasksResponseTypeDef](./type_defs.md#listtasksresponsetypedef) 
 
 
 ### paginate

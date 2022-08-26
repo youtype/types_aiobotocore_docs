@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mgh.paginator import ListApplicationStatesPaginator
 
 session = get_session()
-async with session.create_client("mgh") as client:
-    client: MigrationHubClient
-    paginator: ListApplicationStatesPaginator = client.get_paginator("list_application_states")
+async with session.create_client("mgh") as client:  # (1)
+    paginator: ListApplicationStatesPaginator = client.get_paginator("list_application_states")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListApplicationStatesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MigrationHubClient](./client.md)
+2. paginator: [ListApplicationStatesPaginator](./paginators.md#listapplicationstatespaginator)
+3. item: [:material-code-braces: ListApplicationStatesResultTypeDef](./type_defs.md#listapplicationstatesresulttypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mgh.paginator import ListCreatedArtifactsPaginator
 
 session = get_session()
-async with session.create_client("mgh") as client:
-    client: MigrationHubClient
-    paginator: ListCreatedArtifactsPaginator = client.get_paginator("list_created_artifacts")
+async with session.create_client("mgh") as client:  # (1)
+    paginator: ListCreatedArtifactsPaginator = client.get_paginator("list_created_artifacts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCreatedArtifactsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MigrationHubClient](./client.md)
+2. paginator: [ListCreatedArtifactsPaginator](./paginators.md#listcreatedartifactspaginator)
+3. item: [:material-code-braces: ListCreatedArtifactsResultTypeDef](./type_defs.md#listcreatedartifactsresulttypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mgh.paginator import ListDiscoveredResourcesPaginator
 
 session = get_session()
-async with session.create_client("mgh") as client:
-    client: MigrationHubClient
-    paginator: ListDiscoveredResourcesPaginator = client.get_paginator("list_discovered_resources")
+async with session.create_client("mgh") as client:  # (1)
+    paginator: ListDiscoveredResourcesPaginator = client.get_paginator("list_discovered_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDiscoveredResourcesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MigrationHubClient](./client.md)
+2. paginator: [ListDiscoveredResourcesPaginator](./paginators.md#listdiscoveredresourcespaginator)
+3. item: [:material-code-braces: ListDiscoveredResourcesResultTypeDef](./type_defs.md#listdiscoveredresourcesresulttypedef) 
 
 
 ### paginate
@@ -154,10 +172,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mgh.paginator import ListMigrationTasksPaginator
 
 session = get_session()
-async with session.create_client("mgh") as client:
-    client: MigrationHubClient
-    paginator: ListMigrationTasksPaginator = client.get_paginator("list_migration_tasks")
+async with session.create_client("mgh") as client:  # (1)
+    paginator: ListMigrationTasksPaginator = client.get_paginator("list_migration_tasks")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMigrationTasksResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MigrationHubClient](./client.md)
+2. paginator: [ListMigrationTasksPaginator](./paginators.md#listmigrationtaskspaginator)
+3. item: [:material-code-braces: ListMigrationTasksResultTypeDef](./type_defs.md#listmigrationtasksresulttypedef) 
 
 
 ### paginate
@@ -198,10 +222,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mgh.paginator import ListProgressUpdateStreamsPaginator
 
 session = get_session()
-async with session.create_client("mgh") as client:
-    client: MigrationHubClient
-    paginator: ListProgressUpdateStreamsPaginator = client.get_paginator("list_progress_update_streams")
+async with session.create_client("mgh") as client:  # (1)
+    paginator: ListProgressUpdateStreamsPaginator = client.get_paginator("list_progress_update_streams")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProgressUpdateStreamsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MigrationHubClient](./client.md)
+2. paginator: [ListProgressUpdateStreamsPaginator](./paginators.md#listprogressupdatestreamspaginator)
+3. item: [:material-code-braces: ListProgressUpdateStreamsResultTypeDef](./type_defs.md#listprogressupdatestreamsresulttypedef) 
 
 
 ### paginate

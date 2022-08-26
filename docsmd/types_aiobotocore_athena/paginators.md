@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_athena.paginator import GetQueryResultsPaginator
 
 session = get_session()
-async with session.create_client("athena") as client:
-    client: AthenaClient
-    paginator: GetQueryResultsPaginator = client.get_paginator("get_query_results")
+async with session.create_client("athena") as client:  # (1)
+    paginator: GetQueryResultsPaginator = client.get_paginator("get_query_results")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetQueryResultsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AthenaClient](./client.md)
+2. paginator: [GetQueryResultsPaginator](./paginators.md#getqueryresultspaginator)
+3. item: [:material-code-braces: GetQueryResultsOutputTypeDef](./type_defs.md#getqueryresultsoutputtypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_athena.paginator import ListDataCatalogsPaginator
 
 session = get_session()
-async with session.create_client("athena") as client:
-    client: AthenaClient
-    paginator: ListDataCatalogsPaginator = client.get_paginator("list_data_catalogs")
+async with session.create_client("athena") as client:  # (1)
+    paginator: ListDataCatalogsPaginator = client.get_paginator("list_data_catalogs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDataCatalogsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AthenaClient](./client.md)
+2. paginator: [ListDataCatalogsPaginator](./paginators.md#listdatacatalogspaginator)
+3. item: [:material-code-braces: ListDataCatalogsOutputTypeDef](./type_defs.md#listdatacatalogsoutputtypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_athena.paginator import ListDatabasesPaginator
 
 session = get_session()
-async with session.create_client("athena") as client:
-    client: AthenaClient
-    paginator: ListDatabasesPaginator = client.get_paginator("list_databases")
+async with session.create_client("athena") as client:  # (1)
+    paginator: ListDatabasesPaginator = client.get_paginator("list_databases")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDatabasesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AthenaClient](./client.md)
+2. paginator: [ListDatabasesPaginator](./paginators.md#listdatabasespaginator)
+3. item: [:material-code-braces: ListDatabasesOutputTypeDef](./type_defs.md#listdatabasesoutputtypedef) 
 
 
 ### paginate
@@ -149,10 +167,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_athena.paginator import ListNamedQueriesPaginator
 
 session = get_session()
-async with session.create_client("athena") as client:
-    client: AthenaClient
-    paginator: ListNamedQueriesPaginator = client.get_paginator("list_named_queries")
+async with session.create_client("athena") as client:  # (1)
+    paginator: ListNamedQueriesPaginator = client.get_paginator("list_named_queries")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListNamedQueriesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AthenaClient](./client.md)
+2. paginator: [ListNamedQueriesPaginator](./paginators.md#listnamedqueriespaginator)
+3. item: [:material-code-braces: ListNamedQueriesOutputTypeDef](./type_defs.md#listnamedqueriesoutputtypedef) 
 
 
 ### paginate
@@ -193,10 +217,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_athena.paginator import ListQueryExecutionsPaginator
 
 session = get_session()
-async with session.create_client("athena") as client:
-    client: AthenaClient
-    paginator: ListQueryExecutionsPaginator = client.get_paginator("list_query_executions")
+async with session.create_client("athena") as client:  # (1)
+    paginator: ListQueryExecutionsPaginator = client.get_paginator("list_query_executions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListQueryExecutionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AthenaClient](./client.md)
+2. paginator: [ListQueryExecutionsPaginator](./paginators.md#listqueryexecutionspaginator)
+3. item: [:material-code-braces: ListQueryExecutionsOutputTypeDef](./type_defs.md#listqueryexecutionsoutputtypedef) 
 
 
 ### paginate
@@ -237,10 +267,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_athena.paginator import ListTableMetadataPaginator
 
 session = get_session()
-async with session.create_client("athena") as client:
-    client: AthenaClient
-    paginator: ListTableMetadataPaginator = client.get_paginator("list_table_metadata")
+async with session.create_client("athena") as client:  # (1)
+    paginator: ListTableMetadataPaginator = client.get_paginator("list_table_metadata")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTableMetadataOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AthenaClient](./client.md)
+2. paginator: [ListTableMetadataPaginator](./paginators.md#listtablemetadatapaginator)
+3. item: [:material-code-braces: ListTableMetadataOutputTypeDef](./type_defs.md#listtablemetadataoutputtypedef) 
 
 
 ### paginate
@@ -284,10 +320,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_athena.paginator import ListTagsForResourcePaginator
 
 session = get_session()
-async with session.create_client("athena") as client:
-    client: AthenaClient
-    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
+async with session.create_client("athena") as client:  # (1)
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsForResourceOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AthenaClient](./client.md)
+2. paginator: [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
+3. item: [:material-code-braces: ListTagsForResourceOutputTypeDef](./type_defs.md#listtagsforresourceoutputtypedef) 
 
 
 ### paginate

@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_elastictranscoder.waiter import JobCompleteWaiter
 
-def get_job_complete_waiter() -> JobCompleteWaiter:
-    return Session().client("elastictranscoder").get_waiter("job_complete")
+session = get_session()
+async with session.create_client("elastictranscoder") as client:  # (1)
+    waiter: JobCompleteWaiter = client.get_waiter("job_complete")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ElasticTranscoderClient](./client.md)
+2. waiter: [JobCompleteWaiter](./waiters.md#jobcompletewaiter)
 
 
 ### wait

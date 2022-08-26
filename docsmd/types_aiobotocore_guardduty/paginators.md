@@ -7,6 +7,60 @@
     Auto-generated documentation for [GuardDuty](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty)
     type annotations stubs module [types-aiobotocore-guardduty](https://pypi.org/project/types-aiobotocore-guardduty/).
 
+## DescribeMalwareScansPaginator
+
+Type annotations and code completion for `#!python session.create_client("guardduty").get_paginator("describe_malware_scans")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Paginator.DescribeMalwareScans)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_guardduty.paginator import DescribeMalwareScansPaginator
+
+session = get_session()
+async with session.create_client("guardduty") as client:  # (1)
+    paginator: DescribeMalwareScansPaginator = client.get_paginator("describe_malware_scans")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeMalwareScansResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [GuardDutyClient](./client.md)
+2. paginator: [DescribeMalwareScansPaginator](./paginators.md#describemalwarescanspaginator)
+3. item: [:material-code-braces: DescribeMalwareScansResponseTypeDef](./type_defs.md#describemalwarescansresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python DescribeMalwareScansPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    DetectorId: str,
+    FilterCriteria: FilterCriteriaTypeDef = ...,  # (1)
+    SortCriteria: SortCriteriaTypeDef = ...,  # (2)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (3)
+) -> AsyncIterator[DescribeMalwareScansResponseTypeDef]:  # (4)
+    ...
+```
+
+1. See [:material-code-braces: FilterCriteriaTypeDef](./type_defs.md#filtercriteriatypedef) 
+2. See [:material-code-braces: SortCriteriaTypeDef](./type_defs.md#sortcriteriatypedef) 
+3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+4. See [:material-code-braces: DescribeMalwareScansResponseTypeDef](./type_defs.md#describemalwarescansresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeMalwareScansRequestDescribeMalwareScansPaginateTypeDef = {  # (1)
+    "DetectorId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeMalwareScansRequestDescribeMalwareScansPaginateTypeDef](./type_defs.md#describemalwarescansrequestdescribemalwarescanspaginatetypedef) 
 ## ListDetectorsPaginator
 
 Type annotations and code completion for `#!python session.create_client("guardduty").get_paginator("list_detectors")`.
@@ -18,10 +72,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_guardduty.paginator import ListDetectorsPaginator
 
 session = get_session()
-async with session.create_client("guardduty") as client:
-    client: GuardDutyClient
-    paginator: ListDetectorsPaginator = client.get_paginator("list_detectors")
+async with session.create_client("guardduty") as client:  # (1)
+    paginator: ListDetectorsPaginator = client.get_paginator("list_detectors")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDetectorsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GuardDutyClient](./client.md)
+2. paginator: [ListDetectorsPaginator](./paginators.md#listdetectorspaginator)
+3. item: [:material-code-braces: ListDetectorsResponseTypeDef](./type_defs.md#listdetectorsresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +121,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_guardduty.paginator import ListFiltersPaginator
 
 session = get_session()
-async with session.create_client("guardduty") as client:
-    client: GuardDutyClient
-    paginator: ListFiltersPaginator = client.get_paginator("list_filters")
+async with session.create_client("guardduty") as client:  # (1)
+    paginator: ListFiltersPaginator = client.get_paginator("list_filters")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFiltersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GuardDutyClient](./client.md)
+2. paginator: [ListFiltersPaginator](./paginators.md#listfilterspaginator)
+3. item: [:material-code-braces: ListFiltersResponseTypeDef](./type_defs.md#listfiltersresponsetypedef) 
 
 
 ### paginate
@@ -105,10 +171,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_guardduty.paginator import ListFindingsPaginator
 
 session = get_session()
-async with session.create_client("guardduty") as client:
-    client: GuardDutyClient
-    paginator: ListFindingsPaginator = client.get_paginator("list_findings")
+async with session.create_client("guardduty") as client:  # (1)
+    paginator: ListFindingsPaginator = client.get_paginator("list_findings")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFindingsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GuardDutyClient](./client.md)
+2. paginator: [ListFindingsPaginator](./paginators.md#listfindingspaginator)
+3. item: [:material-code-braces: ListFindingsResponseTypeDef](./type_defs.md#listfindingsresponsetypedef) 
 
 
 ### paginate
@@ -153,10 +225,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_guardduty.paginator import ListIPSetsPaginator
 
 session = get_session()
-async with session.create_client("guardduty") as client:
-    client: GuardDutyClient
-    paginator: ListIPSetsPaginator = client.get_paginator("list_ip_sets")
+async with session.create_client("guardduty") as client:  # (1)
+    paginator: ListIPSetsPaginator = client.get_paginator("list_ip_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListIPSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GuardDutyClient](./client.md)
+2. paginator: [ListIPSetsPaginator](./paginators.md#listipsetspaginator)
+3. item: [:material-code-braces: ListIPSetsResponseTypeDef](./type_defs.md#listipsetsresponsetypedef) 
 
 
 ### paginate
@@ -197,10 +275,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_guardduty.paginator import ListInvitationsPaginator
 
 session = get_session()
-async with session.create_client("guardduty") as client:
-    client: GuardDutyClient
-    paginator: ListInvitationsPaginator = client.get_paginator("list_invitations")
+async with session.create_client("guardduty") as client:  # (1)
+    paginator: ListInvitationsPaginator = client.get_paginator("list_invitations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListInvitationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GuardDutyClient](./client.md)
+2. paginator: [ListInvitationsPaginator](./paginators.md#listinvitationspaginator)
+3. item: [:material-code-braces: ListInvitationsResponseTypeDef](./type_defs.md#listinvitationsresponsetypedef) 
 
 
 ### paginate
@@ -240,10 +324,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_guardduty.paginator import ListMembersPaginator
 
 session = get_session()
-async with session.create_client("guardduty") as client:
-    client: GuardDutyClient
-    paginator: ListMembersPaginator = client.get_paginator("list_members")
+async with session.create_client("guardduty") as client:  # (1)
+    paginator: ListMembersPaginator = client.get_paginator("list_members")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMembersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GuardDutyClient](./client.md)
+2. paginator: [ListMembersPaginator](./paginators.md#listmemberspaginator)
+3. item: [:material-code-braces: ListMembersResponseTypeDef](./type_defs.md#listmembersresponsetypedef) 
 
 
 ### paginate
@@ -285,10 +375,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_guardduty.paginator import ListOrganizationAdminAccountsPaginator
 
 session = get_session()
-async with session.create_client("guardduty") as client:
-    client: GuardDutyClient
-    paginator: ListOrganizationAdminAccountsPaginator = client.get_paginator("list_organization_admin_accounts")
+async with session.create_client("guardduty") as client:  # (1)
+    paginator: ListOrganizationAdminAccountsPaginator = client.get_paginator("list_organization_admin_accounts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListOrganizationAdminAccountsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GuardDutyClient](./client.md)
+2. paginator: [ListOrganizationAdminAccountsPaginator](./paginators.md#listorganizationadminaccountspaginator)
+3. item: [:material-code-braces: ListOrganizationAdminAccountsResponseTypeDef](./type_defs.md#listorganizationadminaccountsresponsetypedef) 
 
 
 ### paginate
@@ -328,10 +424,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_guardduty.paginator import ListThreatIntelSetsPaginator
 
 session = get_session()
-async with session.create_client("guardduty") as client:
-    client: GuardDutyClient
-    paginator: ListThreatIntelSetsPaginator = client.get_paginator("list_threat_intel_sets")
+async with session.create_client("guardduty") as client:  # (1)
+    paginator: ListThreatIntelSetsPaginator = client.get_paginator("list_threat_intel_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListThreatIntelSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GuardDutyClient](./client.md)
+2. paginator: [ListThreatIntelSetsPaginator](./paginators.md#listthreatintelsetspaginator)
+3. item: [:material-code-braces: ListThreatIntelSetsResponseTypeDef](./type_defs.md#listthreatintelsetsresponsetypedef) 
 
 
 ### paginate

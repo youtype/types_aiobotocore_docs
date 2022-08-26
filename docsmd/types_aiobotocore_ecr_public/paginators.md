@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecr_public.paginator import DescribeImageTagsPaginator
 
 session = get_session()
-async with session.create_client("ecr-public") as client:
-    client: ECRPublicClient
-    paginator: DescribeImageTagsPaginator = client.get_paginator("describe_image_tags")
+async with session.create_client("ecr-public") as client:  # (1)
+    paginator: DescribeImageTagsPaginator = client.get_paginator("describe_image_tags")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeImageTagsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECRPublicClient](./client.md)
+2. paginator: [DescribeImageTagsPaginator](./paginators.md#describeimagetagspaginator)
+3. item: [:material-code-braces: DescribeImageTagsResponseTypeDef](./type_defs.md#describeimagetagsresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecr_public.paginator import DescribeImagesPaginator
 
 session = get_session()
-async with session.create_client("ecr-public") as client:
-    client: ECRPublicClient
-    paginator: DescribeImagesPaginator = client.get_paginator("describe_images")
+async with session.create_client("ecr-public") as client:  # (1)
+    paginator: DescribeImagesPaginator = client.get_paginator("describe_images")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeImagesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECRPublicClient](./client.md)
+2. paginator: [DescribeImagesPaginator](./paginators.md#describeimagespaginator)
+3. item: [:material-code-braces: DescribeImagesResponseTypeDef](./type_defs.md#describeimagesresponsetypedef) 
 
 
 ### paginate
@@ -110,10 +122,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecr_public.paginator import DescribeRegistriesPaginator
 
 session = get_session()
-async with session.create_client("ecr-public") as client:
-    client: ECRPublicClient
-    paginator: DescribeRegistriesPaginator = client.get_paginator("describe_registries")
+async with session.create_client("ecr-public") as client:  # (1)
+    paginator: DescribeRegistriesPaginator = client.get_paginator("describe_registries")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeRegistriesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECRPublicClient](./client.md)
+2. paginator: [DescribeRegistriesPaginator](./paginators.md#describeregistriespaginator)
+3. item: [:material-code-braces: DescribeRegistriesResponseTypeDef](./type_defs.md#describeregistriesresponsetypedef) 
 
 
 ### paginate
@@ -153,10 +171,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecr_public.paginator import DescribeRepositoriesPaginator
 
 session = get_session()
-async with session.create_client("ecr-public") as client:
-    client: ECRPublicClient
-    paginator: DescribeRepositoriesPaginator = client.get_paginator("describe_repositories")
+async with session.create_client("ecr-public") as client:  # (1)
+    paginator: DescribeRepositoriesPaginator = client.get_paginator("describe_repositories")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeRepositoriesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECRPublicClient](./client.md)
+2. paginator: [DescribeRepositoriesPaginator](./paginators.md#describerepositoriespaginator)
+3. item: [:material-code-braces: DescribeRepositoriesResponseTypeDef](./type_defs.md#describerepositoriesresponsetypedef) 
 
 
 ### paginate

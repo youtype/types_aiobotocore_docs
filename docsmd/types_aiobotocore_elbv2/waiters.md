@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_elbv2.waiter import LoadBalancerAvailableWaiter
 
-def get_load_balancer_available_waiter() -> LoadBalancerAvailableWaiter:
-    return Session().client("elbv2").get_waiter("load_balancer_available")
+session = get_session()
+async with session.create_client("elbv2") as client:  # (1)
+    waiter: LoadBalancerAvailableWaiter = client.get_waiter("load_balancer_available")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ElasticLoadBalancingv2Client](./client.md)
+2. waiter: [LoadBalancerAvailableWaiter](./waiters.md#loadbalanceravailablewaiter)
 
 
 ### wait
@@ -61,9 +66,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_elbv2.waiter import LoadBalancerExistsWaiter
 
-def get_load_balancer_exists_waiter() -> LoadBalancerExistsWaiter:
-    return Session().client("elbv2").get_waiter("load_balancer_exists")
+session = get_session()
+async with session.create_client("elbv2") as client:  # (1)
+    waiter: LoadBalancerExistsWaiter = client.get_waiter("load_balancer_exists")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ElasticLoadBalancingv2Client](./client.md)
+2. waiter: [LoadBalancerExistsWaiter](./waiters.md#loadbalancerexistswaiter)
 
 
 ### wait
@@ -105,9 +115,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_elbv2.waiter import LoadBalancersDeletedWaiter
 
-def get_load_balancers_deleted_waiter() -> LoadBalancersDeletedWaiter:
-    return Session().client("elbv2").get_waiter("load_balancers_deleted")
+session = get_session()
+async with session.create_client("elbv2") as client:  # (1)
+    waiter: LoadBalancersDeletedWaiter = client.get_waiter("load_balancers_deleted")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ElasticLoadBalancingv2Client](./client.md)
+2. waiter: [LoadBalancersDeletedWaiter](./waiters.md#loadbalancersdeletedwaiter)
 
 
 ### wait
@@ -149,9 +164,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_elbv2.waiter import TargetDeregisteredWaiter
 
-def get_target_deregistered_waiter() -> TargetDeregisteredWaiter:
-    return Session().client("elbv2").get_waiter("target_deregistered")
+session = get_session()
+async with session.create_client("elbv2") as client:  # (1)
+    waiter: TargetDeregisteredWaiter = client.get_waiter("target_deregistered")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ElasticLoadBalancingv2Client](./client.md)
+2. waiter: [TargetDeregisteredWaiter](./waiters.md#targetderegisteredwaiter)
 
 
 ### wait
@@ -192,9 +212,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_elbv2.waiter import TargetInServiceWaiter
 
-def get_target_in_service_waiter() -> TargetInServiceWaiter:
-    return Session().client("elbv2").get_waiter("target_in_service")
+session = get_session()
+async with session.create_client("elbv2") as client:  # (1)
+    waiter: TargetInServiceWaiter = client.get_waiter("target_in_service")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ElasticLoadBalancingv2Client](./client.md)
+2. waiter: [TargetInServiceWaiter](./waiters.md#targetinservicewaiter)
 
 
 ### wait

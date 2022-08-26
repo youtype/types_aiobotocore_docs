@@ -7,6 +7,79 @@
     Auto-generated documentation for [SagemakerEdgeManager](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker-edge.html#SagemakerEdgeManager)
     type annotations stubs module [types-aiobotocore-sagemaker-edge](https://pypi.org/project/types-aiobotocore-sagemaker-edge/).
 
+## ChecksumTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker_edge.literals import ChecksumTypeType
+
+def get_value() -> ChecksumTypeType:
+    return "SHA1"
+```
+
+```python title="Definition"
+ChecksumTypeType = Literal[
+    "SHA1",
+]
+```
+## DeploymentStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker_edge.literals import DeploymentStatusType
+
+def get_value() -> DeploymentStatusType:
+    return "FAIL"
+```
+
+```python title="Definition"
+DeploymentStatusType = Literal[
+    "FAIL",
+    "SUCCESS",
+]
+```
+## DeploymentTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker_edge.literals import DeploymentTypeType
+
+def get_value() -> DeploymentTypeType:
+    return "Model"
+```
+
+```python title="Definition"
+DeploymentTypeType = Literal[
+    "Model",
+]
+```
+## FailureHandlingPolicyType
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker_edge.literals import FailureHandlingPolicyType
+
+def get_value() -> FailureHandlingPolicyType:
+    return "DO_NOTHING"
+```
+
+```python title="Definition"
+FailureHandlingPolicyType = Literal[
+    "DO_NOTHING",
+    "ROLLBACK_ON_FAILURE",
+]
+```
+## ModelStateType
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker_edge.literals import ModelStateType
+
+def get_value() -> ModelStateType:
+    return "DEPLOY"
+```
+
+```python title="Definition"
+ModelStateType = Literal[
+    "DEPLOY",
+    "UNDEPLOY",
+]
+```
 ## SagemakerEdgeManagerServiceName
 
 ```python title="Usage Example"
@@ -61,6 +134,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -206,6 +280,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -259,6 +334,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -269,11 +345,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -319,6 +397,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -363,5 +442,24 @@ ResourceServiceName = Literal[
     "s3",
     "sns",
     "sqs",
+]
+```
+## RegionName
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker_edge.literals import RegionName
+
+def get_value() -> RegionName:
+    return "ap-northeast-1"
+```
+
+```python title="Definition"
+RegionName = Literal[
+    "ap-northeast-1",
+    "eu-central-1",
+    "eu-west-1",
+    "us-east-1",
+    "us-east-2",
+    "us-west-2",
 ]
 ```

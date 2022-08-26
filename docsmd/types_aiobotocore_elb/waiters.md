@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_elb.waiter import AnyInstanceInServiceWaiter
 
-def get_any_instance_in_service_waiter() -> AnyInstanceInServiceWaiter:
-    return Session().client("elb").get_waiter("any_instance_in_service")
+session = get_session()
+async with session.create_client("elb") as client:  # (1)
+    waiter: AnyInstanceInServiceWaiter = client.get_waiter("any_instance_in_service")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ElasticLoadBalancingClient](./client.md)
+2. waiter: [AnyInstanceInServiceWaiter](./waiters.md#anyinstanceinservicewaiter)
 
 
 ### wait
@@ -60,9 +65,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_elb.waiter import InstanceDeregisteredWaiter
 
-def get_instance_deregistered_waiter() -> InstanceDeregisteredWaiter:
-    return Session().client("elb").get_waiter("instance_deregistered")
+session = get_session()
+async with session.create_client("elb") as client:  # (1)
+    waiter: InstanceDeregisteredWaiter = client.get_waiter("instance_deregistered")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ElasticLoadBalancingClient](./client.md)
+2. waiter: [InstanceDeregisteredWaiter](./waiters.md#instancederegisteredwaiter)
 
 
 ### wait
@@ -103,9 +113,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_elb.waiter import InstanceInServiceWaiter
 
-def get_instance_in_service_waiter() -> InstanceInServiceWaiter:
-    return Session().client("elb").get_waiter("instance_in_service")
+session = get_session()
+async with session.create_client("elb") as client:  # (1)
+    waiter: InstanceInServiceWaiter = client.get_waiter("instance_in_service")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ElasticLoadBalancingClient](./client.md)
+2. waiter: [InstanceInServiceWaiter](./waiters.md#instanceinservicewaiter)
 
 
 ### wait

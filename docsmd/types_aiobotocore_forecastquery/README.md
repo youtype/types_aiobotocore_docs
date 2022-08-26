@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `ForecastQueryService`.
 
 ### From PyPI with pip
 
@@ -105,6 +100,8 @@ def get_value() -> DataPointTypeDef:
 - [DataPointTypeDef](./type_defs.md#datapointtypedef)
 - [QueryForecastRequestRequestTypeDef](./type_defs.md#queryforecastrequestrequesttypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [QueryWhatIfForecastRequestRequestTypeDef](./type_defs.md#querywhatifforecastrequestrequesttypedef)
 - [ForecastTypeDef](./type_defs.md#forecasttypedef)
 - [QueryForecastResponseTypeDef](./type_defs.md#queryforecastresponsetypedef)
+- [QueryWhatIfForecastResponseTypeDef](./type_defs.md#querywhatifforecastresponsetypedef)
 

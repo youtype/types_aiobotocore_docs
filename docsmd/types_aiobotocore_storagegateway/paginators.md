@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_storagegateway.paginator import DescribeTapeArchivesPaginator
 
 session = get_session()
-async with session.create_client("storagegateway") as client:
-    client: StorageGatewayClient
-    paginator: DescribeTapeArchivesPaginator = client.get_paginator("describe_tape_archives")
+async with session.create_client("storagegateway") as client:  # (1)
+    paginator: DescribeTapeArchivesPaginator = client.get_paginator("describe_tape_archives")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTapeArchivesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [StorageGatewayClient](./client.md)
+2. paginator: [DescribeTapeArchivesPaginator](./paginators.md#describetapearchivespaginator)
+3. item: [:material-code-braces: DescribeTapeArchivesOutputTypeDef](./type_defs.md#describetapearchivesoutputtypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_storagegateway.paginator import DescribeTapeRecoveryPointsPaginator
 
 session = get_session()
-async with session.create_client("storagegateway") as client:
-    client: StorageGatewayClient
-    paginator: DescribeTapeRecoveryPointsPaginator = client.get_paginator("describe_tape_recovery_points")
+async with session.create_client("storagegateway") as client:  # (1)
+    paginator: DescribeTapeRecoveryPointsPaginator = client.get_paginator("describe_tape_recovery_points")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTapeRecoveryPointsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [StorageGatewayClient](./client.md)
+2. paginator: [DescribeTapeRecoveryPointsPaginator](./paginators.md#describetaperecoverypointspaginator)
+3. item: [:material-code-braces: DescribeTapeRecoveryPointsOutputTypeDef](./type_defs.md#describetaperecoverypointsoutputtypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_storagegateway.paginator import DescribeTapesPaginator
 
 session = get_session()
-async with session.create_client("storagegateway") as client:
-    client: StorageGatewayClient
-    paginator: DescribeTapesPaginator = client.get_paginator("describe_tapes")
+async with session.create_client("storagegateway") as client:  # (1)
+    paginator: DescribeTapesPaginator = client.get_paginator("describe_tapes")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTapesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [StorageGatewayClient](./client.md)
+2. paginator: [DescribeTapesPaginator](./paginators.md#describetapespaginator)
+3. item: [:material-code-braces: DescribeTapesOutputTypeDef](./type_defs.md#describetapesoutputtypedef) 
 
 
 ### paginate
@@ -151,10 +169,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_storagegateway.paginator import DescribeVTLDevicesPaginator
 
 session = get_session()
-async with session.create_client("storagegateway") as client:
-    client: StorageGatewayClient
-    paginator: DescribeVTLDevicesPaginator = client.get_paginator("describe_vtl_devices")
+async with session.create_client("storagegateway") as client:  # (1)
+    paginator: DescribeVTLDevicesPaginator = client.get_paginator("describe_vtl_devices")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeVTLDevicesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [StorageGatewayClient](./client.md)
+2. paginator: [DescribeVTLDevicesPaginator](./paginators.md#describevtldevicespaginator)
+3. item: [:material-code-braces: DescribeVTLDevicesOutputTypeDef](./type_defs.md#describevtldevicesoutputtypedef) 
 
 
 ### paginate
@@ -196,10 +220,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_storagegateway.paginator import ListFileSharesPaginator
 
 session = get_session()
-async with session.create_client("storagegateway") as client:
-    client: StorageGatewayClient
-    paginator: ListFileSharesPaginator = client.get_paginator("list_file_shares")
+async with session.create_client("storagegateway") as client:  # (1)
+    paginator: ListFileSharesPaginator = client.get_paginator("list_file_shares")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFileSharesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [StorageGatewayClient](./client.md)
+2. paginator: [ListFileSharesPaginator](./paginators.md#listfilesharespaginator)
+3. item: [:material-code-braces: ListFileSharesOutputTypeDef](./type_defs.md#listfilesharesoutputtypedef) 
 
 
 ### paginate
@@ -240,10 +270,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_storagegateway.paginator import ListFileSystemAssociationsPaginator
 
 session = get_session()
-async with session.create_client("storagegateway") as client:
-    client: StorageGatewayClient
-    paginator: ListFileSystemAssociationsPaginator = client.get_paginator("list_file_system_associations")
+async with session.create_client("storagegateway") as client:  # (1)
+    paginator: ListFileSystemAssociationsPaginator = client.get_paginator("list_file_system_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFileSystemAssociationsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [StorageGatewayClient](./client.md)
+2. paginator: [ListFileSystemAssociationsPaginator](./paginators.md#listfilesystemassociationspaginator)
+3. item: [:material-code-braces: ListFileSystemAssociationsOutputTypeDef](./type_defs.md#listfilesystemassociationsoutputtypedef) 
 
 
 ### paginate
@@ -284,10 +320,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_storagegateway.paginator import ListGatewaysPaginator
 
 session = get_session()
-async with session.create_client("storagegateway") as client:
-    client: StorageGatewayClient
-    paginator: ListGatewaysPaginator = client.get_paginator("list_gateways")
+async with session.create_client("storagegateway") as client:  # (1)
+    paginator: ListGatewaysPaginator = client.get_paginator("list_gateways")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGatewaysOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [StorageGatewayClient](./client.md)
+2. paginator: [ListGatewaysPaginator](./paginators.md#listgatewayspaginator)
+3. item: [:material-code-braces: ListGatewaysOutputTypeDef](./type_defs.md#listgatewaysoutputtypedef) 
 
 
 ### paginate
@@ -327,10 +369,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_storagegateway.paginator import ListTagsForResourcePaginator
 
 session = get_session()
-async with session.create_client("storagegateway") as client:
-    client: StorageGatewayClient
-    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
+async with session.create_client("storagegateway") as client:  # (1)
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsForResourceOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [StorageGatewayClient](./client.md)
+2. paginator: [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
+3. item: [:material-code-braces: ListTagsForResourceOutputTypeDef](./type_defs.md#listtagsforresourceoutputtypedef) 
 
 
 ### paginate
@@ -371,10 +419,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_storagegateway.paginator import ListTapePoolsPaginator
 
 session = get_session()
-async with session.create_client("storagegateway") as client:
-    client: StorageGatewayClient
-    paginator: ListTapePoolsPaginator = client.get_paginator("list_tape_pools")
+async with session.create_client("storagegateway") as client:  # (1)
+    paginator: ListTapePoolsPaginator = client.get_paginator("list_tape_pools")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTapePoolsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [StorageGatewayClient](./client.md)
+2. paginator: [ListTapePoolsPaginator](./paginators.md#listtapepoolspaginator)
+3. item: [:material-code-braces: ListTapePoolsOutputTypeDef](./type_defs.md#listtapepoolsoutputtypedef) 
 
 
 ### paginate
@@ -415,10 +469,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_storagegateway.paginator import ListTapesPaginator
 
 session = get_session()
-async with session.create_client("storagegateway") as client:
-    client: StorageGatewayClient
-    paginator: ListTapesPaginator = client.get_paginator("list_tapes")
+async with session.create_client("storagegateway") as client:  # (1)
+    paginator: ListTapesPaginator = client.get_paginator("list_tapes")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTapesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [StorageGatewayClient](./client.md)
+2. paginator: [ListTapesPaginator](./paginators.md#listtapespaginator)
+3. item: [:material-code-braces: ListTapesOutputTypeDef](./type_defs.md#listtapesoutputtypedef) 
 
 
 ### paginate
@@ -459,10 +519,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_storagegateway.paginator import ListVolumesPaginator
 
 session = get_session()
-async with session.create_client("storagegateway") as client:
-    client: StorageGatewayClient
-    paginator: ListVolumesPaginator = client.get_paginator("list_volumes")
+async with session.create_client("storagegateway") as client:  # (1)
+    paginator: ListVolumesPaginator = client.get_paginator("list_volumes")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListVolumesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [StorageGatewayClient](./client.md)
+2. paginator: [ListVolumesPaginator](./paginators.md#listvolumespaginator)
+3. item: [:material-code-braces: ListVolumesOutputTypeDef](./type_defs.md#listvolumesoutputtypedef) 
 
 
 ### paginate

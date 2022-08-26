@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_robomaker.paginator import ListDeploymentJobsPaginator
 
 session = get_session()
-async with session.create_client("robomaker") as client:
-    client: RoboMakerClient
-    paginator: ListDeploymentJobsPaginator = client.get_paginator("list_deployment_jobs")
+async with session.create_client("robomaker") as client:  # (1)
+    paginator: ListDeploymentJobsPaginator = client.get_paginator("list_deployment_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeploymentJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RoboMakerClient](./client.md)
+2. paginator: [ListDeploymentJobsPaginator](./paginators.md#listdeploymentjobspaginator)
+3. item: [:material-code-braces: ListDeploymentJobsResponseTypeDef](./type_defs.md#listdeploymentjobsresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_robomaker.paginator import ListFleetsPaginator
 
 session = get_session()
-async with session.create_client("robomaker") as client:
-    client: RoboMakerClient
-    paginator: ListFleetsPaginator = client.get_paginator("list_fleets")
+async with session.create_client("robomaker") as client:  # (1)
+    paginator: ListFleetsPaginator = client.get_paginator("list_fleets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFleetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RoboMakerClient](./client.md)
+2. paginator: [ListFleetsPaginator](./paginators.md#listfleetspaginator)
+3. item: [:material-code-braces: ListFleetsResponseTypeDef](./type_defs.md#listfleetsresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_robomaker.paginator import ListRobotApplicationsPaginator
 
 session = get_session()
-async with session.create_client("robomaker") as client:
-    client: RoboMakerClient
-    paginator: ListRobotApplicationsPaginator = client.get_paginator("list_robot_applications")
+async with session.create_client("robomaker") as client:  # (1)
+    paginator: ListRobotApplicationsPaginator = client.get_paginator("list_robot_applications")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRobotApplicationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RoboMakerClient](./client.md)
+2. paginator: [ListRobotApplicationsPaginator](./paginators.md#listrobotapplicationspaginator)
+3. item: [:material-code-braces: ListRobotApplicationsResponseTypeDef](./type_defs.md#listrobotapplicationsresponsetypedef) 
 
 
 ### paginate
@@ -154,10 +172,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_robomaker.paginator import ListRobotsPaginator
 
 session = get_session()
-async with session.create_client("robomaker") as client:
-    client: RoboMakerClient
-    paginator: ListRobotsPaginator = client.get_paginator("list_robots")
+async with session.create_client("robomaker") as client:  # (1)
+    paginator: ListRobotsPaginator = client.get_paginator("list_robots")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRobotsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RoboMakerClient](./client.md)
+2. paginator: [ListRobotsPaginator](./paginators.md#listrobotspaginator)
+3. item: [:material-code-braces: ListRobotsResponseTypeDef](./type_defs.md#listrobotsresponsetypedef) 
 
 
 ### paginate
@@ -199,10 +223,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_robomaker.paginator import ListSimulationApplicationsPaginator
 
 session = get_session()
-async with session.create_client("robomaker") as client:
-    client: RoboMakerClient
-    paginator: ListSimulationApplicationsPaginator = client.get_paginator("list_simulation_applications")
+async with session.create_client("robomaker") as client:  # (1)
+    paginator: ListSimulationApplicationsPaginator = client.get_paginator("list_simulation_applications")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSimulationApplicationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RoboMakerClient](./client.md)
+2. paginator: [ListSimulationApplicationsPaginator](./paginators.md#listsimulationapplicationspaginator)
+3. item: [:material-code-braces: ListSimulationApplicationsResponseTypeDef](./type_defs.md#listsimulationapplicationsresponsetypedef) 
 
 
 ### paginate
@@ -245,10 +275,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_robomaker.paginator import ListSimulationJobBatchesPaginator
 
 session = get_session()
-async with session.create_client("robomaker") as client:
-    client: RoboMakerClient
-    paginator: ListSimulationJobBatchesPaginator = client.get_paginator("list_simulation_job_batches")
+async with session.create_client("robomaker") as client:  # (1)
+    paginator: ListSimulationJobBatchesPaginator = client.get_paginator("list_simulation_job_batches")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSimulationJobBatchesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RoboMakerClient](./client.md)
+2. paginator: [ListSimulationJobBatchesPaginator](./paginators.md#listsimulationjobbatchespaginator)
+3. item: [:material-code-braces: ListSimulationJobBatchesResponseTypeDef](./type_defs.md#listsimulationjobbatchesresponsetypedef) 
 
 
 ### paginate
@@ -290,10 +326,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_robomaker.paginator import ListSimulationJobsPaginator
 
 session = get_session()
-async with session.create_client("robomaker") as client:
-    client: RoboMakerClient
-    paginator: ListSimulationJobsPaginator = client.get_paginator("list_simulation_jobs")
+async with session.create_client("robomaker") as client:  # (1)
+    paginator: ListSimulationJobsPaginator = client.get_paginator("list_simulation_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSimulationJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RoboMakerClient](./client.md)
+2. paginator: [ListSimulationJobsPaginator](./paginators.md#listsimulationjobspaginator)
+3. item: [:material-code-braces: ListSimulationJobsResponseTypeDef](./type_defs.md#listsimulationjobsresponsetypedef) 
 
 
 ### paginate
@@ -335,10 +377,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_robomaker.paginator import ListWorldExportJobsPaginator
 
 session = get_session()
-async with session.create_client("robomaker") as client:
-    client: RoboMakerClient
-    paginator: ListWorldExportJobsPaginator = client.get_paginator("list_world_export_jobs")
+async with session.create_client("robomaker") as client:  # (1)
+    paginator: ListWorldExportJobsPaginator = client.get_paginator("list_world_export_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListWorldExportJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RoboMakerClient](./client.md)
+2. paginator: [ListWorldExportJobsPaginator](./paginators.md#listworldexportjobspaginator)
+3. item: [:material-code-braces: ListWorldExportJobsResponseTypeDef](./type_defs.md#listworldexportjobsresponsetypedef) 
 
 
 ### paginate
@@ -380,10 +428,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_robomaker.paginator import ListWorldGenerationJobsPaginator
 
 session = get_session()
-async with session.create_client("robomaker") as client:
-    client: RoboMakerClient
-    paginator: ListWorldGenerationJobsPaginator = client.get_paginator("list_world_generation_jobs")
+async with session.create_client("robomaker") as client:  # (1)
+    paginator: ListWorldGenerationJobsPaginator = client.get_paginator("list_world_generation_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListWorldGenerationJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RoboMakerClient](./client.md)
+2. paginator: [ListWorldGenerationJobsPaginator](./paginators.md#listworldgenerationjobspaginator)
+3. item: [:material-code-braces: ListWorldGenerationJobsResponseTypeDef](./type_defs.md#listworldgenerationjobsresponsetypedef) 
 
 
 ### paginate
@@ -425,10 +479,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_robomaker.paginator import ListWorldTemplatesPaginator
 
 session = get_session()
-async with session.create_client("robomaker") as client:
-    client: RoboMakerClient
-    paginator: ListWorldTemplatesPaginator = client.get_paginator("list_world_templates")
+async with session.create_client("robomaker") as client:  # (1)
+    paginator: ListWorldTemplatesPaginator = client.get_paginator("list_world_templates")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListWorldTemplatesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RoboMakerClient](./client.md)
+2. paginator: [ListWorldTemplatesPaginator](./paginators.md#listworldtemplatespaginator)
+3. item: [:material-code-braces: ListWorldTemplatesResponseTypeDef](./type_defs.md#listworldtemplatesresponsetypedef) 
 
 
 ### paginate
@@ -468,10 +528,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_robomaker.paginator import ListWorldsPaginator
 
 session = get_session()
-async with session.create_client("robomaker") as client:
-    client: RoboMakerClient
-    paginator: ListWorldsPaginator = client.get_paginator("list_worlds")
+async with session.create_client("robomaker") as client:  # (1)
+    paginator: ListWorldsPaginator = client.get_paginator("list_worlds")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListWorldsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RoboMakerClient](./client.md)
+2. paginator: [ListWorldsPaginator](./paginators.md#listworldspaginator)
+3. item: [:material-code-braces: ListWorldsResponseTypeDef](./type_defs.md#listworldsresponsetypedef) 
 
 
 ### paginate

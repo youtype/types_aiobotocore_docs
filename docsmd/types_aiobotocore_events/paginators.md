@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_events.paginator import ListRuleNamesByTargetPaginator
 
 session = get_session()
-async with session.create_client("events") as client:
-    client: EventBridgeClient
-    paginator: ListRuleNamesByTargetPaginator = client.get_paginator("list_rule_names_by_target")
+async with session.create_client("events") as client:  # (1)
+    paginator: ListRuleNamesByTargetPaginator = client.get_paginator("list_rule_names_by_target")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRuleNamesByTargetResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EventBridgeClient](./client.md)
+2. paginator: [ListRuleNamesByTargetPaginator](./paginators.md#listrulenamesbytargetpaginator)
+3. item: [:material-code-braces: ListRuleNamesByTargetResponseTypeDef](./type_defs.md#listrulenamesbytargetresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_events.paginator import ListRulesPaginator
 
 session = get_session()
-async with session.create_client("events") as client:
-    client: EventBridgeClient
-    paginator: ListRulesPaginator = client.get_paginator("list_rules")
+async with session.create_client("events") as client:  # (1)
+    paginator: ListRulesPaginator = client.get_paginator("list_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRulesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EventBridgeClient](./client.md)
+2. paginator: [ListRulesPaginator](./paginators.md#listrulespaginator)
+3. item: [:material-code-braces: ListRulesResponseTypeDef](./type_defs.md#listrulesresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_events.paginator import ListTargetsByRulePaginator
 
 session = get_session()
-async with session.create_client("events") as client:
-    client: EventBridgeClient
-    paginator: ListTargetsByRulePaginator = client.get_paginator("list_targets_by_rule")
+async with session.create_client("events") as client:  # (1)
+    paginator: ListTargetsByRulePaginator = client.get_paginator("list_targets_by_rule")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTargetsByRuleResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EventBridgeClient](./client.md)
+2. paginator: [ListTargetsByRulePaginator](./paginators.md#listtargetsbyrulepaginator)
+3. item: [:material-code-braces: ListTargetsByRuleResponseTypeDef](./type_defs.md#listtargetsbyruleresponsetypedef) 
 
 
 ### paginate

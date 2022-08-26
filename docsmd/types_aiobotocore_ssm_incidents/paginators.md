@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm_incidents.paginator import GetResourcePoliciesPaginator
 
 session = get_session()
-async with session.create_client("ssm-incidents") as client:
-    client: SSMIncidentsClient
-    paginator: GetResourcePoliciesPaginator = client.get_paginator("get_resource_policies")
+async with session.create_client("ssm-incidents") as client:  # (1)
+    paginator: GetResourcePoliciesPaginator = client.get_paginator("get_resource_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetResourcePoliciesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMIncidentsClient](./client.md)
+2. paginator: [GetResourcePoliciesPaginator](./paginators.md#getresourcepoliciespaginator)
+3. item: [:material-code-braces: GetResourcePoliciesOutputTypeDef](./type_defs.md#getresourcepoliciesoutputtypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm_incidents.paginator import ListIncidentRecordsPaginator
 
 session = get_session()
-async with session.create_client("ssm-incidents") as client:
-    client: SSMIncidentsClient
-    paginator: ListIncidentRecordsPaginator = client.get_paginator("list_incident_records")
+async with session.create_client("ssm-incidents") as client:  # (1)
+    paginator: ListIncidentRecordsPaginator = client.get_paginator("list_incident_records")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListIncidentRecordsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMIncidentsClient](./client.md)
+2. paginator: [ListIncidentRecordsPaginator](./paginators.md#listincidentrecordspaginator)
+3. item: [:material-code-braces: ListIncidentRecordsOutputTypeDef](./type_defs.md#listincidentrecordsoutputtypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm_incidents.paginator import ListRelatedItemsPaginator
 
 session = get_session()
-async with session.create_client("ssm-incidents") as client:
-    client: SSMIncidentsClient
-    paginator: ListRelatedItemsPaginator = client.get_paginator("list_related_items")
+async with session.create_client("ssm-incidents") as client:  # (1)
+    paginator: ListRelatedItemsPaginator = client.get_paginator("list_related_items")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRelatedItemsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMIncidentsClient](./client.md)
+2. paginator: [ListRelatedItemsPaginator](./paginators.md#listrelateditemspaginator)
+3. item: [:material-code-braces: ListRelatedItemsOutputTypeDef](./type_defs.md#listrelateditemsoutputtypedef) 
 
 
 ### paginate
@@ -151,10 +169,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm_incidents.paginator import ListReplicationSetsPaginator
 
 session = get_session()
-async with session.create_client("ssm-incidents") as client:
-    client: SSMIncidentsClient
-    paginator: ListReplicationSetsPaginator = client.get_paginator("list_replication_sets")
+async with session.create_client("ssm-incidents") as client:  # (1)
+    paginator: ListReplicationSetsPaginator = client.get_paginator("list_replication_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListReplicationSetsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMIncidentsClient](./client.md)
+2. paginator: [ListReplicationSetsPaginator](./paginators.md#listreplicationsetspaginator)
+3. item: [:material-code-braces: ListReplicationSetsOutputTypeDef](./type_defs.md#listreplicationsetsoutputtypedef) 
 
 
 ### paginate
@@ -194,10 +218,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm_incidents.paginator import ListResponsePlansPaginator
 
 session = get_session()
-async with session.create_client("ssm-incidents") as client:
-    client: SSMIncidentsClient
-    paginator: ListResponsePlansPaginator = client.get_paginator("list_response_plans")
+async with session.create_client("ssm-incidents") as client:  # (1)
+    paginator: ListResponsePlansPaginator = client.get_paginator("list_response_plans")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResponsePlansOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMIncidentsClient](./client.md)
+2. paginator: [ListResponsePlansPaginator](./paginators.md#listresponseplanspaginator)
+3. item: [:material-code-braces: ListResponsePlansOutputTypeDef](./type_defs.md#listresponseplansoutputtypedef) 
 
 
 ### paginate
@@ -237,10 +267,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm_incidents.paginator import ListTimelineEventsPaginator
 
 session = get_session()
-async with session.create_client("ssm-incidents") as client:
-    client: SSMIncidentsClient
-    paginator: ListTimelineEventsPaginator = client.get_paginator("list_timeline_events")
+async with session.create_client("ssm-incidents") as client:  # (1)
+    paginator: ListTimelineEventsPaginator = client.get_paginator("list_timeline_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTimelineEventsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMIncidentsClient](./client.md)
+2. paginator: [ListTimelineEventsPaginator](./paginators.md#listtimelineeventspaginator)
+3. item: [:material-code-braces: ListTimelineEventsOutputTypeDef](./type_defs.md#listtimelineeventsoutputtypedef) 
 
 
 ### paginate

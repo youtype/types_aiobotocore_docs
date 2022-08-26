@@ -266,6 +266,24 @@ GlobalTableStatusType = Literal[
     "UPDATING",
 ]
 ```
+## ImportStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_dynamodb.literals import ImportStatusType
+
+def get_value() -> ImportStatusType:
+    return "CANCELLED"
+```
+
+```python title="Definition"
+ImportStatusType = Literal[
+    "CANCELLED",
+    "CANCELLING",
+    "COMPLETED",
+    "FAILED",
+    "IN_PROGRESS",
+]
+```
 ## IndexStatusType
 
 ```python title="Usage Example"
@@ -281,6 +299,38 @@ IndexStatusType = Literal[
     "CREATING",
     "DELETING",
     "UPDATING",
+]
+```
+## InputCompressionTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_dynamodb.literals import InputCompressionTypeType
+
+def get_value() -> InputCompressionTypeType:
+    return "GZIP"
+```
+
+```python title="Definition"
+InputCompressionTypeType = Literal[
+    "GZIP",
+    "NONE",
+    "ZSTD",
+]
+```
+## InputFormatType
+
+```python title="Usage Example"
+from types_aiobotocore_dynamodb.literals import InputFormatType
+
+def get_value() -> InputFormatType:
+    return "CSV"
+```
+
+```python title="Definition"
+InputFormatType = Literal[
+    "CSV",
+    "DYNAMODB_JSON",
+    "ION",
 ]
 ```
 ## KeyTypeType
@@ -715,6 +765,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -860,6 +911,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -913,6 +965,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -923,11 +976,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -973,6 +1028,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_batch.paginator import DescribeComputeEnvironmentsPaginator
 
 session = get_session()
-async with session.create_client("batch") as client:
-    client: BatchClient
-    paginator: DescribeComputeEnvironmentsPaginator = client.get_paginator("describe_compute_environments")
+async with session.create_client("batch") as client:  # (1)
+    paginator: DescribeComputeEnvironmentsPaginator = client.get_paginator("describe_compute_environments")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeComputeEnvironmentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BatchClient](./client.md)
+2. paginator: [DescribeComputeEnvironmentsPaginator](./paginators.md#describecomputeenvironmentspaginator)
+3. item: [:material-code-braces: DescribeComputeEnvironmentsResponseTypeDef](./type_defs.md#describecomputeenvironmentsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_batch.paginator import DescribeJobDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("batch") as client:
-    client: BatchClient
-    paginator: DescribeJobDefinitionsPaginator = client.get_paginator("describe_job_definitions")
+async with session.create_client("batch") as client:  # (1)
+    paginator: DescribeJobDefinitionsPaginator = client.get_paginator("describe_job_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeJobDefinitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BatchClient](./client.md)
+2. paginator: [DescribeJobDefinitionsPaginator](./paginators.md#describejobdefinitionspaginator)
+3. item: [:material-code-braces: DescribeJobDefinitionsResponseTypeDef](./type_defs.md#describejobdefinitionsresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_batch.paginator import DescribeJobQueuesPaginator
 
 session = get_session()
-async with session.create_client("batch") as client:
-    client: BatchClient
-    paginator: DescribeJobQueuesPaginator = client.get_paginator("describe_job_queues")
+async with session.create_client("batch") as client:  # (1)
+    paginator: DescribeJobQueuesPaginator = client.get_paginator("describe_job_queues")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeJobQueuesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BatchClient](./client.md)
+2. paginator: [DescribeJobQueuesPaginator](./paginators.md#describejobqueuespaginator)
+3. item: [:material-code-braces: DescribeJobQueuesResponseTypeDef](./type_defs.md#describejobqueuesresponsetypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_batch.paginator import ListJobsPaginator
 
 session = get_session()
-async with session.create_client("batch") as client:
-    client: BatchClient
-    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
+async with session.create_client("batch") as client:  # (1)
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BatchClient](./client.md)
+2. paginator: [ListJobsPaginator](./paginators.md#listjobspaginator)
+3. item: [:material-code-braces: ListJobsResponseTypeDef](./type_defs.md#listjobsresponsetypedef) 
 
 
 ### paginate
@@ -202,10 +226,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_batch.paginator import ListSchedulingPoliciesPaginator
 
 session = get_session()
-async with session.create_client("batch") as client:
-    client: BatchClient
-    paginator: ListSchedulingPoliciesPaginator = client.get_paginator("list_scheduling_policies")
+async with session.create_client("batch") as client:  # (1)
+    paginator: ListSchedulingPoliciesPaginator = client.get_paginator("list_scheduling_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSchedulingPoliciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BatchClient](./client.md)
+2. paginator: [ListSchedulingPoliciesPaginator](./paginators.md#listschedulingpoliciespaginator)
+3. item: [:material-code-braces: ListSchedulingPoliciesResponseTypeDef](./type_defs.md#listschedulingpoliciesresponsetypedef) 
 
 
 ### paginate

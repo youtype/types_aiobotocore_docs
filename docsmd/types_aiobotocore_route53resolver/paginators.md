@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53resolver.paginator import ListFirewallConfigsPaginator
 
 session = get_session()
-async with session.create_client("route53resolver") as client:
-    client: Route53ResolverClient
-    paginator: ListFirewallConfigsPaginator = client.get_paginator("list_firewall_configs")
+async with session.create_client("route53resolver") as client:  # (1)
+    paginator: ListFirewallConfigsPaginator = client.get_paginator("list_firewall_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFirewallConfigsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53ResolverClient](./client.md)
+2. paginator: [ListFirewallConfigsPaginator](./paginators.md#listfirewallconfigspaginator)
+3. item: [:material-code-braces: ListFirewallConfigsResponseTypeDef](./type_defs.md#listfirewallconfigsresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53resolver.paginator import ListFirewallDomainListsPaginator
 
 session = get_session()
-async with session.create_client("route53resolver") as client:
-    client: Route53ResolverClient
-    paginator: ListFirewallDomainListsPaginator = client.get_paginator("list_firewall_domain_lists")
+async with session.create_client("route53resolver") as client:  # (1)
+    paginator: ListFirewallDomainListsPaginator = client.get_paginator("list_firewall_domain_lists")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFirewallDomainListsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53ResolverClient](./client.md)
+2. paginator: [ListFirewallDomainListsPaginator](./paginators.md#listfirewalldomainlistspaginator)
+3. item: [:material-code-braces: ListFirewallDomainListsResponseTypeDef](./type_defs.md#listfirewalldomainlistsresponsetypedef) 
 
 
 ### paginate
@@ -104,10 +116,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53resolver.paginator import ListFirewallDomainsPaginator
 
 session = get_session()
-async with session.create_client("route53resolver") as client:
-    client: Route53ResolverClient
-    paginator: ListFirewallDomainsPaginator = client.get_paginator("list_firewall_domains")
+async with session.create_client("route53resolver") as client:  # (1)
+    paginator: ListFirewallDomainsPaginator = client.get_paginator("list_firewall_domains")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFirewallDomainsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53ResolverClient](./client.md)
+2. paginator: [ListFirewallDomainsPaginator](./paginators.md#listfirewalldomainspaginator)
+3. item: [:material-code-braces: ListFirewallDomainsResponseTypeDef](./type_defs.md#listfirewalldomainsresponsetypedef) 
 
 
 ### paginate
@@ -148,10 +166,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53resolver.paginator import ListFirewallRuleGroupAssociationsPaginator
 
 session = get_session()
-async with session.create_client("route53resolver") as client:
-    client: Route53ResolverClient
-    paginator: ListFirewallRuleGroupAssociationsPaginator = client.get_paginator("list_firewall_rule_group_associations")
+async with session.create_client("route53resolver") as client:  # (1)
+    paginator: ListFirewallRuleGroupAssociationsPaginator = client.get_paginator("list_firewall_rule_group_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFirewallRuleGroupAssociationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53ResolverClient](./client.md)
+2. paginator: [ListFirewallRuleGroupAssociationsPaginator](./paginators.md#listfirewallrulegroupassociationspaginator)
+3. item: [:material-code-braces: ListFirewallRuleGroupAssociationsResponseTypeDef](./type_defs.md#listfirewallrulegroupassociationsresponsetypedef) 
 
 
 ### paginate
@@ -196,10 +220,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53resolver.paginator import ListFirewallRuleGroupsPaginator
 
 session = get_session()
-async with session.create_client("route53resolver") as client:
-    client: Route53ResolverClient
-    paginator: ListFirewallRuleGroupsPaginator = client.get_paginator("list_firewall_rule_groups")
+async with session.create_client("route53resolver") as client:  # (1)
+    paginator: ListFirewallRuleGroupsPaginator = client.get_paginator("list_firewall_rule_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFirewallRuleGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53ResolverClient](./client.md)
+2. paginator: [ListFirewallRuleGroupsPaginator](./paginators.md#listfirewallrulegroupspaginator)
+3. item: [:material-code-braces: ListFirewallRuleGroupsResponseTypeDef](./type_defs.md#listfirewallrulegroupsresponsetypedef) 
 
 
 ### paginate
@@ -239,10 +269,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53resolver.paginator import ListFirewallRulesPaginator
 
 session = get_session()
-async with session.create_client("route53resolver") as client:
-    client: Route53ResolverClient
-    paginator: ListFirewallRulesPaginator = client.get_paginator("list_firewall_rules")
+async with session.create_client("route53resolver") as client:  # (1)
+    paginator: ListFirewallRulesPaginator = client.get_paginator("list_firewall_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFirewallRulesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53ResolverClient](./client.md)
+2. paginator: [ListFirewallRulesPaginator](./paginators.md#listfirewallrulespaginator)
+3. item: [:material-code-braces: ListFirewallRulesResponseTypeDef](./type_defs.md#listfirewallrulesresponsetypedef) 
 
 
 ### paginate
@@ -286,10 +322,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53resolver.paginator import ListResolverConfigsPaginator
 
 session = get_session()
-async with session.create_client("route53resolver") as client:
-    client: Route53ResolverClient
-    paginator: ListResolverConfigsPaginator = client.get_paginator("list_resolver_configs")
+async with session.create_client("route53resolver") as client:  # (1)
+    paginator: ListResolverConfigsPaginator = client.get_paginator("list_resolver_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResolverConfigsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53ResolverClient](./client.md)
+2. paginator: [ListResolverConfigsPaginator](./paginators.md#listresolverconfigspaginator)
+3. item: [:material-code-braces: ListResolverConfigsResponseTypeDef](./type_defs.md#listresolverconfigsresponsetypedef) 
 
 
 ### paginate
@@ -329,10 +371,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53resolver.paginator import ListResolverDnssecConfigsPaginator
 
 session = get_session()
-async with session.create_client("route53resolver") as client:
-    client: Route53ResolverClient
-    paginator: ListResolverDnssecConfigsPaginator = client.get_paginator("list_resolver_dnssec_configs")
+async with session.create_client("route53resolver") as client:  # (1)
+    paginator: ListResolverDnssecConfigsPaginator = client.get_paginator("list_resolver_dnssec_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResolverDnssecConfigsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53ResolverClient](./client.md)
+2. paginator: [ListResolverDnssecConfigsPaginator](./paginators.md#listresolverdnssecconfigspaginator)
+3. item: [:material-code-braces: ListResolverDnssecConfigsResponseTypeDef](./type_defs.md#listresolverdnssecconfigsresponsetypedef) 
 
 
 ### paginate
@@ -374,10 +422,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53resolver.paginator import ListResolverEndpointIpAddressesPaginator
 
 session = get_session()
-async with session.create_client("route53resolver") as client:
-    client: Route53ResolverClient
-    paginator: ListResolverEndpointIpAddressesPaginator = client.get_paginator("list_resolver_endpoint_ip_addresses")
+async with session.create_client("route53resolver") as client:  # (1)
+    paginator: ListResolverEndpointIpAddressesPaginator = client.get_paginator("list_resolver_endpoint_ip_addresses")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResolverEndpointIpAddressesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53ResolverClient](./client.md)
+2. paginator: [ListResolverEndpointIpAddressesPaginator](./paginators.md#listresolverendpointipaddressespaginator)
+3. item: [:material-code-braces: ListResolverEndpointIpAddressesResponseTypeDef](./type_defs.md#listresolverendpointipaddressesresponsetypedef) 
 
 
 ### paginate
@@ -418,10 +472,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53resolver.paginator import ListResolverEndpointsPaginator
 
 session = get_session()
-async with session.create_client("route53resolver") as client:
-    client: Route53ResolverClient
-    paginator: ListResolverEndpointsPaginator = client.get_paginator("list_resolver_endpoints")
+async with session.create_client("route53resolver") as client:  # (1)
+    paginator: ListResolverEndpointsPaginator = client.get_paginator("list_resolver_endpoints")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResolverEndpointsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53ResolverClient](./client.md)
+2. paginator: [ListResolverEndpointsPaginator](./paginators.md#listresolverendpointspaginator)
+3. item: [:material-code-braces: ListResolverEndpointsResponseTypeDef](./type_defs.md#listresolverendpointsresponsetypedef) 
 
 
 ### paginate
@@ -463,10 +523,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53resolver.paginator import ListResolverQueryLogConfigAssociationsPaginator
 
 session = get_session()
-async with session.create_client("route53resolver") as client:
-    client: Route53ResolverClient
-    paginator: ListResolverQueryLogConfigAssociationsPaginator = client.get_paginator("list_resolver_query_log_config_associations")
+async with session.create_client("route53resolver") as client:  # (1)
+    paginator: ListResolverQueryLogConfigAssociationsPaginator = client.get_paginator("list_resolver_query_log_config_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResolverQueryLogConfigAssociationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53ResolverClient](./client.md)
+2. paginator: [ListResolverQueryLogConfigAssociationsPaginator](./paginators.md#listresolverquerylogconfigassociationspaginator)
+3. item: [:material-code-braces: ListResolverQueryLogConfigAssociationsResponseTypeDef](./type_defs.md#listresolverquerylogconfigassociationsresponsetypedef) 
 
 
 ### paginate
@@ -511,10 +577,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53resolver.paginator import ListResolverQueryLogConfigsPaginator
 
 session = get_session()
-async with session.create_client("route53resolver") as client:
-    client: Route53ResolverClient
-    paginator: ListResolverQueryLogConfigsPaginator = client.get_paginator("list_resolver_query_log_configs")
+async with session.create_client("route53resolver") as client:  # (1)
+    paginator: ListResolverQueryLogConfigsPaginator = client.get_paginator("list_resolver_query_log_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResolverQueryLogConfigsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53ResolverClient](./client.md)
+2. paginator: [ListResolverQueryLogConfigsPaginator](./paginators.md#listresolverquerylogconfigspaginator)
+3. item: [:material-code-braces: ListResolverQueryLogConfigsResponseTypeDef](./type_defs.md#listresolverquerylogconfigsresponsetypedef) 
 
 
 ### paginate
@@ -559,10 +631,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53resolver.paginator import ListResolverRuleAssociationsPaginator
 
 session = get_session()
-async with session.create_client("route53resolver") as client:
-    client: Route53ResolverClient
-    paginator: ListResolverRuleAssociationsPaginator = client.get_paginator("list_resolver_rule_associations")
+async with session.create_client("route53resolver") as client:  # (1)
+    paginator: ListResolverRuleAssociationsPaginator = client.get_paginator("list_resolver_rule_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResolverRuleAssociationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53ResolverClient](./client.md)
+2. paginator: [ListResolverRuleAssociationsPaginator](./paginators.md#listresolverruleassociationspaginator)
+3. item: [:material-code-braces: ListResolverRuleAssociationsResponseTypeDef](./type_defs.md#listresolverruleassociationsresponsetypedef) 
 
 
 ### paginate
@@ -604,10 +682,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53resolver.paginator import ListResolverRulesPaginator
 
 session = get_session()
-async with session.create_client("route53resolver") as client:
-    client: Route53ResolverClient
-    paginator: ListResolverRulesPaginator = client.get_paginator("list_resolver_rules")
+async with session.create_client("route53resolver") as client:  # (1)
+    paginator: ListResolverRulesPaginator = client.get_paginator("list_resolver_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResolverRulesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53ResolverClient](./client.md)
+2. paginator: [ListResolverRulesPaginator](./paginators.md#listresolverrulespaginator)
+3. item: [:material-code-braces: ListResolverRulesResponseTypeDef](./type_defs.md#listresolverrulesresponsetypedef) 
 
 
 ### paginate
@@ -649,10 +733,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53resolver.paginator import ListTagsForResourcePaginator
 
 session = get_session()
-async with session.create_client("route53resolver") as client:
-    client: Route53ResolverClient
-    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
+async with session.create_client("route53resolver") as client:  # (1)
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsForResourceResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53ResolverClient](./client.md)
+2. paginator: [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
+3. item: [:material-code-braces: ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef) 
 
 
 ### paginate

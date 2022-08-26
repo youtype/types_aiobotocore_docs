@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_amplifybackend.paginator import ListBackendJobsPaginator
 
 session = get_session()
-async with session.create_client("amplifybackend") as client:
-    client: AmplifyBackendClient
-    paginator: ListBackendJobsPaginator = client.get_paginator("list_backend_jobs")
+async with session.create_client("amplifybackend") as client:  # (1)
+    paginator: ListBackendJobsPaginator = client.get_paginator("list_backend_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBackendJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AmplifyBackendClient](./client.md)
+2. paginator: [ListBackendJobsPaginator](./paginators.md#listbackendjobspaginator)
+3. item: [:material-code-braces: ListBackendJobsResponseTypeDef](./type_defs.md#listbackendjobsresponsetypedef) 
 
 
 ### paginate

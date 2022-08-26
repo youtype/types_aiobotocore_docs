@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_opsworks.waiter import AppExistsWaiter
 
-def get_app_exists_waiter() -> AppExistsWaiter:
-    return Session().client("opsworks").get_waiter("app_exists")
+session = get_session()
+async with session.create_client("opsworks") as client:  # (1)
+    waiter: AppExistsWaiter = client.get_waiter("app_exists")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [OpsWorksClient](./client.md)
+2. waiter: [AppExistsWaiter](./waiters.md#appexistswaiter)
 
 
 ### wait
@@ -59,9 +64,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_opsworks.waiter import DeploymentSuccessfulWaiter
 
-def get_deployment_successful_waiter() -> DeploymentSuccessfulWaiter:
-    return Session().client("opsworks").get_waiter("deployment_successful")
+session = get_session()
+async with session.create_client("opsworks") as client:  # (1)
+    waiter: DeploymentSuccessfulWaiter = client.get_waiter("deployment_successful")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [OpsWorksClient](./client.md)
+2. waiter: [DeploymentSuccessfulWaiter](./waiters.md#deploymentsuccessfulwaiter)
 
 
 ### wait
@@ -102,9 +112,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_opsworks.waiter import InstanceOnlineWaiter
 
-def get_instance_online_waiter() -> InstanceOnlineWaiter:
-    return Session().client("opsworks").get_waiter("instance_online")
+session = get_session()
+async with session.create_client("opsworks") as client:  # (1)
+    waiter: InstanceOnlineWaiter = client.get_waiter("instance_online")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [OpsWorksClient](./client.md)
+2. waiter: [InstanceOnlineWaiter](./waiters.md#instanceonlinewaiter)
 
 
 ### wait
@@ -145,9 +160,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_opsworks.waiter import InstanceRegisteredWaiter
 
-def get_instance_registered_waiter() -> InstanceRegisteredWaiter:
-    return Session().client("opsworks").get_waiter("instance_registered")
+session = get_session()
+async with session.create_client("opsworks") as client:  # (1)
+    waiter: InstanceRegisteredWaiter = client.get_waiter("instance_registered")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [OpsWorksClient](./client.md)
+2. waiter: [InstanceRegisteredWaiter](./waiters.md#instanceregisteredwaiter)
 
 
 ### wait
@@ -188,9 +208,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_opsworks.waiter import InstanceStoppedWaiter
 
-def get_instance_stopped_waiter() -> InstanceStoppedWaiter:
-    return Session().client("opsworks").get_waiter("instance_stopped")
+session = get_session()
+async with session.create_client("opsworks") as client:  # (1)
+    waiter: InstanceStoppedWaiter = client.get_waiter("instance_stopped")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [OpsWorksClient](./client.md)
+2. waiter: [InstanceStoppedWaiter](./waiters.md#instancestoppedwaiter)
 
 
 ### wait
@@ -231,9 +256,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_opsworks.waiter import InstanceTerminatedWaiter
 
-def get_instance_terminated_waiter() -> InstanceTerminatedWaiter:
-    return Session().client("opsworks").get_waiter("instance_terminated")
+session = get_session()
+async with session.create_client("opsworks") as client:  # (1)
+    waiter: InstanceTerminatedWaiter = client.get_waiter("instance_terminated")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [OpsWorksClient](./client.md)
+2. waiter: [InstanceTerminatedWaiter](./waiters.md#instanceterminatedwaiter)
 
 
 ### wait

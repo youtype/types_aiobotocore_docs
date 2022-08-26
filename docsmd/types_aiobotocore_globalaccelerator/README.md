@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `GlobalAccelerator`.
 
 ### From PyPI with pip
 
@@ -112,6 +107,7 @@ def get_value() -> AcceleratorStatusType:
 - [CustomRoutingProtocolType](./literals.md#customroutingprotocoltype)
 - [HealthCheckProtocolType](./literals.md#healthcheckprotocoltype)
 - [HealthStateType](./literals.md#healthstatetype)
+- [IpAddressFamilyType](./literals.md#ipaddressfamilytype)
 - [IpAddressTypeType](./literals.md#ipaddresstypetype)
 - [ListAcceleratorsPaginatorName](./literals.md#listacceleratorspaginatorname)
 - [ListByoipCidrsPaginatorName](./literals.md#listbyoipcidrspaginatorname)
@@ -144,6 +140,7 @@ def get_value() -> AcceleratorAttributesTypeDef:
 ```
 
 - [AcceleratorAttributesTypeDef](./type_defs.md#acceleratorattributestypedef)
+- [AcceleratorEventTypeDef](./type_defs.md#acceleratoreventtypedef)
 - [IpSetTypeDef](./type_defs.md#ipsettypedef)
 - [CustomRoutingEndpointConfigurationTypeDef](./type_defs.md#customroutingendpointconfigurationtypedef)
 - [CustomRoutingEndpointDescriptionTypeDef](./type_defs.md#customroutingendpointdescriptiontypedef)

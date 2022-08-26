@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_connectcampaigns.paginator import ListCampaignsPaginator
 
 session = get_session()
-async with session.create_client("connectcampaigns") as client:
-    client: ConnectCampaignServiceClient
-    paginator: ListCampaignsPaginator = client.get_paginator("list_campaigns")
+async with session.create_client("connectcampaigns") as client:  # (1)
+    paginator: ListCampaignsPaginator = client.get_paginator("list_campaigns")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCampaignsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConnectCampaignServiceClient](./client.md)
+2. paginator: [ListCampaignsPaginator](./paginators.md#listcampaignspaginator)
+3. item: [:material-code-braces: ListCampaignsResponseTypeDef](./type_defs.md#listcampaignsresponsetypedef) 
 
 
 ### paginate

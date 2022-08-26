@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pricing.paginator import DescribeServicesPaginator
 
 session = get_session()
-async with session.create_client("pricing") as client:
-    client: PricingClient
-    paginator: DescribeServicesPaginator = client.get_paginator("describe_services")
+async with session.create_client("pricing") as client:  # (1)
+    paginator: DescribeServicesPaginator = client.get_paginator("describe_services")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeServicesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PricingClient](./client.md)
+2. paginator: [DescribeServicesPaginator](./paginators.md#describeservicespaginator)
+3. item: [:material-code-braces: DescribeServicesResponseTypeDef](./type_defs.md#describeservicesresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pricing.paginator import GetAttributeValuesPaginator
 
 session = get_session()
-async with session.create_client("pricing") as client:
-    client: PricingClient
-    paginator: GetAttributeValuesPaginator = client.get_paginator("get_attribute_values")
+async with session.create_client("pricing") as client:  # (1)
+    paginator: GetAttributeValuesPaginator = client.get_paginator("get_attribute_values")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetAttributeValuesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PricingClient](./client.md)
+2. paginator: [GetAttributeValuesPaginator](./paginators.md#getattributevaluespaginator)
+3. item: [:material-code-braces: GetAttributeValuesResponseTypeDef](./type_defs.md#getattributevaluesresponsetypedef) 
 
 
 ### paginate
@@ -109,10 +121,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pricing.paginator import GetProductsPaginator
 
 session = get_session()
-async with session.create_client("pricing") as client:
-    client: PricingClient
-    paginator: GetProductsPaginator = client.get_paginator("get_products")
+async with session.create_client("pricing") as client:  # (1)
+    paginator: GetProductsPaginator = client.get_paginator("get_products")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetProductsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PricingClient](./client.md)
+2. paginator: [GetProductsPaginator](./paginators.md#getproductspaginator)
+3. item: [:material-code-braces: GetProductsResponseTypeDef](./type_defs.md#getproductsresponsetypedef) 
 
 
 ### paginate

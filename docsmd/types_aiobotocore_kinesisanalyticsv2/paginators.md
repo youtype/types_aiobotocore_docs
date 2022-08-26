@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kinesisanalyticsv2.paginator import ListApplicationSnapshotsPaginator
 
 session = get_session()
-async with session.create_client("kinesisanalyticsv2") as client:
-    client: KinesisAnalyticsV2Client
-    paginator: ListApplicationSnapshotsPaginator = client.get_paginator("list_application_snapshots")
+async with session.create_client("kinesisanalyticsv2") as client:  # (1)
+    paginator: ListApplicationSnapshotsPaginator = client.get_paginator("list_application_snapshots")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListApplicationSnapshotsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KinesisAnalyticsV2Client](./client.md)
+2. paginator: [ListApplicationSnapshotsPaginator](./paginators.md#listapplicationsnapshotspaginator)
+3. item: [:material-code-braces: ListApplicationSnapshotsResponseTypeDef](./type_defs.md#listapplicationsnapshotsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kinesisanalyticsv2.paginator import ListApplicationsPaginator
 
 session = get_session()
-async with session.create_client("kinesisanalyticsv2") as client:
-    client: KinesisAnalyticsV2Client
-    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")
+async with session.create_client("kinesisanalyticsv2") as client:  # (1)
+    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListApplicationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KinesisAnalyticsV2Client](./client.md)
+2. paginator: [ListApplicationsPaginator](./paginators.md#listapplicationspaginator)
+3. item: [:material-code-braces: ListApplicationsResponseTypeDef](./type_defs.md#listapplicationsresponsetypedef) 
 
 
 ### paginate

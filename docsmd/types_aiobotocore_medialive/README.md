@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `MediaLive`.
 
 ### From PyPI with pip
 
@@ -145,6 +140,7 @@ def get_value() -> AacCodingModeType:
 - [Ac3LfeFilterType](./literals.md#ac3lfefiltertype)
 - [Ac3MetadataControlType](./literals.md#ac3metadatacontroltype)
 - [AcceptHeaderType](./literals.md#acceptheadertype)
+- [AccessibilityTypeType](./literals.md#accessibilitytypetype)
 - [AfdSignalingType](./literals.md#afdsignalingtype)
 - [AudioDescriptionAudioTypeControlType](./literals.md#audiodescriptionaudiotypecontroltype)
 - [AudioDescriptionLanguageCodeControlType](./literals.md#audiodescriptionlanguagecodecontroltype)
@@ -363,6 +359,8 @@ def get_value() -> AacCodingModeType:
 - [OfferingTypeType](./literals.md#offeringtypetype)
 - [PipelineIdType](./literals.md#pipelineidtype)
 - [PreferredChannelPipelineType](./literals.md#preferredchannelpipelinetype)
+- [RebootInputDeviceForceType](./literals.md#rebootinputdeviceforcetype)
+- [ReservationAutomaticRenewalType](./literals.md#reservationautomaticrenewaltype)
 - [ReservationCodecType](./literals.md#reservationcodectype)
 - [ReservationMaximumBitrateType](./literals.md#reservationmaximumbitratetype)
 - [ReservationMaximumFramerateType](./literals.md#reservationmaximumframeratetype)
@@ -492,6 +490,7 @@ def get_value() -> AacSettingsTypeDef:
 - [MultiplexProgramPipelineDetailTypeDef](./type_defs.md#multiplexprogrampipelinedetailtypedef)
 - [DeleteMultiplexRequestRequestTypeDef](./type_defs.md#deletemultiplexrequestrequesttypedef)
 - [DeleteReservationRequestRequestTypeDef](./type_defs.md#deletereservationrequestrequesttypedef)
+- [RenewalSettingsTypeDef](./type_defs.md#renewalsettingstypedef)
 - [ReservationResourceSpecificationTypeDef](./type_defs.md#reservationresourcespecificationtypedef)
 - [DeleteScheduleRequestRequestTypeDef](./type_defs.md#deleteschedulerequestrequesttypedef)
 - [DeleteTagsRequestRequestTypeDef](./type_defs.md#deletetagsrequestrequesttypedef)
@@ -573,18 +572,18 @@ def get_value() -> AacSettingsTypeDef:
 - [RtmpGroupSettingsTypeDef](./type_defs.md#rtmpgroupsettingstypedef)
 - [UdpGroupSettingsTypeDef](./type_defs.md#udpgroupsettingstypedef)
 - [PipelinePauseStateSettingsTypeDef](./type_defs.md#pipelinepausestatesettingstypedef)
-- [PurchaseOfferingRequestRequestTypeDef](./type_defs.md#purchaseofferingrequestrequesttypedef)
+- [RebootInputDeviceRequestRequestTypeDef](./type_defs.md#rebootinputdevicerequestrequesttypedef)
 - [RejectInputDeviceTransferRequestRequestTypeDef](./type_defs.md#rejectinputdevicetransferrequestrequesttypedef)
 - [Scte35ReturnToNetworkScheduleActionSettingsTypeDef](./type_defs.md#scte35returntonetworkscheduleactionsettingstypedef)
 - [Scte35SpliceInsertScheduleActionSettingsTypeDef](./type_defs.md#scte35spliceinsertscheduleactionsettingstypedef)
 - [StaticImageDeactivateScheduleActionSettingsTypeDef](./type_defs.md#staticimagedeactivatescheduleactionsettingstypedef)
 - [Scte35DeliveryRestrictionsTypeDef](./type_defs.md#scte35deliveryrestrictionstypedef)
 - [StartChannelRequestRequestTypeDef](./type_defs.md#startchannelrequestrequesttypedef)
+- [StartInputDeviceMaintenanceWindowRequestRequestTypeDef](./type_defs.md#startinputdevicemaintenancewindowrequestrequesttypedef)
 - [StartMultiplexRequestRequestTypeDef](./type_defs.md#startmultiplexrequestrequesttypedef)
 - [StopChannelRequestRequestTypeDef](./type_defs.md#stopchannelrequestrequesttypedef)
 - [StopMultiplexRequestRequestTypeDef](./type_defs.md#stopmultiplexrequestrequesttypedef)
 - [TransferInputDeviceRequestRequestTypeDef](./type_defs.md#transferinputdevicerequestrequesttypedef)
-- [UpdateReservationRequestRequestTypeDef](./type_defs.md#updatereservationrequestrequesttypedef)
 - [VideoSelectorPidTypeDef](./type_defs.md#videoselectorpidtypedef)
 - [VideoSelectorProgramIdTypeDef](./type_defs.md#videoselectorprogramidtypedef)
 - [ArchiveCdnSettingsTypeDef](./type_defs.md#archivecdnsettingstypedef)
@@ -616,6 +615,8 @@ def get_value() -> AacSettingsTypeDef:
 - [UpdateInputSecurityGroupRequestRequestTypeDef](./type_defs.md#updateinputsecuritygrouprequestrequesttypedef)
 - [CreateMultiplexRequestRequestTypeDef](./type_defs.md#createmultiplexrequestrequesttypedef)
 - [UpdateMultiplexRequestRequestTypeDef](./type_defs.md#updatemultiplexrequestrequesttypedef)
+- [PurchaseOfferingRequestRequestTypeDef](./type_defs.md#purchaseofferingrequestrequesttypedef)
+- [UpdateReservationRequestRequestTypeDef](./type_defs.md#updatereservationrequestrequesttypedef)
 - [DeleteReservationResponseTypeDef](./type_defs.md#deletereservationresponsetypedef)
 - [DescribeOfferingResponseTypeDef](./type_defs.md#describeofferingresponsetypedef)
 - [DescribeReservationResponseTypeDef](./type_defs.md#describereservationresponsetypedef)

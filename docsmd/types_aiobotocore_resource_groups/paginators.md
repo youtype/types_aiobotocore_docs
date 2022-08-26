@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_resource_groups.paginator import ListGroupResourcesPaginator
 
 session = get_session()
-async with session.create_client("resource-groups") as client:
-    client: ResourceGroupsClient
-    paginator: ListGroupResourcesPaginator = client.get_paginator("list_group_resources")
+async with session.create_client("resource-groups") as client:  # (1)
+    paginator: ListGroupResourcesPaginator = client.get_paginator("list_group_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGroupResourcesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ResourceGroupsClient](./client.md)
+2. paginator: [ListGroupResourcesPaginator](./paginators.md#listgroupresourcespaginator)
+3. item: [:material-code-braces: ListGroupResourcesOutputTypeDef](./type_defs.md#listgroupresourcesoutputtypedef) 
 
 
 ### paginate
@@ -65,10 +71,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_resource_groups.paginator import ListGroupsPaginator
 
 session = get_session()
-async with session.create_client("resource-groups") as client:
-    client: ResourceGroupsClient
-    paginator: ListGroupsPaginator = client.get_paginator("list_groups")
+async with session.create_client("resource-groups") as client:  # (1)
+    paginator: ListGroupsPaginator = client.get_paginator("list_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGroupsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ResourceGroupsClient](./client.md)
+2. paginator: [ListGroupsPaginator](./paginators.md#listgroupspaginator)
+3. item: [:material-code-braces: ListGroupsOutputTypeDef](./type_defs.md#listgroupsoutputtypedef) 
 
 
 ### paginate
@@ -110,10 +122,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_resource_groups.paginator import SearchResourcesPaginator
 
 session = get_session()
-async with session.create_client("resource-groups") as client:
-    client: ResourceGroupsClient
-    paginator: SearchResourcesPaginator = client.get_paginator("search_resources")
+async with session.create_client("resource-groups") as client:  # (1)
+    paginator: SearchResourcesPaginator = client.get_paginator("search_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchResourcesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ResourceGroupsClient](./client.md)
+2. paginator: [SearchResourcesPaginator](./paginators.md#searchresourcespaginator)
+3. item: [:material-code-braces: SearchResourcesOutputTypeDef](./type_defs.md#searchresourcesoutputtypedef) 
 
 
 ### paginate

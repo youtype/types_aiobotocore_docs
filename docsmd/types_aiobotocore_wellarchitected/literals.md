@@ -171,6 +171,21 @@ NotificationTypeType = Literal[
     "LENS_VERSION_UPGRADED",
 ]
 ```
+## OrganizationSharingStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_wellarchitected.literals import OrganizationSharingStatusType
+
+def get_value() -> OrganizationSharingStatusType:
+    return "DISABLED"
+```
+
+```python title="Definition"
+OrganizationSharingStatusType = Literal[
+    "DISABLED",
+    "ENABLED",
+]
+```
 ## PermissionTypeType
 
 ```python title="Usage Example"
@@ -246,7 +261,10 @@ def get_value() -> ShareStatusType:
 ```python title="Definition"
 ShareStatusType = Literal[
     "ACCEPTED",
+    "ASSOCIATED",
+    "ASSOCIATING",
     "EXPIRED",
+    "FAILED",
     "PENDING",
     "REJECTED",
     "REVOKED",
@@ -339,6 +357,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -484,6 +503,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -537,6 +557,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -547,11 +568,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -597,6 +620,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

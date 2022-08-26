@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_neptune.paginator import DescribeDBClusterEndpointsPaginator
 
 session = get_session()
-async with session.create_client("neptune") as client:
-    client: NeptuneClient
-    paginator: DescribeDBClusterEndpointsPaginator = client.get_paginator("describe_db_cluster_endpoints")
+async with session.create_client("neptune") as client:  # (1)
+    paginator: DescribeDBClusterEndpointsPaginator = client.get_paginator("describe_db_cluster_endpoints")  # (2)
+    async for item in paginator.paginate(...):
+        item: DBClusterEndpointMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. paginator: [DescribeDBClusterEndpointsPaginator](./paginators.md#describedbclusterendpointspaginator)
+3. item: [:material-code-braces: DBClusterEndpointMessageTypeDef](./type_defs.md#dbclusterendpointmessagetypedef) 
 
 
 ### paginate
@@ -65,10 +71,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_neptune.paginator import DescribeDBClusterParameterGroupsPaginator
 
 session = get_session()
-async with session.create_client("neptune") as client:
-    client: NeptuneClient
-    paginator: DescribeDBClusterParameterGroupsPaginator = client.get_paginator("describe_db_cluster_parameter_groups")
+async with session.create_client("neptune") as client:  # (1)
+    paginator: DescribeDBClusterParameterGroupsPaginator = client.get_paginator("describe_db_cluster_parameter_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DBClusterParameterGroupsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. paginator: [DescribeDBClusterParameterGroupsPaginator](./paginators.md#describedbclusterparametergroupspaginator)
+3. item: [:material-code-braces: DBClusterParameterGroupsMessageTypeDef](./type_defs.md#dbclusterparametergroupsmessagetypedef) 
 
 
 ### paginate
@@ -111,10 +123,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_neptune.paginator import DescribeDBClusterParametersPaginator
 
 session = get_session()
-async with session.create_client("neptune") as client:
-    client: NeptuneClient
-    paginator: DescribeDBClusterParametersPaginator = client.get_paginator("describe_db_cluster_parameters")
+async with session.create_client("neptune") as client:  # (1)
+    paginator: DescribeDBClusterParametersPaginator = client.get_paginator("describe_db_cluster_parameters")  # (2)
+    async for item in paginator.paginate(...):
+        item: DBClusterParameterGroupDetailsTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. paginator: [DescribeDBClusterParametersPaginator](./paginators.md#describedbclusterparameterspaginator)
+3. item: [:material-code-braces: DBClusterParameterGroupDetailsTypeDef](./type_defs.md#dbclusterparametergroupdetailstypedef) 
 
 
 ### paginate
@@ -158,10 +176,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_neptune.paginator import DescribeDBClusterSnapshotsPaginator
 
 session = get_session()
-async with session.create_client("neptune") as client:
-    client: NeptuneClient
-    paginator: DescribeDBClusterSnapshotsPaginator = client.get_paginator("describe_db_cluster_snapshots")
+async with session.create_client("neptune") as client:  # (1)
+    paginator: DescribeDBClusterSnapshotsPaginator = client.get_paginator("describe_db_cluster_snapshots")  # (2)
+    async for item in paginator.paginate(...):
+        item: DBClusterSnapshotMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. paginator: [DescribeDBClusterSnapshotsPaginator](./paginators.md#describedbclustersnapshotspaginator)
+3. item: [:material-code-braces: DBClusterSnapshotMessageTypeDef](./type_defs.md#dbclustersnapshotmessagetypedef) 
 
 
 ### paginate
@@ -208,10 +232,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_neptune.paginator import DescribeDBClustersPaginator
 
 session = get_session()
-async with session.create_client("neptune") as client:
-    client: NeptuneClient
-    paginator: DescribeDBClustersPaginator = client.get_paginator("describe_db_clusters")
+async with session.create_client("neptune") as client:  # (1)
+    paginator: DescribeDBClustersPaginator = client.get_paginator("describe_db_clusters")  # (2)
+    async for item in paginator.paginate(...):
+        item: DBClusterMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. paginator: [DescribeDBClustersPaginator](./paginators.md#describedbclusterspaginator)
+3. item: [:material-code-braces: DBClusterMessageTypeDef](./type_defs.md#dbclustermessagetypedef) 
 
 
 ### paginate
@@ -254,10 +284,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_neptune.paginator import DescribeDBEngineVersionsPaginator
 
 session = get_session()
-async with session.create_client("neptune") as client:
-    client: NeptuneClient
-    paginator: DescribeDBEngineVersionsPaginator = client.get_paginator("describe_db_engine_versions")
+async with session.create_client("neptune") as client:  # (1)
+    paginator: DescribeDBEngineVersionsPaginator = client.get_paginator("describe_db_engine_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DBEngineVersionMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. paginator: [DescribeDBEngineVersionsPaginator](./paginators.md#describedbengineversionspaginator)
+3. item: [:material-code-braces: DBEngineVersionMessageTypeDef](./type_defs.md#dbengineversionmessagetypedef) 
 
 
 ### paginate
@@ -305,10 +341,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_neptune.paginator import DescribeDBInstancesPaginator
 
 session = get_session()
-async with session.create_client("neptune") as client:
-    client: NeptuneClient
-    paginator: DescribeDBInstancesPaginator = client.get_paginator("describe_db_instances")
+async with session.create_client("neptune") as client:  # (1)
+    paginator: DescribeDBInstancesPaginator = client.get_paginator("describe_db_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: DBInstanceMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. paginator: [DescribeDBInstancesPaginator](./paginators.md#describedbinstancespaginator)
+3. item: [:material-code-braces: DBInstanceMessageTypeDef](./type_defs.md#dbinstancemessagetypedef) 
 
 
 ### paginate
@@ -351,10 +393,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_neptune.paginator import DescribeDBParameterGroupsPaginator
 
 session = get_session()
-async with session.create_client("neptune") as client:
-    client: NeptuneClient
-    paginator: DescribeDBParameterGroupsPaginator = client.get_paginator("describe_db_parameter_groups")
+async with session.create_client("neptune") as client:  # (1)
+    paginator: DescribeDBParameterGroupsPaginator = client.get_paginator("describe_db_parameter_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DBParameterGroupsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. paginator: [DescribeDBParameterGroupsPaginator](./paginators.md#describedbparametergroupspaginator)
+3. item: [:material-code-braces: DBParameterGroupsMessageTypeDef](./type_defs.md#dbparametergroupsmessagetypedef) 
 
 
 ### paginate
@@ -397,10 +445,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_neptune.paginator import DescribeDBParametersPaginator
 
 session = get_session()
-async with session.create_client("neptune") as client:
-    client: NeptuneClient
-    paginator: DescribeDBParametersPaginator = client.get_paginator("describe_db_parameters")
+async with session.create_client("neptune") as client:  # (1)
+    paginator: DescribeDBParametersPaginator = client.get_paginator("describe_db_parameters")  # (2)
+    async for item in paginator.paginate(...):
+        item: DBParameterGroupDetailsTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. paginator: [DescribeDBParametersPaginator](./paginators.md#describedbparameterspaginator)
+3. item: [:material-code-braces: DBParameterGroupDetailsTypeDef](./type_defs.md#dbparametergroupdetailstypedef) 
 
 
 ### paginate
@@ -444,10 +498,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_neptune.paginator import DescribeDBSubnetGroupsPaginator
 
 session = get_session()
-async with session.create_client("neptune") as client:
-    client: NeptuneClient
-    paginator: DescribeDBSubnetGroupsPaginator = client.get_paginator("describe_db_subnet_groups")
+async with session.create_client("neptune") as client:  # (1)
+    paginator: DescribeDBSubnetGroupsPaginator = client.get_paginator("describe_db_subnet_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DBSubnetGroupMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. paginator: [DescribeDBSubnetGroupsPaginator](./paginators.md#describedbsubnetgroupspaginator)
+3. item: [:material-code-braces: DBSubnetGroupMessageTypeDef](./type_defs.md#dbsubnetgroupmessagetypedef) 
 
 
 ### paginate
@@ -490,10 +550,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_neptune.paginator import DescribeEngineDefaultParametersPaginator
 
 session = get_session()
-async with session.create_client("neptune") as client:
-    client: NeptuneClient
-    paginator: DescribeEngineDefaultParametersPaginator = client.get_paginator("describe_engine_default_parameters")
+async with session.create_client("neptune") as client:  # (1)
+    paginator: DescribeEngineDefaultParametersPaginator = client.get_paginator("describe_engine_default_parameters")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeEngineDefaultParametersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. paginator: [DescribeEngineDefaultParametersPaginator](./paginators.md#describeenginedefaultparameterspaginator)
+3. item: [:material-code-braces: DescribeEngineDefaultParametersResultTypeDef](./type_defs.md#describeenginedefaultparametersresulttypedef) 
 
 
 ### paginate
@@ -536,10 +602,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_neptune.paginator import DescribeEventSubscriptionsPaginator
 
 session = get_session()
-async with session.create_client("neptune") as client:
-    client: NeptuneClient
-    paginator: DescribeEventSubscriptionsPaginator = client.get_paginator("describe_event_subscriptions")
+async with session.create_client("neptune") as client:  # (1)
+    paginator: DescribeEventSubscriptionsPaginator = client.get_paginator("describe_event_subscriptions")  # (2)
+    async for item in paginator.paginate(...):
+        item: EventSubscriptionsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. paginator: [DescribeEventSubscriptionsPaginator](./paginators.md#describeeventsubscriptionspaginator)
+3. item: [:material-code-braces: EventSubscriptionsMessageTypeDef](./type_defs.md#eventsubscriptionsmessagetypedef) 
 
 
 ### paginate
@@ -582,10 +654,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_neptune.paginator import DescribeEventsPaginator
 
 session = get_session()
-async with session.create_client("neptune") as client:
-    client: NeptuneClient
-    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")
+async with session.create_client("neptune") as client:  # (1)
+    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: EventsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. paginator: [DescribeEventsPaginator](./paginators.md#describeeventspaginator)
+3. item: [:material-code-braces: EventsMessageTypeDef](./type_defs.md#eventsmessagetypedef) 
 
 
 ### paginate
@@ -634,10 +712,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_neptune.paginator import DescribeOrderableDBInstanceOptionsPaginator
 
 session = get_session()
-async with session.create_client("neptune") as client:
-    client: NeptuneClient
-    paginator: DescribeOrderableDBInstanceOptionsPaginator = client.get_paginator("describe_orderable_db_instance_options")
+async with session.create_client("neptune") as client:  # (1)
+    paginator: DescribeOrderableDBInstanceOptionsPaginator = client.get_paginator("describe_orderable_db_instance_options")  # (2)
+    async for item in paginator.paginate(...):
+        item: OrderableDBInstanceOptionsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. paginator: [DescribeOrderableDBInstanceOptionsPaginator](./paginators.md#describeorderabledbinstanceoptionspaginator)
+3. item: [:material-code-braces: OrderableDBInstanceOptionsMessageTypeDef](./type_defs.md#orderabledbinstanceoptionsmessagetypedef) 
 
 
 ### paginate
@@ -684,10 +768,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_neptune.paginator import DescribePendingMaintenanceActionsPaginator
 
 session = get_session()
-async with session.create_client("neptune") as client:
-    client: NeptuneClient
-    paginator: DescribePendingMaintenanceActionsPaginator = client.get_paginator("describe_pending_maintenance_actions")
+async with session.create_client("neptune") as client:  # (1)
+    paginator: DescribePendingMaintenanceActionsPaginator = client.get_paginator("describe_pending_maintenance_actions")  # (2)
+    async for item in paginator.paginate(...):
+        item: PendingMaintenanceActionsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. paginator: [DescribePendingMaintenanceActionsPaginator](./paginators.md#describependingmaintenanceactionspaginator)
+3. item: [:material-code-braces: PendingMaintenanceActionsMessageTypeDef](./type_defs.md#pendingmaintenanceactionsmessagetypedef) 
 
 
 ### paginate

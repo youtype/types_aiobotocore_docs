@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ds.paginator import DescribeDirectoriesPaginator
 
 session = get_session()
-async with session.create_client("ds") as client:
-    client: DirectoryServiceClient
-    paginator: DescribeDirectoriesPaginator = client.get_paginator("describe_directories")
+async with session.create_client("ds") as client:  # (1)
+    paginator: DescribeDirectoriesPaginator = client.get_paginator("describe_directories")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeDirectoriesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DirectoryServiceClient](./client.md)
+2. paginator: [DescribeDirectoriesPaginator](./paginators.md#describedirectoriespaginator)
+3. item: [:material-code-braces: DescribeDirectoriesResultTypeDef](./type_defs.md#describedirectoriesresulttypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ds.paginator import DescribeDomainControllersPaginator
 
 session = get_session()
-async with session.create_client("ds") as client:
-    client: DirectoryServiceClient
-    paginator: DescribeDomainControllersPaginator = client.get_paginator("describe_domain_controllers")
+async with session.create_client("ds") as client:  # (1)
+    paginator: DescribeDomainControllersPaginator = client.get_paginator("describe_domain_controllers")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeDomainControllersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DirectoryServiceClient](./client.md)
+2. paginator: [DescribeDomainControllersPaginator](./paginators.md#describedomaincontrollerspaginator)
+3. item: [:material-code-braces: DescribeDomainControllersResultTypeDef](./type_defs.md#describedomaincontrollersresulttypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ds.paginator import DescribeSharedDirectoriesPaginator
 
 session = get_session()
-async with session.create_client("ds") as client:
-    client: DirectoryServiceClient
-    paginator: DescribeSharedDirectoriesPaginator = client.get_paginator("describe_shared_directories")
+async with session.create_client("ds") as client:  # (1)
+    paginator: DescribeSharedDirectoriesPaginator = client.get_paginator("describe_shared_directories")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSharedDirectoriesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DirectoryServiceClient](./client.md)
+2. paginator: [DescribeSharedDirectoriesPaginator](./paginators.md#describeshareddirectoriespaginator)
+3. item: [:material-code-braces: DescribeSharedDirectoriesResultTypeDef](./type_defs.md#describeshareddirectoriesresulttypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ds.paginator import DescribeSnapshotsPaginator
 
 session = get_session()
-async with session.create_client("ds") as client:
-    client: DirectoryServiceClient
-    paginator: DescribeSnapshotsPaginator = client.get_paginator("describe_snapshots")
+async with session.create_client("ds") as client:  # (1)
+    paginator: DescribeSnapshotsPaginator = client.get_paginator("describe_snapshots")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSnapshotsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DirectoryServiceClient](./client.md)
+2. paginator: [DescribeSnapshotsPaginator](./paginators.md#describesnapshotspaginator)
+3. item: [:material-code-braces: DescribeSnapshotsResultTypeDef](./type_defs.md#describesnapshotsresulttypedef) 
 
 
 ### paginate
@@ -197,10 +221,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ds.paginator import DescribeTrustsPaginator
 
 session = get_session()
-async with session.create_client("ds") as client:
-    client: DirectoryServiceClient
-    paginator: DescribeTrustsPaginator = client.get_paginator("describe_trusts")
+async with session.create_client("ds") as client:  # (1)
+    paginator: DescribeTrustsPaginator = client.get_paginator("describe_trusts")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTrustsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DirectoryServiceClient](./client.md)
+2. paginator: [DescribeTrustsPaginator](./paginators.md#describetrustspaginator)
+3. item: [:material-code-braces: DescribeTrustsResultTypeDef](./type_defs.md#describetrustsresulttypedef) 
 
 
 ### paginate
@@ -242,10 +272,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ds.paginator import ListIpRoutesPaginator
 
 session = get_session()
-async with session.create_client("ds") as client:
-    client: DirectoryServiceClient
-    paginator: ListIpRoutesPaginator = client.get_paginator("list_ip_routes")
+async with session.create_client("ds") as client:  # (1)
+    paginator: ListIpRoutesPaginator = client.get_paginator("list_ip_routes")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListIpRoutesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DirectoryServiceClient](./client.md)
+2. paginator: [ListIpRoutesPaginator](./paginators.md#listiproutespaginator)
+3. item: [:material-code-braces: ListIpRoutesResultTypeDef](./type_defs.md#listiproutesresulttypedef) 
 
 
 ### paginate
@@ -286,10 +322,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ds.paginator import ListLogSubscriptionsPaginator
 
 session = get_session()
-async with session.create_client("ds") as client:
-    client: DirectoryServiceClient
-    paginator: ListLogSubscriptionsPaginator = client.get_paginator("list_log_subscriptions")
+async with session.create_client("ds") as client:  # (1)
+    paginator: ListLogSubscriptionsPaginator = client.get_paginator("list_log_subscriptions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLogSubscriptionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DirectoryServiceClient](./client.md)
+2. paginator: [ListLogSubscriptionsPaginator](./paginators.md#listlogsubscriptionspaginator)
+3. item: [:material-code-braces: ListLogSubscriptionsResultTypeDef](./type_defs.md#listlogsubscriptionsresulttypedef) 
 
 
 ### paginate
@@ -330,10 +372,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ds.paginator import ListSchemaExtensionsPaginator
 
 session = get_session()
-async with session.create_client("ds") as client:
-    client: DirectoryServiceClient
-    paginator: ListSchemaExtensionsPaginator = client.get_paginator("list_schema_extensions")
+async with session.create_client("ds") as client:  # (1)
+    paginator: ListSchemaExtensionsPaginator = client.get_paginator("list_schema_extensions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSchemaExtensionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DirectoryServiceClient](./client.md)
+2. paginator: [ListSchemaExtensionsPaginator](./paginators.md#listschemaextensionspaginator)
+3. item: [:material-code-braces: ListSchemaExtensionsResultTypeDef](./type_defs.md#listschemaextensionsresulttypedef) 
 
 
 ### paginate
@@ -374,10 +422,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ds.paginator import ListTagsForResourcePaginator
 
 session = get_session()
-async with session.create_client("ds") as client:
-    client: DirectoryServiceClient
-    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
+async with session.create_client("ds") as client:  # (1)
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsForResourceResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DirectoryServiceClient](./client.md)
+2. paginator: [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
+3. item: [:material-code-braces: ListTagsForResourceResultTypeDef](./type_defs.md#listtagsforresourceresulttypedef) 
 
 
 ### paginate

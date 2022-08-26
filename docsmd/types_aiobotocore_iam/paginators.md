@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import GetAccountAuthorizationDetailsPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: GetAccountAuthorizationDetailsPaginator = client.get_paginator("get_account_authorization_details")
+async with session.create_client("iam") as client:  # (1)
+    paginator: GetAccountAuthorizationDetailsPaginator = client.get_paginator("get_account_authorization_details")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetAccountAuthorizationDetailsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [GetAccountAuthorizationDetailsPaginator](./paginators.md#getaccountauthorizationdetailspaginator)
+3. item: [:material-code-braces: GetAccountAuthorizationDetailsResponseTypeDef](./type_defs.md#getaccountauthorizationdetailsresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import GetGroupPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: GetGroupPaginator = client.get_paginator("get_group")
+async with session.create_client("iam") as client:  # (1)
+    paginator: GetGroupPaginator = client.get_paginator("get_group")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetGroupResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [GetGroupPaginator](./paginators.md#getgrouppaginator)
+3. item: [:material-code-braces: GetGroupResponseTypeDef](./type_defs.md#getgroupresponsetypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListAccessKeysPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListAccessKeysPaginator = client.get_paginator("list_access_keys")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListAccessKeysPaginator = client.get_paginator("list_access_keys")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAccessKeysResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListAccessKeysPaginator](./paginators.md#listaccesskeyspaginator)
+3. item: [:material-code-braces: ListAccessKeysResponseTypeDef](./type_defs.md#listaccesskeysresponsetypedef) 
 
 
 ### paginate
@@ -151,10 +169,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListAccountAliasesPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListAccountAliasesPaginator = client.get_paginator("list_account_aliases")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListAccountAliasesPaginator = client.get_paginator("list_account_aliases")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAccountAliasesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListAccountAliasesPaginator](./paginators.md#listaccountaliasespaginator)
+3. item: [:material-code-braces: ListAccountAliasesResponseTypeDef](./type_defs.md#listaccountaliasesresponsetypedef) 
 
 
 ### paginate
@@ -194,10 +218,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListAttachedGroupPoliciesPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListAttachedGroupPoliciesPaginator = client.get_paginator("list_attached_group_policies")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListAttachedGroupPoliciesPaginator = client.get_paginator("list_attached_group_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAttachedGroupPoliciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListAttachedGroupPoliciesPaginator](./paginators.md#listattachedgrouppoliciespaginator)
+3. item: [:material-code-braces: ListAttachedGroupPoliciesResponseTypeDef](./type_defs.md#listattachedgrouppoliciesresponsetypedef) 
 
 
 ### paginate
@@ -239,10 +269,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListAttachedRolePoliciesPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListAttachedRolePoliciesPaginator = client.get_paginator("list_attached_role_policies")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListAttachedRolePoliciesPaginator = client.get_paginator("list_attached_role_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAttachedRolePoliciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListAttachedRolePoliciesPaginator](./paginators.md#listattachedrolepoliciespaginator)
+3. item: [:material-code-braces: ListAttachedRolePoliciesResponseTypeDef](./type_defs.md#listattachedrolepoliciesresponsetypedef) 
 
 
 ### paginate
@@ -284,10 +320,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListAttachedUserPoliciesPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListAttachedUserPoliciesPaginator = client.get_paginator("list_attached_user_policies")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListAttachedUserPoliciesPaginator = client.get_paginator("list_attached_user_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAttachedUserPoliciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListAttachedUserPoliciesPaginator](./paginators.md#listattacheduserpoliciespaginator)
+3. item: [:material-code-braces: ListAttachedUserPoliciesResponseTypeDef](./type_defs.md#listattacheduserpoliciesresponsetypedef) 
 
 
 ### paginate
@@ -329,10 +371,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListEntitiesForPolicyPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListEntitiesForPolicyPaginator = client.get_paginator("list_entities_for_policy")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListEntitiesForPolicyPaginator = client.get_paginator("list_entities_for_policy")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEntitiesForPolicyResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListEntitiesForPolicyPaginator](./paginators.md#listentitiesforpolicypaginator)
+3. item: [:material-code-braces: ListEntitiesForPolicyResponseTypeDef](./type_defs.md#listentitiesforpolicyresponsetypedef) 
 
 
 ### paginate
@@ -378,10 +426,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListGroupPoliciesPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListGroupPoliciesPaginator = client.get_paginator("list_group_policies")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListGroupPoliciesPaginator = client.get_paginator("list_group_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGroupPoliciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListGroupPoliciesPaginator](./paginators.md#listgrouppoliciespaginator)
+3. item: [:material-code-braces: ListGroupPoliciesResponseTypeDef](./type_defs.md#listgrouppoliciesresponsetypedef) 
 
 
 ### paginate
@@ -422,10 +476,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListGroupsPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListGroupsPaginator = client.get_paginator("list_groups")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListGroupsPaginator = client.get_paginator("list_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListGroupsPaginator](./paginators.md#listgroupspaginator)
+3. item: [:material-code-braces: ListGroupsResponseTypeDef](./type_defs.md#listgroupsresponsetypedef) 
 
 
 ### paginate
@@ -466,10 +526,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListGroupsForUserPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListGroupsForUserPaginator = client.get_paginator("list_groups_for_user")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListGroupsForUserPaginator = client.get_paginator("list_groups_for_user")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGroupsForUserResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListGroupsForUserPaginator](./paginators.md#listgroupsforuserpaginator)
+3. item: [:material-code-braces: ListGroupsForUserResponseTypeDef](./type_defs.md#listgroupsforuserresponsetypedef) 
 
 
 ### paginate
@@ -510,10 +576,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListInstanceProfilesPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListInstanceProfilesPaginator = client.get_paginator("list_instance_profiles")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListInstanceProfilesPaginator = client.get_paginator("list_instance_profiles")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListInstanceProfilesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListInstanceProfilesPaginator](./paginators.md#listinstanceprofilespaginator)
+3. item: [:material-code-braces: ListInstanceProfilesResponseTypeDef](./type_defs.md#listinstanceprofilesresponsetypedef) 
 
 
 ### paginate
@@ -554,10 +626,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListInstanceProfilesForRolePaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListInstanceProfilesForRolePaginator = client.get_paginator("list_instance_profiles_for_role")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListInstanceProfilesForRolePaginator = client.get_paginator("list_instance_profiles_for_role")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListInstanceProfilesForRoleResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListInstanceProfilesForRolePaginator](./paginators.md#listinstanceprofilesforrolepaginator)
+3. item: [:material-code-braces: ListInstanceProfilesForRoleResponseTypeDef](./type_defs.md#listinstanceprofilesforroleresponsetypedef) 
 
 
 ### paginate
@@ -598,10 +676,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListMFADevicesPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListMFADevicesPaginator = client.get_paginator("list_mfa_devices")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListMFADevicesPaginator = client.get_paginator("list_mfa_devices")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMFADevicesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListMFADevicesPaginator](./paginators.md#listmfadevicespaginator)
+3. item: [:material-code-braces: ListMFADevicesResponseTypeDef](./type_defs.md#listmfadevicesresponsetypedef) 
 
 
 ### paginate
@@ -642,10 +726,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListPoliciesPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListPoliciesPaginator = client.get_paginator("list_policies")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListPoliciesPaginator = client.get_paginator("list_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPoliciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListPoliciesPaginator](./paginators.md#listpoliciespaginator)
+3. item: [:material-code-braces: ListPoliciesResponseTypeDef](./type_defs.md#listpoliciesresponsetypedef) 
 
 
 ### paginate
@@ -691,10 +781,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListPolicyVersionsPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListPolicyVersionsPaginator = client.get_paginator("list_policy_versions")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListPolicyVersionsPaginator = client.get_paginator("list_policy_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPolicyVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListPolicyVersionsPaginator](./paginators.md#listpolicyversionspaginator)
+3. item: [:material-code-braces: ListPolicyVersionsResponseTypeDef](./type_defs.md#listpolicyversionsresponsetypedef) 
 
 
 ### paginate
@@ -735,10 +831,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListRolePoliciesPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListRolePoliciesPaginator = client.get_paginator("list_role_policies")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListRolePoliciesPaginator = client.get_paginator("list_role_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRolePoliciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListRolePoliciesPaginator](./paginators.md#listrolepoliciespaginator)
+3. item: [:material-code-braces: ListRolePoliciesResponseTypeDef](./type_defs.md#listrolepoliciesresponsetypedef) 
 
 
 ### paginate
@@ -779,10 +881,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListRolesPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListRolesPaginator = client.get_paginator("list_roles")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListRolesPaginator = client.get_paginator("list_roles")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRolesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListRolesPaginator](./paginators.md#listrolespaginator)
+3. item: [:material-code-braces: ListRolesResponseTypeDef](./type_defs.md#listrolesresponsetypedef) 
 
 
 ### paginate
@@ -823,10 +931,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListSSHPublicKeysPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListSSHPublicKeysPaginator = client.get_paginator("list_ssh_public_keys")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListSSHPublicKeysPaginator = client.get_paginator("list_ssh_public_keys")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSSHPublicKeysResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListSSHPublicKeysPaginator](./paginators.md#listsshpublickeyspaginator)
+3. item: [:material-code-braces: ListSSHPublicKeysResponseTypeDef](./type_defs.md#listsshpublickeysresponsetypedef) 
 
 
 ### paginate
@@ -867,10 +981,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListServerCertificatesPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListServerCertificatesPaginator = client.get_paginator("list_server_certificates")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListServerCertificatesPaginator = client.get_paginator("list_server_certificates")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServerCertificatesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListServerCertificatesPaginator](./paginators.md#listservercertificatespaginator)
+3. item: [:material-code-braces: ListServerCertificatesResponseTypeDef](./type_defs.md#listservercertificatesresponsetypedef) 
 
 
 ### paginate
@@ -911,10 +1031,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListSigningCertificatesPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListSigningCertificatesPaginator = client.get_paginator("list_signing_certificates")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListSigningCertificatesPaginator = client.get_paginator("list_signing_certificates")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSigningCertificatesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListSigningCertificatesPaginator](./paginators.md#listsigningcertificatespaginator)
+3. item: [:material-code-braces: ListSigningCertificatesResponseTypeDef](./type_defs.md#listsigningcertificatesresponsetypedef) 
 
 
 ### paginate
@@ -955,10 +1081,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListUserPoliciesPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListUserPoliciesPaginator = client.get_paginator("list_user_policies")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListUserPoliciesPaginator = client.get_paginator("list_user_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUserPoliciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListUserPoliciesPaginator](./paginators.md#listuserpoliciespaginator)
+3. item: [:material-code-braces: ListUserPoliciesResponseTypeDef](./type_defs.md#listuserpoliciesresponsetypedef) 
 
 
 ### paginate
@@ -999,10 +1131,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListUserTagsPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListUserTagsPaginator = client.get_paginator("list_user_tags")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListUserTagsPaginator = client.get_paginator("list_user_tags")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUserTagsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListUserTagsPaginator](./paginators.md#listusertagspaginator)
+3. item: [:material-code-braces: ListUserTagsResponseTypeDef](./type_defs.md#listusertagsresponsetypedef) 
 
 
 ### paginate
@@ -1043,10 +1181,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListUsersPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListUsersPaginator = client.get_paginator("list_users")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListUsersPaginator = client.get_paginator("list_users")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUsersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListUsersPaginator](./paginators.md#listuserspaginator)
+3. item: [:material-code-braces: ListUsersResponseTypeDef](./type_defs.md#listusersresponsetypedef) 
 
 
 ### paginate
@@ -1087,10 +1231,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import ListVirtualMFADevicesPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: ListVirtualMFADevicesPaginator = client.get_paginator("list_virtual_mfa_devices")
+async with session.create_client("iam") as client:  # (1)
+    paginator: ListVirtualMFADevicesPaginator = client.get_paginator("list_virtual_mfa_devices")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListVirtualMFADevicesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [ListVirtualMFADevicesPaginator](./paginators.md#listvirtualmfadevicespaginator)
+3. item: [:material-code-braces: ListVirtualMFADevicesResponseTypeDef](./type_defs.md#listvirtualmfadevicesresponsetypedef) 
 
 
 ### paginate
@@ -1132,10 +1282,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import SimulateCustomPolicyPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: SimulateCustomPolicyPaginator = client.get_paginator("simulate_custom_policy")
+async with session.create_client("iam") as client:  # (1)
+    paginator: SimulateCustomPolicyPaginator = client.get_paginator("simulate_custom_policy")  # (2)
+    async for item in paginator.paginate(...):
+        item: SimulatePolicyResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [SimulateCustomPolicyPaginator](./paginators.md#simulatecustompolicypaginator)
+3. item: [:material-code-braces: SimulatePolicyResponseTypeDef](./type_defs.md#simulatepolicyresponsetypedef) 
 
 
 ### paginate
@@ -1186,10 +1342,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iam.paginator import SimulatePrincipalPolicyPaginator
 
 session = get_session()
-async with session.create_client("iam") as client:
-    client: IAMClient
-    paginator: SimulatePrincipalPolicyPaginator = client.get_paginator("simulate_principal_policy")
+async with session.create_client("iam") as client:  # (1)
+    paginator: SimulatePrincipalPolicyPaginator = client.get_paginator("simulate_principal_policy")  # (2)
+    async for item in paginator.paginate(...):
+        item: SimulatePolicyResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IAMClient](./client.md)
+2. paginator: [SimulatePrincipalPolicyPaginator](./paginators.md#simulateprincipalpolicypaginator)
+3. item: [:material-code-braces: SimulatePolicyResponseTypeDef](./type_defs.md#simulatepolicyresponsetypedef) 
 
 
 ### paginate

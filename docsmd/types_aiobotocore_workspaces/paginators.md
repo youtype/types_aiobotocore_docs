@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_workspaces.paginator import DescribeAccountModificationsPaginator
 
 session = get_session()
-async with session.create_client("workspaces") as client:
-    client: WorkSpacesClient
-    paginator: DescribeAccountModificationsPaginator = client.get_paginator("describe_account_modifications")
+async with session.create_client("workspaces") as client:  # (1)
+    paginator: DescribeAccountModificationsPaginator = client.get_paginator("describe_account_modifications")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAccountModificationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WorkSpacesClient](./client.md)
+2. paginator: [DescribeAccountModificationsPaginator](./paginators.md#describeaccountmodificationspaginator)
+3. item: [:material-code-braces: DescribeAccountModificationsResultTypeDef](./type_defs.md#describeaccountmodificationsresulttypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_workspaces.paginator import DescribeIpGroupsPaginator
 
 session = get_session()
-async with session.create_client("workspaces") as client:
-    client: WorkSpacesClient
-    paginator: DescribeIpGroupsPaginator = client.get_paginator("describe_ip_groups")
+async with session.create_client("workspaces") as client:  # (1)
+    paginator: DescribeIpGroupsPaginator = client.get_paginator("describe_ip_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeIpGroupsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WorkSpacesClient](./client.md)
+2. paginator: [DescribeIpGroupsPaginator](./paginators.md#describeipgroupspaginator)
+3. item: [:material-code-braces: DescribeIpGroupsResultTypeDef](./type_defs.md#describeipgroupsresulttypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_workspaces.paginator import DescribeWorkspaceBundlesPaginator
 
 session = get_session()
-async with session.create_client("workspaces") as client:
-    client: WorkSpacesClient
-    paginator: DescribeWorkspaceBundlesPaginator = client.get_paginator("describe_workspace_bundles")
+async with session.create_client("workspaces") as client:  # (1)
+    paginator: DescribeWorkspaceBundlesPaginator = client.get_paginator("describe_workspace_bundles")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeWorkspaceBundlesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WorkSpacesClient](./client.md)
+2. paginator: [DescribeWorkspaceBundlesPaginator](./paginators.md#describeworkspacebundlespaginator)
+3. item: [:material-code-braces: DescribeWorkspaceBundlesResultTypeDef](./type_defs.md#describeworkspacebundlesresulttypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_workspaces.paginator import DescribeWorkspaceDirectoriesPaginator
 
 session = get_session()
-async with session.create_client("workspaces") as client:
-    client: WorkSpacesClient
-    paginator: DescribeWorkspaceDirectoriesPaginator = client.get_paginator("describe_workspace_directories")
+async with session.create_client("workspaces") as client:  # (1)
+    paginator: DescribeWorkspaceDirectoriesPaginator = client.get_paginator("describe_workspace_directories")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeWorkspaceDirectoriesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WorkSpacesClient](./client.md)
+2. paginator: [DescribeWorkspaceDirectoriesPaginator](./paginators.md#describeworkspacedirectoriespaginator)
+3. item: [:material-code-braces: DescribeWorkspaceDirectoriesResultTypeDef](./type_defs.md#describeworkspacedirectoriesresulttypedef) 
 
 
 ### paginate
@@ -195,10 +219,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_workspaces.paginator import DescribeWorkspaceImagesPaginator
 
 session = get_session()
-async with session.create_client("workspaces") as client:
-    client: WorkSpacesClient
-    paginator: DescribeWorkspaceImagesPaginator = client.get_paginator("describe_workspace_images")
+async with session.create_client("workspaces") as client:  # (1)
+    paginator: DescribeWorkspaceImagesPaginator = client.get_paginator("describe_workspace_images")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeWorkspaceImagesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WorkSpacesClient](./client.md)
+2. paginator: [DescribeWorkspaceImagesPaginator](./paginators.md#describeworkspaceimagespaginator)
+3. item: [:material-code-braces: DescribeWorkspaceImagesResultTypeDef](./type_defs.md#describeworkspaceimagesresulttypedef) 
 
 
 ### paginate
@@ -241,10 +271,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_workspaces.paginator import DescribeWorkspacesPaginator
 
 session = get_session()
-async with session.create_client("workspaces") as client:
-    client: WorkSpacesClient
-    paginator: DescribeWorkspacesPaginator = client.get_paginator("describe_workspaces")
+async with session.create_client("workspaces") as client:  # (1)
+    paginator: DescribeWorkspacesPaginator = client.get_paginator("describe_workspaces")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeWorkspacesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WorkSpacesClient](./client.md)
+2. paginator: [DescribeWorkspacesPaginator](./paginators.md#describeworkspacespaginator)
+3. item: [:material-code-braces: DescribeWorkspacesResultTypeDef](./type_defs.md#describeworkspacesresulttypedef) 
 
 
 ### paginate
@@ -288,10 +324,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_workspaces.paginator import DescribeWorkspacesConnectionStatusPaginator
 
 session = get_session()
-async with session.create_client("workspaces") as client:
-    client: WorkSpacesClient
-    paginator: DescribeWorkspacesConnectionStatusPaginator = client.get_paginator("describe_workspaces_connection_status")
+async with session.create_client("workspaces") as client:  # (1)
+    paginator: DescribeWorkspacesConnectionStatusPaginator = client.get_paginator("describe_workspaces_connection_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeWorkspacesConnectionStatusResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WorkSpacesClient](./client.md)
+2. paginator: [DescribeWorkspacesConnectionStatusPaginator](./paginators.md#describeworkspacesconnectionstatuspaginator)
+3. item: [:material-code-braces: DescribeWorkspacesConnectionStatusResultTypeDef](./type_defs.md#describeworkspacesconnectionstatusresulttypedef) 
 
 
 ### paginate
@@ -332,10 +374,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_workspaces.paginator import ListAvailableManagementCidrRangesPaginator
 
 session = get_session()
-async with session.create_client("workspaces") as client:
-    client: WorkSpacesClient
-    paginator: ListAvailableManagementCidrRangesPaginator = client.get_paginator("list_available_management_cidr_ranges")
+async with session.create_client("workspaces") as client:  # (1)
+    paginator: ListAvailableManagementCidrRangesPaginator = client.get_paginator("list_available_management_cidr_ranges")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAvailableManagementCidrRangesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WorkSpacesClient](./client.md)
+2. paginator: [ListAvailableManagementCidrRangesPaginator](./paginators.md#listavailablemanagementcidrrangespaginator)
+3. item: [:material-code-braces: ListAvailableManagementCidrRangesResultTypeDef](./type_defs.md#listavailablemanagementcidrrangesresulttypedef) 
 
 
 ### paginate

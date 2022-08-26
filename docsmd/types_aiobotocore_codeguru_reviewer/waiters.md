@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_codeguru_reviewer.waiter import CodeReviewCompletedWaiter
 
-def get_code_review_completed_waiter() -> CodeReviewCompletedWaiter:
-    return Session().client("codeguru-reviewer").get_waiter("code_review_completed")
+session = get_session()
+async with session.create_client("codeguru-reviewer") as client:  # (1)
+    waiter: CodeReviewCompletedWaiter = client.get_waiter("code_review_completed")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [CodeGuruReviewerClient](./client.md)
+2. waiter: [CodeReviewCompletedWaiter](./waiters.md#codereviewcompletedwaiter)
 
 
 ### wait
@@ -58,9 +63,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_codeguru_reviewer.waiter import RepositoryAssociationSucceededWaiter
 
-def get_repository_association_succeeded_waiter() -> RepositoryAssociationSucceededWaiter:
-    return Session().client("codeguru-reviewer").get_waiter("repository_association_succeeded")
+session = get_session()
+async with session.create_client("codeguru-reviewer") as client:  # (1)
+    waiter: RepositoryAssociationSucceededWaiter = client.get_waiter("repository_association_succeeded")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [CodeGuruReviewerClient](./client.md)
+2. waiter: [RepositoryAssociationSucceededWaiter](./waiters.md#repositoryassociationsucceededwaiter)
 
 
 ### wait

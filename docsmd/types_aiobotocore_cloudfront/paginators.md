@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudfront.paginator import ListCloudFrontOriginAccessIdentitiesPaginator
 
 session = get_session()
-async with session.create_client("cloudfront") as client:
-    client: CloudFrontClient
-    paginator: ListCloudFrontOriginAccessIdentitiesPaginator = client.get_paginator("list_cloud_front_origin_access_identities")
+async with session.create_client("cloudfront") as client:  # (1)
+    paginator: ListCloudFrontOriginAccessIdentitiesPaginator = client.get_paginator("list_cloud_front_origin_access_identities")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCloudFrontOriginAccessIdentitiesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFrontClient](./client.md)
+2. paginator: [ListCloudFrontOriginAccessIdentitiesPaginator](./paginators.md#listcloudfrontoriginaccessidentitiespaginator)
+3. item: [:material-code-braces: ListCloudFrontOriginAccessIdentitiesResultTypeDef](./type_defs.md#listcloudfrontoriginaccessidentitiesresulttypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudfront.paginator import ListDistributionsPaginator
 
 session = get_session()
-async with session.create_client("cloudfront") as client:
-    client: CloudFrontClient
-    paginator: ListDistributionsPaginator = client.get_paginator("list_distributions")
+async with session.create_client("cloudfront") as client:  # (1)
+    paginator: ListDistributionsPaginator = client.get_paginator("list_distributions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDistributionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFrontClient](./client.md)
+2. paginator: [ListDistributionsPaginator](./paginators.md#listdistributionspaginator)
+3. item: [:material-code-braces: ListDistributionsResultTypeDef](./type_defs.md#listdistributionsresulttypedef) 
 
 
 ### paginate
@@ -104,10 +116,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudfront.paginator import ListInvalidationsPaginator
 
 session = get_session()
-async with session.create_client("cloudfront") as client:
-    client: CloudFrontClient
-    paginator: ListInvalidationsPaginator = client.get_paginator("list_invalidations")
+async with session.create_client("cloudfront") as client:  # (1)
+    paginator: ListInvalidationsPaginator = client.get_paginator("list_invalidations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListInvalidationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFrontClient](./client.md)
+2. paginator: [ListInvalidationsPaginator](./paginators.md#listinvalidationspaginator)
+3. item: [:material-code-braces: ListInvalidationsResultTypeDef](./type_defs.md#listinvalidationsresulttypedef) 
 
 
 ### paginate
@@ -148,10 +166,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudfront.paginator import ListStreamingDistributionsPaginator
 
 session = get_session()
-async with session.create_client("cloudfront") as client:
-    client: CloudFrontClient
-    paginator: ListStreamingDistributionsPaginator = client.get_paginator("list_streaming_distributions")
+async with session.create_client("cloudfront") as client:  # (1)
+    paginator: ListStreamingDistributionsPaginator = client.get_paginator("list_streaming_distributions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStreamingDistributionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFrontClient](./client.md)
+2. paginator: [ListStreamingDistributionsPaginator](./paginators.md#liststreamingdistributionspaginator)
+3. item: [:material-code-braces: ListStreamingDistributionsResultTypeDef](./type_defs.md#liststreamingdistributionsresulttypedef) 
 
 
 ### paginate

@@ -138,17 +138,33 @@ HealthStateType = Literal[
     "UNHEALTHY",
 ]
 ```
+## IpAddressFamilyType
+
+```python title="Usage Example"
+from types_aiobotocore_globalaccelerator.literals import IpAddressFamilyType
+
+def get_value() -> IpAddressFamilyType:
+    return "IPv4"
+```
+
+```python title="Definition"
+IpAddressFamilyType = Literal[
+    "IPv4",
+    "IPv6",
+]
+```
 ## IpAddressTypeType
 
 ```python title="Usage Example"
 from types_aiobotocore_globalaccelerator.literals import IpAddressTypeType
 
 def get_value() -> IpAddressTypeType:
-    return "IPV4"
+    return "DUAL_STACK"
 ```
 
 ```python title="Definition"
 IpAddressTypeType = Literal[
+    "DUAL_STACK",
     "IPV4",
 ]
 ```
@@ -333,6 +349,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -478,6 +495,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -531,6 +549,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -541,11 +560,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -591,6 +612,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

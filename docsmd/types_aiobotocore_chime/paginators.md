@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_chime.paginator import ListAccountsPaginator
 
 session = get_session()
-async with session.create_client("chime") as client:
-    client: ChimeClient
-    paginator: ListAccountsPaginator = client.get_paginator("list_accounts")
+async with session.create_client("chime") as client:  # (1)
+    paginator: ListAccountsPaginator = client.get_paginator("list_accounts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAccountsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ChimeClient](./client.md)
+2. paginator: [ListAccountsPaginator](./paginators.md#listaccountspaginator)
+3. item: [:material-code-braces: ListAccountsResponseTypeDef](./type_defs.md#listaccountsresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_chime.paginator import ListUsersPaginator
 
 session = get_session()
-async with session.create_client("chime") as client:
-    client: ChimeClient
-    paginator: ListUsersPaginator = client.get_paginator("list_users")
+async with session.create_client("chime") as client:  # (1)
+    paginator: ListUsersPaginator = client.get_paginator("list_users")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUsersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ChimeClient](./client.md)
+2. paginator: [ListUsersPaginator](./paginators.md#listuserspaginator)
+3. item: [:material-code-braces: ListUsersResponseTypeDef](./type_defs.md#listusersresponsetypedef) 
 
 
 ### paginate

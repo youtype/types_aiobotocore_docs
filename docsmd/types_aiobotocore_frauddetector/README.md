@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `FraudDetector`.
 
 ### From PyPI with pip
 
@@ -109,14 +104,18 @@ def get_value() -> AsyncJobStatusType:
 Type annotations for [typed dictionaries](./type_defs.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_frauddetector.type_defs import BatchCreateVariableErrorTypeDef
+from types_aiobotocore_frauddetector.type_defs import ATIMetricDataPointTypeDef
 
-def get_value() -> BatchCreateVariableErrorTypeDef:
+def get_value() -> ATIMetricDataPointTypeDef:
     return {
-        "name": ...,
+        "cr": ...,
     }
 ```
 
+- [ATIMetricDataPointTypeDef](./type_defs.md#atimetricdatapointtypedef)
+- [ATIModelPerformanceTypeDef](./type_defs.md#atimodelperformancetypedef)
+- [AggregatedLogOddsMetricTypeDef](./type_defs.md#aggregatedlogoddsmetrictypedef)
+- [AggregatedVariablesImpactExplanationTypeDef](./type_defs.md#aggregatedvariablesimpactexplanationtypedef)
 - [BatchCreateVariableErrorTypeDef](./type_defs.md#batchcreatevariableerrortypedef)
 - [TagTypeDef](./type_defs.md#tagtypedef)
 - [VariableEntryTypeDef](./type_defs.md#variableentrytypedef)
@@ -191,8 +190,12 @@ def get_value() -> BatchCreateVariableErrorTypeDef:
 - [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
 - [LogOddsMetricTypeDef](./type_defs.md#logoddsmetrictypedef)
 - [MetricDataPointTypeDef](./type_defs.md#metricdatapointtypedef)
+- [OFIMetricDataPointTypeDef](./type_defs.md#ofimetricdatapointtypedef)
+- [OFIModelPerformanceTypeDef](./type_defs.md#ofimodelperformancetypedef)
 - [VariableImpactExplanationTypeDef](./type_defs.md#variableimpactexplanationtypedef)
 - [PutKMSEncryptionKeyRequestRequestTypeDef](./type_defs.md#putkmsencryptionkeyrequestrequesttypedef)
+- [TFIMetricDataPointTypeDef](./type_defs.md#tfimetricdatapointtypedef)
+- [TFIModelPerformanceTypeDef](./type_defs.md#tfimodelperformancetypedef)
 - [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
 - [UpdateDetectorVersionMetadataRequestRequestTypeDef](./type_defs.md#updatedetectorversionmetadatarequestrequesttypedef)
 - [UpdateDetectorVersionStatusRequestRequestTypeDef](./type_defs.md#updatedetectorversionstatusrequestrequesttypedef)
@@ -200,6 +203,8 @@ def get_value() -> BatchCreateVariableErrorTypeDef:
 - [UpdateModelRequestRequestTypeDef](./type_defs.md#updatemodelrequestrequesttypedef)
 - [UpdateModelVersionStatusRequestRequestTypeDef](./type_defs.md#updatemodelversionstatusrequestrequesttypedef)
 - [UpdateVariableRequestRequestTypeDef](./type_defs.md#updatevariablerequestrequesttypedef)
+- [ATITrainingMetricsValueTypeDef](./type_defs.md#atitrainingmetricsvaluetypedef)
+- [AggregatedVariablesImportanceMetricsTypeDef](./type_defs.md#aggregatedvariablesimportancemetricstypedef)
 - [CreateBatchImportJobRequestRequestTypeDef](./type_defs.md#createbatchimportjobrequestrequesttypedef)
 - [CreateBatchPredictionJobRequestRequestTypeDef](./type_defs.md#createbatchpredictionjobrequestrequesttypedef)
 - [CreateModelRequestRequestTypeDef](./type_defs.md#createmodelrequestrequesttypedef)
@@ -254,7 +259,9 @@ def get_value() -> BatchCreateVariableErrorTypeDef:
 - [ListEventPredictionsRequestRequestTypeDef](./type_defs.md#listeventpredictionsrequestrequesttypedef)
 - [VariableImportanceMetricsTypeDef](./type_defs.md#variableimportancemetricstypedef)
 - [TrainingMetricsTypeDef](./type_defs.md#trainingmetricstypedef)
+- [OFITrainingMetricsValueTypeDef](./type_defs.md#ofitrainingmetricsvaluetypedef)
 - [PredictionExplanationsTypeDef](./type_defs.md#predictionexplanationstypedef)
+- [TFITrainingMetricsValueTypeDef](./type_defs.md#tfitrainingmetricsvaluetypedef)
 - [GetEventResultTypeDef](./type_defs.md#geteventresulttypedef)
 - [GetEventTypesResultTypeDef](./type_defs.md#geteventtypesresulttypedef)
 - [GetEventPredictionResultTypeDef](./type_defs.md#geteventpredictionresulttypedef)
@@ -264,8 +271,10 @@ def get_value() -> BatchCreateVariableErrorTypeDef:
 - [GetModelVersionResultTypeDef](./type_defs.md#getmodelversionresulttypedef)
 - [TrainingResultTypeDef](./type_defs.md#trainingresulttypedef)
 - [ModelVersionEvaluationTypeDef](./type_defs.md#modelversionevaluationtypedef)
-- [ModelVersionDetailTypeDef](./type_defs.md#modelversiondetailtypedef)
+- [TrainingMetricsV2TypeDef](./type_defs.md#trainingmetricsv2typedef)
 - [EvaluatedModelVersionTypeDef](./type_defs.md#evaluatedmodelversiontypedef)
-- [DescribeModelVersionsResultTypeDef](./type_defs.md#describemodelversionsresulttypedef)
+- [TrainingResultV2TypeDef](./type_defs.md#trainingresultv2typedef)
 - [GetEventPredictionMetadataResultTypeDef](./type_defs.md#geteventpredictionmetadataresulttypedef)
+- [ModelVersionDetailTypeDef](./type_defs.md#modelversiondetailtypedef)
+- [DescribeModelVersionsResultTypeDef](./type_defs.md#describemodelversionsresulttypedef)
 

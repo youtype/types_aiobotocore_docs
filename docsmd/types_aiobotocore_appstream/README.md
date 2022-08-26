@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `AppStream`.
 
 ### From PyPI with pip
 
@@ -151,6 +146,7 @@ def get_value() -> AccessEndpointTypeType:
 - [MessageActionType](./literals.md#messageactiontype)
 - [PermissionType](./literals.md#permissiontype)
 - [PlatformTypeType](./literals.md#platformtypetype)
+- [PreferredProtocolType](./literals.md#preferredprotocoltype)
 - [SessionConnectionStateType](./literals.md#sessionconnectionstatetype)
 - [SessionStateType](./literals.md#sessionstatetype)
 - [StackAttributeType](./literals.md#stackattributetype)
@@ -203,6 +199,7 @@ def get_value() -> AccessEndpointTypeDef:
 - [VpcConfigTypeDef](./type_defs.md#vpcconfigtypedef)
 - [CreateImageBuilderStreamingURLRequestRequestTypeDef](./type_defs.md#createimagebuilderstreamingurlrequestrequesttypedef)
 - [StorageConnectorTypeDef](./type_defs.md#storageconnectortypedef)
+- [StreamingExperienceSettingsTypeDef](./type_defs.md#streamingexperiencesettingstypedef)
 - [UserSettingTypeDef](./type_defs.md#usersettingtypedef)
 - [CreateStreamingURLRequestRequestTypeDef](./type_defs.md#createstreamingurlrequestrequesttypedef)
 - [CreateUpdatedImageRequestRequestTypeDef](./type_defs.md#createupdatedimagerequestrequesttypedef)

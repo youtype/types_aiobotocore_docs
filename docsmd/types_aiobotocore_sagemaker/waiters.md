@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_sagemaker.waiter import EndpointDeletedWaiter
 
-def get_endpoint_deleted_waiter() -> EndpointDeletedWaiter:
-    return Session().client("sagemaker").get_waiter("endpoint_deleted")
+session = get_session()
+async with session.create_client("sagemaker") as client:  # (1)
+    waiter: EndpointDeletedWaiter = client.get_waiter("endpoint_deleted")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. waiter: [EndpointDeletedWaiter](./waiters.md#endpointdeletedwaiter)
 
 
 ### wait
@@ -58,9 +63,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_sagemaker.waiter import EndpointInServiceWaiter
 
-def get_endpoint_in_service_waiter() -> EndpointInServiceWaiter:
-    return Session().client("sagemaker").get_waiter("endpoint_in_service")
+session = get_session()
+async with session.create_client("sagemaker") as client:  # (1)
+    waiter: EndpointInServiceWaiter = client.get_waiter("endpoint_in_service")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. waiter: [EndpointInServiceWaiter](./waiters.md#endpointinservicewaiter)
 
 
 ### wait
@@ -99,9 +109,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_sagemaker.waiter import ImageCreatedWaiter
 
-def get_image_created_waiter() -> ImageCreatedWaiter:
-    return Session().client("sagemaker").get_waiter("image_created")
+session = get_session()
+async with session.create_client("sagemaker") as client:  # (1)
+    waiter: ImageCreatedWaiter = client.get_waiter("image_created")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. waiter: [ImageCreatedWaiter](./waiters.md#imagecreatedwaiter)
 
 
 ### wait
@@ -140,9 +155,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_sagemaker.waiter import ImageDeletedWaiter
 
-def get_image_deleted_waiter() -> ImageDeletedWaiter:
-    return Session().client("sagemaker").get_waiter("image_deleted")
+session = get_session()
+async with session.create_client("sagemaker") as client:  # (1)
+    waiter: ImageDeletedWaiter = client.get_waiter("image_deleted")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. waiter: [ImageDeletedWaiter](./waiters.md#imagedeletedwaiter)
 
 
 ### wait
@@ -181,9 +201,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_sagemaker.waiter import ImageUpdatedWaiter
 
-def get_image_updated_waiter() -> ImageUpdatedWaiter:
-    return Session().client("sagemaker").get_waiter("image_updated")
+session = get_session()
+async with session.create_client("sagemaker") as client:  # (1)
+    waiter: ImageUpdatedWaiter = client.get_waiter("image_updated")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. waiter: [ImageUpdatedWaiter](./waiters.md#imageupdatedwaiter)
 
 
 ### wait
@@ -222,9 +247,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_sagemaker.waiter import ImageVersionCreatedWaiter
 
-def get_image_version_created_waiter() -> ImageVersionCreatedWaiter:
-    return Session().client("sagemaker").get_waiter("image_version_created")
+session = get_session()
+async with session.create_client("sagemaker") as client:  # (1)
+    waiter: ImageVersionCreatedWaiter = client.get_waiter("image_version_created")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. waiter: [ImageVersionCreatedWaiter](./waiters.md#imageversioncreatedwaiter)
 
 
 ### wait
@@ -264,9 +294,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_sagemaker.waiter import ImageVersionDeletedWaiter
 
-def get_image_version_deleted_waiter() -> ImageVersionDeletedWaiter:
-    return Session().client("sagemaker").get_waiter("image_version_deleted")
+session = get_session()
+async with session.create_client("sagemaker") as client:  # (1)
+    waiter: ImageVersionDeletedWaiter = client.get_waiter("image_version_deleted")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. waiter: [ImageVersionDeletedWaiter](./waiters.md#imageversiondeletedwaiter)
 
 
 ### wait
@@ -306,9 +341,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_sagemaker.waiter import NotebookInstanceDeletedWaiter
 
-def get_notebook_instance_deleted_waiter() -> NotebookInstanceDeletedWaiter:
-    return Session().client("sagemaker").get_waiter("notebook_instance_deleted")
+session = get_session()
+async with session.create_client("sagemaker") as client:  # (1)
+    waiter: NotebookInstanceDeletedWaiter = client.get_waiter("notebook_instance_deleted")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. waiter: [NotebookInstanceDeletedWaiter](./waiters.md#notebookinstancedeletedwaiter)
 
 
 ### wait
@@ -347,9 +387,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_sagemaker.waiter import NotebookInstanceInServiceWaiter
 
-def get_notebook_instance_in_service_waiter() -> NotebookInstanceInServiceWaiter:
-    return Session().client("sagemaker").get_waiter("notebook_instance_in_service")
+session = get_session()
+async with session.create_client("sagemaker") as client:  # (1)
+    waiter: NotebookInstanceInServiceWaiter = client.get_waiter("notebook_instance_in_service")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. waiter: [NotebookInstanceInServiceWaiter](./waiters.md#notebookinstanceinservicewaiter)
 
 
 ### wait
@@ -388,9 +433,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_sagemaker.waiter import NotebookInstanceStoppedWaiter
 
-def get_notebook_instance_stopped_waiter() -> NotebookInstanceStoppedWaiter:
-    return Session().client("sagemaker").get_waiter("notebook_instance_stopped")
+session = get_session()
+async with session.create_client("sagemaker") as client:  # (1)
+    waiter: NotebookInstanceStoppedWaiter = client.get_waiter("notebook_instance_stopped")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. waiter: [NotebookInstanceStoppedWaiter](./waiters.md#notebookinstancestoppedwaiter)
 
 
 ### wait
@@ -429,9 +479,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_sagemaker.waiter import ProcessingJobCompletedOrStoppedWaiter
 
-def get_processing_job_completed_or_stopped_waiter() -> ProcessingJobCompletedOrStoppedWaiter:
-    return Session().client("sagemaker").get_waiter("processing_job_completed_or_stopped")
+session = get_session()
+async with session.create_client("sagemaker") as client:  # (1)
+    waiter: ProcessingJobCompletedOrStoppedWaiter = client.get_waiter("processing_job_completed_or_stopped")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. waiter: [ProcessingJobCompletedOrStoppedWaiter](./waiters.md#processingjobcompletedorstoppedwaiter)
 
 
 ### wait
@@ -470,9 +525,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_sagemaker.waiter import TrainingJobCompletedOrStoppedWaiter
 
-def get_training_job_completed_or_stopped_waiter() -> TrainingJobCompletedOrStoppedWaiter:
-    return Session().client("sagemaker").get_waiter("training_job_completed_or_stopped")
+session = get_session()
+async with session.create_client("sagemaker") as client:  # (1)
+    waiter: TrainingJobCompletedOrStoppedWaiter = client.get_waiter("training_job_completed_or_stopped")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. waiter: [TrainingJobCompletedOrStoppedWaiter](./waiters.md#trainingjobcompletedorstoppedwaiter)
 
 
 ### wait
@@ -511,9 +571,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_sagemaker.waiter import TransformJobCompletedOrStoppedWaiter
 
-def get_transform_job_completed_or_stopped_waiter() -> TransformJobCompletedOrStoppedWaiter:
-    return Session().client("sagemaker").get_waiter("transform_job_completed_or_stopped")
+session = get_session()
+async with session.create_client("sagemaker") as client:  # (1)
+    waiter: TransformJobCompletedOrStoppedWaiter = client.get_waiter("transform_job_completed_or_stopped")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. waiter: [TransformJobCompletedOrStoppedWaiter](./waiters.md#transformjobcompletedorstoppedwaiter)
 
 
 ### wait

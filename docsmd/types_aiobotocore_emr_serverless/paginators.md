@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_emr_serverless.paginator import ListApplicationsPaginator
 
 session = get_session()
-async with session.create_client("emr-serverless") as client:
-    client: EMRServerlessClient
-    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")
+async with session.create_client("emr-serverless") as client:  # (1)
+    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListApplicationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EMRServerlessClient](./client.md)
+2. paginator: [ListApplicationsPaginator](./paginators.md#listapplicationspaginator)
+3. item: [:material-code-braces: ListApplicationsResponseTypeDef](./type_defs.md#listapplicationsresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_emr_serverless.paginator import ListJobRunsPaginator
 
 session = get_session()
-async with session.create_client("emr-serverless") as client:
-    client: EMRServerlessClient
-    paginator: ListJobRunsPaginator = client.get_paginator("list_job_runs")
+async with session.create_client("emr-serverless") as client:  # (1)
+    paginator: ListJobRunsPaginator = client.get_paginator("list_job_runs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListJobRunsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EMRServerlessClient](./client.md)
+2. paginator: [ListJobRunsPaginator](./paginators.md#listjobrunspaginator)
+3. item: [:material-code-braces: ListJobRunsResponseTypeDef](./type_defs.md#listjobrunsresponsetypedef) 
 
 
 ### paginate

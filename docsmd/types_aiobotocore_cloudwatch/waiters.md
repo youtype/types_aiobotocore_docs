@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_cloudwatch.waiter import AlarmExistsWaiter
 
-def get_alarm_exists_waiter() -> AlarmExistsWaiter:
-    return Session().client("cloudwatch").get_waiter("alarm_exists")
+session = get_session()
+async with session.create_client("cloudwatch") as client:  # (1)
+    waiter: AlarmExistsWaiter = client.get_waiter("alarm_exists")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [CloudWatchClient](./client.md)
+2. waiter: [AlarmExistsWaiter](./waiters.md#alarmexistswaiter)
 
 
 ### wait
@@ -68,9 +73,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_cloudwatch.waiter import CompositeAlarmExistsWaiter
 
-def get_composite_alarm_exists_waiter() -> CompositeAlarmExistsWaiter:
-    return Session().client("cloudwatch").get_waiter("composite_alarm_exists")
+session = get_session()
+async with session.create_client("cloudwatch") as client:  # (1)
+    waiter: CompositeAlarmExistsWaiter = client.get_waiter("composite_alarm_exists")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [CloudWatchClient](./client.md)
+2. waiter: [CompositeAlarmExistsWaiter](./waiters.md#compositealarmexistswaiter)
 
 
 ### wait

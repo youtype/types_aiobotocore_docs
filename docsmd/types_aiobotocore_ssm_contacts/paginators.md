@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm_contacts.paginator import ListContactChannelsPaginator
 
 session = get_session()
-async with session.create_client("ssm-contacts") as client:
-    client: SSMContactsClient
-    paginator: ListContactChannelsPaginator = client.get_paginator("list_contact_channels")
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListContactChannelsPaginator = client.get_paginator("list_contact_channels")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListContactChannelsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListContactChannelsPaginator](./paginators.md#listcontactchannelspaginator)
+3. item: [:material-code-braces: ListContactChannelsResultTypeDef](./type_defs.md#listcontactchannelsresulttypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm_contacts.paginator import ListContactsPaginator
 
 session = get_session()
-async with session.create_client("ssm-contacts") as client:
-    client: SSMContactsClient
-    paginator: ListContactsPaginator = client.get_paginator("list_contacts")
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListContactsPaginator = client.get_paginator("list_contacts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListContactsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListContactsPaginator](./paginators.md#listcontactspaginator)
+3. item: [:material-code-braces: ListContactsResultTypeDef](./type_defs.md#listcontactsresulttypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm_contacts.paginator import ListEngagementsPaginator
 
 session = get_session()
-async with session.create_client("ssm-contacts") as client:
-    client: SSMContactsClient
-    paginator: ListEngagementsPaginator = client.get_paginator("list_engagements")
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListEngagementsPaginator = client.get_paginator("list_engagements")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEngagementsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListEngagementsPaginator](./paginators.md#listengagementspaginator)
+3. item: [:material-code-braces: ListEngagementsResultTypeDef](./type_defs.md#listengagementsresulttypedef) 
 
 
 ### paginate
@@ -154,10 +172,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm_contacts.paginator import ListPageReceiptsPaginator
 
 session = get_session()
-async with session.create_client("ssm-contacts") as client:
-    client: SSMContactsClient
-    paginator: ListPageReceiptsPaginator = client.get_paginator("list_page_receipts")
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListPageReceiptsPaginator = client.get_paginator("list_page_receipts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPageReceiptsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListPageReceiptsPaginator](./paginators.md#listpagereceiptspaginator)
+3. item: [:material-code-braces: ListPageReceiptsResultTypeDef](./type_defs.md#listpagereceiptsresulttypedef) 
 
 
 ### paginate
@@ -198,10 +222,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm_contacts.paginator import ListPagesByContactPaginator
 
 session = get_session()
-async with session.create_client("ssm-contacts") as client:
-    client: SSMContactsClient
-    paginator: ListPagesByContactPaginator = client.get_paginator("list_pages_by_contact")
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListPagesByContactPaginator = client.get_paginator("list_pages_by_contact")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPagesByContactResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListPagesByContactPaginator](./paginators.md#listpagesbycontactpaginator)
+3. item: [:material-code-braces: ListPagesByContactResultTypeDef](./type_defs.md#listpagesbycontactresulttypedef) 
 
 
 ### paginate
@@ -242,10 +272,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ssm_contacts.paginator import ListPagesByEngagementPaginator
 
 session = get_session()
-async with session.create_client("ssm-contacts") as client:
-    client: SSMContactsClient
-    paginator: ListPagesByEngagementPaginator = client.get_paginator("list_pages_by_engagement")
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListPagesByEngagementPaginator = client.get_paginator("list_pages_by_engagement")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPagesByEngagementResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListPagesByEngagementPaginator](./paginators.md#listpagesbyengagementpaginator)
+3. item: [:material-code-braces: ListPagesByEngagementResultTypeDef](./type_defs.md#listpagesbyengagementresulttypedef) 
 
 
 ### paginate

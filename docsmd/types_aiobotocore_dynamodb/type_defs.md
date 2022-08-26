@@ -827,6 +827,23 @@ class TagServiceResourceTypeDef(TypedDict):
     Value: str,
 ```
 
+## CsvOptionsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_dynamodb.type_defs import CsvOptionsTypeDef
+
+def get_value() -> CsvOptionsTypeDef:
+    return {
+        "Delimiter": ...,
+    }
+```
+
+```python title="Definition"
+class CsvOptionsTypeDef(TypedDict):
+    Delimiter: NotRequired[str],
+    HeaderList: NotRequired[List[str]],
+```
+
 ## DeleteBackupInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -1161,6 +1178,22 @@ class DescribeGlobalTableSettingsInputRequestTypeDef(TypedDict):
     GlobalTableName: str,
 ```
 
+## DescribeImportInputRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_dynamodb.type_defs import DescribeImportInputRequestTypeDef
+
+def get_value() -> DescribeImportInputRequestTypeDef:
+    return {
+        "ImportArn": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeImportInputRequestTypeDef(TypedDict):
+    ImportArn: str,
+```
+
 ## DescribeKinesisStreamingDestinationInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -1404,6 +1437,24 @@ class ProjectionServiceResourceTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: ProjectionTypeType](./literals.md#projectiontypetype) 
+## S3BucketSourceTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_dynamodb.type_defs import S3BucketSourceTypeDef
+
+def get_value() -> S3BucketSourceTypeDef:
+    return {
+        "S3Bucket": ...,
+    }
+```
+
+```python title="Definition"
+class S3BucketSourceTypeDef(TypedDict):
+    S3Bucket: str,
+    S3BucketOwner: NotRequired[str],
+    S3KeyPrefix: NotRequired[str],
+```
+
 ## KinesisStreamingDestinationInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -1514,6 +1565,24 @@ class ListGlobalTablesInputRequestTypeDef(TypedDict):
     ExclusiveStartGlobalTableName: NotRequired[str],
     Limit: NotRequired[int],
     RegionName: NotRequired[str],
+```
+
+## ListImportsInputRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_dynamodb.type_defs import ListImportsInputRequestTypeDef
+
+def get_value() -> ListImportsInputRequestTypeDef:
+    return {
+        "TableArn": ...,
+    }
+```
+
+```python title="Definition"
+class ListImportsInputRequestTypeDef(TypedDict):
+    TableArn: NotRequired[str],
+    PageSize: NotRequired[int],
+    NextToken: NotRequired[str],
 ```
 
 ## ListTablesInputRequestTypeDef
@@ -2156,7 +2225,7 @@ def get_value() -> AttributeValueUpdateTypeDef:
 
 ```python title="Definition"
 class AttributeValueUpdateTypeDef(TypedDict):
-    Value: NotRequired[AttributeValueTypeDef],  # (1)
+    Value: NotRequired[Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
     Action: NotRequired[AttributeActionType],  # (2)
 ```
 
@@ -2176,7 +2245,7 @@ def get_value() -> BatchStatementRequestTypeDef:
 ```python title="Definition"
 class BatchStatementRequestTypeDef(TypedDict):
     Statement: str,
-    Parameters: NotRequired[Sequence[AttributeValueTypeDef]],  # (1)
+    Parameters: NotRequired[Sequence[Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (1)
     ConsistentRead: NotRequired[bool],
 ```
 
@@ -2196,11 +2265,11 @@ def get_value() -> ConditionCheckTypeDef:
 
 ```python title="Definition"
 class ConditionCheckTypeDef(TypedDict):
-    Key: Mapping[str, AttributeValueTypeDef],  # (1)
+    Key: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
     TableName: str,
     ConditionExpression: str,
     ExpressionAttributeNames: NotRequired[Mapping[str, str]],
-    ExpressionAttributeValues: NotRequired[Mapping[str, AttributeValueTypeDef]],  # (1)
+    ExpressionAttributeValues: NotRequired[Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (1)
     ReturnValuesOnConditionCheckFailure: NotRequired[ReturnValuesOnConditionCheckFailureType],  # (3)
 ```
 
@@ -2221,7 +2290,7 @@ def get_value() -> ConditionTypeDef:
 ```python title="Definition"
 class ConditionTypeDef(TypedDict):
     ComparisonOperator: ComparisonOperatorType,  # (2)
-    AttributeValueList: NotRequired[Sequence[AttributeValueTypeDef]],  # (1)
+    AttributeValueList: NotRequired[Sequence[Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (1)
 ```
 
 1. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
@@ -2239,7 +2308,7 @@ def get_value() -> DeleteRequestTypeDef:
 
 ```python title="Definition"
 class DeleteRequestTypeDef(TypedDict):
-    Key: Mapping[str, AttributeValueTypeDef],  # (1)
+    Key: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
 ```
 
 1. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
@@ -2257,11 +2326,11 @@ def get_value() -> DeleteTypeDef:
 
 ```python title="Definition"
 class DeleteTypeDef(TypedDict):
-    Key: Mapping[str, AttributeValueTypeDef],  # (1)
+    Key: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
     TableName: str,
     ConditionExpression: NotRequired[str],
     ExpressionAttributeNames: NotRequired[Mapping[str, str]],
-    ExpressionAttributeValues: NotRequired[Mapping[str, AttributeValueTypeDef]],  # (1)
+    ExpressionAttributeValues: NotRequired[Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (1)
     ReturnValuesOnConditionCheckFailure: NotRequired[ReturnValuesOnConditionCheckFailureType],  # (3)
 ```
 
@@ -2282,7 +2351,7 @@ def get_value() -> ExecuteStatementInputRequestTypeDef:
 ```python title="Definition"
 class ExecuteStatementInputRequestTypeDef(TypedDict):
     Statement: str,
-    Parameters: NotRequired[Sequence[AttributeValueTypeDef]],  # (1)
+    Parameters: NotRequired[Sequence[Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (1)
     ConsistentRead: NotRequired[bool],
     NextToken: NotRequired[str],
     ReturnConsumedCapacity: NotRequired[ReturnConsumedCapacityType],  # (2)
@@ -2304,10 +2373,10 @@ def get_value() -> ExpectedAttributeValueTypeDef:
 
 ```python title="Definition"
 class ExpectedAttributeValueTypeDef(TypedDict):
-    Value: NotRequired[AttributeValueTypeDef],  # (1)
+    Value: NotRequired[Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
     Exists: NotRequired[bool],
     ComparisonOperator: NotRequired[ComparisonOperatorType],  # (2)
-    AttributeValueList: NotRequired[Sequence[AttributeValueTypeDef]],  # (3)
+    AttributeValueList: NotRequired[Sequence[Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (3)
 ```
 
 1. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
@@ -2328,7 +2397,7 @@ def get_value() -> GetItemInputRequestTypeDef:
 ```python title="Definition"
 class GetItemInputRequestTypeDef(TypedDict):
     TableName: str,
-    Key: Mapping[str, AttributeValueTypeDef],  # (1)
+    Key: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
     AttributesToGet: NotRequired[Sequence[str]],
     ConsistentRead: NotRequired[bool],
     ReturnConsumedCapacity: NotRequired[ReturnConsumedCapacityType],  # (2)
@@ -2352,7 +2421,7 @@ def get_value() -> GetTypeDef:
 
 ```python title="Definition"
 class GetTypeDef(TypedDict):
-    Key: Mapping[str, AttributeValueTypeDef],  # (1)
+    Key: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
     TableName: str,
     ProjectionExpression: NotRequired[str],
     ExpressionAttributeNames: NotRequired[Mapping[str, str]],
@@ -2407,7 +2476,7 @@ def get_value() -> KeysAndAttributesTypeDef:
 
 ```python title="Definition"
 class KeysAndAttributesTypeDef(TypedDict):
-    Keys: Sequence[Mapping[str, AttributeValueTypeDef]],  # (1)
+    Keys: Sequence[Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (1)
     AttributesToGet: NotRequired[Sequence[str]],
     ConsistentRead: NotRequired[bool],
     ProjectionExpression: NotRequired[str],
@@ -2429,7 +2498,7 @@ def get_value() -> ParameterizedStatementTypeDef:
 ```python title="Definition"
 class ParameterizedStatementTypeDef(TypedDict):
     Statement: str,
-    Parameters: NotRequired[Sequence[AttributeValueTypeDef]],  # (1)
+    Parameters: NotRequired[Sequence[Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (1)
 ```
 
 1. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
@@ -2446,7 +2515,7 @@ def get_value() -> PutRequestTypeDef:
 
 ```python title="Definition"
 class PutRequestTypeDef(TypedDict):
-    Item: Mapping[str, AttributeValueTypeDef],  # (1)
+    Item: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
 ```
 
 1. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
@@ -2464,11 +2533,11 @@ def get_value() -> PutTypeDef:
 
 ```python title="Definition"
 class PutTypeDef(TypedDict):
-    Item: Mapping[str, AttributeValueTypeDef],  # (1)
+    Item: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
     TableName: str,
     ConditionExpression: NotRequired[str],
     ExpressionAttributeNames: NotRequired[Mapping[str, str]],
-    ExpressionAttributeValues: NotRequired[Mapping[str, AttributeValueTypeDef]],  # (1)
+    ExpressionAttributeValues: NotRequired[Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (1)
     ReturnValuesOnConditionCheckFailure: NotRequired[ReturnValuesOnConditionCheckFailureType],  # (3)
 ```
 
@@ -2490,12 +2559,12 @@ def get_value() -> UpdateTypeDef:
 
 ```python title="Definition"
 class UpdateTypeDef(TypedDict):
-    Key: Mapping[str, AttributeValueTypeDef],  # (1)
+    Key: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
     UpdateExpression: str,
     TableName: str,
     ConditionExpression: NotRequired[str],
     ExpressionAttributeNames: NotRequired[Mapping[str, str]],
-    ExpressionAttributeValues: NotRequired[Mapping[str, AttributeValueTypeDef]],  # (1)
+    ExpressionAttributeValues: NotRequired[Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (1)
     ReturnValuesOnConditionCheckFailure: NotRequired[ReturnValuesOnConditionCheckFailureType],  # (3)
 ```
 
@@ -3228,6 +3297,23 @@ class TagResourceInputRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+## InputFormatOptionsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_dynamodb.type_defs import InputFormatOptionsTypeDef
+
+def get_value() -> InputFormatOptionsTypeDef:
+    return {
+        "Csv": ...,
+    }
+```
+
+```python title="Definition"
+class InputFormatOptionsTypeDef(TypedDict):
+    Csv: NotRequired[CsvOptionsTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: CsvOptionsTypeDef](./type_defs.md#csvoptionstypedef) 
 ## DeleteItemInputTableDeleteItemTypeDef
 
 ```python title="Usage Example"
@@ -3247,7 +3333,7 @@ class DeleteItemInputTableDeleteItemTypeDef(TypedDict):
     ReturnValues: NotRequired[ReturnValueType],  # (3)
     ReturnConsumedCapacity: NotRequired[ReturnConsumedCapacityType],  # (4)
     ReturnItemCollectionMetrics: NotRequired[ReturnItemCollectionMetricsType],  # (5)
-    ConditionExpression: NotRequired[str],
+    ConditionExpression: NotRequired[Union[str, ConditionBase]],
     ExpressionAttributeNames: NotRequired[Mapping[str, str]],
     ExpressionAttributeValues: NotRequired[Mapping[str, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],
 ```
@@ -3276,7 +3362,7 @@ class PutItemInputTablePutItemTypeDef(TypedDict):
     ReturnConsumedCapacity: NotRequired[ReturnConsumedCapacityType],  # (3)
     ReturnItemCollectionMetrics: NotRequired[ReturnItemCollectionMetricsType],  # (4)
     ConditionalOperator: NotRequired[ConditionalOperatorType],  # (5)
-    ConditionExpression: NotRequired[str],
+    ConditionExpression: NotRequired[Union[str, ConditionBase]],
     ExpressionAttributeNames: NotRequired[Mapping[str, str]],
     ExpressionAttributeValues: NotRequired[Mapping[str, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],
 ```
@@ -3307,7 +3393,7 @@ class UpdateItemInputTableUpdateItemTypeDef(TypedDict):
     ReturnConsumedCapacity: NotRequired[ReturnConsumedCapacityType],  # (5)
     ReturnItemCollectionMetrics: NotRequired[ReturnItemCollectionMetricsType],  # (6)
     UpdateExpression: NotRequired[str],
-    ConditionExpression: NotRequired[str],
+    ConditionExpression: NotRequired[Union[str, ConditionBase]],
     ExpressionAttributeNames: NotRequired[Mapping[str, str]],
     ExpressionAttributeValues: NotRequired[Mapping[str, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],
 ```
@@ -3630,6 +3716,32 @@ class LocalSecondaryIndexServiceResourceTypeDef(TypedDict):
 
 1. See [:material-code-braces: KeySchemaElementServiceResourceTypeDef](./type_defs.md#keyschemaelementserviceresourcetypedef) 
 2. See [:material-code-braces: ProjectionServiceResourceTypeDef](./type_defs.md#projectionserviceresourcetypedef) 
+## ImportSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_dynamodb.type_defs import ImportSummaryTypeDef
+
+def get_value() -> ImportSummaryTypeDef:
+    return {
+        "ImportArn": ...,
+    }
+```
+
+```python title="Definition"
+class ImportSummaryTypeDef(TypedDict):
+    ImportArn: NotRequired[str],
+    ImportStatus: NotRequired[ImportStatusType],  # (1)
+    TableArn: NotRequired[str],
+    S3BucketSource: NotRequired[S3BucketSourceTypeDef],  # (2)
+    CloudWatchLogGroupArn: NotRequired[str],
+    InputFormat: NotRequired[InputFormatType],  # (3)
+    StartTime: NotRequired[datetime],
+    EndTime: NotRequired[datetime],
+```
+
+1. See [:material-code-brackets: ImportStatusType](./literals.md#importstatustype) 
+2. See [:material-code-braces: S3BucketSourceTypeDef](./type_defs.md#s3bucketsourcetypedef) 
+3. See [:material-code-brackets: InputFormatType](./literals.md#inputformattype) 
 ## ListBackupsInputListBackupsPaginateTypeDef
 
 ```python title="Usage Example"
@@ -3900,13 +4012,13 @@ class QueryInputRequestTypeDef(TypedDict):
     QueryFilter: NotRequired[Mapping[str, ConditionTypeDef]],  # (2)
     ConditionalOperator: NotRequired[ConditionalOperatorType],  # (4)
     ScanIndexForward: NotRequired[bool],
-    ExclusiveStartKey: NotRequired[Mapping[str, AttributeValueTypeDef]],  # (5)
+    ExclusiveStartKey: NotRequired[Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (5)
     ReturnConsumedCapacity: NotRequired[ReturnConsumedCapacityType],  # (6)
     ProjectionExpression: NotRequired[str],
     FilterExpression: NotRequired[str],
     KeyConditionExpression: NotRequired[str],
     ExpressionAttributeNames: NotRequired[Mapping[str, str]],
-    ExpressionAttributeValues: NotRequired[Mapping[str, AttributeValueTypeDef]],  # (5)
+    ExpressionAttributeValues: NotRequired[Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (5)
 ```
 
 1. See [:material-code-brackets: SelectType](./literals.md#selecttype) 
@@ -3936,14 +4048,14 @@ class ScanInputRequestTypeDef(TypedDict):
     Select: NotRequired[SelectType],  # (1)
     ScanFilter: NotRequired[Mapping[str, ConditionTypeDef]],  # (2)
     ConditionalOperator: NotRequired[ConditionalOperatorType],  # (3)
-    ExclusiveStartKey: NotRequired[Mapping[str, AttributeValueTypeDef]],  # (4)
+    ExclusiveStartKey: NotRequired[Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (4)
     ReturnConsumedCapacity: NotRequired[ReturnConsumedCapacityType],  # (5)
     TotalSegments: NotRequired[int],
     Segment: NotRequired[int],
     ProjectionExpression: NotRequired[str],
     FilterExpression: NotRequired[str],
     ExpressionAttributeNames: NotRequired[Mapping[str, str]],
-    ExpressionAttributeValues: NotRequired[Mapping[str, AttributeValueTypeDef]],  # (4)
+    ExpressionAttributeValues: NotRequired[Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (4)
     ConsistentRead: NotRequired[bool],
 ```
 
@@ -3968,7 +4080,7 @@ def get_value() -> DeleteItemInputRequestTypeDef:
 ```python title="Definition"
 class DeleteItemInputRequestTypeDef(TypedDict):
     TableName: str,
-    Key: Mapping[str, AttributeValueTypeDef],  # (1)
+    Key: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
     Expected: NotRequired[Mapping[str, ExpectedAttributeValueTypeDef]],  # (2)
     ConditionalOperator: NotRequired[ConditionalOperatorType],  # (3)
     ReturnValues: NotRequired[ReturnValueType],  # (4)
@@ -3976,7 +4088,7 @@ class DeleteItemInputRequestTypeDef(TypedDict):
     ReturnItemCollectionMetrics: NotRequired[ReturnItemCollectionMetricsType],  # (6)
     ConditionExpression: NotRequired[str],
     ExpressionAttributeNames: NotRequired[Mapping[str, str]],
-    ExpressionAttributeValues: NotRequired[Mapping[str, AttributeValueTypeDef]],  # (1)
+    ExpressionAttributeValues: NotRequired[Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (1)
 ```
 
 1. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
@@ -4001,7 +4113,7 @@ def get_value() -> PutItemInputRequestTypeDef:
 ```python title="Definition"
 class PutItemInputRequestTypeDef(TypedDict):
     TableName: str,
-    Item: Mapping[str, AttributeValueTypeDef],  # (1)
+    Item: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
     Expected: NotRequired[Mapping[str, ExpectedAttributeValueTypeDef]],  # (2)
     ReturnValues: NotRequired[ReturnValueType],  # (3)
     ReturnConsumedCapacity: NotRequired[ReturnConsumedCapacityType],  # (4)
@@ -4009,7 +4121,7 @@ class PutItemInputRequestTypeDef(TypedDict):
     ConditionalOperator: NotRequired[ConditionalOperatorType],  # (6)
     ConditionExpression: NotRequired[str],
     ExpressionAttributeNames: NotRequired[Mapping[str, str]],
-    ExpressionAttributeValues: NotRequired[Mapping[str, AttributeValueTypeDef]],  # (1)
+    ExpressionAttributeValues: NotRequired[Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (1)
 ```
 
 1. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
@@ -4034,7 +4146,7 @@ def get_value() -> UpdateItemInputRequestTypeDef:
 ```python title="Definition"
 class UpdateItemInputRequestTypeDef(TypedDict):
     TableName: str,
-    Key: Mapping[str, AttributeValueTypeDef],  # (1)
+    Key: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
     AttributeUpdates: NotRequired[Mapping[str, AttributeValueUpdateTypeDef]],  # (2)
     Expected: NotRequired[Mapping[str, ExpectedAttributeValueTypeDef]],  # (3)
     ConditionalOperator: NotRequired[ConditionalOperatorType],  # (4)
@@ -4044,7 +4156,7 @@ class UpdateItemInputRequestTypeDef(TypedDict):
     UpdateExpression: NotRequired[str],
     ConditionExpression: NotRequired[str],
     ExpressionAttributeNames: NotRequired[Mapping[str, str]],
-    ExpressionAttributeValues: NotRequired[Mapping[str, AttributeValueTypeDef]],  # (1)
+    ExpressionAttributeValues: NotRequired[Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]]],  # (1)
 ```
 
 1. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
@@ -4862,6 +4974,36 @@ class RestoreTableToPointInTimeInputRequestTypeDef(TypedDict):
 3. See [:material-code-braces: LocalSecondaryIndexTypeDef](./type_defs.md#localsecondaryindextypedef) 
 4. See [:material-code-braces: ProvisionedThroughputTypeDef](./type_defs.md#provisionedthroughputtypedef) 
 5. See [:material-code-braces: SSESpecificationTypeDef](./type_defs.md#ssespecificationtypedef) 
+## TableCreationParametersTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_dynamodb.type_defs import TableCreationParametersTypeDef
+
+def get_value() -> TableCreationParametersTypeDef:
+    return {
+        "TableName": ...,
+        "AttributeDefinitions": ...,
+        "KeySchema": ...,
+    }
+```
+
+```python title="Definition"
+class TableCreationParametersTypeDef(TypedDict):
+    TableName: str,
+    AttributeDefinitions: List[AttributeDefinitionTypeDef],  # (1)
+    KeySchema: List[KeySchemaElementTypeDef],  # (2)
+    BillingMode: NotRequired[BillingModeType],  # (3)
+    ProvisionedThroughput: NotRequired[ProvisionedThroughputTypeDef],  # (4)
+    SSESpecification: NotRequired[SSESpecificationTypeDef],  # (5)
+    GlobalSecondaryIndexes: NotRequired[List[GlobalSecondaryIndexTypeDef]],  # (6)
+```
+
+1. See [:material-code-braces: AttributeDefinitionTypeDef](./type_defs.md#attributedefinitiontypedef) 
+2. See [:material-code-braces: KeySchemaElementTypeDef](./type_defs.md#keyschemaelementtypedef) 
+3. See [:material-code-brackets: BillingModeType](./literals.md#billingmodetype) 
+4. See [:material-code-braces: ProvisionedThroughputTypeDef](./type_defs.md#provisionedthroughputtypedef) 
+5. See [:material-code-braces: SSESpecificationTypeDef](./type_defs.md#ssespecificationtypedef) 
+6. See [:material-code-braces: GlobalSecondaryIndexTypeDef](./type_defs.md#globalsecondaryindextypedef) 
 ## GlobalSecondaryIndexUpdateTypeDef
 
 ```python title="Usage Example"
@@ -5110,6 +5252,28 @@ class CreateTableInputServiceResourceCreateTableTypeDef(TypedDict):
 8. See [:material-code-braces: SSESpecificationServiceResourceTypeDef](./type_defs.md#ssespecificationserviceresourcetypedef) 
 9. See [:material-code-braces: TagServiceResourceTypeDef](./type_defs.md#tagserviceresourcetypedef) 
 10. See [:material-code-brackets: TableClassType](./literals.md#tableclasstype) 
+## ListImportsOutputTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_dynamodb.type_defs import ListImportsOutputTypeDef
+
+def get_value() -> ListImportsOutputTypeDef:
+    return {
+        "ImportSummaryList": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListImportsOutputTypeDef(TypedDict):
+    ImportSummaryList: List[ImportSummaryTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: ImportSummaryTypeDef](./type_defs.md#importsummarytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## BatchWriteItemInputServiceResourceBatchWriteItemTypeDef
 
 ```python title="Usage Example"
@@ -5386,6 +5550,74 @@ class BackupDescriptionTypeDef(TypedDict):
 1. See [:material-code-braces: BackupDetailsTypeDef](./type_defs.md#backupdetailstypedef) 
 2. See [:material-code-braces: SourceTableDetailsTypeDef](./type_defs.md#sourcetabledetailstypedef) 
 3. See [:material-code-braces: SourceTableFeatureDetailsTypeDef](./type_defs.md#sourcetablefeaturedetailstypedef) 
+## ImportTableDescriptionTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_dynamodb.type_defs import ImportTableDescriptionTypeDef
+
+def get_value() -> ImportTableDescriptionTypeDef:
+    return {
+        "ImportArn": ...,
+    }
+```
+
+```python title="Definition"
+class ImportTableDescriptionTypeDef(TypedDict):
+    ImportArn: NotRequired[str],
+    ImportStatus: NotRequired[ImportStatusType],  # (1)
+    TableArn: NotRequired[str],
+    TableId: NotRequired[str],
+    ClientToken: NotRequired[str],
+    S3BucketSource: NotRequired[S3BucketSourceTypeDef],  # (2)
+    ErrorCount: NotRequired[int],
+    CloudWatchLogGroupArn: NotRequired[str],
+    InputFormat: NotRequired[InputFormatType],  # (3)
+    InputFormatOptions: NotRequired[InputFormatOptionsTypeDef],  # (4)
+    InputCompressionType: NotRequired[InputCompressionTypeType],  # (5)
+    TableCreationParameters: NotRequired[TableCreationParametersTypeDef],  # (6)
+    StartTime: NotRequired[datetime],
+    EndTime: NotRequired[datetime],
+    ProcessedSizeBytes: NotRequired[int],
+    ProcessedItemCount: NotRequired[int],
+    ImportedItemCount: NotRequired[int],
+    FailureCode: NotRequired[str],
+    FailureMessage: NotRequired[str],
+```
+
+1. See [:material-code-brackets: ImportStatusType](./literals.md#importstatustype) 
+2. See [:material-code-braces: S3BucketSourceTypeDef](./type_defs.md#s3bucketsourcetypedef) 
+3. See [:material-code-brackets: InputFormatType](./literals.md#inputformattype) 
+4. See [:material-code-braces: InputFormatOptionsTypeDef](./type_defs.md#inputformatoptionstypedef) 
+5. See [:material-code-brackets: InputCompressionTypeType](./literals.md#inputcompressiontypetype) 
+6. See [:material-code-braces: TableCreationParametersTypeDef](./type_defs.md#tablecreationparameterstypedef) 
+## ImportTableInputRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_dynamodb.type_defs import ImportTableInputRequestTypeDef
+
+def get_value() -> ImportTableInputRequestTypeDef:
+    return {
+        "S3BucketSource": ...,
+        "InputFormat": ...,
+        "TableCreationParameters": ...,
+    }
+```
+
+```python title="Definition"
+class ImportTableInputRequestTypeDef(TypedDict):
+    S3BucketSource: S3BucketSourceTypeDef,  # (1)
+    InputFormat: InputFormatType,  # (2)
+    TableCreationParameters: TableCreationParametersTypeDef,  # (3)
+    ClientToken: NotRequired[str],
+    InputFormatOptions: NotRequired[InputFormatOptionsTypeDef],  # (4)
+    InputCompressionType: NotRequired[InputCompressionTypeType],  # (5)
+```
+
+1. See [:material-code-braces: S3BucketSourceTypeDef](./type_defs.md#s3bucketsourcetypedef) 
+2. See [:material-code-brackets: InputFormatType](./literals.md#inputformattype) 
+3. See [:material-code-braces: TableCreationParametersTypeDef](./type_defs.md#tablecreationparameterstypedef) 
+4. See [:material-code-braces: InputFormatOptionsTypeDef](./type_defs.md#inputformatoptionstypedef) 
+5. See [:material-code-brackets: InputCompressionTypeType](./literals.md#inputcompressiontypetype) 
 ## TableDescriptionTableTypeDef
 
 ```python title="Usage Example"
@@ -5686,6 +5918,46 @@ class DescribeBackupOutputTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: BackupDescriptionTypeDef](./type_defs.md#backupdescriptiontypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DescribeImportOutputTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_dynamodb.type_defs import DescribeImportOutputTypeDef
+
+def get_value() -> DescribeImportOutputTypeDef:
+    return {
+        "ImportTableDescription": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeImportOutputTypeDef(TypedDict):
+    ImportTableDescription: ImportTableDescriptionTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: ImportTableDescriptionTypeDef](./type_defs.md#importtabledescriptiontypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ImportTableOutputTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_dynamodb.type_defs import ImportTableOutputTypeDef
+
+def get_value() -> ImportTableOutputTypeDef:
+    return {
+        "ImportTableDescription": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ImportTableOutputTypeDef(TypedDict):
+    ImportTableDescription: ImportTableDescriptionTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: ImportTableDescriptionTypeDef](./type_defs.md#importtabledescriptiontypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DeleteTableOutputTableTypeDef
 

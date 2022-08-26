@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_importexport.paginator import ListJobsPaginator
 
 session = get_session()
-async with session.create_client("importexport") as client:
-    client: ImportExportClient
-    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
+async with session.create_client("importexport") as client:  # (1)
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListJobsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ImportExportClient](./client.md)
+2. paginator: [ListJobsPaginator](./paginators.md#listjobspaginator)
+3. item: [:material-code-braces: ListJobsOutputTypeDef](./type_defs.md#listjobsoutputtypedef) 
 
 
 ### paginate

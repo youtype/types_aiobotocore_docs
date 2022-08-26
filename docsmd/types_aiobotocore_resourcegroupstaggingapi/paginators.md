@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_resourcegroupstaggingapi.paginator import GetComplianceSummaryPaginator
 
 session = get_session()
-async with session.create_client("resourcegroupstaggingapi") as client:
-    client: ResourceGroupsTaggingAPIClient
-    paginator: GetComplianceSummaryPaginator = client.get_paginator("get_compliance_summary")
+async with session.create_client("resourcegroupstaggingapi") as client:  # (1)
+    paginator: GetComplianceSummaryPaginator = client.get_paginator("get_compliance_summary")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetComplianceSummaryOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ResourceGroupsTaggingAPIClient](./client.md)
+2. paginator: [GetComplianceSummaryPaginator](./paginators.md#getcompliancesummarypaginator)
+3. item: [:material-code-braces: GetComplianceSummaryOutputTypeDef](./type_defs.md#getcompliancesummaryoutputtypedef) 
 
 
 ### paginate
@@ -67,10 +73,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_resourcegroupstaggingapi.paginator import GetResourcesPaginator
 
 session = get_session()
-async with session.create_client("resourcegroupstaggingapi") as client:
-    client: ResourceGroupsTaggingAPIClient
-    paginator: GetResourcesPaginator = client.get_paginator("get_resources")
+async with session.create_client("resourcegroupstaggingapi") as client:  # (1)
+    paginator: GetResourcesPaginator = client.get_paginator("get_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetResourcesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ResourceGroupsTaggingAPIClient](./client.md)
+2. paginator: [GetResourcesPaginator](./paginators.md#getresourcespaginator)
+3. item: [:material-code-braces: GetResourcesOutputTypeDef](./type_defs.md#getresourcesoutputtypedef) 
 
 
 ### paginate
@@ -117,10 +129,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_resourcegroupstaggingapi.paginator import GetTagKeysPaginator
 
 session = get_session()
-async with session.create_client("resourcegroupstaggingapi") as client:
-    client: ResourceGroupsTaggingAPIClient
-    paginator: GetTagKeysPaginator = client.get_paginator("get_tag_keys")
+async with session.create_client("resourcegroupstaggingapi") as client:  # (1)
+    paginator: GetTagKeysPaginator = client.get_paginator("get_tag_keys")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTagKeysOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ResourceGroupsTaggingAPIClient](./client.md)
+2. paginator: [GetTagKeysPaginator](./paginators.md#gettagkeyspaginator)
+3. item: [:material-code-braces: GetTagKeysOutputTypeDef](./type_defs.md#gettagkeysoutputtypedef) 
 
 
 ### paginate
@@ -160,10 +178,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_resourcegroupstaggingapi.paginator import GetTagValuesPaginator
 
 session = get_session()
-async with session.create_client("resourcegroupstaggingapi") as client:
-    client: ResourceGroupsTaggingAPIClient
-    paginator: GetTagValuesPaginator = client.get_paginator("get_tag_values")
+async with session.create_client("resourcegroupstaggingapi") as client:  # (1)
+    paginator: GetTagValuesPaginator = client.get_paginator("get_tag_values")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTagValuesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ResourceGroupsTaggingAPIClient](./client.md)
+2. paginator: [GetTagValuesPaginator](./paginators.md#gettagvaluespaginator)
+3. item: [:material-code-braces: GetTagValuesOutputTypeDef](./type_defs.md#gettagvaluesoutputtypedef) 
 
 
 ### paginate

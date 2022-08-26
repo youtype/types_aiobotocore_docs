@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_translate.paginator import ListTerminologiesPaginator
 
 session = get_session()
-async with session.create_client("translate") as client:
-    client: TranslateClient
-    paginator: ListTerminologiesPaginator = client.get_paginator("list_terminologies")
+async with session.create_client("translate") as client:  # (1)
+    paginator: ListTerminologiesPaginator = client.get_paginator("list_terminologies")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTerminologiesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [TranslateClient](./client.md)
+2. paginator: [ListTerminologiesPaginator](./paginators.md#listterminologiespaginator)
+3. item: [:material-code-braces: ListTerminologiesResponseTypeDef](./type_defs.md#listterminologiesresponsetypedef) 
 
 
 ### paginate

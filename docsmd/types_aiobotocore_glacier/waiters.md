@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_glacier.waiter import VaultExistsWaiter
 
-def get_vault_exists_waiter() -> VaultExistsWaiter:
-    return Session().client("glacier").get_waiter("vault_exists")
+session = get_session()
+async with session.create_client("glacier") as client:  # (1)
+    waiter: VaultExistsWaiter = client.get_waiter("vault_exists")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [GlacierClient](./client.md)
+2. waiter: [VaultExistsWaiter](./waiters.md#vaultexistswaiter)
 
 
 ### wait
@@ -60,9 +65,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_glacier.waiter import VaultNotExistsWaiter
 
-def get_vault_not_exists_waiter() -> VaultNotExistsWaiter:
-    return Session().client("glacier").get_waiter("vault_not_exists")
+session = get_session()
+async with session.create_client("glacier") as client:  # (1)
+    waiter: VaultNotExistsWaiter = client.get_waiter("vault_not_exists")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [GlacierClient](./client.md)
+2. waiter: [VaultNotExistsWaiter](./waiters.md#vaultnotexistswaiter)
 
 
 ### wait

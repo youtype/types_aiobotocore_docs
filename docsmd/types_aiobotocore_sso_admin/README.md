@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `SSOAdmin`.
 
 ### From PyPI with pip
 
@@ -81,6 +76,7 @@ def get_list_account_assignment_creation_status_paginator() -> ListAccountAssign
 - [ListAccountAssignmentDeletionStatusPaginator](./paginators.md#listaccountassignmentdeletionstatuspaginator)
 - [ListAccountAssignmentsPaginator](./paginators.md#listaccountassignmentspaginator)
 - [ListAccountsForProvisionedPermissionSetPaginator](./paginators.md#listaccountsforprovisionedpermissionsetpaginator)
+- [ListCustomerManagedPolicyReferencesInPermissionSetPaginator](./paginators.md#listcustomermanagedpolicyreferencesinpermissionsetpaginator)
 - [ListInstancesPaginator](./paginators.md#listinstancespaginator)
 - [ListManagedPoliciesInPermissionSetPaginator](./paginators.md#listmanagedpoliciesinpermissionsetpaginator)
 - [ListPermissionSetProvisioningStatusPaginator](./paginators.md#listpermissionsetprovisioningstatuspaginator)
@@ -111,6 +107,7 @@ def get_value() -> InstanceAccessControlAttributeConfigurationStatusType:
 - [ListAccountAssignmentDeletionStatusPaginatorName](./literals.md#listaccountassignmentdeletionstatuspaginatorname)
 - [ListAccountAssignmentsPaginatorName](./literals.md#listaccountassignmentspaginatorname)
 - [ListAccountsForProvisionedPermissionSetPaginatorName](./literals.md#listaccountsforprovisionedpermissionsetpaginatorname)
+- [ListCustomerManagedPolicyReferencesInPermissionSetPaginatorName](./literals.md#listcustomermanagedpolicyreferencesinpermissionsetpaginatorname)
 - [ListInstancesPaginatorName](./literals.md#listinstancespaginatorname)
 - [ListManagedPoliciesInPermissionSetPaginatorName](./literals.md#listmanagedpoliciesinpermissionsetpaginatorname)
 - [ListPermissionSetProvisioningStatusPaginatorName](./literals.md#listpermissionsetprovisioningstatuspaginatorname)
@@ -126,6 +123,7 @@ def get_value() -> InstanceAccessControlAttributeConfigurationStatusType:
 - [ServiceName](./literals.md#servicename)
 - [ResourceServiceName](./literals.md#resourceservicename)
 - [PaginatorName](./literals.md#paginatorname)
+- [RegionName](./literals.md#regionname)
 
 
 
@@ -147,6 +145,7 @@ def get_value() -> AccessControlAttributeValueTypeDef:
 - [AccountAssignmentOperationStatusMetadataTypeDef](./type_defs.md#accountassignmentoperationstatusmetadatatypedef)
 - [AccountAssignmentOperationStatusTypeDef](./type_defs.md#accountassignmentoperationstatustypedef)
 - [AccountAssignmentTypeDef](./type_defs.md#accountassignmenttypedef)
+- [CustomerManagedPolicyReferenceTypeDef](./type_defs.md#customermanagedpolicyreferencetypedef)
 - [AttachManagedPolicyToPermissionSetRequestRequestTypeDef](./type_defs.md#attachmanagedpolicytopermissionsetrequestrequesttypedef)
 - [AttachedManagedPolicyTypeDef](./type_defs.md#attachedmanagedpolicytypedef)
 - [CreateAccountAssignmentRequestRequestTypeDef](./type_defs.md#createaccountassignmentrequestrequesttypedef)
@@ -157,6 +156,7 @@ def get_value() -> AccessControlAttributeValueTypeDef:
 - [DeleteInlinePolicyFromPermissionSetRequestRequestTypeDef](./type_defs.md#deleteinlinepolicyfrompermissionsetrequestrequesttypedef)
 - [DeleteInstanceAccessControlAttributeConfigurationRequestRequestTypeDef](./type_defs.md#deleteinstanceaccesscontrolattributeconfigurationrequestrequesttypedef)
 - [DeletePermissionSetRequestRequestTypeDef](./type_defs.md#deletepermissionsetrequestrequesttypedef)
+- [DeletePermissionsBoundaryFromPermissionSetRequestRequestTypeDef](./type_defs.md#deletepermissionsboundaryfrompermissionsetrequestrequesttypedef)
 - [DescribeAccountAssignmentCreationStatusRequestRequestTypeDef](./type_defs.md#describeaccountassignmentcreationstatusrequestrequesttypedef)
 - [DescribeAccountAssignmentDeletionStatusRequestRequestTypeDef](./type_defs.md#describeaccountassignmentdeletionstatusrequestrequesttypedef)
 - [DescribeInstanceAccessControlAttributeConfigurationRequestRequestTypeDef](./type_defs.md#describeinstanceaccesscontrolattributeconfigurationrequestrequesttypedef)
@@ -165,11 +165,13 @@ def get_value() -> AccessControlAttributeValueTypeDef:
 - [DescribePermissionSetRequestRequestTypeDef](./type_defs.md#describepermissionsetrequestrequesttypedef)
 - [DetachManagedPolicyFromPermissionSetRequestRequestTypeDef](./type_defs.md#detachmanagedpolicyfrompermissionsetrequestrequesttypedef)
 - [GetInlinePolicyForPermissionSetRequestRequestTypeDef](./type_defs.md#getinlinepolicyforpermissionsetrequestrequesttypedef)
+- [GetPermissionsBoundaryForPermissionSetRequestRequestTypeDef](./type_defs.md#getpermissionsboundaryforpermissionsetrequestrequesttypedef)
 - [InstanceMetadataTypeDef](./type_defs.md#instancemetadatatypedef)
 - [OperationStatusFilterTypeDef](./type_defs.md#operationstatusfiltertypedef)
 - [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 - [ListAccountAssignmentsRequestRequestTypeDef](./type_defs.md#listaccountassignmentsrequestrequesttypedef)
 - [ListAccountsForProvisionedPermissionSetRequestRequestTypeDef](./type_defs.md#listaccountsforprovisionedpermissionsetrequestrequesttypedef)
+- [ListCustomerManagedPolicyReferencesInPermissionSetRequestRequestTypeDef](./type_defs.md#listcustomermanagedpolicyreferencesinpermissionsetrequestrequesttypedef)
 - [ListInstancesRequestRequestTypeDef](./type_defs.md#listinstancesrequestrequesttypedef)
 - [ListManagedPoliciesInPermissionSetRequestRequestTypeDef](./type_defs.md#listmanagedpoliciesinpermissionsetrequestrequesttypedef)
 - [PermissionSetProvisioningStatusMetadataTypeDef](./type_defs.md#permissionsetprovisioningstatusmetadatatypedef)
@@ -181,6 +183,9 @@ def get_value() -> AccessControlAttributeValueTypeDef:
 - [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
 - [UpdatePermissionSetRequestRequestTypeDef](./type_defs.md#updatepermissionsetrequestrequesttypedef)
 - [AccessControlAttributeTypeDef](./type_defs.md#accesscontrolattributetypedef)
+- [AttachCustomerManagedPolicyReferenceToPermissionSetRequestRequestTypeDef](./type_defs.md#attachcustomermanagedpolicyreferencetopermissionsetrequestrequesttypedef)
+- [DetachCustomerManagedPolicyReferenceFromPermissionSetRequestRequestTypeDef](./type_defs.md#detachcustomermanagedpolicyreferencefrompermissionsetrequestrequesttypedef)
+- [PermissionsBoundaryTypeDef](./type_defs.md#permissionsboundarytypedef)
 - [CreateAccountAssignmentResponseTypeDef](./type_defs.md#createaccountassignmentresponsetypedef)
 - [DeleteAccountAssignmentResponseTypeDef](./type_defs.md#deleteaccountassignmentresponsetypedef)
 - [DescribeAccountAssignmentCreationStatusResponseTypeDef](./type_defs.md#describeaccountassignmentcreationstatusresponsetypedef)
@@ -190,6 +195,7 @@ def get_value() -> AccessControlAttributeValueTypeDef:
 - [ListAccountAssignmentDeletionStatusResponseTypeDef](./type_defs.md#listaccountassignmentdeletionstatusresponsetypedef)
 - [ListAccountAssignmentsResponseTypeDef](./type_defs.md#listaccountassignmentsresponsetypedef)
 - [ListAccountsForProvisionedPermissionSetResponseTypeDef](./type_defs.md#listaccountsforprovisionedpermissionsetresponsetypedef)
+- [ListCustomerManagedPolicyReferencesInPermissionSetResponseTypeDef](./type_defs.md#listcustomermanagedpolicyreferencesinpermissionsetresponsetypedef)
 - [ListManagedPoliciesInPermissionSetResponseTypeDef](./type_defs.md#listmanagedpoliciesinpermissionsetresponsetypedef)
 - [ListPermissionSetsProvisionedToAccountResponseTypeDef](./type_defs.md#listpermissionsetsprovisionedtoaccountresponsetypedef)
 - [ListPermissionSetsResponseTypeDef](./type_defs.md#listpermissionsetsresponsetypedef)
@@ -208,6 +214,7 @@ def get_value() -> AccessControlAttributeValueTypeDef:
 - [ListAccountAssignmentDeletionStatusRequestListAccountAssignmentDeletionStatusPaginateTypeDef](./type_defs.md#listaccountassignmentdeletionstatusrequestlistaccountassignmentdeletionstatuspaginatetypedef)
 - [ListAccountAssignmentsRequestListAccountAssignmentsPaginateTypeDef](./type_defs.md#listaccountassignmentsrequestlistaccountassignmentspaginatetypedef)
 - [ListAccountsForProvisionedPermissionSetRequestListAccountsForProvisionedPermissionSetPaginateTypeDef](./type_defs.md#listaccountsforprovisionedpermissionsetrequestlistaccountsforprovisionedpermissionsetpaginatetypedef)
+- [ListCustomerManagedPolicyReferencesInPermissionSetRequestListCustomerManagedPolicyReferencesInPermissionSetPaginateTypeDef](./type_defs.md#listcustomermanagedpolicyreferencesinpermissionsetrequestlistcustomermanagedpolicyreferencesinpermissionsetpaginatetypedef)
 - [ListInstancesRequestListInstancesPaginateTypeDef](./type_defs.md#listinstancesrequestlistinstancespaginatetypedef)
 - [ListManagedPoliciesInPermissionSetRequestListManagedPoliciesInPermissionSetPaginateTypeDef](./type_defs.md#listmanagedpoliciesinpermissionsetrequestlistmanagedpoliciesinpermissionsetpaginatetypedef)
 - [ListPermissionSetProvisioningStatusRequestListPermissionSetProvisioningStatusPaginateTypeDef](./type_defs.md#listpermissionsetprovisioningstatusrequestlistpermissionsetprovisioningstatuspaginatetypedef)
@@ -216,6 +223,8 @@ def get_value() -> AccessControlAttributeValueTypeDef:
 - [ListTagsForResourceRequestListTagsForResourcePaginateTypeDef](./type_defs.md#listtagsforresourcerequestlisttagsforresourcepaginatetypedef)
 - [ListPermissionSetProvisioningStatusResponseTypeDef](./type_defs.md#listpermissionsetprovisioningstatusresponsetypedef)
 - [InstanceAccessControlAttributeConfigurationTypeDef](./type_defs.md#instanceaccesscontrolattributeconfigurationtypedef)
+- [GetPermissionsBoundaryForPermissionSetResponseTypeDef](./type_defs.md#getpermissionsboundaryforpermissionsetresponsetypedef)
+- [PutPermissionsBoundaryToPermissionSetRequestRequestTypeDef](./type_defs.md#putpermissionsboundarytopermissionsetrequestrequesttypedef)
 - [CreateInstanceAccessControlAttributeConfigurationRequestRequestTypeDef](./type_defs.md#createinstanceaccesscontrolattributeconfigurationrequestrequesttypedef)
 - [DescribeInstanceAccessControlAttributeConfigurationResponseTypeDef](./type_defs.md#describeinstanceaccesscontrolattributeconfigurationresponsetypedef)
 - [UpdateInstanceAccessControlAttributeConfigurationRequestRequestTypeDef](./type_defs.md#updateinstanceaccesscontrolattributeconfigurationrequestrequesttypedef)

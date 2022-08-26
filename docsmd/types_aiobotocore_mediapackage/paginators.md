@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediapackage.paginator import ListChannelsPaginator
 
 session = get_session()
-async with session.create_client("mediapackage") as client:
-    client: MediaPackageClient
-    paginator: ListChannelsPaginator = client.get_paginator("list_channels")
+async with session.create_client("mediapackage") as client:  # (1)
+    paginator: ListChannelsPaginator = client.get_paginator("list_channels")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListChannelsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaPackageClient](./client.md)
+2. paginator: [ListChannelsPaginator](./paginators.md#listchannelspaginator)
+3. item: [:material-code-braces: ListChannelsResponseTypeDef](./type_defs.md#listchannelsresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediapackage.paginator import ListHarvestJobsPaginator
 
 session = get_session()
-async with session.create_client("mediapackage") as client:
-    client: MediaPackageClient
-    paginator: ListHarvestJobsPaginator = client.get_paginator("list_harvest_jobs")
+async with session.create_client("mediapackage") as client:  # (1)
+    paginator: ListHarvestJobsPaginator = client.get_paginator("list_harvest_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListHarvestJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaPackageClient](./client.md)
+2. paginator: [ListHarvestJobsPaginator](./paginators.md#listharvestjobspaginator)
+3. item: [:material-code-braces: ListHarvestJobsResponseTypeDef](./type_defs.md#listharvestjobsresponsetypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediapackage.paginator import ListOriginEndpointsPaginator
 
 session = get_session()
-async with session.create_client("mediapackage") as client:
-    client: MediaPackageClient
-    paginator: ListOriginEndpointsPaginator = client.get_paginator("list_origin_endpoints")
+async with session.create_client("mediapackage") as client:  # (1)
+    paginator: ListOriginEndpointsPaginator = client.get_paginator("list_origin_endpoints")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListOriginEndpointsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaPackageClient](./client.md)
+2. paginator: [ListOriginEndpointsPaginator](./paginators.md#listoriginendpointspaginator)
+3. item: [:material-code-braces: ListOriginEndpointsResponseTypeDef](./type_defs.md#listoriginendpointsresponsetypedef) 
 
 
 ### paginate

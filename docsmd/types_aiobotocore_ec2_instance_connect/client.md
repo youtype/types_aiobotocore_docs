@@ -37,6 +37,7 @@ async with session.create_client("ec2-instance-connect") as client:
         client.EC2InstanceNotFoundException,
         client.EC2InstanceStateInvalidException,
         client.EC2InstanceTypeInvalidException,
+        client.EC2InstanceUnavailableException,
         client.InvalidArgsException,
         client.SerialConsoleAccessDisabledException,
         client.SerialConsoleSessionLimitExceededException,

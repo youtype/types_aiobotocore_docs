@@ -70,6 +70,22 @@ DlClassType = Literal[
     "ClassC",
 ]
 ```
+## DownlinkModeType
+
+```python title="Usage Example"
+from types_aiobotocore_iotwireless.literals import DownlinkModeType
+
+def get_value() -> DownlinkModeType:
+    return "CONCURRENT"
+```
+
+```python title="Definition"
+DownlinkModeType = Literal[
+    "CONCURRENT",
+    "SEQUENTIAL",
+    "USING_UPLINK_GATEWAY",
+]
+```
 ## EventNotificationPartnerTypeType
 
 ```python title="Usage Example"
@@ -253,6 +269,79 @@ def get_value() -> PartnerTypeType:
 ```python title="Definition"
 PartnerTypeType = Literal[
     "Sidewalk",
+]
+```
+## PositionConfigurationFecType
+
+```python title="Usage Example"
+from types_aiobotocore_iotwireless.literals import PositionConfigurationFecType
+
+def get_value() -> PositionConfigurationFecType:
+    return "NONE"
+```
+
+```python title="Definition"
+PositionConfigurationFecType = Literal[
+    "NONE",
+    "ROSE",
+]
+```
+## PositionConfigurationStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_iotwireless.literals import PositionConfigurationStatusType
+
+def get_value() -> PositionConfigurationStatusType:
+    return "Disabled"
+```
+
+```python title="Definition"
+PositionConfigurationStatusType = Literal[
+    "Disabled",
+    "Enabled",
+]
+```
+## PositionResourceTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_iotwireless.literals import PositionResourceTypeType
+
+def get_value() -> PositionResourceTypeType:
+    return "WirelessDevice"
+```
+
+```python title="Definition"
+PositionResourceTypeType = Literal[
+    "WirelessDevice",
+    "WirelessGateway",
+]
+```
+## PositionSolverProviderType
+
+```python title="Usage Example"
+from types_aiobotocore_iotwireless.literals import PositionSolverProviderType
+
+def get_value() -> PositionSolverProviderType:
+    return "Semtech"
+```
+
+```python title="Definition"
+PositionSolverProviderType = Literal[
+    "Semtech",
+]
+```
+## PositionSolverTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_iotwireless.literals import PositionSolverTypeType
+
+def get_value() -> PositionSolverTypeType:
+    return "GNSS"
+```
+
+```python title="Definition"
+PositionSolverTypeType = Literal[
+    "GNSS",
 ]
 ```
 ## SigningAlgType
@@ -499,6 +588,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -644,6 +734,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -697,6 +788,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -707,11 +799,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -757,6 +851,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `IoT`.
 
 ### From PyPI with pip
 
@@ -266,6 +261,7 @@ def get_value() -> AbortActionType:
 - [ServiceTypeType](./literals.md#servicetypetype)
 - [StatusType](./literals.md#statustype)
 - [TargetSelectionType](./literals.md#targetselectiontype)
+- [TemplateTypeType](./literals.md#templatetypetype)
 - [ThingConnectivityIndexingModeType](./literals.md#thingconnectivityindexingmodetype)
 - [ThingGroupIndexingModeType](./literals.md#thinggroupindexingmodetype)
 - [ThingIndexingModeType](./literals.md#thingindexingmodetype)
@@ -490,6 +486,7 @@ def get_value() -> AbortCriteriaTypeDef:
 - [HttpUrlDestinationConfigurationTypeDef](./type_defs.md#httpurldestinationconfigurationtypedef)
 - [HttpUrlDestinationPropertiesTypeDef](./type_defs.md#httpurldestinationpropertiestypedef)
 - [HttpUrlDestinationSummaryTypeDef](./type_defs.md#httpurldestinationsummarytypedef)
+- [IndexingFilterTypeDef](./type_defs.md#indexingfiltertypedef)
 - [JobExecutionStatusDetailsTypeDef](./type_defs.md#jobexecutionstatusdetailstypedef)
 - [JobExecutionSummaryTypeDef](./type_defs.md#jobexecutionsummarytypedef)
 - [RetryCriteriaTypeDef](./type_defs.md#retrycriteriatypedef)
@@ -755,7 +752,6 @@ def get_value() -> AbortCriteriaTypeDef:
 - [GetEffectivePoliciesResponseTypeDef](./type_defs.md#geteffectivepoliciesresponsetypedef)
 - [ExponentialRolloutRateTypeDef](./type_defs.md#exponentialrolloutratetypedef)
 - [ThingGroupIndexingConfigurationTypeDef](./type_defs.md#thinggroupindexingconfigurationtypedef)
-- [ThingIndexingConfigurationTypeDef](./type_defs.md#thingindexingconfigurationtypedef)
 - [StreamFileTypeDef](./type_defs.md#streamfiletypedef)
 - [FileLocationTypeDef](./type_defs.md#filelocationtypedef)
 - [ListFleetMetricsResponseTypeDef](./type_defs.md#listfleetmetricsresponsetypedef)
@@ -819,6 +815,7 @@ def get_value() -> AbortCriteriaTypeDef:
 - [ListThingGroupsResponseTypeDef](./type_defs.md#listthinggroupsresponsetypedef)
 - [ThingGroupMetadataTypeDef](./type_defs.md#thinggroupmetadatatypedef)
 - [HttpAuthorizationTypeDef](./type_defs.md#httpauthorizationtypedef)
+- [ThingIndexingConfigurationTypeDef](./type_defs.md#thingindexingconfigurationtypedef)
 - [JobExecutionTypeDef](./type_defs.md#jobexecutiontypedef)
 - [JobExecutionSummaryForJobTypeDef](./type_defs.md#jobexecutionsummaryforjobtypedef)
 - [JobExecutionSummaryForThingTypeDef](./type_defs.md#jobexecutionsummaryforthingtypedef)
@@ -866,13 +863,13 @@ def get_value() -> AbortCriteriaTypeDef:
 - [ListThingTypesResponseTypeDef](./type_defs.md#listthingtypesresponsetypedef)
 - [StartSigningJobParameterTypeDef](./type_defs.md#startsigningjobparametertypedef)
 - [JobExecutionsRolloutConfigTypeDef](./type_defs.md#jobexecutionsrolloutconfigtypedef)
-- [GetIndexingConfigurationResponseTypeDef](./type_defs.md#getindexingconfigurationresponsetypedef)
-- [UpdateIndexingConfigurationRequestRequestTypeDef](./type_defs.md#updateindexingconfigurationrequestrequesttypedef)
 - [CreateStreamRequestRequestTypeDef](./type_defs.md#createstreamrequestrequesttypedef)
 - [StreamInfoTypeDef](./type_defs.md#streaminfotypedef)
 - [UpdateStreamRequestRequestTypeDef](./type_defs.md#updatestreamrequestrequesttypedef)
 - [DescribeThingGroupResponseTypeDef](./type_defs.md#describethinggroupresponsetypedef)
 - [HttpActionTypeDef](./type_defs.md#httpactiontypedef)
+- [GetIndexingConfigurationResponseTypeDef](./type_defs.md#getindexingconfigurationresponsetypedef)
+- [UpdateIndexingConfigurationRequestRequestTypeDef](./type_defs.md#updateindexingconfigurationrequestrequesttypedef)
 - [DescribeJobExecutionResponseTypeDef](./type_defs.md#describejobexecutionresponsetypedef)
 - [ListJobExecutionsForJobResponseTypeDef](./type_defs.md#listjobexecutionsforjobresponsetypedef)
 - [ListJobExecutionsForThingResponseTypeDef](./type_defs.md#listjobexecutionsforthingresponsetypedef)

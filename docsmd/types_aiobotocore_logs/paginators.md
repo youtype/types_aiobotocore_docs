@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_logs.paginator import DescribeDestinationsPaginator
 
 session = get_session()
-async with session.create_client("logs") as client:
-    client: CloudWatchLogsClient
-    paginator: DescribeDestinationsPaginator = client.get_paginator("describe_destinations")
+async with session.create_client("logs") as client:  # (1)
+    paginator: DescribeDestinationsPaginator = client.get_paginator("describe_destinations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeDestinationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchLogsClient](./client.md)
+2. paginator: [DescribeDestinationsPaginator](./paginators.md#describedestinationspaginator)
+3. item: [:material-code-braces: DescribeDestinationsResponseTypeDef](./type_defs.md#describedestinationsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_logs.paginator import DescribeExportTasksPaginator
 
 session = get_session()
-async with session.create_client("logs") as client:
-    client: CloudWatchLogsClient
-    paginator: DescribeExportTasksPaginator = client.get_paginator("describe_export_tasks")
+async with session.create_client("logs") as client:  # (1)
+    paginator: DescribeExportTasksPaginator = client.get_paginator("describe_export_tasks")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeExportTasksResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchLogsClient](./client.md)
+2. paginator: [DescribeExportTasksPaginator](./paginators.md#describeexporttaskspaginator)
+3. item: [:material-code-braces: DescribeExportTasksResponseTypeDef](./type_defs.md#describeexporttasksresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_logs.paginator import DescribeLogGroupsPaginator
 
 session = get_session()
-async with session.create_client("logs") as client:
-    client: CloudWatchLogsClient
-    paginator: DescribeLogGroupsPaginator = client.get_paginator("describe_log_groups")
+async with session.create_client("logs") as client:  # (1)
+    paginator: DescribeLogGroupsPaginator = client.get_paginator("describe_log_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeLogGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchLogsClient](./client.md)
+2. paginator: [DescribeLogGroupsPaginator](./paginators.md#describeloggroupspaginator)
+3. item: [:material-code-braces: DescribeLogGroupsResponseTypeDef](./type_defs.md#describeloggroupsresponsetypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_logs.paginator import DescribeLogStreamsPaginator
 
 session = get_session()
-async with session.create_client("logs") as client:
-    client: CloudWatchLogsClient
-    paginator: DescribeLogStreamsPaginator = client.get_paginator("describe_log_streams")
+async with session.create_client("logs") as client:  # (1)
+    paginator: DescribeLogStreamsPaginator = client.get_paginator("describe_log_streams")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeLogStreamsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchLogsClient](./client.md)
+2. paginator: [DescribeLogStreamsPaginator](./paginators.md#describelogstreamspaginator)
+3. item: [:material-code-braces: DescribeLogStreamsResponseTypeDef](./type_defs.md#describelogstreamsresponsetypedef) 
 
 
 ### paginate
@@ -200,10 +224,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_logs.paginator import DescribeMetricFiltersPaginator
 
 session = get_session()
-async with session.create_client("logs") as client:
-    client: CloudWatchLogsClient
-    paginator: DescribeMetricFiltersPaginator = client.get_paginator("describe_metric_filters")
+async with session.create_client("logs") as client:  # (1)
+    paginator: DescribeMetricFiltersPaginator = client.get_paginator("describe_metric_filters")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeMetricFiltersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchLogsClient](./client.md)
+2. paginator: [DescribeMetricFiltersPaginator](./paginators.md#describemetricfilterspaginator)
+3. item: [:material-code-braces: DescribeMetricFiltersResponseTypeDef](./type_defs.md#describemetricfiltersresponsetypedef) 
 
 
 ### paginate
@@ -247,10 +277,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_logs.paginator import DescribeQueriesPaginator
 
 session = get_session()
-async with session.create_client("logs") as client:
-    client: CloudWatchLogsClient
-    paginator: DescribeQueriesPaginator = client.get_paginator("describe_queries")
+async with session.create_client("logs") as client:  # (1)
+    paginator: DescribeQueriesPaginator = client.get_paginator("describe_queries")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeQueriesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchLogsClient](./client.md)
+2. paginator: [DescribeQueriesPaginator](./paginators.md#describequeriespaginator)
+3. item: [:material-code-braces: DescribeQueriesResponseTypeDef](./type_defs.md#describequeriesresponsetypedef) 
 
 
 ### paginate
@@ -293,10 +329,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_logs.paginator import DescribeResourcePoliciesPaginator
 
 session = get_session()
-async with session.create_client("logs") as client:
-    client: CloudWatchLogsClient
-    paginator: DescribeResourcePoliciesPaginator = client.get_paginator("describe_resource_policies")
+async with session.create_client("logs") as client:  # (1)
+    paginator: DescribeResourcePoliciesPaginator = client.get_paginator("describe_resource_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeResourcePoliciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchLogsClient](./client.md)
+2. paginator: [DescribeResourcePoliciesPaginator](./paginators.md#describeresourcepoliciespaginator)
+3. item: [:material-code-braces: DescribeResourcePoliciesResponseTypeDef](./type_defs.md#describeresourcepoliciesresponsetypedef) 
 
 
 ### paginate
@@ -336,10 +378,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_logs.paginator import DescribeSubscriptionFiltersPaginator
 
 session = get_session()
-async with session.create_client("logs") as client:
-    client: CloudWatchLogsClient
-    paginator: DescribeSubscriptionFiltersPaginator = client.get_paginator("describe_subscription_filters")
+async with session.create_client("logs") as client:  # (1)
+    paginator: DescribeSubscriptionFiltersPaginator = client.get_paginator("describe_subscription_filters")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSubscriptionFiltersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchLogsClient](./client.md)
+2. paginator: [DescribeSubscriptionFiltersPaginator](./paginators.md#describesubscriptionfilterspaginator)
+3. item: [:material-code-braces: DescribeSubscriptionFiltersResponseTypeDef](./type_defs.md#describesubscriptionfiltersresponsetypedef) 
 
 
 ### paginate
@@ -381,10 +429,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_logs.paginator import FilterLogEventsPaginator
 
 session = get_session()
-async with session.create_client("logs") as client:
-    client: CloudWatchLogsClient
-    paginator: FilterLogEventsPaginator = client.get_paginator("filter_log_events")
+async with session.create_client("logs") as client:  # (1)
+    paginator: FilterLogEventsPaginator = client.get_paginator("filter_log_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: FilterLogEventsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchLogsClient](./client.md)
+2. paginator: [FilterLogEventsPaginator](./paginators.md#filterlogeventspaginator)
+3. item: [:material-code-braces: FilterLogEventsResponseTypeDef](./type_defs.md#filterlogeventsresponsetypedef) 
 
 
 ### paginate

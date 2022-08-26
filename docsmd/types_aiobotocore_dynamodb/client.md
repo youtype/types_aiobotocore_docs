@@ -43,6 +43,8 @@ async with session.create_client("dynamodb") as client:
         client.GlobalTableAlreadyExistsException,
         client.GlobalTableNotFoundException,
         client.IdempotentParameterMismatchException,
+        client.ImportConflictException,
+        client.ImportNotFoundException,
         client.IndexNotFoundException,
         client.InternalServerError,
         client.InvalidExportTimeException,
@@ -364,7 +366,7 @@ await def delete_item(
     self,
     *,
     TableName: str,
-    Key: Mapping[str, AttributeValueTypeDef],  # (1)
+    Key: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
     Expected: Mapping[str, ExpectedAttributeValueTypeDef] = ...,  # (2)
     ConditionalOperator: ConditionalOperatorType = ...,  # (3)
     ReturnValues: ReturnValueType = ...,  # (4)
@@ -372,7 +374,7 @@ await def delete_item(
     ReturnItemCollectionMetrics: ReturnItemCollectionMetricsType = ...,  # (6)
     ConditionExpression: str = ...,
     ExpressionAttributeNames: Mapping[str, str] = ...,
-    ExpressionAttributeValues: Mapping[str, AttributeValueTypeDef] = ...,  # (1)
+    ExpressionAttributeValues: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]] = ...,  # (1)
 ) -> DeleteItemOutputTypeDef:  # (8)
     ...
 ```
@@ -620,6 +622,35 @@ parent.describe_global_table_settings(**kwargs)
 
 1. See [:material-code-braces: DescribeGlobalTableSettingsInputRequestTypeDef](./type_defs.md#describeglobaltablesettingsinputrequesttypedef) 
 
+### describe\_import
+
+Represents the properties of the import.
+
+Type annotations and code completion for `#!python session.create_client("dynamodb").describe_import` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.describe_import)
+
+```python title="Method definition"
+await def describe_import(
+    self,
+    *,
+    ImportArn: str,
+) -> DescribeImportOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DescribeImportOutputTypeDef](./type_defs.md#describeimportoutputtypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeImportInputRequestTypeDef = {  # (1)
+    "ImportArn": ...,
+}
+
+parent.describe_import(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeImportInputRequestTypeDef](./type_defs.md#describeimportinputrequesttypedef) 
+
 ### describe\_kinesis\_streaming\_destination
 
 Returns information about the status of Kinesis streaming.
@@ -831,7 +862,7 @@ await def execute_statement(
     self,
     *,
     Statement: str,
-    Parameters: Sequence[AttributeValueTypeDef] = ...,  # (1)
+    Parameters: Sequence[Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]] = ...,  # (1)
     ConsistentRead: bool = ...,
     NextToken: str = ...,
     ReturnConsumedCapacity: ReturnConsumedCapacityType = ...,  # (2)
@@ -961,7 +992,7 @@ await def get_item(
     self,
     *,
     TableName: str,
-    Key: Mapping[str, AttributeValueTypeDef],  # (1)
+    Key: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
     AttributesToGet: Sequence[str] = ...,
     ConsistentRead: bool = ...,
     ReturnConsumedCapacity: ReturnConsumedCapacityType = ...,  # (2)
@@ -986,6 +1017,47 @@ parent.get_item(**kwargs)
 ```
 
 1. See [:material-code-braces: GetItemInputRequestTypeDef](./type_defs.md#getiteminputrequesttypedef) 
+
+### import\_table
+
+Imports table data from an S3 bucket.
+
+Type annotations and code completion for `#!python session.create_client("dynamodb").import_table` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.import_table)
+
+```python title="Method definition"
+await def import_table(
+    self,
+    *,
+    S3BucketSource: S3BucketSourceTypeDef,  # (1)
+    InputFormat: InputFormatType,  # (2)
+    TableCreationParameters: TableCreationParametersTypeDef,  # (3)
+    ClientToken: str = ...,
+    InputFormatOptions: InputFormatOptionsTypeDef = ...,  # (4)
+    InputCompressionType: InputCompressionTypeType = ...,  # (5)
+) -> ImportTableOutputTypeDef:  # (6)
+    ...
+```
+
+1. See [:material-code-braces: S3BucketSourceTypeDef](./type_defs.md#s3bucketsourcetypedef) 
+2. See [:material-code-brackets: InputFormatType](./literals.md#inputformattype) 
+3. See [:material-code-braces: TableCreationParametersTypeDef](./type_defs.md#tablecreationparameterstypedef) 
+4. See [:material-code-braces: InputFormatOptionsTypeDef](./type_defs.md#inputformatoptionstypedef) 
+5. See [:material-code-brackets: InputCompressionTypeType](./literals.md#inputcompressiontypetype) 
+6. See [:material-code-braces: ImportTableOutputTypeDef](./type_defs.md#importtableoutputtypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ImportTableInputRequestTypeDef = {  # (1)
+    "S3BucketSource": ...,
+    "InputFormat": ...,
+    "TableCreationParameters": ...,
+}
+
+parent.import_table(**kwargs)
+```
+
+1. See [:material-code-braces: ImportTableInputRequestTypeDef](./type_defs.md#importtableinputrequesttypedef) 
 
 ### list\_backups
 
@@ -1116,6 +1188,37 @@ parent.list_global_tables(**kwargs)
 
 1. See [:material-code-braces: ListGlobalTablesInputRequestTypeDef](./type_defs.md#listglobaltablesinputrequesttypedef) 
 
+### list\_imports
+
+Lists completed imports within the past 90 days.
+
+Type annotations and code completion for `#!python session.create_client("dynamodb").list_imports` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.list_imports)
+
+```python title="Method definition"
+await def list_imports(
+    self,
+    *,
+    TableArn: str = ...,
+    PageSize: int = ...,
+    NextToken: str = ...,
+) -> ListImportsOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListImportsOutputTypeDef](./type_defs.md#listimportsoutputtypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListImportsInputRequestTypeDef = {  # (1)
+    "TableArn": ...,
+}
+
+parent.list_imports(**kwargs)
+```
+
+1. See [:material-code-braces: ListImportsInputRequestTypeDef](./type_defs.md#listimportsinputrequesttypedef) 
+
 ### list\_tables
 
 Returns an array of table names associated with the current account and
@@ -1189,7 +1292,7 @@ await def put_item(
     self,
     *,
     TableName: str,
-    Item: Mapping[str, AttributeValueTypeDef],  # (1)
+    Item: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
     Expected: Mapping[str, ExpectedAttributeValueTypeDef] = ...,  # (2)
     ReturnValues: ReturnValueType = ...,  # (3)
     ReturnConsumedCapacity: ReturnConsumedCapacityType = ...,  # (4)
@@ -1197,7 +1300,7 @@ await def put_item(
     ConditionalOperator: ConditionalOperatorType = ...,  # (6)
     ConditionExpression: str = ...,
     ExpressionAttributeNames: Mapping[str, str] = ...,
-    ExpressionAttributeValues: Mapping[str, AttributeValueTypeDef] = ...,  # (1)
+    ExpressionAttributeValues: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]] = ...,  # (1)
 ) -> PutItemOutputTypeDef:  # (8)
     ...
 ```
@@ -1245,13 +1348,13 @@ await def query(
     QueryFilter: Mapping[str, ConditionTypeDef] = ...,  # (2)
     ConditionalOperator: ConditionalOperatorType = ...,  # (4)
     ScanIndexForward: bool = ...,
-    ExclusiveStartKey: Mapping[str, AttributeValueTypeDef] = ...,  # (5)
+    ExclusiveStartKey: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]] = ...,  # (5)
     ReturnConsumedCapacity: ReturnConsumedCapacityType = ...,  # (6)
     ProjectionExpression: str = ...,
     FilterExpression: str = ...,
     KeyConditionExpression: str = ...,
     ExpressionAttributeNames: Mapping[str, str] = ...,
-    ExpressionAttributeValues: Mapping[str, AttributeValueTypeDef] = ...,  # (5)
+    ExpressionAttributeValues: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]] = ...,  # (5)
 ) -> QueryOutputTypeDef:  # (8)
     ...
 ```
@@ -1380,14 +1483,14 @@ await def scan(
     Select: SelectType = ...,  # (1)
     ScanFilter: Mapping[str, ConditionTypeDef] = ...,  # (2)
     ConditionalOperator: ConditionalOperatorType = ...,  # (3)
-    ExclusiveStartKey: Mapping[str, AttributeValueTypeDef] = ...,  # (4)
+    ExclusiveStartKey: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]] = ...,  # (4)
     ReturnConsumedCapacity: ReturnConsumedCapacityType = ...,  # (5)
     TotalSegments: int = ...,
     Segment: int = ...,
     ProjectionExpression: str = ...,
     FilterExpression: str = ...,
     ExpressionAttributeNames: Mapping[str, str] = ...,
-    ExpressionAttributeValues: Mapping[str, AttributeValueTypeDef] = ...,  # (4)
+    ExpressionAttributeValues: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]] = ...,  # (4)
     ConsistentRead: bool = ...,
 ) -> ScanOutputTypeDef:  # (7)
     ...
@@ -1694,7 +1797,7 @@ await def update_item(
     self,
     *,
     TableName: str,
-    Key: Mapping[str, AttributeValueTypeDef],  # (1)
+    Key: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]],  # (1)
     AttributeUpdates: Mapping[str, AttributeValueUpdateTypeDef] = ...,  # (2)
     Expected: Mapping[str, ExpectedAttributeValueTypeDef] = ...,  # (3)
     ConditionalOperator: ConditionalOperatorType = ...,  # (4)
@@ -1704,7 +1807,7 @@ await def update_item(
     UpdateExpression: str = ...,
     ConditionExpression: str = ...,
     ExpressionAttributeNames: Mapping[str, str] = ...,
-    ExpressionAttributeValues: Mapping[str, AttributeValueTypeDef] = ...,  # (1)
+    ExpressionAttributeValues: Mapping[str, Union[AttributeValueTypeDef, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]]] = ...,  # (1)
 ) -> UpdateItemOutputTypeDef:  # (9)
     ...
 ```

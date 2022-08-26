@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_signer.paginator import ListSigningJobsPaginator
 
 session = get_session()
-async with session.create_client("signer") as client:
-    client: signerClient
-    paginator: ListSigningJobsPaginator = client.get_paginator("list_signing_jobs")
+async with session.create_client("signer") as client:  # (1)
+    paginator: ListSigningJobsPaginator = client.get_paginator("list_signing_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSigningJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [signerClient](./client.md)
+2. paginator: [ListSigningJobsPaginator](./paginators.md#listsigningjobspaginator)
+3. item: [:material-code-braces: ListSigningJobsResponseTypeDef](./type_defs.md#listsigningjobsresponsetypedef) 
 
 
 ### paginate
@@ -69,10 +75,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_signer.paginator import ListSigningPlatformsPaginator
 
 session = get_session()
-async with session.create_client("signer") as client:
-    client: signerClient
-    paginator: ListSigningPlatformsPaginator = client.get_paginator("list_signing_platforms")
+async with session.create_client("signer") as client:  # (1)
+    paginator: ListSigningPlatformsPaginator = client.get_paginator("list_signing_platforms")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSigningPlatformsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [signerClient](./client.md)
+2. paginator: [ListSigningPlatformsPaginator](./paginators.md#listsigningplatformspaginator)
+3. item: [:material-code-braces: ListSigningPlatformsResponseTypeDef](./type_defs.md#listsigningplatformsresponsetypedef) 
 
 
 ### paginate
@@ -115,10 +127,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_signer.paginator import ListSigningProfilesPaginator
 
 session = get_session()
-async with session.create_client("signer") as client:
-    client: signerClient
-    paginator: ListSigningProfilesPaginator = client.get_paginator("list_signing_profiles")
+async with session.create_client("signer") as client:  # (1)
+    paginator: ListSigningProfilesPaginator = client.get_paginator("list_signing_profiles")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSigningProfilesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [signerClient](./client.md)
+2. paginator: [ListSigningProfilesPaginator](./paginators.md#listsigningprofilespaginator)
+3. item: [:material-code-braces: ListSigningProfilesResponseTypeDef](./type_defs.md#listsigningprofilesresponsetypedef) 
 
 
 ### paginate

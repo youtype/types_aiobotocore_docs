@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_codedeploy.waiter import DeploymentSuccessfulWaiter
 
-def get_deployment_successful_waiter() -> DeploymentSuccessfulWaiter:
-    return Session().client("codedeploy").get_waiter("deployment_successful")
+session = get_session()
+async with session.create_client("codedeploy") as client:  # (1)
+    waiter: DeploymentSuccessfulWaiter = client.get_waiter("deployment_successful")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [CodeDeployClient](./client.md)
+2. waiter: [DeploymentSuccessfulWaiter](./waiters.md#deploymentsuccessfulwaiter)
 
 
 ### wait

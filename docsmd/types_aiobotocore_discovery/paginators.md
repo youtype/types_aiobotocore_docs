@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_discovery.paginator import DescribeAgentsPaginator
 
 session = get_session()
-async with session.create_client("discovery") as client:
-    client: ApplicationDiscoveryServiceClient
-    paginator: DescribeAgentsPaginator = client.get_paginator("describe_agents")
+async with session.create_client("discovery") as client:  # (1)
+    paginator: DescribeAgentsPaginator = client.get_paginator("describe_agents")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAgentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApplicationDiscoveryServiceClient](./client.md)
+2. paginator: [DescribeAgentsPaginator](./paginators.md#describeagentspaginator)
+3. item: [:material-code-braces: DescribeAgentsResponseTypeDef](./type_defs.md#describeagentsresponsetypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_discovery.paginator import DescribeContinuousExportsPaginator
 
 session = get_session()
-async with session.create_client("discovery") as client:
-    client: ApplicationDiscoveryServiceClient
-    paginator: DescribeContinuousExportsPaginator = client.get_paginator("describe_continuous_exports")
+async with session.create_client("discovery") as client:  # (1)
+    paginator: DescribeContinuousExportsPaginator = client.get_paginator("describe_continuous_exports")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeContinuousExportsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApplicationDiscoveryServiceClient](./client.md)
+2. paginator: [DescribeContinuousExportsPaginator](./paginators.md#describecontinuousexportspaginator)
+3. item: [:material-code-braces: DescribeContinuousExportsResponseTypeDef](./type_defs.md#describecontinuousexportsresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_discovery.paginator import DescribeExportConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("discovery") as client:
-    client: ApplicationDiscoveryServiceClient
-    paginator: DescribeExportConfigurationsPaginator = client.get_paginator("describe_export_configurations")
+async with session.create_client("discovery") as client:  # (1)
+    paginator: DescribeExportConfigurationsPaginator = client.get_paginator("describe_export_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeExportConfigurationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApplicationDiscoveryServiceClient](./client.md)
+2. paginator: [DescribeExportConfigurationsPaginator](./paginators.md#describeexportconfigurationspaginator)
+3. item: [:material-code-braces: DescribeExportConfigurationsResponseTypeDef](./type_defs.md#describeexportconfigurationsresponsetypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_discovery.paginator import DescribeExportTasksPaginator
 
 session = get_session()
-async with session.create_client("discovery") as client:
-    client: ApplicationDiscoveryServiceClient
-    paginator: DescribeExportTasksPaginator = client.get_paginator("describe_export_tasks")
+async with session.create_client("discovery") as client:  # (1)
+    paginator: DescribeExportTasksPaginator = client.get_paginator("describe_export_tasks")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeExportTasksResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApplicationDiscoveryServiceClient](./client.md)
+2. paginator: [DescribeExportTasksPaginator](./paginators.md#describeexporttaskspaginator)
+3. item: [:material-code-braces: DescribeExportTasksResponseTypeDef](./type_defs.md#describeexporttasksresponsetypedef) 
 
 
 ### paginate
@@ -198,10 +222,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_discovery.paginator import DescribeTagsPaginator
 
 session = get_session()
-async with session.create_client("discovery") as client:
-    client: ApplicationDiscoveryServiceClient
-    paginator: DescribeTagsPaginator = client.get_paginator("describe_tags")
+async with session.create_client("discovery") as client:  # (1)
+    paginator: DescribeTagsPaginator = client.get_paginator("describe_tags")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTagsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApplicationDiscoveryServiceClient](./client.md)
+2. paginator: [DescribeTagsPaginator](./paginators.md#describetagspaginator)
+3. item: [:material-code-braces: DescribeTagsResponseTypeDef](./type_defs.md#describetagsresponsetypedef) 
 
 
 ### paginate
@@ -243,10 +273,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_discovery.paginator import ListConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("discovery") as client:
-    client: ApplicationDiscoveryServiceClient
-    paginator: ListConfigurationsPaginator = client.get_paginator("list_configurations")
+async with session.create_client("discovery") as client:  # (1)
+    paginator: ListConfigurationsPaginator = client.get_paginator("list_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListConfigurationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApplicationDiscoveryServiceClient](./client.md)
+2. paginator: [ListConfigurationsPaginator](./paginators.md#listconfigurationspaginator)
+3. item: [:material-code-braces: ListConfigurationsResponseTypeDef](./type_defs.md#listconfigurationsresponsetypedef) 
 
 
 ### paginate

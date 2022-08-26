@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_eks.paginator import DescribeAddonVersionsPaginator
 
 session = get_session()
-async with session.create_client("eks") as client:
-    client: EKSClient
-    paginator: DescribeAddonVersionsPaginator = client.get_paginator("describe_addon_versions")
+async with session.create_client("eks") as client:  # (1)
+    paginator: DescribeAddonVersionsPaginator = client.get_paginator("describe_addon_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAddonVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EKSClient](./client.md)
+2. paginator: [DescribeAddonVersionsPaginator](./paginators.md#describeaddonversionspaginator)
+3. item: [:material-code-braces: DescribeAddonVersionsResponseTypeDef](./type_defs.md#describeaddonversionsresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_eks.paginator import ListAddonsPaginator
 
 session = get_session()
-async with session.create_client("eks") as client:
-    client: EKSClient
-    paginator: ListAddonsPaginator = client.get_paginator("list_addons")
+async with session.create_client("eks") as client:  # (1)
+    paginator: ListAddonsPaginator = client.get_paginator("list_addons")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAddonsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EKSClient](./client.md)
+2. paginator: [ListAddonsPaginator](./paginators.md#listaddonspaginator)
+3. item: [:material-code-braces: ListAddonsResponseTypeDef](./type_defs.md#listaddonsresponsetypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_eks.paginator import ListClustersPaginator
 
 session = get_session()
-async with session.create_client("eks") as client:
-    client: EKSClient
-    paginator: ListClustersPaginator = client.get_paginator("list_clusters")
+async with session.create_client("eks") as client:  # (1)
+    paginator: ListClustersPaginator = client.get_paginator("list_clusters")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListClustersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EKSClient](./client.md)
+2. paginator: [ListClustersPaginator](./paginators.md#listclusterspaginator)
+3. item: [:material-code-braces: ListClustersResponseTypeDef](./type_defs.md#listclustersresponsetypedef) 
 
 
 ### paginate
@@ -151,10 +169,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_eks.paginator import ListFargateProfilesPaginator
 
 session = get_session()
-async with session.create_client("eks") as client:
-    client: EKSClient
-    paginator: ListFargateProfilesPaginator = client.get_paginator("list_fargate_profiles")
+async with session.create_client("eks") as client:  # (1)
+    paginator: ListFargateProfilesPaginator = client.get_paginator("list_fargate_profiles")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFargateProfilesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EKSClient](./client.md)
+2. paginator: [ListFargateProfilesPaginator](./paginators.md#listfargateprofilespaginator)
+3. item: [:material-code-braces: ListFargateProfilesResponseTypeDef](./type_defs.md#listfargateprofilesresponsetypedef) 
 
 
 ### paginate
@@ -195,10 +219,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_eks.paginator import ListIdentityProviderConfigsPaginator
 
 session = get_session()
-async with session.create_client("eks") as client:
-    client: EKSClient
-    paginator: ListIdentityProviderConfigsPaginator = client.get_paginator("list_identity_provider_configs")
+async with session.create_client("eks") as client:  # (1)
+    paginator: ListIdentityProviderConfigsPaginator = client.get_paginator("list_identity_provider_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListIdentityProviderConfigsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EKSClient](./client.md)
+2. paginator: [ListIdentityProviderConfigsPaginator](./paginators.md#listidentityproviderconfigspaginator)
+3. item: [:material-code-braces: ListIdentityProviderConfigsResponseTypeDef](./type_defs.md#listidentityproviderconfigsresponsetypedef) 
 
 
 ### paginate
@@ -239,10 +269,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_eks.paginator import ListNodegroupsPaginator
 
 session = get_session()
-async with session.create_client("eks") as client:
-    client: EKSClient
-    paginator: ListNodegroupsPaginator = client.get_paginator("list_nodegroups")
+async with session.create_client("eks") as client:  # (1)
+    paginator: ListNodegroupsPaginator = client.get_paginator("list_nodegroups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListNodegroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EKSClient](./client.md)
+2. paginator: [ListNodegroupsPaginator](./paginators.md#listnodegroupspaginator)
+3. item: [:material-code-braces: ListNodegroupsResponseTypeDef](./type_defs.md#listnodegroupsresponsetypedef) 
 
 
 ### paginate
@@ -283,10 +319,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_eks.paginator import ListUpdatesPaginator
 
 session = get_session()
-async with session.create_client("eks") as client:
-    client: EKSClient
-    paginator: ListUpdatesPaginator = client.get_paginator("list_updates")
+async with session.create_client("eks") as client:  # (1)
+    paginator: ListUpdatesPaginator = client.get_paginator("list_updates")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUpdatesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EKSClient](./client.md)
+2. paginator: [ListUpdatesPaginator](./paginators.md#listupdatespaginator)
+3. item: [:material-code-braces: ListUpdatesResponseTypeDef](./type_defs.md#listupdatesresponsetypedef) 
 
 
 ### paginate

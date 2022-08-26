@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `QuickSight`.
 
 ### From PyPI with pip
 
@@ -113,6 +108,7 @@ def get_value() -> AnalysisErrorTypeType:
 - [AnalysisErrorTypeType](./literals.md#analysiserrortypetype)
 - [AnalysisFilterAttributeType](./literals.md#analysisfilterattributetype)
 - [AssignmentStatusType](./literals.md#assignmentstatustype)
+- [AuthenticationMethodOptionType](./literals.md#authenticationmethodoptiontype)
 - [ColumnDataTypeType](./literals.md#columndatatypetype)
 - [ColumnTagNameType](./literals.md#columntagnametype)
 - [DashboardBehaviorType](./literals.md#dashboardbehaviortype)
@@ -190,6 +186,7 @@ def get_value() -> AccountCustomizationTypeDef:
 ```
 
 - [AccountCustomizationTypeDef](./type_defs.md#accountcustomizationtypedef)
+- [AccountInfoTypeDef](./type_defs.md#accountinfotypedef)
 - [AccountSettingsTypeDef](./type_defs.md#accountsettingstypedef)
 - [ActiveIAMPolicyAssignmentTypeDef](./type_defs.md#activeiampolicyassignmenttypedef)
 - [AdHocFilteringOptionTypeDef](./type_defs.md#adhocfilteringoptiontypedef)
@@ -201,6 +198,7 @@ def get_value() -> AccountCustomizationTypeDef:
 - [AnalysisSummaryTypeDef](./type_defs.md#analysissummarytypedef)
 - [SheetTypeDef](./type_defs.md#sheettypedef)
 - [AnonymousUserDashboardEmbeddingConfigurationTypeDef](./type_defs.md#anonymoususerdashboardembeddingconfigurationtypedef)
+- [DashboardVisualIdTypeDef](./type_defs.md#dashboardvisualidtypedef)
 - [AthenaParametersTypeDef](./type_defs.md#athenaparameterstypedef)
 - [AuroraParametersTypeDef](./type_defs.md#auroraparameterstypedef)
 - [AuroraPostgreSqlParametersTypeDef](./type_defs.md#aurorapostgresqlparameterstypedef)
@@ -216,6 +214,8 @@ def get_value() -> AccountCustomizationTypeDef:
 - [ColumnLevelPermissionRuleTypeDef](./type_defs.md#columnlevelpermissionruletypedef)
 - [ColumnSchemaTypeDef](./type_defs.md#columnschematypedef)
 - [TagTypeDef](./type_defs.md#tagtypedef)
+- [CreateAccountSubscriptionRequestRequestTypeDef](./type_defs.md#createaccountsubscriptionrequestrequesttypedef)
+- [SignupResponseTypeDef](./type_defs.md#signupresponsetypedef)
 - [ResourcePermissionTypeDef](./type_defs.md#resourcepermissiontypedef)
 - [DataSetUsageConfigurationTypeDef](./type_defs.md#datasetusageconfigurationtypedef)
 - [FieldFolderTypeDef](./type_defs.md#fieldfoldertypedef)
@@ -280,6 +280,7 @@ def get_value() -> AccountCustomizationTypeDef:
 - [DeleteUserRequestRequestTypeDef](./type_defs.md#deleteuserrequestrequesttypedef)
 - [DescribeAccountCustomizationRequestRequestTypeDef](./type_defs.md#describeaccountcustomizationrequestrequesttypedef)
 - [DescribeAccountSettingsRequestRequestTypeDef](./type_defs.md#describeaccountsettingsrequestrequesttypedef)
+- [DescribeAccountSubscriptionRequestRequestTypeDef](./type_defs.md#describeaccountsubscriptionrequestrequesttypedef)
 - [DescribeAnalysisPermissionsRequestRequestTypeDef](./type_defs.md#describeanalysispermissionsrequestrequesttypedef)
 - [DescribeAnalysisRequestRequestTypeDef](./type_defs.md#describeanalysisrequestrequesttypedef)
 - [DescribeDashboardPermissionsRequestRequestTypeDef](./type_defs.md#describedashboardpermissionsrequestrequesttypedef)
@@ -384,7 +385,8 @@ def get_value() -> AccountCustomizationTypeDef:
 - [DashboardSourceTemplateTypeDef](./type_defs.md#dashboardsourcetemplatetypedef)
 - [TemplateSourceAnalysisTypeDef](./type_defs.md#templatesourceanalysistypedef)
 - [AnalysisTypeDef](./type_defs.md#analysistypedef)
-- [AnonymousUserEmbeddingExperienceConfigurationTypeDef](./type_defs.md#anonymoususerembeddingexperienceconfigurationtypedef)
+- [AnonymousUserDashboardVisualEmbeddingConfigurationTypeDef](./type_defs.md#anonymoususerdashboardvisualembeddingconfigurationtypedef)
+- [RegisteredUserDashboardVisualEmbeddingConfigurationTypeDef](./type_defs.md#registereduserdashboardvisualembeddingconfigurationtypedef)
 - [TileStyleTypeDef](./type_defs.md#tilestyletypedef)
 - [CreateColumnsOperationTypeDef](./type_defs.md#createcolumnsoperationtypedef)
 - [CancelIngestionResponseTypeDef](./type_defs.md#cancelingestionresponsetypedef)
@@ -418,6 +420,7 @@ def get_value() -> AccountCustomizationTypeDef:
 - [DeleteUserResponseTypeDef](./type_defs.md#deleteuserresponsetypedef)
 - [DescribeAccountCustomizationResponseTypeDef](./type_defs.md#describeaccountcustomizationresponsetypedef)
 - [DescribeAccountSettingsResponseTypeDef](./type_defs.md#describeaccountsettingsresponsetypedef)
+- [DescribeAccountSubscriptionResponseTypeDef](./type_defs.md#describeaccountsubscriptionresponsetypedef)
 - [DescribeIpRestrictionResponseTypeDef](./type_defs.md#describeiprestrictionresponsetypedef)
 - [GenerateEmbedUrlForAnonymousUserResponseTypeDef](./type_defs.md#generateembedurlforanonymoususerresponsetypedef)
 - [GenerateEmbedUrlForRegisteredUserResponseTypeDef](./type_defs.md#generateembedurlforregistereduserresponsetypedef)
@@ -452,6 +455,7 @@ def get_value() -> AccountCustomizationTypeDef:
 - [CreateNamespaceRequestRequestTypeDef](./type_defs.md#createnamespacerequestrequesttypedef)
 - [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
 - [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
+- [CreateAccountSubscriptionResponseTypeDef](./type_defs.md#createaccountsubscriptionresponsetypedef)
 - [CreateFolderRequestRequestTypeDef](./type_defs.md#createfolderrequestrequesttypedef)
 - [DescribeAnalysisPermissionsResponseTypeDef](./type_defs.md#describeanalysispermissionsresponsetypedef)
 - [DescribeDataSetPermissionsResponseTypeDef](./type_defs.md#describedatasetpermissionsresponsetypedef)
@@ -535,14 +539,14 @@ def get_value() -> AccountCustomizationTypeDef:
 - [TileLayoutStyleTypeDef](./type_defs.md#tilelayoutstyletypedef)
 - [NamespaceInfoV2TypeDef](./type_defs.md#namespaceinfov2typedef)
 - [ParametersTypeDef](./type_defs.md#parameterstypedef)
-- [RegisteredUserEmbeddingExperienceConfigurationTypeDef](./type_defs.md#registereduserembeddingexperienceconfigurationtypedef)
 - [RowLevelPermissionTagConfigurationTypeDef](./type_defs.md#rowlevelpermissiontagconfigurationtypedef)
 - [S3SourceTypeDef](./type_defs.md#s3sourcetypedef)
 - [AnalysisSourceEntityTypeDef](./type_defs.md#analysissourceentitytypedef)
 - [DashboardSourceEntityTypeDef](./type_defs.md#dashboardsourceentitytypedef)
 - [TemplateSourceEntityTypeDef](./type_defs.md#templatesourceentitytypedef)
 - [DescribeAnalysisResponseTypeDef](./type_defs.md#describeanalysisresponsetypedef)
-- [GenerateEmbedUrlForAnonymousUserRequestRequestTypeDef](./type_defs.md#generateembedurlforanonymoususerrequestrequesttypedef)
+- [AnonymousUserEmbeddingExperienceConfigurationTypeDef](./type_defs.md#anonymoususerembeddingexperienceconfigurationtypedef)
+- [RegisteredUserEmbeddingExperienceConfigurationTypeDef](./type_defs.md#registereduserembeddingexperienceconfigurationtypedef)
 - [TagColumnOperationTypeDef](./type_defs.md#tagcolumnoperationtypedef)
 - [DataSetConfigurationTypeDef](./type_defs.md#datasetconfigurationtypedef)
 - [DescribeDashboardPermissionsResponseTypeDef](./type_defs.md#describedashboardpermissionsresponsetypedef)
@@ -556,7 +560,6 @@ def get_value() -> AccountCustomizationTypeDef:
 - [SheetStyleTypeDef](./type_defs.md#sheetstyletypedef)
 - [DescribeNamespaceResponseTypeDef](./type_defs.md#describenamespaceresponsetypedef)
 - [ListNamespacesResponseTypeDef](./type_defs.md#listnamespacesresponsetypedef)
-- [GenerateEmbedUrlForRegisteredUserRequestRequestTypeDef](./type_defs.md#generateembedurlforregistereduserrequestrequesttypedef)
 - [PhysicalTableTypeDef](./type_defs.md#physicaltabletypedef)
 - [CreateAnalysisRequestRequestTypeDef](./type_defs.md#createanalysisrequestrequesttypedef)
 - [UpdateAnalysisRequestRequestTypeDef](./type_defs.md#updateanalysisrequestrequesttypedef)
@@ -564,6 +567,8 @@ def get_value() -> AccountCustomizationTypeDef:
 - [UpdateDashboardRequestRequestTypeDef](./type_defs.md#updatedashboardrequestrequesttypedef)
 - [CreateTemplateRequestRequestTypeDef](./type_defs.md#createtemplaterequestrequesttypedef)
 - [UpdateTemplateRequestRequestTypeDef](./type_defs.md#updatetemplaterequestrequesttypedef)
+- [GenerateEmbedUrlForAnonymousUserRequestRequestTypeDef](./type_defs.md#generateembedurlforanonymoususerrequestrequesttypedef)
+- [GenerateEmbedUrlForRegisteredUserRequestRequestTypeDef](./type_defs.md#generateembedurlforregistereduserrequestrequesttypedef)
 - [TransformOperationTypeDef](./type_defs.md#transformoperationtypedef)
 - [TemplateVersionTypeDef](./type_defs.md#templateversiontypedef)
 - [DescribeDashboardResponseTypeDef](./type_defs.md#describedashboardresponsetypedef)

@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Athena`.
 
 ### From PyPI with pip
 
@@ -145,6 +140,9 @@ def get_value() -> AclConfigurationTypeDef:
 - [NamedQueryTypeDef](./type_defs.md#namedquerytypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
 - [UnprocessedNamedQueryIdTypeDef](./type_defs.md#unprocessednamedqueryidtypedef)
+- [BatchGetPreparedStatementInputRequestTypeDef](./type_defs.md#batchgetpreparedstatementinputrequesttypedef)
+- [PreparedStatementTypeDef](./type_defs.md#preparedstatementtypedef)
+- [UnprocessedPreparedStatementNameTypeDef](./type_defs.md#unprocessedpreparedstatementnametypedef)
 - [BatchGetQueryExecutionInputRequestTypeDef](./type_defs.md#batchgetqueryexecutioninputrequesttypedef)
 - [UnprocessedQueryExecutionIdTypeDef](./type_defs.md#unprocessedqueryexecutionidtypedef)
 - [ColumnInfoTypeDef](./type_defs.md#columninfotypedef)
@@ -166,10 +164,10 @@ def get_value() -> AclConfigurationTypeDef:
 - [GetDatabaseInputRequestTypeDef](./type_defs.md#getdatabaseinputrequesttypedef)
 - [GetNamedQueryInputRequestTypeDef](./type_defs.md#getnamedqueryinputrequesttypedef)
 - [GetPreparedStatementInputRequestTypeDef](./type_defs.md#getpreparedstatementinputrequesttypedef)
-- [PreparedStatementTypeDef](./type_defs.md#preparedstatementtypedef)
 - [GetQueryExecutionInputRequestTypeDef](./type_defs.md#getqueryexecutioninputrequesttypedef)
 - [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 - [GetQueryResultsInputRequestTypeDef](./type_defs.md#getqueryresultsinputrequesttypedef)
+- [GetQueryRuntimeStatisticsInputRequestTypeDef](./type_defs.md#getqueryruntimestatisticsinputrequesttypedef)
 - [GetTableMetadataInputRequestTypeDef](./type_defs.md#gettablemetadatainputrequesttypedef)
 - [GetWorkGroupInputRequestTypeDef](./type_defs.md#getworkgroupinputrequesttypedef)
 - [ListDataCatalogsInputRequestTypeDef](./type_defs.md#listdatacatalogsinputrequesttypedef)
@@ -184,6 +182,10 @@ def get_value() -> AclConfigurationTypeDef:
 - [ListWorkGroupsInputRequestTypeDef](./type_defs.md#listworkgroupsinputrequesttypedef)
 - [QueryExecutionContextTypeDef](./type_defs.md#queryexecutioncontexttypedef)
 - [QueryExecutionStatisticsTypeDef](./type_defs.md#queryexecutionstatisticstypedef)
+- [QueryRuntimeStatisticsRowsTypeDef](./type_defs.md#queryruntimestatisticsrowstypedef)
+- [QueryRuntimeStatisticsTimelineTypeDef](./type_defs.md#queryruntimestatisticstimelinetypedef)
+- [QueryStagePlanNodeTypeDef](./type_defs.md#querystageplannodetypedef)
+- [QueryStageTypeDef](./type_defs.md#querystagetypedef)
 - [StopQueryExecutionInputRequestTypeDef](./type_defs.md#stopqueryexecutioninputrequesttypedef)
 - [UntagResourceInputRequestTypeDef](./type_defs.md#untagresourceinputrequesttypedef)
 - [UpdateDataCatalogInputRequestTypeDef](./type_defs.md#updatedatacataloginputrequesttypedef)
@@ -196,6 +198,8 @@ def get_value() -> AclConfigurationTypeDef:
 - [ListQueryExecutionsOutputTypeDef](./type_defs.md#listqueryexecutionsoutputtypedef)
 - [StartQueryExecutionOutputTypeDef](./type_defs.md#startqueryexecutionoutputtypedef)
 - [BatchGetNamedQueryOutputTypeDef](./type_defs.md#batchgetnamedqueryoutputtypedef)
+- [GetPreparedStatementOutputTypeDef](./type_defs.md#getpreparedstatementoutputtypedef)
+- [BatchGetPreparedStatementOutputTypeDef](./type_defs.md#batchgetpreparedstatementoutputtypedef)
 - [ResultSetMetadataTypeDef](./type_defs.md#resultsetmetadatatypedef)
 - [TableMetadataTypeDef](./type_defs.md#tablemetadatatypedef)
 - [CreateDataCatalogInputRequestTypeDef](./type_defs.md#createdatacataloginputrequesttypedef)
@@ -210,7 +214,6 @@ def get_value() -> AclConfigurationTypeDef:
 - [ResultConfigurationUpdatesTypeDef](./type_defs.md#resultconfigurationupdatestypedef)
 - [ListEngineVersionsOutputTypeDef](./type_defs.md#listengineversionsoutputtypedef)
 - [WorkGroupSummaryTypeDef](./type_defs.md#workgroupsummarytypedef)
-- [GetPreparedStatementOutputTypeDef](./type_defs.md#getpreparedstatementoutputtypedef)
 - [GetQueryResultsInputGetQueryResultsPaginateTypeDef](./type_defs.md#getqueryresultsinputgetqueryresultspaginatetypedef)
 - [ListDataCatalogsInputListDataCatalogsPaginateTypeDef](./type_defs.md#listdatacatalogsinputlistdatacatalogspaginatetypedef)
 - [ListDatabasesInputListDatabasesPaginateTypeDef](./type_defs.md#listdatabasesinputlistdatabasespaginatetypedef)
@@ -219,6 +222,7 @@ def get_value() -> AclConfigurationTypeDef:
 - [ListTableMetadataInputListTableMetadataPaginateTypeDef](./type_defs.md#listtablemetadatainputlisttablemetadatapaginatetypedef)
 - [ListTagsForResourceInputListTagsForResourcePaginateTypeDef](./type_defs.md#listtagsforresourceinputlisttagsforresourcepaginatetypedef)
 - [ListPreparedStatementsOutputTypeDef](./type_defs.md#listpreparedstatementsoutputtypedef)
+- [QueryRuntimeStatisticsTypeDef](./type_defs.md#queryruntimestatisticstypedef)
 - [GetTableMetadataOutputTypeDef](./type_defs.md#gettablemetadataoutputtypedef)
 - [ListTableMetadataOutputTypeDef](./type_defs.md#listtablemetadataoutputtypedef)
 - [ResultSetTypeDef](./type_defs.md#resultsettypedef)
@@ -227,6 +231,7 @@ def get_value() -> AclConfigurationTypeDef:
 - [WorkGroupConfigurationTypeDef](./type_defs.md#workgroupconfigurationtypedef)
 - [WorkGroupConfigurationUpdatesTypeDef](./type_defs.md#workgroupconfigurationupdatestypedef)
 - [ListWorkGroupsOutputTypeDef](./type_defs.md#listworkgroupsoutputtypedef)
+- [GetQueryRuntimeStatisticsOutputTypeDef](./type_defs.md#getqueryruntimestatisticsoutputtypedef)
 - [GetQueryResultsOutputTypeDef](./type_defs.md#getqueryresultsoutputtypedef)
 - [BatchGetQueryExecutionOutputTypeDef](./type_defs.md#batchgetqueryexecutionoutputtypedef)
 - [GetQueryExecutionOutputTypeDef](./type_defs.md#getqueryexecutionoutputtypedef)

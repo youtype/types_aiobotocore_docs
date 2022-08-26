@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_grafana.paginator import ListPermissionsPaginator
 
 session = get_session()
-async with session.create_client("grafana") as client:
-    client: ManagedGrafanaClient
-    paginator: ListPermissionsPaginator = client.get_paginator("list_permissions")
+async with session.create_client("grafana") as client:  # (1)
+    paginator: ListPermissionsPaginator = client.get_paginator("list_permissions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPermissionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ManagedGrafanaClient](./client.md)
+2. paginator: [ListPermissionsPaginator](./paginators.md#listpermissionspaginator)
+3. item: [:material-code-braces: ListPermissionsResponseTypeDef](./type_defs.md#listpermissionsresponsetypedef) 
 
 
 ### paginate
@@ -66,10 +72,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_grafana.paginator import ListWorkspacesPaginator
 
 session = get_session()
-async with session.create_client("grafana") as client:
-    client: ManagedGrafanaClient
-    paginator: ListWorkspacesPaginator = client.get_paginator("list_workspaces")
+async with session.create_client("grafana") as client:  # (1)
+    paginator: ListWorkspacesPaginator = client.get_paginator("list_workspaces")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListWorkspacesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ManagedGrafanaClient](./client.md)
+2. paginator: [ListWorkspacesPaginator](./paginators.md#listworkspacespaginator)
+3. item: [:material-code-braces: ListWorkspacesResponseTypeDef](./type_defs.md#listworkspacesresponsetypedef) 
 
 
 ### paginate

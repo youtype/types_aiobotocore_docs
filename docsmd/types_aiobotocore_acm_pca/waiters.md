@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_acm_pca.waiter import AuditReportCreatedWaiter
 
-def get_audit_report_created_waiter() -> AuditReportCreatedWaiter:
-    return Session().client("acm-pca").get_waiter("audit_report_created")
+session = get_session()
+async with session.create_client("acm-pca") as client:  # (1)
+    waiter: AuditReportCreatedWaiter = client.get_waiter("audit_report_created")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ACMPCAClient](./client.md)
+2. waiter: [AuditReportCreatedWaiter](./waiters.md#auditreportcreatedwaiter)
 
 
 ### wait
@@ -60,9 +65,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_acm_pca.waiter import CertificateAuthorityCSRCreatedWaiter
 
-def get_certificate_authority_csr_created_waiter() -> CertificateAuthorityCSRCreatedWaiter:
-    return Session().client("acm-pca").get_waiter("certificate_authority_csr_created")
+session = get_session()
+async with session.create_client("acm-pca") as client:  # (1)
+    waiter: CertificateAuthorityCSRCreatedWaiter = client.get_waiter("certificate_authority_csr_created")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ACMPCAClient](./client.md)
+2. waiter: [CertificateAuthorityCSRCreatedWaiter](./waiters.md#certificateauthoritycsrcreatedwaiter)
 
 
 ### wait
@@ -101,9 +111,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_acm_pca.waiter import CertificateIssuedWaiter
 
-def get_certificate_issued_waiter() -> CertificateIssuedWaiter:
-    return Session().client("acm-pca").get_waiter("certificate_issued")
+session = get_session()
+async with session.create_client("acm-pca") as client:  # (1)
+    waiter: CertificateIssuedWaiter = client.get_waiter("certificate_issued")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ACMPCAClient](./client.md)
+2. waiter: [CertificateIssuedWaiter](./waiters.md#certificateissuedwaiter)
 
 
 ### wait

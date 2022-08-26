@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cognito_identity.paginator import ListIdentityPoolsPaginator
 
 session = get_session()
-async with session.create_client("cognito-identity") as client:
-    client: CognitoIdentityClient
-    paginator: ListIdentityPoolsPaginator = client.get_paginator("list_identity_pools")
+async with session.create_client("cognito-identity") as client:  # (1)
+    paginator: ListIdentityPoolsPaginator = client.get_paginator("list_identity_pools")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListIdentityPoolsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CognitoIdentityClient](./client.md)
+2. paginator: [ListIdentityPoolsPaginator](./paginators.md#listidentitypoolspaginator)
+3. item: [:material-code-braces: ListIdentityPoolsResponseTypeDef](./type_defs.md#listidentitypoolsresponsetypedef) 
 
 
 ### paginate

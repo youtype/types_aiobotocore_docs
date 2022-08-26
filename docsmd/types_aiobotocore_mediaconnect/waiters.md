@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_mediaconnect.waiter import FlowActiveWaiter
 
-def get_flow_active_waiter() -> FlowActiveWaiter:
-    return Session().client("mediaconnect").get_waiter("flow_active")
+session = get_session()
+async with session.create_client("mediaconnect") as client:  # (1)
+    waiter: FlowActiveWaiter = client.get_waiter("flow_active")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [MediaConnectClient](./client.md)
+2. waiter: [FlowActiveWaiter](./waiters.md#flowactivewaiter)
 
 
 ### wait
@@ -58,9 +63,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_mediaconnect.waiter import FlowDeletedWaiter
 
-def get_flow_deleted_waiter() -> FlowDeletedWaiter:
-    return Session().client("mediaconnect").get_waiter("flow_deleted")
+session = get_session()
+async with session.create_client("mediaconnect") as client:  # (1)
+    waiter: FlowDeletedWaiter = client.get_waiter("flow_deleted")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [MediaConnectClient](./client.md)
+2. waiter: [FlowDeletedWaiter](./waiters.md#flowdeletedwaiter)
 
 
 ### wait
@@ -99,9 +109,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_mediaconnect.waiter import FlowStandbyWaiter
 
-def get_flow_standby_waiter() -> FlowStandbyWaiter:
-    return Session().client("mediaconnect").get_waiter("flow_standby")
+session = get_session()
+async with session.create_client("mediaconnect") as client:  # (1)
+    waiter: FlowStandbyWaiter = client.get_waiter("flow_standby")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [MediaConnectClient](./client.md)
+2. waiter: [FlowStandbyWaiter](./waiters.md#flowstandbywaiter)
 
 
 ### wait

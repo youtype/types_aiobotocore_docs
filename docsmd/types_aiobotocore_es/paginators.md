@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_es.paginator import DescribeReservedElasticsearchInstanceOfferingsPaginator
 
 session = get_session()
-async with session.create_client("es") as client:
-    client: ElasticsearchServiceClient
-    paginator: DescribeReservedElasticsearchInstanceOfferingsPaginator = client.get_paginator("describe_reserved_elasticsearch_instance_offerings")
+async with session.create_client("es") as client:  # (1)
+    paginator: DescribeReservedElasticsearchInstanceOfferingsPaginator = client.get_paginator("describe_reserved_elasticsearch_instance_offerings")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeReservedElasticsearchInstanceOfferingsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticsearchServiceClient](./client.md)
+2. paginator: [DescribeReservedElasticsearchInstanceOfferingsPaginator](./paginators.md#describereservedelasticsearchinstanceofferingspaginator)
+3. item: [:material-code-braces: DescribeReservedElasticsearchInstanceOfferingsResponseTypeDef](./type_defs.md#describereservedelasticsearchinstanceofferingsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_es.paginator import DescribeReservedElasticsearchInstancesPaginator
 
 session = get_session()
-async with session.create_client("es") as client:
-    client: ElasticsearchServiceClient
-    paginator: DescribeReservedElasticsearchInstancesPaginator = client.get_paginator("describe_reserved_elasticsearch_instances")
+async with session.create_client("es") as client:  # (1)
+    paginator: DescribeReservedElasticsearchInstancesPaginator = client.get_paginator("describe_reserved_elasticsearch_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeReservedElasticsearchInstancesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticsearchServiceClient](./client.md)
+2. paginator: [DescribeReservedElasticsearchInstancesPaginator](./paginators.md#describereservedelasticsearchinstancespaginator)
+3. item: [:material-code-braces: DescribeReservedElasticsearchInstancesResponseTypeDef](./type_defs.md#describereservedelasticsearchinstancesresponsetypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_es.paginator import GetUpgradeHistoryPaginator
 
 session = get_session()
-async with session.create_client("es") as client:
-    client: ElasticsearchServiceClient
-    paginator: GetUpgradeHistoryPaginator = client.get_paginator("get_upgrade_history")
+async with session.create_client("es") as client:  # (1)
+    paginator: GetUpgradeHistoryPaginator = client.get_paginator("get_upgrade_history")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetUpgradeHistoryResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticsearchServiceClient](./client.md)
+2. paginator: [GetUpgradeHistoryPaginator](./paginators.md#getupgradehistorypaginator)
+3. item: [:material-code-braces: GetUpgradeHistoryResponseTypeDef](./type_defs.md#getupgradehistoryresponsetypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_es.paginator import ListElasticsearchInstanceTypesPaginator
 
 session = get_session()
-async with session.create_client("es") as client:
-    client: ElasticsearchServiceClient
-    paginator: ListElasticsearchInstanceTypesPaginator = client.get_paginator("list_elasticsearch_instance_types")
+async with session.create_client("es") as client:  # (1)
+    paginator: ListElasticsearchInstanceTypesPaginator = client.get_paginator("list_elasticsearch_instance_types")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListElasticsearchInstanceTypesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticsearchServiceClient](./client.md)
+2. paginator: [ListElasticsearchInstanceTypesPaginator](./paginators.md#listelasticsearchinstancetypespaginator)
+3. item: [:material-code-braces: ListElasticsearchInstanceTypesResponseTypeDef](./type_defs.md#listelasticsearchinstancetypesresponsetypedef) 
 
 
 ### paginate
@@ -195,10 +219,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_es.paginator import ListElasticsearchVersionsPaginator
 
 session = get_session()
-async with session.create_client("es") as client:
-    client: ElasticsearchServiceClient
-    paginator: ListElasticsearchVersionsPaginator = client.get_paginator("list_elasticsearch_versions")
+async with session.create_client("es") as client:  # (1)
+    paginator: ListElasticsearchVersionsPaginator = client.get_paginator("list_elasticsearch_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListElasticsearchVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticsearchServiceClient](./client.md)
+2. paginator: [ListElasticsearchVersionsPaginator](./paginators.md#listelasticsearchversionspaginator)
+3. item: [:material-code-braces: ListElasticsearchVersionsResponseTypeDef](./type_defs.md#listelasticsearchversionsresponsetypedef) 
 
 
 ### paginate

@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Glue`.
 
 ### From PyPI with pip
 
@@ -135,6 +130,7 @@ def get_value() -> AggFunctionType:
 - [DataFormatType](./literals.md#dataformattype)
 - [DeleteBehaviorType](./literals.md#deletebehaviortype)
 - [EnableHybridValuesType](./literals.md#enablehybridvaluestype)
+- [ExecutionClassType](./literals.md#executionclasstype)
 - [ExistConditionType](./literals.md#existconditiontype)
 - [FieldNameType](./literals.md#fieldnametype)
 - [FilterLogicalOperatorType](./literals.md#filterlogicaloperatortype)

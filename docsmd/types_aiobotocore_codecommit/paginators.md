@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codecommit.paginator import DescribePullRequestEventsPaginator
 
 session = get_session()
-async with session.create_client("codecommit") as client:
-    client: CodeCommitClient
-    paginator: DescribePullRequestEventsPaginator = client.get_paginator("describe_pull_request_events")
+async with session.create_client("codecommit") as client:  # (1)
+    paginator: DescribePullRequestEventsPaginator = client.get_paginator("describe_pull_request_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribePullRequestEventsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeCommitClient](./client.md)
+2. paginator: [DescribePullRequestEventsPaginator](./paginators.md#describepullrequesteventspaginator)
+3. item: [:material-code-braces: DescribePullRequestEventsOutputTypeDef](./type_defs.md#describepullrequesteventsoutputtypedef) 
 
 
 ### paginate
@@ -65,10 +71,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codecommit.paginator import GetCommentsForComparedCommitPaginator
 
 session = get_session()
-async with session.create_client("codecommit") as client:
-    client: CodeCommitClient
-    paginator: GetCommentsForComparedCommitPaginator = client.get_paginator("get_comments_for_compared_commit")
+async with session.create_client("codecommit") as client:  # (1)
+    paginator: GetCommentsForComparedCommitPaginator = client.get_paginator("get_comments_for_compared_commit")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetCommentsForComparedCommitOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeCommitClient](./client.md)
+2. paginator: [GetCommentsForComparedCommitPaginator](./paginators.md#getcommentsforcomparedcommitpaginator)
+3. item: [:material-code-braces: GetCommentsForComparedCommitOutputTypeDef](./type_defs.md#getcommentsforcomparedcommitoutputtypedef) 
 
 
 ### paginate
@@ -112,10 +124,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codecommit.paginator import GetCommentsForPullRequestPaginator
 
 session = get_session()
-async with session.create_client("codecommit") as client:
-    client: CodeCommitClient
-    paginator: GetCommentsForPullRequestPaginator = client.get_paginator("get_comments_for_pull_request")
+async with session.create_client("codecommit") as client:  # (1)
+    paginator: GetCommentsForPullRequestPaginator = client.get_paginator("get_comments_for_pull_request")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetCommentsForPullRequestOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeCommitClient](./client.md)
+2. paginator: [GetCommentsForPullRequestPaginator](./paginators.md#getcommentsforpullrequestpaginator)
+3. item: [:material-code-braces: GetCommentsForPullRequestOutputTypeDef](./type_defs.md#getcommentsforpullrequestoutputtypedef) 
 
 
 ### paginate
@@ -159,10 +177,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codecommit.paginator import GetDifferencesPaginator
 
 session = get_session()
-async with session.create_client("codecommit") as client:
-    client: CodeCommitClient
-    paginator: GetDifferencesPaginator = client.get_paginator("get_differences")
+async with session.create_client("codecommit") as client:  # (1)
+    paginator: GetDifferencesPaginator = client.get_paginator("get_differences")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetDifferencesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeCommitClient](./client.md)
+2. paginator: [GetDifferencesPaginator](./paginators.md#getdifferencespaginator)
+3. item: [:material-code-braces: GetDifferencesOutputTypeDef](./type_defs.md#getdifferencesoutputtypedef) 
 
 
 ### paginate
@@ -208,10 +232,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codecommit.paginator import ListBranchesPaginator
 
 session = get_session()
-async with session.create_client("codecommit") as client:
-    client: CodeCommitClient
-    paginator: ListBranchesPaginator = client.get_paginator("list_branches")
+async with session.create_client("codecommit") as client:  # (1)
+    paginator: ListBranchesPaginator = client.get_paginator("list_branches")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBranchesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeCommitClient](./client.md)
+2. paginator: [ListBranchesPaginator](./paginators.md#listbranchespaginator)
+3. item: [:material-code-braces: ListBranchesOutputTypeDef](./type_defs.md#listbranchesoutputtypedef) 
 
 
 ### paginate
@@ -252,10 +282,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codecommit.paginator import ListPullRequestsPaginator
 
 session = get_session()
-async with session.create_client("codecommit") as client:
-    client: CodeCommitClient
-    paginator: ListPullRequestsPaginator = client.get_paginator("list_pull_requests")
+async with session.create_client("codecommit") as client:  # (1)
+    paginator: ListPullRequestsPaginator = client.get_paginator("list_pull_requests")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPullRequestsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeCommitClient](./client.md)
+2. paginator: [ListPullRequestsPaginator](./paginators.md#listpullrequestspaginator)
+3. item: [:material-code-braces: ListPullRequestsOutputTypeDef](./type_defs.md#listpullrequestsoutputtypedef) 
 
 
 ### paginate
@@ -299,10 +335,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codecommit.paginator import ListRepositoriesPaginator
 
 session = get_session()
-async with session.create_client("codecommit") as client:
-    client: CodeCommitClient
-    paginator: ListRepositoriesPaginator = client.get_paginator("list_repositories")
+async with session.create_client("codecommit") as client:  # (1)
+    paginator: ListRepositoriesPaginator = client.get_paginator("list_repositories")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRepositoriesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeCommitClient](./client.md)
+2. paginator: [ListRepositoriesPaginator](./paginators.md#listrepositoriespaginator)
+3. item: [:material-code-braces: ListRepositoriesOutputTypeDef](./type_defs.md#listrepositoriesoutputtypedef) 
 
 
 ### paginate

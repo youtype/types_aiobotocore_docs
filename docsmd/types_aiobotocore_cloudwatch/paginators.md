@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudwatch.paginator import DescribeAlarmHistoryPaginator
 
 session = get_session()
-async with session.create_client("cloudwatch") as client:
-    client: CloudWatchClient
-    paginator: DescribeAlarmHistoryPaginator = client.get_paginator("describe_alarm_history")
+async with session.create_client("cloudwatch") as client:  # (1)
+    paginator: DescribeAlarmHistoryPaginator = client.get_paginator("describe_alarm_history")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAlarmHistoryOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchClient](./client.md)
+2. paginator: [DescribeAlarmHistoryPaginator](./paginators.md#describealarmhistorypaginator)
+3. item: [:material-code-braces: DescribeAlarmHistoryOutputTypeDef](./type_defs.md#describealarmhistoryoutputtypedef) 
 
 
 ### paginate
@@ -70,10 +76,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudwatch.paginator import DescribeAlarmsPaginator
 
 session = get_session()
-async with session.create_client("cloudwatch") as client:
-    client: CloudWatchClient
-    paginator: DescribeAlarmsPaginator = client.get_paginator("describe_alarms")
+async with session.create_client("cloudwatch") as client:  # (1)
+    paginator: DescribeAlarmsPaginator = client.get_paginator("describe_alarms")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAlarmsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchClient](./client.md)
+2. paginator: [DescribeAlarmsPaginator](./paginators.md#describealarmspaginator)
+3. item: [:material-code-braces: DescribeAlarmsOutputTypeDef](./type_defs.md#describealarmsoutputtypedef) 
 
 
 ### paginate
@@ -111,6 +123,61 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeAlarmsInputDescribeAlarmsPaginateTypeDef](./type_defs.md#describealarmsinputdescribealarmspaginatetypedef) 
+## DescribeAnomalyDetectorsPaginator
+
+Type annotations and code completion for `#!python session.create_client("cloudwatch").get_paginator("describe_anomaly_detectors")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Paginator.DescribeAnomalyDetectors)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_cloudwatch.paginator import DescribeAnomalyDetectorsPaginator
+
+session = get_session()
+async with session.create_client("cloudwatch") as client:  # (1)
+    paginator: DescribeAnomalyDetectorsPaginator = client.get_paginator("describe_anomaly_detectors")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAnomalyDetectorsOutputTypeDef
+        print(item)  # (3)
+```
+
+1. client: [CloudWatchClient](./client.md)
+2. paginator: [DescribeAnomalyDetectorsPaginator](./paginators.md#describeanomalydetectorspaginator)
+3. item: [:material-code-braces: DescribeAnomalyDetectorsOutputTypeDef](./type_defs.md#describeanomalydetectorsoutputtypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python DescribeAnomalyDetectorsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    Namespace: str = ...,
+    MetricName: str = ...,
+    Dimensions: Sequence[DimensionTypeDef] = ...,  # (1)
+    AnomalyDetectorTypes: Sequence[AnomalyDetectorTypeType] = ...,  # (2)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (3)
+) -> AsyncIterator[DescribeAnomalyDetectorsOutputTypeDef]:  # (4)
+    ...
+```
+
+1. See [:material-code-braces: DimensionTypeDef](./type_defs.md#dimensiontypedef) 
+2. See [:material-code-brackets: AnomalyDetectorTypeType](./literals.md#anomalydetectortypetype) 
+3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+4. See [:material-code-braces: DescribeAnomalyDetectorsOutputTypeDef](./type_defs.md#describeanomalydetectorsoutputtypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeAnomalyDetectorsInputDescribeAnomalyDetectorsPaginateTypeDef = {  # (1)
+    "Namespace": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeAnomalyDetectorsInputDescribeAnomalyDetectorsPaginateTypeDef](./type_defs.md#describeanomalydetectorsinputdescribeanomalydetectorspaginatetypedef) 
 ## GetMetricDataPaginator
 
 Type annotations and code completion for `#!python session.create_client("cloudwatch").get_paginator("get_metric_data")`.
@@ -122,10 +189,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudwatch.paginator import GetMetricDataPaginator
 
 session = get_session()
-async with session.create_client("cloudwatch") as client:
-    client: CloudWatchClient
-    paginator: GetMetricDataPaginator = client.get_paginator("get_metric_data")
+async with session.create_client("cloudwatch") as client:  # (1)
+    paginator: GetMetricDataPaginator = client.get_paginator("get_metric_data")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetMetricDataOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchClient](./client.md)
+2. paginator: [GetMetricDataPaginator](./paginators.md#getmetricdatapaginator)
+3. item: [:material-code-braces: GetMetricDataOutputTypeDef](./type_defs.md#getmetricdataoutputtypedef) 
 
 
 ### paginate
@@ -175,10 +248,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudwatch.paginator import ListDashboardsPaginator
 
 session = get_session()
-async with session.create_client("cloudwatch") as client:
-    client: CloudWatchClient
-    paginator: ListDashboardsPaginator = client.get_paginator("list_dashboards")
+async with session.create_client("cloudwatch") as client:  # (1)
+    paginator: ListDashboardsPaginator = client.get_paginator("list_dashboards")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDashboardsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchClient](./client.md)
+2. paginator: [ListDashboardsPaginator](./paginators.md#listdashboardspaginator)
+3. item: [:material-code-braces: ListDashboardsOutputTypeDef](./type_defs.md#listdashboardsoutputtypedef) 
 
 
 ### paginate
@@ -219,10 +298,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudwatch.paginator import ListMetricsPaginator
 
 session = get_session()
-async with session.create_client("cloudwatch") as client:
-    client: CloudWatchClient
-    paginator: ListMetricsPaginator = client.get_paginator("list_metrics")
+async with session.create_client("cloudwatch") as client:  # (1)
+    paginator: ListMetricsPaginator = client.get_paginator("list_metrics")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMetricsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchClient](./client.md)
+2. paginator: [ListMetricsPaginator](./paginators.md#listmetricspaginator)
+3. item: [:material-code-braces: ListMetricsOutputTypeDef](./type_defs.md#listmetricsoutputtypedef) 
 
 
 ### paginate

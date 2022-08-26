@@ -44,14 +44,14 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("guardduty") as client:  # (1)
-        paginator = client.get_paginator("list_detectors")  # (2)
+        paginator = client.get_paginator("describe_malware_scans")  # (2)
         async for item in paginator.paginate(...):
             print(item)  # (3)
     ```
 
     1. client: [GuardDutyClient](./client.md)
-    2. paginator: [ListDetectorsPaginator](./paginators.md#listdetectorspaginator)
-    3. item: [:material-code-braces: ListDetectorsResponseTypeDef](./type_defs.md#listdetectorsresponsetypedef) 
+    2. paginator: [DescribeMalwareScansPaginator](./paginators.md#describemalwarescanspaginator)
+    3. item: [:material-code-braces: DescribeMalwareScansResponseTypeDef](./type_defs.md#describemalwarescansresponsetypedef) 
 
 
 
@@ -92,17 +92,17 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_guardduty.client import GuardDutyClient
-    from types_aiobotocore_guardduty.paginator import ListDetectorsPaginator
-    from types_aiobotocore_guardduty.type_defs import ListDetectorsResponseTypeDef
+    from types_aiobotocore_guardduty.paginator import DescribeMalwareScansPaginator
+    from types_aiobotocore_guardduty.type_defs import DescribeMalwareScansResponseTypeDef
 
 
     session = get_session()
 
     async with session.create_client("guardduty") as client:
         client: GuardDutyClient
-        paginator: ListDetectorsPaginator = client.get_paginator("list_detectors")
+        paginator: DescribeMalwareScansPaginator = client.get_paginator("describe_malware_scans")
         async for item in paginator.paginate(...):
-            item: ListDetectorsResponseTypeDef
+            item: DescribeMalwareScansResponseTypeDef
             print(item)
     ```
 

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appsync.paginator import ListApiKeysPaginator
 
 session = get_session()
-async with session.create_client("appsync") as client:
-    client: AppSyncClient
-    paginator: ListApiKeysPaginator = client.get_paginator("list_api_keys")
+async with session.create_client("appsync") as client:  # (1)
+    paginator: ListApiKeysPaginator = client.get_paginator("list_api_keys")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListApiKeysResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppSyncClient](./client.md)
+2. paginator: [ListApiKeysPaginator](./paginators.md#listapikeyspaginator)
+3. item: [:material-code-braces: ListApiKeysResponseTypeDef](./type_defs.md#listapikeysresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appsync.paginator import ListDataSourcesPaginator
 
 session = get_session()
-async with session.create_client("appsync") as client:
-    client: AppSyncClient
-    paginator: ListDataSourcesPaginator = client.get_paginator("list_data_sources")
+async with session.create_client("appsync") as client:  # (1)
+    paginator: ListDataSourcesPaginator = client.get_paginator("list_data_sources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDataSourcesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppSyncClient](./client.md)
+2. paginator: [ListDataSourcesPaginator](./paginators.md#listdatasourcespaginator)
+3. item: [:material-code-braces: ListDataSourcesResponseTypeDef](./type_defs.md#listdatasourcesresponsetypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appsync.paginator import ListFunctionsPaginator
 
 session = get_session()
-async with session.create_client("appsync") as client:
-    client: AppSyncClient
-    paginator: ListFunctionsPaginator = client.get_paginator("list_functions")
+async with session.create_client("appsync") as client:  # (1)
+    paginator: ListFunctionsPaginator = client.get_paginator("list_functions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFunctionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppSyncClient](./client.md)
+2. paginator: [ListFunctionsPaginator](./paginators.md#listfunctionspaginator)
+3. item: [:material-code-braces: ListFunctionsResponseTypeDef](./type_defs.md#listfunctionsresponsetypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appsync.paginator import ListGraphqlApisPaginator
 
 session = get_session()
-async with session.create_client("appsync") as client:
-    client: AppSyncClient
-    paginator: ListGraphqlApisPaginator = client.get_paginator("list_graphql_apis")
+async with session.create_client("appsync") as client:  # (1)
+    paginator: ListGraphqlApisPaginator = client.get_paginator("list_graphql_apis")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGraphqlApisResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppSyncClient](./client.md)
+2. paginator: [ListGraphqlApisPaginator](./paginators.md#listgraphqlapispaginator)
+3. item: [:material-code-braces: ListGraphqlApisResponseTypeDef](./type_defs.md#listgraphqlapisresponsetypedef) 
 
 
 ### paginate
@@ -193,10 +217,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appsync.paginator import ListResolversPaginator
 
 session = get_session()
-async with session.create_client("appsync") as client:
-    client: AppSyncClient
-    paginator: ListResolversPaginator = client.get_paginator("list_resolvers")
+async with session.create_client("appsync") as client:  # (1)
+    paginator: ListResolversPaginator = client.get_paginator("list_resolvers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResolversResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppSyncClient](./client.md)
+2. paginator: [ListResolversPaginator](./paginators.md#listresolverspaginator)
+3. item: [:material-code-braces: ListResolversResponseTypeDef](./type_defs.md#listresolversresponsetypedef) 
 
 
 ### paginate
@@ -239,10 +269,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appsync.paginator import ListResolversByFunctionPaginator
 
 session = get_session()
-async with session.create_client("appsync") as client:
-    client: AppSyncClient
-    paginator: ListResolversByFunctionPaginator = client.get_paginator("list_resolvers_by_function")
+async with session.create_client("appsync") as client:  # (1)
+    paginator: ListResolversByFunctionPaginator = client.get_paginator("list_resolvers_by_function")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResolversByFunctionResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppSyncClient](./client.md)
+2. paginator: [ListResolversByFunctionPaginator](./paginators.md#listresolversbyfunctionpaginator)
+3. item: [:material-code-braces: ListResolversByFunctionResponseTypeDef](./type_defs.md#listresolversbyfunctionresponsetypedef) 
 
 
 ### paginate
@@ -285,10 +321,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_appsync.paginator import ListTypesPaginator
 
 session = get_session()
-async with session.create_client("appsync") as client:
-    client: AppSyncClient
-    paginator: ListTypesPaginator = client.get_paginator("list_types")
+async with session.create_client("appsync") as client:  # (1)
+    paginator: ListTypesPaginator = client.get_paginator("list_types")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTypesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppSyncClient](./client.md)
+2. paginator: [ListTypesPaginator](./paginators.md#listtypespaginator)
+3. item: [:material-code-braces: ListTypesResponseTypeDef](./type_defs.md#listtypesresponsetypedef) 
 
 
 ### paginate

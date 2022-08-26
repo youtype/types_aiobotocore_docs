@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_kinesis.waiter import StreamExistsWaiter
 
-def get_stream_exists_waiter() -> StreamExistsWaiter:
-    return Session().client("kinesis").get_waiter("stream_exists")
+session = get_session()
+async with session.create_client("kinesis") as client:  # (1)
+    waiter: StreamExistsWaiter = client.get_waiter("stream_exists")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [KinesisClient](./client.md)
+2. waiter: [StreamExistsWaiter](./waiters.md#streamexistswaiter)
 
 
 ### wait
@@ -60,9 +65,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_kinesis.waiter import StreamNotExistsWaiter
 
-def get_stream_not_exists_waiter() -> StreamNotExistsWaiter:
-    return Session().client("kinesis").get_waiter("stream_not_exists")
+session = get_session()
+async with session.create_client("kinesis") as client:  # (1)
+    waiter: StreamNotExistsWaiter = client.get_waiter("stream_not_exists")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [KinesisClient](./client.md)
+2. waiter: [StreamNotExistsWaiter](./waiters.md#streamnotexistswaiter)
 
 
 ### wait

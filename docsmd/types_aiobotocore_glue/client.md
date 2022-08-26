@@ -601,7 +601,7 @@ parent.cancel_ml_task_run(**kwargs)
 
 ### cancel\_statement
 
-Cancels the statement..
+Cancels the statement.
 
 Type annotations and code completion for `#!python session.create_client("glue").cancel_statement` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.cancel_statement)
@@ -872,6 +872,7 @@ await def create_database(
     *,
     DatabaseInput: DatabaseInputTypeDef,  # (1)
     CatalogId: str = ...,
+    Tags: Mapping[str, str] = ...,
 ) -> Dict[str, Any]:
     ...
 ```
@@ -965,7 +966,8 @@ await def create_job(
     NumberOfWorkers: int = ...,
     WorkerType: WorkerTypeType = ...,  # (5)
     CodeGenConfigurationNodes: Mapping[str, CodeGenConfigurationNodeTypeDef] = ...,  # (6)
-) -> CreateJobResponseTypeDef:  # (7)
+    ExecutionClass: ExecutionClassType = ...,  # (7)
+) -> CreateJobResponseTypeDef:  # (8)
     ...
 ```
 
@@ -975,7 +977,8 @@ await def create_job(
 4. See [:material-code-braces: NotificationPropertyTypeDef](./type_defs.md#notificationpropertytypedef) 
 5. See [:material-code-brackets: WorkerTypeType](./literals.md#workertypetype) 
 6. See [:material-code-braces: CodeGenConfigurationNodeTypeDef](./type_defs.md#codegenconfigurationnodetypedef) 
-7. See [:material-code-braces: CreateJobResponseTypeDef](./type_defs.md#createjobresponsetypedef) 
+7. See [:material-code-brackets: ExecutionClassType](./literals.md#executionclasstype) 
+8. See [:material-code-braces: CreateJobResponseTypeDef](./type_defs.md#createjobresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -4497,7 +4500,7 @@ parent.list_schemas(**kwargs)
 
 ### list\_sessions
 
-Retrieve a session..
+Retrieve a list of sessions.
 
 Type annotations and code completion for `#!python session.create_client("glue").list_sessions` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.list_sessions)
@@ -5168,13 +5171,15 @@ await def start_job_run(
     NotificationProperty: NotificationPropertyTypeDef = ...,  # (1)
     WorkerType: WorkerTypeType = ...,  # (2)
     NumberOfWorkers: int = ...,
-) -> StartJobRunResponseTypeDef:  # (3)
+    ExecutionClass: ExecutionClassType = ...,  # (3)
+) -> StartJobRunResponseTypeDef:  # (4)
     ...
 ```
 
 1. See [:material-code-braces: NotificationPropertyTypeDef](./type_defs.md#notificationpropertytypedef) 
 2. See [:material-code-brackets: WorkerTypeType](./literals.md#workertypetype) 
-3. See [:material-code-braces: StartJobRunResponseTypeDef](./type_defs.md#startjobrunresponsetypedef) 
+3. See [:material-code-brackets: ExecutionClassType](./literals.md#executionclasstype) 
+4. See [:material-code-braces: StartJobRunResponseTypeDef](./type_defs.md#startjobrunresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"

@@ -319,7 +319,7 @@ await def delete_item(
     ReturnValues: ReturnValueType = ...,  # (3)
     ReturnConsumedCapacity: ReturnConsumedCapacityType = ...,  # (4)
     ReturnItemCollectionMetrics: ReturnItemCollectionMetricsType = ...,  # (5)
-    ConditionExpression: str = ...,
+    ConditionExpression: Union[str, ConditionBase] = ...,
     ExpressionAttributeNames: Mapping[str, str] = ...,
     ExpressionAttributeValues: Mapping[str, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]] = ...,
 ) -> DeleteItemOutputTableTypeDef:  # (6)
@@ -428,7 +428,7 @@ await def put_item(
     ReturnConsumedCapacity: ReturnConsumedCapacityType = ...,  # (3)
     ReturnItemCollectionMetrics: ReturnItemCollectionMetricsType = ...,  # (4)
     ConditionalOperator: ConditionalOperatorType = ...,  # (5)
-    ConditionExpression: str = ...,
+    ConditionExpression: Union[str, ConditionBase] = ...,
     ExpressionAttributeNames: Mapping[str, str] = ...,
     ExpressionAttributeValues: Mapping[str, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]] = ...,
 ) -> PutItemOutputTableTypeDef:  # (6)
@@ -631,7 +631,7 @@ await def update_item(
     ReturnConsumedCapacity: ReturnConsumedCapacityType = ...,  # (5)
     ReturnItemCollectionMetrics: ReturnItemCollectionMetricsType = ...,  # (6)
     UpdateExpression: str = ...,
-    ConditionExpression: str = ...,
+    ConditionExpression: Union[str, ConditionBase] = ...,
     ExpressionAttributeNames: Mapping[str, str] = ...,
     ExpressionAttributeValues: Mapping[str, Union[bytes, bytearray, str, int, Decimal, bool, Set[int], Set[Decimal], Set[str], Set[bytes], Set[bytearray], Sequence[Any], Mapping[str, Any], None]] = ...,
 ) -> UpdateItemOutputTableTypeDef:  # (7)

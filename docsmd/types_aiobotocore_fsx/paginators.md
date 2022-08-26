@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_fsx.paginator import DescribeBackupsPaginator
 
 session = get_session()
-async with session.create_client("fsx") as client:
-    client: FSxClient
-    paginator: DescribeBackupsPaginator = client.get_paginator("describe_backups")
+async with session.create_client("fsx") as client:  # (1)
+    paginator: DescribeBackupsPaginator = client.get_paginator("describe_backups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeBackupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [FSxClient](./client.md)
+2. paginator: [DescribeBackupsPaginator](./paginators.md#describebackupspaginator)
+3. item: [:material-code-braces: DescribeBackupsResponseTypeDef](./type_defs.md#describebackupsresponsetypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_fsx.paginator import DescribeFileSystemsPaginator
 
 session = get_session()
-async with session.create_client("fsx") as client:
-    client: FSxClient
-    paginator: DescribeFileSystemsPaginator = client.get_paginator("describe_file_systems")
+async with session.create_client("fsx") as client:  # (1)
+    paginator: DescribeFileSystemsPaginator = client.get_paginator("describe_file_systems")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeFileSystemsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [FSxClient](./client.md)
+2. paginator: [DescribeFileSystemsPaginator](./paginators.md#describefilesystemspaginator)
+3. item: [:material-code-braces: DescribeFileSystemsResponseTypeDef](./type_defs.md#describefilesystemsresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_fsx.paginator import DescribeStorageVirtualMachinesPaginator
 
 session = get_session()
-async with session.create_client("fsx") as client:
-    client: FSxClient
-    paginator: DescribeStorageVirtualMachinesPaginator = client.get_paginator("describe_storage_virtual_machines")
+async with session.create_client("fsx") as client:  # (1)
+    paginator: DescribeStorageVirtualMachinesPaginator = client.get_paginator("describe_storage_virtual_machines")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeStorageVirtualMachinesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [FSxClient](./client.md)
+2. paginator: [DescribeStorageVirtualMachinesPaginator](./paginators.md#describestoragevirtualmachinespaginator)
+3. item: [:material-code-braces: DescribeStorageVirtualMachinesResponseTypeDef](./type_defs.md#describestoragevirtualmachinesresponsetypedef) 
 
 
 ### paginate
@@ -154,10 +172,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_fsx.paginator import DescribeVolumesPaginator
 
 session = get_session()
-async with session.create_client("fsx") as client:
-    client: FSxClient
-    paginator: DescribeVolumesPaginator = client.get_paginator("describe_volumes")
+async with session.create_client("fsx") as client:  # (1)
+    paginator: DescribeVolumesPaginator = client.get_paginator("describe_volumes")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeVolumesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [FSxClient](./client.md)
+2. paginator: [DescribeVolumesPaginator](./paginators.md#describevolumespaginator)
+3. item: [:material-code-braces: DescribeVolumesResponseTypeDef](./type_defs.md#describevolumesresponsetypedef) 
 
 
 ### paginate
@@ -200,10 +224,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_fsx.paginator import ListTagsForResourcePaginator
 
 session = get_session()
-async with session.create_client("fsx") as client:
-    client: FSxClient
-    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
+async with session.create_client("fsx") as client:  # (1)
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsForResourceResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [FSxClient](./client.md)
+2. paginator: [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
+3. item: [:material-code-braces: ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef) 
 
 
 ### paginate

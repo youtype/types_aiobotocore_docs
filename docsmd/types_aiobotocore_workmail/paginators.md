@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_workmail.paginator import ListAliasesPaginator
 
 session = get_session()
-async with session.create_client("workmail") as client:
-    client: WorkMailClient
-    paginator: ListAliasesPaginator = client.get_paginator("list_aliases")
+async with session.create_client("workmail") as client:  # (1)
+    paginator: ListAliasesPaginator = client.get_paginator("list_aliases")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAliasesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WorkMailClient](./client.md)
+2. paginator: [ListAliasesPaginator](./paginators.md#listaliasespaginator)
+3. item: [:material-code-braces: ListAliasesResponseTypeDef](./type_defs.md#listaliasesresponsetypedef) 
 
 
 ### paginate
@@ -53,6 +59,56 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListAliasesRequestListAliasesPaginateTypeDef](./type_defs.md#listaliasesrequestlistaliasespaginatetypedef) 
+## ListAvailabilityConfigurationsPaginator
+
+Type annotations and code completion for `#!python session.create_client("workmail").get_paginator("list_availability_configurations")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Paginator.ListAvailabilityConfigurations)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_workmail.paginator import ListAvailabilityConfigurationsPaginator
+
+session = get_session()
+async with session.create_client("workmail") as client:  # (1)
+    paginator: ListAvailabilityConfigurationsPaginator = client.get_paginator("list_availability_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAvailabilityConfigurationsResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [WorkMailClient](./client.md)
+2. paginator: [ListAvailabilityConfigurationsPaginator](./paginators.md#listavailabilityconfigurationspaginator)
+3. item: [:material-code-braces: ListAvailabilityConfigurationsResponseTypeDef](./type_defs.md#listavailabilityconfigurationsresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListAvailabilityConfigurationsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    OrganizationId: str,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListAvailabilityConfigurationsResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListAvailabilityConfigurationsResponseTypeDef](./type_defs.md#listavailabilityconfigurationsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListAvailabilityConfigurationsRequestListAvailabilityConfigurationsPaginateTypeDef = {  # (1)
+    "OrganizationId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListAvailabilityConfigurationsRequestListAvailabilityConfigurationsPaginateTypeDef](./type_defs.md#listavailabilityconfigurationsrequestlistavailabilityconfigurationspaginatetypedef) 
 ## ListGroupMembersPaginator
 
 Type annotations and code completion for `#!python session.create_client("workmail").get_paginator("list_group_members")`.
@@ -64,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_workmail.paginator import ListGroupMembersPaginator
 
 session = get_session()
-async with session.create_client("workmail") as client:
-    client: WorkMailClient
-    paginator: ListGroupMembersPaginator = client.get_paginator("list_group_members")
+async with session.create_client("workmail") as client:  # (1)
+    paginator: ListGroupMembersPaginator = client.get_paginator("list_group_members")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGroupMembersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WorkMailClient](./client.md)
+2. paginator: [ListGroupMembersPaginator](./paginators.md#listgroupmemberspaginator)
+3. item: [:material-code-braces: ListGroupMembersResponseTypeDef](./type_defs.md#listgroupmembersresponsetypedef) 
 
 
 ### paginate
@@ -110,10 +172,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_workmail.paginator import ListGroupsPaginator
 
 session = get_session()
-async with session.create_client("workmail") as client:
-    client: WorkMailClient
-    paginator: ListGroupsPaginator = client.get_paginator("list_groups")
+async with session.create_client("workmail") as client:  # (1)
+    paginator: ListGroupsPaginator = client.get_paginator("list_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WorkMailClient](./client.md)
+2. paginator: [ListGroupsPaginator](./paginators.md#listgroupspaginator)
+3. item: [:material-code-braces: ListGroupsResponseTypeDef](./type_defs.md#listgroupsresponsetypedef) 
 
 
 ### paginate
@@ -154,10 +222,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_workmail.paginator import ListMailboxPermissionsPaginator
 
 session = get_session()
-async with session.create_client("workmail") as client:
-    client: WorkMailClient
-    paginator: ListMailboxPermissionsPaginator = client.get_paginator("list_mailbox_permissions")
+async with session.create_client("workmail") as client:  # (1)
+    paginator: ListMailboxPermissionsPaginator = client.get_paginator("list_mailbox_permissions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMailboxPermissionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WorkMailClient](./client.md)
+2. paginator: [ListMailboxPermissionsPaginator](./paginators.md#listmailboxpermissionspaginator)
+3. item: [:material-code-braces: ListMailboxPermissionsResponseTypeDef](./type_defs.md#listmailboxpermissionsresponsetypedef) 
 
 
 ### paginate
@@ -200,10 +274,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_workmail.paginator import ListOrganizationsPaginator
 
 session = get_session()
-async with session.create_client("workmail") as client:
-    client: WorkMailClient
-    paginator: ListOrganizationsPaginator = client.get_paginator("list_organizations")
+async with session.create_client("workmail") as client:  # (1)
+    paginator: ListOrganizationsPaginator = client.get_paginator("list_organizations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListOrganizationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WorkMailClient](./client.md)
+2. paginator: [ListOrganizationsPaginator](./paginators.md#listorganizationspaginator)
+3. item: [:material-code-braces: ListOrganizationsResponseTypeDef](./type_defs.md#listorganizationsresponsetypedef) 
 
 
 ### paginate
@@ -243,10 +323,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_workmail.paginator import ListResourceDelegatesPaginator
 
 session = get_session()
-async with session.create_client("workmail") as client:
-    client: WorkMailClient
-    paginator: ListResourceDelegatesPaginator = client.get_paginator("list_resource_delegates")
+async with session.create_client("workmail") as client:  # (1)
+    paginator: ListResourceDelegatesPaginator = client.get_paginator("list_resource_delegates")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResourceDelegatesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WorkMailClient](./client.md)
+2. paginator: [ListResourceDelegatesPaginator](./paginators.md#listresourcedelegatespaginator)
+3. item: [:material-code-braces: ListResourceDelegatesResponseTypeDef](./type_defs.md#listresourcedelegatesresponsetypedef) 
 
 
 ### paginate
@@ -289,10 +375,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_workmail.paginator import ListResourcesPaginator
 
 session = get_session()
-async with session.create_client("workmail") as client:
-    client: WorkMailClient
-    paginator: ListResourcesPaginator = client.get_paginator("list_resources")
+async with session.create_client("workmail") as client:  # (1)
+    paginator: ListResourcesPaginator = client.get_paginator("list_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResourcesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WorkMailClient](./client.md)
+2. paginator: [ListResourcesPaginator](./paginators.md#listresourcespaginator)
+3. item: [:material-code-braces: ListResourcesResponseTypeDef](./type_defs.md#listresourcesresponsetypedef) 
 
 
 ### paginate
@@ -333,10 +425,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_workmail.paginator import ListUsersPaginator
 
 session = get_session()
-async with session.create_client("workmail") as client:
-    client: WorkMailClient
-    paginator: ListUsersPaginator = client.get_paginator("list_users")
+async with session.create_client("workmail") as client:  # (1)
+    paginator: ListUsersPaginator = client.get_paginator("list_users")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUsersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WorkMailClient](./client.md)
+2. paginator: [ListUsersPaginator](./paginators.md#listuserspaginator)
+3. item: [:material-code-braces: ListUsersResponseTypeDef](./type_defs.md#listusersresponsetypedef) 
 
 
 ### paginate

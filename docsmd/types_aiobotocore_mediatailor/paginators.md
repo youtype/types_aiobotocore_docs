@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediatailor.paginator import GetChannelSchedulePaginator
 
 session = get_session()
-async with session.create_client("mediatailor") as client:
-    client: MediaTailorClient
-    paginator: GetChannelSchedulePaginator = client.get_paginator("get_channel_schedule")
+async with session.create_client("mediatailor") as client:  # (1)
+    paginator: GetChannelSchedulePaginator = client.get_paginator("get_channel_schedule")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetChannelScheduleResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaTailorClient](./client.md)
+2. paginator: [GetChannelSchedulePaginator](./paginators.md#getchannelschedulepaginator)
+3. item: [:material-code-braces: GetChannelScheduleResponseTypeDef](./type_defs.md#getchannelscheduleresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediatailor.paginator import ListAlertsPaginator
 
 session = get_session()
-async with session.create_client("mediatailor") as client:
-    client: MediaTailorClient
-    paginator: ListAlertsPaginator = client.get_paginator("list_alerts")
+async with session.create_client("mediatailor") as client:  # (1)
+    paginator: ListAlertsPaginator = client.get_paginator("list_alerts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAlertsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaTailorClient](./client.md)
+2. paginator: [ListAlertsPaginator](./paginators.md#listalertspaginator)
+3. item: [:material-code-braces: ListAlertsResponseTypeDef](./type_defs.md#listalertsresponsetypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediatailor.paginator import ListChannelsPaginator
 
 session = get_session()
-async with session.create_client("mediatailor") as client:
-    client: MediaTailorClient
-    paginator: ListChannelsPaginator = client.get_paginator("list_channels")
+async with session.create_client("mediatailor") as client:  # (1)
+    paginator: ListChannelsPaginator = client.get_paginator("list_channels")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListChannelsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaTailorClient](./client.md)
+2. paginator: [ListChannelsPaginator](./paginators.md#listchannelspaginator)
+3. item: [:material-code-braces: ListChannelsResponseTypeDef](./type_defs.md#listchannelsresponsetypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediatailor.paginator import ListLiveSourcesPaginator
 
 session = get_session()
-async with session.create_client("mediatailor") as client:
-    client: MediaTailorClient
-    paginator: ListLiveSourcesPaginator = client.get_paginator("list_live_sources")
+async with session.create_client("mediatailor") as client:  # (1)
+    paginator: ListLiveSourcesPaginator = client.get_paginator("list_live_sources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLiveSourcesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaTailorClient](./client.md)
+2. paginator: [ListLiveSourcesPaginator](./paginators.md#listlivesourcespaginator)
+3. item: [:material-code-braces: ListLiveSourcesResponseTypeDef](./type_defs.md#listlivesourcesresponsetypedef) 
 
 
 ### paginate
@@ -194,10 +218,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediatailor.paginator import ListPlaybackConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("mediatailor") as client:
-    client: MediaTailorClient
-    paginator: ListPlaybackConfigurationsPaginator = client.get_paginator("list_playback_configurations")
+async with session.create_client("mediatailor") as client:  # (1)
+    paginator: ListPlaybackConfigurationsPaginator = client.get_paginator("list_playback_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPlaybackConfigurationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaTailorClient](./client.md)
+2. paginator: [ListPlaybackConfigurationsPaginator](./paginators.md#listplaybackconfigurationspaginator)
+3. item: [:material-code-braces: ListPlaybackConfigurationsResponseTypeDef](./type_defs.md#listplaybackconfigurationsresponsetypedef) 
 
 
 ### paginate
@@ -237,10 +267,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediatailor.paginator import ListPrefetchSchedulesPaginator
 
 session = get_session()
-async with session.create_client("mediatailor") as client:
-    client: MediaTailorClient
-    paginator: ListPrefetchSchedulesPaginator = client.get_paginator("list_prefetch_schedules")
+async with session.create_client("mediatailor") as client:  # (1)
+    paginator: ListPrefetchSchedulesPaginator = client.get_paginator("list_prefetch_schedules")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPrefetchSchedulesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaTailorClient](./client.md)
+2. paginator: [ListPrefetchSchedulesPaginator](./paginators.md#listprefetchschedulespaginator)
+3. item: [:material-code-braces: ListPrefetchSchedulesResponseTypeDef](./type_defs.md#listprefetchschedulesresponsetypedef) 
 
 
 ### paginate
@@ -282,10 +318,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediatailor.paginator import ListSourceLocationsPaginator
 
 session = get_session()
-async with session.create_client("mediatailor") as client:
-    client: MediaTailorClient
-    paginator: ListSourceLocationsPaginator = client.get_paginator("list_source_locations")
+async with session.create_client("mediatailor") as client:  # (1)
+    paginator: ListSourceLocationsPaginator = client.get_paginator("list_source_locations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSourceLocationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaTailorClient](./client.md)
+2. paginator: [ListSourceLocationsPaginator](./paginators.md#listsourcelocationspaginator)
+3. item: [:material-code-braces: ListSourceLocationsResponseTypeDef](./type_defs.md#listsourcelocationsresponsetypedef) 
 
 
 ### paginate
@@ -325,10 +367,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediatailor.paginator import ListVodSourcesPaginator
 
 session = get_session()
-async with session.create_client("mediatailor") as client:
-    client: MediaTailorClient
-    paginator: ListVodSourcesPaginator = client.get_paginator("list_vod_sources")
+async with session.create_client("mediatailor") as client:  # (1)
+    paginator: ListVodSourcesPaginator = client.get_paginator("list_vod_sources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListVodSourcesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaTailorClient](./client.md)
+2. paginator: [ListVodSourcesPaginator](./paginators.md#listvodsourcespaginator)
+3. item: [:material-code-braces: ListVodSourcesResponseTypeDef](./type_defs.md#listvodsourcesresponsetypedef) 
 
 
 ### paginate

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecs.paginator import ListAccountSettingsPaginator
 
 session = get_session()
-async with session.create_client("ecs") as client:
-    client: ECSClient
-    paginator: ListAccountSettingsPaginator = client.get_paginator("list_account_settings")
+async with session.create_client("ecs") as client:  # (1)
+    paginator: ListAccountSettingsPaginator = client.get_paginator("list_account_settings")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAccountSettingsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECSClient](./client.md)
+2. paginator: [ListAccountSettingsPaginator](./paginators.md#listaccountsettingspaginator)
+3. item: [:material-code-braces: ListAccountSettingsResponseTypeDef](./type_defs.md#listaccountsettingsresponsetypedef) 
 
 
 ### paginate
@@ -66,10 +72,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecs.paginator import ListAttributesPaginator
 
 session = get_session()
-async with session.create_client("ecs") as client:
-    client: ECSClient
-    paginator: ListAttributesPaginator = client.get_paginator("list_attributes")
+async with session.create_client("ecs") as client:  # (1)
+    paginator: ListAttributesPaginator = client.get_paginator("list_attributes")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAttributesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECSClient](./client.md)
+2. paginator: [ListAttributesPaginator](./paginators.md#listattributespaginator)
+3. item: [:material-code-braces: ListAttributesResponseTypeDef](./type_defs.md#listattributesresponsetypedef) 
 
 
 ### paginate
@@ -114,10 +126,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecs.paginator import ListClustersPaginator
 
 session = get_session()
-async with session.create_client("ecs") as client:
-    client: ECSClient
-    paginator: ListClustersPaginator = client.get_paginator("list_clusters")
+async with session.create_client("ecs") as client:  # (1)
+    paginator: ListClustersPaginator = client.get_paginator("list_clusters")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListClustersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECSClient](./client.md)
+2. paginator: [ListClustersPaginator](./paginators.md#listclusterspaginator)
+3. item: [:material-code-braces: ListClustersResponseTypeDef](./type_defs.md#listclustersresponsetypedef) 
 
 
 ### paginate
@@ -157,10 +175,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecs.paginator import ListContainerInstancesPaginator
 
 session = get_session()
-async with session.create_client("ecs") as client:
-    client: ECSClient
-    paginator: ListContainerInstancesPaginator = client.get_paginator("list_container_instances")
+async with session.create_client("ecs") as client:  # (1)
+    paginator: ListContainerInstancesPaginator = client.get_paginator("list_container_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListContainerInstancesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECSClient](./client.md)
+2. paginator: [ListContainerInstancesPaginator](./paginators.md#listcontainerinstancespaginator)
+3. item: [:material-code-braces: ListContainerInstancesResponseTypeDef](./type_defs.md#listcontainerinstancesresponsetypedef) 
 
 
 ### paginate
@@ -204,10 +228,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecs.paginator import ListServicesPaginator
 
 session = get_session()
-async with session.create_client("ecs") as client:
-    client: ECSClient
-    paginator: ListServicesPaginator = client.get_paginator("list_services")
+async with session.create_client("ecs") as client:  # (1)
+    paginator: ListServicesPaginator = client.get_paginator("list_services")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServicesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECSClient](./client.md)
+2. paginator: [ListServicesPaginator](./paginators.md#listservicespaginator)
+3. item: [:material-code-braces: ListServicesResponseTypeDef](./type_defs.md#listservicesresponsetypedef) 
 
 
 ### paginate
@@ -252,10 +282,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecs.paginator import ListTaskDefinitionFamiliesPaginator
 
 session = get_session()
-async with session.create_client("ecs") as client:
-    client: ECSClient
-    paginator: ListTaskDefinitionFamiliesPaginator = client.get_paginator("list_task_definition_families")
+async with session.create_client("ecs") as client:  # (1)
+    paginator: ListTaskDefinitionFamiliesPaginator = client.get_paginator("list_task_definition_families")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTaskDefinitionFamiliesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECSClient](./client.md)
+2. paginator: [ListTaskDefinitionFamiliesPaginator](./paginators.md#listtaskdefinitionfamiliespaginator)
+3. item: [:material-code-braces: ListTaskDefinitionFamiliesResponseTypeDef](./type_defs.md#listtaskdefinitionfamiliesresponsetypedef) 
 
 
 ### paginate
@@ -298,10 +334,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecs.paginator import ListTaskDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("ecs") as client:
-    client: ECSClient
-    paginator: ListTaskDefinitionsPaginator = client.get_paginator("list_task_definitions")
+async with session.create_client("ecs") as client:  # (1)
+    paginator: ListTaskDefinitionsPaginator = client.get_paginator("list_task_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTaskDefinitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECSClient](./client.md)
+2. paginator: [ListTaskDefinitionsPaginator](./paginators.md#listtaskdefinitionspaginator)
+3. item: [:material-code-braces: ListTaskDefinitionsResponseTypeDef](./type_defs.md#listtaskdefinitionsresponsetypedef) 
 
 
 ### paginate
@@ -346,10 +388,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecs.paginator import ListTasksPaginator
 
 session = get_session()
-async with session.create_client("ecs") as client:
-    client: ECSClient
-    paginator: ListTasksPaginator = client.get_paginator("list_tasks")
+async with session.create_client("ecs") as client:  # (1)
+    paginator: ListTasksPaginator = client.get_paginator("list_tasks")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTasksResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECSClient](./client.md)
+2. paginator: [ListTasksPaginator](./paginators.md#listtaskspaginator)
+3. item: [:material-code-braces: ListTasksResponseTypeDef](./type_defs.md#listtasksresponsetypedef) 
 
 
 ### paginate

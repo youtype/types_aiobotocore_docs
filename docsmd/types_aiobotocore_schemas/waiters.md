@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_schemas.waiter import CodeBindingExistsWaiter
 
-def get_code_binding_exists_waiter() -> CodeBindingExistsWaiter:
-    return Session().client("schemas").get_waiter("code_binding_exists")
+session = get_session()
+async with session.create_client("schemas") as client:  # (1)
+    waiter: CodeBindingExistsWaiter = client.get_waiter("code_binding_exists")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SchemasClient](./client.md)
+2. waiter: [CodeBindingExistsWaiter](./waiters.md#codebindingexistswaiter)
 
 
 ### wait

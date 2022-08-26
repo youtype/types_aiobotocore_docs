@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamesparks.paginator import ListExtensionVersionsPaginator
 
 session = get_session()
-async with session.create_client("gamesparks") as client:
-    client: GameSparksClient
-    paginator: ListExtensionVersionsPaginator = client.get_paginator("list_extension_versions")
+async with session.create_client("gamesparks") as client:  # (1)
+    paginator: ListExtensionVersionsPaginator = client.get_paginator("list_extension_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListExtensionVersionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameSparksClient](./client.md)
+2. paginator: [ListExtensionVersionsPaginator](./paginators.md#listextensionversionspaginator)
+3. item: [:material-code-braces: ListExtensionVersionsResultTypeDef](./type_defs.md#listextensionversionsresulttypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamesparks.paginator import ListExtensionsPaginator
 
 session = get_session()
-async with session.create_client("gamesparks") as client:
-    client: GameSparksClient
-    paginator: ListExtensionsPaginator = client.get_paginator("list_extensions")
+async with session.create_client("gamesparks") as client:  # (1)
+    paginator: ListExtensionsPaginator = client.get_paginator("list_extensions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListExtensionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameSparksClient](./client.md)
+2. paginator: [ListExtensionsPaginator](./paginators.md#listextensionspaginator)
+3. item: [:material-code-braces: ListExtensionsResultTypeDef](./type_defs.md#listextensionsresulttypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamesparks.paginator import ListGamesPaginator
 
 session = get_session()
-async with session.create_client("gamesparks") as client:
-    client: GameSparksClient
-    paginator: ListGamesPaginator = client.get_paginator("list_games")
+async with session.create_client("gamesparks") as client:  # (1)
+    paginator: ListGamesPaginator = client.get_paginator("list_games")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGamesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameSparksClient](./client.md)
+2. paginator: [ListGamesPaginator](./paginators.md#listgamespaginator)
+3. item: [:material-code-braces: ListGamesResultTypeDef](./type_defs.md#listgamesresulttypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamesparks.paginator import ListGeneratedCodeJobsPaginator
 
 session = get_session()
-async with session.create_client("gamesparks") as client:
-    client: GameSparksClient
-    paginator: ListGeneratedCodeJobsPaginator = client.get_paginator("list_generated_code_jobs")
+async with session.create_client("gamesparks") as client:  # (1)
+    paginator: ListGeneratedCodeJobsPaginator = client.get_paginator("list_generated_code_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGeneratedCodeJobsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameSparksClient](./client.md)
+2. paginator: [ListGeneratedCodeJobsPaginator](./paginators.md#listgeneratedcodejobspaginator)
+3. item: [:material-code-braces: ListGeneratedCodeJobsResultTypeDef](./type_defs.md#listgeneratedcodejobsresulttypedef) 
 
 
 ### paginate
@@ -196,10 +220,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamesparks.paginator import ListSnapshotsPaginator
 
 session = get_session()
-async with session.create_client("gamesparks") as client:
-    client: GameSparksClient
-    paginator: ListSnapshotsPaginator = client.get_paginator("list_snapshots")
+async with session.create_client("gamesparks") as client:  # (1)
+    paginator: ListSnapshotsPaginator = client.get_paginator("list_snapshots")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSnapshotsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameSparksClient](./client.md)
+2. paginator: [ListSnapshotsPaginator](./paginators.md#listsnapshotspaginator)
+3. item: [:material-code-braces: ListSnapshotsResultTypeDef](./type_defs.md#listsnapshotsresulttypedef) 
 
 
 ### paginate
@@ -240,10 +270,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamesparks.paginator import ListStageDeploymentsPaginator
 
 session = get_session()
-async with session.create_client("gamesparks") as client:
-    client: GameSparksClient
-    paginator: ListStageDeploymentsPaginator = client.get_paginator("list_stage_deployments")
+async with session.create_client("gamesparks") as client:  # (1)
+    paginator: ListStageDeploymentsPaginator = client.get_paginator("list_stage_deployments")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStageDeploymentsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameSparksClient](./client.md)
+2. paginator: [ListStageDeploymentsPaginator](./paginators.md#liststagedeploymentspaginator)
+3. item: [:material-code-braces: ListStageDeploymentsResultTypeDef](./type_defs.md#liststagedeploymentsresulttypedef) 
 
 
 ### paginate
@@ -286,10 +322,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamesparks.paginator import ListStagesPaginator
 
 session = get_session()
-async with session.create_client("gamesparks") as client:
-    client: GameSparksClient
-    paginator: ListStagesPaginator = client.get_paginator("list_stages")
+async with session.create_client("gamesparks") as client:  # (1)
+    paginator: ListStagesPaginator = client.get_paginator("list_stages")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStagesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameSparksClient](./client.md)
+2. paginator: [ListStagesPaginator](./paginators.md#liststagespaginator)
+3. item: [:material-code-braces: ListStagesResultTypeDef](./type_defs.md#liststagesresulttypedef) 
 
 
 ### paginate

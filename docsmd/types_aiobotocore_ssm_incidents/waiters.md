@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_ssm_incidents.waiter import WaitForReplicationSetActiveWaiter
 
-def get_wait_for_replication_set_active_waiter() -> WaitForReplicationSetActiveWaiter:
-    return Session().client("ssm-incidents").get_waiter("wait_for_replication_set_active")
+session = get_session()
+async with session.create_client("ssm-incidents") as client:  # (1)
+    waiter: WaitForReplicationSetActiveWaiter = client.get_waiter("wait_for_replication_set_active")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SSMIncidentsClient](./client.md)
+2. waiter: [WaitForReplicationSetActiveWaiter](./waiters.md#waitforreplicationsetactivewaiter)
 
 
 ### wait
@@ -58,9 +63,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_ssm_incidents.waiter import WaitForReplicationSetDeletedWaiter
 
-def get_wait_for_replication_set_deleted_waiter() -> WaitForReplicationSetDeletedWaiter:
-    return Session().client("ssm-incidents").get_waiter("wait_for_replication_set_deleted")
+session = get_session()
+async with session.create_client("ssm-incidents") as client:  # (1)
+    waiter: WaitForReplicationSetDeletedWaiter = client.get_waiter("wait_for_replication_set_deleted")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SSMIncidentsClient](./client.md)
+2. waiter: [WaitForReplicationSetDeletedWaiter](./waiters.md#waitforreplicationsetdeletedwaiter)
 
 
 ### wait

@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Personalize`.
 
 ### From PyPI with pip
 
@@ -111,6 +106,7 @@ def get_value() -> DomainType:
 ```
 
 - [DomainType](./literals.md#domaintype)
+- [ImportModeType](./literals.md#importmodetype)
 - [IngestionModeType](./literals.md#ingestionmodetype)
 - [ListBatchInferenceJobsPaginatorName](./literals.md#listbatchinferencejobspaginatorname)
 - [ListBatchSegmentJobsPaginatorName](./literals.md#listbatchsegmentjobspaginatorname)

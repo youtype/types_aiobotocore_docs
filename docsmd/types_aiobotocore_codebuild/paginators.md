@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codebuild.paginator import DescribeCodeCoveragesPaginator
 
 session = get_session()
-async with session.create_client("codebuild") as client:
-    client: CodeBuildClient
-    paginator: DescribeCodeCoveragesPaginator = client.get_paginator("describe_code_coverages")
+async with session.create_client("codebuild") as client:  # (1)
+    paginator: DescribeCodeCoveragesPaginator = client.get_paginator("describe_code_coverages")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeCodeCoveragesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeBuildClient](./client.md)
+2. paginator: [DescribeCodeCoveragesPaginator](./paginators.md#describecodecoveragespaginator)
+3. item: [:material-code-braces: DescribeCodeCoveragesOutputTypeDef](./type_defs.md#describecodecoveragesoutputtypedef) 
 
 
 ### paginate
@@ -68,10 +74,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codebuild.paginator import DescribeTestCasesPaginator
 
 session = get_session()
-async with session.create_client("codebuild") as client:
-    client: CodeBuildClient
-    paginator: DescribeTestCasesPaginator = client.get_paginator("describe_test_cases")
+async with session.create_client("codebuild") as client:  # (1)
+    paginator: DescribeTestCasesPaginator = client.get_paginator("describe_test_cases")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTestCasesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeBuildClient](./client.md)
+2. paginator: [DescribeTestCasesPaginator](./paginators.md#describetestcasespaginator)
+3. item: [:material-code-braces: DescribeTestCasesOutputTypeDef](./type_defs.md#describetestcasesoutputtypedef) 
 
 
 ### paginate
@@ -114,10 +126,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codebuild.paginator import ListBuildBatchesPaginator
 
 session = get_session()
-async with session.create_client("codebuild") as client:
-    client: CodeBuildClient
-    paginator: ListBuildBatchesPaginator = client.get_paginator("list_build_batches")
+async with session.create_client("codebuild") as client:  # (1)
+    paginator: ListBuildBatchesPaginator = client.get_paginator("list_build_batches")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBuildBatchesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeBuildClient](./client.md)
+2. paginator: [ListBuildBatchesPaginator](./paginators.md#listbuildbatchespaginator)
+3. item: [:material-code-braces: ListBuildBatchesOutputTypeDef](./type_defs.md#listbuildbatchesoutputtypedef) 
 
 
 ### paginate
@@ -161,10 +179,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codebuild.paginator import ListBuildBatchesForProjectPaginator
 
 session = get_session()
-async with session.create_client("codebuild") as client:
-    client: CodeBuildClient
-    paginator: ListBuildBatchesForProjectPaginator = client.get_paginator("list_build_batches_for_project")
+async with session.create_client("codebuild") as client:  # (1)
+    paginator: ListBuildBatchesForProjectPaginator = client.get_paginator("list_build_batches_for_project")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBuildBatchesForProjectOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeBuildClient](./client.md)
+2. paginator: [ListBuildBatchesForProjectPaginator](./paginators.md#listbuildbatchesforprojectpaginator)
+3. item: [:material-code-braces: ListBuildBatchesForProjectOutputTypeDef](./type_defs.md#listbuildbatchesforprojectoutputtypedef) 
 
 
 ### paginate
@@ -209,10 +233,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codebuild.paginator import ListBuildsPaginator
 
 session = get_session()
-async with session.create_client("codebuild") as client:
-    client: CodeBuildClient
-    paginator: ListBuildsPaginator = client.get_paginator("list_builds")
+async with session.create_client("codebuild") as client:  # (1)
+    paginator: ListBuildsPaginator = client.get_paginator("list_builds")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBuildsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeBuildClient](./client.md)
+2. paginator: [ListBuildsPaginator](./paginators.md#listbuildspaginator)
+3. item: [:material-code-braces: ListBuildsOutputTypeDef](./type_defs.md#listbuildsoutputtypedef) 
 
 
 ### paginate
@@ -254,10 +284,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codebuild.paginator import ListBuildsForProjectPaginator
 
 session = get_session()
-async with session.create_client("codebuild") as client:
-    client: CodeBuildClient
-    paginator: ListBuildsForProjectPaginator = client.get_paginator("list_builds_for_project")
+async with session.create_client("codebuild") as client:  # (1)
+    paginator: ListBuildsForProjectPaginator = client.get_paginator("list_builds_for_project")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBuildsForProjectOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeBuildClient](./client.md)
+2. paginator: [ListBuildsForProjectPaginator](./paginators.md#listbuildsforprojectpaginator)
+3. item: [:material-code-braces: ListBuildsForProjectOutputTypeDef](./type_defs.md#listbuildsforprojectoutputtypedef) 
 
 
 ### paginate
@@ -300,10 +336,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codebuild.paginator import ListProjectsPaginator
 
 session = get_session()
-async with session.create_client("codebuild") as client:
-    client: CodeBuildClient
-    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
+async with session.create_client("codebuild") as client:  # (1)
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProjectsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeBuildClient](./client.md)
+2. paginator: [ListProjectsPaginator](./paginators.md#listprojectspaginator)
+3. item: [:material-code-braces: ListProjectsOutputTypeDef](./type_defs.md#listprojectsoutputtypedef) 
 
 
 ### paginate
@@ -347,10 +389,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codebuild.paginator import ListReportGroupsPaginator
 
 session = get_session()
-async with session.create_client("codebuild") as client:
-    client: CodeBuildClient
-    paginator: ListReportGroupsPaginator = client.get_paginator("list_report_groups")
+async with session.create_client("codebuild") as client:  # (1)
+    paginator: ListReportGroupsPaginator = client.get_paginator("list_report_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListReportGroupsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeBuildClient](./client.md)
+2. paginator: [ListReportGroupsPaginator](./paginators.md#listreportgroupspaginator)
+3. item: [:material-code-braces: ListReportGroupsOutputTypeDef](./type_defs.md#listreportgroupsoutputtypedef) 
 
 
 ### paginate
@@ -394,10 +442,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codebuild.paginator import ListReportsPaginator
 
 session = get_session()
-async with session.create_client("codebuild") as client:
-    client: CodeBuildClient
-    paginator: ListReportsPaginator = client.get_paginator("list_reports")
+async with session.create_client("codebuild") as client:  # (1)
+    paginator: ListReportsPaginator = client.get_paginator("list_reports")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListReportsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeBuildClient](./client.md)
+2. paginator: [ListReportsPaginator](./paginators.md#listreportspaginator)
+3. item: [:material-code-braces: ListReportsOutputTypeDef](./type_defs.md#listreportsoutputtypedef) 
 
 
 ### paginate
@@ -441,10 +495,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codebuild.paginator import ListReportsForReportGroupPaginator
 
 session = get_session()
-async with session.create_client("codebuild") as client:
-    client: CodeBuildClient
-    paginator: ListReportsForReportGroupPaginator = client.get_paginator("list_reports_for_report_group")
+async with session.create_client("codebuild") as client:  # (1)
+    paginator: ListReportsForReportGroupPaginator = client.get_paginator("list_reports_for_report_group")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListReportsForReportGroupOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeBuildClient](./client.md)
+2. paginator: [ListReportsForReportGroupPaginator](./paginators.md#listreportsforreportgrouppaginator)
+3. item: [:material-code-braces: ListReportsForReportGroupOutputTypeDef](./type_defs.md#listreportsforreportgroupoutputtypedef) 
 
 
 ### paginate
@@ -489,10 +549,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codebuild.paginator import ListSharedProjectsPaginator
 
 session = get_session()
-async with session.create_client("codebuild") as client:
-    client: CodeBuildClient
-    paginator: ListSharedProjectsPaginator = client.get_paginator("list_shared_projects")
+async with session.create_client("codebuild") as client:  # (1)
+    paginator: ListSharedProjectsPaginator = client.get_paginator("list_shared_projects")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSharedProjectsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeBuildClient](./client.md)
+2. paginator: [ListSharedProjectsPaginator](./paginators.md#listsharedprojectspaginator)
+3. item: [:material-code-braces: ListSharedProjectsOutputTypeDef](./type_defs.md#listsharedprojectsoutputtypedef) 
 
 
 ### paginate
@@ -536,10 +602,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codebuild.paginator import ListSharedReportGroupsPaginator
 
 session = get_session()
-async with session.create_client("codebuild") as client:
-    client: CodeBuildClient
-    paginator: ListSharedReportGroupsPaginator = client.get_paginator("list_shared_report_groups")
+async with session.create_client("codebuild") as client:  # (1)
+    paginator: ListSharedReportGroupsPaginator = client.get_paginator("list_shared_report_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSharedReportGroupsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeBuildClient](./client.md)
+2. paginator: [ListSharedReportGroupsPaginator](./paginators.md#listsharedreportgroupspaginator)
+3. item: [:material-code-braces: ListSharedReportGroupsOutputTypeDef](./type_defs.md#listsharedreportgroupsoutputtypedef) 
 
 
 ### paginate

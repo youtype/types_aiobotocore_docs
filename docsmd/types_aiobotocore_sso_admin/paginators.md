@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sso_admin.paginator import ListAccountAssignmentCreationStatusPaginator
 
 session = get_session()
-async with session.create_client("sso-admin") as client:
-    client: SSOAdminClient
-    paginator: ListAccountAssignmentCreationStatusPaginator = client.get_paginator("list_account_assignment_creation_status")
+async with session.create_client("sso-admin") as client:  # (1)
+    paginator: ListAccountAssignmentCreationStatusPaginator = client.get_paginator("list_account_assignment_creation_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAccountAssignmentCreationStatusResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSOAdminClient](./client.md)
+2. paginator: [ListAccountAssignmentCreationStatusPaginator](./paginators.md#listaccountassignmentcreationstatuspaginator)
+3. item: [:material-code-braces: ListAccountAssignmentCreationStatusResponseTypeDef](./type_defs.md#listaccountassignmentcreationstatusresponsetypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sso_admin.paginator import ListAccountAssignmentDeletionStatusPaginator
 
 session = get_session()
-async with session.create_client("sso-admin") as client:
-    client: SSOAdminClient
-    paginator: ListAccountAssignmentDeletionStatusPaginator = client.get_paginator("list_account_assignment_deletion_status")
+async with session.create_client("sso-admin") as client:  # (1)
+    paginator: ListAccountAssignmentDeletionStatusPaginator = client.get_paginator("list_account_assignment_deletion_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAccountAssignmentDeletionStatusResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSOAdminClient](./client.md)
+2. paginator: [ListAccountAssignmentDeletionStatusPaginator](./paginators.md#listaccountassignmentdeletionstatuspaginator)
+3. item: [:material-code-braces: ListAccountAssignmentDeletionStatusResponseTypeDef](./type_defs.md#listaccountassignmentdeletionstatusresponsetypedef) 
 
 
 ### paginate
@@ -110,10 +122,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sso_admin.paginator import ListAccountAssignmentsPaginator
 
 session = get_session()
-async with session.create_client("sso-admin") as client:
-    client: SSOAdminClient
-    paginator: ListAccountAssignmentsPaginator = client.get_paginator("list_account_assignments")
+async with session.create_client("sso-admin") as client:  # (1)
+    paginator: ListAccountAssignmentsPaginator = client.get_paginator("list_account_assignments")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAccountAssignmentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSOAdminClient](./client.md)
+2. paginator: [ListAccountAssignmentsPaginator](./paginators.md#listaccountassignmentspaginator)
+3. item: [:material-code-braces: ListAccountAssignmentsResponseTypeDef](./type_defs.md#listaccountassignmentsresponsetypedef) 
 
 
 ### paginate
@@ -158,10 +176,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sso_admin.paginator import ListAccountsForProvisionedPermissionSetPaginator
 
 session = get_session()
-async with session.create_client("sso-admin") as client:
-    client: SSOAdminClient
-    paginator: ListAccountsForProvisionedPermissionSetPaginator = client.get_paginator("list_accounts_for_provisioned_permission_set")
+async with session.create_client("sso-admin") as client:  # (1)
+    paginator: ListAccountsForProvisionedPermissionSetPaginator = client.get_paginator("list_accounts_for_provisioned_permission_set")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAccountsForProvisionedPermissionSetResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSOAdminClient](./client.md)
+2. paginator: [ListAccountsForProvisionedPermissionSetPaginator](./paginators.md#listaccountsforprovisionedpermissionsetpaginator)
+3. item: [:material-code-braces: ListAccountsForProvisionedPermissionSetResponseTypeDef](./type_defs.md#listaccountsforprovisionedpermissionsetresponsetypedef) 
 
 
 ### paginate
@@ -195,6 +219,58 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListAccountsForProvisionedPermissionSetRequestListAccountsForProvisionedPermissionSetPaginateTypeDef](./type_defs.md#listaccountsforprovisionedpermissionsetrequestlistaccountsforprovisionedpermissionsetpaginatetypedef) 
+## ListCustomerManagedPolicyReferencesInPermissionSetPaginator
+
+Type annotations and code completion for `#!python session.create_client("sso-admin").get_paginator("list_customer_managed_policy_references_in_permission_set")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Paginator.ListCustomerManagedPolicyReferencesInPermissionSet)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_sso_admin.paginator import ListCustomerManagedPolicyReferencesInPermissionSetPaginator
+
+session = get_session()
+async with session.create_client("sso-admin") as client:  # (1)
+    paginator: ListCustomerManagedPolicyReferencesInPermissionSetPaginator = client.get_paginator("list_customer_managed_policy_references_in_permission_set")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCustomerManagedPolicyReferencesInPermissionSetResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [SSOAdminClient](./client.md)
+2. paginator: [ListCustomerManagedPolicyReferencesInPermissionSetPaginator](./paginators.md#listcustomermanagedpolicyreferencesinpermissionsetpaginator)
+3. item: [:material-code-braces: ListCustomerManagedPolicyReferencesInPermissionSetResponseTypeDef](./type_defs.md#listcustomermanagedpolicyreferencesinpermissionsetresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListCustomerManagedPolicyReferencesInPermissionSetPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    InstanceArn: str,
+    PermissionSetArn: str,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListCustomerManagedPolicyReferencesInPermissionSetResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListCustomerManagedPolicyReferencesInPermissionSetResponseTypeDef](./type_defs.md#listcustomermanagedpolicyreferencesinpermissionsetresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListCustomerManagedPolicyReferencesInPermissionSetRequestListCustomerManagedPolicyReferencesInPermissionSetPaginateTypeDef = {  # (1)
+    "InstanceArn": ...,
+    "PermissionSetArn": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListCustomerManagedPolicyReferencesInPermissionSetRequestListCustomerManagedPolicyReferencesInPermissionSetPaginateTypeDef](./type_defs.md#listcustomermanagedpolicyreferencesinpermissionsetrequestlistcustomermanagedpolicyreferencesinpermissionsetpaginatetypedef) 
 ## ListInstancesPaginator
 
 Type annotations and code completion for `#!python session.create_client("sso-admin").get_paginator("list_instances")`.
@@ -206,10 +282,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sso_admin.paginator import ListInstancesPaginator
 
 session = get_session()
-async with session.create_client("sso-admin") as client:
-    client: SSOAdminClient
-    paginator: ListInstancesPaginator = client.get_paginator("list_instances")
+async with session.create_client("sso-admin") as client:  # (1)
+    paginator: ListInstancesPaginator = client.get_paginator("list_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListInstancesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSOAdminClient](./client.md)
+2. paginator: [ListInstancesPaginator](./paginators.md#listinstancespaginator)
+3. item: [:material-code-braces: ListInstancesResponseTypeDef](./type_defs.md#listinstancesresponsetypedef) 
 
 
 ### paginate
@@ -249,10 +331,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sso_admin.paginator import ListManagedPoliciesInPermissionSetPaginator
 
 session = get_session()
-async with session.create_client("sso-admin") as client:
-    client: SSOAdminClient
-    paginator: ListManagedPoliciesInPermissionSetPaginator = client.get_paginator("list_managed_policies_in_permission_set")
+async with session.create_client("sso-admin") as client:  # (1)
+    paginator: ListManagedPoliciesInPermissionSetPaginator = client.get_paginator("list_managed_policies_in_permission_set")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListManagedPoliciesInPermissionSetResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSOAdminClient](./client.md)
+2. paginator: [ListManagedPoliciesInPermissionSetPaginator](./paginators.md#listmanagedpoliciesinpermissionsetpaginator)
+3. item: [:material-code-braces: ListManagedPoliciesInPermissionSetResponseTypeDef](./type_defs.md#listmanagedpoliciesinpermissionsetresponsetypedef) 
 
 
 ### paginate
@@ -295,10 +383,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sso_admin.paginator import ListPermissionSetProvisioningStatusPaginator
 
 session = get_session()
-async with session.create_client("sso-admin") as client:
-    client: SSOAdminClient
-    paginator: ListPermissionSetProvisioningStatusPaginator = client.get_paginator("list_permission_set_provisioning_status")
+async with session.create_client("sso-admin") as client:  # (1)
+    paginator: ListPermissionSetProvisioningStatusPaginator = client.get_paginator("list_permission_set_provisioning_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPermissionSetProvisioningStatusResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSOAdminClient](./client.md)
+2. paginator: [ListPermissionSetProvisioningStatusPaginator](./paginators.md#listpermissionsetprovisioningstatuspaginator)
+3. item: [:material-code-braces: ListPermissionSetProvisioningStatusResponseTypeDef](./type_defs.md#listpermissionsetprovisioningstatusresponsetypedef) 
 
 
 ### paginate
@@ -341,10 +435,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sso_admin.paginator import ListPermissionSetsPaginator
 
 session = get_session()
-async with session.create_client("sso-admin") as client:
-    client: SSOAdminClient
-    paginator: ListPermissionSetsPaginator = client.get_paginator("list_permission_sets")
+async with session.create_client("sso-admin") as client:  # (1)
+    paginator: ListPermissionSetsPaginator = client.get_paginator("list_permission_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPermissionSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSOAdminClient](./client.md)
+2. paginator: [ListPermissionSetsPaginator](./paginators.md#listpermissionsetspaginator)
+3. item: [:material-code-braces: ListPermissionSetsResponseTypeDef](./type_defs.md#listpermissionsetsresponsetypedef) 
 
 
 ### paginate
@@ -385,10 +485,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sso_admin.paginator import ListPermissionSetsProvisionedToAccountPaginator
 
 session = get_session()
-async with session.create_client("sso-admin") as client:
-    client: SSOAdminClient
-    paginator: ListPermissionSetsProvisionedToAccountPaginator = client.get_paginator("list_permission_sets_provisioned_to_account")
+async with session.create_client("sso-admin") as client:  # (1)
+    paginator: ListPermissionSetsProvisionedToAccountPaginator = client.get_paginator("list_permission_sets_provisioned_to_account")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPermissionSetsProvisionedToAccountResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSOAdminClient](./client.md)
+2. paginator: [ListPermissionSetsProvisionedToAccountPaginator](./paginators.md#listpermissionsetsprovisionedtoaccountpaginator)
+3. item: [:material-code-braces: ListPermissionSetsProvisionedToAccountResponseTypeDef](./type_defs.md#listpermissionsetsprovisionedtoaccountresponsetypedef) 
 
 
 ### paginate
@@ -433,10 +539,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sso_admin.paginator import ListTagsForResourcePaginator
 
 session = get_session()
-async with session.create_client("sso-admin") as client:
-    client: SSOAdminClient
-    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
+async with session.create_client("sso-admin") as client:  # (1)
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsForResourceResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSOAdminClient](./client.md)
+2. paginator: [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
+3. item: [:material-code-braces: ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef) 
 
 
 ### paginate

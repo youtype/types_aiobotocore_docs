@@ -142,6 +142,29 @@ ConfidenceType = Literal[
     "NONE",
 ]
 ```
+## DataQualityMetricTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.literals import DataQualityMetricTypeType
+
+def get_value() -> DataQualityMetricTypeType:
+    return "BACKTEST_INFERENCE_DATA_END_TIME_STAMP"
+```
+
+```python title="Definition"
+DataQualityMetricTypeType = Literal[
+    "BACKTEST_INFERENCE_DATA_END_TIME_STAMP",
+    "BACKTEST_INFERENCE_DATA_START_TIME_STAMP",
+    "BACKTEST_TRAINING_DATA_END_TIME_STAMP",
+    "BACKTEST_TRAINING_DATA_START_TIME_STAMP",
+    "COLUMN_COMPLETENESS",
+    "DIMENSION_UNIQUENESS",
+    "INVALID_ROWS_COMPLIANCE",
+    "ROWS_PARTIAL_COMPLIANCE",
+    "ROWS_PROCESSED",
+    "TIME_SERIES_COUNT",
+]
+```
 ## FrequencyType
 
 ```python title="Usage Example"
@@ -259,6 +282,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -404,6 +428,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -457,6 +482,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -467,11 +493,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -517,6 +545,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ses.paginator import ListConfigurationSetsPaginator
 
 session = get_session()
-async with session.create_client("ses") as client:
-    client: SESClient
-    paginator: ListConfigurationSetsPaginator = client.get_paginator("list_configuration_sets")
+async with session.create_client("ses") as client:  # (1)
+    paginator: ListConfigurationSetsPaginator = client.get_paginator("list_configuration_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListConfigurationSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SESClient](./client.md)
+2. paginator: [ListConfigurationSetsPaginator](./paginators.md#listconfigurationsetspaginator)
+3. item: [:material-code-braces: ListConfigurationSetsResponseTypeDef](./type_defs.md#listconfigurationsetsresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ses.paginator import ListCustomVerificationEmailTemplatesPaginator
 
 session = get_session()
-async with session.create_client("ses") as client:
-    client: SESClient
-    paginator: ListCustomVerificationEmailTemplatesPaginator = client.get_paginator("list_custom_verification_email_templates")
+async with session.create_client("ses") as client:  # (1)
+    paginator: ListCustomVerificationEmailTemplatesPaginator = client.get_paginator("list_custom_verification_email_templates")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCustomVerificationEmailTemplatesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SESClient](./client.md)
+2. paginator: [ListCustomVerificationEmailTemplatesPaginator](./paginators.md#listcustomverificationemailtemplatespaginator)
+3. item: [:material-code-braces: ListCustomVerificationEmailTemplatesResponseTypeDef](./type_defs.md#listcustomverificationemailtemplatesresponsetypedef) 
 
 
 ### paginate
@@ -104,10 +116,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ses.paginator import ListIdentitiesPaginator
 
 session = get_session()
-async with session.create_client("ses") as client:
-    client: SESClient
-    paginator: ListIdentitiesPaginator = client.get_paginator("list_identities")
+async with session.create_client("ses") as client:  # (1)
+    paginator: ListIdentitiesPaginator = client.get_paginator("list_identities")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListIdentitiesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SESClient](./client.md)
+2. paginator: [ListIdentitiesPaginator](./paginators.md#listidentitiespaginator)
+3. item: [:material-code-braces: ListIdentitiesResponseTypeDef](./type_defs.md#listidentitiesresponsetypedef) 
 
 
 ### paginate
@@ -149,10 +167,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ses.paginator import ListReceiptRuleSetsPaginator
 
 session = get_session()
-async with session.create_client("ses") as client:
-    client: SESClient
-    paginator: ListReceiptRuleSetsPaginator = client.get_paginator("list_receipt_rule_sets")
+async with session.create_client("ses") as client:  # (1)
+    paginator: ListReceiptRuleSetsPaginator = client.get_paginator("list_receipt_rule_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListReceiptRuleSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SESClient](./client.md)
+2. paginator: [ListReceiptRuleSetsPaginator](./paginators.md#listreceiptrulesetspaginator)
+3. item: [:material-code-braces: ListReceiptRuleSetsResponseTypeDef](./type_defs.md#listreceiptrulesetsresponsetypedef) 
 
 
 ### paginate
@@ -192,10 +216,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ses.paginator import ListTemplatesPaginator
 
 session = get_session()
-async with session.create_client("ses") as client:
-    client: SESClient
-    paginator: ListTemplatesPaginator = client.get_paginator("list_templates")
+async with session.create_client("ses") as client:  # (1)
+    paginator: ListTemplatesPaginator = client.get_paginator("list_templates")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTemplatesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SESClient](./client.md)
+2. paginator: [ListTemplatesPaginator](./paginators.md#listtemplatespaginator)
+3. item: [:material-code-braces: ListTemplatesResponseTypeDef](./type_defs.md#listtemplatesresponsetypedef) 
 
 
 ### paginate

@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `CloudWatch`.
 
 ### From PyPI with pip
 
@@ -79,6 +74,7 @@ def get_describe_alarm_history_paginator() -> DescribeAlarmHistoryPaginator:
 
 - [DescribeAlarmHistoryPaginator](./paginators.md#describealarmhistorypaginator)
 - [DescribeAlarmsPaginator](./paginators.md#describealarmspaginator)
+- [DescribeAnomalyDetectorsPaginator](./paginators.md#describeanomalydetectorspaginator)
 - [GetMetricDataPaginator](./paginators.md#getmetricdatapaginator)
 - [ListDashboardsPaginator](./paginators.md#listdashboardspaginator)
 - [ListMetricsPaginator](./paginators.md#listmetricspaginator)
@@ -158,12 +154,13 @@ def get_resource() -> Alarm:
 Type annotations for [literals](./literals.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_cloudwatch.literals import AlarmExistsWaiterName
+from types_aiobotocore_cloudwatch.literals import ActionsSuppressedByType
 
-def get_value() -> AlarmExistsWaiterName:
-    return "alarm_exists"
+def get_value() -> ActionsSuppressedByType:
+    return "Alarm"
 ```
 
+- [ActionsSuppressedByType](./literals.md#actionssuppressedbytype)
 - [AlarmExistsWaiterName](./literals.md#alarmexistswaitername)
 - [AlarmTypeType](./literals.md#alarmtypetype)
 - [AnomalyDetectorStateValueType](./literals.md#anomalydetectorstatevaluetype)
@@ -172,6 +169,7 @@ def get_value() -> AlarmExistsWaiterName:
 - [CompositeAlarmExistsWaiterName](./literals.md#compositealarmexistswaitername)
 - [DescribeAlarmHistoryPaginatorName](./literals.md#describealarmhistorypaginatorname)
 - [DescribeAlarmsPaginatorName](./literals.md#describealarmspaginatorname)
+- [DescribeAnomalyDetectorsPaginatorName](./literals.md#describeanomalydetectorspaginatorname)
 - [GetMetricDataPaginatorName](./literals.md#getmetricdatapaginatorname)
 - [HistoryItemTypeType](./literals.md#historyitemtypetype)
 - [ListDashboardsPaginatorName](./literals.md#listdashboardspaginatorname)
@@ -241,10 +239,12 @@ def get_value() -> AlarmHistoryItemTypeDef:
 - [GetMetricWidgetImageInputRequestTypeDef](./type_defs.md#getmetricwidgetimageinputrequesttypedef)
 - [InsightRuleContributorDatapointTypeDef](./type_defs.md#insightrulecontributordatapointtypedef)
 - [ListDashboardsInputRequestTypeDef](./type_defs.md#listdashboardsinputrequesttypedef)
+- [ListManagedInsightRulesInputRequestTypeDef](./type_defs.md#listmanagedinsightrulesinputrequesttypedef)
 - [ListMetricStreamsInputRequestTypeDef](./type_defs.md#listmetricstreamsinputrequesttypedef)
 - [MetricStreamEntryTypeDef](./type_defs.md#metricstreamentrytypedef)
 - [ListTagsForResourceInputRequestTypeDef](./type_defs.md#listtagsforresourceinputrequesttypedef)
 - [TagTypeDef](./type_defs.md#tagtypedef)
+- [ManagedRuleStateTypeDef](./type_defs.md#managedrulestatetypedef)
 - [StatisticSetTypeDef](./type_defs.md#statisticsettypedef)
 - [MetricStreamStatisticsMetricTypeDef](./type_defs.md#metricstreamstatisticsmetrictypedef)
 - [PutDashboardInputRequestTypeDef](./type_defs.md#putdashboardinputrequesttypedef)
@@ -272,9 +272,11 @@ def get_value() -> AlarmHistoryItemTypeDef:
 - [GetMetricWidgetImageOutputTypeDef](./type_defs.md#getmetricwidgetimageoutputtypedef)
 - [ListDashboardsOutputTypeDef](./type_defs.md#listdashboardsoutputtypedef)
 - [PutDashboardOutputTypeDef](./type_defs.md#putdashboardoutputtypedef)
+- [PutManagedInsightRulesOutputTypeDef](./type_defs.md#putmanagedinsightrulesoutputtypedef)
 - [PutMetricStreamOutputTypeDef](./type_defs.md#putmetricstreamoutputtypedef)
 - [DescribeAlarmHistoryInputDescribeAlarmHistoryPaginateTypeDef](./type_defs.md#describealarmhistoryinputdescribealarmhistorypaginatetypedef)
 - [DescribeAlarmsInputDescribeAlarmsPaginateTypeDef](./type_defs.md#describealarmsinputdescribealarmspaginatetypedef)
+- [DescribeAnomalyDetectorsInputDescribeAnomalyDetectorsPaginateTypeDef](./type_defs.md#describeanomalydetectorsinputdescribeanomalydetectorspaginatetypedef)
 - [ListDashboardsInputListDashboardsPaginateTypeDef](./type_defs.md#listdashboardsinputlistdashboardspaginatetypedef)
 - [DescribeAlarmsInputAlarmExistsWaitTypeDef](./type_defs.md#describealarmsinputalarmexistswaittypedef)
 - [DescribeAlarmsInputCompositeAlarmExistsWaitTypeDef](./type_defs.md#describealarmsinputcompositealarmexistswaittypedef)
@@ -285,15 +287,19 @@ def get_value() -> AlarmHistoryItemTypeDef:
 - [InsightRuleContributorTypeDef](./type_defs.md#insightrulecontributortypedef)
 - [ListMetricStreamsOutputTypeDef](./type_defs.md#listmetricstreamsoutputtypedef)
 - [ListTagsForResourceOutputTypeDef](./type_defs.md#listtagsforresourceoutputtypedef)
+- [ManagedRuleTypeDef](./type_defs.md#managedruletypedef)
 - [PutCompositeAlarmInputRequestTypeDef](./type_defs.md#putcompositealarminputrequesttypedef)
 - [PutInsightRuleInputRequestTypeDef](./type_defs.md#putinsightruleinputrequesttypedef)
 - [TagResourceInputRequestTypeDef](./type_defs.md#tagresourceinputrequesttypedef)
+- [ManagedRuleDescriptionTypeDef](./type_defs.md#managedruledescriptiontypedef)
 - [MetricDatumTypeDef](./type_defs.md#metricdatumtypedef)
 - [MetricStreamStatisticsConfigurationTypeDef](./type_defs.md#metricstreamstatisticsconfigurationtypedef)
 - [ListMetricsOutputTypeDef](./type_defs.md#listmetricsoutputtypedef)
 - [MetricStatTypeDef](./type_defs.md#metricstattypedef)
 - [GetMetricDataOutputTypeDef](./type_defs.md#getmetricdataoutputtypedef)
 - [GetInsightRuleReportOutputTypeDef](./type_defs.md#getinsightrulereportoutputtypedef)
+- [PutManagedInsightRulesInputRequestTypeDef](./type_defs.md#putmanagedinsightrulesinputrequesttypedef)
+- [ListManagedInsightRulesOutputTypeDef](./type_defs.md#listmanagedinsightrulesoutputtypedef)
 - [PutMetricDataInputRequestTypeDef](./type_defs.md#putmetricdatainputrequesttypedef)
 - [GetMetricStreamOutputTypeDef](./type_defs.md#getmetricstreamoutputtypedef)
 - [PutMetricStreamInputRequestTypeDef](./type_defs.md#putmetricstreaminputrequesttypedef)

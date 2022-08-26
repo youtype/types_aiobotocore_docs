@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codeguruprofiler.paginator import ListProfileTimesPaginator
 
 session = get_session()
-async with session.create_client("codeguruprofiler") as client:
-    client: CodeGuruProfilerClient
-    paginator: ListProfileTimesPaginator = client.get_paginator("list_profile_times")
+async with session.create_client("codeguruprofiler") as client:  # (1)
+    paginator: ListProfileTimesPaginator = client.get_paginator("list_profile_times")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProfileTimesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeGuruProfilerClient](./client.md)
+2. paginator: [ListProfileTimesPaginator](./paginators.md#listprofiletimespaginator)
+3. item: [:material-code-braces: ListProfileTimesResponseTypeDef](./type_defs.md#listprofiletimesresponsetypedef) 
 
 
 ### paginate

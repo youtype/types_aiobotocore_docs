@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_alexaforbusiness.paginator import ListBusinessReportSchedulesPaginator
 
 session = get_session()
-async with session.create_client("alexaforbusiness") as client:
-    client: AlexaForBusinessClient
-    paginator: ListBusinessReportSchedulesPaginator = client.get_paginator("list_business_report_schedules")
+async with session.create_client("alexaforbusiness") as client:  # (1)
+    paginator: ListBusinessReportSchedulesPaginator = client.get_paginator("list_business_report_schedules")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBusinessReportSchedulesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AlexaForBusinessClient](./client.md)
+2. paginator: [ListBusinessReportSchedulesPaginator](./paginators.md#listbusinessreportschedulespaginator)
+3. item: [:material-code-braces: ListBusinessReportSchedulesResponseTypeDef](./type_defs.md#listbusinessreportschedulesresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_alexaforbusiness.paginator import ListConferenceProvidersPaginator
 
 session = get_session()
-async with session.create_client("alexaforbusiness") as client:
-    client: AlexaForBusinessClient
-    paginator: ListConferenceProvidersPaginator = client.get_paginator("list_conference_providers")
+async with session.create_client("alexaforbusiness") as client:  # (1)
+    paginator: ListConferenceProvidersPaginator = client.get_paginator("list_conference_providers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListConferenceProvidersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AlexaForBusinessClient](./client.md)
+2. paginator: [ListConferenceProvidersPaginator](./paginators.md#listconferenceproviderspaginator)
+3. item: [:material-code-braces: ListConferenceProvidersResponseTypeDef](./type_defs.md#listconferenceprovidersresponsetypedef) 
 
 
 ### paginate
@@ -104,10 +116,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_alexaforbusiness.paginator import ListDeviceEventsPaginator
 
 session = get_session()
-async with session.create_client("alexaforbusiness") as client:
-    client: AlexaForBusinessClient
-    paginator: ListDeviceEventsPaginator = client.get_paginator("list_device_events")
+async with session.create_client("alexaforbusiness") as client:  # (1)
+    paginator: ListDeviceEventsPaginator = client.get_paginator("list_device_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeviceEventsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AlexaForBusinessClient](./client.md)
+2. paginator: [ListDeviceEventsPaginator](./paginators.md#listdeviceeventspaginator)
+3. item: [:material-code-braces: ListDeviceEventsResponseTypeDef](./type_defs.md#listdeviceeventsresponsetypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_alexaforbusiness.paginator import ListSkillsPaginator
 
 session = get_session()
-async with session.create_client("alexaforbusiness") as client:
-    client: AlexaForBusinessClient
-    paginator: ListSkillsPaginator = client.get_paginator("list_skills")
+async with session.create_client("alexaforbusiness") as client:  # (1)
+    paginator: ListSkillsPaginator = client.get_paginator("list_skills")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSkillsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AlexaForBusinessClient](./client.md)
+2. paginator: [ListSkillsPaginator](./paginators.md#listskillspaginator)
+3. item: [:material-code-braces: ListSkillsResponseTypeDef](./type_defs.md#listskillsresponsetypedef) 
 
 
 ### paginate
@@ -198,10 +222,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_alexaforbusiness.paginator import ListSkillsStoreCategoriesPaginator
 
 session = get_session()
-async with session.create_client("alexaforbusiness") as client:
-    client: AlexaForBusinessClient
-    paginator: ListSkillsStoreCategoriesPaginator = client.get_paginator("list_skills_store_categories")
+async with session.create_client("alexaforbusiness") as client:  # (1)
+    paginator: ListSkillsStoreCategoriesPaginator = client.get_paginator("list_skills_store_categories")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSkillsStoreCategoriesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AlexaForBusinessClient](./client.md)
+2. paginator: [ListSkillsStoreCategoriesPaginator](./paginators.md#listskillsstorecategoriespaginator)
+3. item: [:material-code-braces: ListSkillsStoreCategoriesResponseTypeDef](./type_defs.md#listskillsstorecategoriesresponsetypedef) 
 
 
 ### paginate
@@ -241,10 +271,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_alexaforbusiness.paginator import ListSkillsStoreSkillsByCategoryPaginator
 
 session = get_session()
-async with session.create_client("alexaforbusiness") as client:
-    client: AlexaForBusinessClient
-    paginator: ListSkillsStoreSkillsByCategoryPaginator = client.get_paginator("list_skills_store_skills_by_category")
+async with session.create_client("alexaforbusiness") as client:  # (1)
+    paginator: ListSkillsStoreSkillsByCategoryPaginator = client.get_paginator("list_skills_store_skills_by_category")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSkillsStoreSkillsByCategoryResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AlexaForBusinessClient](./client.md)
+2. paginator: [ListSkillsStoreSkillsByCategoryPaginator](./paginators.md#listskillsstoreskillsbycategorypaginator)
+3. item: [:material-code-braces: ListSkillsStoreSkillsByCategoryResponseTypeDef](./type_defs.md#listskillsstoreskillsbycategoryresponsetypedef) 
 
 
 ### paginate
@@ -285,10 +321,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_alexaforbusiness.paginator import ListSmartHomeAppliancesPaginator
 
 session = get_session()
-async with session.create_client("alexaforbusiness") as client:
-    client: AlexaForBusinessClient
-    paginator: ListSmartHomeAppliancesPaginator = client.get_paginator("list_smart_home_appliances")
+async with session.create_client("alexaforbusiness") as client:  # (1)
+    paginator: ListSmartHomeAppliancesPaginator = client.get_paginator("list_smart_home_appliances")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSmartHomeAppliancesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AlexaForBusinessClient](./client.md)
+2. paginator: [ListSmartHomeAppliancesPaginator](./paginators.md#listsmarthomeappliancespaginator)
+3. item: [:material-code-braces: ListSmartHomeAppliancesResponseTypeDef](./type_defs.md#listsmarthomeappliancesresponsetypedef) 
 
 
 ### paginate
@@ -329,10 +371,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_alexaforbusiness.paginator import ListTagsPaginator
 
 session = get_session()
-async with session.create_client("alexaforbusiness") as client:
-    client: AlexaForBusinessClient
-    paginator: ListTagsPaginator = client.get_paginator("list_tags")
+async with session.create_client("alexaforbusiness") as client:  # (1)
+    paginator: ListTagsPaginator = client.get_paginator("list_tags")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AlexaForBusinessClient](./client.md)
+2. paginator: [ListTagsPaginator](./paginators.md#listtagspaginator)
+3. item: [:material-code-braces: ListTagsResponseTypeDef](./type_defs.md#listtagsresponsetypedef) 
 
 
 ### paginate
@@ -373,10 +421,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_alexaforbusiness.paginator import SearchDevicesPaginator
 
 session = get_session()
-async with session.create_client("alexaforbusiness") as client:
-    client: AlexaForBusinessClient
-    paginator: SearchDevicesPaginator = client.get_paginator("search_devices")
+async with session.create_client("alexaforbusiness") as client:  # (1)
+    paginator: SearchDevicesPaginator = client.get_paginator("search_devices")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchDevicesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AlexaForBusinessClient](./client.md)
+2. paginator: [SearchDevicesPaginator](./paginators.md#searchdevicespaginator)
+3. item: [:material-code-braces: SearchDevicesResponseTypeDef](./type_defs.md#searchdevicesresponsetypedef) 
 
 
 ### paginate
@@ -420,10 +474,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_alexaforbusiness.paginator import SearchProfilesPaginator
 
 session = get_session()
-async with session.create_client("alexaforbusiness") as client:
-    client: AlexaForBusinessClient
-    paginator: SearchProfilesPaginator = client.get_paginator("search_profiles")
+async with session.create_client("alexaforbusiness") as client:  # (1)
+    paginator: SearchProfilesPaginator = client.get_paginator("search_profiles")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchProfilesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AlexaForBusinessClient](./client.md)
+2. paginator: [SearchProfilesPaginator](./paginators.md#searchprofilespaginator)
+3. item: [:material-code-braces: SearchProfilesResponseTypeDef](./type_defs.md#searchprofilesresponsetypedef) 
 
 
 ### paginate
@@ -467,10 +527,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_alexaforbusiness.paginator import SearchRoomsPaginator
 
 session = get_session()
-async with session.create_client("alexaforbusiness") as client:
-    client: AlexaForBusinessClient
-    paginator: SearchRoomsPaginator = client.get_paginator("search_rooms")
+async with session.create_client("alexaforbusiness") as client:  # (1)
+    paginator: SearchRoomsPaginator = client.get_paginator("search_rooms")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchRoomsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AlexaForBusinessClient](./client.md)
+2. paginator: [SearchRoomsPaginator](./paginators.md#searchroomspaginator)
+3. item: [:material-code-braces: SearchRoomsResponseTypeDef](./type_defs.md#searchroomsresponsetypedef) 
 
 
 ### paginate
@@ -514,10 +580,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_alexaforbusiness.paginator import SearchSkillGroupsPaginator
 
 session = get_session()
-async with session.create_client("alexaforbusiness") as client:
-    client: AlexaForBusinessClient
-    paginator: SearchSkillGroupsPaginator = client.get_paginator("search_skill_groups")
+async with session.create_client("alexaforbusiness") as client:  # (1)
+    paginator: SearchSkillGroupsPaginator = client.get_paginator("search_skill_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchSkillGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AlexaForBusinessClient](./client.md)
+2. paginator: [SearchSkillGroupsPaginator](./paginators.md#searchskillgroupspaginator)
+3. item: [:material-code-braces: SearchSkillGroupsResponseTypeDef](./type_defs.md#searchskillgroupsresponsetypedef) 
 
 
 ### paginate
@@ -561,10 +633,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_alexaforbusiness.paginator import SearchUsersPaginator
 
 session = get_session()
-async with session.create_client("alexaforbusiness") as client:
-    client: AlexaForBusinessClient
-    paginator: SearchUsersPaginator = client.get_paginator("search_users")
+async with session.create_client("alexaforbusiness") as client:  # (1)
+    paginator: SearchUsersPaginator = client.get_paginator("search_users")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchUsersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AlexaForBusinessClient](./client.md)
+2. paginator: [SearchUsersPaginator](./paginators.md#searchuserspaginator)
+3. item: [:material-code-braces: SearchUsersResponseTypeDef](./type_defs.md#searchusersresponsetypedef) 
 
 
 ### paginate

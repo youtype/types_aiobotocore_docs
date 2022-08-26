@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_drs.paginator import DescribeJobLogItemsPaginator
 
 session = get_session()
-async with session.create_client("drs") as client:
-    client: drsClient
-    paginator: DescribeJobLogItemsPaginator = client.get_paginator("describe_job_log_items")
+async with session.create_client("drs") as client:  # (1)
+    paginator: DescribeJobLogItemsPaginator = client.get_paginator("describe_job_log_items")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeJobLogItemsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [drsClient](./client.md)
+2. paginator: [DescribeJobLogItemsPaginator](./paginators.md#describejoblogitemspaginator)
+3. item: [:material-code-braces: DescribeJobLogItemsResponseTypeDef](./type_defs.md#describejoblogitemsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_drs.paginator import DescribeJobsPaginator
 
 session = get_session()
-async with session.create_client("drs") as client:
-    client: drsClient
-    paginator: DescribeJobsPaginator = client.get_paginator("describe_jobs")
+async with session.create_client("drs") as client:  # (1)
+    paginator: DescribeJobsPaginator = client.get_paginator("describe_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [drsClient](./client.md)
+2. paginator: [DescribeJobsPaginator](./paginators.md#describejobspaginator)
+3. item: [:material-code-braces: DescribeJobsResponseTypeDef](./type_defs.md#describejobsresponsetypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_drs.paginator import DescribeRecoveryInstancesPaginator
 
 session = get_session()
-async with session.create_client("drs") as client:
-    client: drsClient
-    paginator: DescribeRecoveryInstancesPaginator = client.get_paginator("describe_recovery_instances")
+async with session.create_client("drs") as client:  # (1)
+    paginator: DescribeRecoveryInstancesPaginator = client.get_paginator("describe_recovery_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeRecoveryInstancesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [drsClient](./client.md)
+2. paginator: [DescribeRecoveryInstancesPaginator](./paginators.md#describerecoveryinstancespaginator)
+3. item: [:material-code-braces: DescribeRecoveryInstancesResponseTypeDef](./type_defs.md#describerecoveryinstancesresponsetypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_drs.paginator import DescribeRecoverySnapshotsPaginator
 
 session = get_session()
-async with session.create_client("drs") as client:
-    client: drsClient
-    paginator: DescribeRecoverySnapshotsPaginator = client.get_paginator("describe_recovery_snapshots")
+async with session.create_client("drs") as client:  # (1)
+    paginator: DescribeRecoverySnapshotsPaginator = client.get_paginator("describe_recovery_snapshots")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeRecoverySnapshotsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [drsClient](./client.md)
+2. paginator: [DescribeRecoverySnapshotsPaginator](./paginators.md#describerecoverysnapshotspaginator)
+3. item: [:material-code-braces: DescribeRecoverySnapshotsResponseTypeDef](./type_defs.md#describerecoverysnapshotsresponsetypedef) 
 
 
 ### paginate
@@ -200,10 +224,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_drs.paginator import DescribeReplicationConfigurationTemplatesPaginator
 
 session = get_session()
-async with session.create_client("drs") as client:
-    client: drsClient
-    paginator: DescribeReplicationConfigurationTemplatesPaginator = client.get_paginator("describe_replication_configuration_templates")
+async with session.create_client("drs") as client:  # (1)
+    paginator: DescribeReplicationConfigurationTemplatesPaginator = client.get_paginator("describe_replication_configuration_templates")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeReplicationConfigurationTemplatesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [drsClient](./client.md)
+2. paginator: [DescribeReplicationConfigurationTemplatesPaginator](./paginators.md#describereplicationconfigurationtemplatespaginator)
+3. item: [:material-code-braces: DescribeReplicationConfigurationTemplatesResponseTypeDef](./type_defs.md#describereplicationconfigurationtemplatesresponsetypedef) 
 
 
 ### paginate
@@ -244,10 +274,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_drs.paginator import DescribeSourceServersPaginator
 
 session = get_session()
-async with session.create_client("drs") as client:
-    client: drsClient
-    paginator: DescribeSourceServersPaginator = client.get_paginator("describe_source_servers")
+async with session.create_client("drs") as client:  # (1)
+    paginator: DescribeSourceServersPaginator = client.get_paginator("describe_source_servers")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSourceServersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [drsClient](./client.md)
+2. paginator: [DescribeSourceServersPaginator](./paginators.md#describesourceserverspaginator)
+3. item: [:material-code-braces: DescribeSourceServersResponseTypeDef](./type_defs.md#describesourceserversresponsetypedef) 
 
 
 ### paginate
@@ -289,10 +325,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_drs.paginator import ListExtensibleSourceServersPaginator
 
 session = get_session()
-async with session.create_client("drs") as client:
-    client: drsClient
-    paginator: ListExtensibleSourceServersPaginator = client.get_paginator("list_extensible_source_servers")
+async with session.create_client("drs") as client:  # (1)
+    paginator: ListExtensibleSourceServersPaginator = client.get_paginator("list_extensible_source_servers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListExtensibleSourceServersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [drsClient](./client.md)
+2. paginator: [ListExtensibleSourceServersPaginator](./paginators.md#listextensiblesourceserverspaginator)
+3. item: [:material-code-braces: ListExtensibleSourceServersResponseTypeDef](./type_defs.md#listextensiblesourceserversresponsetypedef) 
 
 
 ### paginate
@@ -333,10 +375,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_drs.paginator import ListStagingAccountsPaginator
 
 session = get_session()
-async with session.create_client("drs") as client:
-    client: drsClient
-    paginator: ListStagingAccountsPaginator = client.get_paginator("list_staging_accounts")
+async with session.create_client("drs") as client:  # (1)
+    paginator: ListStagingAccountsPaginator = client.get_paginator("list_staging_accounts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStagingAccountsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [drsClient](./client.md)
+2. paginator: [ListStagingAccountsPaginator](./paginators.md#liststagingaccountspaginator)
+3. item: [:material-code-braces: ListStagingAccountsResponseTypeDef](./type_defs.md#liststagingaccountsresponsetypedef) 
 
 
 ### paginate

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lakeformation.paginator import GetWorkUnitsPaginator
 
 session = get_session()
-async with session.create_client("lakeformation") as client:
-    client: LakeFormationClient
-    paginator: GetWorkUnitsPaginator = client.get_paginator("get_work_units")
+async with session.create_client("lakeformation") as client:  # (1)
+    paginator: GetWorkUnitsPaginator = client.get_paginator("get_work_units")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetWorkUnitsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LakeFormationClient](./client.md)
+2. paginator: [GetWorkUnitsPaginator](./paginators.md#getworkunitspaginator)
+3. item: [:material-code-braces: GetWorkUnitsResponseTypeDef](./type_defs.md#getworkunitsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lakeformation.paginator import ListDataCellsFilterPaginator
 
 session = get_session()
-async with session.create_client("lakeformation") as client:
-    client: LakeFormationClient
-    paginator: ListDataCellsFilterPaginator = client.get_paginator("list_data_cells_filter")
+async with session.create_client("lakeformation") as client:  # (1)
+    paginator: ListDataCellsFilterPaginator = client.get_paginator("list_data_cells_filter")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDataCellsFilterResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LakeFormationClient](./client.md)
+2. paginator: [ListDataCellsFilterPaginator](./paginators.md#listdatacellsfilterpaginator)
+3. item: [:material-code-braces: ListDataCellsFilterResponseTypeDef](./type_defs.md#listdatacellsfilterresponsetypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lakeformation.paginator import ListLFTagsPaginator
 
 session = get_session()
-async with session.create_client("lakeformation") as client:
-    client: LakeFormationClient
-    paginator: ListLFTagsPaginator = client.get_paginator("list_lf_tags")
+async with session.create_client("lakeformation") as client:  # (1)
+    paginator: ListLFTagsPaginator = client.get_paginator("list_lf_tags")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLFTagsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LakeFormationClient](./client.md)
+2. paginator: [ListLFTagsPaginator](./paginators.md#listlftagspaginator)
+3. item: [:material-code-braces: ListLFTagsResponseTypeDef](./type_defs.md#listlftagsresponsetypedef) 
 
 
 ### paginate
@@ -153,10 +171,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lakeformation.paginator import SearchDatabasesByLFTagsPaginator
 
 session = get_session()
-async with session.create_client("lakeformation") as client:
-    client: LakeFormationClient
-    paginator: SearchDatabasesByLFTagsPaginator = client.get_paginator("search_databases_by_lf_tags")
+async with session.create_client("lakeformation") as client:  # (1)
+    paginator: SearchDatabasesByLFTagsPaginator = client.get_paginator("search_databases_by_lf_tags")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchDatabasesByLFTagsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LakeFormationClient](./client.md)
+2. paginator: [SearchDatabasesByLFTagsPaginator](./paginators.md#searchdatabasesbylftagspaginator)
+3. item: [:material-code-braces: SearchDatabasesByLFTagsResponseTypeDef](./type_defs.md#searchdatabasesbylftagsresponsetypedef) 
 
 
 ### paginate
@@ -199,10 +223,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lakeformation.paginator import SearchTablesByLFTagsPaginator
 
 session = get_session()
-async with session.create_client("lakeformation") as client:
-    client: LakeFormationClient
-    paginator: SearchTablesByLFTagsPaginator = client.get_paginator("search_tables_by_lf_tags")
+async with session.create_client("lakeformation") as client:  # (1)
+    paginator: SearchTablesByLFTagsPaginator = client.get_paginator("search_tables_by_lf_tags")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchTablesByLFTagsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LakeFormationClient](./client.md)
+2. paginator: [SearchTablesByLFTagsPaginator](./paginators.md#searchtablesbylftagspaginator)
+3. item: [:material-code-braces: SearchTablesByLFTagsResponseTypeDef](./type_defs.md#searchtablesbylftagsresponsetypedef) 
 
 
 ### paginate

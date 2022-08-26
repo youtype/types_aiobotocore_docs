@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elb.paginator import DescribeAccountLimitsPaginator
 
 session = get_session()
-async with session.create_client("elb") as client:
-    client: ElasticLoadBalancingClient
-    paginator: DescribeAccountLimitsPaginator = client.get_paginator("describe_account_limits")
+async with session.create_client("elb") as client:  # (1)
+    paginator: DescribeAccountLimitsPaginator = client.get_paginator("describe_account_limits")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAccountLimitsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticLoadBalancingClient](./client.md)
+2. paginator: [DescribeAccountLimitsPaginator](./paginators.md#describeaccountlimitspaginator)
+3. item: [:material-code-braces: DescribeAccountLimitsOutputTypeDef](./type_defs.md#describeaccountlimitsoutputtypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elb.paginator import DescribeLoadBalancersPaginator
 
 session = get_session()
-async with session.create_client("elb") as client:
-    client: ElasticLoadBalancingClient
-    paginator: DescribeLoadBalancersPaginator = client.get_paginator("describe_load_balancers")
+async with session.create_client("elb") as client:  # (1)
+    paginator: DescribeLoadBalancersPaginator = client.get_paginator("describe_load_balancers")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAccessPointsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticLoadBalancingClient](./client.md)
+2. paginator: [DescribeLoadBalancersPaginator](./paginators.md#describeloadbalancerspaginator)
+3. item: [:material-code-braces: DescribeAccessPointsOutputTypeDef](./type_defs.md#describeaccesspointsoutputtypedef) 
 
 
 ### paginate

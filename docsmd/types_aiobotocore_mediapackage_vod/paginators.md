@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediapackage_vod.paginator import ListAssetsPaginator
 
 session = get_session()
-async with session.create_client("mediapackage-vod") as client:
-    client: MediaPackageVodClient
-    paginator: ListAssetsPaginator = client.get_paginator("list_assets")
+async with session.create_client("mediapackage-vod") as client:  # (1)
+    paginator: ListAssetsPaginator = client.get_paginator("list_assets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaPackageVodClient](./client.md)
+2. paginator: [ListAssetsPaginator](./paginators.md#listassetspaginator)
+3. item: [:material-code-braces: ListAssetsResponseTypeDef](./type_defs.md#listassetsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediapackage_vod.paginator import ListPackagingConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("mediapackage-vod") as client:
-    client: MediaPackageVodClient
-    paginator: ListPackagingConfigurationsPaginator = client.get_paginator("list_packaging_configurations")
+async with session.create_client("mediapackage-vod") as client:  # (1)
+    paginator: ListPackagingConfigurationsPaginator = client.get_paginator("list_packaging_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPackagingConfigurationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaPackageVodClient](./client.md)
+2. paginator: [ListPackagingConfigurationsPaginator](./paginators.md#listpackagingconfigurationspaginator)
+3. item: [:material-code-braces: ListPackagingConfigurationsResponseTypeDef](./type_defs.md#listpackagingconfigurationsresponsetypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediapackage_vod.paginator import ListPackagingGroupsPaginator
 
 session = get_session()
-async with session.create_client("mediapackage-vod") as client:
-    client: MediaPackageVodClient
-    paginator: ListPackagingGroupsPaginator = client.get_paginator("list_packaging_groups")
+async with session.create_client("mediapackage-vod") as client:  # (1)
+    paginator: ListPackagingGroupsPaginator = client.get_paginator("list_packaging_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPackagingGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaPackageVodClient](./client.md)
+2. paginator: [ListPackagingGroupsPaginator](./paginators.md#listpackaginggroupspaginator)
+3. item: [:material-code-braces: ListPackagingGroupsResponseTypeDef](./type_defs.md#listpackaginggroupsresponsetypedef) 
 
 
 ### paginate

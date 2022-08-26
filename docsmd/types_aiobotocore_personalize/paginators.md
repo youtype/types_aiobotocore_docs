@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_personalize.paginator import ListBatchInferenceJobsPaginator
 
 session = get_session()
-async with session.create_client("personalize") as client:
-    client: PersonalizeClient
-    paginator: ListBatchInferenceJobsPaginator = client.get_paginator("list_batch_inference_jobs")
+async with session.create_client("personalize") as client:  # (1)
+    paginator: ListBatchInferenceJobsPaginator = client.get_paginator("list_batch_inference_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBatchInferenceJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PersonalizeClient](./client.md)
+2. paginator: [ListBatchInferenceJobsPaginator](./paginators.md#listbatchinferencejobspaginator)
+3. item: [:material-code-braces: ListBatchInferenceJobsResponseTypeDef](./type_defs.md#listbatchinferencejobsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_personalize.paginator import ListBatchSegmentJobsPaginator
 
 session = get_session()
-async with session.create_client("personalize") as client:
-    client: PersonalizeClient
-    paginator: ListBatchSegmentJobsPaginator = client.get_paginator("list_batch_segment_jobs")
+async with session.create_client("personalize") as client:  # (1)
+    paginator: ListBatchSegmentJobsPaginator = client.get_paginator("list_batch_segment_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBatchSegmentJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PersonalizeClient](./client.md)
+2. paginator: [ListBatchSegmentJobsPaginator](./paginators.md#listbatchsegmentjobspaginator)
+3. item: [:material-code-braces: ListBatchSegmentJobsResponseTypeDef](./type_defs.md#listbatchsegmentjobsresponsetypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_personalize.paginator import ListCampaignsPaginator
 
 session = get_session()
-async with session.create_client("personalize") as client:
-    client: PersonalizeClient
-    paginator: ListCampaignsPaginator = client.get_paginator("list_campaigns")
+async with session.create_client("personalize") as client:  # (1)
+    paginator: ListCampaignsPaginator = client.get_paginator("list_campaigns")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCampaignsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PersonalizeClient](./client.md)
+2. paginator: [ListCampaignsPaginator](./paginators.md#listcampaignspaginator)
+3. item: [:material-code-braces: ListCampaignsResponseTypeDef](./type_defs.md#listcampaignsresponsetypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_personalize.paginator import ListDatasetExportJobsPaginator
 
 session = get_session()
-async with session.create_client("personalize") as client:
-    client: PersonalizeClient
-    paginator: ListDatasetExportJobsPaginator = client.get_paginator("list_dataset_export_jobs")
+async with session.create_client("personalize") as client:  # (1)
+    paginator: ListDatasetExportJobsPaginator = client.get_paginator("list_dataset_export_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDatasetExportJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PersonalizeClient](./client.md)
+2. paginator: [ListDatasetExportJobsPaginator](./paginators.md#listdatasetexportjobspaginator)
+3. item: [:material-code-braces: ListDatasetExportJobsResponseTypeDef](./type_defs.md#listdatasetexportjobsresponsetypedef) 
 
 
 ### paginate
@@ -194,10 +218,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_personalize.paginator import ListDatasetGroupsPaginator
 
 session = get_session()
-async with session.create_client("personalize") as client:
-    client: PersonalizeClient
-    paginator: ListDatasetGroupsPaginator = client.get_paginator("list_dataset_groups")
+async with session.create_client("personalize") as client:  # (1)
+    paginator: ListDatasetGroupsPaginator = client.get_paginator("list_dataset_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDatasetGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PersonalizeClient](./client.md)
+2. paginator: [ListDatasetGroupsPaginator](./paginators.md#listdatasetgroupspaginator)
+3. item: [:material-code-braces: ListDatasetGroupsResponseTypeDef](./type_defs.md#listdatasetgroupsresponsetypedef) 
 
 
 ### paginate
@@ -237,10 +267,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_personalize.paginator import ListDatasetImportJobsPaginator
 
 session = get_session()
-async with session.create_client("personalize") as client:
-    client: PersonalizeClient
-    paginator: ListDatasetImportJobsPaginator = client.get_paginator("list_dataset_import_jobs")
+async with session.create_client("personalize") as client:  # (1)
+    paginator: ListDatasetImportJobsPaginator = client.get_paginator("list_dataset_import_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDatasetImportJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PersonalizeClient](./client.md)
+2. paginator: [ListDatasetImportJobsPaginator](./paginators.md#listdatasetimportjobspaginator)
+3. item: [:material-code-braces: ListDatasetImportJobsResponseTypeDef](./type_defs.md#listdatasetimportjobsresponsetypedef) 
 
 
 ### paginate
@@ -281,10 +317,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_personalize.paginator import ListDatasetsPaginator
 
 session = get_session()
-async with session.create_client("personalize") as client:
-    client: PersonalizeClient
-    paginator: ListDatasetsPaginator = client.get_paginator("list_datasets")
+async with session.create_client("personalize") as client:  # (1)
+    paginator: ListDatasetsPaginator = client.get_paginator("list_datasets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDatasetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PersonalizeClient](./client.md)
+2. paginator: [ListDatasetsPaginator](./paginators.md#listdatasetspaginator)
+3. item: [:material-code-braces: ListDatasetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef) 
 
 
 ### paginate
@@ -325,10 +367,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_personalize.paginator import ListEventTrackersPaginator
 
 session = get_session()
-async with session.create_client("personalize") as client:
-    client: PersonalizeClient
-    paginator: ListEventTrackersPaginator = client.get_paginator("list_event_trackers")
+async with session.create_client("personalize") as client:  # (1)
+    paginator: ListEventTrackersPaginator = client.get_paginator("list_event_trackers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEventTrackersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PersonalizeClient](./client.md)
+2. paginator: [ListEventTrackersPaginator](./paginators.md#listeventtrackerspaginator)
+3. item: [:material-code-braces: ListEventTrackersResponseTypeDef](./type_defs.md#listeventtrackersresponsetypedef) 
 
 
 ### paginate
@@ -369,10 +417,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_personalize.paginator import ListFiltersPaginator
 
 session = get_session()
-async with session.create_client("personalize") as client:
-    client: PersonalizeClient
-    paginator: ListFiltersPaginator = client.get_paginator("list_filters")
+async with session.create_client("personalize") as client:  # (1)
+    paginator: ListFiltersPaginator = client.get_paginator("list_filters")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFiltersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PersonalizeClient](./client.md)
+2. paginator: [ListFiltersPaginator](./paginators.md#listfilterspaginator)
+3. item: [:material-code-braces: ListFiltersResponseTypeDef](./type_defs.md#listfiltersresponsetypedef) 
 
 
 ### paginate
@@ -413,10 +467,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_personalize.paginator import ListRecipesPaginator
 
 session = get_session()
-async with session.create_client("personalize") as client:
-    client: PersonalizeClient
-    paginator: ListRecipesPaginator = client.get_paginator("list_recipes")
+async with session.create_client("personalize") as client:  # (1)
+    paginator: ListRecipesPaginator = client.get_paginator("list_recipes")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRecipesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PersonalizeClient](./client.md)
+2. paginator: [ListRecipesPaginator](./paginators.md#listrecipespaginator)
+3. item: [:material-code-braces: ListRecipesResponseTypeDef](./type_defs.md#listrecipesresponsetypedef) 
 
 
 ### paginate
@@ -460,10 +520,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_personalize.paginator import ListRecommendersPaginator
 
 session = get_session()
-async with session.create_client("personalize") as client:
-    client: PersonalizeClient
-    paginator: ListRecommendersPaginator = client.get_paginator("list_recommenders")
+async with session.create_client("personalize") as client:  # (1)
+    paginator: ListRecommendersPaginator = client.get_paginator("list_recommenders")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRecommendersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PersonalizeClient](./client.md)
+2. paginator: [ListRecommendersPaginator](./paginators.md#listrecommenderspaginator)
+3. item: [:material-code-braces: ListRecommendersResponseTypeDef](./type_defs.md#listrecommendersresponsetypedef) 
 
 
 ### paginate
@@ -504,10 +570,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_personalize.paginator import ListSchemasPaginator
 
 session = get_session()
-async with session.create_client("personalize") as client:
-    client: PersonalizeClient
-    paginator: ListSchemasPaginator = client.get_paginator("list_schemas")
+async with session.create_client("personalize") as client:  # (1)
+    paginator: ListSchemasPaginator = client.get_paginator("list_schemas")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSchemasResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PersonalizeClient](./client.md)
+2. paginator: [ListSchemasPaginator](./paginators.md#listschemaspaginator)
+3. item: [:material-code-braces: ListSchemasResponseTypeDef](./type_defs.md#listschemasresponsetypedef) 
 
 
 ### paginate
@@ -547,10 +619,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_personalize.paginator import ListSolutionVersionsPaginator
 
 session = get_session()
-async with session.create_client("personalize") as client:
-    client: PersonalizeClient
-    paginator: ListSolutionVersionsPaginator = client.get_paginator("list_solution_versions")
+async with session.create_client("personalize") as client:  # (1)
+    paginator: ListSolutionVersionsPaginator = client.get_paginator("list_solution_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSolutionVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PersonalizeClient](./client.md)
+2. paginator: [ListSolutionVersionsPaginator](./paginators.md#listsolutionversionspaginator)
+3. item: [:material-code-braces: ListSolutionVersionsResponseTypeDef](./type_defs.md#listsolutionversionsresponsetypedef) 
 
 
 ### paginate
@@ -591,10 +669,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_personalize.paginator import ListSolutionsPaginator
 
 session = get_session()
-async with session.create_client("personalize") as client:
-    client: PersonalizeClient
-    paginator: ListSolutionsPaginator = client.get_paginator("list_solutions")
+async with session.create_client("personalize") as client:  # (1)
+    paginator: ListSolutionsPaginator = client.get_paginator("list_solutions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSolutionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PersonalizeClient](./client.md)
+2. paginator: [ListSolutionsPaginator](./paginators.md#listsolutionspaginator)
+3. item: [:material-code-braces: ListSolutionsResponseTypeDef](./type_defs.md#listsolutionsresponsetypedef) 
 
 
 ### paginate

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ram.paginator import GetResourcePoliciesPaginator
 
 session = get_session()
-async with session.create_client("ram") as client:
-    client: RAMClient
-    paginator: GetResourcePoliciesPaginator = client.get_paginator("get_resource_policies")
+async with session.create_client("ram") as client:  # (1)
+    paginator: GetResourcePoliciesPaginator = client.get_paginator("get_resource_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetResourcePoliciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RAMClient](./client.md)
+2. paginator: [GetResourcePoliciesPaginator](./paginators.md#getresourcepoliciespaginator)
+3. item: [:material-code-braces: GetResourcePoliciesResponseTypeDef](./type_defs.md#getresourcepoliciesresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ram.paginator import GetResourceShareAssociationsPaginator
 
 session = get_session()
-async with session.create_client("ram") as client:
-    client: RAMClient
-    paginator: GetResourceShareAssociationsPaginator = client.get_paginator("get_resource_share_associations")
+async with session.create_client("ram") as client:  # (1)
+    paginator: GetResourceShareAssociationsPaginator = client.get_paginator("get_resource_share_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetResourceShareAssociationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RAMClient](./client.md)
+2. paginator: [GetResourceShareAssociationsPaginator](./paginators.md#getresourceshareassociationspaginator)
+3. item: [:material-code-braces: GetResourceShareAssociationsResponseTypeDef](./type_defs.md#getresourceshareassociationsresponsetypedef) 
 
 
 ### paginate
@@ -113,10 +125,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ram.paginator import GetResourceShareInvitationsPaginator
 
 session = get_session()
-async with session.create_client("ram") as client:
-    client: RAMClient
-    paginator: GetResourceShareInvitationsPaginator = client.get_paginator("get_resource_share_invitations")
+async with session.create_client("ram") as client:  # (1)
+    paginator: GetResourceShareInvitationsPaginator = client.get_paginator("get_resource_share_invitations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetResourceShareInvitationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RAMClient](./client.md)
+2. paginator: [GetResourceShareInvitationsPaginator](./paginators.md#getresourceshareinvitationspaginator)
+3. item: [:material-code-braces: GetResourceShareInvitationsResponseTypeDef](./type_defs.md#getresourceshareinvitationsresponsetypedef) 
 
 
 ### paginate
@@ -158,10 +176,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ram.paginator import GetResourceSharesPaginator
 
 session = get_session()
-async with session.create_client("ram") as client:
-    client: RAMClient
-    paginator: GetResourceSharesPaginator = client.get_paginator("get_resource_shares")
+async with session.create_client("ram") as client:  # (1)
+    paginator: GetResourceSharesPaginator = client.get_paginator("get_resource_shares")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetResourceSharesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RAMClient](./client.md)
+2. paginator: [GetResourceSharesPaginator](./paginators.md#getresourcesharespaginator)
+3. item: [:material-code-braces: GetResourceSharesResponseTypeDef](./type_defs.md#getresourcesharesresponsetypedef) 
 
 
 ### paginate
@@ -210,10 +234,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ram.paginator import ListPrincipalsPaginator
 
 session = get_session()
-async with session.create_client("ram") as client:
-    client: RAMClient
-    paginator: ListPrincipalsPaginator = client.get_paginator("list_principals")
+async with session.create_client("ram") as client:  # (1)
+    paginator: ListPrincipalsPaginator = client.get_paginator("list_principals")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPrincipalsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RAMClient](./client.md)
+2. paginator: [ListPrincipalsPaginator](./paginators.md#listprincipalspaginator)
+3. item: [:material-code-braces: ListPrincipalsResponseTypeDef](./type_defs.md#listprincipalsresponsetypedef) 
 
 
 ### paginate
@@ -259,10 +289,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ram.paginator import ListResourcesPaginator
 
 session = get_session()
-async with session.create_client("ram") as client:
-    client: RAMClient
-    paginator: ListResourcesPaginator = client.get_paginator("list_resources")
+async with session.create_client("ram") as client:  # (1)
+    paginator: ListResourcesPaginator = client.get_paginator("list_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResourcesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RAMClient](./client.md)
+2. paginator: [ListResourcesPaginator](./paginators.md#listresourcespaginator)
+3. item: [:material-code-braces: ListResourcesResponseTypeDef](./type_defs.md#listresourcesresponsetypedef) 
 
 
 ### paginate

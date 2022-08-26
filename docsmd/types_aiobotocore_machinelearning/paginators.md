@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_machinelearning.paginator import DescribeBatchPredictionsPaginator
 
 session = get_session()
-async with session.create_client("machinelearning") as client:
-    client: MachineLearningClient
-    paginator: DescribeBatchPredictionsPaginator = client.get_paginator("describe_batch_predictions")
+async with session.create_client("machinelearning") as client:  # (1)
+    paginator: DescribeBatchPredictionsPaginator = client.get_paginator("describe_batch_predictions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeBatchPredictionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MachineLearningClient](./client.md)
+2. paginator: [DescribeBatchPredictionsPaginator](./paginators.md#describebatchpredictionspaginator)
+3. item: [:material-code-braces: DescribeBatchPredictionsOutputTypeDef](./type_defs.md#describebatchpredictionsoutputtypedef) 
 
 
 ### paginate
@@ -72,10 +78,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_machinelearning.paginator import DescribeDataSourcesPaginator
 
 session = get_session()
-async with session.create_client("machinelearning") as client:
-    client: MachineLearningClient
-    paginator: DescribeDataSourcesPaginator = client.get_paginator("describe_data_sources")
+async with session.create_client("machinelearning") as client:  # (1)
+    paginator: DescribeDataSourcesPaginator = client.get_paginator("describe_data_sources")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeDataSourcesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MachineLearningClient](./client.md)
+2. paginator: [DescribeDataSourcesPaginator](./paginators.md#describedatasourcespaginator)
+3. item: [:material-code-braces: DescribeDataSourcesOutputTypeDef](./type_defs.md#describedatasourcesoutputtypedef) 
 
 
 ### paginate
@@ -126,10 +138,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_machinelearning.paginator import DescribeEvaluationsPaginator
 
 session = get_session()
-async with session.create_client("machinelearning") as client:
-    client: MachineLearningClient
-    paginator: DescribeEvaluationsPaginator = client.get_paginator("describe_evaluations")
+async with session.create_client("machinelearning") as client:  # (1)
+    paginator: DescribeEvaluationsPaginator = client.get_paginator("describe_evaluations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeEvaluationsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MachineLearningClient](./client.md)
+2. paginator: [DescribeEvaluationsPaginator](./paginators.md#describeevaluationspaginator)
+3. item: [:material-code-braces: DescribeEvaluationsOutputTypeDef](./type_defs.md#describeevaluationsoutputtypedef) 
 
 
 ### paginate
@@ -180,10 +198,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_machinelearning.paginator import DescribeMLModelsPaginator
 
 session = get_session()
-async with session.create_client("machinelearning") as client:
-    client: MachineLearningClient
-    paginator: DescribeMLModelsPaginator = client.get_paginator("describe_ml_models")
+async with session.create_client("machinelearning") as client:  # (1)
+    paginator: DescribeMLModelsPaginator = client.get_paginator("describe_ml_models")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeMLModelsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MachineLearningClient](./client.md)
+2. paginator: [DescribeMLModelsPaginator](./paginators.md#describemlmodelspaginator)
+3. item: [:material-code-braces: DescribeMLModelsOutputTypeDef](./type_defs.md#describemlmodelsoutputtypedef) 
 
 
 ### paginate

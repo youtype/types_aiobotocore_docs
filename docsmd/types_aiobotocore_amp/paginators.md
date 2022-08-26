@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_amp.paginator import ListRuleGroupsNamespacesPaginator
 
 session = get_session()
-async with session.create_client("amp") as client:
-    client: PrometheusServiceClient
-    paginator: ListRuleGroupsNamespacesPaginator = client.get_paginator("list_rule_groups_namespaces")
+async with session.create_client("amp") as client:  # (1)
+    paginator: ListRuleGroupsNamespacesPaginator = client.get_paginator("list_rule_groups_namespaces")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRuleGroupsNamespacesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PrometheusServiceClient](./client.md)
+2. paginator: [ListRuleGroupsNamespacesPaginator](./paginators.md#listrulegroupsnamespacespaginator)
+3. item: [:material-code-braces: ListRuleGroupsNamespacesResponseTypeDef](./type_defs.md#listrulegroupsnamespacesresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_amp.paginator import ListWorkspacesPaginator
 
 session = get_session()
-async with session.create_client("amp") as client:
-    client: PrometheusServiceClient
-    paginator: ListWorkspacesPaginator = client.get_paginator("list_workspaces")
+async with session.create_client("amp") as client:  # (1)
+    paginator: ListWorkspacesPaginator = client.get_paginator("list_workspaces")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListWorkspacesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PrometheusServiceClient](./client.md)
+2. paginator: [ListWorkspacesPaginator](./paginators.md#listworkspacespaginator)
+3. item: [:material-code-braces: ListWorkspacesResponseTypeDef](./type_defs.md#listworkspacesresponsetypedef) 
 
 
 ### paginate

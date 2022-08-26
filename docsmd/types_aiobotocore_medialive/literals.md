@@ -215,6 +215,21 @@ AcceptHeaderType = Literal[
     "image/jpeg",
 ]
 ```
+## AccessibilityTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_medialive.literals import AccessibilityTypeType
+
+def get_value() -> AccessibilityTypeType:
+    return "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES"
+```
+
+```python title="Definition"
+AccessibilityTypeType = Literal[
+    "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES",
+    "IMPLEMENTS_ACCESSIBILITY_FEATURES",
+]
+```
 ## AfdSignalingType
 
 ```python title="Usage Example"
@@ -683,6 +698,7 @@ def get_value() -> DeviceUpdateStatusType:
 DeviceUpdateStatusType = Literal[
     "NOT_UP_TO_DATE",
     "UP_TO_DATE",
+    "UPDATING",
 ]
 ```
 ## DvbSdtOutputSdtType
@@ -3619,6 +3635,37 @@ PreferredChannelPipelineType = Literal[
     "PIPELINE_1",
 ]
 ```
+## RebootInputDeviceForceType
+
+```python title="Usage Example"
+from types_aiobotocore_medialive.literals import RebootInputDeviceForceType
+
+def get_value() -> RebootInputDeviceForceType:
+    return "NO"
+```
+
+```python title="Definition"
+RebootInputDeviceForceType = Literal[
+    "NO",
+    "YES",
+]
+```
+## ReservationAutomaticRenewalType
+
+```python title="Usage Example"
+from types_aiobotocore_medialive.literals import ReservationAutomaticRenewalType
+
+def get_value() -> ReservationAutomaticRenewalType:
+    return "DISABLED"
+```
+
+```python title="Definition"
+ReservationAutomaticRenewalType = Literal[
+    "DISABLED",
+    "ENABLED",
+    "UNAVAILABLE",
+]
+```
 ## ReservationCodecType
 
 ```python title="Usage Example"
@@ -4380,6 +4427,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -4525,6 +4573,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -4578,6 +4627,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -4588,11 +4638,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -4638,6 +4690,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

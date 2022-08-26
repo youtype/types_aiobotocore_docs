@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `SecurityHub`.
 
 ### From PyPI with pip
 
@@ -143,6 +138,7 @@ def get_value() -> AdminStatusType:
 - [ThreatIntelIndicatorCategoryType](./literals.md#threatintelindicatorcategorytype)
 - [ThreatIntelIndicatorTypeType](./literals.md#threatintelindicatortypetype)
 - [VerificationStateType](./literals.md#verificationstatetype)
+- [VulnerabilityFixAvailableType](./literals.md#vulnerabilityfixavailabletype)
 - [WorkflowStateType](./literals.md#workflowstatetype)
 - [WorkflowStatusType](./literals.md#workflowstatustype)
 - [SecurityHubServiceName](./literals.md#securityhubservicename)
@@ -198,6 +194,12 @@ def get_value() -> AcceptAdministratorInvitationRequestRequestTypeDef:
 - [AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsTypeDef](./type_defs.md#awsautoscalinglaunchconfigurationblockdevicemappingsebsdetailstypedef)
 - [AwsAutoScalingLaunchConfigurationInstanceMonitoringDetailsTypeDef](./type_defs.md#awsautoscalinglaunchconfigurationinstancemonitoringdetailstypedef)
 - [AwsAutoScalingLaunchConfigurationMetadataOptionsTypeDef](./type_defs.md#awsautoscalinglaunchconfigurationmetadataoptionstypedef)
+- [AwsBackupBackupPlanAdvancedBackupSettingsDetailsTypeDef](./type_defs.md#awsbackupbackupplanadvancedbackupsettingsdetailstypedef)
+- [AwsBackupBackupPlanLifecycleDetailsTypeDef](./type_defs.md#awsbackupbackupplanlifecycledetailstypedef)
+- [AwsBackupBackupVaultNotificationsDetailsTypeDef](./type_defs.md#awsbackupbackupvaultnotificationsdetailstypedef)
+- [AwsBackupRecoveryPointCalculatedLifecycleDetailsTypeDef](./type_defs.md#awsbackuprecoverypointcalculatedlifecycledetailstypedef)
+- [AwsBackupRecoveryPointCreatedByDetailsTypeDef](./type_defs.md#awsbackuprecoverypointcreatedbydetailstypedef)
+- [AwsBackupRecoveryPointLifecycleDetailsTypeDef](./type_defs.md#awsbackuprecoverypointlifecycledetailstypedef)
 - [AwsCertificateManagerCertificateExtendedKeyUsageTypeDef](./type_defs.md#awscertificatemanagercertificateextendedkeyusagetypedef)
 - [AwsCertificateManagerCertificateKeyUsageTypeDef](./type_defs.md#awscertificatemanagercertificatekeyusagetypedef)
 - [AwsCertificateManagerCertificateOptionsTypeDef](./type_defs.md#awscertificatemanagercertificateoptionstypedef)
@@ -517,6 +519,9 @@ def get_value() -> AcceptAdministratorInvitationRequestRequestTypeDef:
 - [AwsApiGatewayV2StageDetailsTypeDef](./type_defs.md#awsapigatewayv2stagedetailstypedef)
 - [AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetailsTypeDef](./type_defs.md#awsautoscalingautoscalinggroupmixedinstancespolicylaunchtemplatedetailstypedef)
 - [AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsTypeDef](./type_defs.md#awsautoscalinglaunchconfigurationblockdevicemappingsdetailstypedef)
+- [AwsBackupBackupPlanRuleCopyActionsDetailsTypeDef](./type_defs.md#awsbackupbackupplanrulecopyactionsdetailstypedef)
+- [AwsBackupBackupVaultDetailsTypeDef](./type_defs.md#awsbackupbackupvaultdetailstypedef)
+- [AwsBackupRecoveryPointDetailsTypeDef](./type_defs.md#awsbackuprecoverypointdetailstypedef)
 - [AwsCertificateManagerCertificateDomainValidationOptionTypeDef](./type_defs.md#awscertificatemanagercertificatedomainvalidationoptiontypedef)
 - [AwsCloudFormationStackDetailsTypeDef](./type_defs.md#awscloudformationstackdetailstypedef)
 - [AwsCloudFrontDistributionCacheBehaviorsTypeDef](./type_defs.md#awscloudfrontdistributioncachebehaviorstypedef)
@@ -654,6 +659,7 @@ def get_value() -> AcceptAdministratorInvitationRequestRequestTypeDef:
 - [VulnerabilityTypeDef](./type_defs.md#vulnerabilitytypedef)
 - [AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetailsTypeDef](./type_defs.md#awsautoscalingautoscalinggroupmixedinstancespolicydetailstypedef)
 - [AwsAutoScalingLaunchConfigurationDetailsTypeDef](./type_defs.md#awsautoscalinglaunchconfigurationdetailstypedef)
+- [AwsBackupBackupPlanRuleDetailsTypeDef](./type_defs.md#awsbackupbackupplanruledetailstypedef)
 - [AwsCertificateManagerCertificateRenewalSummaryTypeDef](./type_defs.md#awscertificatemanagercertificaterenewalsummarytypedef)
 - [AwsCloudFrontDistributionOriginItemTypeDef](./type_defs.md#awscloudfrontdistributionoriginitemtypedef)
 - [AwsCloudFrontDistributionOriginGroupTypeDef](./type_defs.md#awscloudfrontdistributionorigingrouptypedef)
@@ -699,6 +705,7 @@ def get_value() -> AcceptAdministratorInvitationRequestRequestTypeDef:
 - [StatelessCustomActionDefinitionTypeDef](./type_defs.md#statelesscustomactiondefinitiontypedef)
 - [PortProbeActionTypeDef](./type_defs.md#portprobeactiontypedef)
 - [AwsAutoScalingAutoScalingGroupDetailsTypeDef](./type_defs.md#awsautoscalingautoscalinggroupdetailstypedef)
+- [AwsBackupBackupPlanBackupPlanDetailsTypeDef](./type_defs.md#awsbackupbackupplanbackupplandetailstypedef)
 - [AwsCertificateManagerCertificateDetailsTypeDef](./type_defs.md#awscertificatemanagercertificatedetailstypedef)
 - [AwsCloudFrontDistributionOriginsTypeDef](./type_defs.md#awscloudfrontdistributionoriginstypedef)
 - [AwsCloudFrontDistributionOriginGroupsTypeDef](./type_defs.md#awscloudfrontdistributionorigingroupstypedef)
@@ -721,6 +728,7 @@ def get_value() -> AcceptAdministratorInvitationRequestRequestTypeDef:
 - [FirewallPolicyStatelessCustomActionsDetailsTypeDef](./type_defs.md#firewallpolicystatelesscustomactionsdetailstypedef)
 - [RuleGroupSourceCustomActionsDetailsTypeDef](./type_defs.md#rulegroupsourcecustomactionsdetailstypedef)
 - [ActionTypeDef](./type_defs.md#actiontypedef)
+- [AwsBackupBackupPlanDetailsTypeDef](./type_defs.md#awsbackupbackupplandetailstypedef)
 - [AwsCloudFrontDistributionDetailsTypeDef](./type_defs.md#awscloudfrontdistributiondetailstypedef)
 - [AwsS3BucketBucketLifecycleConfigurationRulesDetailsTypeDef](./type_defs.md#awss3bucketbucketlifecycleconfigurationrulesdetailstypedef)
 - [AwsS3BucketNotificationConfigurationTypeDef](./type_defs.md#awss3bucketnotificationconfigurationtypedef)

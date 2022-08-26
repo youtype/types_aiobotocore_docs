@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_wisdom.paginator import ListAssistantAssociationsPaginator
 
 session = get_session()
-async with session.create_client("wisdom") as client:
-    client: ConnectWisdomServiceClient
-    paginator: ListAssistantAssociationsPaginator = client.get_paginator("list_assistant_associations")
+async with session.create_client("wisdom") as client:  # (1)
+    paginator: ListAssistantAssociationsPaginator = client.get_paginator("list_assistant_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssistantAssociationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConnectWisdomServiceClient](./client.md)
+2. paginator: [ListAssistantAssociationsPaginator](./paginators.md#listassistantassociationspaginator)
+3. item: [:material-code-braces: ListAssistantAssociationsResponseTypeDef](./type_defs.md#listassistantassociationsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_wisdom.paginator import ListAssistantsPaginator
 
 session = get_session()
-async with session.create_client("wisdom") as client:
-    client: ConnectWisdomServiceClient
-    paginator: ListAssistantsPaginator = client.get_paginator("list_assistants")
+async with session.create_client("wisdom") as client:  # (1)
+    paginator: ListAssistantsPaginator = client.get_paginator("list_assistants")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssistantsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConnectWisdomServiceClient](./client.md)
+2. paginator: [ListAssistantsPaginator](./paginators.md#listassistantspaginator)
+3. item: [:material-code-braces: ListAssistantsResponseTypeDef](./type_defs.md#listassistantsresponsetypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_wisdom.paginator import ListContentsPaginator
 
 session = get_session()
-async with session.create_client("wisdom") as client:
-    client: ConnectWisdomServiceClient
-    paginator: ListContentsPaginator = client.get_paginator("list_contents")
+async with session.create_client("wisdom") as client:  # (1)
+    paginator: ListContentsPaginator = client.get_paginator("list_contents")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListContentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConnectWisdomServiceClient](./client.md)
+2. paginator: [ListContentsPaginator](./paginators.md#listcontentspaginator)
+3. item: [:material-code-braces: ListContentsResponseTypeDef](./type_defs.md#listcontentsresponsetypedef) 
 
 
 ### paginate
@@ -149,10 +167,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_wisdom.paginator import ListKnowledgeBasesPaginator
 
 session = get_session()
-async with session.create_client("wisdom") as client:
-    client: ConnectWisdomServiceClient
-    paginator: ListKnowledgeBasesPaginator = client.get_paginator("list_knowledge_bases")
+async with session.create_client("wisdom") as client:  # (1)
+    paginator: ListKnowledgeBasesPaginator = client.get_paginator("list_knowledge_bases")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListKnowledgeBasesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConnectWisdomServiceClient](./client.md)
+2. paginator: [ListKnowledgeBasesPaginator](./paginators.md#listknowledgebasespaginator)
+3. item: [:material-code-braces: ListKnowledgeBasesResponseTypeDef](./type_defs.md#listknowledgebasesresponsetypedef) 
 
 
 ### paginate
@@ -192,10 +216,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_wisdom.paginator import QueryAssistantPaginator
 
 session = get_session()
-async with session.create_client("wisdom") as client:
-    client: ConnectWisdomServiceClient
-    paginator: QueryAssistantPaginator = client.get_paginator("query_assistant")
+async with session.create_client("wisdom") as client:  # (1)
+    paginator: QueryAssistantPaginator = client.get_paginator("query_assistant")  # (2)
+    async for item in paginator.paginate(...):
+        item: QueryAssistantResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConnectWisdomServiceClient](./client.md)
+2. paginator: [QueryAssistantPaginator](./paginators.md#queryassistantpaginator)
+3. item: [:material-code-braces: QueryAssistantResponseTypeDef](./type_defs.md#queryassistantresponsetypedef) 
 
 
 ### paginate
@@ -238,10 +268,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_wisdom.paginator import SearchContentPaginator
 
 session = get_session()
-async with session.create_client("wisdom") as client:
-    client: ConnectWisdomServiceClient
-    paginator: SearchContentPaginator = client.get_paginator("search_content")
+async with session.create_client("wisdom") as client:  # (1)
+    paginator: SearchContentPaginator = client.get_paginator("search_content")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchContentResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConnectWisdomServiceClient](./client.md)
+2. paginator: [SearchContentPaginator](./paginators.md#searchcontentpaginator)
+3. item: [:material-code-braces: SearchContentResponseTypeDef](./type_defs.md#searchcontentresponsetypedef) 
 
 
 ### paginate
@@ -285,10 +321,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_wisdom.paginator import SearchSessionsPaginator
 
 session = get_session()
-async with session.create_client("wisdom") as client:
-    client: ConnectWisdomServiceClient
-    paginator: SearchSessionsPaginator = client.get_paginator("search_sessions")
+async with session.create_client("wisdom") as client:  # (1)
+    paginator: SearchSessionsPaginator = client.get_paginator("search_sessions")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchSessionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConnectWisdomServiceClient](./client.md)
+2. paginator: [SearchSessionsPaginator](./paginators.md#searchsessionspaginator)
+3. item: [:material-code-braces: SearchSessionsResponseTypeDef](./type_defs.md#searchsessionsresponsetypedef) 
 
 
 ### paginate

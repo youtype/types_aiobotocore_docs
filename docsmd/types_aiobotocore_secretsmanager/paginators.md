@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_secretsmanager.paginator import ListSecretsPaginator
 
 session = get_session()
-async with session.create_client("secretsmanager") as client:
-    client: SecretsManagerClient
-    paginator: ListSecretsPaginator = client.get_paginator("list_secrets")
+async with session.create_client("secretsmanager") as client:  # (1)
+    paginator: ListSecretsPaginator = client.get_paginator("list_secrets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSecretsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SecretsManagerClient](./client.md)
+2. paginator: [ListSecretsPaginator](./paginators.md#listsecretspaginator)
+3. item: [:material-code-braces: ListSecretsResponseTypeDef](./type_defs.md#listsecretsresponsetypedef) 
 
 
 ### paginate

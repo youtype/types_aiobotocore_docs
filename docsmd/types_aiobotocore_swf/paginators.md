@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_swf.paginator import GetWorkflowExecutionHistoryPaginator
 
 session = get_session()
-async with session.create_client("swf") as client:
-    client: SWFClient
-    paginator: GetWorkflowExecutionHistoryPaginator = client.get_paginator("get_workflow_execution_history")
+async with session.create_client("swf") as client:  # (1)
+    paginator: GetWorkflowExecutionHistoryPaginator = client.get_paginator("get_workflow_execution_history")  # (2)
+    async for item in paginator.paginate(...):
+        item: HistoryTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SWFClient](./client.md)
+2. paginator: [GetWorkflowExecutionHistoryPaginator](./paginators.md#getworkflowexecutionhistorypaginator)
+3. item: [:material-code-braces: HistoryTypeDef](./type_defs.md#historytypedef) 
 
 
 ### paginate
@@ -66,10 +72,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_swf.paginator import ListActivityTypesPaginator
 
 session = get_session()
-async with session.create_client("swf") as client:
-    client: SWFClient
-    paginator: ListActivityTypesPaginator = client.get_paginator("list_activity_types")
+async with session.create_client("swf") as client:  # (1)
+    paginator: ListActivityTypesPaginator = client.get_paginator("list_activity_types")  # (2)
+    async for item in paginator.paginate(...):
+        item: ActivityTypeInfosTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SWFClient](./client.md)
+2. paginator: [ListActivityTypesPaginator](./paginators.md#listactivitytypespaginator)
+3. item: [:material-code-braces: ActivityTypeInfosTypeDef](./type_defs.md#activitytypeinfostypedef) 
 
 
 ### paginate
@@ -115,10 +127,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_swf.paginator import ListClosedWorkflowExecutionsPaginator
 
 session = get_session()
-async with session.create_client("swf") as client:
-    client: SWFClient
-    paginator: ListClosedWorkflowExecutionsPaginator = client.get_paginator("list_closed_workflow_executions")
+async with session.create_client("swf") as client:  # (1)
+    paginator: ListClosedWorkflowExecutionsPaginator = client.get_paginator("list_closed_workflow_executions")  # (2)
+    async for item in paginator.paginate(...):
+        item: WorkflowExecutionInfosTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SWFClient](./client.md)
+2. paginator: [ListClosedWorkflowExecutionsPaginator](./paginators.md#listclosedworkflowexecutionspaginator)
+3. item: [:material-code-braces: WorkflowExecutionInfosTypeDef](./type_defs.md#workflowexecutioninfostypedef) 
 
 
 ### paginate
@@ -172,10 +190,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_swf.paginator import ListDomainsPaginator
 
 session = get_session()
-async with session.create_client("swf") as client:
-    client: SWFClient
-    paginator: ListDomainsPaginator = client.get_paginator("list_domains")
+async with session.create_client("swf") as client:  # (1)
+    paginator: ListDomainsPaginator = client.get_paginator("list_domains")  # (2)
+    async for item in paginator.paginate(...):
+        item: DomainInfosTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SWFClient](./client.md)
+2. paginator: [ListDomainsPaginator](./paginators.md#listdomainspaginator)
+3. item: [:material-code-braces: DomainInfosTypeDef](./type_defs.md#domaininfostypedef) 
 
 
 ### paginate
@@ -218,10 +242,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_swf.paginator import ListOpenWorkflowExecutionsPaginator
 
 session = get_session()
-async with session.create_client("swf") as client:
-    client: SWFClient
-    paginator: ListOpenWorkflowExecutionsPaginator = client.get_paginator("list_open_workflow_executions")
+async with session.create_client("swf") as client:  # (1)
+    paginator: ListOpenWorkflowExecutionsPaginator = client.get_paginator("list_open_workflow_executions")  # (2)
+    async for item in paginator.paginate(...):
+        item: WorkflowExecutionInfosTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SWFClient](./client.md)
+2. paginator: [ListOpenWorkflowExecutionsPaginator](./paginators.md#listopenworkflowexecutionspaginator)
+3. item: [:material-code-braces: WorkflowExecutionInfosTypeDef](./type_defs.md#workflowexecutioninfostypedef) 
 
 
 ### paginate
@@ -272,10 +302,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_swf.paginator import ListWorkflowTypesPaginator
 
 session = get_session()
-async with session.create_client("swf") as client:
-    client: SWFClient
-    paginator: ListWorkflowTypesPaginator = client.get_paginator("list_workflow_types")
+async with session.create_client("swf") as client:  # (1)
+    paginator: ListWorkflowTypesPaginator = client.get_paginator("list_workflow_types")  # (2)
+    async for item in paginator.paginate(...):
+        item: WorkflowTypeInfosTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SWFClient](./client.md)
+2. paginator: [ListWorkflowTypesPaginator](./paginators.md#listworkflowtypespaginator)
+3. item: [:material-code-braces: WorkflowTypeInfosTypeDef](./type_defs.md#workflowtypeinfostypedef) 
 
 
 ### paginate
@@ -321,10 +357,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_swf.paginator import PollForDecisionTaskPaginator
 
 session = get_session()
-async with session.create_client("swf") as client:
-    client: SWFClient
-    paginator: PollForDecisionTaskPaginator = client.get_paginator("poll_for_decision_task")
+async with session.create_client("swf") as client:  # (1)
+    paginator: PollForDecisionTaskPaginator = client.get_paginator("poll_for_decision_task")  # (2)
+    async for item in paginator.paginate(...):
+        item: DecisionTaskTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SWFClient](./client.md)
+2. paginator: [PollForDecisionTaskPaginator](./paginators.md#pollfordecisiontaskpaginator)
+3. item: [:material-code-braces: DecisionTaskTypeDef](./type_defs.md#decisiontasktypedef) 
 
 
 ### paginate

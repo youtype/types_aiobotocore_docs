@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_sms_voice_v2.paginator import DescribeAccountAttributesPaginator
 
 session = get_session()
-async with session.create_client("pinpoint-sms-voice-v2") as client:
-    client: PinpointSMSVoiceV2Client
-    paginator: DescribeAccountAttributesPaginator = client.get_paginator("describe_account_attributes")
+async with session.create_client("pinpoint-sms-voice-v2") as client:  # (1)
+    paginator: DescribeAccountAttributesPaginator = client.get_paginator("describe_account_attributes")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAccountAttributesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PinpointSMSVoiceV2Client](./client.md)
+2. paginator: [DescribeAccountAttributesPaginator](./paginators.md#describeaccountattributespaginator)
+3. item: [:material-code-braces: DescribeAccountAttributesResultTypeDef](./type_defs.md#describeaccountattributesresulttypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_sms_voice_v2.paginator import DescribeAccountLimitsPaginator
 
 session = get_session()
-async with session.create_client("pinpoint-sms-voice-v2") as client:
-    client: PinpointSMSVoiceV2Client
-    paginator: DescribeAccountLimitsPaginator = client.get_paginator("describe_account_limits")
+async with session.create_client("pinpoint-sms-voice-v2") as client:  # (1)
+    paginator: DescribeAccountLimitsPaginator = client.get_paginator("describe_account_limits")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAccountLimitsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PinpointSMSVoiceV2Client](./client.md)
+2. paginator: [DescribeAccountLimitsPaginator](./paginators.md#describeaccountlimitspaginator)
+3. item: [:material-code-braces: DescribeAccountLimitsResultTypeDef](./type_defs.md#describeaccountlimitsresulttypedef) 
 
 
 ### paginate
@@ -104,10 +116,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_sms_voice_v2.paginator import DescribeConfigurationSetsPaginator
 
 session = get_session()
-async with session.create_client("pinpoint-sms-voice-v2") as client:
-    client: PinpointSMSVoiceV2Client
-    paginator: DescribeConfigurationSetsPaginator = client.get_paginator("describe_configuration_sets")
+async with session.create_client("pinpoint-sms-voice-v2") as client:  # (1)
+    paginator: DescribeConfigurationSetsPaginator = client.get_paginator("describe_configuration_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeConfigurationSetsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PinpointSMSVoiceV2Client](./client.md)
+2. paginator: [DescribeConfigurationSetsPaginator](./paginators.md#describeconfigurationsetspaginator)
+3. item: [:material-code-braces: DescribeConfigurationSetsResultTypeDef](./type_defs.md#describeconfigurationsetsresulttypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_sms_voice_v2.paginator import DescribeKeywordsPaginator
 
 session = get_session()
-async with session.create_client("pinpoint-sms-voice-v2") as client:
-    client: PinpointSMSVoiceV2Client
-    paginator: DescribeKeywordsPaginator = client.get_paginator("describe_keywords")
+async with session.create_client("pinpoint-sms-voice-v2") as client:  # (1)
+    paginator: DescribeKeywordsPaginator = client.get_paginator("describe_keywords")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeKeywordsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PinpointSMSVoiceV2Client](./client.md)
+2. paginator: [DescribeKeywordsPaginator](./paginators.md#describekeywordspaginator)
+3. item: [:material-code-braces: DescribeKeywordsResultTypeDef](./type_defs.md#describekeywordsresulttypedef) 
 
 
 ### paginate
@@ -197,10 +221,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_sms_voice_v2.paginator import DescribeOptOutListsPaginator
 
 session = get_session()
-async with session.create_client("pinpoint-sms-voice-v2") as client:
-    client: PinpointSMSVoiceV2Client
-    paginator: DescribeOptOutListsPaginator = client.get_paginator("describe_opt_out_lists")
+async with session.create_client("pinpoint-sms-voice-v2") as client:  # (1)
+    paginator: DescribeOptOutListsPaginator = client.get_paginator("describe_opt_out_lists")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeOptOutListsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PinpointSMSVoiceV2Client](./client.md)
+2. paginator: [DescribeOptOutListsPaginator](./paginators.md#describeoptoutlistspaginator)
+3. item: [:material-code-braces: DescribeOptOutListsResultTypeDef](./type_defs.md#describeoptoutlistsresulttypedef) 
 
 
 ### paginate
@@ -241,10 +271,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_sms_voice_v2.paginator import DescribeOptedOutNumbersPaginator
 
 session = get_session()
-async with session.create_client("pinpoint-sms-voice-v2") as client:
-    client: PinpointSMSVoiceV2Client
-    paginator: DescribeOptedOutNumbersPaginator = client.get_paginator("describe_opted_out_numbers")
+async with session.create_client("pinpoint-sms-voice-v2") as client:  # (1)
+    paginator: DescribeOptedOutNumbersPaginator = client.get_paginator("describe_opted_out_numbers")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeOptedOutNumbersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PinpointSMSVoiceV2Client](./client.md)
+2. paginator: [DescribeOptedOutNumbersPaginator](./paginators.md#describeoptedoutnumberspaginator)
+3. item: [:material-code-braces: DescribeOptedOutNumbersResultTypeDef](./type_defs.md#describeoptedoutnumbersresulttypedef) 
 
 
 ### paginate
@@ -288,10 +324,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_sms_voice_v2.paginator import DescribePhoneNumbersPaginator
 
 session = get_session()
-async with session.create_client("pinpoint-sms-voice-v2") as client:
-    client: PinpointSMSVoiceV2Client
-    paginator: DescribePhoneNumbersPaginator = client.get_paginator("describe_phone_numbers")
+async with session.create_client("pinpoint-sms-voice-v2") as client:  # (1)
+    paginator: DescribePhoneNumbersPaginator = client.get_paginator("describe_phone_numbers")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribePhoneNumbersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PinpointSMSVoiceV2Client](./client.md)
+2. paginator: [DescribePhoneNumbersPaginator](./paginators.md#describephonenumberspaginator)
+3. item: [:material-code-braces: DescribePhoneNumbersResultTypeDef](./type_defs.md#describephonenumbersresulttypedef) 
 
 
 ### paginate
@@ -334,10 +376,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_sms_voice_v2.paginator import DescribePoolsPaginator
 
 session = get_session()
-async with session.create_client("pinpoint-sms-voice-v2") as client:
-    client: PinpointSMSVoiceV2Client
-    paginator: DescribePoolsPaginator = client.get_paginator("describe_pools")
+async with session.create_client("pinpoint-sms-voice-v2") as client:  # (1)
+    paginator: DescribePoolsPaginator = client.get_paginator("describe_pools")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribePoolsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PinpointSMSVoiceV2Client](./client.md)
+2. paginator: [DescribePoolsPaginator](./paginators.md#describepoolspaginator)
+3. item: [:material-code-braces: DescribePoolsResultTypeDef](./type_defs.md#describepoolsresulttypedef) 
 
 
 ### paginate
@@ -380,10 +428,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_sms_voice_v2.paginator import DescribeSenderIdsPaginator
 
 session = get_session()
-async with session.create_client("pinpoint-sms-voice-v2") as client:
-    client: PinpointSMSVoiceV2Client
-    paginator: DescribeSenderIdsPaginator = client.get_paginator("describe_sender_ids")
+async with session.create_client("pinpoint-sms-voice-v2") as client:  # (1)
+    paginator: DescribeSenderIdsPaginator = client.get_paginator("describe_sender_ids")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSenderIdsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PinpointSMSVoiceV2Client](./client.md)
+2. paginator: [DescribeSenderIdsPaginator](./paginators.md#describesenderidspaginator)
+3. item: [:material-code-braces: DescribeSenderIdsResultTypeDef](./type_defs.md#describesenderidsresulttypedef) 
 
 
 ### paginate
@@ -427,10 +481,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_sms_voice_v2.paginator import DescribeSpendLimitsPaginator
 
 session = get_session()
-async with session.create_client("pinpoint-sms-voice-v2") as client:
-    client: PinpointSMSVoiceV2Client
-    paginator: DescribeSpendLimitsPaginator = client.get_paginator("describe_spend_limits")
+async with session.create_client("pinpoint-sms-voice-v2") as client:  # (1)
+    paginator: DescribeSpendLimitsPaginator = client.get_paginator("describe_spend_limits")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSpendLimitsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PinpointSMSVoiceV2Client](./client.md)
+2. paginator: [DescribeSpendLimitsPaginator](./paginators.md#describespendlimitspaginator)
+3. item: [:material-code-braces: DescribeSpendLimitsResultTypeDef](./type_defs.md#describespendlimitsresulttypedef) 
 
 
 ### paginate
@@ -470,10 +530,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_sms_voice_v2.paginator import ListPoolOriginationIdentitiesPaginator
 
 session = get_session()
-async with session.create_client("pinpoint-sms-voice-v2") as client:
-    client: PinpointSMSVoiceV2Client
-    paginator: ListPoolOriginationIdentitiesPaginator = client.get_paginator("list_pool_origination_identities")
+async with session.create_client("pinpoint-sms-voice-v2") as client:  # (1)
+    paginator: ListPoolOriginationIdentitiesPaginator = client.get_paginator("list_pool_origination_identities")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPoolOriginationIdentitiesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PinpointSMSVoiceV2Client](./client.md)
+2. paginator: [ListPoolOriginationIdentitiesPaginator](./paginators.md#listpooloriginationidentitiespaginator)
+3. item: [:material-code-braces: ListPoolOriginationIdentitiesResultTypeDef](./type_defs.md#listpooloriginationidentitiesresulttypedef) 
 
 
 ### paginate

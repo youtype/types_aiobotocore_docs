@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Shield`.
 
 ### From PyPI with pip
 
@@ -154,10 +149,10 @@ def get_value() -> ResponseActionTypeDef:
 - [DisableApplicationLayerAutomaticResponseRequestRequestTypeDef](./type_defs.md#disableapplicationlayerautomaticresponserequestrequesttypedef)
 - [DisassociateDRTLogBucketRequestRequestTypeDef](./type_defs.md#disassociatedrtlogbucketrequestrequesttypedef)
 - [DisassociateHealthCheckRequestRequestTypeDef](./type_defs.md#disassociatehealthcheckrequestrequesttypedef)
+- [InclusionProtectionFiltersTypeDef](./type_defs.md#inclusionprotectionfilterstypedef)
+- [InclusionProtectionGroupFiltersTypeDef](./type_defs.md#inclusionprotectiongroupfilterstypedef)
 - [LimitTypeDef](./type_defs.md#limittypedef)
 - [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
-- [ListProtectionGroupsRequestRequestTypeDef](./type_defs.md#listprotectiongroupsrequestrequesttypedef)
-- [ListProtectionsRequestRequestTypeDef](./type_defs.md#listprotectionsrequestrequesttypedef)
 - [ListResourcesInProtectionGroupRequestRequestTypeDef](./type_defs.md#listresourcesinprotectiongrouprequestrequesttypedef)
 - [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
 - [ProtectionGroupArbitraryPatternLimitsTypeDef](./type_defs.md#protectiongrouparbitrarypatternlimitstypedef)
@@ -185,6 +180,8 @@ def get_value() -> ResponseActionTypeDef:
 - [ListAttacksRequestRequestTypeDef](./type_defs.md#listattacksrequestrequesttypedef)
 - [DescribeProtectionGroupResponseTypeDef](./type_defs.md#describeprotectiongroupresponsetypedef)
 - [ListProtectionGroupsResponseTypeDef](./type_defs.md#listprotectiongroupsresponsetypedef)
+- [ListProtectionsRequestRequestTypeDef](./type_defs.md#listprotectionsrequestrequesttypedef)
+- [ListProtectionGroupsRequestRequestTypeDef](./type_defs.md#listprotectiongroupsrequestrequesttypedef)
 - [ProtectionLimitsTypeDef](./type_defs.md#protectionlimitstypedef)
 - [ListAttacksRequestListAttacksPaginateTypeDef](./type_defs.md#listattacksrequestlistattackspaginatetypedef)
 - [ListProtectionsRequestListProtectionsPaginateTypeDef](./type_defs.md#listprotectionsrequestlistprotectionspaginatetypedef)

@@ -62,6 +62,28 @@ ConnectionTypeType = Literal[
     "STATIC_IP",
 ]
 ```
+## DeviceAggregatedStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_panorama.literals import DeviceAggregatedStatusType
+
+def get_value() -> DeviceAggregatedStatusType:
+    return "AWAITING_PROVISIONING"
+```
+
+```python title="Definition"
+DeviceAggregatedStatusType = Literal[
+    "AWAITING_PROVISIONING",
+    "DELETING",
+    "ERROR",
+    "FAILED",
+    "LEASE_EXPIRED",
+    "OFFLINE",
+    "ONLINE",
+    "PENDING",
+    "UPDATE_NEEDED",
+]
+```
 ## DeviceBrandType
 
 ```python title="Usage Example"
@@ -155,6 +177,23 @@ def get_value() -> JobTypeType:
 ```python title="Definition"
 JobTypeType = Literal[
     "OTA",
+]
+```
+## ListDevicesSortByType
+
+```python title="Usage Example"
+from types_aiobotocore_panorama.literals import ListDevicesSortByType
+
+def get_value() -> ListDevicesSortByType:
+    return "CREATED_TIME"
+```
+
+```python title="Definition"
+ListDevicesSortByType = Literal[
+    "CREATED_TIME",
+    "DEVICE_AGGREGATED_STATUS",
+    "DEVICE_ID",
+    "NAME",
 ]
 ```
 ## NetworkConnectionStatusType
@@ -288,6 +327,21 @@ PortTypeType = Literal[
     "STRING",
 ]
 ```
+## SortOrderType
+
+```python title="Usage Example"
+from types_aiobotocore_panorama.literals import SortOrderType
+
+def get_value() -> SortOrderType:
+    return "ASCENDING"
+```
+
+```python title="Definition"
+SortOrderType = Literal[
+    "ASCENDING",
+    "DESCENDING",
+]
+```
 ## StatusFilterType
 
 ```python title="Usage Example"
@@ -396,6 +450,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -541,6 +596,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -594,6 +650,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -604,11 +661,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -654,6 +713,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

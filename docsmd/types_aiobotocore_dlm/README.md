@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `DLM`.
 
 ### From PyPI with pip
 
@@ -94,6 +89,7 @@ def get_value() -> EventSourceValuesType:
 - [DLMServiceName](./literals.md#dlmservicename)
 - [ServiceName](./literals.md#servicename)
 - [ResourceServiceName](./literals.md#resourceservicename)
+- [RegionName](./literals.md#regionname)
 
 
 
@@ -128,7 +124,6 @@ def get_value() -> ResponseMetadataTypeDef:
 - [LifecyclePolicySummaryTypeDef](./type_defs.md#lifecyclepolicysummarytypedef)
 - [GetLifecyclePolicyRequestRequestTypeDef](./type_defs.md#getlifecyclepolicyrequestrequesttypedef)
 - [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
-- [ParametersTypeDef](./type_defs.md#parameterstypedef)
 - [TagTypeDef](./type_defs.md#tagtypedef)
 - [RetainRuleTypeDef](./type_defs.md#retainruletypedef)
 - [ShareRuleTypeDef](./type_defs.md#shareruletypedef)
@@ -140,6 +135,7 @@ def get_value() -> ResponseMetadataTypeDef:
 - [CrossRegionCopyRuleTypeDef](./type_defs.md#crossregioncopyruletypedef)
 - [EventSourceTypeDef](./type_defs.md#eventsourcetypedef)
 - [GetLifecyclePoliciesResponseTypeDef](./type_defs.md#getlifecyclepoliciesresponsetypedef)
+- [ParametersTypeDef](./type_defs.md#parameterstypedef)
 - [ActionTypeDef](./type_defs.md#actiontypedef)
 - [ScheduleTypeDef](./type_defs.md#scheduletypedef)
 - [PolicyDetailsTypeDef](./type_defs.md#policydetailstypedef)

@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `AppSync`.
 
 ### From PyPI with pip
 
@@ -181,6 +176,8 @@ def get_value() -> CognitoUserPoolConfigTypeDef:
 - [DeleteTypeRequestRequestTypeDef](./type_defs.md#deletetyperequestrequesttypedef)
 - [DeltaSyncConfigTypeDef](./type_defs.md#deltasyncconfigtypedef)
 - [DisassociateApiRequestRequestTypeDef](./type_defs.md#disassociateapirequestrequesttypedef)
+- [ErrorDetailTypeDef](./type_defs.md#errordetailtypedef)
+- [EvaluateMappingTemplateRequestRequestTypeDef](./type_defs.md#evaluatemappingtemplaterequestrequesttypedef)
 - [FlushApiCacheRequestRequestTypeDef](./type_defs.md#flushapicacherequestrequesttypedef)
 - [GetApiAssociationRequestRequestTypeDef](./type_defs.md#getapiassociationrequestrequesttypedef)
 - [GetApiCacheRequestRequestTypeDef](./type_defs.md#getapicacherequestrequesttypedef)
@@ -234,6 +231,7 @@ def get_value() -> CognitoUserPoolConfigTypeDef:
 - [ListTypesResponseTypeDef](./type_defs.md#listtypesresponsetypedef)
 - [UpdateTypeResponseTypeDef](./type_defs.md#updatetyperesponsetypedef)
 - [DynamodbDataSourceConfigTypeDef](./type_defs.md#dynamodbdatasourceconfigtypedef)
+- [EvaluateMappingTemplateResponseTypeDef](./type_defs.md#evaluatemappingtemplateresponsetypedef)
 - [SyncConfigTypeDef](./type_defs.md#syncconfigtypedef)
 - [ListApiKeysRequestListApiKeysPaginateTypeDef](./type_defs.md#listapikeysrequestlistapikeyspaginatetypedef)
 - [ListDataSourcesRequestListDataSourcesPaginateTypeDef](./type_defs.md#listdatasourcesrequestlistdatasourcespaginatetypedef)

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_application_autoscaling.paginator import DescribeScalableTargetsPaginator
 
 session = get_session()
-async with session.create_client("application-autoscaling") as client:
-    client: ApplicationAutoScalingClient
-    paginator: DescribeScalableTargetsPaginator = client.get_paginator("describe_scalable_targets")
+async with session.create_client("application-autoscaling") as client:  # (1)
+    paginator: DescribeScalableTargetsPaginator = client.get_paginator("describe_scalable_targets")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeScalableTargetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApplicationAutoScalingClient](./client.md)
+2. paginator: [DescribeScalableTargetsPaginator](./paginators.md#describescalabletargetspaginator)
+3. item: [:material-code-braces: DescribeScalableTargetsResponseTypeDef](./type_defs.md#describescalabletargetsresponsetypedef) 
 
 
 ### paginate
@@ -66,10 +72,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_application_autoscaling.paginator import DescribeScalingActivitiesPaginator
 
 session = get_session()
-async with session.create_client("application-autoscaling") as client:
-    client: ApplicationAutoScalingClient
-    paginator: DescribeScalingActivitiesPaginator = client.get_paginator("describe_scaling_activities")
+async with session.create_client("application-autoscaling") as client:  # (1)
+    paginator: DescribeScalingActivitiesPaginator = client.get_paginator("describe_scaling_activities")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeScalingActivitiesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApplicationAutoScalingClient](./client.md)
+2. paginator: [DescribeScalingActivitiesPaginator](./paginators.md#describescalingactivitiespaginator)
+3. item: [:material-code-braces: DescribeScalingActivitiesResponseTypeDef](./type_defs.md#describescalingactivitiesresponsetypedef) 
 
 
 ### paginate
@@ -114,10 +126,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_application_autoscaling.paginator import DescribeScalingPoliciesPaginator
 
 session = get_session()
-async with session.create_client("application-autoscaling") as client:
-    client: ApplicationAutoScalingClient
-    paginator: DescribeScalingPoliciesPaginator = client.get_paginator("describe_scaling_policies")
+async with session.create_client("application-autoscaling") as client:  # (1)
+    paginator: DescribeScalingPoliciesPaginator = client.get_paginator("describe_scaling_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeScalingPoliciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApplicationAutoScalingClient](./client.md)
+2. paginator: [DescribeScalingPoliciesPaginator](./paginators.md#describescalingpoliciespaginator)
+3. item: [:material-code-braces: DescribeScalingPoliciesResponseTypeDef](./type_defs.md#describescalingpoliciesresponsetypedef) 
 
 
 ### paginate
@@ -163,10 +181,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_application_autoscaling.paginator import DescribeScheduledActionsPaginator
 
 session = get_session()
-async with session.create_client("application-autoscaling") as client:
-    client: ApplicationAutoScalingClient
-    paginator: DescribeScheduledActionsPaginator = client.get_paginator("describe_scheduled_actions")
+async with session.create_client("application-autoscaling") as client:  # (1)
+    paginator: DescribeScheduledActionsPaginator = client.get_paginator("describe_scheduled_actions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeScheduledActionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApplicationAutoScalingClient](./client.md)
+2. paginator: [DescribeScheduledActionsPaginator](./paginators.md#describescheduledactionspaginator)
+3. item: [:material-code-braces: DescribeScheduledActionsResponseTypeDef](./type_defs.md#describescheduledactionsresponsetypedef) 
 
 
 ### paginate

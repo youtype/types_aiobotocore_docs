@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_neptune.waiter import DBInstanceAvailableWaiter
 
-def get_db_instance_available_waiter() -> DBInstanceAvailableWaiter:
-    return Session().client("neptune").get_waiter("db_instance_available")
+session = get_session()
+async with session.create_client("neptune") as client:  # (1)
+    waiter: DBInstanceAvailableWaiter = client.get_waiter("db_instance_available")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. waiter: [DBInstanceAvailableWaiter](./waiters.md#dbinstanceavailablewaiter)
 
 
 ### wait
@@ -62,9 +67,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_neptune.waiter import DBInstanceDeletedWaiter
 
-def get_db_instance_deleted_waiter() -> DBInstanceDeletedWaiter:
-    return Session().client("neptune").get_waiter("db_instance_deleted")
+session = get_session()
+async with session.create_client("neptune") as client:  # (1)
+    waiter: DBInstanceDeletedWaiter = client.get_waiter("db_instance_deleted")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [NeptuneClient](./client.md)
+2. waiter: [DBInstanceDeletedWaiter](./waiters.md#dbinstancedeletedwaiter)
 
 
 ### wait

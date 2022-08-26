@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iot1click_devices.paginator import ListDeviceEventsPaginator
 
 session = get_session()
-async with session.create_client("iot1click-devices") as client:
-    client: IoT1ClickDevicesServiceClient
-    paginator: ListDeviceEventsPaginator = client.get_paginator("list_device_events")
+async with session.create_client("iot1click-devices") as client:  # (1)
+    paginator: ListDeviceEventsPaginator = client.get_paginator("list_device_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeviceEventsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoT1ClickDevicesServiceClient](./client.md)
+2. paginator: [ListDeviceEventsPaginator](./paginators.md#listdeviceeventspaginator)
+3. item: [:material-code-braces: ListDeviceEventsResponseTypeDef](./type_defs.md#listdeviceeventsresponsetypedef) 
 
 
 ### paginate
@@ -66,10 +72,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iot1click_devices.paginator import ListDevicesPaginator
 
 session = get_session()
-async with session.create_client("iot1click-devices") as client:
-    client: IoT1ClickDevicesServiceClient
-    paginator: ListDevicesPaginator = client.get_paginator("list_devices")
+async with session.create_client("iot1click-devices") as client:  # (1)
+    paginator: ListDevicesPaginator = client.get_paginator("list_devices")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDevicesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoT1ClickDevicesServiceClient](./client.md)
+2. paginator: [ListDevicesPaginator](./paginators.md#listdevicespaginator)
+3. item: [:material-code-braces: ListDevicesResponseTypeDef](./type_defs.md#listdevicesresponsetypedef) 
 
 
 ### paginate

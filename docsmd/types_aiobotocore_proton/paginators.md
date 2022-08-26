@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListComponentOutputsPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListComponentOutputsPaginator = client.get_paginator("list_component_outputs")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListComponentOutputsPaginator = client.get_paginator("list_component_outputs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListComponentOutputsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListComponentOutputsPaginator](./paginators.md#listcomponentoutputspaginator)
+3. item: [:material-code-braces: ListComponentOutputsOutputTypeDef](./type_defs.md#listcomponentoutputsoutputtypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListComponentProvisionedResourcesPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListComponentProvisionedResourcesPaginator = client.get_paginator("list_component_provisioned_resources")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListComponentProvisionedResourcesPaginator = client.get_paginator("list_component_provisioned_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListComponentProvisionedResourcesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListComponentProvisionedResourcesPaginator](./paginators.md#listcomponentprovisionedresourcespaginator)
+3. item: [:material-code-braces: ListComponentProvisionedResourcesOutputTypeDef](./type_defs.md#listcomponentprovisionedresourcesoutputtypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListComponentsPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListComponentsPaginator = client.get_paginator("list_components")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListComponentsPaginator = client.get_paginator("list_components")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListComponentsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListComponentsPaginator](./paginators.md#listcomponentspaginator)
+3. item: [:material-code-braces: ListComponentsOutputTypeDef](./type_defs.md#listcomponentsoutputtypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListEnvironmentAccountConnectionsPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListEnvironmentAccountConnectionsPaginator = client.get_paginator("list_environment_account_connections")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListEnvironmentAccountConnectionsPaginator = client.get_paginator("list_environment_account_connections")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEnvironmentAccountConnectionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListEnvironmentAccountConnectionsPaginator](./paginators.md#listenvironmentaccountconnectionspaginator)
+3. item: [:material-code-braces: ListEnvironmentAccountConnectionsOutputTypeDef](./type_defs.md#listenvironmentaccountconnectionsoutputtypedef) 
 
 
 ### paginate
@@ -200,10 +224,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListEnvironmentOutputsPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListEnvironmentOutputsPaginator = client.get_paginator("list_environment_outputs")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListEnvironmentOutputsPaginator = client.get_paginator("list_environment_outputs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEnvironmentOutputsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListEnvironmentOutputsPaginator](./paginators.md#listenvironmentoutputspaginator)
+3. item: [:material-code-braces: ListEnvironmentOutputsOutputTypeDef](./type_defs.md#listenvironmentoutputsoutputtypedef) 
 
 
 ### paginate
@@ -244,10 +274,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListEnvironmentProvisionedResourcesPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListEnvironmentProvisionedResourcesPaginator = client.get_paginator("list_environment_provisioned_resources")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListEnvironmentProvisionedResourcesPaginator = client.get_paginator("list_environment_provisioned_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEnvironmentProvisionedResourcesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListEnvironmentProvisionedResourcesPaginator](./paginators.md#listenvironmentprovisionedresourcespaginator)
+3. item: [:material-code-braces: ListEnvironmentProvisionedResourcesOutputTypeDef](./type_defs.md#listenvironmentprovisionedresourcesoutputtypedef) 
 
 
 ### paginate
@@ -288,10 +324,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListEnvironmentTemplateVersionsPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListEnvironmentTemplateVersionsPaginator = client.get_paginator("list_environment_template_versions")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListEnvironmentTemplateVersionsPaginator = client.get_paginator("list_environment_template_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEnvironmentTemplateVersionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListEnvironmentTemplateVersionsPaginator](./paginators.md#listenvironmenttemplateversionspaginator)
+3. item: [:material-code-braces: ListEnvironmentTemplateVersionsOutputTypeDef](./type_defs.md#listenvironmenttemplateversionsoutputtypedef) 
 
 
 ### paginate
@@ -333,10 +375,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListEnvironmentTemplatesPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListEnvironmentTemplatesPaginator = client.get_paginator("list_environment_templates")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListEnvironmentTemplatesPaginator = client.get_paginator("list_environment_templates")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEnvironmentTemplatesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListEnvironmentTemplatesPaginator](./paginators.md#listenvironmenttemplatespaginator)
+3. item: [:material-code-braces: ListEnvironmentTemplatesOutputTypeDef](./type_defs.md#listenvironmenttemplatesoutputtypedef) 
 
 
 ### paginate
@@ -376,10 +424,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListEnvironmentsPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListEnvironmentsPaginator = client.get_paginator("list_environments")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListEnvironmentsPaginator = client.get_paginator("list_environments")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEnvironmentsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListEnvironmentsPaginator](./paginators.md#listenvironmentspaginator)
+3. item: [:material-code-braces: ListEnvironmentsOutputTypeDef](./type_defs.md#listenvironmentsoutputtypedef) 
 
 
 ### paginate
@@ -421,10 +475,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListRepositoriesPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListRepositoriesPaginator = client.get_paginator("list_repositories")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListRepositoriesPaginator = client.get_paginator("list_repositories")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRepositoriesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListRepositoriesPaginator](./paginators.md#listrepositoriespaginator)
+3. item: [:material-code-braces: ListRepositoriesOutputTypeDef](./type_defs.md#listrepositoriesoutputtypedef) 
 
 
 ### paginate
@@ -464,10 +524,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListRepositorySyncDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListRepositorySyncDefinitionsPaginator = client.get_paginator("list_repository_sync_definitions")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListRepositorySyncDefinitionsPaginator = client.get_paginator("list_repository_sync_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRepositorySyncDefinitionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListRepositorySyncDefinitionsPaginator](./paginators.md#listrepositorysyncdefinitionspaginator)
+3. item: [:material-code-braces: ListRepositorySyncDefinitionsOutputTypeDef](./type_defs.md#listrepositorysyncdefinitionsoutputtypedef) 
 
 
 ### paginate
@@ -514,10 +580,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListServiceInstanceOutputsPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListServiceInstanceOutputsPaginator = client.get_paginator("list_service_instance_outputs")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListServiceInstanceOutputsPaginator = client.get_paginator("list_service_instance_outputs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServiceInstanceOutputsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListServiceInstanceOutputsPaginator](./paginators.md#listserviceinstanceoutputspaginator)
+3. item: [:material-code-braces: ListServiceInstanceOutputsOutputTypeDef](./type_defs.md#listserviceinstanceoutputsoutputtypedef) 
 
 
 ### paginate
@@ -560,10 +632,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListServiceInstanceProvisionedResourcesPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListServiceInstanceProvisionedResourcesPaginator = client.get_paginator("list_service_instance_provisioned_resources")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListServiceInstanceProvisionedResourcesPaginator = client.get_paginator("list_service_instance_provisioned_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServiceInstanceProvisionedResourcesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListServiceInstanceProvisionedResourcesPaginator](./paginators.md#listserviceinstanceprovisionedresourcespaginator)
+3. item: [:material-code-braces: ListServiceInstanceProvisionedResourcesOutputTypeDef](./type_defs.md#listserviceinstanceprovisionedresourcesoutputtypedef) 
 
 
 ### paginate
@@ -606,10 +684,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListServiceInstancesPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListServiceInstancesPaginator = client.get_paginator("list_service_instances")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListServiceInstancesPaginator = client.get_paginator("list_service_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServiceInstancesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListServiceInstancesPaginator](./paginators.md#listserviceinstancespaginator)
+3. item: [:material-code-braces: ListServiceInstancesOutputTypeDef](./type_defs.md#listserviceinstancesoutputtypedef) 
 
 
 ### paginate
@@ -650,10 +734,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListServicePipelineOutputsPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListServicePipelineOutputsPaginator = client.get_paginator("list_service_pipeline_outputs")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListServicePipelineOutputsPaginator = client.get_paginator("list_service_pipeline_outputs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServicePipelineOutputsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListServicePipelineOutputsPaginator](./paginators.md#listservicepipelineoutputspaginator)
+3. item: [:material-code-braces: ListServicePipelineOutputsOutputTypeDef](./type_defs.md#listservicepipelineoutputsoutputtypedef) 
 
 
 ### paginate
@@ -694,10 +784,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListServicePipelineProvisionedResourcesPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListServicePipelineProvisionedResourcesPaginator = client.get_paginator("list_service_pipeline_provisioned_resources")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListServicePipelineProvisionedResourcesPaginator = client.get_paginator("list_service_pipeline_provisioned_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServicePipelineProvisionedResourcesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListServicePipelineProvisionedResourcesPaginator](./paginators.md#listservicepipelineprovisionedresourcespaginator)
+3. item: [:material-code-braces: ListServicePipelineProvisionedResourcesOutputTypeDef](./type_defs.md#listservicepipelineprovisionedresourcesoutputtypedef) 
 
 
 ### paginate
@@ -738,10 +834,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListServiceTemplateVersionsPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListServiceTemplateVersionsPaginator = client.get_paginator("list_service_template_versions")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListServiceTemplateVersionsPaginator = client.get_paginator("list_service_template_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServiceTemplateVersionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListServiceTemplateVersionsPaginator](./paginators.md#listservicetemplateversionspaginator)
+3. item: [:material-code-braces: ListServiceTemplateVersionsOutputTypeDef](./type_defs.md#listservicetemplateversionsoutputtypedef) 
 
 
 ### paginate
@@ -783,10 +885,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListServiceTemplatesPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListServiceTemplatesPaginator = client.get_paginator("list_service_templates")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListServiceTemplatesPaginator = client.get_paginator("list_service_templates")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServiceTemplatesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListServiceTemplatesPaginator](./paginators.md#listservicetemplatespaginator)
+3. item: [:material-code-braces: ListServiceTemplatesOutputTypeDef](./type_defs.md#listservicetemplatesoutputtypedef) 
 
 
 ### paginate
@@ -826,10 +934,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListServicesPaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListServicesPaginator = client.get_paginator("list_services")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListServicesPaginator = client.get_paginator("list_services")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServicesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListServicesPaginator](./paginators.md#listservicespaginator)
+3. item: [:material-code-braces: ListServicesOutputTypeDef](./type_defs.md#listservicesoutputtypedef) 
 
 
 ### paginate
@@ -869,10 +983,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_proton.paginator import ListTagsForResourcePaginator
 
 session = get_session()
-async with session.create_client("proton") as client:
-    client: ProtonClient
-    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
+async with session.create_client("proton") as client:  # (1)
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsForResourceOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ProtonClient](./client.md)
+2. paginator: [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
+3. item: [:material-code-braces: ListTagsForResourceOutputTypeDef](./type_defs.md#listtagsforresourceoutputtypedef) 
 
 
 ### paginate

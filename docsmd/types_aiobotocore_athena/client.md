@@ -83,6 +83,38 @@ parent.batch_get_named_query(**kwargs)
 
 1. See [:material-code-braces: BatchGetNamedQueryInputRequestTypeDef](./type_defs.md#batchgetnamedqueryinputrequesttypedef) 
 
+### batch\_get\_prepared\_statement
+
+Returns the details of a single prepared statement or a list of up to 256
+prepared statements for the array of prepared statement names that you provide.
+
+Type annotations and code completion for `#!python session.create_client("athena").batch_get_prepared_statement` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.batch_get_prepared_statement)
+
+```python title="Method definition"
+await def batch_get_prepared_statement(
+    self,
+    *,
+    PreparedStatementNames: Sequence[str],
+    WorkGroup: str,
+) -> BatchGetPreparedStatementOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: BatchGetPreparedStatementOutputTypeDef](./type_defs.md#batchgetpreparedstatementoutputtypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: BatchGetPreparedStatementInputRequestTypeDef = {  # (1)
+    "PreparedStatementNames": ...,
+    "WorkGroup": ...,
+}
+
+parent.batch_get_prepared_statement(**kwargs)
+```
+
+1. See [:material-code-braces: BatchGetPreparedStatementInputRequestTypeDef](./type_defs.md#batchgetpreparedstatementinputrequesttypedef) 
+
 ### batch\_get\_query\_execution
 
 Returns the details of a single query execution or a list of up to 50 query
@@ -600,6 +632,36 @@ parent.get_query_results(**kwargs)
 
 1. See [:material-code-braces: GetQueryResultsInputRequestTypeDef](./type_defs.md#getqueryresultsinputrequesttypedef) 
 
+### get\_query\_runtime\_statistics
+
+Returns query execution runtime statistics related to a single execution of a
+query if you have access to the workgroup in which the query ran.
+
+Type annotations and code completion for `#!python session.create_client("athena").get_query_runtime_statistics` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.get_query_runtime_statistics)
+
+```python title="Method definition"
+await def get_query_runtime_statistics(
+    self,
+    *,
+    QueryExecutionId: str,
+) -> GetQueryRuntimeStatisticsOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetQueryRuntimeStatisticsOutputTypeDef](./type_defs.md#getqueryruntimestatisticsoutputtypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetQueryRuntimeStatisticsInputRequestTypeDef = {  # (1)
+    "QueryExecutionId": ...,
+}
+
+parent.get_query_runtime_statistics(**kwargs)
+```
+
+1. See [:material-code-braces: GetQueryRuntimeStatisticsInputRequestTypeDef](./type_defs.md#getqueryruntimestatisticsinputrequesttypedef) 
+
 ### get\_table\_metadata
 
 Returns table metadata for the specified catalog, database, and table.
@@ -788,7 +850,7 @@ parent.list_named_queries(**kwargs)
 
 ### list\_prepared\_statements
 
-Lists the prepared statements in the specfied workgroup.
+Lists the prepared statements in the specified workgroup.
 
 Type annotations and code completion for `#!python session.create_client("athena").list_prepared_statements` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.list_prepared_statements)
@@ -960,6 +1022,7 @@ await def start_query_execution(
     QueryExecutionContext: QueryExecutionContextTypeDef = ...,  # (1)
     ResultConfiguration: ResultConfigurationTypeDef = ...,  # (2)
     WorkGroup: str = ...,
+    ExecutionParameters: Sequence[str] = ...,
 ) -> StartQueryExecutionOutputTypeDef:  # (3)
     ...
 ```

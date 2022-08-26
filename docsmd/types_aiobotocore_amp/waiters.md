@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_amp.waiter import WorkspaceActiveWaiter
 
-def get_workspace_active_waiter() -> WorkspaceActiveWaiter:
-    return Session().client("amp").get_waiter("workspace_active")
+session = get_session()
+async with session.create_client("amp") as client:  # (1)
+    waiter: WorkspaceActiveWaiter = client.get_waiter("workspace_active")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [PrometheusServiceClient](./client.md)
+2. waiter: [WorkspaceActiveWaiter](./waiters.md#workspaceactivewaiter)
 
 
 ### wait
@@ -58,9 +63,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_amp.waiter import WorkspaceDeletedWaiter
 
-def get_workspace_deleted_waiter() -> WorkspaceDeletedWaiter:
-    return Session().client("amp").get_waiter("workspace_deleted")
+session = get_session()
+async with session.create_client("amp") as client:  # (1)
+    waiter: WorkspaceDeletedWaiter = client.get_waiter("workspace_deleted")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [PrometheusServiceClient](./client.md)
+2. waiter: [WorkspaceDeletedWaiter](./waiters.md#workspacedeletedwaiter)
 
 
 ### wait

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sqs.paginator import ListDeadLetterSourceQueuesPaginator
 
 session = get_session()
-async with session.create_client("sqs") as client:
-    client: SQSClient
-    paginator: ListDeadLetterSourceQueuesPaginator = client.get_paginator("list_dead_letter_source_queues")
+async with session.create_client("sqs") as client:  # (1)
+    paginator: ListDeadLetterSourceQueuesPaginator = client.get_paginator("list_dead_letter_source_queues")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeadLetterSourceQueuesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SQSClient](./client.md)
+2. paginator: [ListDeadLetterSourceQueuesPaginator](./paginators.md#listdeadlettersourcequeuespaginator)
+3. item: [:material-code-braces: ListDeadLetterSourceQueuesResultTypeDef](./type_defs.md#listdeadlettersourcequeuesresulttypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sqs.paginator import ListQueuesPaginator
 
 session = get_session()
-async with session.create_client("sqs") as client:
-    client: SQSClient
-    paginator: ListQueuesPaginator = client.get_paginator("list_queues")
+async with session.create_client("sqs") as client:  # (1)
+    paginator: ListQueuesPaginator = client.get_paginator("list_queues")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListQueuesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SQSClient](./client.md)
+2. paginator: [ListQueuesPaginator](./paginators.md#listqueuespaginator)
+3. item: [:material-code-braces: ListQueuesResultTypeDef](./type_defs.md#listqueuesresulttypedef) 
 
 
 ### paginate

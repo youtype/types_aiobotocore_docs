@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53_recovery_cluster.paginator import ListRoutingControlsPaginator
 
 session = get_session()
-async with session.create_client("route53-recovery-cluster") as client:
-    client: Route53RecoveryClusterClient
-    paginator: ListRoutingControlsPaginator = client.get_paginator("list_routing_controls")
+async with session.create_client("route53-recovery-cluster") as client:  # (1)
+    paginator: ListRoutingControlsPaginator = client.get_paginator("list_routing_controls")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRoutingControlsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53RecoveryClusterClient](./client.md)
+2. paginator: [ListRoutingControlsPaginator](./paginators.md#listroutingcontrolspaginator)
+3. item: [:material-code-braces: ListRoutingControlsResponseTypeDef](./type_defs.md#listroutingcontrolsresponsetypedef) 
 
 
 ### paginate

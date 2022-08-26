@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_opsworks.paginator import DescribeEcsClustersPaginator
 
 session = get_session()
-async with session.create_client("opsworks") as client:
-    client: OpsWorksClient
-    paginator: DescribeEcsClustersPaginator = client.get_paginator("describe_ecs_clusters")
+async with session.create_client("opsworks") as client:  # (1)
+    paginator: DescribeEcsClustersPaginator = client.get_paginator("describe_ecs_clusters")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeEcsClustersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [OpsWorksClient](./client.md)
+2. paginator: [DescribeEcsClustersPaginator](./paginators.md#describeecsclusterspaginator)
+3. item: [:material-code-braces: DescribeEcsClustersResultTypeDef](./type_defs.md#describeecsclustersresulttypedef) 
 
 
 ### paginate

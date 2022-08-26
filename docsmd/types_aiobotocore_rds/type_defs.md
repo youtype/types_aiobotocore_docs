@@ -1649,6 +1649,24 @@ class MinimumEngineVersionPerAllowedValueTypeDef(TypedDict):
     MinimumEngineVersion: NotRequired[str],
 ```
 
+## ModifyActivityStreamRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rds.type_defs import ModifyActivityStreamRequestRequestTypeDef
+
+def get_value() -> ModifyActivityStreamRequestRequestTypeDef:
+    return {
+        "ResourceArn": ...,
+    }
+```
+
+```python title="Definition"
+class ModifyActivityStreamRequestRequestTypeDef(TypedDict):
+    ResourceArn: NotRequired[str],
+    AuditPolicyState: NotRequired[AuditPolicyStateType],  # (1)
+```
+
+1. See [:material-code-brackets: AuditPolicyStateType](./literals.md#auditpolicystatetype) 
 ## ModifyCertificatesMessageRequestTypeDef
 
 ```python title="Usage Example"
@@ -2357,6 +2375,22 @@ class StopDBInstanceMessageRequestTypeDef(TypedDict):
     DBSnapshotIdentifier: NotRequired[str],
 ```
 
+## SwitchoverReadReplicaMessageRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rds.type_defs import SwitchoverReadReplicaMessageRequestTypeDef
+
+def get_value() -> SwitchoverReadReplicaMessageRequestTypeDef:
+    return {
+        "DBInstanceIdentifier": ...,
+    }
+```
+
+```python title="Definition"
+class SwitchoverReadReplicaMessageRequestTypeDef(TypedDict):
+    DBInstanceIdentifier: str,
+```
+
 ## AccountAttributesMessageTypeDef
 
 ```python title="Usage Example"
@@ -2595,6 +2629,38 @@ class ExportTaskResponseMetadataTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ModifyActivityStreamResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rds.type_defs import ModifyActivityStreamResponseTypeDef
+
+def get_value() -> ModifyActivityStreamResponseTypeDef:
+    return {
+        "KmsKeyId": ...,
+        "KinesisStreamName": ...,
+        "Status": ...,
+        "Mode": ...,
+        "EngineNativeAuditFieldsIncluded": ...,
+        "PolicyStatus": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ModifyActivityStreamResponseTypeDef(TypedDict):
+    KmsKeyId: str,
+    KinesisStreamName: str,
+    Status: ActivityStreamStatusType,  # (1)
+    Mode: ActivityStreamModeType,  # (2)
+    EngineNativeAuditFieldsIncluded: bool,
+    PolicyStatus: ActivityStreamPolicyStatusType,  # (3)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (4)
+```
+
+1. See [:material-code-brackets: ActivityStreamStatusType](./literals.md#activitystreamstatustype) 
+2. See [:material-code-brackets: ActivityStreamModeType](./literals.md#activitystreammodetype) 
+3. See [:material-code-brackets: ActivityStreamPolicyStatusType](./literals.md#activitystreampolicystatustype) 
+4. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## StartActivityStreamResponseTypeDef
 
 ```python title="Usage Example"
@@ -3574,6 +3640,7 @@ class CreateDBClusterMessageRequestTypeDef(TypedDict):
     PerformanceInsightsKMSKeyId: NotRequired[str],
     PerformanceInsightsRetentionPeriod: NotRequired[int],
     ServerlessV2ScalingConfiguration: NotRequired[ServerlessV2ScalingConfigurationTypeDef],  # (3)
+    NetworkType: NotRequired[str],
     SourceRegion: NotRequired[str],
 ```
 
@@ -3628,6 +3695,7 @@ class ModifyDBClusterMessageRequestTypeDef(TypedDict):
     PerformanceInsightsKMSKeyId: NotRequired[str],
     PerformanceInsightsRetentionPeriod: NotRequired[int],
     ServerlessV2ScalingConfiguration: NotRequired[ServerlessV2ScalingConfigurationTypeDef],  # (3)
+    NetworkType: NotRequired[str],
 ```
 
 1. See [:material-code-braces: CloudwatchLogsExportConfigurationTypeDef](./type_defs.md#cloudwatchlogsexportconfigurationtypedef) 
@@ -3685,6 +3753,7 @@ class RestoreDBClusterFromS3MessageRequestTypeDef(TypedDict):
     Domain: NotRequired[str],
     DomainIAMRoleName: NotRequired[str],
     ServerlessV2ScalingConfiguration: NotRequired[ServerlessV2ScalingConfigurationTypeDef],  # (2)
+    NetworkType: NotRequired[str],
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
@@ -3731,6 +3800,7 @@ class RestoreDBClusterFromSnapshotMessageRequestTypeDef(TypedDict):
     Iops: NotRequired[int],
     PubliclyAccessible: NotRequired[bool],
     ServerlessV2ScalingConfiguration: NotRequired[ServerlessV2ScalingConfigurationTypeDef],  # (3)
+    NetworkType: NotRequired[str],
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
@@ -3776,6 +3846,7 @@ class RestoreDBClusterToPointInTimeMessageRequestTypeDef(TypedDict):
     PubliclyAccessible: NotRequired[bool],
     Iops: NotRequired[int],
     ServerlessV2ScalingConfiguration: NotRequired[ServerlessV2ScalingConfigurationTypeDef],  # (3)
+    NetworkType: NotRequired[str],
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
@@ -3948,6 +4019,7 @@ class DBSnapshotTypeDef(TypedDict):
     DbiResourceId: NotRequired[str],
     TagList: NotRequired[List[TagTypeDef]],  # (2)
     OriginalSnapshotCreateTime: NotRequired[datetime],
+    SnapshotDatabaseTime: NotRequired[datetime],
     SnapshotTarget: NotRequired[str],
 ```
 
@@ -6371,6 +6443,52 @@ class DescribeDBClusterSnapshotsMessageDBClusterSnapshotDeletedWaitTypeDef(Typed
 
 1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
 2. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
+## DescribeDBClustersMessageDBClusterAvailableWaitTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rds.type_defs import DescribeDBClustersMessageDBClusterAvailableWaitTypeDef
+
+def get_value() -> DescribeDBClustersMessageDBClusterAvailableWaitTypeDef:
+    return {
+        "DBClusterIdentifier": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeDBClustersMessageDBClusterAvailableWaitTypeDef(TypedDict):
+    DBClusterIdentifier: NotRequired[str],
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    MaxRecords: NotRequired[int],
+    Marker: NotRequired[str],
+    IncludeShared: NotRequired[bool],
+    WaiterConfig: NotRequired[WaiterConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
+## DescribeDBClustersMessageDBClusterDeletedWaitTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rds.type_defs import DescribeDBClustersMessageDBClusterDeletedWaitTypeDef
+
+def get_value() -> DescribeDBClustersMessageDBClusterDeletedWaitTypeDef:
+    return {
+        "DBClusterIdentifier": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeDBClustersMessageDBClusterDeletedWaitTypeDef(TypedDict):
+    DBClusterIdentifier: NotRequired[str],
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    MaxRecords: NotRequired[int],
+    Marker: NotRequired[str],
+    IncludeShared: NotRequired[bool],
+    WaiterConfig: NotRequired[WaiterConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
 ## DescribeDBInstancesMessageDBInstanceAvailableWaitTypeDef
 
 ```python title="Usage Example"
@@ -7010,6 +7128,7 @@ class DBClusterTypeDef(TypedDict):
     PerformanceInsightsKMSKeyId: NotRequired[str],
     PerformanceInsightsRetentionPeriod: NotRequired[int],
     ServerlessV2ScalingConfiguration: NotRequired[ServerlessV2ScalingConfigurationInfoTypeDef],  # (12)
+    NetworkType: NotRequired[str],
 ```
 
 1. See [:material-code-braces: DBClusterOptionGroupStatusTypeDef](./type_defs.md#dbclusteroptiongroupstatustypedef) 
@@ -8399,6 +8518,7 @@ class DBInstanceTypeDef(TypedDict):
     CustomIamInstanceProfile: NotRequired[str],
     BackupTarget: NotRequired[str],
     NetworkType: NotRequired[str],
+    ActivityStreamPolicyStatus: NotRequired[ActivityStreamPolicyStatusType],  # (19)
 ```
 
 1. See [:material-code-braces: EndpointTypeDef](./type_defs.md#endpointtypedef) 
@@ -8419,6 +8539,7 @@ class DBInstanceTypeDef(TypedDict):
 16. See [:material-code-brackets: ActivityStreamStatusType](./literals.md#activitystreamstatustype) 
 17. See [:material-code-brackets: ActivityStreamModeType](./literals.md#activitystreammodetype) 
 18. See [:material-code-brackets: AutomationModeType](./literals.md#automationmodetype) 
+19. See [:material-code-brackets: ActivityStreamPolicyStatusType](./literals.md#activitystreampolicystatustype) 
 ## DBSubnetGroupMessageTypeDef
 
 ```python title="Usage Example"
@@ -8717,6 +8838,26 @@ def get_value() -> StopDBInstanceResultTypeDef:
 
 ```python title="Definition"
 class StopDBInstanceResultTypeDef(TypedDict):
+    DBInstance: DBInstanceTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: DBInstanceTypeDef](./type_defs.md#dbinstancetypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## SwitchoverReadReplicaResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rds.type_defs import SwitchoverReadReplicaResultTypeDef
+
+def get_value() -> SwitchoverReadReplicaResultTypeDef:
+    return {
+        "DBInstance": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class SwitchoverReadReplicaResultTypeDef(TypedDict):
     DBInstance: DBInstanceTypeDef,  # (1)
     ResponseMetadata: ResponseMetadataTypeDef,  # (2)
 ```

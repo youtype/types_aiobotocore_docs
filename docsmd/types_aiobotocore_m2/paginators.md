@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_m2.paginator import ListApplicationVersionsPaginator
 
 session = get_session()
-async with session.create_client("m2") as client:
-    client: MainframeModernizationClient
-    paginator: ListApplicationVersionsPaginator = client.get_paginator("list_application_versions")
+async with session.create_client("m2") as client:  # (1)
+    paginator: ListApplicationVersionsPaginator = client.get_paginator("list_application_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListApplicationVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MainframeModernizationClient](./client.md)
+2. paginator: [ListApplicationVersionsPaginator](./paginators.md#listapplicationversionspaginator)
+3. item: [:material-code-braces: ListApplicationVersionsResponseTypeDef](./type_defs.md#listapplicationversionsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_m2.paginator import ListApplicationsPaginator
 
 session = get_session()
-async with session.create_client("m2") as client:
-    client: MainframeModernizationClient
-    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")
+async with session.create_client("m2") as client:  # (1)
+    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListApplicationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MainframeModernizationClient](./client.md)
+2. paginator: [ListApplicationsPaginator](./paginators.md#listapplicationspaginator)
+3. item: [:material-code-braces: ListApplicationsResponseTypeDef](./type_defs.md#listapplicationsresponsetypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_m2.paginator import ListBatchJobDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("m2") as client:
-    client: MainframeModernizationClient
-    paginator: ListBatchJobDefinitionsPaginator = client.get_paginator("list_batch_job_definitions")
+async with session.create_client("m2") as client:  # (1)
+    paginator: ListBatchJobDefinitionsPaginator = client.get_paginator("list_batch_job_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBatchJobDefinitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MainframeModernizationClient](./client.md)
+2. paginator: [ListBatchJobDefinitionsPaginator](./paginators.md#listbatchjobdefinitionspaginator)
+3. item: [:material-code-braces: ListBatchJobDefinitionsResponseTypeDef](./type_defs.md#listbatchjobdefinitionsresponsetypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_m2.paginator import ListBatchJobExecutionsPaginator
 
 session = get_session()
-async with session.create_client("m2") as client:
-    client: MainframeModernizationClient
-    paginator: ListBatchJobExecutionsPaginator = client.get_paginator("list_batch_job_executions")
+async with session.create_client("m2") as client:  # (1)
+    paginator: ListBatchJobExecutionsPaginator = client.get_paginator("list_batch_job_executions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBatchJobExecutionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MainframeModernizationClient](./client.md)
+2. paginator: [ListBatchJobExecutionsPaginator](./paginators.md#listbatchjobexecutionspaginator)
+3. item: [:material-code-braces: ListBatchJobExecutionsResponseTypeDef](./type_defs.md#listbatchjobexecutionsresponsetypedef) 
 
 
 ### paginate
@@ -202,10 +226,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_m2.paginator import ListDataSetImportHistoryPaginator
 
 session = get_session()
-async with session.create_client("m2") as client:
-    client: MainframeModernizationClient
-    paginator: ListDataSetImportHistoryPaginator = client.get_paginator("list_data_set_import_history")
+async with session.create_client("m2") as client:  # (1)
+    paginator: ListDataSetImportHistoryPaginator = client.get_paginator("list_data_set_import_history")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDataSetImportHistoryResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MainframeModernizationClient](./client.md)
+2. paginator: [ListDataSetImportHistoryPaginator](./paginators.md#listdatasetimporthistorypaginator)
+3. item: [:material-code-braces: ListDataSetImportHistoryResponseTypeDef](./type_defs.md#listdatasetimporthistoryresponsetypedef) 
 
 
 ### paginate
@@ -246,10 +276,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_m2.paginator import ListDataSetsPaginator
 
 session = get_session()
-async with session.create_client("m2") as client:
-    client: MainframeModernizationClient
-    paginator: ListDataSetsPaginator = client.get_paginator("list_data_sets")
+async with session.create_client("m2") as client:  # (1)
+    paginator: ListDataSetsPaginator = client.get_paginator("list_data_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDataSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MainframeModernizationClient](./client.md)
+2. paginator: [ListDataSetsPaginator](./paginators.md#listdatasetspaginator)
+3. item: [:material-code-braces: ListDataSetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef) 
 
 
 ### paginate
@@ -291,10 +327,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_m2.paginator import ListDeploymentsPaginator
 
 session = get_session()
-async with session.create_client("m2") as client:
-    client: MainframeModernizationClient
-    paginator: ListDeploymentsPaginator = client.get_paginator("list_deployments")
+async with session.create_client("m2") as client:  # (1)
+    paginator: ListDeploymentsPaginator = client.get_paginator("list_deployments")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeploymentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MainframeModernizationClient](./client.md)
+2. paginator: [ListDeploymentsPaginator](./paginators.md#listdeploymentspaginator)
+3. item: [:material-code-braces: ListDeploymentsResponseTypeDef](./type_defs.md#listdeploymentsresponsetypedef) 
 
 
 ### paginate
@@ -335,10 +377,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_m2.paginator import ListEngineVersionsPaginator
 
 session = get_session()
-async with session.create_client("m2") as client:
-    client: MainframeModernizationClient
-    paginator: ListEngineVersionsPaginator = client.get_paginator("list_engine_versions")
+async with session.create_client("m2") as client:  # (1)
+    paginator: ListEngineVersionsPaginator = client.get_paginator("list_engine_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEngineVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MainframeModernizationClient](./client.md)
+2. paginator: [ListEngineVersionsPaginator](./paginators.md#listengineversionspaginator)
+3. item: [:material-code-braces: ListEngineVersionsResponseTypeDef](./type_defs.md#listengineversionsresponsetypedef) 
 
 
 ### paginate
@@ -380,10 +428,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_m2.paginator import ListEnvironmentsPaginator
 
 session = get_session()
-async with session.create_client("m2") as client:
-    client: MainframeModernizationClient
-    paginator: ListEnvironmentsPaginator = client.get_paginator("list_environments")
+async with session.create_client("m2") as client:  # (1)
+    paginator: ListEnvironmentsPaginator = client.get_paginator("list_environments")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEnvironmentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MainframeModernizationClient](./client.md)
+2. paginator: [ListEnvironmentsPaginator](./paginators.md#listenvironmentspaginator)
+3. item: [:material-code-braces: ListEnvironmentsResponseTypeDef](./type_defs.md#listenvironmentsresponsetypedef) 
 
 
 ### paginate

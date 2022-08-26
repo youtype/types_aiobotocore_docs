@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_billingconductor.paginator import ListAccountAssociationsPaginator
 
 session = get_session()
-async with session.create_client("billingconductor") as client:
-    client: BillingConductorClient
-    paginator: ListAccountAssociationsPaginator = client.get_paginator("list_account_associations")
+async with session.create_client("billingconductor") as client:  # (1)
+    paginator: ListAccountAssociationsPaginator = client.get_paginator("list_account_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAccountAssociationsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BillingConductorClient](./client.md)
+2. paginator: [ListAccountAssociationsPaginator](./paginators.md#listaccountassociationspaginator)
+3. item: [:material-code-braces: ListAccountAssociationsOutputTypeDef](./type_defs.md#listaccountassociationsoutputtypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_billingconductor.paginator import ListBillingGroupCostReportsPaginator
 
 session = get_session()
-async with session.create_client("billingconductor") as client:
-    client: BillingConductorClient
-    paginator: ListBillingGroupCostReportsPaginator = client.get_paginator("list_billing_group_cost_reports")
+async with session.create_client("billingconductor") as client:  # (1)
+    paginator: ListBillingGroupCostReportsPaginator = client.get_paginator("list_billing_group_cost_reports")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBillingGroupCostReportsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BillingConductorClient](./client.md)
+2. paginator: [ListBillingGroupCostReportsPaginator](./paginators.md#listbillinggroupcostreportspaginator)
+3. item: [:material-code-braces: ListBillingGroupCostReportsOutputTypeDef](./type_defs.md#listbillinggroupcostreportsoutputtypedef) 
 
 
 ### paginate
@@ -110,10 +122,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_billingconductor.paginator import ListBillingGroupsPaginator
 
 session = get_session()
-async with session.create_client("billingconductor") as client:
-    client: BillingConductorClient
-    paginator: ListBillingGroupsPaginator = client.get_paginator("list_billing_groups")
+async with session.create_client("billingconductor") as client:  # (1)
+    paginator: ListBillingGroupsPaginator = client.get_paginator("list_billing_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBillingGroupsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BillingConductorClient](./client.md)
+2. paginator: [ListBillingGroupsPaginator](./paginators.md#listbillinggroupspaginator)
+3. item: [:material-code-braces: ListBillingGroupsOutputTypeDef](./type_defs.md#listbillinggroupsoutputtypedef) 
 
 
 ### paginate
@@ -156,10 +174,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_billingconductor.paginator import ListCustomLineItemsPaginator
 
 session = get_session()
-async with session.create_client("billingconductor") as client:
-    client: BillingConductorClient
-    paginator: ListCustomLineItemsPaginator = client.get_paginator("list_custom_line_items")
+async with session.create_client("billingconductor") as client:  # (1)
+    paginator: ListCustomLineItemsPaginator = client.get_paginator("list_custom_line_items")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCustomLineItemsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BillingConductorClient](./client.md)
+2. paginator: [ListCustomLineItemsPaginator](./paginators.md#listcustomlineitemspaginator)
+3. item: [:material-code-braces: ListCustomLineItemsOutputTypeDef](./type_defs.md#listcustomlineitemsoutputtypedef) 
 
 
 ### paginate
@@ -202,10 +226,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_billingconductor.paginator import ListPricingPlansPaginator
 
 session = get_session()
-async with session.create_client("billingconductor") as client:
-    client: BillingConductorClient
-    paginator: ListPricingPlansPaginator = client.get_paginator("list_pricing_plans")
+async with session.create_client("billingconductor") as client:  # (1)
+    paginator: ListPricingPlansPaginator = client.get_paginator("list_pricing_plans")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPricingPlansOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BillingConductorClient](./client.md)
+2. paginator: [ListPricingPlansPaginator](./paginators.md#listpricingplanspaginator)
+3. item: [:material-code-braces: ListPricingPlansOutputTypeDef](./type_defs.md#listpricingplansoutputtypedef) 
 
 
 ### paginate
@@ -248,10 +278,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_billingconductor.paginator import ListPricingPlansAssociatedWithPricingRulePaginator
 
 session = get_session()
-async with session.create_client("billingconductor") as client:
-    client: BillingConductorClient
-    paginator: ListPricingPlansAssociatedWithPricingRulePaginator = client.get_paginator("list_pricing_plans_associated_with_pricing_rule")
+async with session.create_client("billingconductor") as client:  # (1)
+    paginator: ListPricingPlansAssociatedWithPricingRulePaginator = client.get_paginator("list_pricing_plans_associated_with_pricing_rule")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPricingPlansAssociatedWithPricingRuleOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BillingConductorClient](./client.md)
+2. paginator: [ListPricingPlansAssociatedWithPricingRulePaginator](./paginators.md#listpricingplansassociatedwithpricingrulepaginator)
+3. item: [:material-code-braces: ListPricingPlansAssociatedWithPricingRuleOutputTypeDef](./type_defs.md#listpricingplansassociatedwithpricingruleoutputtypedef) 
 
 
 ### paginate
@@ -293,10 +329,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_billingconductor.paginator import ListPricingRulesPaginator
 
 session = get_session()
-async with session.create_client("billingconductor") as client:
-    client: BillingConductorClient
-    paginator: ListPricingRulesPaginator = client.get_paginator("list_pricing_rules")
+async with session.create_client("billingconductor") as client:  # (1)
+    paginator: ListPricingRulesPaginator = client.get_paginator("list_pricing_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPricingRulesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BillingConductorClient](./client.md)
+2. paginator: [ListPricingRulesPaginator](./paginators.md#listpricingrulespaginator)
+3. item: [:material-code-braces: ListPricingRulesOutputTypeDef](./type_defs.md#listpricingrulesoutputtypedef) 
 
 
 ### paginate
@@ -339,10 +381,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_billingconductor.paginator import ListPricingRulesAssociatedToPricingPlanPaginator
 
 session = get_session()
-async with session.create_client("billingconductor") as client:
-    client: BillingConductorClient
-    paginator: ListPricingRulesAssociatedToPricingPlanPaginator = client.get_paginator("list_pricing_rules_associated_to_pricing_plan")
+async with session.create_client("billingconductor") as client:  # (1)
+    paginator: ListPricingRulesAssociatedToPricingPlanPaginator = client.get_paginator("list_pricing_rules_associated_to_pricing_plan")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPricingRulesAssociatedToPricingPlanOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BillingConductorClient](./client.md)
+2. paginator: [ListPricingRulesAssociatedToPricingPlanPaginator](./paginators.md#listpricingrulesassociatedtopricingplanpaginator)
+3. item: [:material-code-braces: ListPricingRulesAssociatedToPricingPlanOutputTypeDef](./type_defs.md#listpricingrulesassociatedtopricingplanoutputtypedef) 
 
 
 ### paginate
@@ -384,10 +432,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_billingconductor.paginator import ListResourcesAssociatedToCustomLineItemPaginator
 
 session = get_session()
-async with session.create_client("billingconductor") as client:
-    client: BillingConductorClient
-    paginator: ListResourcesAssociatedToCustomLineItemPaginator = client.get_paginator("list_resources_associated_to_custom_line_item")
+async with session.create_client("billingconductor") as client:  # (1)
+    paginator: ListResourcesAssociatedToCustomLineItemPaginator = client.get_paginator("list_resources_associated_to_custom_line_item")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResourcesAssociatedToCustomLineItemOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BillingConductorClient](./client.md)
+2. paginator: [ListResourcesAssociatedToCustomLineItemPaginator](./paginators.md#listresourcesassociatedtocustomlineitempaginator)
+3. item: [:material-code-braces: ListResourcesAssociatedToCustomLineItemOutputTypeDef](./type_defs.md#listresourcesassociatedtocustomlineitemoutputtypedef) 
 
 
 ### paginate

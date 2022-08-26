@@ -2241,6 +2241,34 @@ DescribeTransitGatewayPeeringAttachmentsPaginatorName = Literal[
     "describe_transit_gateway_peering_attachments",
 ]
 ```
+## DescribeTransitGatewayPolicyTablesPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.literals import DescribeTransitGatewayPolicyTablesPaginatorName
+
+def get_value() -> DescribeTransitGatewayPolicyTablesPaginatorName:
+    return "describe_transit_gateway_policy_tables"
+```
+
+```python title="Definition"
+DescribeTransitGatewayPolicyTablesPaginatorName = Literal[
+    "describe_transit_gateway_policy_tables",
+]
+```
+## DescribeTransitGatewayRouteTableAnnouncementsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.literals import DescribeTransitGatewayRouteTableAnnouncementsPaginatorName
+
+def get_value() -> DescribeTransitGatewayRouteTableAnnouncementsPaginatorName:
+    return "describe_transit_gateway_route_table_announcements"
+```
+
+```python title="Definition"
+DescribeTransitGatewayRouteTableAnnouncementsPaginatorName = Literal[
+    "describe_transit_gateway_route_table_announcements",
+]
+```
 ## DescribeTransitGatewayRouteTablesPaginatorName
 
 ```python title="Usage Example"
@@ -2587,6 +2615,21 @@ def get_value() -> DomainTypeType:
 DomainTypeType = Literal[
     "standard",
     "vpc",
+]
+```
+## DynamicRoutingValueType
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.literals import DynamicRoutingValueType
+
+def get_value() -> DynamicRoutingValueType:
+    return "disable"
+```
+
+```python title="Definition"
+DynamicRoutingValueType = Literal[
+    "disable",
+    "enable",
 ]
 ```
 ## EbsEncryptionSupportType
@@ -3059,6 +3102,8 @@ def get_value() -> FlowLogsResourceTypeType:
 FlowLogsResourceTypeType = Literal[
     "NetworkInterface",
     "Subnet",
+    "TransitGateway",
+    "TransitGatewayAttachment",
     "VPC",
 ]
 ```
@@ -3293,6 +3338,20 @@ def get_value() -> GetTransitGatewayMulticastDomainAssociationsPaginatorName:
 ```python title="Definition"
 GetTransitGatewayMulticastDomainAssociationsPaginatorName = Literal[
     "get_transit_gateway_multicast_domain_associations",
+]
+```
+## GetTransitGatewayPolicyTableAssociationsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.literals import GetTransitGatewayPolicyTableAssociationsPaginatorName
+
+def get_value() -> GetTransitGatewayPolicyTableAssociationsPaginatorName:
+    return "get_transit_gateway_policy_table_associations"
+```
+
+```python title="Definition"
+GetTransitGatewayPolicyTableAssociationsPaginatorName = Literal[
+    "get_transit_gateway_policy_table_associations",
 ]
 ```
 ## GetTransitGatewayPrefixListReferencesPaginatorName
@@ -3994,6 +4053,16 @@ InstanceTypeType = Literal[
     "c6i.large",
     "c6i.metal",
     "c6i.xlarge",
+    "c6id.12xlarge",
+    "c6id.16xlarge",
+    "c6id.24xlarge",
+    "c6id.2xlarge",
+    "c6id.32xlarge",
+    "c6id.4xlarge",
+    "c6id.8xlarge",
+    "c6id.large",
+    "c6id.metal",
+    "c6id.xlarge",
     "c7g.12xlarge",
     "c7g.16xlarge",
     "c7g.2xlarge",
@@ -4221,7 +4290,18 @@ InstanceTypeType = Literal[
     "m6i.large",
     "m6i.metal",
     "m6i.xlarge",
+    "m6id.12xlarge",
+    "m6id.16xlarge",
+    "m6id.24xlarge",
+    "m6id.2xlarge",
+    "m6id.32xlarge",
+    "m6id.4xlarge",
+    "m6id.8xlarge",
+    "m6id.large",
+    "m6id.metal",
+    "m6id.xlarge",
     "mac1.metal",
+    "mac2.metal",
     "p2.16xlarge",
     "p2.8xlarge",
     "p2.xlarge",
@@ -4230,6 +4310,7 @@ InstanceTypeType = Literal[
     "p3.8xlarge",
     "p3dn.24xlarge",
     "p4d.24xlarge",
+    "p4de.24xlarge",
     "r3.2xlarge",
     "r3.4xlarge",
     "r3.8xlarge",
@@ -4302,6 +4383,17 @@ InstanceTypeType = Literal[
     "r5n.large",
     "r5n.metal",
     "r5n.xlarge",
+    "r6a.12xlarge",
+    "r6a.16xlarge",
+    "r6a.24xlarge",
+    "r6a.2xlarge",
+    "r6a.32xlarge",
+    "r6a.48xlarge",
+    "r6a.4xlarge",
+    "r6a.8xlarge",
+    "r6a.large",
+    "r6a.metal",
+    "r6a.xlarge",
     "r6g.12xlarge",
     "r6g.16xlarge",
     "r6g.2xlarge",
@@ -4330,6 +4422,16 @@ InstanceTypeType = Literal[
     "r6i.large",
     "r6i.metal",
     "r6i.xlarge",
+    "r6id.12xlarge",
+    "r6id.16xlarge",
+    "r6id.24xlarge",
+    "r6id.2xlarge",
+    "r6id.32xlarge",
+    "r6id.4xlarge",
+    "r6id.8xlarge",
+    "r6id.large",
+    "r6id.metal",
+    "r6id.xlarge",
     "t1.micro",
     "t2.2xlarge",
     "t2.large",
@@ -5758,6 +5860,7 @@ def get_value() -> ResourceTypeType:
 ```python title="Definition"
 ResourceTypeType = Literal[
     "capacity-reservation",
+    "capacity-reservation-fleet",
     "carrier-gateway",
     "client-vpn-endpoint",
     "customer-gateway",
@@ -5810,16 +5913,20 @@ ResourceTypeType = Literal[
     "subnet",
     "subnet-cidr-reservation",
     "traffic-mirror-filter",
+    "traffic-mirror-filter-rule",
     "traffic-mirror-session",
     "traffic-mirror-target",
     "transit-gateway",
     "transit-gateway-attachment",
     "transit-gateway-connect-peer",
     "transit-gateway-multicast-domain",
+    "transit-gateway-policy-table",
     "transit-gateway-route-table",
+    "transit-gateway-route-table-announcement",
     "volume",
     "vpc",
     "vpc-endpoint",
+    "vpc-endpoint-connection-device-type",
     "vpc-endpoint-service",
     "vpc-flow-log",
     "vpc-peering-connection",
@@ -6684,6 +6791,23 @@ TransitGatewayMulticastDomainStateType = Literal[
     "pending",
 ]
 ```
+## TransitGatewayPolicyTableStateType
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.literals import TransitGatewayPolicyTableStateType
+
+def get_value() -> TransitGatewayPolicyTableStateType:
+    return "available"
+```
+
+```python title="Definition"
+TransitGatewayPolicyTableStateType = Literal[
+    "available",
+    "deleted",
+    "deleting",
+    "pending",
+]
+```
 ## TransitGatewayPrefixListReferenceStateType
 
 ```python title="Usage Example"
@@ -6733,6 +6857,40 @@ TransitGatewayRouteStateType = Literal[
     "blackhole",
     "deleted",
     "deleting",
+    "pending",
+]
+```
+## TransitGatewayRouteTableAnnouncementDirectionType
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.literals import TransitGatewayRouteTableAnnouncementDirectionType
+
+def get_value() -> TransitGatewayRouteTableAnnouncementDirectionType:
+    return "incoming"
+```
+
+```python title="Definition"
+TransitGatewayRouteTableAnnouncementDirectionType = Literal[
+    "incoming",
+    "outgoing",
+]
+```
+## TransitGatewayRouteTableAnnouncementStateType
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.literals import TransitGatewayRouteTableAnnouncementStateType
+
+def get_value() -> TransitGatewayRouteTableAnnouncementStateType:
+    return "available"
+```
+
+```python title="Definition"
+TransitGatewayRouteTableAnnouncementStateType = Literal[
+    "available",
+    "deleted",
+    "deleting",
+    "failed",
+    "failing",
     "pending",
 ]
 ```
@@ -7376,6 +7534,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -7521,6 +7680,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -7574,6 +7734,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -7584,11 +7745,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -7634,6 +7797,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -7775,6 +7939,8 @@ PaginatorName = Literal[
     "describe_transit_gateway_connects",
     "describe_transit_gateway_multicast_domains",
     "describe_transit_gateway_peering_attachments",
+    "describe_transit_gateway_policy_tables",
+    "describe_transit_gateway_route_table_announcements",
     "describe_transit_gateway_route_tables",
     "describe_transit_gateway_vpc_attachments",
     "describe_transit_gateways",
@@ -7803,6 +7969,7 @@ PaginatorName = Literal[
     "get_spot_placement_scores",
     "get_transit_gateway_attachment_propagations",
     "get_transit_gateway_multicast_domain_associations",
+    "get_transit_gateway_policy_table_associations",
     "get_transit_gateway_prefix_list_references",
     "get_transit_gateway_route_table_associations",
     "get_transit_gateway_route_table_propagations",

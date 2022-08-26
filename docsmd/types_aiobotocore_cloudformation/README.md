@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `CloudFormation`.
 
 ### From PyPI with pip
 
@@ -35,30 +30,6 @@ python -m pip install 'types-aiobotocore-lite[cloudformation]'
 python -m pip install types-aiobotocore-cloudformation
 ```
 
-
-### From conda-forge
-
-Installing `types-aiobotocore-cloudformation` from the `conda-forge` channel
-can be achieved by adding `conda-forge` to your channels with:
-
-```bash
-conda config --add channels conda-forge
-conda config --set channel_priority strict
-```
-
-Once the `conda-forge` channel has been enabled, `types-aiobotocore-cloudformation`
-can be installed with:
-
-```bash
-conda install types-aiobotocore-cloudformation
-```
-
-It is possible to list all of the versions of `types-aiobotocore-cloudformation`
-available on your platform with:
-
-```bash
-conda search types-aiobotocore-cloudformation --channel conda-forge
-```
 
 
 ## How to uninstall
@@ -198,12 +169,13 @@ def get_resource() -> Event:
 Type annotations for [literals](./literals.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_cloudformation.literals import AccountGateStatusType
+from types_aiobotocore_cloudformation.literals import AccountFilterTypeType
 
-def get_value() -> AccountGateStatusType:
-    return "FAILED"
+def get_value() -> AccountFilterTypeType:
+    return "DIFFERENCE"
 ```
 
+- [AccountFilterTypeType](./literals.md#accountfiltertypetype)
 - [AccountGateStatusType](./literals.md#accountgatestatustype)
 - [CallAsType](./literals.md#callastype)
 - [CapabilityType](./literals.md#capabilitytype)

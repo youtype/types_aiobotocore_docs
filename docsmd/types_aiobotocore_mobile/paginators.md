@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mobile.paginator import ListBundlesPaginator
 
 session = get_session()
-async with session.create_client("mobile") as client:
-    client: MobileClient
-    paginator: ListBundlesPaginator = client.get_paginator("list_bundles")
+async with session.create_client("mobile") as client:  # (1)
+    paginator: ListBundlesPaginator = client.get_paginator("list_bundles")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBundlesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MobileClient](./client.md)
+2. paginator: [ListBundlesPaginator](./paginators.md#listbundlespaginator)
+3. item: [:material-code-braces: ListBundlesResultTypeDef](./type_defs.md#listbundlesresulttypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mobile.paginator import ListProjectsPaginator
 
 session = get_session()
-async with session.create_client("mobile") as client:
-    client: MobileClient
-    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
+async with session.create_client("mobile") as client:  # (1)
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProjectsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MobileClient](./client.md)
+2. paginator: [ListProjectsPaginator](./paginators.md#listprojectspaginator)
+3. item: [:material-code-braces: ListProjectsResultTypeDef](./type_defs.md#listprojectsresulttypedef) 
 
 
 ### paginate

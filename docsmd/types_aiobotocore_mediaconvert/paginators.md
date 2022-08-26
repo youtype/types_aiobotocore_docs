@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediaconvert.paginator import DescribeEndpointsPaginator
 
 session = get_session()
-async with session.create_client("mediaconvert") as client:
-    client: MediaConvertClient
-    paginator: DescribeEndpointsPaginator = client.get_paginator("describe_endpoints")
+async with session.create_client("mediaconvert") as client:  # (1)
+    paginator: DescribeEndpointsPaginator = client.get_paginator("describe_endpoints")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeEndpointsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaConvertClient](./client.md)
+2. paginator: [DescribeEndpointsPaginator](./paginators.md#describeendpointspaginator)
+3. item: [:material-code-braces: DescribeEndpointsResponseTypeDef](./type_defs.md#describeendpointsresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediaconvert.paginator import ListJobTemplatesPaginator
 
 session = get_session()
-async with session.create_client("mediaconvert") as client:
-    client: MediaConvertClient
-    paginator: ListJobTemplatesPaginator = client.get_paginator("list_job_templates")
+async with session.create_client("mediaconvert") as client:  # (1)
+    paginator: ListJobTemplatesPaginator = client.get_paginator("list_job_templates")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListJobTemplatesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaConvertClient](./client.md)
+2. paginator: [ListJobTemplatesPaginator](./paginators.md#listjobtemplatespaginator)
+3. item: [:material-code-braces: ListJobTemplatesResponseTypeDef](./type_defs.md#listjobtemplatesresponsetypedef) 
 
 
 ### paginate
@@ -111,10 +123,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediaconvert.paginator import ListJobsPaginator
 
 session = get_session()
-async with session.create_client("mediaconvert") as client:
-    client: MediaConvertClient
-    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
+async with session.create_client("mediaconvert") as client:  # (1)
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaConvertClient](./client.md)
+2. paginator: [ListJobsPaginator](./paginators.md#listjobspaginator)
+3. item: [:material-code-braces: ListJobsResponseTypeDef](./type_defs.md#listjobsresponsetypedef) 
 
 
 ### paginate
@@ -159,10 +177,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediaconvert.paginator import ListPresetsPaginator
 
 session = get_session()
-async with session.create_client("mediaconvert") as client:
-    client: MediaConvertClient
-    paginator: ListPresetsPaginator = client.get_paginator("list_presets")
+async with session.create_client("mediaconvert") as client:  # (1)
+    paginator: ListPresetsPaginator = client.get_paginator("list_presets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPresetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaConvertClient](./client.md)
+2. paginator: [ListPresetsPaginator](./paginators.md#listpresetspaginator)
+3. item: [:material-code-braces: ListPresetsResponseTypeDef](./type_defs.md#listpresetsresponsetypedef) 
 
 
 ### paginate
@@ -207,10 +231,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediaconvert.paginator import ListQueuesPaginator
 
 session = get_session()
-async with session.create_client("mediaconvert") as client:
-    client: MediaConvertClient
-    paginator: ListQueuesPaginator = client.get_paginator("list_queues")
+async with session.create_client("mediaconvert") as client:  # (1)
+    paginator: ListQueuesPaginator = client.get_paginator("list_queues")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListQueuesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaConvertClient](./client.md)
+2. paginator: [ListQueuesPaginator](./paginators.md#listqueuespaginator)
+3. item: [:material-code-braces: ListQueuesResponseTypeDef](./type_defs.md#listqueuesresponsetypedef) 
 
 
 ### paginate

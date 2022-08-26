@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeAddressesAttributePaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeAddressesAttributePaginator = client.get_paginator("describe_addresses_attribute")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeAddressesAttributePaginator = client.get_paginator("describe_addresses_attribute")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAddressesAttributeResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeAddressesAttributePaginator](./paginators.md#describeaddressesattributepaginator)
+3. item: [:material-code-braces: DescribeAddressesAttributeResultTypeDef](./type_defs.md#describeaddressesattributeresulttypedef) 
 
 
 ### paginate
@@ -65,10 +71,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeByoipCidrsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeByoipCidrsPaginator = client.get_paginator("describe_byoip_cidrs")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeByoipCidrsPaginator = client.get_paginator("describe_byoip_cidrs")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeByoipCidrsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeByoipCidrsPaginator](./paginators.md#describebyoipcidrspaginator)
+3. item: [:material-code-braces: DescribeByoipCidrsResultTypeDef](./type_defs.md#describebyoipcidrsresulttypedef) 
 
 
 ### paginate
@@ -109,10 +121,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeCapacityReservationFleetsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeCapacityReservationFleetsPaginator = client.get_paginator("describe_capacity_reservation_fleets")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeCapacityReservationFleetsPaginator = client.get_paginator("describe_capacity_reservation_fleets")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeCapacityReservationFleetsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeCapacityReservationFleetsPaginator](./paginators.md#describecapacityreservationfleetspaginator)
+3. item: [:material-code-braces: DescribeCapacityReservationFleetsResultTypeDef](./type_defs.md#describecapacityreservationfleetsresulttypedef) 
 
 
 ### paginate
@@ -156,10 +174,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeCapacityReservationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeCapacityReservationsPaginator = client.get_paginator("describe_capacity_reservations")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeCapacityReservationsPaginator = client.get_paginator("describe_capacity_reservations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeCapacityReservationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeCapacityReservationsPaginator](./paginators.md#describecapacityreservationspaginator)
+3. item: [:material-code-braces: DescribeCapacityReservationsResultTypeDef](./type_defs.md#describecapacityreservationsresulttypedef) 
 
 
 ### paginate
@@ -203,10 +227,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeCarrierGatewaysPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeCarrierGatewaysPaginator = client.get_paginator("describe_carrier_gateways")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeCarrierGatewaysPaginator = client.get_paginator("describe_carrier_gateways")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeCarrierGatewaysResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeCarrierGatewaysPaginator](./paginators.md#describecarriergatewayspaginator)
+3. item: [:material-code-braces: DescribeCarrierGatewaysResultTypeDef](./type_defs.md#describecarriergatewaysresulttypedef) 
 
 
 ### paginate
@@ -250,10 +280,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeClassicLinkInstancesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeClassicLinkInstancesPaginator = client.get_paginator("describe_classic_link_instances")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeClassicLinkInstancesPaginator = client.get_paginator("describe_classic_link_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeClassicLinkInstancesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeClassicLinkInstancesPaginator](./paginators.md#describeclassiclinkinstancespaginator)
+3. item: [:material-code-braces: DescribeClassicLinkInstancesResultTypeDef](./type_defs.md#describeclassiclinkinstancesresulttypedef) 
 
 
 ### paginate
@@ -297,10 +333,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeClientVpnAuthorizationRulesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeClientVpnAuthorizationRulesPaginator = client.get_paginator("describe_client_vpn_authorization_rules")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeClientVpnAuthorizationRulesPaginator = client.get_paginator("describe_client_vpn_authorization_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeClientVpnAuthorizationRulesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeClientVpnAuthorizationRulesPaginator](./paginators.md#describeclientvpnauthorizationrulespaginator)
+3. item: [:material-code-braces: DescribeClientVpnAuthorizationRulesResultTypeDef](./type_defs.md#describeclientvpnauthorizationrulesresulttypedef) 
 
 
 ### paginate
@@ -344,10 +386,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeClientVpnConnectionsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeClientVpnConnectionsPaginator = client.get_paginator("describe_client_vpn_connections")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeClientVpnConnectionsPaginator = client.get_paginator("describe_client_vpn_connections")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeClientVpnConnectionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeClientVpnConnectionsPaginator](./paginators.md#describeclientvpnconnectionspaginator)
+3. item: [:material-code-braces: DescribeClientVpnConnectionsResultTypeDef](./type_defs.md#describeclientvpnconnectionsresulttypedef) 
 
 
 ### paginate
@@ -391,10 +439,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeClientVpnEndpointsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeClientVpnEndpointsPaginator = client.get_paginator("describe_client_vpn_endpoints")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeClientVpnEndpointsPaginator = client.get_paginator("describe_client_vpn_endpoints")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeClientVpnEndpointsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeClientVpnEndpointsPaginator](./paginators.md#describeclientvpnendpointspaginator)
+3. item: [:material-code-braces: DescribeClientVpnEndpointsResultTypeDef](./type_defs.md#describeclientvpnendpointsresulttypedef) 
 
 
 ### paginate
@@ -438,10 +492,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeClientVpnRoutesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeClientVpnRoutesPaginator = client.get_paginator("describe_client_vpn_routes")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeClientVpnRoutesPaginator = client.get_paginator("describe_client_vpn_routes")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeClientVpnRoutesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeClientVpnRoutesPaginator](./paginators.md#describeclientvpnroutespaginator)
+3. item: [:material-code-braces: DescribeClientVpnRoutesResultTypeDef](./type_defs.md#describeclientvpnroutesresulttypedef) 
 
 
 ### paginate
@@ -485,10 +545,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeClientVpnTargetNetworksPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeClientVpnTargetNetworksPaginator = client.get_paginator("describe_client_vpn_target_networks")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeClientVpnTargetNetworksPaginator = client.get_paginator("describe_client_vpn_target_networks")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeClientVpnTargetNetworksResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeClientVpnTargetNetworksPaginator](./paginators.md#describeclientvpntargetnetworkspaginator)
+3. item: [:material-code-braces: DescribeClientVpnTargetNetworksResultTypeDef](./type_defs.md#describeclientvpntargetnetworksresulttypedef) 
 
 
 ### paginate
@@ -533,10 +599,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeCoipPoolsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeCoipPoolsPaginator = client.get_paginator("describe_coip_pools")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeCoipPoolsPaginator = client.get_paginator("describe_coip_pools")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeCoipPoolsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeCoipPoolsPaginator](./paginators.md#describecoippoolspaginator)
+3. item: [:material-code-braces: DescribeCoipPoolsResultTypeDef](./type_defs.md#describecoippoolsresulttypedef) 
 
 
 ### paginate
@@ -580,10 +652,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeDhcpOptionsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeDhcpOptionsPaginator = client.get_paginator("describe_dhcp_options")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeDhcpOptionsPaginator = client.get_paginator("describe_dhcp_options")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeDhcpOptionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeDhcpOptionsPaginator](./paginators.md#describedhcpoptionspaginator)
+3. item: [:material-code-braces: DescribeDhcpOptionsResultTypeDef](./type_defs.md#describedhcpoptionsresulttypedef) 
 
 
 ### paginate
@@ -627,10 +705,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeEgressOnlyInternetGatewaysPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeEgressOnlyInternetGatewaysPaginator = client.get_paginator("describe_egress_only_internet_gateways")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeEgressOnlyInternetGatewaysPaginator = client.get_paginator("describe_egress_only_internet_gateways")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeEgressOnlyInternetGatewaysResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeEgressOnlyInternetGatewaysPaginator](./paginators.md#describeegressonlyinternetgatewayspaginator)
+3. item: [:material-code-braces: DescribeEgressOnlyInternetGatewaysResultTypeDef](./type_defs.md#describeegressonlyinternetgatewaysresulttypedef) 
 
 
 ### paginate
@@ -674,10 +758,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeExportImageTasksPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeExportImageTasksPaginator = client.get_paginator("describe_export_image_tasks")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeExportImageTasksPaginator = client.get_paginator("describe_export_image_tasks")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeExportImageTasksResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeExportImageTasksPaginator](./paginators.md#describeexportimagetaskspaginator)
+3. item: [:material-code-braces: DescribeExportImageTasksResultTypeDef](./type_defs.md#describeexportimagetasksresulttypedef) 
 
 
 ### paginate
@@ -721,10 +811,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeFastLaunchImagesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeFastLaunchImagesPaginator = client.get_paginator("describe_fast_launch_images")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeFastLaunchImagesPaginator = client.get_paginator("describe_fast_launch_images")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeFastLaunchImagesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeFastLaunchImagesPaginator](./paginators.md#describefastlaunchimagespaginator)
+3. item: [:material-code-braces: DescribeFastLaunchImagesResultTypeDef](./type_defs.md#describefastlaunchimagesresulttypedef) 
 
 
 ### paginate
@@ -768,10 +864,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeFastSnapshotRestoresPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeFastSnapshotRestoresPaginator = client.get_paginator("describe_fast_snapshot_restores")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeFastSnapshotRestoresPaginator = client.get_paginator("describe_fast_snapshot_restores")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeFastSnapshotRestoresResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeFastSnapshotRestoresPaginator](./paginators.md#describefastsnapshotrestorespaginator)
+3. item: [:material-code-braces: DescribeFastSnapshotRestoresResultTypeDef](./type_defs.md#describefastsnapshotrestoresresulttypedef) 
 
 
 ### paginate
@@ -814,10 +916,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeFleetsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeFleetsPaginator = client.get_paginator("describe_fleets")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeFleetsPaginator = client.get_paginator("describe_fleets")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeFleetsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeFleetsPaginator](./paginators.md#describefleetspaginator)
+3. item: [:material-code-braces: DescribeFleetsResultTypeDef](./type_defs.md#describefleetsresulttypedef) 
 
 
 ### paginate
@@ -861,10 +969,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeFlowLogsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeFlowLogsPaginator = client.get_paginator("describe_flow_logs")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeFlowLogsPaginator = client.get_paginator("describe_flow_logs")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeFlowLogsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeFlowLogsPaginator](./paginators.md#describeflowlogspaginator)
+3. item: [:material-code-braces: DescribeFlowLogsResultTypeDef](./type_defs.md#describeflowlogsresulttypedef) 
 
 
 ### paginate
@@ -908,10 +1022,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeFpgaImagesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeFpgaImagesPaginator = client.get_paginator("describe_fpga_images")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeFpgaImagesPaginator = client.get_paginator("describe_fpga_images")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeFpgaImagesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeFpgaImagesPaginator](./paginators.md#describefpgaimagespaginator)
+3. item: [:material-code-braces: DescribeFpgaImagesResultTypeDef](./type_defs.md#describefpgaimagesresulttypedef) 
 
 
 ### paginate
@@ -956,10 +1076,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeHostReservationOfferingsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeHostReservationOfferingsPaginator = client.get_paginator("describe_host_reservation_offerings")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeHostReservationOfferingsPaginator = client.get_paginator("describe_host_reservation_offerings")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeHostReservationOfferingsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeHostReservationOfferingsPaginator](./paginators.md#describehostreservationofferingspaginator)
+3. item: [:material-code-braces: DescribeHostReservationOfferingsResultTypeDef](./type_defs.md#describehostreservationofferingsresulttypedef) 
 
 
 ### paginate
@@ -1004,10 +1130,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeHostReservationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeHostReservationsPaginator = client.get_paginator("describe_host_reservations")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeHostReservationsPaginator = client.get_paginator("describe_host_reservations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeHostReservationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeHostReservationsPaginator](./paginators.md#describehostreservationspaginator)
+3. item: [:material-code-braces: DescribeHostReservationsResultTypeDef](./type_defs.md#describehostreservationsresulttypedef) 
 
 
 ### paginate
@@ -1050,10 +1182,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeHostsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeHostsPaginator = client.get_paginator("describe_hosts")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeHostsPaginator = client.get_paginator("describe_hosts")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeHostsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeHostsPaginator](./paginators.md#describehostspaginator)
+3. item: [:material-code-braces: DescribeHostsResultTypeDef](./type_defs.md#describehostsresulttypedef) 
 
 
 ### paginate
@@ -1096,10 +1234,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeIamInstanceProfileAssociationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeIamInstanceProfileAssociationsPaginator = client.get_paginator("describe_iam_instance_profile_associations")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeIamInstanceProfileAssociationsPaginator = client.get_paginator("describe_iam_instance_profile_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeIamInstanceProfileAssociationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeIamInstanceProfileAssociationsPaginator](./paginators.md#describeiaminstanceprofileassociationspaginator)
+3. item: [:material-code-braces: DescribeIamInstanceProfileAssociationsResultTypeDef](./type_defs.md#describeiaminstanceprofileassociationsresulttypedef) 
 
 
 ### paginate
@@ -1142,10 +1286,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeImportImageTasksPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeImportImageTasksPaginator = client.get_paginator("describe_import_image_tasks")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeImportImageTasksPaginator = client.get_paginator("describe_import_image_tasks")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeImportImageTasksResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeImportImageTasksPaginator](./paginators.md#describeimportimagetaskspaginator)
+3. item: [:material-code-braces: DescribeImportImageTasksResultTypeDef](./type_defs.md#describeimportimagetasksresulttypedef) 
 
 
 ### paginate
@@ -1189,10 +1339,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeImportSnapshotTasksPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeImportSnapshotTasksPaginator = client.get_paginator("describe_import_snapshot_tasks")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeImportSnapshotTasksPaginator = client.get_paginator("describe_import_snapshot_tasks")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeImportSnapshotTasksResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeImportSnapshotTasksPaginator](./paginators.md#describeimportsnapshottaskspaginator)
+3. item: [:material-code-braces: DescribeImportSnapshotTasksResultTypeDef](./type_defs.md#describeimportsnapshottasksresulttypedef) 
 
 
 ### paginate
@@ -1236,10 +1392,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeInstanceCreditSpecificationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeInstanceCreditSpecificationsPaginator = client.get_paginator("describe_instance_credit_specifications")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeInstanceCreditSpecificationsPaginator = client.get_paginator("describe_instance_credit_specifications")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeInstanceCreditSpecificationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeInstanceCreditSpecificationsPaginator](./paginators.md#describeinstancecreditspecificationspaginator)
+3. item: [:material-code-braces: DescribeInstanceCreditSpecificationsResultTypeDef](./type_defs.md#describeinstancecreditspecificationsresulttypedef) 
 
 
 ### paginate
@@ -1283,10 +1445,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeInstanceEventWindowsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeInstanceEventWindowsPaginator = client.get_paginator("describe_instance_event_windows")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeInstanceEventWindowsPaginator = client.get_paginator("describe_instance_event_windows")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeInstanceEventWindowsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeInstanceEventWindowsPaginator](./paginators.md#describeinstanceeventwindowspaginator)
+3. item: [:material-code-braces: DescribeInstanceEventWindowsResultTypeDef](./type_defs.md#describeinstanceeventwindowsresulttypedef) 
 
 
 ### paginate
@@ -1330,10 +1498,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeInstanceStatusPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeInstanceStatusPaginator = client.get_paginator("describe_instance_status")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeInstanceStatusPaginator = client.get_paginator("describe_instance_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeInstanceStatusResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeInstanceStatusPaginator](./paginators.md#describeinstancestatuspaginator)
+3. item: [:material-code-braces: DescribeInstanceStatusResultTypeDef](./type_defs.md#describeinstancestatusresulttypedef) 
 
 
 ### paginate
@@ -1378,10 +1552,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeInstanceTypeOfferingsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeInstanceTypeOfferingsPaginator = client.get_paginator("describe_instance_type_offerings")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeInstanceTypeOfferingsPaginator = client.get_paginator("describe_instance_type_offerings")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeInstanceTypeOfferingsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeInstanceTypeOfferingsPaginator](./paginators.md#describeinstancetypeofferingspaginator)
+3. item: [:material-code-braces: DescribeInstanceTypeOfferingsResultTypeDef](./type_defs.md#describeinstancetypeofferingsresulttypedef) 
 
 
 ### paginate
@@ -1426,10 +1606,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeInstanceTypesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeInstanceTypesPaginator = client.get_paginator("describe_instance_types")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeInstanceTypesPaginator = client.get_paginator("describe_instance_types")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeInstanceTypesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeInstanceTypesPaginator](./paginators.md#describeinstancetypespaginator)
+3. item: [:material-code-braces: DescribeInstanceTypesResultTypeDef](./type_defs.md#describeinstancetypesresulttypedef) 
 
 
 ### paginate
@@ -1474,10 +1660,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeInstancesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeInstancesPaginator = client.get_paginator("describe_instances")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeInstancesPaginator = client.get_paginator("describe_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeInstancesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeInstancesPaginator](./paginators.md#describeinstancespaginator)
+3. item: [:material-code-braces: DescribeInstancesResultTypeDef](./type_defs.md#describeinstancesresulttypedef) 
 
 
 ### paginate
@@ -1521,10 +1713,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeInternetGatewaysPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeInternetGatewaysPaginator = client.get_paginator("describe_internet_gateways")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeInternetGatewaysPaginator = client.get_paginator("describe_internet_gateways")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeInternetGatewaysResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeInternetGatewaysPaginator](./paginators.md#describeinternetgatewayspaginator)
+3. item: [:material-code-braces: DescribeInternetGatewaysResultTypeDef](./type_defs.md#describeinternetgatewaysresulttypedef) 
 
 
 ### paginate
@@ -1568,10 +1766,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeIpamPoolsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeIpamPoolsPaginator = client.get_paginator("describe_ipam_pools")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeIpamPoolsPaginator = client.get_paginator("describe_ipam_pools")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeIpamPoolsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeIpamPoolsPaginator](./paginators.md#describeipampoolspaginator)
+3. item: [:material-code-braces: DescribeIpamPoolsResultTypeDef](./type_defs.md#describeipampoolsresulttypedef) 
 
 
 ### paginate
@@ -1615,10 +1819,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeIpamScopesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeIpamScopesPaginator = client.get_paginator("describe_ipam_scopes")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeIpamScopesPaginator = client.get_paginator("describe_ipam_scopes")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeIpamScopesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeIpamScopesPaginator](./paginators.md#describeipamscopespaginator)
+3. item: [:material-code-braces: DescribeIpamScopesResultTypeDef](./type_defs.md#describeipamscopesresulttypedef) 
 
 
 ### paginate
@@ -1662,10 +1872,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeIpamsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeIpamsPaginator = client.get_paginator("describe_ipams")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeIpamsPaginator = client.get_paginator("describe_ipams")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeIpamsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeIpamsPaginator](./paginators.md#describeipamspaginator)
+3. item: [:material-code-braces: DescribeIpamsResultTypeDef](./type_defs.md#describeipamsresulttypedef) 
 
 
 ### paginate
@@ -1709,10 +1925,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeIpv6PoolsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeIpv6PoolsPaginator = client.get_paginator("describe_ipv6_pools")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeIpv6PoolsPaginator = client.get_paginator("describe_ipv6_pools")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeIpv6PoolsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeIpv6PoolsPaginator](./paginators.md#describeipv6poolspaginator)
+3. item: [:material-code-braces: DescribeIpv6PoolsResultTypeDef](./type_defs.md#describeipv6poolsresulttypedef) 
 
 
 ### paginate
@@ -1756,10 +1978,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeLaunchTemplateVersionsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeLaunchTemplateVersionsPaginator = client.get_paginator("describe_launch_template_versions")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeLaunchTemplateVersionsPaginator = client.get_paginator("describe_launch_template_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeLaunchTemplateVersionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeLaunchTemplateVersionsPaginator](./paginators.md#describelaunchtemplateversionspaginator)
+3. item: [:material-code-braces: DescribeLaunchTemplateVersionsResultTypeDef](./type_defs.md#describelaunchtemplateversionsresulttypedef) 
 
 
 ### paginate
@@ -1807,10 +2035,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeLaunchTemplatesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeLaunchTemplatesPaginator = client.get_paginator("describe_launch_templates")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeLaunchTemplatesPaginator = client.get_paginator("describe_launch_templates")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeLaunchTemplatesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeLaunchTemplatesPaginator](./paginators.md#describelaunchtemplatespaginator)
+3. item: [:material-code-braces: DescribeLaunchTemplatesResultTypeDef](./type_defs.md#describelaunchtemplatesresulttypedef) 
 
 
 ### paginate
@@ -1855,10 +2089,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator = client.get_paginator("describe_local_gateway_route_table_virtual_interface_group_associations")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator = client.get_paginator("describe_local_gateway_route_table_virtual_interface_group_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator](./paginators.md#describelocalgatewayroutetablevirtualinterfacegroupassociationspaginator)
+3. item: [:material-code-braces: DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResultTypeDef](./type_defs.md#describelocalgatewayroutetablevirtualinterfacegroupassociationsresulttypedef) 
 
 
 ### paginate
@@ -1902,10 +2142,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeLocalGatewayRouteTableVpcAssociationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeLocalGatewayRouteTableVpcAssociationsPaginator = client.get_paginator("describe_local_gateway_route_table_vpc_associations")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeLocalGatewayRouteTableVpcAssociationsPaginator = client.get_paginator("describe_local_gateway_route_table_vpc_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeLocalGatewayRouteTableVpcAssociationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeLocalGatewayRouteTableVpcAssociationsPaginator](./paginators.md#describelocalgatewayroutetablevpcassociationspaginator)
+3. item: [:material-code-braces: DescribeLocalGatewayRouteTableVpcAssociationsResultTypeDef](./type_defs.md#describelocalgatewayroutetablevpcassociationsresulttypedef) 
 
 
 ### paginate
@@ -1949,10 +2195,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeLocalGatewayRouteTablesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeLocalGatewayRouteTablesPaginator = client.get_paginator("describe_local_gateway_route_tables")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeLocalGatewayRouteTablesPaginator = client.get_paginator("describe_local_gateway_route_tables")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeLocalGatewayRouteTablesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeLocalGatewayRouteTablesPaginator](./paginators.md#describelocalgatewayroutetablespaginator)
+3. item: [:material-code-braces: DescribeLocalGatewayRouteTablesResultTypeDef](./type_defs.md#describelocalgatewayroutetablesresulttypedef) 
 
 
 ### paginate
@@ -1996,10 +2248,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeLocalGatewayVirtualInterfaceGroupsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeLocalGatewayVirtualInterfaceGroupsPaginator = client.get_paginator("describe_local_gateway_virtual_interface_groups")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeLocalGatewayVirtualInterfaceGroupsPaginator = client.get_paginator("describe_local_gateway_virtual_interface_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeLocalGatewayVirtualInterfaceGroupsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeLocalGatewayVirtualInterfaceGroupsPaginator](./paginators.md#describelocalgatewayvirtualinterfacegroupspaginator)
+3. item: [:material-code-braces: DescribeLocalGatewayVirtualInterfaceGroupsResultTypeDef](./type_defs.md#describelocalgatewayvirtualinterfacegroupsresulttypedef) 
 
 
 ### paginate
@@ -2043,10 +2301,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeLocalGatewayVirtualInterfacesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeLocalGatewayVirtualInterfacesPaginator = client.get_paginator("describe_local_gateway_virtual_interfaces")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeLocalGatewayVirtualInterfacesPaginator = client.get_paginator("describe_local_gateway_virtual_interfaces")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeLocalGatewayVirtualInterfacesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeLocalGatewayVirtualInterfacesPaginator](./paginators.md#describelocalgatewayvirtualinterfacespaginator)
+3. item: [:material-code-braces: DescribeLocalGatewayVirtualInterfacesResultTypeDef](./type_defs.md#describelocalgatewayvirtualinterfacesresulttypedef) 
 
 
 ### paginate
@@ -2090,10 +2354,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeLocalGatewaysPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeLocalGatewaysPaginator = client.get_paginator("describe_local_gateways")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeLocalGatewaysPaginator = client.get_paginator("describe_local_gateways")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeLocalGatewaysResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeLocalGatewaysPaginator](./paginators.md#describelocalgatewayspaginator)
+3. item: [:material-code-braces: DescribeLocalGatewaysResultTypeDef](./type_defs.md#describelocalgatewaysresulttypedef) 
 
 
 ### paginate
@@ -2137,10 +2407,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeManagedPrefixListsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeManagedPrefixListsPaginator = client.get_paginator("describe_managed_prefix_lists")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeManagedPrefixListsPaginator = client.get_paginator("describe_managed_prefix_lists")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeManagedPrefixListsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeManagedPrefixListsPaginator](./paginators.md#describemanagedprefixlistspaginator)
+3. item: [:material-code-braces: DescribeManagedPrefixListsResultTypeDef](./type_defs.md#describemanagedprefixlistsresulttypedef) 
 
 
 ### paginate
@@ -2184,10 +2460,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeMovingAddressesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeMovingAddressesPaginator = client.get_paginator("describe_moving_addresses")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeMovingAddressesPaginator = client.get_paginator("describe_moving_addresses")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeMovingAddressesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeMovingAddressesPaginator](./paginators.md#describemovingaddressespaginator)
+3. item: [:material-code-braces: DescribeMovingAddressesResultTypeDef](./type_defs.md#describemovingaddressesresulttypedef) 
 
 
 ### paginate
@@ -2231,10 +2513,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeNatGatewaysPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeNatGatewaysPaginator = client.get_paginator("describe_nat_gateways")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeNatGatewaysPaginator = client.get_paginator("describe_nat_gateways")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeNatGatewaysResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeNatGatewaysPaginator](./paginators.md#describenatgatewayspaginator)
+3. item: [:material-code-braces: DescribeNatGatewaysResultTypeDef](./type_defs.md#describenatgatewaysresulttypedef) 
 
 
 ### paginate
@@ -2278,10 +2566,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeNetworkAclsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeNetworkAclsPaginator = client.get_paginator("describe_network_acls")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeNetworkAclsPaginator = client.get_paginator("describe_network_acls")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeNetworkAclsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeNetworkAclsPaginator](./paginators.md#describenetworkaclspaginator)
+3. item: [:material-code-braces: DescribeNetworkAclsResultTypeDef](./type_defs.md#describenetworkaclsresulttypedef) 
 
 
 ### paginate
@@ -2325,10 +2619,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeNetworkInsightsAccessScopeAnalysesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeNetworkInsightsAccessScopeAnalysesPaginator = client.get_paginator("describe_network_insights_access_scope_analyses")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeNetworkInsightsAccessScopeAnalysesPaginator = client.get_paginator("describe_network_insights_access_scope_analyses")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeNetworkInsightsAccessScopeAnalysesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeNetworkInsightsAccessScopeAnalysesPaginator](./paginators.md#describenetworkinsightsaccessscopeanalysespaginator)
+3. item: [:material-code-braces: DescribeNetworkInsightsAccessScopeAnalysesResultTypeDef](./type_defs.md#describenetworkinsightsaccessscopeanalysesresulttypedef) 
 
 
 ### paginate
@@ -2375,10 +2675,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeNetworkInsightsAccessScopesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeNetworkInsightsAccessScopesPaginator = client.get_paginator("describe_network_insights_access_scopes")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeNetworkInsightsAccessScopesPaginator = client.get_paginator("describe_network_insights_access_scopes")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeNetworkInsightsAccessScopesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeNetworkInsightsAccessScopesPaginator](./paginators.md#describenetworkinsightsaccessscopespaginator)
+3. item: [:material-code-braces: DescribeNetworkInsightsAccessScopesResultTypeDef](./type_defs.md#describenetworkinsightsaccessscopesresulttypedef) 
 
 
 ### paginate
@@ -2422,10 +2728,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeNetworkInsightsAnalysesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeNetworkInsightsAnalysesPaginator = client.get_paginator("describe_network_insights_analyses")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeNetworkInsightsAnalysesPaginator = client.get_paginator("describe_network_insights_analyses")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeNetworkInsightsAnalysesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeNetworkInsightsAnalysesPaginator](./paginators.md#describenetworkinsightsanalysespaginator)
+3. item: [:material-code-braces: DescribeNetworkInsightsAnalysesResultTypeDef](./type_defs.md#describenetworkinsightsanalysesresulttypedef) 
 
 
 ### paginate
@@ -2472,10 +2784,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeNetworkInsightsPathsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeNetworkInsightsPathsPaginator = client.get_paginator("describe_network_insights_paths")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeNetworkInsightsPathsPaginator = client.get_paginator("describe_network_insights_paths")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeNetworkInsightsPathsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeNetworkInsightsPathsPaginator](./paginators.md#describenetworkinsightspathspaginator)
+3. item: [:material-code-braces: DescribeNetworkInsightsPathsResultTypeDef](./type_defs.md#describenetworkinsightspathsresulttypedef) 
 
 
 ### paginate
@@ -2519,10 +2837,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeNetworkInterfacePermissionsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeNetworkInterfacePermissionsPaginator = client.get_paginator("describe_network_interface_permissions")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeNetworkInterfacePermissionsPaginator = client.get_paginator("describe_network_interface_permissions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeNetworkInterfacePermissionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeNetworkInterfacePermissionsPaginator](./paginators.md#describenetworkinterfacepermissionspaginator)
+3. item: [:material-code-braces: DescribeNetworkInterfacePermissionsResultTypeDef](./type_defs.md#describenetworkinterfacepermissionsresulttypedef) 
 
 
 ### paginate
@@ -2565,10 +2889,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeNetworkInterfacesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeNetworkInterfacesPaginator = client.get_paginator("describe_network_interfaces")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeNetworkInterfacesPaginator = client.get_paginator("describe_network_interfaces")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeNetworkInterfacesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeNetworkInterfacesPaginator](./paginators.md#describenetworkinterfacespaginator)
+3. item: [:material-code-braces: DescribeNetworkInterfacesResultTypeDef](./type_defs.md#describenetworkinterfacesresulttypedef) 
 
 
 ### paginate
@@ -2612,10 +2942,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribePrefixListsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribePrefixListsPaginator = client.get_paginator("describe_prefix_lists")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribePrefixListsPaginator = client.get_paginator("describe_prefix_lists")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribePrefixListsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribePrefixListsPaginator](./paginators.md#describeprefixlistspaginator)
+3. item: [:material-code-braces: DescribePrefixListsResultTypeDef](./type_defs.md#describeprefixlistsresulttypedef) 
 
 
 ### paginate
@@ -2659,10 +2995,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribePrincipalIdFormatPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribePrincipalIdFormatPaginator = client.get_paginator("describe_principal_id_format")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribePrincipalIdFormatPaginator = client.get_paginator("describe_principal_id_format")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribePrincipalIdFormatResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribePrincipalIdFormatPaginator](./paginators.md#describeprincipalidformatpaginator)
+3. item: [:material-code-braces: DescribePrincipalIdFormatResultTypeDef](./type_defs.md#describeprincipalidformatresulttypedef) 
 
 
 ### paginate
@@ -2704,10 +3046,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribePublicIpv4PoolsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribePublicIpv4PoolsPaginator = client.get_paginator("describe_public_ipv4_pools")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribePublicIpv4PoolsPaginator = client.get_paginator("describe_public_ipv4_pools")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribePublicIpv4PoolsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribePublicIpv4PoolsPaginator](./paginators.md#describepublicipv4poolspaginator)
+3. item: [:material-code-braces: DescribePublicIpv4PoolsResultTypeDef](./type_defs.md#describepublicipv4poolsresulttypedef) 
 
 
 ### paginate
@@ -2750,10 +3098,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeReplaceRootVolumeTasksPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeReplaceRootVolumeTasksPaginator = client.get_paginator("describe_replace_root_volume_tasks")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeReplaceRootVolumeTasksPaginator = client.get_paginator("describe_replace_root_volume_tasks")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeReplaceRootVolumeTasksResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeReplaceRootVolumeTasksPaginator](./paginators.md#describereplacerootvolumetaskspaginator)
+3. item: [:material-code-braces: DescribeReplaceRootVolumeTasksResultTypeDef](./type_defs.md#describereplacerootvolumetasksresulttypedef) 
 
 
 ### paginate
@@ -2797,10 +3151,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeReservedInstancesModificationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeReservedInstancesModificationsPaginator = client.get_paginator("describe_reserved_instances_modifications")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeReservedInstancesModificationsPaginator = client.get_paginator("describe_reserved_instances_modifications")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeReservedInstancesModificationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeReservedInstancesModificationsPaginator](./paginators.md#describereservedinstancesmodificationspaginator)
+3. item: [:material-code-braces: DescribeReservedInstancesModificationsResultTypeDef](./type_defs.md#describereservedinstancesmodificationsresulttypedef) 
 
 
 ### paginate
@@ -2843,10 +3203,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeReservedInstancesOfferingsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeReservedInstancesOfferingsPaginator = client.get_paginator("describe_reserved_instances_offerings")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeReservedInstancesOfferingsPaginator = client.get_paginator("describe_reserved_instances_offerings")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeReservedInstancesOfferingsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeReservedInstancesOfferingsPaginator](./paginators.md#describereservedinstancesofferingspaginator)
+3. item: [:material-code-braces: DescribeReservedInstancesOfferingsResultTypeDef](./type_defs.md#describereservedinstancesofferingsresulttypedef) 
 
 
 ### paginate
@@ -2905,10 +3271,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeRouteTablesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeRouteTablesPaginator = client.get_paginator("describe_route_tables")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeRouteTablesPaginator = client.get_paginator("describe_route_tables")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeRouteTablesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeRouteTablesPaginator](./paginators.md#describeroutetablespaginator)
+3. item: [:material-code-braces: DescribeRouteTablesResultTypeDef](./type_defs.md#describeroutetablesresulttypedef) 
 
 
 ### paginate
@@ -2952,10 +3324,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeScheduledInstanceAvailabilityPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeScheduledInstanceAvailabilityPaginator = client.get_paginator("describe_scheduled_instance_availability")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeScheduledInstanceAvailabilityPaginator = client.get_paginator("describe_scheduled_instance_availability")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeScheduledInstanceAvailabilityResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeScheduledInstanceAvailabilityPaginator](./paginators.md#describescheduledinstanceavailabilitypaginator)
+3. item: [:material-code-braces: DescribeScheduledInstanceAvailabilityResultTypeDef](./type_defs.md#describescheduledinstanceavailabilityresulttypedef) 
 
 
 ### paginate
@@ -3005,10 +3383,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeScheduledInstancesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeScheduledInstancesPaginator = client.get_paginator("describe_scheduled_instances")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeScheduledInstancesPaginator = client.get_paginator("describe_scheduled_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeScheduledInstancesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeScheduledInstancesPaginator](./paginators.md#describescheduledinstancespaginator)
+3. item: [:material-code-braces: DescribeScheduledInstancesResultTypeDef](./type_defs.md#describescheduledinstancesresulttypedef) 
 
 
 ### paginate
@@ -3054,10 +3438,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeSecurityGroupRulesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeSecurityGroupRulesPaginator = client.get_paginator("describe_security_group_rules")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeSecurityGroupRulesPaginator = client.get_paginator("describe_security_group_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSecurityGroupRulesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeSecurityGroupRulesPaginator](./paginators.md#describesecuritygrouprulespaginator)
+3. item: [:material-code-braces: DescribeSecurityGroupRulesResultTypeDef](./type_defs.md#describesecuritygrouprulesresulttypedef) 
 
 
 ### paginate
@@ -3101,10 +3491,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeSecurityGroupsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeSecurityGroupsPaginator = client.get_paginator("describe_security_groups")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeSecurityGroupsPaginator = client.get_paginator("describe_security_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSecurityGroupsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeSecurityGroupsPaginator](./paginators.md#describesecuritygroupspaginator)
+3. item: [:material-code-braces: DescribeSecurityGroupsResultTypeDef](./type_defs.md#describesecuritygroupsresulttypedef) 
 
 
 ### paginate
@@ -3149,10 +3545,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeSnapshotTierStatusPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeSnapshotTierStatusPaginator = client.get_paginator("describe_snapshot_tier_status")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeSnapshotTierStatusPaginator = client.get_paginator("describe_snapshot_tier_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSnapshotTierStatusResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeSnapshotTierStatusPaginator](./paginators.md#describesnapshottierstatuspaginator)
+3. item: [:material-code-braces: DescribeSnapshotTierStatusResultTypeDef](./type_defs.md#describesnapshottierstatusresulttypedef) 
 
 
 ### paginate
@@ -3195,10 +3597,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeSnapshotsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeSnapshotsPaginator = client.get_paginator("describe_snapshots")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeSnapshotsPaginator = client.get_paginator("describe_snapshots")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSnapshotsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeSnapshotsPaginator](./paginators.md#describesnapshotspaginator)
+3. item: [:material-code-braces: DescribeSnapshotsResultTypeDef](./type_defs.md#describesnapshotsresulttypedef) 
 
 
 ### paginate
@@ -3244,10 +3652,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeSpotFleetInstancesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeSpotFleetInstancesPaginator = client.get_paginator("describe_spot_fleet_instances")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeSpotFleetInstancesPaginator = client.get_paginator("describe_spot_fleet_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSpotFleetInstancesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeSpotFleetInstancesPaginator](./paginators.md#describespotfleetinstancespaginator)
+3. item: [:material-code-braces: DescribeSpotFleetInstancesResponseTypeDef](./type_defs.md#describespotfleetinstancesresponsetypedef) 
 
 
 ### paginate
@@ -3289,10 +3703,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeSpotFleetRequestsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeSpotFleetRequestsPaginator = client.get_paginator("describe_spot_fleet_requests")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeSpotFleetRequestsPaginator = client.get_paginator("describe_spot_fleet_requests")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSpotFleetRequestsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeSpotFleetRequestsPaginator](./paginators.md#describespotfleetrequestspaginator)
+3. item: [:material-code-braces: DescribeSpotFleetRequestsResponseTypeDef](./type_defs.md#describespotfleetrequestsresponsetypedef) 
 
 
 ### paginate
@@ -3334,10 +3754,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeSpotInstanceRequestsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeSpotInstanceRequestsPaginator = client.get_paginator("describe_spot_instance_requests")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeSpotInstanceRequestsPaginator = client.get_paginator("describe_spot_instance_requests")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSpotInstanceRequestsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeSpotInstanceRequestsPaginator](./paginators.md#describespotinstancerequestspaginator)
+3. item: [:material-code-braces: DescribeSpotInstanceRequestsResultTypeDef](./type_defs.md#describespotinstancerequestsresulttypedef) 
 
 
 ### paginate
@@ -3381,10 +3807,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeSpotPriceHistoryPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeSpotPriceHistoryPaginator = client.get_paginator("describe_spot_price_history")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeSpotPriceHistoryPaginator = client.get_paginator("describe_spot_price_history")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSpotPriceHistoryResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeSpotPriceHistoryPaginator](./paginators.md#describespotpricehistorypaginator)
+3. item: [:material-code-braces: DescribeSpotPriceHistoryResultTypeDef](./type_defs.md#describespotpricehistoryresulttypedef) 
 
 
 ### paginate
@@ -3433,10 +3865,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeStaleSecurityGroupsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeStaleSecurityGroupsPaginator = client.get_paginator("describe_stale_security_groups")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeStaleSecurityGroupsPaginator = client.get_paginator("describe_stale_security_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeStaleSecurityGroupsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeStaleSecurityGroupsPaginator](./paginators.md#describestalesecuritygroupspaginator)
+3. item: [:material-code-braces: DescribeStaleSecurityGroupsResultTypeDef](./type_defs.md#describestalesecuritygroupsresulttypedef) 
 
 
 ### paginate
@@ -3478,10 +3916,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeStoreImageTasksPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeStoreImageTasksPaginator = client.get_paginator("describe_store_image_tasks")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeStoreImageTasksPaginator = client.get_paginator("describe_store_image_tasks")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeStoreImageTasksResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeStoreImageTasksPaginator](./paginators.md#describestoreimagetaskspaginator)
+3. item: [:material-code-braces: DescribeStoreImageTasksResultTypeDef](./type_defs.md#describestoreimagetasksresulttypedef) 
 
 
 ### paginate
@@ -3525,10 +3969,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeSubnetsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeSubnetsPaginator = client.get_paginator("describe_subnets")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeSubnetsPaginator = client.get_paginator("describe_subnets")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSubnetsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeSubnetsPaginator](./paginators.md#describesubnetspaginator)
+3. item: [:material-code-braces: DescribeSubnetsResultTypeDef](./type_defs.md#describesubnetsresulttypedef) 
 
 
 ### paginate
@@ -3572,10 +4022,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeTagsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeTagsPaginator = client.get_paginator("describe_tags")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeTagsPaginator = client.get_paginator("describe_tags")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTagsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTagsPaginator](./paginators.md#describetagspaginator)
+3. item: [:material-code-braces: DescribeTagsResultTypeDef](./type_defs.md#describetagsresulttypedef) 
 
 
 ### paginate
@@ -3618,10 +4074,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeTrafficMirrorFiltersPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeTrafficMirrorFiltersPaginator = client.get_paginator("describe_traffic_mirror_filters")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeTrafficMirrorFiltersPaginator = client.get_paginator("describe_traffic_mirror_filters")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTrafficMirrorFiltersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTrafficMirrorFiltersPaginator](./paginators.md#describetrafficmirrorfilterspaginator)
+3. item: [:material-code-braces: DescribeTrafficMirrorFiltersResultTypeDef](./type_defs.md#describetrafficmirrorfiltersresulttypedef) 
 
 
 ### paginate
@@ -3665,10 +4127,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeTrafficMirrorSessionsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeTrafficMirrorSessionsPaginator = client.get_paginator("describe_traffic_mirror_sessions")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeTrafficMirrorSessionsPaginator = client.get_paginator("describe_traffic_mirror_sessions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTrafficMirrorSessionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTrafficMirrorSessionsPaginator](./paginators.md#describetrafficmirrorsessionspaginator)
+3. item: [:material-code-braces: DescribeTrafficMirrorSessionsResultTypeDef](./type_defs.md#describetrafficmirrorsessionsresulttypedef) 
 
 
 ### paginate
@@ -3712,10 +4180,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeTrafficMirrorTargetsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeTrafficMirrorTargetsPaginator = client.get_paginator("describe_traffic_mirror_targets")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeTrafficMirrorTargetsPaginator = client.get_paginator("describe_traffic_mirror_targets")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTrafficMirrorTargetsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTrafficMirrorTargetsPaginator](./paginators.md#describetrafficmirrortargetspaginator)
+3. item: [:material-code-braces: DescribeTrafficMirrorTargetsResultTypeDef](./type_defs.md#describetrafficmirrortargetsresulttypedef) 
 
 
 ### paginate
@@ -3759,10 +4233,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeTransitGatewayAttachmentsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeTransitGatewayAttachmentsPaginator = client.get_paginator("describe_transit_gateway_attachments")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeTransitGatewayAttachmentsPaginator = client.get_paginator("describe_transit_gateway_attachments")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTransitGatewayAttachmentsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTransitGatewayAttachmentsPaginator](./paginators.md#describetransitgatewayattachmentspaginator)
+3. item: [:material-code-braces: DescribeTransitGatewayAttachmentsResultTypeDef](./type_defs.md#describetransitgatewayattachmentsresulttypedef) 
 
 
 ### paginate
@@ -3806,10 +4286,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeTransitGatewayConnectPeersPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeTransitGatewayConnectPeersPaginator = client.get_paginator("describe_transit_gateway_connect_peers")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeTransitGatewayConnectPeersPaginator = client.get_paginator("describe_transit_gateway_connect_peers")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTransitGatewayConnectPeersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTransitGatewayConnectPeersPaginator](./paginators.md#describetransitgatewayconnectpeerspaginator)
+3. item: [:material-code-braces: DescribeTransitGatewayConnectPeersResultTypeDef](./type_defs.md#describetransitgatewayconnectpeersresulttypedef) 
 
 
 ### paginate
@@ -3853,10 +4339,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeTransitGatewayConnectsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeTransitGatewayConnectsPaginator = client.get_paginator("describe_transit_gateway_connects")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeTransitGatewayConnectsPaginator = client.get_paginator("describe_transit_gateway_connects")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTransitGatewayConnectsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTransitGatewayConnectsPaginator](./paginators.md#describetransitgatewayconnectspaginator)
+3. item: [:material-code-braces: DescribeTransitGatewayConnectsResultTypeDef](./type_defs.md#describetransitgatewayconnectsresulttypedef) 
 
 
 ### paginate
@@ -3900,10 +4392,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeTransitGatewayMulticastDomainsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeTransitGatewayMulticastDomainsPaginator = client.get_paginator("describe_transit_gateway_multicast_domains")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeTransitGatewayMulticastDomainsPaginator = client.get_paginator("describe_transit_gateway_multicast_domains")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTransitGatewayMulticastDomainsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTransitGatewayMulticastDomainsPaginator](./paginators.md#describetransitgatewaymulticastdomainspaginator)
+3. item: [:material-code-braces: DescribeTransitGatewayMulticastDomainsResultTypeDef](./type_defs.md#describetransitgatewaymulticastdomainsresulttypedef) 
 
 
 ### paginate
@@ -3947,10 +4445,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeTransitGatewayPeeringAttachmentsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeTransitGatewayPeeringAttachmentsPaginator = client.get_paginator("describe_transit_gateway_peering_attachments")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeTransitGatewayPeeringAttachmentsPaginator = client.get_paginator("describe_transit_gateway_peering_attachments")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTransitGatewayPeeringAttachmentsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTransitGatewayPeeringAttachmentsPaginator](./paginators.md#describetransitgatewaypeeringattachmentspaginator)
+3. item: [:material-code-braces: DescribeTransitGatewayPeeringAttachmentsResultTypeDef](./type_defs.md#describetransitgatewaypeeringattachmentsresulttypedef) 
 
 
 ### paginate
@@ -3983,6 +4487,112 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeTransitGatewayPeeringAttachmentsRequestDescribeTransitGatewayPeeringAttachmentsPaginateTypeDef](./type_defs.md#describetransitgatewaypeeringattachmentsrequestdescribetransitgatewaypeeringattachmentspaginatetypedef) 
+## DescribeTransitGatewayPolicyTablesPaginator
+
+Type annotations and code completion for `#!python session.create_client("ec2").get_paginator("describe_transit_gateway_policy_tables")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Paginator.DescribeTransitGatewayPolicyTables)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_ec2.paginator import DescribeTransitGatewayPolicyTablesPaginator
+
+session = get_session()
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeTransitGatewayPolicyTablesPaginator = client.get_paginator("describe_transit_gateway_policy_tables")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTransitGatewayPolicyTablesResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTransitGatewayPolicyTablesPaginator](./paginators.md#describetransitgatewaypolicytablespaginator)
+3. item: [:material-code-braces: DescribeTransitGatewayPolicyTablesResultTypeDef](./type_defs.md#describetransitgatewaypolicytablesresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python DescribeTransitGatewayPolicyTablesPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    TransitGatewayPolicyTableIds: Sequence[str] = ...,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    DryRun: bool = ...,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[DescribeTransitGatewayPolicyTablesResultTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: DescribeTransitGatewayPolicyTablesResultTypeDef](./type_defs.md#describetransitgatewaypolicytablesresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeTransitGatewayPolicyTablesRequestDescribeTransitGatewayPolicyTablesPaginateTypeDef = {  # (1)
+    "TransitGatewayPolicyTableIds": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeTransitGatewayPolicyTablesRequestDescribeTransitGatewayPolicyTablesPaginateTypeDef](./type_defs.md#describetransitgatewaypolicytablesrequestdescribetransitgatewaypolicytablespaginatetypedef) 
+## DescribeTransitGatewayRouteTableAnnouncementsPaginator
+
+Type annotations and code completion for `#!python session.create_client("ec2").get_paginator("describe_transit_gateway_route_table_announcements")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Paginator.DescribeTransitGatewayRouteTableAnnouncements)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_ec2.paginator import DescribeTransitGatewayRouteTableAnnouncementsPaginator
+
+session = get_session()
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeTransitGatewayRouteTableAnnouncementsPaginator = client.get_paginator("describe_transit_gateway_route_table_announcements")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTransitGatewayRouteTableAnnouncementsResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTransitGatewayRouteTableAnnouncementsPaginator](./paginators.md#describetransitgatewayroutetableannouncementspaginator)
+3. item: [:material-code-braces: DescribeTransitGatewayRouteTableAnnouncementsResultTypeDef](./type_defs.md#describetransitgatewayroutetableannouncementsresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python DescribeTransitGatewayRouteTableAnnouncementsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    TransitGatewayRouteTableAnnouncementIds: Sequence[str] = ...,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    DryRun: bool = ...,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[DescribeTransitGatewayRouteTableAnnouncementsResultTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: DescribeTransitGatewayRouteTableAnnouncementsResultTypeDef](./type_defs.md#describetransitgatewayroutetableannouncementsresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeTransitGatewayRouteTableAnnouncementsRequestDescribeTransitGatewayRouteTableAnnouncementsPaginateTypeDef = {  # (1)
+    "TransitGatewayRouteTableAnnouncementIds": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeTransitGatewayRouteTableAnnouncementsRequestDescribeTransitGatewayRouteTableAnnouncementsPaginateTypeDef](./type_defs.md#describetransitgatewayroutetableannouncementsrequestdescribetransitgatewayroutetableannouncementspaginatetypedef) 
 ## DescribeTransitGatewayRouteTablesPaginator
 
 Type annotations and code completion for `#!python session.create_client("ec2").get_paginator("describe_transit_gateway_route_tables")`.
@@ -3994,10 +4604,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeTransitGatewayRouteTablesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeTransitGatewayRouteTablesPaginator = client.get_paginator("describe_transit_gateway_route_tables")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeTransitGatewayRouteTablesPaginator = client.get_paginator("describe_transit_gateway_route_tables")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTransitGatewayRouteTablesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTransitGatewayRouteTablesPaginator](./paginators.md#describetransitgatewayroutetablespaginator)
+3. item: [:material-code-braces: DescribeTransitGatewayRouteTablesResultTypeDef](./type_defs.md#describetransitgatewayroutetablesresulttypedef) 
 
 
 ### paginate
@@ -4041,10 +4657,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeTransitGatewayVpcAttachmentsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeTransitGatewayVpcAttachmentsPaginator = client.get_paginator("describe_transit_gateway_vpc_attachments")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeTransitGatewayVpcAttachmentsPaginator = client.get_paginator("describe_transit_gateway_vpc_attachments")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTransitGatewayVpcAttachmentsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTransitGatewayVpcAttachmentsPaginator](./paginators.md#describetransitgatewayvpcattachmentspaginator)
+3. item: [:material-code-braces: DescribeTransitGatewayVpcAttachmentsResultTypeDef](./type_defs.md#describetransitgatewayvpcattachmentsresulttypedef) 
 
 
 ### paginate
@@ -4088,10 +4710,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeTransitGatewaysPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeTransitGatewaysPaginator = client.get_paginator("describe_transit_gateways")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeTransitGatewaysPaginator = client.get_paginator("describe_transit_gateways")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTransitGatewaysResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTransitGatewaysPaginator](./paginators.md#describetransitgatewayspaginator)
+3. item: [:material-code-braces: DescribeTransitGatewaysResultTypeDef](./type_defs.md#describetransitgatewaysresulttypedef) 
 
 
 ### paginate
@@ -4135,10 +4763,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeTrunkInterfaceAssociationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeTrunkInterfaceAssociationsPaginator = client.get_paginator("describe_trunk_interface_associations")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeTrunkInterfaceAssociationsPaginator = client.get_paginator("describe_trunk_interface_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTrunkInterfaceAssociationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTrunkInterfaceAssociationsPaginator](./paginators.md#describetrunkinterfaceassociationspaginator)
+3. item: [:material-code-braces: DescribeTrunkInterfaceAssociationsResultTypeDef](./type_defs.md#describetrunkinterfaceassociationsresulttypedef) 
 
 
 ### paginate
@@ -4182,10 +4816,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeVolumeStatusPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeVolumeStatusPaginator = client.get_paginator("describe_volume_status")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeVolumeStatusPaginator = client.get_paginator("describe_volume_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeVolumeStatusResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeVolumeStatusPaginator](./paginators.md#describevolumestatuspaginator)
+3. item: [:material-code-braces: DescribeVolumeStatusResultTypeDef](./type_defs.md#describevolumestatusresulttypedef) 
 
 
 ### paginate
@@ -4229,10 +4869,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeVolumesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeVolumesPaginator = client.get_paginator("describe_volumes")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeVolumesPaginator = client.get_paginator("describe_volumes")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeVolumesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeVolumesPaginator](./paginators.md#describevolumespaginator)
+3. item: [:material-code-braces: DescribeVolumesResultTypeDef](./type_defs.md#describevolumesresulttypedef) 
 
 
 ### paginate
@@ -4276,10 +4922,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeVolumesModificationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeVolumesModificationsPaginator = client.get_paginator("describe_volumes_modifications")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeVolumesModificationsPaginator = client.get_paginator("describe_volumes_modifications")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeVolumesModificationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeVolumesModificationsPaginator](./paginators.md#describevolumesmodificationspaginator)
+3. item: [:material-code-braces: DescribeVolumesModificationsResultTypeDef](./type_defs.md#describevolumesmodificationsresulttypedef) 
 
 
 ### paginate
@@ -4323,10 +4975,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeVpcClassicLinkDnsSupportPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeVpcClassicLinkDnsSupportPaginator = client.get_paginator("describe_vpc_classic_link_dns_support")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeVpcClassicLinkDnsSupportPaginator = client.get_paginator("describe_vpc_classic_link_dns_support")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeVpcClassicLinkDnsSupportResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeVpcClassicLinkDnsSupportPaginator](./paginators.md#describevpcclassiclinkdnssupportpaginator)
+3. item: [:material-code-braces: DescribeVpcClassicLinkDnsSupportResultTypeDef](./type_defs.md#describevpcclassiclinkdnssupportresulttypedef) 
 
 
 ### paginate
@@ -4367,10 +5025,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeVpcEndpointConnectionNotificationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeVpcEndpointConnectionNotificationsPaginator = client.get_paginator("describe_vpc_endpoint_connection_notifications")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeVpcEndpointConnectionNotificationsPaginator = client.get_paginator("describe_vpc_endpoint_connection_notifications")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeVpcEndpointConnectionNotificationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeVpcEndpointConnectionNotificationsPaginator](./paginators.md#describevpcendpointconnectionnotificationspaginator)
+3. item: [:material-code-braces: DescribeVpcEndpointConnectionNotificationsResultTypeDef](./type_defs.md#describevpcendpointconnectionnotificationsresulttypedef) 
 
 
 ### paginate
@@ -4414,10 +5078,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeVpcEndpointConnectionsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeVpcEndpointConnectionsPaginator = client.get_paginator("describe_vpc_endpoint_connections")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeVpcEndpointConnectionsPaginator = client.get_paginator("describe_vpc_endpoint_connections")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeVpcEndpointConnectionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeVpcEndpointConnectionsPaginator](./paginators.md#describevpcendpointconnectionspaginator)
+3. item: [:material-code-braces: DescribeVpcEndpointConnectionsResultTypeDef](./type_defs.md#describevpcendpointconnectionsresulttypedef) 
 
 
 ### paginate
@@ -4460,10 +5130,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeVpcEndpointServiceConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeVpcEndpointServiceConfigurationsPaginator = client.get_paginator("describe_vpc_endpoint_service_configurations")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeVpcEndpointServiceConfigurationsPaginator = client.get_paginator("describe_vpc_endpoint_service_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeVpcEndpointServiceConfigurationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeVpcEndpointServiceConfigurationsPaginator](./paginators.md#describevpcendpointserviceconfigurationspaginator)
+3. item: [:material-code-braces: DescribeVpcEndpointServiceConfigurationsResultTypeDef](./type_defs.md#describevpcendpointserviceconfigurationsresulttypedef) 
 
 
 ### paginate
@@ -4507,10 +5183,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeVpcEndpointServicePermissionsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeVpcEndpointServicePermissionsPaginator = client.get_paginator("describe_vpc_endpoint_service_permissions")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeVpcEndpointServicePermissionsPaginator = client.get_paginator("describe_vpc_endpoint_service_permissions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeVpcEndpointServicePermissionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeVpcEndpointServicePermissionsPaginator](./paginators.md#describevpcendpointservicepermissionspaginator)
+3. item: [:material-code-braces: DescribeVpcEndpointServicePermissionsResultTypeDef](./type_defs.md#describevpcendpointservicepermissionsresulttypedef) 
 
 
 ### paginate
@@ -4554,10 +5236,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeVpcEndpointServicesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeVpcEndpointServicesPaginator = client.get_paginator("describe_vpc_endpoint_services")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeVpcEndpointServicesPaginator = client.get_paginator("describe_vpc_endpoint_services")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeVpcEndpointServicesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeVpcEndpointServicesPaginator](./paginators.md#describevpcendpointservicespaginator)
+3. item: [:material-code-braces: DescribeVpcEndpointServicesResultTypeDef](./type_defs.md#describevpcendpointservicesresulttypedef) 
 
 
 ### paginate
@@ -4601,10 +5289,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeVpcEndpointsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeVpcEndpointsPaginator = client.get_paginator("describe_vpc_endpoints")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeVpcEndpointsPaginator = client.get_paginator("describe_vpc_endpoints")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeVpcEndpointsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeVpcEndpointsPaginator](./paginators.md#describevpcendpointspaginator)
+3. item: [:material-code-braces: DescribeVpcEndpointsResultTypeDef](./type_defs.md#describevpcendpointsresulttypedef) 
 
 
 ### paginate
@@ -4648,10 +5342,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeVpcPeeringConnectionsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeVpcPeeringConnectionsPaginator = client.get_paginator("describe_vpc_peering_connections")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeVpcPeeringConnectionsPaginator = client.get_paginator("describe_vpc_peering_connections")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeVpcPeeringConnectionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeVpcPeeringConnectionsPaginator](./paginators.md#describevpcpeeringconnectionspaginator)
+3. item: [:material-code-braces: DescribeVpcPeeringConnectionsResultTypeDef](./type_defs.md#describevpcpeeringconnectionsresulttypedef) 
 
 
 ### paginate
@@ -4695,10 +5395,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import DescribeVpcsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: DescribeVpcsPaginator = client.get_paginator("describe_vpcs")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: DescribeVpcsPaginator = client.get_paginator("describe_vpcs")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeVpcsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeVpcsPaginator](./paginators.md#describevpcspaginator)
+3. item: [:material-code-braces: DescribeVpcsResultTypeDef](./type_defs.md#describevpcsresulttypedef) 
 
 
 ### paginate
@@ -4742,10 +5448,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import GetAssociatedIpv6PoolCidrsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: GetAssociatedIpv6PoolCidrsPaginator = client.get_paginator("get_associated_ipv6_pool_cidrs")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetAssociatedIpv6PoolCidrsPaginator = client.get_paginator("get_associated_ipv6_pool_cidrs")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetAssociatedIpv6PoolCidrsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetAssociatedIpv6PoolCidrsPaginator](./paginators.md#getassociatedipv6poolcidrspaginator)
+3. item: [:material-code-braces: GetAssociatedIpv6PoolCidrsResultTypeDef](./type_defs.md#getassociatedipv6poolcidrsresulttypedef) 
 
 
 ### paginate
@@ -4787,10 +5499,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import GetGroupsForCapacityReservationPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: GetGroupsForCapacityReservationPaginator = client.get_paginator("get_groups_for_capacity_reservation")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetGroupsForCapacityReservationPaginator = client.get_paginator("get_groups_for_capacity_reservation")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetGroupsForCapacityReservationResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetGroupsForCapacityReservationPaginator](./paginators.md#getgroupsforcapacityreservationpaginator)
+3. item: [:material-code-braces: GetGroupsForCapacityReservationResultTypeDef](./type_defs.md#getgroupsforcapacityreservationresulttypedef) 
 
 
 ### paginate
@@ -4832,10 +5550,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import GetInstanceTypesFromInstanceRequirementsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: GetInstanceTypesFromInstanceRequirementsPaginator = client.get_paginator("get_instance_types_from_instance_requirements")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetInstanceTypesFromInstanceRequirementsPaginator = client.get_paginator("get_instance_types_from_instance_requirements")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetInstanceTypesFromInstanceRequirementsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetInstanceTypesFromInstanceRequirementsPaginator](./paginators.md#getinstancetypesfrominstancerequirementspaginator)
+3. item: [:material-code-braces: GetInstanceTypesFromInstanceRequirementsResultTypeDef](./type_defs.md#getinstancetypesfrominstancerequirementsresulttypedef) 
 
 
 ### paginate
@@ -4884,10 +5608,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import GetIpamAddressHistoryPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: GetIpamAddressHistoryPaginator = client.get_paginator("get_ipam_address_history")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetIpamAddressHistoryPaginator = client.get_paginator("get_ipam_address_history")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetIpamAddressHistoryResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetIpamAddressHistoryPaginator](./paginators.md#getipamaddresshistorypaginator)
+3. item: [:material-code-braces: GetIpamAddressHistoryResultTypeDef](./type_defs.md#getipamaddresshistoryresulttypedef) 
 
 
 ### paginate
@@ -4934,10 +5664,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import GetIpamPoolAllocationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: GetIpamPoolAllocationsPaginator = client.get_paginator("get_ipam_pool_allocations")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetIpamPoolAllocationsPaginator = client.get_paginator("get_ipam_pool_allocations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetIpamPoolAllocationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetIpamPoolAllocationsPaginator](./paginators.md#getipampoolallocationspaginator)
+3. item: [:material-code-braces: GetIpamPoolAllocationsResultTypeDef](./type_defs.md#getipampoolallocationsresulttypedef) 
 
 
 ### paginate
@@ -4982,10 +5718,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import GetIpamPoolCidrsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: GetIpamPoolCidrsPaginator = client.get_paginator("get_ipam_pool_cidrs")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetIpamPoolCidrsPaginator = client.get_paginator("get_ipam_pool_cidrs")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetIpamPoolCidrsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetIpamPoolCidrsPaginator](./paginators.md#getipampoolcidrspaginator)
+3. item: [:material-code-braces: GetIpamPoolCidrsResultTypeDef](./type_defs.md#getipampoolcidrsresulttypedef) 
 
 
 ### paginate
@@ -5029,10 +5771,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import GetIpamResourceCidrsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: GetIpamResourceCidrsPaginator = client.get_paginator("get_ipam_resource_cidrs")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetIpamResourceCidrsPaginator = client.get_paginator("get_ipam_resource_cidrs")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetIpamResourceCidrsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetIpamResourceCidrsPaginator](./paginators.md#getipamresourcecidrspaginator)
+3. item: [:material-code-braces: GetIpamResourceCidrsResultTypeDef](./type_defs.md#getipamresourcecidrsresulttypedef) 
 
 
 ### paginate
@@ -5083,10 +5831,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import GetManagedPrefixListAssociationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: GetManagedPrefixListAssociationsPaginator = client.get_paginator("get_managed_prefix_list_associations")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetManagedPrefixListAssociationsPaginator = client.get_paginator("get_managed_prefix_list_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetManagedPrefixListAssociationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetManagedPrefixListAssociationsPaginator](./paginators.md#getmanagedprefixlistassociationspaginator)
+3. item: [:material-code-braces: GetManagedPrefixListAssociationsResultTypeDef](./type_defs.md#getmanagedprefixlistassociationsresulttypedef) 
 
 
 ### paginate
@@ -5128,10 +5882,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import GetManagedPrefixListEntriesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: GetManagedPrefixListEntriesPaginator = client.get_paginator("get_managed_prefix_list_entries")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetManagedPrefixListEntriesPaginator = client.get_paginator("get_managed_prefix_list_entries")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetManagedPrefixListEntriesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetManagedPrefixListEntriesPaginator](./paginators.md#getmanagedprefixlistentriespaginator)
+3. item: [:material-code-braces: GetManagedPrefixListEntriesResultTypeDef](./type_defs.md#getmanagedprefixlistentriesresulttypedef) 
 
 
 ### paginate
@@ -5174,10 +5934,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import GetSpotPlacementScoresPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: GetSpotPlacementScoresPaginator = client.get_paginator("get_spot_placement_scores")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetSpotPlacementScoresPaginator = client.get_paginator("get_spot_placement_scores")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetSpotPlacementScoresResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetSpotPlacementScoresPaginator](./paginators.md#getspotplacementscorespaginator)
+3. item: [:material-code-braces: GetSpotPlacementScoresResultTypeDef](./type_defs.md#getspotplacementscoresresulttypedef) 
 
 
 ### paginate
@@ -5226,10 +5992,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import GetTransitGatewayAttachmentPropagationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: GetTransitGatewayAttachmentPropagationsPaginator = client.get_paginator("get_transit_gateway_attachment_propagations")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetTransitGatewayAttachmentPropagationsPaginator = client.get_paginator("get_transit_gateway_attachment_propagations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTransitGatewayAttachmentPropagationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetTransitGatewayAttachmentPropagationsPaginator](./paginators.md#gettransitgatewayattachmentpropagationspaginator)
+3. item: [:material-code-braces: GetTransitGatewayAttachmentPropagationsResultTypeDef](./type_defs.md#gettransitgatewayattachmentpropagationsresulttypedef) 
 
 
 ### paginate
@@ -5273,10 +6045,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import GetTransitGatewayMulticastDomainAssociationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: GetTransitGatewayMulticastDomainAssociationsPaginator = client.get_paginator("get_transit_gateway_multicast_domain_associations")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetTransitGatewayMulticastDomainAssociationsPaginator = client.get_paginator("get_transit_gateway_multicast_domain_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTransitGatewayMulticastDomainAssociationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetTransitGatewayMulticastDomainAssociationsPaginator](./paginators.md#gettransitgatewaymulticastdomainassociationspaginator)
+3. item: [:material-code-braces: GetTransitGatewayMulticastDomainAssociationsResultTypeDef](./type_defs.md#gettransitgatewaymulticastdomainassociationsresulttypedef) 
 
 
 ### paginate
@@ -5309,6 +6087,59 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: GetTransitGatewayMulticastDomainAssociationsRequestGetTransitGatewayMulticastDomainAssociationsPaginateTypeDef](./type_defs.md#gettransitgatewaymulticastdomainassociationsrequestgettransitgatewaymulticastdomainassociationspaginatetypedef) 
+## GetTransitGatewayPolicyTableAssociationsPaginator
+
+Type annotations and code completion for `#!python session.create_client("ec2").get_paginator("get_transit_gateway_policy_table_associations")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Paginator.GetTransitGatewayPolicyTableAssociations)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_ec2.paginator import GetTransitGatewayPolicyTableAssociationsPaginator
+
+session = get_session()
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetTransitGatewayPolicyTableAssociationsPaginator = client.get_paginator("get_transit_gateway_policy_table_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTransitGatewayPolicyTableAssociationsResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetTransitGatewayPolicyTableAssociationsPaginator](./paginators.md#gettransitgatewaypolicytableassociationspaginator)
+3. item: [:material-code-braces: GetTransitGatewayPolicyTableAssociationsResultTypeDef](./type_defs.md#gettransitgatewaypolicytableassociationsresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python GetTransitGatewayPolicyTableAssociationsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    TransitGatewayPolicyTableId: str,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    DryRun: bool = ...,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[GetTransitGatewayPolicyTableAssociationsResultTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: GetTransitGatewayPolicyTableAssociationsResultTypeDef](./type_defs.md#gettransitgatewaypolicytableassociationsresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetTransitGatewayPolicyTableAssociationsRequestGetTransitGatewayPolicyTableAssociationsPaginateTypeDef = {  # (1)
+    "TransitGatewayPolicyTableId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: GetTransitGatewayPolicyTableAssociationsRequestGetTransitGatewayPolicyTableAssociationsPaginateTypeDef](./type_defs.md#gettransitgatewaypolicytableassociationsrequestgettransitgatewaypolicytableassociationspaginatetypedef) 
 ## GetTransitGatewayPrefixListReferencesPaginator
 
 Type annotations and code completion for `#!python session.create_client("ec2").get_paginator("get_transit_gateway_prefix_list_references")`.
@@ -5320,10 +6151,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import GetTransitGatewayPrefixListReferencesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: GetTransitGatewayPrefixListReferencesPaginator = client.get_paginator("get_transit_gateway_prefix_list_references")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetTransitGatewayPrefixListReferencesPaginator = client.get_paginator("get_transit_gateway_prefix_list_references")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTransitGatewayPrefixListReferencesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetTransitGatewayPrefixListReferencesPaginator](./paginators.md#gettransitgatewayprefixlistreferencespaginator)
+3. item: [:material-code-braces: GetTransitGatewayPrefixListReferencesResultTypeDef](./type_defs.md#gettransitgatewayprefixlistreferencesresulttypedef) 
 
 
 ### paginate
@@ -5367,10 +6204,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import GetTransitGatewayRouteTableAssociationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: GetTransitGatewayRouteTableAssociationsPaginator = client.get_paginator("get_transit_gateway_route_table_associations")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetTransitGatewayRouteTableAssociationsPaginator = client.get_paginator("get_transit_gateway_route_table_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTransitGatewayRouteTableAssociationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetTransitGatewayRouteTableAssociationsPaginator](./paginators.md#gettransitgatewayroutetableassociationspaginator)
+3. item: [:material-code-braces: GetTransitGatewayRouteTableAssociationsResultTypeDef](./type_defs.md#gettransitgatewayroutetableassociationsresulttypedef) 
 
 
 ### paginate
@@ -5414,10 +6257,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import GetTransitGatewayRouteTablePropagationsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: GetTransitGatewayRouteTablePropagationsPaginator = client.get_paginator("get_transit_gateway_route_table_propagations")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetTransitGatewayRouteTablePropagationsPaginator = client.get_paginator("get_transit_gateway_route_table_propagations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTransitGatewayRouteTablePropagationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetTransitGatewayRouteTablePropagationsPaginator](./paginators.md#gettransitgatewayroutetablepropagationspaginator)
+3. item: [:material-code-braces: GetTransitGatewayRouteTablePropagationsResultTypeDef](./type_defs.md#gettransitgatewayroutetablepropagationsresulttypedef) 
 
 
 ### paginate
@@ -5461,10 +6310,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import GetVpnConnectionDeviceTypesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: GetVpnConnectionDeviceTypesPaginator = client.get_paginator("get_vpn_connection_device_types")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: GetVpnConnectionDeviceTypesPaginator = client.get_paginator("get_vpn_connection_device_types")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetVpnConnectionDeviceTypesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetVpnConnectionDeviceTypesPaginator](./paginators.md#getvpnconnectiondevicetypespaginator)
+3. item: [:material-code-braces: GetVpnConnectionDeviceTypesResultTypeDef](./type_defs.md#getvpnconnectiondevicetypesresulttypedef) 
 
 
 ### paginate
@@ -5505,10 +6360,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import ListImagesInRecycleBinPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: ListImagesInRecycleBinPaginator = client.get_paginator("list_images_in_recycle_bin")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: ListImagesInRecycleBinPaginator = client.get_paginator("list_images_in_recycle_bin")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListImagesInRecycleBinResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [ListImagesInRecycleBinPaginator](./paginators.md#listimagesinrecyclebinpaginator)
+3. item: [:material-code-braces: ListImagesInRecycleBinResultTypeDef](./type_defs.md#listimagesinrecyclebinresulttypedef) 
 
 
 ### paginate
@@ -5550,10 +6411,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import ListSnapshotsInRecycleBinPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: ListSnapshotsInRecycleBinPaginator = client.get_paginator("list_snapshots_in_recycle_bin")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: ListSnapshotsInRecycleBinPaginator = client.get_paginator("list_snapshots_in_recycle_bin")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSnapshotsInRecycleBinResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [ListSnapshotsInRecycleBinPaginator](./paginators.md#listsnapshotsinrecyclebinpaginator)
+3. item: [:material-code-braces: ListSnapshotsInRecycleBinResultTypeDef](./type_defs.md#listsnapshotsinrecyclebinresulttypedef) 
 
 
 ### paginate
@@ -5595,10 +6462,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import SearchLocalGatewayRoutesPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: SearchLocalGatewayRoutesPaginator = client.get_paginator("search_local_gateway_routes")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: SearchLocalGatewayRoutesPaginator = client.get_paginator("search_local_gateway_routes")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchLocalGatewayRoutesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [SearchLocalGatewayRoutesPaginator](./paginators.md#searchlocalgatewayroutespaginator)
+3. item: [:material-code-braces: SearchLocalGatewayRoutesResultTypeDef](./type_defs.md#searchlocalgatewayroutesresulttypedef) 
 
 
 ### paginate
@@ -5642,10 +6515,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ec2.paginator import SearchTransitGatewayMulticastGroupsPaginator
 
 session = get_session()
-async with session.create_client("ec2") as client:
-    client: EC2Client
-    paginator: SearchTransitGatewayMulticastGroupsPaginator = client.get_paginator("search_transit_gateway_multicast_groups")
+async with session.create_client("ec2") as client:  # (1)
+    paginator: SearchTransitGatewayMulticastGroupsPaginator = client.get_paginator("search_transit_gateway_multicast_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchTransitGatewayMulticastGroupsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [SearchTransitGatewayMulticastGroupsPaginator](./paginators.md#searchtransitgatewaymulticastgroupspaginator)
+3. item: [:material-code-braces: SearchTransitGatewayMulticastGroupsResultTypeDef](./type_defs.md#searchtransitgatewaymulticastgroupsresulttypedef) 
 
 
 ### paginate

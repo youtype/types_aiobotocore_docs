@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog_appregistry.paginator import ListApplicationsPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog-appregistry") as client:
-    client: AppRegistryClient
-    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")
+async with session.create_client("servicecatalog-appregistry") as client:  # (1)
+    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListApplicationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppRegistryClient](./client.md)
+2. paginator: [ListApplicationsPaginator](./paginators.md#listapplicationspaginator)
+3. item: [:material-code-braces: ListApplicationsResponseTypeDef](./type_defs.md#listapplicationsresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog_appregistry.paginator import ListAssociatedAttributeGroupsPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog-appregistry") as client:
-    client: AppRegistryClient
-    paginator: ListAssociatedAttributeGroupsPaginator = client.get_paginator("list_associated_attribute_groups")
+async with session.create_client("servicecatalog-appregistry") as client:  # (1)
+    paginator: ListAssociatedAttributeGroupsPaginator = client.get_paginator("list_associated_attribute_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssociatedAttributeGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppRegistryClient](./client.md)
+2. paginator: [ListAssociatedAttributeGroupsPaginator](./paginators.md#listassociatedattributegroupspaginator)
+3. item: [:material-code-braces: ListAssociatedAttributeGroupsResponseTypeDef](./type_defs.md#listassociatedattributegroupsresponsetypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog_appregistry.paginator import ListAssociatedResourcesPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog-appregistry") as client:
-    client: AppRegistryClient
-    paginator: ListAssociatedResourcesPaginator = client.get_paginator("list_associated_resources")
+async with session.create_client("servicecatalog-appregistry") as client:  # (1)
+    paginator: ListAssociatedResourcesPaginator = client.get_paginator("list_associated_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssociatedResourcesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppRegistryClient](./client.md)
+2. paginator: [ListAssociatedResourcesPaginator](./paginators.md#listassociatedresourcespaginator)
+3. item: [:material-code-braces: ListAssociatedResourcesResponseTypeDef](./type_defs.md#listassociatedresourcesresponsetypedef) 
 
 
 ### paginate
@@ -149,10 +167,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog_appregistry.paginator import ListAttributeGroupsPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog-appregistry") as client:
-    client: AppRegistryClient
-    paginator: ListAttributeGroupsPaginator = client.get_paginator("list_attribute_groups")
+async with session.create_client("servicecatalog-appregistry") as client:  # (1)
+    paginator: ListAttributeGroupsPaginator = client.get_paginator("list_attribute_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAttributeGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppRegistryClient](./client.md)
+2. paginator: [ListAttributeGroupsPaginator](./paginators.md#listattributegroupspaginator)
+3. item: [:material-code-braces: ListAttributeGroupsResponseTypeDef](./type_defs.md#listattributegroupsresponsetypedef) 
 
 
 ### paginate
@@ -192,10 +216,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog_appregistry.paginator import ListAttributeGroupsForApplicationPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog-appregistry") as client:
-    client: AppRegistryClient
-    paginator: ListAttributeGroupsForApplicationPaginator = client.get_paginator("list_attribute_groups_for_application")
+async with session.create_client("servicecatalog-appregistry") as client:  # (1)
+    paginator: ListAttributeGroupsForApplicationPaginator = client.get_paginator("list_attribute_groups_for_application")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAttributeGroupsForApplicationResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AppRegistryClient](./client.md)
+2. paginator: [ListAttributeGroupsForApplicationPaginator](./paginators.md#listattributegroupsforapplicationpaginator)
+3. item: [:material-code-braces: ListAttributeGroupsForApplicationResponseTypeDef](./type_defs.md#listattributegroupsforapplicationresponsetypedef) 
 
 
 ### paginate

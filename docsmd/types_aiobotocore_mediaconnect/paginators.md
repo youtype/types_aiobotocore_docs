@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediaconnect.paginator import ListEntitlementsPaginator
 
 session = get_session()
-async with session.create_client("mediaconnect") as client:
-    client: MediaConnectClient
-    paginator: ListEntitlementsPaginator = client.get_paginator("list_entitlements")
+async with session.create_client("mediaconnect") as client:  # (1)
+    paginator: ListEntitlementsPaginator = client.get_paginator("list_entitlements")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEntitlementsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaConnectClient](./client.md)
+2. paginator: [ListEntitlementsPaginator](./paginators.md#listentitlementspaginator)
+3. item: [:material-code-braces: ListEntitlementsResponseTypeDef](./type_defs.md#listentitlementsresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediaconnect.paginator import ListFlowsPaginator
 
 session = get_session()
-async with session.create_client("mediaconnect") as client:
-    client: MediaConnectClient
-    paginator: ListFlowsPaginator = client.get_paginator("list_flows")
+async with session.create_client("mediaconnect") as client:  # (1)
+    paginator: ListFlowsPaginator = client.get_paginator("list_flows")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFlowsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaConnectClient](./client.md)
+2. paginator: [ListFlowsPaginator](./paginators.md#listflowspaginator)
+3. item: [:material-code-braces: ListFlowsResponseTypeDef](./type_defs.md#listflowsresponsetypedef) 
 
 
 ### paginate
@@ -104,10 +116,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediaconnect.paginator import ListOfferingsPaginator
 
 session = get_session()
-async with session.create_client("mediaconnect") as client:
-    client: MediaConnectClient
-    paginator: ListOfferingsPaginator = client.get_paginator("list_offerings")
+async with session.create_client("mediaconnect") as client:  # (1)
+    paginator: ListOfferingsPaginator = client.get_paginator("list_offerings")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListOfferingsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaConnectClient](./client.md)
+2. paginator: [ListOfferingsPaginator](./paginators.md#listofferingspaginator)
+3. item: [:material-code-braces: ListOfferingsResponseTypeDef](./type_defs.md#listofferingsresponsetypedef) 
 
 
 ### paginate
@@ -147,10 +165,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediaconnect.paginator import ListReservationsPaginator
 
 session = get_session()
-async with session.create_client("mediaconnect") as client:
-    client: MediaConnectClient
-    paginator: ListReservationsPaginator = client.get_paginator("list_reservations")
+async with session.create_client("mediaconnect") as client:  # (1)
+    paginator: ListReservationsPaginator = client.get_paginator("list_reservations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListReservationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaConnectClient](./client.md)
+2. paginator: [ListReservationsPaginator](./paginators.md#listreservationspaginator)
+3. item: [:material-code-braces: ListReservationsResponseTypeDef](./type_defs.md#listreservationsresponsetypedef) 
 
 
 ### paginate

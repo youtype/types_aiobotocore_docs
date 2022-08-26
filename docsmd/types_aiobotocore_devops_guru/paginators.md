@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devops_guru.paginator import DescribeOrganizationResourceCollectionHealthPaginator
 
 session = get_session()
-async with session.create_client("devops-guru") as client:
-    client: DevOpsGuruClient
-    paginator: DescribeOrganizationResourceCollectionHealthPaginator = client.get_paginator("describe_organization_resource_collection_health")
+async with session.create_client("devops-guru") as client:  # (1)
+    paginator: DescribeOrganizationResourceCollectionHealthPaginator = client.get_paginator("describe_organization_resource_collection_health")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeOrganizationResourceCollectionHealthResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DevOpsGuruClient](./client.md)
+2. paginator: [DescribeOrganizationResourceCollectionHealthPaginator](./paginators.md#describeorganizationresourcecollectionhealthpaginator)
+3. item: [:material-code-braces: DescribeOrganizationResourceCollectionHealthResponseTypeDef](./type_defs.md#describeorganizationresourcecollectionhealthresponsetypedef) 
 
 
 ### paginate
@@ -66,10 +72,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devops_guru.paginator import DescribeResourceCollectionHealthPaginator
 
 session = get_session()
-async with session.create_client("devops-guru") as client:
-    client: DevOpsGuruClient
-    paginator: DescribeResourceCollectionHealthPaginator = client.get_paginator("describe_resource_collection_health")
+async with session.create_client("devops-guru") as client:  # (1)
+    paginator: DescribeResourceCollectionHealthPaginator = client.get_paginator("describe_resource_collection_health")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeResourceCollectionHealthResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DevOpsGuruClient](./client.md)
+2. paginator: [DescribeResourceCollectionHealthPaginator](./paginators.md#describeresourcecollectionhealthpaginator)
+3. item: [:material-code-braces: DescribeResourceCollectionHealthResponseTypeDef](./type_defs.md#describeresourcecollectionhealthresponsetypedef) 
 
 
 ### paginate
@@ -111,10 +123,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devops_guru.paginator import GetCostEstimationPaginator
 
 session = get_session()
-async with session.create_client("devops-guru") as client:
-    client: DevOpsGuruClient
-    paginator: GetCostEstimationPaginator = client.get_paginator("get_cost_estimation")
+async with session.create_client("devops-guru") as client:  # (1)
+    paginator: GetCostEstimationPaginator = client.get_paginator("get_cost_estimation")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetCostEstimationResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DevOpsGuruClient](./client.md)
+2. paginator: [GetCostEstimationPaginator](./paginators.md#getcostestimationpaginator)
+3. item: [:material-code-braces: GetCostEstimationResponseTypeDef](./type_defs.md#getcostestimationresponsetypedef) 
 
 
 ### paginate
@@ -154,10 +172,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devops_guru.paginator import GetResourceCollectionPaginator
 
 session = get_session()
-async with session.create_client("devops-guru") as client:
-    client: DevOpsGuruClient
-    paginator: GetResourceCollectionPaginator = client.get_paginator("get_resource_collection")
+async with session.create_client("devops-guru") as client:  # (1)
+    paginator: GetResourceCollectionPaginator = client.get_paginator("get_resource_collection")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetResourceCollectionResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DevOpsGuruClient](./client.md)
+2. paginator: [GetResourceCollectionPaginator](./paginators.md#getresourcecollectionpaginator)
+3. item: [:material-code-braces: GetResourceCollectionResponseTypeDef](./type_defs.md#getresourcecollectionresponsetypedef) 
 
 
 ### paginate
@@ -199,10 +223,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devops_guru.paginator import ListAnomaliesForInsightPaginator
 
 session = get_session()
-async with session.create_client("devops-guru") as client:
-    client: DevOpsGuruClient
-    paginator: ListAnomaliesForInsightPaginator = client.get_paginator("list_anomalies_for_insight")
+async with session.create_client("devops-guru") as client:  # (1)
+    paginator: ListAnomaliesForInsightPaginator = client.get_paginator("list_anomalies_for_insight")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAnomaliesForInsightResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DevOpsGuruClient](./client.md)
+2. paginator: [ListAnomaliesForInsightPaginator](./paginators.md#listanomaliesforinsightpaginator)
+3. item: [:material-code-braces: ListAnomaliesForInsightResponseTypeDef](./type_defs.md#listanomaliesforinsightresponsetypedef) 
 
 
 ### paginate
@@ -235,6 +265,56 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListAnomaliesForInsightRequestListAnomaliesForInsightPaginateTypeDef](./type_defs.md#listanomaliesforinsightrequestlistanomaliesforinsightpaginatetypedef) 
+## ListAnomalousLogGroupsPaginator
+
+Type annotations and code completion for `#!python session.create_client("devops-guru").get_paginator("list_anomalous_log_groups")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Paginator.ListAnomalousLogGroups)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_devops_guru.paginator import ListAnomalousLogGroupsPaginator
+
+session = get_session()
+async with session.create_client("devops-guru") as client:  # (1)
+    paginator: ListAnomalousLogGroupsPaginator = client.get_paginator("list_anomalous_log_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAnomalousLogGroupsResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [DevOpsGuruClient](./client.md)
+2. paginator: [ListAnomalousLogGroupsPaginator](./paginators.md#listanomalousloggroupspaginator)
+3. item: [:material-code-braces: ListAnomalousLogGroupsResponseTypeDef](./type_defs.md#listanomalousloggroupsresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListAnomalousLogGroupsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    InsightId: str,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListAnomalousLogGroupsResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListAnomalousLogGroupsResponseTypeDef](./type_defs.md#listanomalousloggroupsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListAnomalousLogGroupsRequestListAnomalousLogGroupsPaginateTypeDef = {  # (1)
+    "InsightId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListAnomalousLogGroupsRequestListAnomalousLogGroupsPaginateTypeDef](./type_defs.md#listanomalousloggroupsrequestlistanomalousloggroupspaginatetypedef) 
 ## ListEventsPaginator
 
 Type annotations and code completion for `#!python session.create_client("devops-guru").get_paginator("list_events")`.
@@ -246,10 +326,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devops_guru.paginator import ListEventsPaginator
 
 session = get_session()
-async with session.create_client("devops-guru") as client:
-    client: DevOpsGuruClient
-    paginator: ListEventsPaginator = client.get_paginator("list_events")
+async with session.create_client("devops-guru") as client:  # (1)
+    paginator: ListEventsPaginator = client.get_paginator("list_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEventsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DevOpsGuruClient](./client.md)
+2. paginator: [ListEventsPaginator](./paginators.md#listeventspaginator)
+3. item: [:material-code-braces: ListEventsResponseTypeDef](./type_defs.md#listeventsresponsetypedef) 
 
 
 ### paginate
@@ -292,10 +378,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devops_guru.paginator import ListInsightsPaginator
 
 session = get_session()
-async with session.create_client("devops-guru") as client:
-    client: DevOpsGuruClient
-    paginator: ListInsightsPaginator = client.get_paginator("list_insights")
+async with session.create_client("devops-guru") as client:  # (1)
+    paginator: ListInsightsPaginator = client.get_paginator("list_insights")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListInsightsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DevOpsGuruClient](./client.md)
+2. paginator: [ListInsightsPaginator](./paginators.md#listinsightspaginator)
+3. item: [:material-code-braces: ListInsightsResponseTypeDef](./type_defs.md#listinsightsresponsetypedef) 
 
 
 ### paginate
@@ -326,6 +418,57 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListInsightsRequestListInsightsPaginateTypeDef](./type_defs.md#listinsightsrequestlistinsightspaginatetypedef) 
+## ListMonitoredResourcesPaginator
+
+Type annotations and code completion for `#!python session.create_client("devops-guru").get_paginator("list_monitored_resources")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Paginator.ListMonitoredResources)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_devops_guru.paginator import ListMonitoredResourcesPaginator
+
+session = get_session()
+async with session.create_client("devops-guru") as client:  # (1)
+    paginator: ListMonitoredResourcesPaginator = client.get_paginator("list_monitored_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMonitoredResourcesResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [DevOpsGuruClient](./client.md)
+2. paginator: [ListMonitoredResourcesPaginator](./paginators.md#listmonitoredresourcespaginator)
+3. item: [:material-code-braces: ListMonitoredResourcesResponseTypeDef](./type_defs.md#listmonitoredresourcesresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListMonitoredResourcesPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    Filters: ListMonitoredResourcesFiltersTypeDef,  # (1)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[ListMonitoredResourcesResponseTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: ListMonitoredResourcesFiltersTypeDef](./type_defs.md#listmonitoredresourcesfilterstypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: ListMonitoredResourcesResponseTypeDef](./type_defs.md#listmonitoredresourcesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListMonitoredResourcesRequestListMonitoredResourcesPaginateTypeDef = {  # (1)
+    "Filters": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListMonitoredResourcesRequestListMonitoredResourcesPaginateTypeDef](./type_defs.md#listmonitoredresourcesrequestlistmonitoredresourcespaginatetypedef) 
 ## ListNotificationChannelsPaginator
 
 Type annotations and code completion for `#!python session.create_client("devops-guru").get_paginator("list_notification_channels")`.
@@ -337,10 +480,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devops_guru.paginator import ListNotificationChannelsPaginator
 
 session = get_session()
-async with session.create_client("devops-guru") as client:
-    client: DevOpsGuruClient
-    paginator: ListNotificationChannelsPaginator = client.get_paginator("list_notification_channels")
+async with session.create_client("devops-guru") as client:  # (1)
+    paginator: ListNotificationChannelsPaginator = client.get_paginator("list_notification_channels")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListNotificationChannelsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DevOpsGuruClient](./client.md)
+2. paginator: [ListNotificationChannelsPaginator](./paginators.md#listnotificationchannelspaginator)
+3. item: [:material-code-braces: ListNotificationChannelsResponseTypeDef](./type_defs.md#listnotificationchannelsresponsetypedef) 
 
 
 ### paginate
@@ -380,10 +529,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devops_guru.paginator import ListOrganizationInsightsPaginator
 
 session = get_session()
-async with session.create_client("devops-guru") as client:
-    client: DevOpsGuruClient
-    paginator: ListOrganizationInsightsPaginator = client.get_paginator("list_organization_insights")
+async with session.create_client("devops-guru") as client:  # (1)
+    paginator: ListOrganizationInsightsPaginator = client.get_paginator("list_organization_insights")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListOrganizationInsightsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DevOpsGuruClient](./client.md)
+2. paginator: [ListOrganizationInsightsPaginator](./paginators.md#listorganizationinsightspaginator)
+3. item: [:material-code-braces: ListOrganizationInsightsResponseTypeDef](./type_defs.md#listorganizationinsightsresponsetypedef) 
 
 
 ### paginate
@@ -427,10 +582,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devops_guru.paginator import ListRecommendationsPaginator
 
 session = get_session()
-async with session.create_client("devops-guru") as client:
-    client: DevOpsGuruClient
-    paginator: ListRecommendationsPaginator = client.get_paginator("list_recommendations")
+async with session.create_client("devops-guru") as client:  # (1)
+    paginator: ListRecommendationsPaginator = client.get_paginator("list_recommendations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRecommendationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DevOpsGuruClient](./client.md)
+2. paginator: [ListRecommendationsPaginator](./paginators.md#listrecommendationspaginator)
+3. item: [:material-code-braces: ListRecommendationsResponseTypeDef](./type_defs.md#listrecommendationsresponsetypedef) 
 
 
 ### paginate
@@ -474,10 +635,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devops_guru.paginator import SearchInsightsPaginator
 
 session = get_session()
-async with session.create_client("devops-guru") as client:
-    client: DevOpsGuruClient
-    paginator: SearchInsightsPaginator = client.get_paginator("search_insights")
+async with session.create_client("devops-guru") as client:  # (1)
+    paginator: SearchInsightsPaginator = client.get_paginator("search_insights")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchInsightsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DevOpsGuruClient](./client.md)
+2. paginator: [SearchInsightsPaginator](./paginators.md#searchinsightspaginator)
+3. item: [:material-code-braces: SearchInsightsResponseTypeDef](./type_defs.md#searchinsightsresponsetypedef) 
 
 
 ### paginate
@@ -524,10 +691,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devops_guru.paginator import SearchOrganizationInsightsPaginator
 
 session = get_session()
-async with session.create_client("devops-guru") as client:
-    client: DevOpsGuruClient
-    paginator: SearchOrganizationInsightsPaginator = client.get_paginator("search_organization_insights")
+async with session.create_client("devops-guru") as client:  # (1)
+    paginator: SearchOrganizationInsightsPaginator = client.get_paginator("search_organization_insights")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchOrganizationInsightsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DevOpsGuruClient](./client.md)
+2. paginator: [SearchOrganizationInsightsPaginator](./paginators.md#searchorganizationinsightspaginator)
+3. item: [:material-code-braces: SearchOrganizationInsightsResponseTypeDef](./type_defs.md#searchorganizationinsightsresponsetypedef) 
 
 
 ### paginate

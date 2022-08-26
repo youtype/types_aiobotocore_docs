@@ -60,6 +60,22 @@ AssignmentStatusType = Literal[
     "ENABLED",
 ]
 ```
+## AuthenticationMethodOptionType
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.literals import AuthenticationMethodOptionType
+
+def get_value() -> AuthenticationMethodOptionType:
+    return "ACTIVE_DIRECTORY"
+```
+
+```python title="Definition"
+AuthenticationMethodOptionType = Literal[
+    "ACTIVE_DIRECTORY",
+    "IAM_AND_QUICKSIGHT",
+    "IAM_ONLY",
+]
+```
 ## ColumnDataTypeType
 
 ```python title="Usage Example"
@@ -245,6 +261,7 @@ def get_value() -> EditionType:
 ```python title="Definition"
 EditionType = Literal[
     "ENTERPRISE",
+    "ENTERPRISE_AND_Q",
     "STANDARD",
 ]
 ```
@@ -1020,6 +1037,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -1165,6 +1183,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -1218,6 +1237,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -1228,11 +1248,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -1278,6 +1300,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

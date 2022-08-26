@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_s3.paginator import ListMultipartUploadsPaginator
 
 session = get_session()
-async with session.create_client("s3") as client:
-    client: S3Client
-    paginator: ListMultipartUploadsPaginator = client.get_paginator("list_multipart_uploads")
+async with session.create_client("s3") as client:  # (1)
+    paginator: ListMultipartUploadsPaginator = client.get_paginator("list_multipart_uploads")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMultipartUploadsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [S3Client](./client.md)
+2. paginator: [ListMultipartUploadsPaginator](./paginators.md#listmultipartuploadspaginator)
+3. item: [:material-code-braces: ListMultipartUploadsOutputTypeDef](./type_defs.md#listmultipartuploadsoutputtypedef) 
 
 
 ### paginate
@@ -67,10 +73,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_s3.paginator import ListObjectVersionsPaginator
 
 session = get_session()
-async with session.create_client("s3") as client:
-    client: S3Client
-    paginator: ListObjectVersionsPaginator = client.get_paginator("list_object_versions")
+async with session.create_client("s3") as client:  # (1)
+    paginator: ListObjectVersionsPaginator = client.get_paginator("list_object_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListObjectVersionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [S3Client](./client.md)
+2. paginator: [ListObjectVersionsPaginator](./paginators.md#listobjectversionspaginator)
+3. item: [:material-code-braces: ListObjectVersionsOutputTypeDef](./type_defs.md#listobjectversionsoutputtypedef) 
 
 
 ### paginate
@@ -116,10 +128,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_s3.paginator import ListObjectsPaginator
 
 session = get_session()
-async with session.create_client("s3") as client:
-    client: S3Client
-    paginator: ListObjectsPaginator = client.get_paginator("list_objects")
+async with session.create_client("s3") as client:  # (1)
+    paginator: ListObjectsPaginator = client.get_paginator("list_objects")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListObjectsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [S3Client](./client.md)
+2. paginator: [ListObjectsPaginator](./paginators.md#listobjectspaginator)
+3. item: [:material-code-braces: ListObjectsOutputTypeDef](./type_defs.md#listobjectsoutputtypedef) 
 
 
 ### paginate
@@ -167,10 +185,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_s3.paginator import ListObjectsV2Paginator
 
 session = get_session()
-async with session.create_client("s3") as client:
-    client: S3Client
-    paginator: ListObjectsV2Paginator = client.get_paginator("list_objects_v2")
+async with session.create_client("s3") as client:  # (1)
+    paginator: ListObjectsV2Paginator = client.get_paginator("list_objects_v2")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListObjectsV2OutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [S3Client](./client.md)
+2. paginator: [ListObjectsV2Paginator](./paginators.md#listobjectsv2paginator)
+3. item: [:material-code-braces: ListObjectsV2OutputTypeDef](./type_defs.md#listobjectsv2outputtypedef) 
 
 
 ### paginate
@@ -220,10 +244,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_s3.paginator import ListPartsPaginator
 
 session = get_session()
-async with session.create_client("s3") as client:
-    client: S3Client
-    paginator: ListPartsPaginator = client.get_paginator("list_parts")
+async with session.create_client("s3") as client:  # (1)
+    paginator: ListPartsPaginator = client.get_paginator("list_parts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPartsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [S3Client](./client.md)
+2. paginator: [ListPartsPaginator](./paginators.md#listpartspaginator)
+3. item: [:material-code-braces: ListPartsOutputTypeDef](./type_defs.md#listpartsoutputtypedef) 
 
 
 ### paginate

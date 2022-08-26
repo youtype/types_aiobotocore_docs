@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_rum.paginator import GetAppMonitorDataPaginator
 
 session = get_session()
-async with session.create_client("rum") as client:
-    client: CloudWatchRUMClient
-    paginator: GetAppMonitorDataPaginator = client.get_paginator("get_app_monitor_data")
+async with session.create_client("rum") as client:  # (1)
+    paginator: GetAppMonitorDataPaginator = client.get_paginator("get_app_monitor_data")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetAppMonitorDataResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchRUMClient](./client.md)
+2. paginator: [GetAppMonitorDataPaginator](./paginators.md#getappmonitordatapaginator)
+3. item: [:material-code-braces: GetAppMonitorDataResponseTypeDef](./type_defs.md#getappmonitordataresponsetypedef) 
 
 
 ### paginate
@@ -67,10 +73,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_rum.paginator import ListAppMonitorsPaginator
 
 session = get_session()
-async with session.create_client("rum") as client:
-    client: CloudWatchRUMClient
-    paginator: ListAppMonitorsPaginator = client.get_paginator("list_app_monitors")
+async with session.create_client("rum") as client:  # (1)
+    paginator: ListAppMonitorsPaginator = client.get_paginator("list_app_monitors")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAppMonitorsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchRUMClient](./client.md)
+2. paginator: [ListAppMonitorsPaginator](./paginators.md#listappmonitorspaginator)
+3. item: [:material-code-braces: ListAppMonitorsResponseTypeDef](./type_defs.md#listappmonitorsresponsetypedef) 
 
 
 ### paginate

@@ -501,6 +501,40 @@ class ConformancePackComplianceFiltersTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: ConformancePackComplianceTypeType](./literals.md#conformancepackcompliancetypetype) 
+## ConformancePackComplianceScoreTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_config.type_defs import ConformancePackComplianceScoreTypeDef
+
+def get_value() -> ConformancePackComplianceScoreTypeDef:
+    return {
+        "Score": ...,
+    }
+```
+
+```python title="Definition"
+class ConformancePackComplianceScoreTypeDef(TypedDict):
+    Score: NotRequired[str],
+    ConformancePackName: NotRequired[str],
+    LastUpdatedTime: NotRequired[datetime],
+```
+
+## ConformancePackComplianceScoresFiltersTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_config.type_defs import ConformancePackComplianceScoresFiltersTypeDef
+
+def get_value() -> ConformancePackComplianceScoresFiltersTypeDef:
+    return {
+        "ConformancePackNames": ...,
+    }
+```
+
+```python title="Definition"
+class ConformancePackComplianceScoresFiltersTypeDef(TypedDict):
+    ConformancePackNames: Sequence[str],
+```
+
 ## ConformancePackComplianceSummaryTypeDef
 
 ```python title="Usage Example"
@@ -536,6 +570,23 @@ def get_value() -> ConformancePackInputParameterTypeDef:
 class ConformancePackInputParameterTypeDef(TypedDict):
     ParameterName: str,
     ParameterValue: str,
+```
+
+## TemplateSSMDocumentDetailsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_config.type_defs import TemplateSSMDocumentDetailsTypeDef
+
+def get_value() -> TemplateSSMDocumentDetailsTypeDef:
+    return {
+        "DocumentName": ...,
+    }
+```
+
+```python title="Definition"
+class TemplateSSMDocumentDetailsTypeDef(TypedDict):
+    DocumentName: str,
+    DocumentVersion: NotRequired[str],
 ```
 
 ## ConformancePackEvaluationFiltersTypeDef
@@ -3015,6 +3066,51 @@ class DescribeConformancePackComplianceRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ConformancePackComplianceFiltersTypeDef](./type_defs.md#conformancepackcompliancefilterstypedef) 
+## ListConformancePackComplianceScoresResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_config.type_defs import ListConformancePackComplianceScoresResponseTypeDef
+
+def get_value() -> ListConformancePackComplianceScoresResponseTypeDef:
+    return {
+        "NextToken": ...,
+        "ConformancePackComplianceScores": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListConformancePackComplianceScoresResponseTypeDef(TypedDict):
+    NextToken: str,
+    ConformancePackComplianceScores: List[ConformancePackComplianceScoreTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: ConformancePackComplianceScoreTypeDef](./type_defs.md#conformancepackcompliancescoretypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ListConformancePackComplianceScoresRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_config.type_defs import ListConformancePackComplianceScoresRequestRequestTypeDef
+
+def get_value() -> ListConformancePackComplianceScoresRequestRequestTypeDef:
+    return {
+        "Filters": ...,
+    }
+```
+
+```python title="Definition"
+class ListConformancePackComplianceScoresRequestRequestTypeDef(TypedDict):
+    Filters: NotRequired[ConformancePackComplianceScoresFiltersTypeDef],  # (1)
+    SortOrder: NotRequired[SortOrderType],  # (2)
+    SortBy: NotRequired[SortByType],  # (3)
+    Limit: NotRequired[int],
+    NextToken: NotRequired[str],
+```
+
+1. See [:material-code-braces: ConformancePackComplianceScoresFiltersTypeDef](./type_defs.md#conformancepackcompliancescoresfilterstypedef) 
+2. See [:material-code-brackets: SortOrderType](./literals.md#sortordertype) 
+3. See [:material-code-brackets: SortByType](./literals.md#sortbytype) 
 ## GetConformancePackComplianceSummaryResponseTypeDef
 
 ```python title="Usage Example"
@@ -3037,32 +3133,6 @@ class GetConformancePackComplianceSummaryResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: ConformancePackComplianceSummaryTypeDef](./type_defs.md#conformancepackcompliancesummarytypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## ConformancePackDetailTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_config.type_defs import ConformancePackDetailTypeDef
-
-def get_value() -> ConformancePackDetailTypeDef:
-    return {
-        "ConformancePackName": ...,
-        "ConformancePackArn": ...,
-        "ConformancePackId": ...,
-    }
-```
-
-```python title="Definition"
-class ConformancePackDetailTypeDef(TypedDict):
-    ConformancePackName: str,
-    ConformancePackArn: str,
-    ConformancePackId: str,
-    DeliveryS3Bucket: NotRequired[str],
-    DeliveryS3KeyPrefix: NotRequired[str],
-    ConformancePackInputParameters: NotRequired[List[ConformancePackInputParameterTypeDef]],  # (1)
-    LastUpdateRequestedTime: NotRequired[datetime],
-    CreatedBy: NotRequired[str],
-```
-
-1. See [:material-code-braces: ConformancePackInputParameterTypeDef](./type_defs.md#conformancepackinputparametertypedef) 
 ## OrganizationConformancePackTypeDef
 
 ```python title="Usage Example"
@@ -3085,28 +3155,6 @@ class OrganizationConformancePackTypeDef(TypedDict):
     DeliveryS3KeyPrefix: NotRequired[str],
     ConformancePackInputParameters: NotRequired[List[ConformancePackInputParameterTypeDef]],  # (1)
     ExcludedAccounts: NotRequired[List[str]],
-```
-
-1. See [:material-code-braces: ConformancePackInputParameterTypeDef](./type_defs.md#conformancepackinputparametertypedef) 
-## PutConformancePackRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_config.type_defs import PutConformancePackRequestRequestTypeDef
-
-def get_value() -> PutConformancePackRequestRequestTypeDef:
-    return {
-        "ConformancePackName": ...,
-    }
-```
-
-```python title="Definition"
-class PutConformancePackRequestRequestTypeDef(TypedDict):
-    ConformancePackName: str,
-    TemplateS3Uri: NotRequired[str],
-    TemplateBody: NotRequired[str],
-    DeliveryS3Bucket: NotRequired[str],
-    DeliveryS3KeyPrefix: NotRequired[str],
-    ConformancePackInputParameters: NotRequired[Sequence[ConformancePackInputParameterTypeDef]],  # (1)
 ```
 
 1. See [:material-code-braces: ConformancePackInputParameterTypeDef](./type_defs.md#conformancepackinputparametertypedef) 
@@ -3133,6 +3181,58 @@ class PutOrganizationConformancePackRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ConformancePackInputParameterTypeDef](./type_defs.md#conformancepackinputparametertypedef) 
+## ConformancePackDetailTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_config.type_defs import ConformancePackDetailTypeDef
+
+def get_value() -> ConformancePackDetailTypeDef:
+    return {
+        "ConformancePackName": ...,
+        "ConformancePackArn": ...,
+        "ConformancePackId": ...,
+    }
+```
+
+```python title="Definition"
+class ConformancePackDetailTypeDef(TypedDict):
+    ConformancePackName: str,
+    ConformancePackArn: str,
+    ConformancePackId: str,
+    DeliveryS3Bucket: NotRequired[str],
+    DeliveryS3KeyPrefix: NotRequired[str],
+    ConformancePackInputParameters: NotRequired[List[ConformancePackInputParameterTypeDef]],  # (1)
+    LastUpdateRequestedTime: NotRequired[datetime],
+    CreatedBy: NotRequired[str],
+    TemplateSSMDocumentDetails: NotRequired[TemplateSSMDocumentDetailsTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: ConformancePackInputParameterTypeDef](./type_defs.md#conformancepackinputparametertypedef) 
+2. See [:material-code-braces: TemplateSSMDocumentDetailsTypeDef](./type_defs.md#templatessmdocumentdetailstypedef) 
+## PutConformancePackRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_config.type_defs import PutConformancePackRequestRequestTypeDef
+
+def get_value() -> PutConformancePackRequestRequestTypeDef:
+    return {
+        "ConformancePackName": ...,
+    }
+```
+
+```python title="Definition"
+class PutConformancePackRequestRequestTypeDef(TypedDict):
+    ConformancePackName: str,
+    TemplateS3Uri: NotRequired[str],
+    TemplateBody: NotRequired[str],
+    DeliveryS3Bucket: NotRequired[str],
+    DeliveryS3KeyPrefix: NotRequired[str],
+    ConformancePackInputParameters: NotRequired[Sequence[ConformancePackInputParameterTypeDef]],  # (1)
+    TemplateSSMDocumentDetails: NotRequired[TemplateSSMDocumentDetailsTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: ConformancePackInputParameterTypeDef](./type_defs.md#conformancepackinputparametertypedef) 
+2. See [:material-code-braces: TemplateSSMDocumentDetailsTypeDef](./type_defs.md#templatessmdocumentdetailstypedef) 
 ## GetConformancePackComplianceDetailsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -4918,28 +5018,6 @@ class PutConfigurationRecorderRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ConfigurationRecorderTypeDef](./type_defs.md#configurationrecordertypedef) 
-## DescribeConformancePacksResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_config.type_defs import DescribeConformancePacksResponseTypeDef
-
-def get_value() -> DescribeConformancePacksResponseTypeDef:
-    return {
-        "ConformancePackDetails": ...,
-        "NextToken": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeConformancePacksResponseTypeDef(TypedDict):
-    ConformancePackDetails: List[ConformancePackDetailTypeDef],  # (1)
-    NextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: ConformancePackDetailTypeDef](./type_defs.md#conformancepackdetailtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DescribeOrganizationConformancePacksResponseTypeDef
 
 ```python title="Usage Example"
@@ -4961,6 +5039,28 @@ class DescribeOrganizationConformancePacksResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: OrganizationConformancePackTypeDef](./type_defs.md#organizationconformancepacktypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DescribeConformancePacksResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_config.type_defs import DescribeConformancePacksResponseTypeDef
+
+def get_value() -> DescribeConformancePacksResponseTypeDef:
+    return {
+        "ConformancePackDetails": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeConformancePacksResponseTypeDef(TypedDict):
+    ConformancePackDetails: List[ConformancePackDetailTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: ConformancePackDetailTypeDef](./type_defs.md#conformancepackdetailtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DeleteRemediationExceptionsResponseTypeDef
 

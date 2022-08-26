@@ -7,6 +7,22 @@
     Auto-generated documentation for [kendra](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra)
     type annotations stubs module [types-aiobotocore-kendra](https://pypi.org/project/types-aiobotocore-kendra/).
 
+## AccessControlConfigurationSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import AccessControlConfigurationSummaryTypeDef
+
+def get_value() -> AccessControlConfigurationSummaryTypeDef:
+    return {
+        "Id": ...,
+    }
+```
+
+```python title="Definition"
+class AccessControlConfigurationSummaryTypeDef(TypedDict):
+    Id: str,
+```
+
 ## AccessControlListConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -37,6 +53,61 @@ def get_value() -> AclConfigurationTypeDef:
 ```python title="Definition"
 class AclConfigurationTypeDef(TypedDict):
     AllowedGroupsColumnName: str,
+```
+
+## DataSourceToIndexFieldMappingTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import DataSourceToIndexFieldMappingTypeDef
+
+def get_value() -> DataSourceToIndexFieldMappingTypeDef:
+    return {
+        "DataSourceFieldName": ...,
+        "IndexFieldName": ...,
+    }
+```
+
+```python title="Definition"
+class DataSourceToIndexFieldMappingTypeDef(TypedDict):
+    DataSourceFieldName: str,
+    IndexFieldName: str,
+    DateFieldFormat: NotRequired[str],
+```
+
+## DataSourceVpcConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import DataSourceVpcConfigurationTypeDef
+
+def get_value() -> DataSourceVpcConfigurationTypeDef:
+    return {
+        "SubnetIds": ...,
+        "SecurityGroupIds": ...,
+    }
+```
+
+```python title="Definition"
+class DataSourceVpcConfigurationTypeDef(TypedDict):
+    SubnetIds: Sequence[str],
+    SecurityGroupIds: Sequence[str],
+```
+
+## S3PathTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import S3PathTypeDef
+
+def get_value() -> S3PathTypeDef:
+    return {
+        "Bucket": ...,
+        "Key": ...,
+    }
+```
+
+```python title="Definition"
+class S3PathTypeDef(TypedDict):
+    Bucket: str,
+    Key: str,
 ```
 
 ## EntityConfigurationTypeDef
@@ -232,43 +303,6 @@ class BatchPutDocumentResponseFailedDocumentTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: ErrorCodeType](./literals.md#errorcodetype) 
-## DataSourceToIndexFieldMappingTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import DataSourceToIndexFieldMappingTypeDef
-
-def get_value() -> DataSourceToIndexFieldMappingTypeDef:
-    return {
-        "DataSourceFieldName": ...,
-        "IndexFieldName": ...,
-    }
-```
-
-```python title="Definition"
-class DataSourceToIndexFieldMappingTypeDef(TypedDict):
-    DataSourceFieldName: str,
-    IndexFieldName: str,
-    DateFieldFormat: NotRequired[str],
-```
-
-## DataSourceVpcConfigurationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import DataSourceVpcConfigurationTypeDef
-
-def get_value() -> DataSourceVpcConfigurationTypeDef:
-    return {
-        "SubnetIds": ...,
-        "SecurityGroupIds": ...,
-    }
-```
-
-```python title="Definition"
-class DataSourceVpcConfigurationTypeDef(TypedDict):
-    SubnetIds: Sequence[str],
-    SecurityGroupIds: Sequence[str],
-```
-
 ## CapacityUnitsConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -359,6 +393,25 @@ class ConfluenceBlogToIndexFieldMappingTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: ConfluenceBlogFieldNameType](./literals.md#confluenceblogfieldnametype) 
+## ProxyConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import ProxyConfigurationTypeDef
+
+def get_value() -> ProxyConfigurationTypeDef:
+    return {
+        "Host": ...,
+        "Port": ...,
+    }
+```
+
+```python title="Definition"
+class ProxyConfigurationTypeDef(TypedDict):
+    Host: str,
+    Port: int,
+    Credentials: NotRequired[str],
+```
+
 ## ConfluencePageToIndexFieldMappingTypeDef
 
 ```python title="Usage Example"
@@ -458,6 +511,29 @@ class CorrectionTypeDef(TypedDict):
     CorrectedTerm: NotRequired[str],
 ```
 
+## PrincipalTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import PrincipalTypeDef
+
+def get_value() -> PrincipalTypeDef:
+    return {
+        "Name": ...,
+        "Type": ...,
+        "Access": ...,
+    }
+```
+
+```python title="Definition"
+class PrincipalTypeDef(TypedDict):
+    Name: str,
+    Type: PrincipalTypeType,  # (1)
+    Access: ReadAccessTypeType,  # (2)
+    DataSourceId: NotRequired[str],
+```
+
+1. See [:material-code-brackets: PrincipalTypeType](./literals.md#principaltypetype) 
+2. See [:material-code-brackets: ReadAccessTypeType](./literals.md#readaccesstypetype) 
 ## TagTypeDef
 
 ```python title="Usage Example"
@@ -474,24 +550,6 @@ def get_value() -> TagTypeDef:
 class TagTypeDef(TypedDict):
     Key: str,
     Value: str,
-```
-
-## S3PathTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import S3PathTypeDef
-
-def get_value() -> S3PathTypeDef:
-    return {
-        "Bucket": ...,
-        "Key": ...,
-    }
-```
-
-```python title="Definition"
-class S3PathTypeDef(TypedDict):
-    Bucket: str,
-    Key: str,
 ```
 
 ## ServerSideEncryptionConfigurationTypeDef
@@ -527,6 +585,22 @@ class UserGroupResolutionConfigurationTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: UserGroupResolutionModeType](./literals.md#usergroupresolutionmodetype) 
+## TemplateConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import TemplateConfigurationTypeDef
+
+def get_value() -> TemplateConfigurationTypeDef:
+    return {
+        "Template": ...,
+    }
+```
+
+```python title="Definition"
+class TemplateConfigurationTypeDef(TypedDict):
+    Template: NotRequired[Mapping[str, Any]],
+```
+
 ## DataSourceGroupTypeDef
 
 ```python title="Usage Example"
@@ -606,6 +680,24 @@ class SqlConfigurationTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: QueryIdentifiersEnclosingOptionType](./literals.md#queryidentifiersenclosingoptiontype) 
+## DeleteAccessControlConfigurationRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import DeleteAccessControlConfigurationRequestRequestTypeDef
+
+def get_value() -> DeleteAccessControlConfigurationRequestRequestTypeDef:
+    return {
+        "IndexId": ...,
+        "Id": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteAccessControlConfigurationRequestRequestTypeDef(TypedDict):
+    IndexId: str,
+    Id: str,
+```
+
 ## DeleteDataSourceRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -730,6 +822,24 @@ def get_value() -> DeleteThesaurusRequestRequestTypeDef:
 class DeleteThesaurusRequestRequestTypeDef(TypedDict):
     Id: str,
     IndexId: str,
+```
+
+## DescribeAccessControlConfigurationRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import DescribeAccessControlConfigurationRequestRequestTypeDef
+
+def get_value() -> DescribeAccessControlConfigurationRequestRequestTypeDef:
+    return {
+        "IndexId": ...,
+        "Id": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeAccessControlConfigurationRequestRequestTypeDef(TypedDict):
+    IndexId: str,
+    Id: str,
 ```
 
 ## DescribeDataSourceRequestRequestTypeDef
@@ -991,29 +1101,6 @@ class SearchTypeDef(TypedDict):
     Sortable: NotRequired[bool],
 ```
 
-## PrincipalTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import PrincipalTypeDef
-
-def get_value() -> PrincipalTypeDef:
-    return {
-        "Name": ...,
-        "Type": ...,
-        "Access": ...,
-    }
-```
-
-```python title="Definition"
-class PrincipalTypeDef(TypedDict):
-    Name: str,
-    Type: PrincipalTypeType,  # (1)
-    Access: ReadAccessTypeType,  # (2)
-    DataSourceId: NotRequired[str],
-```
-
-1. See [:material-code-brackets: PrincipalTypeType](./literals.md#principaltypetype) 
-2. See [:material-code-brackets: ReadAccessTypeType](./literals.md#readaccesstypetype) 
 ## DocumentsMetadataConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -1400,6 +1487,24 @@ class JwtTokenTypeConfigurationTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: KeyLocationType](./literals.md#keylocationtype) 
+## ListAccessControlConfigurationsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import ListAccessControlConfigurationsRequestRequestTypeDef
+
+def get_value() -> ListAccessControlConfigurationsRequestRequestTypeDef:
+    return {
+        "IndexId": ...,
+    }
+```
+
+```python title="Definition"
+class ListAccessControlConfigurationsRequestRequestTypeDef(TypedDict):
+    IndexId: str,
+    NextToken: NotRequired[str],
+    MaxResults: NotRequired[int],
+```
+
 ## ListDataSourcesRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1646,25 +1751,6 @@ class ThesaurusSummaryTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: ThesaurusStatusType](./literals.md#thesaurusstatustype) 
-## ProxyConfigurationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import ProxyConfigurationTypeDef
-
-def get_value() -> ProxyConfigurationTypeDef:
-    return {
-        "Host": ...,
-        "Port": ...,
-    }
-```
-
-```python title="Definition"
-class ProxyConfigurationTypeDef(TypedDict):
-    Host: str,
-    Port: int,
-    Credentials: NotRequired[str],
-```
-
 ## SortingConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -1881,436 +1967,6 @@ class UpdateQuerySuggestionsConfigRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: ModeType](./literals.md#modetype) 
-## AssociateEntitiesToExperienceRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import AssociateEntitiesToExperienceRequestRequestTypeDef
-
-def get_value() -> AssociateEntitiesToExperienceRequestRequestTypeDef:
-    return {
-        "Id": ...,
-        "IndexId": ...,
-        "EntityList": ...,
-    }
-```
-
-```python title="Definition"
-class AssociateEntitiesToExperienceRequestRequestTypeDef(TypedDict):
-    Id: str,
-    IndexId: str,
-    EntityList: Sequence[EntityConfigurationTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: EntityConfigurationTypeDef](./type_defs.md#entityconfigurationtypedef) 
-## DisassociateEntitiesFromExperienceRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import DisassociateEntitiesFromExperienceRequestRequestTypeDef
-
-def get_value() -> DisassociateEntitiesFromExperienceRequestRequestTypeDef:
-    return {
-        "Id": ...,
-        "IndexId": ...,
-        "EntityList": ...,
-    }
-```
-
-```python title="Definition"
-class DisassociateEntitiesFromExperienceRequestRequestTypeDef(TypedDict):
-    Id: str,
-    IndexId: str,
-    EntityList: Sequence[EntityConfigurationTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: EntityConfigurationTypeDef](./type_defs.md#entityconfigurationtypedef) 
-## AssociateEntitiesToExperienceResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import AssociateEntitiesToExperienceResponseTypeDef
-
-def get_value() -> AssociateEntitiesToExperienceResponseTypeDef:
-    return {
-        "FailedEntityList": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class AssociateEntitiesToExperienceResponseTypeDef(TypedDict):
-    FailedEntityList: List[FailedEntityTypeDef],  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: FailedEntityTypeDef](./type_defs.md#failedentitytypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## AssociatePersonasToEntitiesResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import AssociatePersonasToEntitiesResponseTypeDef
-
-def get_value() -> AssociatePersonasToEntitiesResponseTypeDef:
-    return {
-        "FailedEntityList": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class AssociatePersonasToEntitiesResponseTypeDef(TypedDict):
-    FailedEntityList: List[FailedEntityTypeDef],  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: FailedEntityTypeDef](./type_defs.md#failedentitytypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## CreateDataSourceResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import CreateDataSourceResponseTypeDef
-
-def get_value() -> CreateDataSourceResponseTypeDef:
-    return {
-        "Id": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class CreateDataSourceResponseTypeDef(TypedDict):
-    Id: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## CreateExperienceResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import CreateExperienceResponseTypeDef
-
-def get_value() -> CreateExperienceResponseTypeDef:
-    return {
-        "Id": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class CreateExperienceResponseTypeDef(TypedDict):
-    Id: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## CreateFaqResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import CreateFaqResponseTypeDef
-
-def get_value() -> CreateFaqResponseTypeDef:
-    return {
-        "Id": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class CreateFaqResponseTypeDef(TypedDict):
-    Id: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## CreateIndexResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import CreateIndexResponseTypeDef
-
-def get_value() -> CreateIndexResponseTypeDef:
-    return {
-        "Id": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class CreateIndexResponseTypeDef(TypedDict):
-    Id: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## CreateQuerySuggestionsBlockListResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import CreateQuerySuggestionsBlockListResponseTypeDef
-
-def get_value() -> CreateQuerySuggestionsBlockListResponseTypeDef:
-    return {
-        "Id": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class CreateQuerySuggestionsBlockListResponseTypeDef(TypedDict):
-    Id: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## CreateThesaurusResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import CreateThesaurusResponseTypeDef
-
-def get_value() -> CreateThesaurusResponseTypeDef:
-    return {
-        "Id": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class CreateThesaurusResponseTypeDef(TypedDict):
-    Id: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## DescribeQuerySuggestionsConfigResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import DescribeQuerySuggestionsConfigResponseTypeDef
-
-def get_value() -> DescribeQuerySuggestionsConfigResponseTypeDef:
-    return {
-        "Mode": ...,
-        "Status": ...,
-        "QueryLogLookBackWindowInDays": ...,
-        "IncludeQueriesWithoutUserInformation": ...,
-        "MinimumNumberOfQueryingUsers": ...,
-        "MinimumQueryCount": ...,
-        "LastSuggestionsBuildTime": ...,
-        "LastClearTime": ...,
-        "TotalSuggestionsCount": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeQuerySuggestionsConfigResponseTypeDef(TypedDict):
-    Mode: ModeType,  # (1)
-    Status: QuerySuggestionsStatusType,  # (2)
-    QueryLogLookBackWindowInDays: int,
-    IncludeQueriesWithoutUserInformation: bool,
-    MinimumNumberOfQueryingUsers: int,
-    MinimumQueryCount: int,
-    LastSuggestionsBuildTime: datetime,
-    LastClearTime: datetime,
-    TotalSuggestionsCount: int,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
-```
-
-1. See [:material-code-brackets: ModeType](./literals.md#modetype) 
-2. See [:material-code-brackets: QuerySuggestionsStatusType](./literals.md#querysuggestionsstatustype) 
-3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## DisassociateEntitiesFromExperienceResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import DisassociateEntitiesFromExperienceResponseTypeDef
-
-def get_value() -> DisassociateEntitiesFromExperienceResponseTypeDef:
-    return {
-        "FailedEntityList": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DisassociateEntitiesFromExperienceResponseTypeDef(TypedDict):
-    FailedEntityList: List[FailedEntityTypeDef],  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: FailedEntityTypeDef](./type_defs.md#failedentitytypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## DisassociatePersonasFromEntitiesResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import DisassociatePersonasFromEntitiesResponseTypeDef
-
-def get_value() -> DisassociatePersonasFromEntitiesResponseTypeDef:
-    return {
-        "FailedEntityList": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DisassociatePersonasFromEntitiesResponseTypeDef(TypedDict):
-    FailedEntityList: List[FailedEntityTypeDef],  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: FailedEntityTypeDef](./type_defs.md#failedentitytypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## EmptyResponseMetadataTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import EmptyResponseMetadataTypeDef
-
-def get_value() -> EmptyResponseMetadataTypeDef:
-    return {
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class EmptyResponseMetadataTypeDef(TypedDict):
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## StartDataSourceSyncJobResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import StartDataSourceSyncJobResponseTypeDef
-
-def get_value() -> StartDataSourceSyncJobResponseTypeDef:
-    return {
-        "ExecutionId": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class StartDataSourceSyncJobResponseTypeDef(TypedDict):
-    ExecutionId: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## AssociatePersonasToEntitiesRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import AssociatePersonasToEntitiesRequestRequestTypeDef
-
-def get_value() -> AssociatePersonasToEntitiesRequestRequestTypeDef:
-    return {
-        "Id": ...,
-        "IndexId": ...,
-        "Personas": ...,
-    }
-```
-
-```python title="Definition"
-class AssociatePersonasToEntitiesRequestRequestTypeDef(TypedDict):
-    Id: str,
-    IndexId: str,
-    Personas: Sequence[EntityPersonaConfigurationTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: EntityPersonaConfigurationTypeDef](./type_defs.md#entitypersonaconfigurationtypedef) 
-## AuthenticationConfigurationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import AuthenticationConfigurationTypeDef
-
-def get_value() -> AuthenticationConfigurationTypeDef:
-    return {
-        "BasicAuthentication": ...,
-    }
-```
-
-```python title="Definition"
-class AuthenticationConfigurationTypeDef(TypedDict):
-    BasicAuthentication: NotRequired[Sequence[BasicAuthenticationConfigurationTypeDef]],  # (1)
-```
-
-1. See [:material-code-braces: BasicAuthenticationConfigurationTypeDef](./type_defs.md#basicauthenticationconfigurationtypedef) 
-## BatchDeleteDocumentRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import BatchDeleteDocumentRequestRequestTypeDef
-
-def get_value() -> BatchDeleteDocumentRequestRequestTypeDef:
-    return {
-        "IndexId": ...,
-        "DocumentIdList": ...,
-    }
-```
-
-```python title="Definition"
-class BatchDeleteDocumentRequestRequestTypeDef(TypedDict):
-    IndexId: str,
-    DocumentIdList: Sequence[str],
-    DataSourceSyncJobMetricTarget: NotRequired[DataSourceSyncJobMetricTargetTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: DataSourceSyncJobMetricTargetTypeDef](./type_defs.md#datasourcesyncjobmetrictargettypedef) 
-## BatchDeleteDocumentResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import BatchDeleteDocumentResponseTypeDef
-
-def get_value() -> BatchDeleteDocumentResponseTypeDef:
-    return {
-        "FailedDocuments": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class BatchDeleteDocumentResponseTypeDef(TypedDict):
-    FailedDocuments: List[BatchDeleteDocumentResponseFailedDocumentTypeDef],  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: BatchDeleteDocumentResponseFailedDocumentTypeDef](./type_defs.md#batchdeletedocumentresponsefaileddocumenttypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## BatchGetDocumentStatusResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import BatchGetDocumentStatusResponseTypeDef
-
-def get_value() -> BatchGetDocumentStatusResponseTypeDef:
-    return {
-        "Errors": ...,
-        "DocumentStatusList": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class BatchGetDocumentStatusResponseTypeDef(TypedDict):
-    Errors: List[BatchGetDocumentStatusResponseErrorTypeDef],  # (1)
-    DocumentStatusList: List[StatusTypeDef],  # (2)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
-```
-
-1. See [:material-code-braces: BatchGetDocumentStatusResponseErrorTypeDef](./type_defs.md#batchgetdocumentstatusresponseerrortypedef) 
-2. See [:material-code-braces: StatusTypeDef](./type_defs.md#statustypedef) 
-3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## BatchPutDocumentResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import BatchPutDocumentResponseTypeDef
-
-def get_value() -> BatchPutDocumentResponseTypeDef:
-    return {
-        "FailedDocuments": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class BatchPutDocumentResponseTypeDef(TypedDict):
-    FailedDocuments: List[BatchPutDocumentResponseFailedDocumentTypeDef],  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: BatchPutDocumentResponseFailedDocumentTypeDef](./type_defs.md#batchputdocumentresponsefaileddocumenttypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ColumnConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -2691,220 +2347,343 @@ class SlackConfigurationTypeDef(TypedDict):
 1. See [:material-code-braces: DataSourceVpcConfigurationTypeDef](./type_defs.md#datasourcevpcconfigurationtypedef) 
 2. See [:material-code-brackets: SlackEntityType](./literals.md#slackentitytype) 
 3. See [:material-code-braces: DataSourceToIndexFieldMappingTypeDef](./type_defs.md#datasourcetoindexfieldmappingtypedef) 
-## ConfluenceAttachmentConfigurationTypeDef
+## AlfrescoConfigurationTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import ConfluenceAttachmentConfigurationTypeDef
+from types_aiobotocore_kendra.type_defs import AlfrescoConfigurationTypeDef
 
-def get_value() -> ConfluenceAttachmentConfigurationTypeDef:
+def get_value() -> AlfrescoConfigurationTypeDef:
     return {
-        "CrawlAttachments": ...,
+        "SiteUrl": ...,
+        "SiteId": ...,
+        "SecretArn": ...,
+        "SslCertificateS3Path": ...,
     }
 ```
 
 ```python title="Definition"
-class ConfluenceAttachmentConfigurationTypeDef(TypedDict):
-    CrawlAttachments: NotRequired[bool],
-    AttachmentFieldMappings: NotRequired[Sequence[ConfluenceAttachmentToIndexFieldMappingTypeDef]],  # (1)
+class AlfrescoConfigurationTypeDef(TypedDict):
+    SiteUrl: str,
+    SiteId: str,
+    SecretArn: str,
+    SslCertificateS3Path: S3PathTypeDef,  # (1)
+    CrawlSystemFolders: NotRequired[bool],
+    CrawlComments: NotRequired[bool],
+    EntityFilter: NotRequired[Sequence[AlfrescoEntityType]],  # (2)
+    DocumentLibraryFieldMappings: NotRequired[Sequence[DataSourceToIndexFieldMappingTypeDef]],  # (3)
+    BlogFieldMappings: NotRequired[Sequence[DataSourceToIndexFieldMappingTypeDef]],  # (3)
+    WikiFieldMappings: NotRequired[Sequence[DataSourceToIndexFieldMappingTypeDef]],  # (3)
+    InclusionPatterns: NotRequired[Sequence[str]],
+    ExclusionPatterns: NotRequired[Sequence[str]],
+    VpcConfiguration: NotRequired[DataSourceVpcConfigurationTypeDef],  # (6)
 ```
 
-1. See [:material-code-braces: ConfluenceAttachmentToIndexFieldMappingTypeDef](./type_defs.md#confluenceattachmenttoindexfieldmappingtypedef) 
-## ConfluenceBlogConfigurationTypeDef
+1. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
+2. See [:material-code-brackets: AlfrescoEntityType](./literals.md#alfrescoentitytype) 
+3. See [:material-code-braces: DataSourceToIndexFieldMappingTypeDef](./type_defs.md#datasourcetoindexfieldmappingtypedef) 
+4. See [:material-code-braces: DataSourceToIndexFieldMappingTypeDef](./type_defs.md#datasourcetoindexfieldmappingtypedef) 
+5. See [:material-code-braces: DataSourceToIndexFieldMappingTypeDef](./type_defs.md#datasourcetoindexfieldmappingtypedef) 
+6. See [:material-code-braces: DataSourceVpcConfigurationTypeDef](./type_defs.md#datasourcevpcconfigurationtypedef) 
+## OnPremiseConfigurationTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import ConfluenceBlogConfigurationTypeDef
+from types_aiobotocore_kendra.type_defs import OnPremiseConfigurationTypeDef
 
-def get_value() -> ConfluenceBlogConfigurationTypeDef:
+def get_value() -> OnPremiseConfigurationTypeDef:
     return {
-        "BlogFieldMappings": ...,
+        "HostUrl": ...,
+        "OrganizationName": ...,
+        "SslCertificateS3Path": ...,
     }
 ```
 
 ```python title="Definition"
-class ConfluenceBlogConfigurationTypeDef(TypedDict):
-    BlogFieldMappings: NotRequired[Sequence[ConfluenceBlogToIndexFieldMappingTypeDef]],  # (1)
+class OnPremiseConfigurationTypeDef(TypedDict):
+    HostUrl: str,
+    OrganizationName: str,
+    SslCertificateS3Path: S3PathTypeDef,  # (1)
 ```
 
-1. See [:material-code-braces: ConfluenceBlogToIndexFieldMappingTypeDef](./type_defs.md#confluenceblogtoindexfieldmappingtypedef) 
-## ConfluencePageConfigurationTypeDef
+1. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
+## OneDriveUsersTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import ConfluencePageConfigurationTypeDef
+from types_aiobotocore_kendra.type_defs import OneDriveUsersTypeDef
 
-def get_value() -> ConfluencePageConfigurationTypeDef:
+def get_value() -> OneDriveUsersTypeDef:
     return {
-        "PageFieldMappings": ...,
+        "OneDriveUserList": ...,
     }
 ```
 
 ```python title="Definition"
-class ConfluencePageConfigurationTypeDef(TypedDict):
-    PageFieldMappings: NotRequired[Sequence[ConfluencePageToIndexFieldMappingTypeDef]],  # (1)
+class OneDriveUsersTypeDef(TypedDict):
+    OneDriveUserList: NotRequired[Sequence[str]],
+    OneDriveUserS3Path: NotRequired[S3PathTypeDef],  # (1)
 ```
 
-1. See [:material-code-braces: ConfluencePageToIndexFieldMappingTypeDef](./type_defs.md#confluencepagetoindexfieldmappingtypedef) 
-## ConfluenceSpaceConfigurationTypeDef
+1. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
+## UpdateQuerySuggestionsBlockListRequestRequestTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import ConfluenceSpaceConfigurationTypeDef
+from types_aiobotocore_kendra.type_defs import UpdateQuerySuggestionsBlockListRequestRequestTypeDef
 
-def get_value() -> ConfluenceSpaceConfigurationTypeDef:
+def get_value() -> UpdateQuerySuggestionsBlockListRequestRequestTypeDef:
     return {
-        "CrawlPersonalSpaces": ...,
+        "IndexId": ...,
+        "Id": ...,
     }
 ```
 
 ```python title="Definition"
-class ConfluenceSpaceConfigurationTypeDef(TypedDict):
-    CrawlPersonalSpaces: NotRequired[bool],
-    CrawlArchivedSpaces: NotRequired[bool],
-    IncludeSpaces: NotRequired[Sequence[str]],
-    ExcludeSpaces: NotRequired[Sequence[str]],
-    SpaceFieldMappings: NotRequired[Sequence[ConfluenceSpaceToIndexFieldMappingTypeDef]],  # (1)
+class UpdateQuerySuggestionsBlockListRequestRequestTypeDef(TypedDict):
+    IndexId: str,
+    Id: str,
+    Name: NotRequired[str],
+    Description: NotRequired[str],
+    SourceS3Path: NotRequired[S3PathTypeDef],  # (1)
+    RoleArn: NotRequired[str],
 ```
 
-1. See [:material-code-braces: ConfluenceSpaceToIndexFieldMappingTypeDef](./type_defs.md#confluencespacetoindexfieldmappingtypedef) 
-## SpellCorrectedQueryTypeDef
+1. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
+## UpdateThesaurusRequestRequestTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import SpellCorrectedQueryTypeDef
+from types_aiobotocore_kendra.type_defs import UpdateThesaurusRequestRequestTypeDef
 
-def get_value() -> SpellCorrectedQueryTypeDef:
+def get_value() -> UpdateThesaurusRequestRequestTypeDef:
     return {
-        "SuggestedQueryText": ...,
+        "Id": ...,
+        "IndexId": ...,
     }
 ```
 
 ```python title="Definition"
-class SpellCorrectedQueryTypeDef(TypedDict):
-    SuggestedQueryText: NotRequired[str],
-    Corrections: NotRequired[List[CorrectionTypeDef]],  # (1)
+class UpdateThesaurusRequestRequestTypeDef(TypedDict):
+    Id: str,
+    IndexId: str,
+    Name: NotRequired[str],
+    Description: NotRequired[str],
+    RoleArn: NotRequired[str],
+    SourceS3Path: NotRequired[S3PathTypeDef],  # (1)
 ```
 
-1. See [:material-code-braces: CorrectionTypeDef](./type_defs.md#correctiontypedef) 
-## ListTagsForResourceResponseTypeDef
+1. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
+## AssociateEntitiesToExperienceRequestRequestTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import ListTagsForResourceResponseTypeDef
+from types_aiobotocore_kendra.type_defs import AssociateEntitiesToExperienceRequestRequestTypeDef
 
-def get_value() -> ListTagsForResourceResponseTypeDef:
+def get_value() -> AssociateEntitiesToExperienceRequestRequestTypeDef:
     return {
-        "Tags": ...,
+        "Id": ...,
+        "IndexId": ...,
+        "EntityList": ...,
+    }
+```
+
+```python title="Definition"
+class AssociateEntitiesToExperienceRequestRequestTypeDef(TypedDict):
+    Id: str,
+    IndexId: str,
+    EntityList: Sequence[EntityConfigurationTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: EntityConfigurationTypeDef](./type_defs.md#entityconfigurationtypedef) 
+## DisassociateEntitiesFromExperienceRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import DisassociateEntitiesFromExperienceRequestRequestTypeDef
+
+def get_value() -> DisassociateEntitiesFromExperienceRequestRequestTypeDef:
+    return {
+        "Id": ...,
+        "IndexId": ...,
+        "EntityList": ...,
+    }
+```
+
+```python title="Definition"
+class DisassociateEntitiesFromExperienceRequestRequestTypeDef(TypedDict):
+    Id: str,
+    IndexId: str,
+    EntityList: Sequence[EntityConfigurationTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: EntityConfigurationTypeDef](./type_defs.md#entityconfigurationtypedef) 
+## AssociateEntitiesToExperienceResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import AssociateEntitiesToExperienceResponseTypeDef
+
+def get_value() -> AssociateEntitiesToExperienceResponseTypeDef:
+    return {
+        "FailedEntityList": ...,
         "ResponseMetadata": ...,
     }
 ```
 
 ```python title="Definition"
-class ListTagsForResourceResponseTypeDef(TypedDict):
-    Tags: List[TagTypeDef],  # (1)
+class AssociateEntitiesToExperienceResponseTypeDef(TypedDict):
+    FailedEntityList: List[FailedEntityTypeDef],  # (1)
     ResponseMetadata: ResponseMetadataTypeDef,  # (2)
 ```
 
-1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+1. See [:material-code-braces: FailedEntityTypeDef](./type_defs.md#failedentitytypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## TagResourceRequestRequestTypeDef
+## AssociatePersonasToEntitiesResponseTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import TagResourceRequestRequestTypeDef
+from types_aiobotocore_kendra.type_defs import AssociatePersonasToEntitiesResponseTypeDef
 
-def get_value() -> TagResourceRequestRequestTypeDef:
+def get_value() -> AssociatePersonasToEntitiesResponseTypeDef:
     return {
-        "ResourceARN": ...,
-        "Tags": ...,
+        "FailedEntityList": ...,
+        "ResponseMetadata": ...,
     }
 ```
 
 ```python title="Definition"
-class TagResourceRequestRequestTypeDef(TypedDict):
-    ResourceARN: str,
-    Tags: Sequence[TagTypeDef],  # (1)
+class AssociatePersonasToEntitiesResponseTypeDef(TypedDict):
+    FailedEntityList: List[FailedEntityTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
 ```
 
-1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-## CreateFaqRequestRequestTypeDef
+1. See [:material-code-braces: FailedEntityTypeDef](./type_defs.md#failedentitytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateAccessControlConfigurationResponseTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import CreateFaqRequestRequestTypeDef
+from types_aiobotocore_kendra.type_defs import CreateAccessControlConfigurationResponseTypeDef
 
-def get_value() -> CreateFaqRequestRequestTypeDef:
+def get_value() -> CreateAccessControlConfigurationResponseTypeDef:
     return {
-        "IndexId": ...,
-        "Name": ...,
-        "S3Path": ...,
-        "RoleArn": ...,
+        "Id": ...,
+        "ResponseMetadata": ...,
     }
 ```
 
 ```python title="Definition"
-class CreateFaqRequestRequestTypeDef(TypedDict):
-    IndexId: str,
-    Name: str,
-    S3Path: S3PathTypeDef,  # (1)
-    RoleArn: str,
-    Description: NotRequired[str],
-    Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
-    FileFormat: NotRequired[FaqFileFormatType],  # (3)
-    ClientToken: NotRequired[str],
-    LanguageCode: NotRequired[str],
+class CreateAccessControlConfigurationResponseTypeDef(TypedDict):
+    Id: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
 ```
 
-1. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
-2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-3. See [:material-code-brackets: FaqFileFormatType](./literals.md#faqfileformattype) 
-## CreateQuerySuggestionsBlockListRequestRequestTypeDef
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateDataSourceResponseTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import CreateQuerySuggestionsBlockListRequestRequestTypeDef
+from types_aiobotocore_kendra.type_defs import CreateDataSourceResponseTypeDef
 
-def get_value() -> CreateQuerySuggestionsBlockListRequestRequestTypeDef:
+def get_value() -> CreateDataSourceResponseTypeDef:
     return {
-        "IndexId": ...,
-        "Name": ...,
-        "SourceS3Path": ...,
-        "RoleArn": ...,
+        "Id": ...,
+        "ResponseMetadata": ...,
     }
 ```
 
 ```python title="Definition"
-class CreateQuerySuggestionsBlockListRequestRequestTypeDef(TypedDict):
-    IndexId: str,
-    Name: str,
-    SourceS3Path: S3PathTypeDef,  # (1)
-    RoleArn: str,
-    Description: NotRequired[str],
-    ClientToken: NotRequired[str],
-    Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
+class CreateDataSourceResponseTypeDef(TypedDict):
+    Id: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
 ```
 
-1. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
-2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-## CreateThesaurusRequestRequestTypeDef
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateExperienceResponseTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import CreateThesaurusRequestRequestTypeDef
+from types_aiobotocore_kendra.type_defs import CreateExperienceResponseTypeDef
 
-def get_value() -> CreateThesaurusRequestRequestTypeDef:
+def get_value() -> CreateExperienceResponseTypeDef:
     return {
-        "IndexId": ...,
-        "Name": ...,
-        "RoleArn": ...,
-        "SourceS3Path": ...,
+        "Id": ...,
+        "ResponseMetadata": ...,
     }
 ```
 
 ```python title="Definition"
-class CreateThesaurusRequestRequestTypeDef(TypedDict):
-    IndexId: str,
-    Name: str,
-    RoleArn: str,
-    SourceS3Path: S3PathTypeDef,  # (1)
-    Description: NotRequired[str],
-    Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
-    ClientToken: NotRequired[str],
+class CreateExperienceResponseTypeDef(TypedDict):
+    Id: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
 ```
 
-1. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
-2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateFaqResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import CreateFaqResponseTypeDef
+
+def get_value() -> CreateFaqResponseTypeDef:
+    return {
+        "Id": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateFaqResponseTypeDef(TypedDict):
+    Id: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateIndexResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import CreateIndexResponseTypeDef
+
+def get_value() -> CreateIndexResponseTypeDef:
+    return {
+        "Id": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateIndexResponseTypeDef(TypedDict):
+    Id: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateQuerySuggestionsBlockListResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import CreateQuerySuggestionsBlockListResponseTypeDef
+
+def get_value() -> CreateQuerySuggestionsBlockListResponseTypeDef:
+    return {
+        "Id": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateQuerySuggestionsBlockListResponseTypeDef(TypedDict):
+    Id: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateThesaurusResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import CreateThesaurusResponseTypeDef
+
+def get_value() -> CreateThesaurusResponseTypeDef:
+    return {
+        "Id": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateThesaurusResponseTypeDef(TypedDict):
+    Id: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DescribeFaqResponseTypeDef
 
 ```python title="Usage Example"
@@ -2992,6 +2771,43 @@ class DescribeQuerySuggestionsBlockListResponseTypeDef(TypedDict):
 1. See [:material-code-brackets: QuerySuggestionsBlockListStatusType](./literals.md#querysuggestionsblockliststatustype) 
 2. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
 3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DescribeQuerySuggestionsConfigResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import DescribeQuerySuggestionsConfigResponseTypeDef
+
+def get_value() -> DescribeQuerySuggestionsConfigResponseTypeDef:
+    return {
+        "Mode": ...,
+        "Status": ...,
+        "QueryLogLookBackWindowInDays": ...,
+        "IncludeQueriesWithoutUserInformation": ...,
+        "MinimumNumberOfQueryingUsers": ...,
+        "MinimumQueryCount": ...,
+        "LastSuggestionsBuildTime": ...,
+        "LastClearTime": ...,
+        "TotalSuggestionsCount": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeQuerySuggestionsConfigResponseTypeDef(TypedDict):
+    Mode: ModeType,  # (1)
+    Status: QuerySuggestionsStatusType,  # (2)
+    QueryLogLookBackWindowInDays: int,
+    IncludeQueriesWithoutUserInformation: bool,
+    MinimumNumberOfQueryingUsers: int,
+    MinimumQueryCount: int,
+    LastSuggestionsBuildTime: datetime,
+    LastClearTime: datetime,
+    TotalSuggestionsCount: int,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
+```
+
+1. See [:material-code-brackets: ModeType](./literals.md#modetype) 
+2. See [:material-code-brackets: QuerySuggestionsStatusType](./literals.md#querysuggestionsstatustype) 
+3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DescribeThesaurusResponseTypeDef
 
 ```python title="Usage Example"
@@ -3037,45 +2853,260 @@ class DescribeThesaurusResponseTypeDef(TypedDict):
 1. See [:material-code-brackets: ThesaurusStatusType](./literals.md#thesaurusstatustype) 
 2. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
 3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## OnPremiseConfigurationTypeDef
+## DisassociateEntitiesFromExperienceResponseTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import OnPremiseConfigurationTypeDef
+from types_aiobotocore_kendra.type_defs import DisassociateEntitiesFromExperienceResponseTypeDef
 
-def get_value() -> OnPremiseConfigurationTypeDef:
+def get_value() -> DisassociateEntitiesFromExperienceResponseTypeDef:
     return {
-        "HostUrl": ...,
-        "OrganizationName": ...,
-        "SslCertificateS3Path": ...,
+        "FailedEntityList": ...,
+        "ResponseMetadata": ...,
     }
 ```
 
 ```python title="Definition"
-class OnPremiseConfigurationTypeDef(TypedDict):
-    HostUrl: str,
-    OrganizationName: str,
-    SslCertificateS3Path: S3PathTypeDef,  # (1)
+class DisassociateEntitiesFromExperienceResponseTypeDef(TypedDict):
+    FailedEntityList: List[FailedEntityTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
 ```
 
-1. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
-## OneDriveUsersTypeDef
+1. See [:material-code-braces: FailedEntityTypeDef](./type_defs.md#failedentitytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DisassociatePersonasFromEntitiesResponseTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import OneDriveUsersTypeDef
+from types_aiobotocore_kendra.type_defs import DisassociatePersonasFromEntitiesResponseTypeDef
 
-def get_value() -> OneDriveUsersTypeDef:
+def get_value() -> DisassociatePersonasFromEntitiesResponseTypeDef:
     return {
-        "OneDriveUserList": ...,
+        "FailedEntityList": ...,
+        "ResponseMetadata": ...,
     }
 ```
 
 ```python title="Definition"
-class OneDriveUsersTypeDef(TypedDict):
-    OneDriveUserList: NotRequired[Sequence[str]],
-    OneDriveUserS3Path: NotRequired[S3PathTypeDef],  # (1)
+class DisassociatePersonasFromEntitiesResponseTypeDef(TypedDict):
+    FailedEntityList: List[FailedEntityTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
 ```
 
-1. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
+1. See [:material-code-braces: FailedEntityTypeDef](./type_defs.md#failedentitytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## EmptyResponseMetadataTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import EmptyResponseMetadataTypeDef
+
+def get_value() -> EmptyResponseMetadataTypeDef:
+    return {
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class EmptyResponseMetadataTypeDef(TypedDict):
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ListAccessControlConfigurationsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import ListAccessControlConfigurationsResponseTypeDef
+
+def get_value() -> ListAccessControlConfigurationsResponseTypeDef:
+    return {
+        "NextToken": ...,
+        "AccessControlConfigurations": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListAccessControlConfigurationsResponseTypeDef(TypedDict):
+    NextToken: str,
+    AccessControlConfigurations: List[AccessControlConfigurationSummaryTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: AccessControlConfigurationSummaryTypeDef](./type_defs.md#accesscontrolconfigurationsummarytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## StartDataSourceSyncJobResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import StartDataSourceSyncJobResponseTypeDef
+
+def get_value() -> StartDataSourceSyncJobResponseTypeDef:
+    return {
+        "ExecutionId": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class StartDataSourceSyncJobResponseTypeDef(TypedDict):
+    ExecutionId: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## AssociatePersonasToEntitiesRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import AssociatePersonasToEntitiesRequestRequestTypeDef
+
+def get_value() -> AssociatePersonasToEntitiesRequestRequestTypeDef:
+    return {
+        "Id": ...,
+        "IndexId": ...,
+        "Personas": ...,
+    }
+```
+
+```python title="Definition"
+class AssociatePersonasToEntitiesRequestRequestTypeDef(TypedDict):
+    Id: str,
+    IndexId: str,
+    Personas: Sequence[EntityPersonaConfigurationTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: EntityPersonaConfigurationTypeDef](./type_defs.md#entitypersonaconfigurationtypedef) 
+## AuthenticationConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import AuthenticationConfigurationTypeDef
+
+def get_value() -> AuthenticationConfigurationTypeDef:
+    return {
+        "BasicAuthentication": ...,
+    }
+```
+
+```python title="Definition"
+class AuthenticationConfigurationTypeDef(TypedDict):
+    BasicAuthentication: NotRequired[Sequence[BasicAuthenticationConfigurationTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: BasicAuthenticationConfigurationTypeDef](./type_defs.md#basicauthenticationconfigurationtypedef) 
+## BatchDeleteDocumentRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import BatchDeleteDocumentRequestRequestTypeDef
+
+def get_value() -> BatchDeleteDocumentRequestRequestTypeDef:
+    return {
+        "IndexId": ...,
+        "DocumentIdList": ...,
+    }
+```
+
+```python title="Definition"
+class BatchDeleteDocumentRequestRequestTypeDef(TypedDict):
+    IndexId: str,
+    DocumentIdList: Sequence[str],
+    DataSourceSyncJobMetricTarget: NotRequired[DataSourceSyncJobMetricTargetTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: DataSourceSyncJobMetricTargetTypeDef](./type_defs.md#datasourcesyncjobmetrictargettypedef) 
+## BatchDeleteDocumentResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import BatchDeleteDocumentResponseTypeDef
+
+def get_value() -> BatchDeleteDocumentResponseTypeDef:
+    return {
+        "FailedDocuments": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class BatchDeleteDocumentResponseTypeDef(TypedDict):
+    FailedDocuments: List[BatchDeleteDocumentResponseFailedDocumentTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: BatchDeleteDocumentResponseFailedDocumentTypeDef](./type_defs.md#batchdeletedocumentresponsefaileddocumenttypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## BatchGetDocumentStatusResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import BatchGetDocumentStatusResponseTypeDef
+
+def get_value() -> BatchGetDocumentStatusResponseTypeDef:
+    return {
+        "Errors": ...,
+        "DocumentStatusList": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetDocumentStatusResponseTypeDef(TypedDict):
+    Errors: List[BatchGetDocumentStatusResponseErrorTypeDef],  # (1)
+    DocumentStatusList: List[StatusTypeDef],  # (2)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
+```
+
+1. See [:material-code-braces: BatchGetDocumentStatusResponseErrorTypeDef](./type_defs.md#batchgetdocumentstatusresponseerrortypedef) 
+2. See [:material-code-braces: StatusTypeDef](./type_defs.md#statustypedef) 
+3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## BatchPutDocumentResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import BatchPutDocumentResponseTypeDef
+
+def get_value() -> BatchPutDocumentResponseTypeDef:
+    return {
+        "FailedDocuments": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class BatchPutDocumentResponseTypeDef(TypedDict):
+    FailedDocuments: List[BatchPutDocumentResponseFailedDocumentTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: BatchPutDocumentResponseFailedDocumentTypeDef](./type_defs.md#batchputdocumentresponsefaileddocumenttypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ConfluenceAttachmentConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import ConfluenceAttachmentConfigurationTypeDef
+
+def get_value() -> ConfluenceAttachmentConfigurationTypeDef:
+    return {
+        "CrawlAttachments": ...,
+    }
+```
+
+```python title="Definition"
+class ConfluenceAttachmentConfigurationTypeDef(TypedDict):
+    CrawlAttachments: NotRequired[bool],
+    AttachmentFieldMappings: NotRequired[Sequence[ConfluenceAttachmentToIndexFieldMappingTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: ConfluenceAttachmentToIndexFieldMappingTypeDef](./type_defs.md#confluenceattachmenttoindexfieldmappingtypedef) 
+## ConfluenceBlogConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import ConfluenceBlogConfigurationTypeDef
+
+def get_value() -> ConfluenceBlogConfigurationTypeDef:
+    return {
+        "BlogFieldMappings": ...,
+    }
+```
+
+```python title="Definition"
+class ConfluenceBlogConfigurationTypeDef(TypedDict):
+    BlogFieldMappings: NotRequired[Sequence[ConfluenceBlogToIndexFieldMappingTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: ConfluenceBlogToIndexFieldMappingTypeDef](./type_defs.md#confluenceblogtoindexfieldmappingtypedef) 
 ## SharePointConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -3103,58 +3134,212 @@ class SharePointConfigurationTypeDef(TypedDict):
     DocumentTitleFieldName: NotRequired[str],
     DisableLocalGroups: NotRequired[bool],
     SslCertificateS3Path: NotRequired[S3PathTypeDef],  # (4)
+    AuthenticationType: NotRequired[SharePointOnlineAuthenticationTypeType],  # (5)
+    ProxyConfiguration: NotRequired[ProxyConfigurationTypeDef],  # (6)
 ```
 
 1. See [:material-code-brackets: SharePointVersionType](./literals.md#sharepointversiontype) 
 2. See [:material-code-braces: DataSourceVpcConfigurationTypeDef](./type_defs.md#datasourcevpcconfigurationtypedef) 
 3. See [:material-code-braces: DataSourceToIndexFieldMappingTypeDef](./type_defs.md#datasourcetoindexfieldmappingtypedef) 
 4. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
-## UpdateQuerySuggestionsBlockListRequestRequestTypeDef
+5. See [:material-code-brackets: SharePointOnlineAuthenticationTypeType](./literals.md#sharepointonlineauthenticationtypetype) 
+6. See [:material-code-braces: ProxyConfigurationTypeDef](./type_defs.md#proxyconfigurationtypedef) 
+## ConfluencePageConfigurationTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import UpdateQuerySuggestionsBlockListRequestRequestTypeDef
+from types_aiobotocore_kendra.type_defs import ConfluencePageConfigurationTypeDef
 
-def get_value() -> UpdateQuerySuggestionsBlockListRequestRequestTypeDef:
+def get_value() -> ConfluencePageConfigurationTypeDef:
     return {
-        "IndexId": ...,
-        "Id": ...,
+        "PageFieldMappings": ...,
     }
 ```
 
 ```python title="Definition"
-class UpdateQuerySuggestionsBlockListRequestRequestTypeDef(TypedDict):
-    IndexId: str,
-    Id: str,
-    Name: NotRequired[str],
-    Description: NotRequired[str],
-    SourceS3Path: NotRequired[S3PathTypeDef],  # (1)
-    RoleArn: NotRequired[str],
+class ConfluencePageConfigurationTypeDef(TypedDict):
+    PageFieldMappings: NotRequired[Sequence[ConfluencePageToIndexFieldMappingTypeDef]],  # (1)
 ```
 
-1. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
-## UpdateThesaurusRequestRequestTypeDef
+1. See [:material-code-braces: ConfluencePageToIndexFieldMappingTypeDef](./type_defs.md#confluencepagetoindexfieldmappingtypedef) 
+## ConfluenceSpaceConfigurationTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import UpdateThesaurusRequestRequestTypeDef
+from types_aiobotocore_kendra.type_defs import ConfluenceSpaceConfigurationTypeDef
 
-def get_value() -> UpdateThesaurusRequestRequestTypeDef:
+def get_value() -> ConfluenceSpaceConfigurationTypeDef:
     return {
-        "Id": ...,
-        "IndexId": ...,
+        "CrawlPersonalSpaces": ...,
     }
 ```
 
 ```python title="Definition"
-class UpdateThesaurusRequestRequestTypeDef(TypedDict):
-    Id: str,
+class ConfluenceSpaceConfigurationTypeDef(TypedDict):
+    CrawlPersonalSpaces: NotRequired[bool],
+    CrawlArchivedSpaces: NotRequired[bool],
+    IncludeSpaces: NotRequired[Sequence[str]],
+    ExcludeSpaces: NotRequired[Sequence[str]],
+    SpaceFieldMappings: NotRequired[Sequence[ConfluenceSpaceToIndexFieldMappingTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: ConfluenceSpaceToIndexFieldMappingTypeDef](./type_defs.md#confluencespacetoindexfieldmappingtypedef) 
+## SpellCorrectedQueryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import SpellCorrectedQueryTypeDef
+
+def get_value() -> SpellCorrectedQueryTypeDef:
+    return {
+        "SuggestedQueryText": ...,
+    }
+```
+
+```python title="Definition"
+class SpellCorrectedQueryTypeDef(TypedDict):
+    SuggestedQueryText: NotRequired[str],
+    Corrections: NotRequired[List[CorrectionTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: CorrectionTypeDef](./type_defs.md#correctiontypedef) 
+## HierarchicalPrincipalTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import HierarchicalPrincipalTypeDef
+
+def get_value() -> HierarchicalPrincipalTypeDef:
+    return {
+        "PrincipalList": ...,
+    }
+```
+
+```python title="Definition"
+class HierarchicalPrincipalTypeDef(TypedDict):
+    PrincipalList: Sequence[PrincipalTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: PrincipalTypeDef](./type_defs.md#principaltypedef) 
+## CreateFaqRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import CreateFaqRequestRequestTypeDef
+
+def get_value() -> CreateFaqRequestRequestTypeDef:
+    return {
+        "IndexId": ...,
+        "Name": ...,
+        "S3Path": ...,
+        "RoleArn": ...,
+    }
+```
+
+```python title="Definition"
+class CreateFaqRequestRequestTypeDef(TypedDict):
     IndexId: str,
-    Name: NotRequired[str],
+    Name: str,
+    S3Path: S3PathTypeDef,  # (1)
+    RoleArn: str,
     Description: NotRequired[str],
-    RoleArn: NotRequired[str],
-    SourceS3Path: NotRequired[S3PathTypeDef],  # (1)
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
+    FileFormat: NotRequired[FaqFileFormatType],  # (3)
+    ClientToken: NotRequired[str],
+    LanguageCode: NotRequired[str],
 ```
 
 1. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
+2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+3. See [:material-code-brackets: FaqFileFormatType](./literals.md#faqfileformattype) 
+## CreateQuerySuggestionsBlockListRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import CreateQuerySuggestionsBlockListRequestRequestTypeDef
+
+def get_value() -> CreateQuerySuggestionsBlockListRequestRequestTypeDef:
+    return {
+        "IndexId": ...,
+        "Name": ...,
+        "SourceS3Path": ...,
+        "RoleArn": ...,
+    }
+```
+
+```python title="Definition"
+class CreateQuerySuggestionsBlockListRequestRequestTypeDef(TypedDict):
+    IndexId: str,
+    Name: str,
+    SourceS3Path: S3PathTypeDef,  # (1)
+    RoleArn: str,
+    Description: NotRequired[str],
+    ClientToken: NotRequired[str],
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
+```
+
+1. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
+2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+## CreateThesaurusRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import CreateThesaurusRequestRequestTypeDef
+
+def get_value() -> CreateThesaurusRequestRequestTypeDef:
+    return {
+        "IndexId": ...,
+        "Name": ...,
+        "RoleArn": ...,
+        "SourceS3Path": ...,
+    }
+```
+
+```python title="Definition"
+class CreateThesaurusRequestRequestTypeDef(TypedDict):
+    IndexId: str,
+    Name: str,
+    RoleArn: str,
+    SourceS3Path: S3PathTypeDef,  # (1)
+    Description: NotRequired[str],
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
+    ClientToken: NotRequired[str],
+```
+
+1. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
+2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+## ListTagsForResourceResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import ListTagsForResourceResponseTypeDef
+
+def get_value() -> ListTagsForResourceResponseTypeDef:
+    return {
+        "Tags": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListTagsForResourceResponseTypeDef(TypedDict):
+    Tags: List[TagTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## TagResourceRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import TagResourceRequestRequestTypeDef
+
+def get_value() -> TagResourceRequestRequestTypeDef:
+    return {
+        "ResourceARN": ...,
+        "Tags": ...,
+    }
+```
+
+```python title="Definition"
+class TagResourceRequestRequestTypeDef(TypedDict):
+    ResourceARN: str,
+    Tags: Sequence[TagTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## UserContextTypeDef
 
 ```python title="Usage Example"
@@ -3392,23 +3577,6 @@ class DocumentMetadataConfigurationTypeDef(TypedDict):
 1. See [:material-code-brackets: DocumentAttributeValueTypeType](./literals.md#documentattributevaluetypetype) 
 2. See [:material-code-braces: RelevanceTypeDef](./type_defs.md#relevancetypedef) 
 3. See [:material-code-braces: SearchTypeDef](./type_defs.md#searchtypedef) 
-## HierarchicalPrincipalTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import HierarchicalPrincipalTypeDef
-
-def get_value() -> HierarchicalPrincipalTypeDef:
-    return {
-        "PrincipalList": ...,
-    }
-```
-
-```python title="Definition"
-class HierarchicalPrincipalTypeDef(TypedDict):
-    PrincipalList: Sequence[PrincipalTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: PrincipalTypeDef](./type_defs.md#principaltypedef) 
 ## S3DataSourceConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -3867,39 +4035,6 @@ class ServiceNowConfigurationTypeDef(TypedDict):
 2. See [:material-code-braces: ServiceNowKnowledgeArticleConfigurationTypeDef](./type_defs.md#servicenowknowledgearticleconfigurationtypedef) 
 3. See [:material-code-braces: ServiceNowServiceCatalogConfigurationTypeDef](./type_defs.md#servicenowservicecatalogconfigurationtypedef) 
 4. See [:material-code-brackets: ServiceNowAuthenticationTypeType](./literals.md#servicenowauthenticationtypetype) 
-## ConfluenceConfigurationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import ConfluenceConfigurationTypeDef
-
-def get_value() -> ConfluenceConfigurationTypeDef:
-    return {
-        "ServerUrl": ...,
-        "SecretArn": ...,
-        "Version": ...,
-    }
-```
-
-```python title="Definition"
-class ConfluenceConfigurationTypeDef(TypedDict):
-    ServerUrl: str,
-    SecretArn: str,
-    Version: ConfluenceVersionType,  # (1)
-    SpaceConfiguration: NotRequired[ConfluenceSpaceConfigurationTypeDef],  # (2)
-    PageConfiguration: NotRequired[ConfluencePageConfigurationTypeDef],  # (3)
-    BlogConfiguration: NotRequired[ConfluenceBlogConfigurationTypeDef],  # (4)
-    AttachmentConfiguration: NotRequired[ConfluenceAttachmentConfigurationTypeDef],  # (5)
-    VpcConfiguration: NotRequired[DataSourceVpcConfigurationTypeDef],  # (6)
-    InclusionPatterns: NotRequired[Sequence[str]],
-    ExclusionPatterns: NotRequired[Sequence[str]],
-```
-
-1. See [:material-code-brackets: ConfluenceVersionType](./literals.md#confluenceversiontype) 
-2. See [:material-code-braces: ConfluenceSpaceConfigurationTypeDef](./type_defs.md#confluencespaceconfigurationtypedef) 
-3. See [:material-code-braces: ConfluencePageConfigurationTypeDef](./type_defs.md#confluencepageconfigurationtypedef) 
-4. See [:material-code-braces: ConfluenceBlogConfigurationTypeDef](./type_defs.md#confluenceblogconfigurationtypedef) 
-5. See [:material-code-braces: ConfluenceAttachmentConfigurationTypeDef](./type_defs.md#confluenceattachmentconfigurationtypedef) 
-6. See [:material-code-braces: DataSourceVpcConfigurationTypeDef](./type_defs.md#datasourcevpcconfigurationtypedef) 
 ## GitHubConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -3976,6 +4111,120 @@ class OneDriveConfigurationTypeDef(TypedDict):
 
 1. See [:material-code-braces: OneDriveUsersTypeDef](./type_defs.md#onedriveuserstypedef) 
 2. See [:material-code-braces: DataSourceToIndexFieldMappingTypeDef](./type_defs.md#datasourcetoindexfieldmappingtypedef) 
+## ConfluenceConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import ConfluenceConfigurationTypeDef
+
+def get_value() -> ConfluenceConfigurationTypeDef:
+    return {
+        "ServerUrl": ...,
+        "SecretArn": ...,
+        "Version": ...,
+    }
+```
+
+```python title="Definition"
+class ConfluenceConfigurationTypeDef(TypedDict):
+    ServerUrl: str,
+    SecretArn: str,
+    Version: ConfluenceVersionType,  # (1)
+    SpaceConfiguration: NotRequired[ConfluenceSpaceConfigurationTypeDef],  # (2)
+    PageConfiguration: NotRequired[ConfluencePageConfigurationTypeDef],  # (3)
+    BlogConfiguration: NotRequired[ConfluenceBlogConfigurationTypeDef],  # (4)
+    AttachmentConfiguration: NotRequired[ConfluenceAttachmentConfigurationTypeDef],  # (5)
+    VpcConfiguration: NotRequired[DataSourceVpcConfigurationTypeDef],  # (6)
+    InclusionPatterns: NotRequired[Sequence[str]],
+    ExclusionPatterns: NotRequired[Sequence[str]],
+    ProxyConfiguration: NotRequired[ProxyConfigurationTypeDef],  # (7)
+    AuthenticationType: NotRequired[ConfluenceAuthenticationTypeType],  # (8)
+```
+
+1. See [:material-code-brackets: ConfluenceVersionType](./literals.md#confluenceversiontype) 
+2. See [:material-code-braces: ConfluenceSpaceConfigurationTypeDef](./type_defs.md#confluencespaceconfigurationtypedef) 
+3. See [:material-code-braces: ConfluencePageConfigurationTypeDef](./type_defs.md#confluencepageconfigurationtypedef) 
+4. See [:material-code-braces: ConfluenceBlogConfigurationTypeDef](./type_defs.md#confluenceblogconfigurationtypedef) 
+5. See [:material-code-braces: ConfluenceAttachmentConfigurationTypeDef](./type_defs.md#confluenceattachmentconfigurationtypedef) 
+6. See [:material-code-braces: DataSourceVpcConfigurationTypeDef](./type_defs.md#datasourcevpcconfigurationtypedef) 
+7. See [:material-code-braces: ProxyConfigurationTypeDef](./type_defs.md#proxyconfigurationtypedef) 
+8. See [:material-code-brackets: ConfluenceAuthenticationTypeType](./literals.md#confluenceauthenticationtypetype) 
+## CreateAccessControlConfigurationRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import CreateAccessControlConfigurationRequestRequestTypeDef
+
+def get_value() -> CreateAccessControlConfigurationRequestRequestTypeDef:
+    return {
+        "IndexId": ...,
+        "Name": ...,
+    }
+```
+
+```python title="Definition"
+class CreateAccessControlConfigurationRequestRequestTypeDef(TypedDict):
+    IndexId: str,
+    Name: str,
+    Description: NotRequired[str],
+    AccessControlList: NotRequired[Sequence[PrincipalTypeDef]],  # (1)
+    HierarchicalAccessControlList: NotRequired[Sequence[HierarchicalPrincipalTypeDef]],  # (2)
+    ClientToken: NotRequired[str],
+```
+
+1. See [:material-code-braces: PrincipalTypeDef](./type_defs.md#principaltypedef) 
+2. See [:material-code-braces: HierarchicalPrincipalTypeDef](./type_defs.md#hierarchicalprincipaltypedef) 
+## DescribeAccessControlConfigurationResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import DescribeAccessControlConfigurationResponseTypeDef
+
+def get_value() -> DescribeAccessControlConfigurationResponseTypeDef:
+    return {
+        "Name": ...,
+        "Description": ...,
+        "ErrorMessage": ...,
+        "AccessControlList": ...,
+        "HierarchicalAccessControlList": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeAccessControlConfigurationResponseTypeDef(TypedDict):
+    Name: str,
+    Description: str,
+    ErrorMessage: str,
+    AccessControlList: List[PrincipalTypeDef],  # (1)
+    HierarchicalAccessControlList: List[HierarchicalPrincipalTypeDef],  # (2)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
+```
+
+1. See [:material-code-braces: PrincipalTypeDef](./type_defs.md#principaltypedef) 
+2. See [:material-code-braces: HierarchicalPrincipalTypeDef](./type_defs.md#hierarchicalprincipaltypedef) 
+3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## UpdateAccessControlConfigurationRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import UpdateAccessControlConfigurationRequestRequestTypeDef
+
+def get_value() -> UpdateAccessControlConfigurationRequestRequestTypeDef:
+    return {
+        "IndexId": ...,
+        "Id": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateAccessControlConfigurationRequestRequestTypeDef(TypedDict):
+    IndexId: str,
+    Id: str,
+    Name: NotRequired[str],
+    Description: NotRequired[str],
+    AccessControlList: NotRequired[Sequence[PrincipalTypeDef]],  # (1)
+    HierarchicalAccessControlList: NotRequired[Sequence[HierarchicalPrincipalTypeDef]],  # (2)
+```
+
+1. See [:material-code-braces: PrincipalTypeDef](./type_defs.md#principaltypedef) 
+2. See [:material-code-braces: HierarchicalPrincipalTypeDef](./type_defs.md#hierarchicalprincipaltypedef) 
 ## ListDataSourceSyncJobsResponseTypeDef
 
 ```python title="Usage Example"
@@ -4113,6 +4362,35 @@ class DocumentInfoTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: DocumentAttributeTypeDef](./type_defs.md#documentattributetypedef) 
+## DocumentTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import DocumentTypeDef
+
+def get_value() -> DocumentTypeDef:
+    return {
+        "Id": ...,
+    }
+```
+
+```python title="Definition"
+class DocumentTypeDef(TypedDict):
+    Id: str,
+    Title: NotRequired[str],
+    Blob: NotRequired[Union[str, bytes, IO[Any], StreamingBody]],
+    S3Path: NotRequired[S3PathTypeDef],  # (1)
+    Attributes: NotRequired[Sequence[DocumentAttributeTypeDef]],  # (2)
+    AccessControlList: NotRequired[Sequence[PrincipalTypeDef]],  # (3)
+    HierarchicalAccessControlList: NotRequired[Sequence[HierarchicalPrincipalTypeDef]],  # (4)
+    ContentType: NotRequired[ContentTypeType],  # (5)
+    AccessControlConfigurationId: NotRequired[str],
+```
+
+1. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
+2. See [:material-code-braces: DocumentAttributeTypeDef](./type_defs.md#documentattributetypedef) 
+3. See [:material-code-braces: PrincipalTypeDef](./type_defs.md#principaltypedef) 
+4. See [:material-code-braces: HierarchicalPrincipalTypeDef](./type_defs.md#hierarchicalprincipaltypedef) 
+5. See [:material-code-brackets: ContentTypeType](./literals.md#contenttypetype) 
 ## QueryRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -4148,34 +4426,6 @@ class QueryRequestRequestTypeDef(TypedDict):
 5. See [:material-code-braces: SortingConfigurationTypeDef](./type_defs.md#sortingconfigurationtypedef) 
 6. See [:material-code-braces: UserContextTypeDef](./type_defs.md#usercontexttypedef) 
 7. See [:material-code-braces: SpellCorrectionConfigurationTypeDef](./type_defs.md#spellcorrectionconfigurationtypedef) 
-## DocumentTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.type_defs import DocumentTypeDef
-
-def get_value() -> DocumentTypeDef:
-    return {
-        "Id": ...,
-    }
-```
-
-```python title="Definition"
-class DocumentTypeDef(TypedDict):
-    Id: str,
-    Title: NotRequired[str],
-    Blob: NotRequired[Union[str, bytes, IO[Any], StreamingBody]],
-    S3Path: NotRequired[S3PathTypeDef],  # (1)
-    Attributes: NotRequired[Sequence[DocumentAttributeTypeDef]],  # (2)
-    AccessControlList: NotRequired[Sequence[PrincipalTypeDef]],  # (3)
-    HierarchicalAccessControlList: NotRequired[Sequence[HierarchicalPrincipalTypeDef]],  # (4)
-    ContentType: NotRequired[ContentTypeType],  # (5)
-```
-
-1. See [:material-code-braces: S3PathTypeDef](./type_defs.md#s3pathtypedef) 
-2. See [:material-code-braces: DocumentAttributeTypeDef](./type_defs.md#documentattributetypedef) 
-3. See [:material-code-braces: PrincipalTypeDef](./type_defs.md#principaltypedef) 
-4. See [:material-code-braces: HierarchicalPrincipalTypeDef](./type_defs.md#hierarchicalprincipaltypedef) 
-5. See [:material-code-brackets: ContentTypeType](./literals.md#contenttypetype) 
 ## ListExperienceEntitiesResponseTypeDef
 
 ```python title="Usage Example"
@@ -4629,6 +4879,8 @@ class DataSourceConfigurationTypeDef(TypedDict):
     QuipConfiguration: NotRequired[QuipConfigurationTypeDef],  # (14)
     JiraConfiguration: NotRequired[JiraConfigurationTypeDef],  # (15)
     GitHubConfiguration: NotRequired[GitHubConfigurationTypeDef],  # (16)
+    AlfrescoConfiguration: NotRequired[AlfrescoConfigurationTypeDef],  # (17)
+    TemplateConfiguration: NotRequired[TemplateConfigurationTypeDef],  # (18)
 ```
 
 1. See [:material-code-braces: S3DataSourceConfigurationTypeDef](./type_defs.md#s3datasourceconfigurationtypedef) 
@@ -4647,6 +4899,8 @@ class DataSourceConfigurationTypeDef(TypedDict):
 14. See [:material-code-braces: QuipConfigurationTypeDef](./type_defs.md#quipconfigurationtypedef) 
 15. See [:material-code-braces: JiraConfigurationTypeDef](./type_defs.md#jiraconfigurationtypedef) 
 16. See [:material-code-braces: GitHubConfigurationTypeDef](./type_defs.md#githubconfigurationtypedef) 
+17. See [:material-code-braces: AlfrescoConfigurationTypeDef](./type_defs.md#alfrescoconfigurationtypedef) 
+18. See [:material-code-braces: TemplateConfigurationTypeDef](./type_defs.md#templateconfigurationtypedef) 
 ## BatchPutDocumentRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -4741,19 +4995,21 @@ class CreateDataSourceRequestRequestTypeDef(TypedDict):
     IndexId: str,
     Type: DataSourceTypeType,  # (1)
     Configuration: NotRequired[DataSourceConfigurationTypeDef],  # (2)
+    VpcConfiguration: NotRequired[DataSourceVpcConfigurationTypeDef],  # (3)
     Description: NotRequired[str],
     Schedule: NotRequired[str],
     RoleArn: NotRequired[str],
-    Tags: NotRequired[Sequence[TagTypeDef]],  # (3)
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (4)
     ClientToken: NotRequired[str],
     LanguageCode: NotRequired[str],
-    CustomDocumentEnrichmentConfiguration: NotRequired[CustomDocumentEnrichmentConfigurationTypeDef],  # (4)
+    CustomDocumentEnrichmentConfiguration: NotRequired[CustomDocumentEnrichmentConfigurationTypeDef],  # (5)
 ```
 
 1. See [:material-code-brackets: DataSourceTypeType](./literals.md#datasourcetypetype) 
 2. See [:material-code-braces: DataSourceConfigurationTypeDef](./type_defs.md#datasourceconfigurationtypedef) 
-3. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-4. See [:material-code-braces: CustomDocumentEnrichmentConfigurationTypeDef](./type_defs.md#customdocumentenrichmentconfigurationtypedef) 
+3. See [:material-code-braces: DataSourceVpcConfigurationTypeDef](./type_defs.md#datasourcevpcconfigurationtypedef) 
+4. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+5. See [:material-code-braces: CustomDocumentEnrichmentConfigurationTypeDef](./type_defs.md#customdocumentenrichmentconfigurationtypedef) 
 ## DescribeDataSourceResponseTypeDef
 
 ```python title="Usage Example"
@@ -4766,6 +5022,7 @@ def get_value() -> DescribeDataSourceResponseTypeDef:
         "Name": ...,
         "Type": ...,
         "Configuration": ...,
+        "VpcConfiguration": ...,
         "CreatedAt": ...,
         "UpdatedAt": ...,
         "Description": ...,
@@ -4786,23 +5043,25 @@ class DescribeDataSourceResponseTypeDef(TypedDict):
     Name: str,
     Type: DataSourceTypeType,  # (1)
     Configuration: DataSourceConfigurationTypeDef,  # (2)
+    VpcConfiguration: DataSourceVpcConfigurationTypeDef,  # (3)
     CreatedAt: datetime,
     UpdatedAt: datetime,
     Description: str,
-    Status: DataSourceStatusType,  # (3)
+    Status: DataSourceStatusType,  # (4)
     Schedule: str,
     RoleArn: str,
     ErrorMessage: str,
     LanguageCode: str,
-    CustomDocumentEnrichmentConfiguration: CustomDocumentEnrichmentConfigurationTypeDef,  # (4)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (5)
+    CustomDocumentEnrichmentConfiguration: CustomDocumentEnrichmentConfigurationTypeDef,  # (5)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (6)
 ```
 
 1. See [:material-code-brackets: DataSourceTypeType](./literals.md#datasourcetypetype) 
 2. See [:material-code-braces: DataSourceConfigurationTypeDef](./type_defs.md#datasourceconfigurationtypedef) 
-3. See [:material-code-brackets: DataSourceStatusType](./literals.md#datasourcestatustype) 
-4. See [:material-code-braces: CustomDocumentEnrichmentConfigurationTypeDef](./type_defs.md#customdocumentenrichmentconfigurationtypedef) 
-5. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+3. See [:material-code-braces: DataSourceVpcConfigurationTypeDef](./type_defs.md#datasourcevpcconfigurationtypedef) 
+4. See [:material-code-brackets: DataSourceStatusType](./literals.md#datasourcestatustype) 
+5. See [:material-code-braces: CustomDocumentEnrichmentConfigurationTypeDef](./type_defs.md#customdocumentenrichmentconfigurationtypedef) 
+6. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## UpdateDataSourceRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -4821,15 +5080,17 @@ class UpdateDataSourceRequestRequestTypeDef(TypedDict):
     IndexId: str,
     Name: NotRequired[str],
     Configuration: NotRequired[DataSourceConfigurationTypeDef],  # (1)
+    VpcConfiguration: NotRequired[DataSourceVpcConfigurationTypeDef],  # (2)
     Description: NotRequired[str],
     Schedule: NotRequired[str],
     RoleArn: NotRequired[str],
     LanguageCode: NotRequired[str],
-    CustomDocumentEnrichmentConfiguration: NotRequired[CustomDocumentEnrichmentConfigurationTypeDef],  # (2)
+    CustomDocumentEnrichmentConfiguration: NotRequired[CustomDocumentEnrichmentConfigurationTypeDef],  # (3)
 ```
 
 1. See [:material-code-braces: DataSourceConfigurationTypeDef](./type_defs.md#datasourceconfigurationtypedef) 
-2. See [:material-code-braces: CustomDocumentEnrichmentConfigurationTypeDef](./type_defs.md#customdocumentenrichmentconfigurationtypedef) 
+2. See [:material-code-braces: DataSourceVpcConfigurationTypeDef](./type_defs.md#datasourcevpcconfigurationtypedef) 
+3. See [:material-code-braces: CustomDocumentEnrichmentConfigurationTypeDef](./type_defs.md#customdocumentenrichmentconfigurationtypedef) 
 ## QueryResultTypeDef
 
 ```python title="Usage Example"

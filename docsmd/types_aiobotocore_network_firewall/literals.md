@@ -30,11 +30,12 @@ AttachmentStatusType = Literal[
 from types_aiobotocore_network_firewall.literals import ConfigurationSyncStateType
 
 def get_value() -> ConfigurationSyncStateType:
-    return "IN_SYNC"
+    return "CAPACITY_CONSTRAINED"
 ```
 
 ```python title="Definition"
 ConfigurationSyncStateType = Literal[
+    "CAPACITY_CONSTRAINED",
     "IN_SYNC",
     "PENDING",
 ]
@@ -192,11 +193,12 @@ OverrideActionType = Literal[
 from types_aiobotocore_network_firewall.literals import PerObjectSyncStatusType
 
 def get_value() -> PerObjectSyncStatusType:
-    return "IN_SYNC"
+    return "CAPACITY_CONSTRAINED"
 ```
 
 ```python title="Definition"
 PerObjectSyncStatusType = Literal[
+    "CAPACITY_CONSTRAINED",
     "IN_SYNC",
     "PENDING",
 ]
@@ -429,6 +431,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -574,6 +577,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -627,6 +631,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -637,11 +642,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -687,6 +694,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

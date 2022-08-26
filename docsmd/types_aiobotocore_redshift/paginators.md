@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeClusterDbRevisionsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeClusterDbRevisionsPaginator = client.get_paginator("describe_cluster_db_revisions")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeClusterDbRevisionsPaginator = client.get_paginator("describe_cluster_db_revisions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ClusterDbRevisionsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeClusterDbRevisionsPaginator](./paginators.md#describeclusterdbrevisionspaginator)
+3. item: [:material-code-braces: ClusterDbRevisionsMessageTypeDef](./type_defs.md#clusterdbrevisionsmessagetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeClusterParameterGroupsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeClusterParameterGroupsPaginator = client.get_paginator("describe_cluster_parameter_groups")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeClusterParameterGroupsPaginator = client.get_paginator("describe_cluster_parameter_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ClusterParameterGroupsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeClusterParameterGroupsPaginator](./paginators.md#describeclusterparametergroupspaginator)
+3. item: [:material-code-braces: ClusterParameterGroupsMessageTypeDef](./type_defs.md#clusterparametergroupsmessagetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeClusterParametersPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeClusterParametersPaginator = client.get_paginator("describe_cluster_parameters")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeClusterParametersPaginator = client.get_paginator("describe_cluster_parameters")  # (2)
+    async for item in paginator.paginate(...):
+        item: ClusterParameterGroupDetailsTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeClusterParametersPaginator](./paginators.md#describeclusterparameterspaginator)
+3. item: [:material-code-braces: ClusterParameterGroupDetailsTypeDef](./type_defs.md#clusterparametergroupdetailstypedef) 
 
 
 ### paginate
@@ -153,10 +171,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeClusterSecurityGroupsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeClusterSecurityGroupsPaginator = client.get_paginator("describe_cluster_security_groups")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeClusterSecurityGroupsPaginator = client.get_paginator("describe_cluster_security_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ClusterSecurityGroupMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeClusterSecurityGroupsPaginator](./paginators.md#describeclustersecuritygroupspaginator)
+3. item: [:material-code-braces: ClusterSecurityGroupMessageTypeDef](./type_defs.md#clustersecuritygroupmessagetypedef) 
 
 
 ### paginate
@@ -199,10 +223,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeClusterSnapshotsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeClusterSnapshotsPaginator = client.get_paginator("describe_cluster_snapshots")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeClusterSnapshotsPaginator = client.get_paginator("describe_cluster_snapshots")  # (2)
+    async for item in paginator.paginate(...):
+        item: SnapshotMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeClusterSnapshotsPaginator](./paginators.md#describeclustersnapshotspaginator)
+3. item: [:material-code-braces: SnapshotMessageTypeDef](./type_defs.md#snapshotmessagetypedef) 
 
 
 ### paginate
@@ -215,6 +245,7 @@ def paginate(
     *,
     ClusterIdentifier: str = ...,
     SnapshotIdentifier: str = ...,
+    SnapshotArn: str = ...,
     SnapshotType: str = ...,
     StartTime: Union[datetime, str] = ...,
     EndTime: Union[datetime, str] = ...,
@@ -253,10 +284,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeClusterSubnetGroupsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeClusterSubnetGroupsPaginator = client.get_paginator("describe_cluster_subnet_groups")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeClusterSubnetGroupsPaginator = client.get_paginator("describe_cluster_subnet_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ClusterSubnetGroupMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeClusterSubnetGroupsPaginator](./paginators.md#describeclustersubnetgroupspaginator)
+3. item: [:material-code-braces: ClusterSubnetGroupMessageTypeDef](./type_defs.md#clustersubnetgroupmessagetypedef) 
 
 
 ### paginate
@@ -299,10 +336,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeClusterTracksPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeClusterTracksPaginator = client.get_paginator("describe_cluster_tracks")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeClusterTracksPaginator = client.get_paginator("describe_cluster_tracks")  # (2)
+    async for item in paginator.paginate(...):
+        item: TrackListMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeClusterTracksPaginator](./paginators.md#describeclustertrackspaginator)
+3. item: [:material-code-braces: TrackListMessageTypeDef](./type_defs.md#tracklistmessagetypedef) 
 
 
 ### paginate
@@ -343,10 +386,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeClusterVersionsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeClusterVersionsPaginator = client.get_paginator("describe_cluster_versions")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeClusterVersionsPaginator = client.get_paginator("describe_cluster_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ClusterVersionsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeClusterVersionsPaginator](./paginators.md#describeclusterversionspaginator)
+3. item: [:material-code-braces: ClusterVersionsMessageTypeDef](./type_defs.md#clusterversionsmessagetypedef) 
 
 
 ### paginate
@@ -388,10 +437,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeClustersPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeClustersPaginator = client.get_paginator("describe_clusters")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeClustersPaginator = client.get_paginator("describe_clusters")  # (2)
+    async for item in paginator.paginate(...):
+        item: ClustersMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeClustersPaginator](./paginators.md#describeclusterspaginator)
+3. item: [:material-code-braces: ClustersMessageTypeDef](./type_defs.md#clustersmessagetypedef) 
 
 
 ### paginate
@@ -434,10 +489,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeDataSharesPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeDataSharesPaginator = client.get_paginator("describe_data_shares")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeDataSharesPaginator = client.get_paginator("describe_data_shares")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeDataSharesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeDataSharesPaginator](./paginators.md#describedatasharespaginator)
+3. item: [:material-code-braces: DescribeDataSharesResultTypeDef](./type_defs.md#describedatasharesresulttypedef) 
 
 
 ### paginate
@@ -478,10 +539,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeDataSharesForConsumerPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeDataSharesForConsumerPaginator = client.get_paginator("describe_data_shares_for_consumer")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeDataSharesForConsumerPaginator = client.get_paginator("describe_data_shares_for_consumer")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeDataSharesForConsumerResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeDataSharesForConsumerPaginator](./paginators.md#describedatasharesforconsumerpaginator)
+3. item: [:material-code-braces: DescribeDataSharesForConsumerResultTypeDef](./type_defs.md#describedatasharesforconsumerresulttypedef) 
 
 
 ### paginate
@@ -524,10 +591,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeDataSharesForProducerPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeDataSharesForProducerPaginator = client.get_paginator("describe_data_shares_for_producer")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeDataSharesForProducerPaginator = client.get_paginator("describe_data_shares_for_producer")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeDataSharesForProducerResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeDataSharesForProducerPaginator](./paginators.md#describedatasharesforproducerpaginator)
+3. item: [:material-code-braces: DescribeDataSharesForProducerResultTypeDef](./type_defs.md#describedatasharesforproducerresulttypedef) 
 
 
 ### paginate
@@ -570,10 +643,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeDefaultClusterParametersPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeDefaultClusterParametersPaginator = client.get_paginator("describe_default_cluster_parameters")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeDefaultClusterParametersPaginator = client.get_paginator("describe_default_cluster_parameters")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeDefaultClusterParametersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeDefaultClusterParametersPaginator](./paginators.md#describedefaultclusterparameterspaginator)
+3. item: [:material-code-braces: DescribeDefaultClusterParametersResultTypeDef](./type_defs.md#describedefaultclusterparametersresulttypedef) 
 
 
 ### paginate
@@ -614,10 +693,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeEndpointAccessPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeEndpointAccessPaginator = client.get_paginator("describe_endpoint_access")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeEndpointAccessPaginator = client.get_paginator("describe_endpoint_access")  # (2)
+    async for item in paginator.paginate(...):
+        item: EndpointAccessListTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeEndpointAccessPaginator](./paginators.md#describeendpointaccesspaginator)
+3. item: [:material-code-braces: EndpointAccessListTypeDef](./type_defs.md#endpointaccesslisttypedef) 
 
 
 ### paginate
@@ -661,10 +746,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeEndpointAuthorizationPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeEndpointAuthorizationPaginator = client.get_paginator("describe_endpoint_authorization")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeEndpointAuthorizationPaginator = client.get_paginator("describe_endpoint_authorization")  # (2)
+    async for item in paginator.paginate(...):
+        item: EndpointAuthorizationListTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeEndpointAuthorizationPaginator](./paginators.md#describeendpointauthorizationpaginator)
+3. item: [:material-code-braces: EndpointAuthorizationListTypeDef](./type_defs.md#endpointauthorizationlisttypedef) 
 
 
 ### paginate
@@ -707,10 +798,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeEventSubscriptionsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeEventSubscriptionsPaginator = client.get_paginator("describe_event_subscriptions")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeEventSubscriptionsPaginator = client.get_paginator("describe_event_subscriptions")  # (2)
+    async for item in paginator.paginate(...):
+        item: EventSubscriptionsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeEventSubscriptionsPaginator](./paginators.md#describeeventsubscriptionspaginator)
+3. item: [:material-code-braces: EventSubscriptionsMessageTypeDef](./type_defs.md#eventsubscriptionsmessagetypedef) 
 
 
 ### paginate
@@ -753,10 +850,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeEventsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: EventsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeEventsPaginator](./paginators.md#describeeventspaginator)
+3. item: [:material-code-braces: EventsMessageTypeDef](./type_defs.md#eventsmessagetypedef) 
 
 
 ### paginate
@@ -802,10 +905,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeHsmClientCertificatesPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeHsmClientCertificatesPaginator = client.get_paginator("describe_hsm_client_certificates")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeHsmClientCertificatesPaginator = client.get_paginator("describe_hsm_client_certificates")  # (2)
+    async for item in paginator.paginate(...):
+        item: HsmClientCertificateMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeHsmClientCertificatesPaginator](./paginators.md#describehsmclientcertificatespaginator)
+3. item: [:material-code-braces: HsmClientCertificateMessageTypeDef](./type_defs.md#hsmclientcertificatemessagetypedef) 
 
 
 ### paginate
@@ -848,10 +957,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeHsmConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeHsmConfigurationsPaginator = client.get_paginator("describe_hsm_configurations")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeHsmConfigurationsPaginator = client.get_paginator("describe_hsm_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: HsmConfigurationMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeHsmConfigurationsPaginator](./paginators.md#describehsmconfigurationspaginator)
+3. item: [:material-code-braces: HsmConfigurationMessageTypeDef](./type_defs.md#hsmconfigurationmessagetypedef) 
 
 
 ### paginate
@@ -894,10 +1009,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeNodeConfigurationOptionsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeNodeConfigurationOptionsPaginator = client.get_paginator("describe_node_configuration_options")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeNodeConfigurationOptionsPaginator = client.get_paginator("describe_node_configuration_options")  # (2)
+    async for item in paginator.paginate(...):
+        item: NodeConfigurationOptionsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeNodeConfigurationOptionsPaginator](./paginators.md#describenodeconfigurationoptionspaginator)
+3. item: [:material-code-braces: NodeConfigurationOptionsMessageTypeDef](./type_defs.md#nodeconfigurationoptionsmessagetypedef) 
 
 
 ### paginate
@@ -911,6 +1032,7 @@ def paginate(
     ActionType: ActionTypeType,  # (1)
     ClusterIdentifier: str = ...,
     SnapshotIdentifier: str = ...,
+    SnapshotArn: str = ...,
     OwnerAccount: str = ...,
     Filters: Sequence[NodeConfigurationOptionsFilterTypeDef] = ...,  # (2)
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (3)
@@ -944,10 +1066,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeOrderableClusterOptionsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeOrderableClusterOptionsPaginator = client.get_paginator("describe_orderable_cluster_options")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeOrderableClusterOptionsPaginator = client.get_paginator("describe_orderable_cluster_options")  # (2)
+    async for item in paginator.paginate(...):
+        item: OrderableClusterOptionsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeOrderableClusterOptionsPaginator](./paginators.md#describeorderableclusteroptionspaginator)
+3. item: [:material-code-braces: OrderableClusterOptionsMessageTypeDef](./type_defs.md#orderableclusteroptionsmessagetypedef) 
 
 
 ### paginate
@@ -989,10 +1117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeReservedNodeExchangeStatusPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeReservedNodeExchangeStatusPaginator = client.get_paginator("describe_reserved_node_exchange_status")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeReservedNodeExchangeStatusPaginator = client.get_paginator("describe_reserved_node_exchange_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeReservedNodeExchangeStatusOutputMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeReservedNodeExchangeStatusPaginator](./paginators.md#describereservednodeexchangestatuspaginator)
+3. item: [:material-code-braces: DescribeReservedNodeExchangeStatusOutputMessageTypeDef](./type_defs.md#describereservednodeexchangestatusoutputmessagetypedef) 
 
 
 ### paginate
@@ -1034,10 +1168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeReservedNodeOfferingsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeReservedNodeOfferingsPaginator = client.get_paginator("describe_reserved_node_offerings")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeReservedNodeOfferingsPaginator = client.get_paginator("describe_reserved_node_offerings")  # (2)
+    async for item in paginator.paginate(...):
+        item: ReservedNodeOfferingsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeReservedNodeOfferingsPaginator](./paginators.md#describereservednodeofferingspaginator)
+3. item: [:material-code-braces: ReservedNodeOfferingsMessageTypeDef](./type_defs.md#reservednodeofferingsmessagetypedef) 
 
 
 ### paginate
@@ -1078,10 +1218,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeReservedNodesPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeReservedNodesPaginator = client.get_paginator("describe_reserved_nodes")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeReservedNodesPaginator = client.get_paginator("describe_reserved_nodes")  # (2)
+    async for item in paginator.paginate(...):
+        item: ReservedNodesMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeReservedNodesPaginator](./paginators.md#describereservednodespaginator)
+3. item: [:material-code-braces: ReservedNodesMessageTypeDef](./type_defs.md#reservednodesmessagetypedef) 
 
 
 ### paginate
@@ -1122,10 +1268,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeScheduledActionsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeScheduledActionsPaginator = client.get_paginator("describe_scheduled_actions")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeScheduledActionsPaginator = client.get_paginator("describe_scheduled_actions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ScheduledActionsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeScheduledActionsPaginator](./paginators.md#describescheduledactionspaginator)
+3. item: [:material-code-braces: ScheduledActionsMessageTypeDef](./type_defs.md#scheduledactionsmessagetypedef) 
 
 
 ### paginate
@@ -1173,10 +1325,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeSnapshotCopyGrantsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeSnapshotCopyGrantsPaginator = client.get_paginator("describe_snapshot_copy_grants")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeSnapshotCopyGrantsPaginator = client.get_paginator("describe_snapshot_copy_grants")  # (2)
+    async for item in paginator.paginate(...):
+        item: SnapshotCopyGrantMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeSnapshotCopyGrantsPaginator](./paginators.md#describesnapshotcopygrantspaginator)
+3. item: [:material-code-braces: SnapshotCopyGrantMessageTypeDef](./type_defs.md#snapshotcopygrantmessagetypedef) 
 
 
 ### paginate
@@ -1219,10 +1377,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeSnapshotSchedulesPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeSnapshotSchedulesPaginator = client.get_paginator("describe_snapshot_schedules")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeSnapshotSchedulesPaginator = client.get_paginator("describe_snapshot_schedules")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSnapshotSchedulesOutputMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeSnapshotSchedulesPaginator](./paginators.md#describesnapshotschedulespaginator)
+3. item: [:material-code-braces: DescribeSnapshotSchedulesOutputMessageTypeDef](./type_defs.md#describesnapshotschedulesoutputmessagetypedef) 
 
 
 ### paginate
@@ -1266,10 +1430,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeTableRestoreStatusPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeTableRestoreStatusPaginator = client.get_paginator("describe_table_restore_status")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeTableRestoreStatusPaginator = client.get_paginator("describe_table_restore_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: TableRestoreStatusMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeTableRestoreStatusPaginator](./paginators.md#describetablerestorestatuspaginator)
+3. item: [:material-code-braces: TableRestoreStatusMessageTypeDef](./type_defs.md#tablerestorestatusmessagetypedef) 
 
 
 ### paginate
@@ -1311,10 +1481,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeTagsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeTagsPaginator = client.get_paginator("describe_tags")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeTagsPaginator = client.get_paginator("describe_tags")  # (2)
+    async for item in paginator.paginate(...):
+        item: TaggedResourceListMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeTagsPaginator](./paginators.md#describetagspaginator)
+3. item: [:material-code-braces: TaggedResourceListMessageTypeDef](./type_defs.md#taggedresourcelistmessagetypedef) 
 
 
 ### paginate
@@ -1358,10 +1534,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import DescribeUsageLimitsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: DescribeUsageLimitsPaginator = client.get_paginator("describe_usage_limits")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: DescribeUsageLimitsPaginator = client.get_paginator("describe_usage_limits")  # (2)
+    async for item in paginator.paginate(...):
+        item: UsageLimitListTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [DescribeUsageLimitsPaginator](./paginators.md#describeusagelimitspaginator)
+3. item: [:material-code-braces: UsageLimitListTypeDef](./type_defs.md#usagelimitlisttypedef) 
 
 
 ### paginate
@@ -1407,10 +1589,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import GetReservedNodeExchangeConfigurationOptionsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: GetReservedNodeExchangeConfigurationOptionsPaginator = client.get_paginator("get_reserved_node_exchange_configuration_options")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: GetReservedNodeExchangeConfigurationOptionsPaginator = client.get_paginator("get_reserved_node_exchange_configuration_options")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetReservedNodeExchangeConfigurationOptionsOutputMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [GetReservedNodeExchangeConfigurationOptionsPaginator](./paginators.md#getreservednodeexchangeconfigurationoptionspaginator)
+3. item: [:material-code-braces: GetReservedNodeExchangeConfigurationOptionsOutputMessageTypeDef](./type_defs.md#getreservednodeexchangeconfigurationoptionsoutputmessagetypedef) 
 
 
 ### paginate
@@ -1454,10 +1642,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift.paginator import GetReservedNodeExchangeOfferingsPaginator
 
 session = get_session()
-async with session.create_client("redshift") as client:
-    client: RedshiftClient
-    paginator: GetReservedNodeExchangeOfferingsPaginator = client.get_paginator("get_reserved_node_exchange_offerings")
+async with session.create_client("redshift") as client:  # (1)
+    paginator: GetReservedNodeExchangeOfferingsPaginator = client.get_paginator("get_reserved_node_exchange_offerings")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetReservedNodeExchangeOfferingsOutputMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftClient](./client.md)
+2. paginator: [GetReservedNodeExchangeOfferingsPaginator](./paginators.md#getreservednodeexchangeofferingspaginator)
+3. item: [:material-code-braces: GetReservedNodeExchangeOfferingsOutputMessageTypeDef](./type_defs.md#getreservednodeexchangeofferingsoutputmessagetypedef) 
 
 
 ### paginate

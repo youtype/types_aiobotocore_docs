@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetActiveNamesPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetActiveNamesPaginator = client.get_paginator("get_active_names")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetActiveNamesPaginator = client.get_paginator("get_active_names")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetActiveNamesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetActiveNamesPaginator](./paginators.md#getactivenamespaginator)
+3. item: [:material-code-braces: GetActiveNamesResultTypeDef](./type_defs.md#getactivenamesresulttypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetBlueprintsPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetBlueprintsPaginator = client.get_paginator("get_blueprints")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetBlueprintsPaginator = client.get_paginator("get_blueprints")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetBlueprintsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetBlueprintsPaginator](./paginators.md#getblueprintspaginator)
+3. item: [:material-code-braces: GetBlueprintsResultTypeDef](./type_defs.md#getblueprintsresulttypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetBundlesPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetBundlesPaginator = client.get_paginator("get_bundles")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetBundlesPaginator = client.get_paginator("get_bundles")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetBundlesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetBundlesPaginator](./paginators.md#getbundlespaginator)
+3. item: [:material-code-braces: GetBundlesResultTypeDef](./type_defs.md#getbundlesresulttypedef) 
 
 
 ### paginate
@@ -149,10 +167,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetCloudFormationStackRecordsPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetCloudFormationStackRecordsPaginator = client.get_paginator("get_cloud_formation_stack_records")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetCloudFormationStackRecordsPaginator = client.get_paginator("get_cloud_formation_stack_records")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetCloudFormationStackRecordsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetCloudFormationStackRecordsPaginator](./paginators.md#getcloudformationstackrecordspaginator)
+3. item: [:material-code-braces: GetCloudFormationStackRecordsResultTypeDef](./type_defs.md#getcloudformationstackrecordsresulttypedef) 
 
 
 ### paginate
@@ -192,10 +216,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetDiskSnapshotsPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetDiskSnapshotsPaginator = client.get_paginator("get_disk_snapshots")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetDiskSnapshotsPaginator = client.get_paginator("get_disk_snapshots")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetDiskSnapshotsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetDiskSnapshotsPaginator](./paginators.md#getdisksnapshotspaginator)
+3. item: [:material-code-braces: GetDiskSnapshotsResultTypeDef](./type_defs.md#getdisksnapshotsresulttypedef) 
 
 
 ### paginate
@@ -235,10 +265,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetDisksPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetDisksPaginator = client.get_paginator("get_disks")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetDisksPaginator = client.get_paginator("get_disks")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetDisksResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetDisksPaginator](./paginators.md#getdiskspaginator)
+3. item: [:material-code-braces: GetDisksResultTypeDef](./type_defs.md#getdisksresulttypedef) 
 
 
 ### paginate
@@ -278,10 +314,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetDomainsPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetDomainsPaginator = client.get_paginator("get_domains")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetDomainsPaginator = client.get_paginator("get_domains")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetDomainsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetDomainsPaginator](./paginators.md#getdomainspaginator)
+3. item: [:material-code-braces: GetDomainsResultTypeDef](./type_defs.md#getdomainsresulttypedef) 
 
 
 ### paginate
@@ -321,10 +363,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetExportSnapshotRecordsPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetExportSnapshotRecordsPaginator = client.get_paginator("get_export_snapshot_records")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetExportSnapshotRecordsPaginator = client.get_paginator("get_export_snapshot_records")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetExportSnapshotRecordsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetExportSnapshotRecordsPaginator](./paginators.md#getexportsnapshotrecordspaginator)
+3. item: [:material-code-braces: GetExportSnapshotRecordsResultTypeDef](./type_defs.md#getexportsnapshotrecordsresulttypedef) 
 
 
 ### paginate
@@ -364,10 +412,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetInstanceSnapshotsPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetInstanceSnapshotsPaginator = client.get_paginator("get_instance_snapshots")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetInstanceSnapshotsPaginator = client.get_paginator("get_instance_snapshots")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetInstanceSnapshotsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetInstanceSnapshotsPaginator](./paginators.md#getinstancesnapshotspaginator)
+3. item: [:material-code-braces: GetInstanceSnapshotsResultTypeDef](./type_defs.md#getinstancesnapshotsresulttypedef) 
 
 
 ### paginate
@@ -407,10 +461,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetInstancesPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetInstancesPaginator = client.get_paginator("get_instances")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetInstancesPaginator = client.get_paginator("get_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetInstancesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetInstancesPaginator](./paginators.md#getinstancespaginator)
+3. item: [:material-code-braces: GetInstancesResultTypeDef](./type_defs.md#getinstancesresulttypedef) 
 
 
 ### paginate
@@ -450,10 +510,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetKeyPairsPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetKeyPairsPaginator = client.get_paginator("get_key_pairs")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetKeyPairsPaginator = client.get_paginator("get_key_pairs")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetKeyPairsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetKeyPairsPaginator](./paginators.md#getkeypairspaginator)
+3. item: [:material-code-braces: GetKeyPairsResultTypeDef](./type_defs.md#getkeypairsresulttypedef) 
 
 
 ### paginate
@@ -494,10 +560,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetLoadBalancersPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetLoadBalancersPaginator = client.get_paginator("get_load_balancers")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetLoadBalancersPaginator = client.get_paginator("get_load_balancers")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetLoadBalancersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetLoadBalancersPaginator](./paginators.md#getloadbalancerspaginator)
+3. item: [:material-code-braces: GetLoadBalancersResultTypeDef](./type_defs.md#getloadbalancersresulttypedef) 
 
 
 ### paginate
@@ -537,10 +609,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetOperationsPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetOperationsPaginator = client.get_paginator("get_operations")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetOperationsPaginator = client.get_paginator("get_operations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetOperationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetOperationsPaginator](./paginators.md#getoperationspaginator)
+3. item: [:material-code-braces: GetOperationsResultTypeDef](./type_defs.md#getoperationsresulttypedef) 
 
 
 ### paginate
@@ -580,10 +658,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetRelationalDatabaseBlueprintsPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetRelationalDatabaseBlueprintsPaginator = client.get_paginator("get_relational_database_blueprints")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetRelationalDatabaseBlueprintsPaginator = client.get_paginator("get_relational_database_blueprints")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetRelationalDatabaseBlueprintsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetRelationalDatabaseBlueprintsPaginator](./paginators.md#getrelationaldatabaseblueprintspaginator)
+3. item: [:material-code-braces: GetRelationalDatabaseBlueprintsResultTypeDef](./type_defs.md#getrelationaldatabaseblueprintsresulttypedef) 
 
 
 ### paginate
@@ -623,10 +707,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetRelationalDatabaseBundlesPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetRelationalDatabaseBundlesPaginator = client.get_paginator("get_relational_database_bundles")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetRelationalDatabaseBundlesPaginator = client.get_paginator("get_relational_database_bundles")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetRelationalDatabaseBundlesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetRelationalDatabaseBundlesPaginator](./paginators.md#getrelationaldatabasebundlespaginator)
+3. item: [:material-code-braces: GetRelationalDatabaseBundlesResultTypeDef](./type_defs.md#getrelationaldatabasebundlesresulttypedef) 
 
 
 ### paginate
@@ -667,10 +757,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetRelationalDatabaseEventsPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetRelationalDatabaseEventsPaginator = client.get_paginator("get_relational_database_events")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetRelationalDatabaseEventsPaginator = client.get_paginator("get_relational_database_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetRelationalDatabaseEventsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetRelationalDatabaseEventsPaginator](./paginators.md#getrelationaldatabaseeventspaginator)
+3. item: [:material-code-braces: GetRelationalDatabaseEventsResultTypeDef](./type_defs.md#getrelationaldatabaseeventsresulttypedef) 
 
 
 ### paginate
@@ -712,10 +808,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetRelationalDatabaseParametersPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetRelationalDatabaseParametersPaginator = client.get_paginator("get_relational_database_parameters")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetRelationalDatabaseParametersPaginator = client.get_paginator("get_relational_database_parameters")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetRelationalDatabaseParametersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetRelationalDatabaseParametersPaginator](./paginators.md#getrelationaldatabaseparameterspaginator)
+3. item: [:material-code-braces: GetRelationalDatabaseParametersResultTypeDef](./type_defs.md#getrelationaldatabaseparametersresulttypedef) 
 
 
 ### paginate
@@ -756,10 +858,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetRelationalDatabaseSnapshotsPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetRelationalDatabaseSnapshotsPaginator = client.get_paginator("get_relational_database_snapshots")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetRelationalDatabaseSnapshotsPaginator = client.get_paginator("get_relational_database_snapshots")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetRelationalDatabaseSnapshotsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetRelationalDatabaseSnapshotsPaginator](./paginators.md#getrelationaldatabasesnapshotspaginator)
+3. item: [:material-code-braces: GetRelationalDatabaseSnapshotsResultTypeDef](./type_defs.md#getrelationaldatabasesnapshotsresulttypedef) 
 
 
 ### paginate
@@ -799,10 +907,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetRelationalDatabasesPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetRelationalDatabasesPaginator = client.get_paginator("get_relational_databases")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetRelationalDatabasesPaginator = client.get_paginator("get_relational_databases")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetRelationalDatabasesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetRelationalDatabasesPaginator](./paginators.md#getrelationaldatabasespaginator)
+3. item: [:material-code-braces: GetRelationalDatabasesResultTypeDef](./type_defs.md#getrelationaldatabasesresulttypedef) 
 
 
 ### paginate
@@ -842,10 +956,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.paginator import GetStaticIpsPaginator
 
 session = get_session()
-async with session.create_client("lightsail") as client:
-    client: LightsailClient
-    paginator: GetStaticIpsPaginator = client.get_paginator("get_static_ips")
+async with session.create_client("lightsail") as client:  # (1)
+    paginator: GetStaticIpsPaginator = client.get_paginator("get_static_ips")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetStaticIpsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LightsailClient](./client.md)
+2. paginator: [GetStaticIpsPaginator](./paginators.md#getstaticipspaginator)
+3. item: [:material-code-braces: GetStaticIpsResultTypeDef](./type_defs.md#getstaticipsresulttypedef) 
 
 
 ### paginate

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudformation.paginator import DescribeAccountLimitsPaginator
 
 session = get_session()
-async with session.create_client("cloudformation") as client:
-    client: CloudFormationClient
-    paginator: DescribeAccountLimitsPaginator = client.get_paginator("describe_account_limits")
+async with session.create_client("cloudformation") as client:  # (1)
+    paginator: DescribeAccountLimitsPaginator = client.get_paginator("describe_account_limits")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAccountLimitsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFormationClient](./client.md)
+2. paginator: [DescribeAccountLimitsPaginator](./paginators.md#describeaccountlimitspaginator)
+3. item: [:material-code-braces: DescribeAccountLimitsOutputTypeDef](./type_defs.md#describeaccountlimitsoutputtypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudformation.paginator import DescribeChangeSetPaginator
 
 session = get_session()
-async with session.create_client("cloudformation") as client:
-    client: CloudFormationClient
-    paginator: DescribeChangeSetPaginator = client.get_paginator("describe_change_set")
+async with session.create_client("cloudformation") as client:  # (1)
+    paginator: DescribeChangeSetPaginator = client.get_paginator("describe_change_set")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeChangeSetOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFormationClient](./client.md)
+2. paginator: [DescribeChangeSetPaginator](./paginators.md#describechangesetpaginator)
+3. item: [:material-code-braces: DescribeChangeSetOutputTypeDef](./type_defs.md#describechangesetoutputtypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudformation.paginator import DescribeStackEventsPaginator
 
 session = get_session()
-async with session.create_client("cloudformation") as client:
-    client: CloudFormationClient
-    paginator: DescribeStackEventsPaginator = client.get_paginator("describe_stack_events")
+async with session.create_client("cloudformation") as client:  # (1)
+    paginator: DescribeStackEventsPaginator = client.get_paginator("describe_stack_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeStackEventsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFormationClient](./client.md)
+2. paginator: [DescribeStackEventsPaginator](./paginators.md#describestackeventspaginator)
+3. item: [:material-code-braces: DescribeStackEventsOutputTypeDef](./type_defs.md#describestackeventsoutputtypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudformation.paginator import DescribeStacksPaginator
 
 session = get_session()
-async with session.create_client("cloudformation") as client:
-    client: CloudFormationClient
-    paginator: DescribeStacksPaginator = client.get_paginator("describe_stacks")
+async with session.create_client("cloudformation") as client:  # (1)
+    paginator: DescribeStacksPaginator = client.get_paginator("describe_stacks")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeStacksOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFormationClient](./client.md)
+2. paginator: [DescribeStacksPaginator](./paginators.md#describestackspaginator)
+3. item: [:material-code-braces: DescribeStacksOutputTypeDef](./type_defs.md#describestacksoutputtypedef) 
 
 
 ### paginate
@@ -194,10 +218,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudformation.paginator import ListChangeSetsPaginator
 
 session = get_session()
-async with session.create_client("cloudformation") as client:
-    client: CloudFormationClient
-    paginator: ListChangeSetsPaginator = client.get_paginator("list_change_sets")
+async with session.create_client("cloudformation") as client:  # (1)
+    paginator: ListChangeSetsPaginator = client.get_paginator("list_change_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListChangeSetsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFormationClient](./client.md)
+2. paginator: [ListChangeSetsPaginator](./paginators.md#listchangesetspaginator)
+3. item: [:material-code-braces: ListChangeSetsOutputTypeDef](./type_defs.md#listchangesetsoutputtypedef) 
 
 
 ### paginate
@@ -238,10 +268,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudformation.paginator import ListExportsPaginator
 
 session = get_session()
-async with session.create_client("cloudformation") as client:
-    client: CloudFormationClient
-    paginator: ListExportsPaginator = client.get_paginator("list_exports")
+async with session.create_client("cloudformation") as client:  # (1)
+    paginator: ListExportsPaginator = client.get_paginator("list_exports")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListExportsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFormationClient](./client.md)
+2. paginator: [ListExportsPaginator](./paginators.md#listexportspaginator)
+3. item: [:material-code-braces: ListExportsOutputTypeDef](./type_defs.md#listexportsoutputtypedef) 
 
 
 ### paginate
@@ -281,10 +317,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudformation.paginator import ListImportsPaginator
 
 session = get_session()
-async with session.create_client("cloudformation") as client:
-    client: CloudFormationClient
-    paginator: ListImportsPaginator = client.get_paginator("list_imports")
+async with session.create_client("cloudformation") as client:  # (1)
+    paginator: ListImportsPaginator = client.get_paginator("list_imports")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListImportsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFormationClient](./client.md)
+2. paginator: [ListImportsPaginator](./paginators.md#listimportspaginator)
+3. item: [:material-code-braces: ListImportsOutputTypeDef](./type_defs.md#listimportsoutputtypedef) 
 
 
 ### paginate
@@ -325,10 +367,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudformation.paginator import ListStackInstancesPaginator
 
 session = get_session()
-async with session.create_client("cloudformation") as client:
-    client: CloudFormationClient
-    paginator: ListStackInstancesPaginator = client.get_paginator("list_stack_instances")
+async with session.create_client("cloudformation") as client:  # (1)
+    paginator: ListStackInstancesPaginator = client.get_paginator("list_stack_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStackInstancesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFormationClient](./client.md)
+2. paginator: [ListStackInstancesPaginator](./paginators.md#liststackinstancespaginator)
+3. item: [:material-code-braces: ListStackInstancesOutputTypeDef](./type_defs.md#liststackinstancesoutputtypedef) 
 
 
 ### paginate
@@ -375,10 +423,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudformation.paginator import ListStackResourcesPaginator
 
 session = get_session()
-async with session.create_client("cloudformation") as client:
-    client: CloudFormationClient
-    paginator: ListStackResourcesPaginator = client.get_paginator("list_stack_resources")
+async with session.create_client("cloudformation") as client:  # (1)
+    paginator: ListStackResourcesPaginator = client.get_paginator("list_stack_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStackResourcesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFormationClient](./client.md)
+2. paginator: [ListStackResourcesPaginator](./paginators.md#liststackresourcespaginator)
+3. item: [:material-code-braces: ListStackResourcesOutputTypeDef](./type_defs.md#liststackresourcesoutputtypedef) 
 
 
 ### paginate
@@ -419,10 +473,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudformation.paginator import ListStackSetOperationResultsPaginator
 
 session = get_session()
-async with session.create_client("cloudformation") as client:
-    client: CloudFormationClient
-    paginator: ListStackSetOperationResultsPaginator = client.get_paginator("list_stack_set_operation_results")
+async with session.create_client("cloudformation") as client:  # (1)
+    paginator: ListStackSetOperationResultsPaginator = client.get_paginator("list_stack_set_operation_results")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStackSetOperationResultsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFormationClient](./client.md)
+2. paginator: [ListStackSetOperationResultsPaginator](./paginators.md#liststacksetoperationresultspaginator)
+3. item: [:material-code-braces: ListStackSetOperationResultsOutputTypeDef](./type_defs.md#liststacksetoperationresultsoutputtypedef) 
 
 
 ### paginate
@@ -467,10 +527,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudformation.paginator import ListStackSetOperationsPaginator
 
 session = get_session()
-async with session.create_client("cloudformation") as client:
-    client: CloudFormationClient
-    paginator: ListStackSetOperationsPaginator = client.get_paginator("list_stack_set_operations")
+async with session.create_client("cloudformation") as client:  # (1)
+    paginator: ListStackSetOperationsPaginator = client.get_paginator("list_stack_set_operations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStackSetOperationsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFormationClient](./client.md)
+2. paginator: [ListStackSetOperationsPaginator](./paginators.md#liststacksetoperationspaginator)
+3. item: [:material-code-braces: ListStackSetOperationsOutputTypeDef](./type_defs.md#liststacksetoperationsoutputtypedef) 
 
 
 ### paginate
@@ -513,10 +579,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudformation.paginator import ListStackSetsPaginator
 
 session = get_session()
-async with session.create_client("cloudformation") as client:
-    client: CloudFormationClient
-    paginator: ListStackSetsPaginator = client.get_paginator("list_stack_sets")
+async with session.create_client("cloudformation") as client:  # (1)
+    paginator: ListStackSetsPaginator = client.get_paginator("list_stack_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStackSetsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFormationClient](./client.md)
+2. paginator: [ListStackSetsPaginator](./paginators.md#liststacksetspaginator)
+3. item: [:material-code-braces: ListStackSetsOutputTypeDef](./type_defs.md#liststacksetsoutputtypedef) 
 
 
 ### paginate
@@ -560,10 +632,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudformation.paginator import ListStacksPaginator
 
 session = get_session()
-async with session.create_client("cloudformation") as client:
-    client: CloudFormationClient
-    paginator: ListStacksPaginator = client.get_paginator("list_stacks")
+async with session.create_client("cloudformation") as client:  # (1)
+    paginator: ListStacksPaginator = client.get_paginator("list_stacks")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStacksOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFormationClient](./client.md)
+2. paginator: [ListStacksPaginator](./paginators.md#liststackspaginator)
+3. item: [:material-code-braces: ListStacksOutputTypeDef](./type_defs.md#liststacksoutputtypedef) 
 
 
 ### paginate
@@ -605,10 +683,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudformation.paginator import ListTypesPaginator
 
 session = get_session()
-async with session.create_client("cloudformation") as client:
-    client: CloudFormationClient
-    paginator: ListTypesPaginator = client.get_paginator("list_types")
+async with session.create_client("cloudformation") as client:  # (1)
+    paginator: ListTypesPaginator = client.get_paginator("list_types")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTypesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudFormationClient](./client.md)
+2. paginator: [ListTypesPaginator](./paginators.md#listtypespaginator)
+3. item: [:material-code-braces: ListTypesOutputTypeDef](./type_defs.md#listtypesoutputtypedef) 
 
 
 ### paginate

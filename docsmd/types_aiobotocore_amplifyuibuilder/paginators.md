@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_amplifyuibuilder.paginator import ExportComponentsPaginator
 
 session = get_session()
-async with session.create_client("amplifyuibuilder") as client:
-    client: AmplifyUIBuilderClient
-    paginator: ExportComponentsPaginator = client.get_paginator("export_components")
+async with session.create_client("amplifyuibuilder") as client:  # (1)
+    paginator: ExportComponentsPaginator = client.get_paginator("export_components")  # (2)
+    async for item in paginator.paginate(...):
+        item: ExportComponentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AmplifyUIBuilderClient](./client.md)
+2. paginator: [ExportComponentsPaginator](./paginators.md#exportcomponentspaginator)
+3. item: [:material-code-braces: ExportComponentsResponseTypeDef](./type_defs.md#exportcomponentsresponsetypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_amplifyuibuilder.paginator import ExportThemesPaginator
 
 session = get_session()
-async with session.create_client("amplifyuibuilder") as client:
-    client: AmplifyUIBuilderClient
-    paginator: ExportThemesPaginator = client.get_paginator("export_themes")
+async with session.create_client("amplifyuibuilder") as client:  # (1)
+    paginator: ExportThemesPaginator = client.get_paginator("export_themes")  # (2)
+    async for item in paginator.paginate(...):
+        item: ExportThemesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AmplifyUIBuilderClient](./client.md)
+2. paginator: [ExportThemesPaginator](./paginators.md#exportthemespaginator)
+3. item: [:material-code-braces: ExportThemesResponseTypeDef](./type_defs.md#exportthemesresponsetypedef) 
 
 
 ### paginate
@@ -110,10 +122,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_amplifyuibuilder.paginator import ListComponentsPaginator
 
 session = get_session()
-async with session.create_client("amplifyuibuilder") as client:
-    client: AmplifyUIBuilderClient
-    paginator: ListComponentsPaginator = client.get_paginator("list_components")
+async with session.create_client("amplifyuibuilder") as client:  # (1)
+    paginator: ListComponentsPaginator = client.get_paginator("list_components")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListComponentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AmplifyUIBuilderClient](./client.md)
+2. paginator: [ListComponentsPaginator](./paginators.md#listcomponentspaginator)
+3. item: [:material-code-braces: ListComponentsResponseTypeDef](./type_defs.md#listcomponentsresponsetypedef) 
 
 
 ### paginate
@@ -156,10 +174,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_amplifyuibuilder.paginator import ListThemesPaginator
 
 session = get_session()
-async with session.create_client("amplifyuibuilder") as client:
-    client: AmplifyUIBuilderClient
-    paginator: ListThemesPaginator = client.get_paginator("list_themes")
+async with session.create_client("amplifyuibuilder") as client:  # (1)
+    paginator: ListThemesPaginator = client.get_paginator("list_themes")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListThemesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AmplifyUIBuilderClient](./client.md)
+2. paginator: [ListThemesPaginator](./paginators.md#listthemespaginator)
+3. item: [:material-code-braces: ListThemesResponseTypeDef](./type_defs.md#listthemesresponsetypedef) 
 
 
 ### paginate

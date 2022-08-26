@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_efs.paginator import DescribeFileSystemsPaginator
 
 session = get_session()
-async with session.create_client("efs") as client:
-    client: EFSClient
-    paginator: DescribeFileSystemsPaginator = client.get_paginator("describe_file_systems")
+async with session.create_client("efs") as client:  # (1)
+    paginator: DescribeFileSystemsPaginator = client.get_paginator("describe_file_systems")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeFileSystemsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EFSClient](./client.md)
+2. paginator: [DescribeFileSystemsPaginator](./paginators.md#describefilesystemspaginator)
+3. item: [:material-code-braces: DescribeFileSystemsResponseTypeDef](./type_defs.md#describefilesystemsresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_efs.paginator import DescribeMountTargetsPaginator
 
 session = get_session()
-async with session.create_client("efs") as client:
-    client: EFSClient
-    paginator: DescribeMountTargetsPaginator = client.get_paginator("describe_mount_targets")
+async with session.create_client("efs") as client:  # (1)
+    paginator: DescribeMountTargetsPaginator = client.get_paginator("describe_mount_targets")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeMountTargetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EFSClient](./client.md)
+2. paginator: [DescribeMountTargetsPaginator](./paginators.md#describemounttargetspaginator)
+3. item: [:material-code-braces: DescribeMountTargetsResponseTypeDef](./type_defs.md#describemounttargetsresponsetypedef) 
 
 
 ### paginate
@@ -109,10 +121,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_efs.paginator import DescribeTagsPaginator
 
 session = get_session()
-async with session.create_client("efs") as client:
-    client: EFSClient
-    paginator: DescribeTagsPaginator = client.get_paginator("describe_tags")
+async with session.create_client("efs") as client:  # (1)
+    paginator: DescribeTagsPaginator = client.get_paginator("describe_tags")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTagsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EFSClient](./client.md)
+2. paginator: [DescribeTagsPaginator](./paginators.md#describetagspaginator)
+3. item: [:material-code-braces: DescribeTagsResponseTypeDef](./type_defs.md#describetagsresponsetypedef) 
 
 
 ### paginate

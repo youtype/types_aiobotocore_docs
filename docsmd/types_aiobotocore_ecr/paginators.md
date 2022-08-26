@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecr.paginator import DescribeImageScanFindingsPaginator
 
 session = get_session()
-async with session.create_client("ecr") as client:
-    client: ECRClient
-    paginator: DescribeImageScanFindingsPaginator = client.get_paginator("describe_image_scan_findings")
+async with session.create_client("ecr") as client:  # (1)
+    paginator: DescribeImageScanFindingsPaginator = client.get_paginator("describe_image_scan_findings")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeImageScanFindingsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECRClient](./client.md)
+2. paginator: [DescribeImageScanFindingsPaginator](./paginators.md#describeimagescanfindingspaginator)
+3. item: [:material-code-braces: DescribeImageScanFindingsResponseTypeDef](./type_defs.md#describeimagescanfindingsresponsetypedef) 
 
 
 ### paginate
@@ -66,10 +72,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecr.paginator import DescribeImagesPaginator
 
 session = get_session()
-async with session.create_client("ecr") as client:
-    client: ECRClient
-    paginator: DescribeImagesPaginator = client.get_paginator("describe_images")
+async with session.create_client("ecr") as client:  # (1)
+    paginator: DescribeImagesPaginator = client.get_paginator("describe_images")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeImagesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECRClient](./client.md)
+2. paginator: [DescribeImagesPaginator](./paginators.md#describeimagespaginator)
+3. item: [:material-code-braces: DescribeImagesResponseTypeDef](./type_defs.md#describeimagesresponsetypedef) 
 
 
 ### paginate
@@ -115,10 +127,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecr.paginator import DescribePullThroughCacheRulesPaginator
 
 session = get_session()
-async with session.create_client("ecr") as client:
-    client: ECRClient
-    paginator: DescribePullThroughCacheRulesPaginator = client.get_paginator("describe_pull_through_cache_rules")
+async with session.create_client("ecr") as client:  # (1)
+    paginator: DescribePullThroughCacheRulesPaginator = client.get_paginator("describe_pull_through_cache_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribePullThroughCacheRulesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECRClient](./client.md)
+2. paginator: [DescribePullThroughCacheRulesPaginator](./paginators.md#describepullthroughcacherulespaginator)
+3. item: [:material-code-braces: DescribePullThroughCacheRulesResponseTypeDef](./type_defs.md#describepullthroughcacherulesresponsetypedef) 
 
 
 ### paginate
@@ -160,10 +178,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecr.paginator import DescribeRepositoriesPaginator
 
 session = get_session()
-async with session.create_client("ecr") as client:
-    client: ECRClient
-    paginator: DescribeRepositoriesPaginator = client.get_paginator("describe_repositories")
+async with session.create_client("ecr") as client:  # (1)
+    paginator: DescribeRepositoriesPaginator = client.get_paginator("describe_repositories")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeRepositoriesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECRClient](./client.md)
+2. paginator: [DescribeRepositoriesPaginator](./paginators.md#describerepositoriespaginator)
+3. item: [:material-code-braces: DescribeRepositoriesResponseTypeDef](./type_defs.md#describerepositoriesresponsetypedef) 
 
 
 ### paginate
@@ -205,10 +229,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecr.paginator import GetLifecyclePolicyPreviewPaginator
 
 session = get_session()
-async with session.create_client("ecr") as client:
-    client: ECRClient
-    paginator: GetLifecyclePolicyPreviewPaginator = client.get_paginator("get_lifecycle_policy_preview")
+async with session.create_client("ecr") as client:  # (1)
+    paginator: GetLifecyclePolicyPreviewPaginator = client.get_paginator("get_lifecycle_policy_preview")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetLifecyclePolicyPreviewResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECRClient](./client.md)
+2. paginator: [GetLifecyclePolicyPreviewPaginator](./paginators.md#getlifecyclepolicypreviewpaginator)
+3. item: [:material-code-braces: GetLifecyclePolicyPreviewResponseTypeDef](./type_defs.md#getlifecyclepolicypreviewresponsetypedef) 
 
 
 ### paginate
@@ -254,10 +284,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ecr.paginator import ListImagesPaginator
 
 session = get_session()
-async with session.create_client("ecr") as client:
-    client: ECRClient
-    paginator: ListImagesPaginator = client.get_paginator("list_images")
+async with session.create_client("ecr") as client:  # (1)
+    paginator: ListImagesPaginator = client.get_paginator("list_images")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListImagesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ECRClient](./client.md)
+2. paginator: [ListImagesPaginator](./paginators.md#listimagespaginator)
+3. item: [:material-code-braces: ListImagesResponseTypeDef](./type_defs.md#listimagesresponsetypedef) 
 
 
 ### paginate

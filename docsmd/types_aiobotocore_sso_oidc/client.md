@@ -105,7 +105,7 @@ await def create_token(
     clientId: str,
     clientSecret: str,
     grantType: str,
-    deviceCode: str,
+    deviceCode: str = ...,
     code: str = ...,
     refreshToken: str = ...,
     scope: Sequence[str] = ...,
@@ -122,7 +122,6 @@ kwargs: CreateTokenRequestRequestTypeDef = {  # (1)
     "clientId": ...,
     "clientSecret": ...,
     "grantType": ...,
-    "deviceCode": ...,
 }
 
 parent.create_token(**kwargs)

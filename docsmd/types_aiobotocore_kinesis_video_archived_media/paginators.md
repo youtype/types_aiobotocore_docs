@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kinesis_video_archived_media.paginator import GetImagesPaginator
 
 session = get_session()
-async with session.create_client("kinesis-video-archived-media") as client:
-    client: KinesisVideoArchivedMediaClient
-    paginator: GetImagesPaginator = client.get_paginator("get_images")
+async with session.create_client("kinesis-video-archived-media") as client:  # (1)
+    paginator: GetImagesPaginator = client.get_paginator("get_images")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetImagesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KinesisVideoArchivedMediaClient](./client.md)
+2. paginator: [GetImagesPaginator](./paginators.md#getimagespaginator)
+3. item: [:material-code-braces: GetImagesOutputTypeDef](./type_defs.md#getimagesoutputtypedef) 
 
 
 ### paginate
@@ -78,10 +84,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kinesis_video_archived_media.paginator import ListFragmentsPaginator
 
 session = get_session()
-async with session.create_client("kinesis-video-archived-media") as client:
-    client: KinesisVideoArchivedMediaClient
-    paginator: ListFragmentsPaginator = client.get_paginator("list_fragments")
+async with session.create_client("kinesis-video-archived-media") as client:  # (1)
+    paginator: ListFragmentsPaginator = client.get_paginator("list_fragments")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFragmentsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KinesisVideoArchivedMediaClient](./client.md)
+2. paginator: [ListFragmentsPaginator](./paginators.md#listfragmentspaginator)
+3. item: [:material-code-braces: ListFragmentsOutputTypeDef](./type_defs.md#listfragmentsoutputtypedef) 
 
 
 ### paginate

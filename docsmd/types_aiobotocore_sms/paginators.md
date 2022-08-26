@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sms.paginator import GetConnectorsPaginator
 
 session = get_session()
-async with session.create_client("sms") as client:
-    client: SMSClient
-    paginator: GetConnectorsPaginator = client.get_paginator("get_connectors")
+async with session.create_client("sms") as client:  # (1)
+    paginator: GetConnectorsPaginator = client.get_paginator("get_connectors")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetConnectorsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SMSClient](./client.md)
+2. paginator: [GetConnectorsPaginator](./paginators.md#getconnectorspaginator)
+3. item: [:material-code-braces: GetConnectorsResponseTypeDef](./type_defs.md#getconnectorsresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sms.paginator import GetReplicationJobsPaginator
 
 session = get_session()
-async with session.create_client("sms") as client:
-    client: SMSClient
-    paginator: GetReplicationJobsPaginator = client.get_paginator("get_replication_jobs")
+async with session.create_client("sms") as client:  # (1)
+    paginator: GetReplicationJobsPaginator = client.get_paginator("get_replication_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetReplicationJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SMSClient](./client.md)
+2. paginator: [GetReplicationJobsPaginator](./paginators.md#getreplicationjobspaginator)
+3. item: [:material-code-braces: GetReplicationJobsResponseTypeDef](./type_defs.md#getreplicationjobsresponsetypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sms.paginator import GetReplicationRunsPaginator
 
 session = get_session()
-async with session.create_client("sms") as client:
-    client: SMSClient
-    paginator: GetReplicationRunsPaginator = client.get_paginator("get_replication_runs")
+async with session.create_client("sms") as client:  # (1)
+    paginator: GetReplicationRunsPaginator = client.get_paginator("get_replication_runs")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetReplicationRunsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SMSClient](./client.md)
+2. paginator: [GetReplicationRunsPaginator](./paginators.md#getreplicationrunspaginator)
+3. item: [:material-code-braces: GetReplicationRunsResponseTypeDef](./type_defs.md#getreplicationrunsresponsetypedef) 
 
 
 ### paginate
@@ -149,10 +167,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sms.paginator import GetServersPaginator
 
 session = get_session()
-async with session.create_client("sms") as client:
-    client: SMSClient
-    paginator: GetServersPaginator = client.get_paginator("get_servers")
+async with session.create_client("sms") as client:  # (1)
+    paginator: GetServersPaginator = client.get_paginator("get_servers")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetServersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SMSClient](./client.md)
+2. paginator: [GetServersPaginator](./paginators.md#getserverspaginator)
+3. item: [:material-code-braces: GetServersResponseTypeDef](./type_defs.md#getserversresponsetypedef) 
 
 
 ### paginate
@@ -194,10 +218,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sms.paginator import ListAppsPaginator
 
 session = get_session()
-async with session.create_client("sms") as client:
-    client: SMSClient
-    paginator: ListAppsPaginator = client.get_paginator("list_apps")
+async with session.create_client("sms") as client:  # (1)
+    paginator: ListAppsPaginator = client.get_paginator("list_apps")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAppsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SMSClient](./client.md)
+2. paginator: [ListAppsPaginator](./paginators.md#listappspaginator)
+3. item: [:material-code-braces: ListAppsResponseTypeDef](./type_defs.md#listappsresponsetypedef) 
 
 
 ### paginate

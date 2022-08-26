@@ -79,6 +79,20 @@ ListAccountsForProvisionedPermissionSetPaginatorName = Literal[
     "list_accounts_for_provisioned_permission_set",
 ]
 ```
+## ListCustomerManagedPolicyReferencesInPermissionSetPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_sso_admin.literals import ListCustomerManagedPolicyReferencesInPermissionSetPaginatorName
+
+def get_value() -> ListCustomerManagedPolicyReferencesInPermissionSetPaginatorName:
+    return "list_customer_managed_policy_references_in_permission_set"
+```
+
+```python title="Definition"
+ListCustomerManagedPolicyReferencesInPermissionSetPaginatorName = Literal[
+    "list_customer_managed_policy_references_in_permission_set",
+]
+```
 ## ListInstancesPaginatorName
 
 ```python title="Usage Example"
@@ -292,6 +306,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -437,6 +452,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -490,6 +506,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -500,11 +517,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -550,6 +569,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -611,11 +631,44 @@ PaginatorName = Literal[
     "list_account_assignment_deletion_status",
     "list_account_assignments",
     "list_accounts_for_provisioned_permission_set",
+    "list_customer_managed_policy_references_in_permission_set",
     "list_instances",
     "list_managed_policies_in_permission_set",
     "list_permission_set_provisioning_status",
     "list_permission_sets",
     "list_permission_sets_provisioned_to_account",
     "list_tags_for_resource",
+]
+```
+## RegionName
+
+```python title="Usage Example"
+from types_aiobotocore_sso_admin.literals import RegionName
+
+def get_value() -> RegionName:
+    return "ap-east-1"
+```
+
+```python title="Definition"
+RegionName = Literal[
+    "ap-east-1",
+    "ap-northeast-1",
+    "ap-northeast-2",
+    "ap-northeast-3",
+    "ap-south-1",
+    "ap-southeast-1",
+    "ap-southeast-2",
+    "ca-central-1",
+    "eu-central-1",
+    "eu-north-1",
+    "eu-south-1",
+    "eu-west-1",
+    "eu-west-2",
+    "eu-west-3",
+    "me-south-1",
+    "sa-east-1",
+    "us-east-1",
+    "us-east-2",
+    "us-west-2",
 ]
 ```

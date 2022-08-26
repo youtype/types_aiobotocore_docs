@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_migration_hub_refactor_spaces.paginator import ListApplicationsPaginator
 
 session = get_session()
-async with session.create_client("migration-hub-refactor-spaces") as client:
-    client: MigrationHubRefactorSpacesClient
-    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")
+async with session.create_client("migration-hub-refactor-spaces") as client:  # (1)
+    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListApplicationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MigrationHubRefactorSpacesClient](./client.md)
+2. paginator: [ListApplicationsPaginator](./paginators.md#listapplicationspaginator)
+3. item: [:material-code-braces: ListApplicationsResponseTypeDef](./type_defs.md#listapplicationsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_migration_hub_refactor_spaces.paginator import ListEnvironmentVpcsPaginator
 
 session = get_session()
-async with session.create_client("migration-hub-refactor-spaces") as client:
-    client: MigrationHubRefactorSpacesClient
-    paginator: ListEnvironmentVpcsPaginator = client.get_paginator("list_environment_vpcs")
+async with session.create_client("migration-hub-refactor-spaces") as client:  # (1)
+    paginator: ListEnvironmentVpcsPaginator = client.get_paginator("list_environment_vpcs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEnvironmentVpcsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MigrationHubRefactorSpacesClient](./client.md)
+2. paginator: [ListEnvironmentVpcsPaginator](./paginators.md#listenvironmentvpcspaginator)
+3. item: [:material-code-braces: ListEnvironmentVpcsResponseTypeDef](./type_defs.md#listenvironmentvpcsresponsetypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_migration_hub_refactor_spaces.paginator import ListEnvironmentsPaginator
 
 session = get_session()
-async with session.create_client("migration-hub-refactor-spaces") as client:
-    client: MigrationHubRefactorSpacesClient
-    paginator: ListEnvironmentsPaginator = client.get_paginator("list_environments")
+async with session.create_client("migration-hub-refactor-spaces") as client:  # (1)
+    paginator: ListEnvironmentsPaginator = client.get_paginator("list_environments")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEnvironmentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MigrationHubRefactorSpacesClient](./client.md)
+2. paginator: [ListEnvironmentsPaginator](./paginators.md#listenvironmentspaginator)
+3. item: [:material-code-braces: ListEnvironmentsResponseTypeDef](./type_defs.md#listenvironmentsresponsetypedef) 
 
 
 ### paginate
@@ -149,10 +167,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_migration_hub_refactor_spaces.paginator import ListRoutesPaginator
 
 session = get_session()
-async with session.create_client("migration-hub-refactor-spaces") as client:
-    client: MigrationHubRefactorSpacesClient
-    paginator: ListRoutesPaginator = client.get_paginator("list_routes")
+async with session.create_client("migration-hub-refactor-spaces") as client:  # (1)
+    paginator: ListRoutesPaginator = client.get_paginator("list_routes")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRoutesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MigrationHubRefactorSpacesClient](./client.md)
+2. paginator: [ListRoutesPaginator](./paginators.md#listroutespaginator)
+3. item: [:material-code-braces: ListRoutesResponseTypeDef](./type_defs.md#listroutesresponsetypedef) 
 
 
 ### paginate
@@ -195,10 +219,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_migration_hub_refactor_spaces.paginator import ListServicesPaginator
 
 session = get_session()
-async with session.create_client("migration-hub-refactor-spaces") as client:
-    client: MigrationHubRefactorSpacesClient
-    paginator: ListServicesPaginator = client.get_paginator("list_services")
+async with session.create_client("migration-hub-refactor-spaces") as client:  # (1)
+    paginator: ListServicesPaginator = client.get_paginator("list_services")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServicesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MigrationHubRefactorSpacesClient](./client.md)
+2. paginator: [ListServicesPaginator](./paginators.md#listservicespaginator)
+3. item: [:material-code-braces: ListServicesResponseTypeDef](./type_defs.md#listservicesresponsetypedef) 
 
 
 ### paginate

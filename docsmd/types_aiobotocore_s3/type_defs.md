@@ -5257,7 +5257,7 @@ class BucketCopyRequestTypeDef(TypedDict):
     Key: str,
     ExtraArgs: NotRequired[Dict[str, Any]],
     Callback: NotRequired[Callable[..., Any]],
-    SourceClient: NotRequired[BaseClient],
+    SourceClient: NotRequired[AioBaseClient],
     Config: NotRequired[TransferConfig],
 ```
 
@@ -5282,7 +5282,7 @@ class ClientCopyRequestTypeDef(TypedDict):
     Key: str,
     ExtraArgs: NotRequired[Dict[str, Any]],
     Callback: NotRequired[Callable[..., Any]],
-    SourceClient: NotRequired[BaseClient],
+    SourceClient: NotRequired[AioBaseClient],
     Config: NotRequired[TransferConfig],
 ```
 
@@ -5371,7 +5371,7 @@ class ObjectCopyRequestTypeDef(TypedDict):
     CopySource: CopySourceTypeDef,  # (1)
     ExtraArgs: NotRequired[Dict[str, Any]],
     Callback: NotRequired[Callable[..., Any]],
-    SourceClient: NotRequired[BaseClient],
+    SourceClient: NotRequired[AioBaseClient],
     Config: NotRequired[TransferConfig],
 ```
 

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codedeploy.paginator import ListApplicationRevisionsPaginator
 
 session = get_session()
-async with session.create_client("codedeploy") as client:
-    client: CodeDeployClient
-    paginator: ListApplicationRevisionsPaginator = client.get_paginator("list_application_revisions")
+async with session.create_client("codedeploy") as client:  # (1)
+    paginator: ListApplicationRevisionsPaginator = client.get_paginator("list_application_revisions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListApplicationRevisionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeDeployClient](./client.md)
+2. paginator: [ListApplicationRevisionsPaginator](./paginators.md#listapplicationrevisionspaginator)
+3. item: [:material-code-braces: ListApplicationRevisionsOutputTypeDef](./type_defs.md#listapplicationrevisionsoutputtypedef) 
 
 
 ### paginate
@@ -70,10 +76,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codedeploy.paginator import ListApplicationsPaginator
 
 session = get_session()
-async with session.create_client("codedeploy") as client:
-    client: CodeDeployClient
-    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")
+async with session.create_client("codedeploy") as client:  # (1)
+    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListApplicationsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeDeployClient](./client.md)
+2. paginator: [ListApplicationsPaginator](./paginators.md#listapplicationspaginator)
+3. item: [:material-code-braces: ListApplicationsOutputTypeDef](./type_defs.md#listapplicationsoutputtypedef) 
 
 
 ### paginate
@@ -113,10 +125,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codedeploy.paginator import ListDeploymentConfigsPaginator
 
 session = get_session()
-async with session.create_client("codedeploy") as client:
-    client: CodeDeployClient
-    paginator: ListDeploymentConfigsPaginator = client.get_paginator("list_deployment_configs")
+async with session.create_client("codedeploy") as client:  # (1)
+    paginator: ListDeploymentConfigsPaginator = client.get_paginator("list_deployment_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeploymentConfigsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeDeployClient](./client.md)
+2. paginator: [ListDeploymentConfigsPaginator](./paginators.md#listdeploymentconfigspaginator)
+3. item: [:material-code-braces: ListDeploymentConfigsOutputTypeDef](./type_defs.md#listdeploymentconfigsoutputtypedef) 
 
 
 ### paginate
@@ -156,10 +174,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codedeploy.paginator import ListDeploymentGroupsPaginator
 
 session = get_session()
-async with session.create_client("codedeploy") as client:
-    client: CodeDeployClient
-    paginator: ListDeploymentGroupsPaginator = client.get_paginator("list_deployment_groups")
+async with session.create_client("codedeploy") as client:  # (1)
+    paginator: ListDeploymentGroupsPaginator = client.get_paginator("list_deployment_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeploymentGroupsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeDeployClient](./client.md)
+2. paginator: [ListDeploymentGroupsPaginator](./paginators.md#listdeploymentgroupspaginator)
+3. item: [:material-code-braces: ListDeploymentGroupsOutputTypeDef](./type_defs.md#listdeploymentgroupsoutputtypedef) 
 
 
 ### paginate
@@ -200,10 +224,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codedeploy.paginator import ListDeploymentInstancesPaginator
 
 session = get_session()
-async with session.create_client("codedeploy") as client:
-    client: CodeDeployClient
-    paginator: ListDeploymentInstancesPaginator = client.get_paginator("list_deployment_instances")
+async with session.create_client("codedeploy") as client:  # (1)
+    paginator: ListDeploymentInstancesPaginator = client.get_paginator("list_deployment_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeploymentInstancesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeDeployClient](./client.md)
+2. paginator: [ListDeploymentInstancesPaginator](./paginators.md#listdeploymentinstancespaginator)
+3. item: [:material-code-braces: ListDeploymentInstancesOutputTypeDef](./type_defs.md#listdeploymentinstancesoutputtypedef) 
 
 
 ### paginate
@@ -248,10 +278,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codedeploy.paginator import ListDeploymentTargetsPaginator
 
 session = get_session()
-async with session.create_client("codedeploy") as client:
-    client: CodeDeployClient
-    paginator: ListDeploymentTargetsPaginator = client.get_paginator("list_deployment_targets")
+async with session.create_client("codedeploy") as client:  # (1)
+    paginator: ListDeploymentTargetsPaginator = client.get_paginator("list_deployment_targets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeploymentTargetsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeDeployClient](./client.md)
+2. paginator: [ListDeploymentTargetsPaginator](./paginators.md#listdeploymenttargetspaginator)
+3. item: [:material-code-braces: ListDeploymentTargetsOutputTypeDef](./type_defs.md#listdeploymenttargetsoutputtypedef) 
 
 
 ### paginate
@@ -294,10 +330,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codedeploy.paginator import ListDeploymentsPaginator
 
 session = get_session()
-async with session.create_client("codedeploy") as client:
-    client: CodeDeployClient
-    paginator: ListDeploymentsPaginator = client.get_paginator("list_deployments")
+async with session.create_client("codedeploy") as client:  # (1)
+    paginator: ListDeploymentsPaginator = client.get_paginator("list_deployments")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeploymentsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeDeployClient](./client.md)
+2. paginator: [ListDeploymentsPaginator](./paginators.md#listdeploymentspaginator)
+3. item: [:material-code-braces: ListDeploymentsOutputTypeDef](./type_defs.md#listdeploymentsoutputtypedef) 
 
 
 ### paginate
@@ -344,10 +386,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codedeploy.paginator import ListGitHubAccountTokenNamesPaginator
 
 session = get_session()
-async with session.create_client("codedeploy") as client:
-    client: CodeDeployClient
-    paginator: ListGitHubAccountTokenNamesPaginator = client.get_paginator("list_git_hub_account_token_names")
+async with session.create_client("codedeploy") as client:  # (1)
+    paginator: ListGitHubAccountTokenNamesPaginator = client.get_paginator("list_git_hub_account_token_names")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGitHubAccountTokenNamesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeDeployClient](./client.md)
+2. paginator: [ListGitHubAccountTokenNamesPaginator](./paginators.md#listgithubaccounttokennamespaginator)
+3. item: [:material-code-braces: ListGitHubAccountTokenNamesOutputTypeDef](./type_defs.md#listgithubaccounttokennamesoutputtypedef) 
 
 
 ### paginate
@@ -387,10 +435,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codedeploy.paginator import ListOnPremisesInstancesPaginator
 
 session = get_session()
-async with session.create_client("codedeploy") as client:
-    client: CodeDeployClient
-    paginator: ListOnPremisesInstancesPaginator = client.get_paginator("list_on_premises_instances")
+async with session.create_client("codedeploy") as client:  # (1)
+    paginator: ListOnPremisesInstancesPaginator = client.get_paginator("list_on_premises_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListOnPremisesInstancesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeDeployClient](./client.md)
+2. paginator: [ListOnPremisesInstancesPaginator](./paginators.md#listonpremisesinstancespaginator)
+3. item: [:material-code-braces: ListOnPremisesInstancesOutputTypeDef](./type_defs.md#listonpremisesinstancesoutputtypedef) 
 
 
 ### paginate

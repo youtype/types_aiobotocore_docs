@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_network_firewall.paginator import ListFirewallPoliciesPaginator
 
 session = get_session()
-async with session.create_client("network-firewall") as client:
-    client: NetworkFirewallClient
-    paginator: ListFirewallPoliciesPaginator = client.get_paginator("list_firewall_policies")
+async with session.create_client("network-firewall") as client:  # (1)
+    paginator: ListFirewallPoliciesPaginator = client.get_paginator("list_firewall_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFirewallPoliciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkFirewallClient](./client.md)
+2. paginator: [ListFirewallPoliciesPaginator](./paginators.md#listfirewallpoliciespaginator)
+3. item: [:material-code-braces: ListFirewallPoliciesResponseTypeDef](./type_defs.md#listfirewallpoliciesresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_network_firewall.paginator import ListFirewallsPaginator
 
 session = get_session()
-async with session.create_client("network-firewall") as client:
-    client: NetworkFirewallClient
-    paginator: ListFirewallsPaginator = client.get_paginator("list_firewalls")
+async with session.create_client("network-firewall") as client:  # (1)
+    paginator: ListFirewallsPaginator = client.get_paginator("list_firewalls")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFirewallsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkFirewallClient](./client.md)
+2. paginator: [ListFirewallsPaginator](./paginators.md#listfirewallspaginator)
+3. item: [:material-code-braces: ListFirewallsResponseTypeDef](./type_defs.md#listfirewallsresponsetypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_network_firewall.paginator import ListRuleGroupsPaginator
 
 session = get_session()
-async with session.create_client("network-firewall") as client:
-    client: NetworkFirewallClient
-    paginator: ListRuleGroupsPaginator = client.get_paginator("list_rule_groups")
+async with session.create_client("network-firewall") as client:  # (1)
+    paginator: ListRuleGroupsPaginator = client.get_paginator("list_rule_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRuleGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkFirewallClient](./client.md)
+2. paginator: [ListRuleGroupsPaginator](./paginators.md#listrulegroupspaginator)
+3. item: [:material-code-braces: ListRuleGroupsResponseTypeDef](./type_defs.md#listrulegroupsresponsetypedef) 
 
 
 ### paginate
@@ -154,10 +172,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_network_firewall.paginator import ListTagsForResourcePaginator
 
 session = get_session()
-async with session.create_client("network-firewall") as client:
-    client: NetworkFirewallClient
-    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
+async with session.create_client("network-firewall") as client:  # (1)
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsForResourceResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkFirewallClient](./client.md)
+2. paginator: [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
+3. item: [:material-code-braces: ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef) 
 
 
 ### paginate

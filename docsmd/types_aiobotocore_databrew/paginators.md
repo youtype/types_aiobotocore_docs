@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_databrew.paginator import ListDatasetsPaginator
 
 session = get_session()
-async with session.create_client("databrew") as client:
-    client: GlueDataBrewClient
-    paginator: ListDatasetsPaginator = client.get_paginator("list_datasets")
+async with session.create_client("databrew") as client:  # (1)
+    paginator: ListDatasetsPaginator = client.get_paginator("list_datasets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDatasetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueDataBrewClient](./client.md)
+2. paginator: [ListDatasetsPaginator](./paginators.md#listdatasetspaginator)
+3. item: [:material-code-braces: ListDatasetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_databrew.paginator import ListJobRunsPaginator
 
 session = get_session()
-async with session.create_client("databrew") as client:
-    client: GlueDataBrewClient
-    paginator: ListJobRunsPaginator = client.get_paginator("list_job_runs")
+async with session.create_client("databrew") as client:  # (1)
+    paginator: ListJobRunsPaginator = client.get_paginator("list_job_runs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListJobRunsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueDataBrewClient](./client.md)
+2. paginator: [ListJobRunsPaginator](./paginators.md#listjobrunspaginator)
+3. item: [:material-code-braces: ListJobRunsResponseTypeDef](./type_defs.md#listjobrunsresponsetypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_databrew.paginator import ListJobsPaginator
 
 session = get_session()
-async with session.create_client("databrew") as client:
-    client: GlueDataBrewClient
-    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
+async with session.create_client("databrew") as client:  # (1)
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueDataBrewClient](./client.md)
+2. paginator: [ListJobsPaginator](./paginators.md#listjobspaginator)
+3. item: [:material-code-braces: ListJobsResponseTypeDef](./type_defs.md#listjobsresponsetypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_databrew.paginator import ListProjectsPaginator
 
 session = get_session()
-async with session.create_client("databrew") as client:
-    client: GlueDataBrewClient
-    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
+async with session.create_client("databrew") as client:  # (1)
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProjectsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueDataBrewClient](./client.md)
+2. paginator: [ListProjectsPaginator](./paginators.md#listprojectspaginator)
+3. item: [:material-code-braces: ListProjectsResponseTypeDef](./type_defs.md#listprojectsresponsetypedef) 
 
 
 ### paginate
@@ -193,10 +217,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_databrew.paginator import ListRecipeVersionsPaginator
 
 session = get_session()
-async with session.create_client("databrew") as client:
-    client: GlueDataBrewClient
-    paginator: ListRecipeVersionsPaginator = client.get_paginator("list_recipe_versions")
+async with session.create_client("databrew") as client:  # (1)
+    paginator: ListRecipeVersionsPaginator = client.get_paginator("list_recipe_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRecipeVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueDataBrewClient](./client.md)
+2. paginator: [ListRecipeVersionsPaginator](./paginators.md#listrecipeversionspaginator)
+3. item: [:material-code-braces: ListRecipeVersionsResponseTypeDef](./type_defs.md#listrecipeversionsresponsetypedef) 
 
 
 ### paginate
@@ -237,10 +267,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_databrew.paginator import ListRecipesPaginator
 
 session = get_session()
-async with session.create_client("databrew") as client:
-    client: GlueDataBrewClient
-    paginator: ListRecipesPaginator = client.get_paginator("list_recipes")
+async with session.create_client("databrew") as client:  # (1)
+    paginator: ListRecipesPaginator = client.get_paginator("list_recipes")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRecipesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueDataBrewClient](./client.md)
+2. paginator: [ListRecipesPaginator](./paginators.md#listrecipespaginator)
+3. item: [:material-code-braces: ListRecipesResponseTypeDef](./type_defs.md#listrecipesresponsetypedef) 
 
 
 ### paginate
@@ -281,10 +317,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_databrew.paginator import ListRulesetsPaginator
 
 session = get_session()
-async with session.create_client("databrew") as client:
-    client: GlueDataBrewClient
-    paginator: ListRulesetsPaginator = client.get_paginator("list_rulesets")
+async with session.create_client("databrew") as client:  # (1)
+    paginator: ListRulesetsPaginator = client.get_paginator("list_rulesets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRulesetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueDataBrewClient](./client.md)
+2. paginator: [ListRulesetsPaginator](./paginators.md#listrulesetspaginator)
+3. item: [:material-code-braces: ListRulesetsResponseTypeDef](./type_defs.md#listrulesetsresponsetypedef) 
 
 
 ### paginate
@@ -325,10 +367,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_databrew.paginator import ListSchedulesPaginator
 
 session = get_session()
-async with session.create_client("databrew") as client:
-    client: GlueDataBrewClient
-    paginator: ListSchedulesPaginator = client.get_paginator("list_schedules")
+async with session.create_client("databrew") as client:  # (1)
+    paginator: ListSchedulesPaginator = client.get_paginator("list_schedules")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSchedulesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueDataBrewClient](./client.md)
+2. paginator: [ListSchedulesPaginator](./paginators.md#listschedulespaginator)
+3. item: [:material-code-braces: ListSchedulesResponseTypeDef](./type_defs.md#listschedulesresponsetypedef) 
 
 
 ### paginate

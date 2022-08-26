@@ -1462,14 +1462,16 @@ await def purchase_offering(
     Count: int,
     OfferingId: str,
     Name: str = ...,
+    RenewalSettings: RenewalSettingsTypeDef = ...,  # (1)
     RequestId: str = ...,
     Start: str = ...,
     Tags: Mapping[str, str] = ...,
-) -> PurchaseOfferingResponseTypeDef:  # (1)
+) -> PurchaseOfferingResponseTypeDef:  # (2)
     ...
 ```
 
-1. See [:material-code-braces: PurchaseOfferingResponseTypeDef](./type_defs.md#purchaseofferingresponsetypedef) 
+1. See [:material-code-braces: RenewalSettingsTypeDef](./type_defs.md#renewalsettingstypedef) 
+2. See [:material-code-braces: PurchaseOfferingResponseTypeDef](./type_defs.md#purchaseofferingresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1482,6 +1484,36 @@ parent.purchase_offering(**kwargs)
 ```
 
 1. See [:material-code-braces: PurchaseOfferingRequestRequestTypeDef](./type_defs.md#purchaseofferingrequestrequesttypedef) 
+
+### reboot\_input\_device
+
+Send a reboot command to the specified input device.
+
+Type annotations and code completion for `#!python session.create_client("medialive").reboot_input_device` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.reboot_input_device)
+
+```python title="Method definition"
+await def reboot_input_device(
+    self,
+    *,
+    InputDeviceId: str,
+    Force: RebootInputDeviceForceType = ...,  # (1)
+) -> Dict[str, Any]:
+    ...
+```
+
+1. See [:material-code-brackets: RebootInputDeviceForceType](./literals.md#rebootinputdeviceforcetype) 
+
+
+```python title="Usage example with kwargs"
+kwargs: RebootInputDeviceRequestRequestTypeDef = {  # (1)
+    "InputDeviceId": ...,
+}
+
+parent.reboot_input_device(**kwargs)
+```
+
+1. See [:material-code-braces: RebootInputDeviceRequestRequestTypeDef](./type_defs.md#rebootinputdevicerequestrequesttypedef) 
 
 ### reject\_input\_device\_transfer
 
@@ -1540,6 +1572,34 @@ parent.start_channel(**kwargs)
 ```
 
 1. See [:material-code-braces: StartChannelRequestRequestTypeDef](./type_defs.md#startchannelrequestrequesttypedef) 
+
+### start\_input\_device\_maintenance\_window
+
+Start a maintenance window for the specified input device.
+
+Type annotations and code completion for `#!python session.create_client("medialive").start_input_device_maintenance_window` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.start_input_device_maintenance_window)
+
+```python title="Method definition"
+await def start_input_device_maintenance_window(
+    self,
+    *,
+    InputDeviceId: str,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python title="Usage example with kwargs"
+kwargs: StartInputDeviceMaintenanceWindowRequestRequestTypeDef = {  # (1)
+    "InputDeviceId": ...,
+}
+
+parent.start_input_device_maintenance_window(**kwargs)
+```
+
+1. See [:material-code-braces: StartInputDeviceMaintenanceWindowRequestRequestTypeDef](./type_defs.md#startinputdevicemaintenancewindowrequestrequesttypedef) 
 
 ### start\_multiplex
 
@@ -1923,11 +1983,13 @@ await def update_reservation(
     *,
     ReservationId: str,
     Name: str = ...,
-) -> UpdateReservationResponseTypeDef:  # (1)
+    RenewalSettings: RenewalSettingsTypeDef = ...,  # (1)
+) -> UpdateReservationResponseTypeDef:  # (2)
     ...
 ```
 
-1. See [:material-code-braces: UpdateReservationResponseTypeDef](./type_defs.md#updatereservationresponsetypedef) 
+1. See [:material-code-braces: RenewalSettingsTypeDef](./type_defs.md#renewalsettingstypedef) 
+2. See [:material-code-braces: UpdateReservationResponseTypeDef](./type_defs.md#updatereservationresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"

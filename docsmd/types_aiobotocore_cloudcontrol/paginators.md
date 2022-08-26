@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudcontrol.paginator import ListResourceRequestsPaginator
 
 session = get_session()
-async with session.create_client("cloudcontrol") as client:
-    client: CloudControlApiClient
-    paginator: ListResourceRequestsPaginator = client.get_paginator("list_resource_requests")
+async with session.create_client("cloudcontrol") as client:  # (1)
+    paginator: ListResourceRequestsPaginator = client.get_paginator("list_resource_requests")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResourceRequestsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudControlApiClient](./client.md)
+2. paginator: [ListResourceRequestsPaginator](./paginators.md#listresourcerequestspaginator)
+3. item: [:material-code-braces: ListResourceRequestsOutputTypeDef](./type_defs.md#listresourcerequestsoutputtypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudcontrol.paginator import ListResourcesPaginator
 
 session = get_session()
-async with session.create_client("cloudcontrol") as client:
-    client: CloudControlApiClient
-    paginator: ListResourcesPaginator = client.get_paginator("list_resources")
+async with session.create_client("cloudcontrol") as client:  # (1)
+    paginator: ListResourcesPaginator = client.get_paginator("list_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResourcesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudControlApiClient](./client.md)
+2. paginator: [ListResourcesPaginator](./paginators.md#listresourcespaginator)
+3. item: [:material-code-braces: ListResourcesOutputTypeDef](./type_defs.md#listresourcesoutputtypedef) 
 
 
 ### paginate

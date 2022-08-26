@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_braket.paginator import SearchDevicesPaginator
 
 session = get_session()
-async with session.create_client("braket") as client:
-    client: BraketClient
-    paginator: SearchDevicesPaginator = client.get_paginator("search_devices")
+async with session.create_client("braket") as client:  # (1)
+    paginator: SearchDevicesPaginator = client.get_paginator("search_devices")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchDevicesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BraketClient](./client.md)
+2. paginator: [SearchDevicesPaginator](./paginators.md#searchdevicespaginator)
+3. item: [:material-code-braces: SearchDevicesResponseTypeDef](./type_defs.md#searchdevicesresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_braket.paginator import SearchJobsPaginator
 
 session = get_session()
-async with session.create_client("braket") as client:
-    client: BraketClient
-    paginator: SearchJobsPaginator = client.get_paginator("search_jobs")
+async with session.create_client("braket") as client:  # (1)
+    paginator: SearchJobsPaginator = client.get_paginator("search_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BraketClient](./client.md)
+2. paginator: [SearchJobsPaginator](./paginators.md#searchjobspaginator)
+3. item: [:material-code-braces: SearchJobsResponseTypeDef](./type_defs.md#searchjobsresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_braket.paginator import SearchQuantumTasksPaginator
 
 session = get_session()
-async with session.create_client("braket") as client:
-    client: BraketClient
-    paginator: SearchQuantumTasksPaginator = client.get_paginator("search_quantum_tasks")
+async with session.create_client("braket") as client:  # (1)
+    paginator: SearchQuantumTasksPaginator = client.get_paginator("search_quantum_tasks")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchQuantumTasksResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BraketClient](./client.md)
+2. paginator: [SearchQuantumTasksPaginator](./paginators.md#searchquantumtaskspaginator)
+3. item: [:material-code-braces: SearchQuantumTasksResponseTypeDef](./type_defs.md#searchquantumtasksresponsetypedef) 
 
 
 ### paginate

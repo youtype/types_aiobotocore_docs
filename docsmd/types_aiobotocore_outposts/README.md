@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Outposts`.
 
 ### From PyPI with pip
 
@@ -97,6 +92,7 @@ def get_value() -> AddressTypeType:
 - [PowerDrawKvaType](./literals.md#powerdrawkvatype)
 - [PowerFeedDropType](./literals.md#powerfeeddroptype)
 - [PowerPhaseType](./literals.md#powerphasetype)
+- [ShipmentCarrierType](./literals.md#shipmentcarriertype)
 - [SupportedHardwareTypeType](./literals.md#supportedhardwaretypetype)
 - [SupportedStorageEnumType](./literals.md#supportedstorageenumtype)
 - [UplinkCountType](./literals.md#uplinkcounttype)
@@ -147,7 +143,8 @@ def get_value() -> AddressTypeDef:
 - [InstanceTypeItemTypeDef](./type_defs.md#instancetypeitemtypedef)
 - [GetSiteAddressInputRequestTypeDef](./type_defs.md#getsiteaddressinputrequesttypedef)
 - [GetSiteInputRequestTypeDef](./type_defs.md#getsiteinputrequesttypedef)
-- [LineItemTypeDef](./type_defs.md#lineitemtypedef)
+- [LineItemAssetInformationTypeDef](./type_defs.md#lineitemassetinformationtypedef)
+- [ShipmentInformationTypeDef](./type_defs.md#shipmentinformationtypedef)
 - [ListAssetsInputRequestTypeDef](./type_defs.md#listassetsinputrequesttypedef)
 - [ListCatalogItemsInputRequestTypeDef](./type_defs.md#listcatalogitemsinputrequesttypedef)
 - [ListOrdersInputRequestTypeDef](./type_defs.md#listordersinputrequesttypedef)
@@ -177,7 +174,7 @@ def get_value() -> AddressTypeDef:
 - [CreateSiteInputRequestTypeDef](./type_defs.md#createsiteinputrequesttypedef)
 - [SiteTypeDef](./type_defs.md#sitetypedef)
 - [GetOutpostInstanceTypesOutputTypeDef](./type_defs.md#getoutpostinstancetypesoutputtypedef)
-- [OrderTypeDef](./type_defs.md#ordertypedef)
+- [LineItemTypeDef](./type_defs.md#lineitemtypedef)
 - [ListOrdersOutputTypeDef](./type_defs.md#listordersoutputtypedef)
 - [ListAssetsOutputTypeDef](./type_defs.md#listassetsoutputtypedef)
 - [GetCatalogItemOutputTypeDef](./type_defs.md#getcatalogitemoutputtypedef)
@@ -187,6 +184,7 @@ def get_value() -> AddressTypeDef:
 - [ListSitesOutputTypeDef](./type_defs.md#listsitesoutputtypedef)
 - [UpdateSiteOutputTypeDef](./type_defs.md#updatesiteoutputtypedef)
 - [UpdateSiteRackPhysicalPropertiesOutputTypeDef](./type_defs.md#updatesiterackphysicalpropertiesoutputtypedef)
+- [OrderTypeDef](./type_defs.md#ordertypedef)
 - [CreateOrderOutputTypeDef](./type_defs.md#createorderoutputtypedef)
 - [GetOrderOutputTypeDef](./type_defs.md#getorderoutputtypedef)
 

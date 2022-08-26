@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_polly.paginator import DescribeVoicesPaginator
 
 session = get_session()
-async with session.create_client("polly") as client:
-    client: PollyClient
-    paginator: DescribeVoicesPaginator = client.get_paginator("describe_voices")
+async with session.create_client("polly") as client:  # (1)
+    paginator: DescribeVoicesPaginator = client.get_paginator("describe_voices")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeVoicesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PollyClient](./client.md)
+2. paginator: [DescribeVoicesPaginator](./paginators.md#describevoicespaginator)
+3. item: [:material-code-braces: DescribeVoicesOutputTypeDef](./type_defs.md#describevoicesoutputtypedef) 
 
 
 ### paginate
@@ -66,10 +72,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_polly.paginator import ListLexiconsPaginator
 
 session = get_session()
-async with session.create_client("polly") as client:
-    client: PollyClient
-    paginator: ListLexiconsPaginator = client.get_paginator("list_lexicons")
+async with session.create_client("polly") as client:  # (1)
+    paginator: ListLexiconsPaginator = client.get_paginator("list_lexicons")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLexiconsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PollyClient](./client.md)
+2. paginator: [ListLexiconsPaginator](./paginators.md#listlexiconspaginator)
+3. item: [:material-code-braces: ListLexiconsOutputTypeDef](./type_defs.md#listlexiconsoutputtypedef) 
 
 
 ### paginate
@@ -109,10 +121,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_polly.paginator import ListSpeechSynthesisTasksPaginator
 
 session = get_session()
-async with session.create_client("polly") as client:
-    client: PollyClient
-    paginator: ListSpeechSynthesisTasksPaginator = client.get_paginator("list_speech_synthesis_tasks")
+async with session.create_client("polly") as client:  # (1)
+    paginator: ListSpeechSynthesisTasksPaginator = client.get_paginator("list_speech_synthesis_tasks")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSpeechSynthesisTasksOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PollyClient](./client.md)
+2. paginator: [ListSpeechSynthesisTasksPaginator](./paginators.md#listspeechsynthesistaskspaginator)
+3. item: [:material-code-braces: ListSpeechSynthesisTasksOutputTypeDef](./type_defs.md#listspeechsynthesistasksoutputtypedef) 
 
 
 ### paginate

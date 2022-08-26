@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_evidently.paginator import ListExperimentsPaginator
 
 session = get_session()
-async with session.create_client("evidently") as client:
-    client: CloudWatchEvidentlyClient
-    paginator: ListExperimentsPaginator = client.get_paginator("list_experiments")
+async with session.create_client("evidently") as client:  # (1)
+    paginator: ListExperimentsPaginator = client.get_paginator("list_experiments")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListExperimentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchEvidentlyClient](./client.md)
+2. paginator: [ListExperimentsPaginator](./paginators.md#listexperimentspaginator)
+3. item: [:material-code-braces: ListExperimentsResponseTypeDef](./type_defs.md#listexperimentsresponsetypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_evidently.paginator import ListFeaturesPaginator
 
 session = get_session()
-async with session.create_client("evidently") as client:
-    client: CloudWatchEvidentlyClient
-    paginator: ListFeaturesPaginator = client.get_paginator("list_features")
+async with session.create_client("evidently") as client:  # (1)
+    paginator: ListFeaturesPaginator = client.get_paginator("list_features")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFeaturesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchEvidentlyClient](./client.md)
+2. paginator: [ListFeaturesPaginator](./paginators.md#listfeaturespaginator)
+3. item: [:material-code-braces: ListFeaturesResponseTypeDef](./type_defs.md#listfeaturesresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_evidently.paginator import ListLaunchesPaginator
 
 session = get_session()
-async with session.create_client("evidently") as client:
-    client: CloudWatchEvidentlyClient
-    paginator: ListLaunchesPaginator = client.get_paginator("list_launches")
+async with session.create_client("evidently") as client:  # (1)
+    paginator: ListLaunchesPaginator = client.get_paginator("list_launches")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLaunchesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchEvidentlyClient](./client.md)
+2. paginator: [ListLaunchesPaginator](./paginators.md#listlaunchespaginator)
+3. item: [:material-code-braces: ListLaunchesResponseTypeDef](./type_defs.md#listlaunchesresponsetypedef) 
 
 
 ### paginate
@@ -154,10 +172,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_evidently.paginator import ListProjectsPaginator
 
 session = get_session()
-async with session.create_client("evidently") as client:
-    client: CloudWatchEvidentlyClient
-    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
+async with session.create_client("evidently") as client:  # (1)
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProjectsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudWatchEvidentlyClient](./client.md)
+2. paginator: [ListProjectsPaginator](./paginators.md#listprojectspaginator)
+3. item: [:material-code-braces: ListProjectsResponseTypeDef](./type_defs.md#listprojectsresponsetypedef) 
 
 
 ### paginate
@@ -186,3 +210,105 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListProjectsRequestListProjectsPaginateTypeDef](./type_defs.md#listprojectsrequestlistprojectspaginatetypedef) 
+## ListSegmentReferencesPaginator
+
+Type annotations and code completion for `#!python session.create_client("evidently").get_paginator("list_segment_references")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Paginator.ListSegmentReferences)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_evidently.paginator import ListSegmentReferencesPaginator
+
+session = get_session()
+async with session.create_client("evidently") as client:  # (1)
+    paginator: ListSegmentReferencesPaginator = client.get_paginator("list_segment_references")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSegmentReferencesResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [CloudWatchEvidentlyClient](./client.md)
+2. paginator: [ListSegmentReferencesPaginator](./paginators.md#listsegmentreferencespaginator)
+3. item: [:material-code-braces: ListSegmentReferencesResponseTypeDef](./type_defs.md#listsegmentreferencesresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListSegmentReferencesPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    segment: str,
+    type: SegmentReferenceResourceTypeType,  # (1)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[ListSegmentReferencesResponseTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-brackets: SegmentReferenceResourceTypeType](./literals.md#segmentreferenceresourcetypetype) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: ListSegmentReferencesResponseTypeDef](./type_defs.md#listsegmentreferencesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListSegmentReferencesRequestListSegmentReferencesPaginateTypeDef = {  # (1)
+    "segment": ...,
+    "type": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListSegmentReferencesRequestListSegmentReferencesPaginateTypeDef](./type_defs.md#listsegmentreferencesrequestlistsegmentreferencespaginatetypedef) 
+## ListSegmentsPaginator
+
+Type annotations and code completion for `#!python session.create_client("evidently").get_paginator("list_segments")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Paginator.ListSegments)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_evidently.paginator import ListSegmentsPaginator
+
+session = get_session()
+async with session.create_client("evidently") as client:  # (1)
+    paginator: ListSegmentsPaginator = client.get_paginator("list_segments")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSegmentsResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [CloudWatchEvidentlyClient](./client.md)
+2. paginator: [ListSegmentsPaginator](./paginators.md#listsegmentspaginator)
+3. item: [:material-code-braces: ListSegmentsResponseTypeDef](./type_defs.md#listsegmentsresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListSegmentsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListSegmentsResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListSegmentsResponseTypeDef](./type_defs.md#listsegmentsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListSegmentsRequestListSegmentsPaginateTypeDef = {  # (1)
+    "PaginationConfig": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListSegmentsRequestListSegmentsPaginateTypeDef](./type_defs.md#listsegmentsrequestlistsegmentspaginatetypedef) 

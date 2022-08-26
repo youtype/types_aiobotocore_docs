@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dataexchange.paginator import ListDataSetRevisionsPaginator
 
 session = get_session()
-async with session.create_client("dataexchange") as client:
-    client: DataExchangeClient
-    paginator: ListDataSetRevisionsPaginator = client.get_paginator("list_data_set_revisions")
+async with session.create_client("dataexchange") as client:  # (1)
+    paginator: ListDataSetRevisionsPaginator = client.get_paginator("list_data_set_revisions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDataSetRevisionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DataExchangeClient](./client.md)
+2. paginator: [ListDataSetRevisionsPaginator](./paginators.md#listdatasetrevisionspaginator)
+3. item: [:material-code-braces: ListDataSetRevisionsResponseTypeDef](./type_defs.md#listdatasetrevisionsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dataexchange.paginator import ListDataSetsPaginator
 
 session = get_session()
-async with session.create_client("dataexchange") as client:
-    client: DataExchangeClient
-    paginator: ListDataSetsPaginator = client.get_paginator("list_data_sets")
+async with session.create_client("dataexchange") as client:  # (1)
+    paginator: ListDataSetsPaginator = client.get_paginator("list_data_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDataSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DataExchangeClient](./client.md)
+2. paginator: [ListDataSetsPaginator](./paginators.md#listdatasetspaginator)
+3. item: [:material-code-braces: ListDataSetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dataexchange.paginator import ListEventActionsPaginator
 
 session = get_session()
-async with session.create_client("dataexchange") as client:
-    client: DataExchangeClient
-    paginator: ListEventActionsPaginator = client.get_paginator("list_event_actions")
+async with session.create_client("dataexchange") as client:  # (1)
+    paginator: ListEventActionsPaginator = client.get_paginator("list_event_actions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEventActionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DataExchangeClient](./client.md)
+2. paginator: [ListEventActionsPaginator](./paginators.md#listeventactionspaginator)
+3. item: [:material-code-braces: ListEventActionsResponseTypeDef](./type_defs.md#listeventactionsresponsetypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dataexchange.paginator import ListJobsPaginator
 
 session = get_session()
-async with session.create_client("dataexchange") as client:
-    client: DataExchangeClient
-    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
+async with session.create_client("dataexchange") as client:  # (1)
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DataExchangeClient](./client.md)
+2. paginator: [ListJobsPaginator](./paginators.md#listjobspaginator)
+3. item: [:material-code-braces: ListJobsResponseTypeDef](./type_defs.md#listjobsresponsetypedef) 
 
 
 ### paginate
@@ -195,10 +219,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dataexchange.paginator import ListRevisionAssetsPaginator
 
 session = get_session()
-async with session.create_client("dataexchange") as client:
-    client: DataExchangeClient
-    paginator: ListRevisionAssetsPaginator = client.get_paginator("list_revision_assets")
+async with session.create_client("dataexchange") as client:  # (1)
+    paginator: ListRevisionAssetsPaginator = client.get_paginator("list_revision_assets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRevisionAssetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DataExchangeClient](./client.md)
+2. paginator: [ListRevisionAssetsPaginator](./paginators.md#listrevisionassetspaginator)
+3. item: [:material-code-braces: ListRevisionAssetsResponseTypeDef](./type_defs.md#listrevisionassetsresponsetypedef) 
 
 
 ### paginate

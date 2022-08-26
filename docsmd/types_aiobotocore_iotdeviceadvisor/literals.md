@@ -7,6 +7,21 @@
     Auto-generated documentation for [IoTDeviceAdvisor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor)
     type annotations stubs module [types-aiobotocore-iotdeviceadvisor](https://pypi.org/project/types-aiobotocore-iotdeviceadvisor/).
 
+## ProtocolType
+
+```python title="Usage Example"
+from types_aiobotocore_iotdeviceadvisor.literals import ProtocolType
+
+def get_value() -> ProtocolType:
+    return "MqttV3_1_1"
+```
+
+```python title="Definition"
+ProtocolType = Literal[
+    "MqttV3_1_1",
+    "MqttV5",
+]
+```
 ## StatusType
 
 ```python title="Usage Example"
@@ -49,6 +64,43 @@ SuiteRunStatusType = Literal[
     "RUNNING",
     "STOPPED",
     "STOPPING",
+]
+```
+## TestCaseScenarioStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_iotdeviceadvisor.literals import TestCaseScenarioStatusType
+
+def get_value() -> TestCaseScenarioStatusType:
+    return "CANCELED"
+```
+
+```python title="Definition"
+TestCaseScenarioStatusType = Literal[
+    "CANCELED",
+    "ERROR",
+    "FAIL",
+    "PASS",
+    "PASS_WITH_WARNINGS",
+    "PENDING",
+    "RUNNING",
+    "STOPPED",
+    "STOPPING",
+]
+```
+## TestCaseScenarioTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_iotdeviceadvisor.literals import TestCaseScenarioTypeType
+
+def get_value() -> TestCaseScenarioTypeType:
+    return "Advanced"
+```
+
+```python title="Definition"
+TestCaseScenarioTypeType = Literal[
+    "Advanced",
+    "Basic",
 ]
 ```
 ## IoTDeviceAdvisorServiceName
@@ -105,6 +157,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -250,6 +303,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -303,6 +357,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -313,11 +368,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -363,6 +420,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -407,5 +465,22 @@ ResourceServiceName = Literal[
     "s3",
     "sns",
     "sqs",
+]
+```
+## RegionName
+
+```python title="Usage Example"
+from types_aiobotocore_iotdeviceadvisor.literals import RegionName
+
+def get_value() -> RegionName:
+    return "ap-northeast-1"
+```
+
+```python title="Definition"
+RegionName = Literal[
+    "ap-northeast-1",
+    "eu-west-1",
+    "us-east-1",
+    "us-west-2",
 ]
 ```

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_honeycode.paginator import ListTableColumnsPaginator
 
 session = get_session()
-async with session.create_client("honeycode") as client:
-    client: HoneycodeClient
-    paginator: ListTableColumnsPaginator = client.get_paginator("list_table_columns")
+async with session.create_client("honeycode") as client:  # (1)
+    paginator: ListTableColumnsPaginator = client.get_paginator("list_table_columns")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTableColumnsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [HoneycodeClient](./client.md)
+2. paginator: [ListTableColumnsPaginator](./paginators.md#listtablecolumnspaginator)
+3. item: [:material-code-braces: ListTableColumnsResultTypeDef](./type_defs.md#listtablecolumnsresulttypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_honeycode.paginator import ListTableRowsPaginator
 
 session = get_session()
-async with session.create_client("honeycode") as client:
-    client: HoneycodeClient
-    paginator: ListTableRowsPaginator = client.get_paginator("list_table_rows")
+async with session.create_client("honeycode") as client:  # (1)
+    paginator: ListTableRowsPaginator = client.get_paginator("list_table_rows")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTableRowsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [HoneycodeClient](./client.md)
+2. paginator: [ListTableRowsPaginator](./paginators.md#listtablerowspaginator)
+3. item: [:material-code-braces: ListTableRowsResultTypeDef](./type_defs.md#listtablerowsresulttypedef) 
 
 
 ### paginate
@@ -111,10 +123,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_honeycode.paginator import ListTablesPaginator
 
 session = get_session()
-async with session.create_client("honeycode") as client:
-    client: HoneycodeClient
-    paginator: ListTablesPaginator = client.get_paginator("list_tables")
+async with session.create_client("honeycode") as client:  # (1)
+    paginator: ListTablesPaginator = client.get_paginator("list_tables")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTablesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [HoneycodeClient](./client.md)
+2. paginator: [ListTablesPaginator](./paginators.md#listtablespaginator)
+3. item: [:material-code-braces: ListTablesResultTypeDef](./type_defs.md#listtablesresulttypedef) 
 
 
 ### paginate
@@ -155,10 +173,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_honeycode.paginator import QueryTableRowsPaginator
 
 session = get_session()
-async with session.create_client("honeycode") as client:
-    client: HoneycodeClient
-    paginator: QueryTableRowsPaginator = client.get_paginator("query_table_rows")
+async with session.create_client("honeycode") as client:  # (1)
+    paginator: QueryTableRowsPaginator = client.get_paginator("query_table_rows")  # (2)
+    async for item in paginator.paginate(...):
+        item: QueryTableRowsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [HoneycodeClient](./client.md)
+2. paginator: [QueryTableRowsPaginator](./paginators.md#querytablerowspaginator)
+3. item: [:material-code-braces: QueryTableRowsResultTypeDef](./type_defs.md#querytablerowsresulttypedef) 
 
 
 ### paginate

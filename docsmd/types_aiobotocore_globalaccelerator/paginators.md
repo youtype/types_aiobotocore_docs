@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_globalaccelerator.paginator import ListAcceleratorsPaginator
 
 session = get_session()
-async with session.create_client("globalaccelerator") as client:
-    client: GlobalAcceleratorClient
-    paginator: ListAcceleratorsPaginator = client.get_paginator("list_accelerators")
+async with session.create_client("globalaccelerator") as client:  # (1)
+    paginator: ListAcceleratorsPaginator = client.get_paginator("list_accelerators")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAcceleratorsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlobalAcceleratorClient](./client.md)
+2. paginator: [ListAcceleratorsPaginator](./paginators.md#listacceleratorspaginator)
+3. item: [:material-code-braces: ListAcceleratorsResponseTypeDef](./type_defs.md#listacceleratorsresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_globalaccelerator.paginator import ListByoipCidrsPaginator
 
 session = get_session()
-async with session.create_client("globalaccelerator") as client:
-    client: GlobalAcceleratorClient
-    paginator: ListByoipCidrsPaginator = client.get_paginator("list_byoip_cidrs")
+async with session.create_client("globalaccelerator") as client:  # (1)
+    paginator: ListByoipCidrsPaginator = client.get_paginator("list_byoip_cidrs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListByoipCidrsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlobalAcceleratorClient](./client.md)
+2. paginator: [ListByoipCidrsPaginator](./paginators.md#listbyoipcidrspaginator)
+3. item: [:material-code-braces: ListByoipCidrsResponseTypeDef](./type_defs.md#listbyoipcidrsresponsetypedef) 
 
 
 ### paginate
@@ -104,10 +116,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_globalaccelerator.paginator import ListCustomRoutingAcceleratorsPaginator
 
 session = get_session()
-async with session.create_client("globalaccelerator") as client:
-    client: GlobalAcceleratorClient
-    paginator: ListCustomRoutingAcceleratorsPaginator = client.get_paginator("list_custom_routing_accelerators")
+async with session.create_client("globalaccelerator") as client:  # (1)
+    paginator: ListCustomRoutingAcceleratorsPaginator = client.get_paginator("list_custom_routing_accelerators")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCustomRoutingAcceleratorsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlobalAcceleratorClient](./client.md)
+2. paginator: [ListCustomRoutingAcceleratorsPaginator](./paginators.md#listcustomroutingacceleratorspaginator)
+3. item: [:material-code-braces: ListCustomRoutingAcceleratorsResponseTypeDef](./type_defs.md#listcustomroutingacceleratorsresponsetypedef) 
 
 
 ### paginate
@@ -147,10 +165,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_globalaccelerator.paginator import ListCustomRoutingListenersPaginator
 
 session = get_session()
-async with session.create_client("globalaccelerator") as client:
-    client: GlobalAcceleratorClient
-    paginator: ListCustomRoutingListenersPaginator = client.get_paginator("list_custom_routing_listeners")
+async with session.create_client("globalaccelerator") as client:  # (1)
+    paginator: ListCustomRoutingListenersPaginator = client.get_paginator("list_custom_routing_listeners")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCustomRoutingListenersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlobalAcceleratorClient](./client.md)
+2. paginator: [ListCustomRoutingListenersPaginator](./paginators.md#listcustomroutinglistenerspaginator)
+3. item: [:material-code-braces: ListCustomRoutingListenersResponseTypeDef](./type_defs.md#listcustomroutinglistenersresponsetypedef) 
 
 
 ### paginate
@@ -191,10 +215,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_globalaccelerator.paginator import ListCustomRoutingPortMappingsPaginator
 
 session = get_session()
-async with session.create_client("globalaccelerator") as client:
-    client: GlobalAcceleratorClient
-    paginator: ListCustomRoutingPortMappingsPaginator = client.get_paginator("list_custom_routing_port_mappings")
+async with session.create_client("globalaccelerator") as client:  # (1)
+    paginator: ListCustomRoutingPortMappingsPaginator = client.get_paginator("list_custom_routing_port_mappings")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCustomRoutingPortMappingsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlobalAcceleratorClient](./client.md)
+2. paginator: [ListCustomRoutingPortMappingsPaginator](./paginators.md#listcustomroutingportmappingspaginator)
+3. item: [:material-code-braces: ListCustomRoutingPortMappingsResponseTypeDef](./type_defs.md#listcustomroutingportmappingsresponsetypedef) 
 
 
 ### paginate
@@ -236,10 +266,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_globalaccelerator.paginator import ListCustomRoutingPortMappingsByDestinationPaginator
 
 session = get_session()
-async with session.create_client("globalaccelerator") as client:
-    client: GlobalAcceleratorClient
-    paginator: ListCustomRoutingPortMappingsByDestinationPaginator = client.get_paginator("list_custom_routing_port_mappings_by_destination")
+async with session.create_client("globalaccelerator") as client:  # (1)
+    paginator: ListCustomRoutingPortMappingsByDestinationPaginator = client.get_paginator("list_custom_routing_port_mappings_by_destination")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCustomRoutingPortMappingsByDestinationResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlobalAcceleratorClient](./client.md)
+2. paginator: [ListCustomRoutingPortMappingsByDestinationPaginator](./paginators.md#listcustomroutingportmappingsbydestinationpaginator)
+3. item: [:material-code-braces: ListCustomRoutingPortMappingsByDestinationResponseTypeDef](./type_defs.md#listcustomroutingportmappingsbydestinationresponsetypedef) 
 
 
 ### paginate
@@ -282,10 +318,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_globalaccelerator.paginator import ListEndpointGroupsPaginator
 
 session = get_session()
-async with session.create_client("globalaccelerator") as client:
-    client: GlobalAcceleratorClient
-    paginator: ListEndpointGroupsPaginator = client.get_paginator("list_endpoint_groups")
+async with session.create_client("globalaccelerator") as client:  # (1)
+    paginator: ListEndpointGroupsPaginator = client.get_paginator("list_endpoint_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEndpointGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlobalAcceleratorClient](./client.md)
+2. paginator: [ListEndpointGroupsPaginator](./paginators.md#listendpointgroupspaginator)
+3. item: [:material-code-braces: ListEndpointGroupsResponseTypeDef](./type_defs.md#listendpointgroupsresponsetypedef) 
 
 
 ### paginate
@@ -326,10 +368,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_globalaccelerator.paginator import ListListenersPaginator
 
 session = get_session()
-async with session.create_client("globalaccelerator") as client:
-    client: GlobalAcceleratorClient
-    paginator: ListListenersPaginator = client.get_paginator("list_listeners")
+async with session.create_client("globalaccelerator") as client:  # (1)
+    paginator: ListListenersPaginator = client.get_paginator("list_listeners")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListListenersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlobalAcceleratorClient](./client.md)
+2. paginator: [ListListenersPaginator](./paginators.md#listlistenerspaginator)
+3. item: [:material-code-braces: ListListenersResponseTypeDef](./type_defs.md#listlistenersresponsetypedef) 
 
 
 ### paginate

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dax.paginator import DescribeClustersPaginator
 
 session = get_session()
-async with session.create_client("dax") as client:
-    client: DAXClient
-    paginator: DescribeClustersPaginator = client.get_paginator("describe_clusters")
+async with session.create_client("dax") as client:  # (1)
+    paginator: DescribeClustersPaginator = client.get_paginator("describe_clusters")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeClustersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DAXClient](./client.md)
+2. paginator: [DescribeClustersPaginator](./paginators.md#describeclusterspaginator)
+3. item: [:material-code-braces: DescribeClustersResponseTypeDef](./type_defs.md#describeclustersresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dax.paginator import DescribeDefaultParametersPaginator
 
 session = get_session()
-async with session.create_client("dax") as client:
-    client: DAXClient
-    paginator: DescribeDefaultParametersPaginator = client.get_paginator("describe_default_parameters")
+async with session.create_client("dax") as client:  # (1)
+    paginator: DescribeDefaultParametersPaginator = client.get_paginator("describe_default_parameters")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeDefaultParametersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DAXClient](./client.md)
+2. paginator: [DescribeDefaultParametersPaginator](./paginators.md#describedefaultparameterspaginator)
+3. item: [:material-code-braces: DescribeDefaultParametersResponseTypeDef](./type_defs.md#describedefaultparametersresponsetypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dax.paginator import DescribeEventsPaginator
 
 session = get_session()
-async with session.create_client("dax") as client:
-    client: DAXClient
-    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")
+async with session.create_client("dax") as client:  # (1)
+    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeEventsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DAXClient](./client.md)
+2. paginator: [DescribeEventsPaginator](./paginators.md#describeeventspaginator)
+3. item: [:material-code-braces: DescribeEventsResponseTypeDef](./type_defs.md#describeeventsresponsetypedef) 
 
 
 ### paginate
@@ -154,10 +172,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dax.paginator import DescribeParameterGroupsPaginator
 
 session = get_session()
-async with session.create_client("dax") as client:
-    client: DAXClient
-    paginator: DescribeParameterGroupsPaginator = client.get_paginator("describe_parameter_groups")
+async with session.create_client("dax") as client:  # (1)
+    paginator: DescribeParameterGroupsPaginator = client.get_paginator("describe_parameter_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeParameterGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DAXClient](./client.md)
+2. paginator: [DescribeParameterGroupsPaginator](./paginators.md#describeparametergroupspaginator)
+3. item: [:material-code-braces: DescribeParameterGroupsResponseTypeDef](./type_defs.md#describeparametergroupsresponsetypedef) 
 
 
 ### paginate
@@ -198,10 +222,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dax.paginator import DescribeParametersPaginator
 
 session = get_session()
-async with session.create_client("dax") as client:
-    client: DAXClient
-    paginator: DescribeParametersPaginator = client.get_paginator("describe_parameters")
+async with session.create_client("dax") as client:  # (1)
+    paginator: DescribeParametersPaginator = client.get_paginator("describe_parameters")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeParametersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DAXClient](./client.md)
+2. paginator: [DescribeParametersPaginator](./paginators.md#describeparameterspaginator)
+3. item: [:material-code-braces: DescribeParametersResponseTypeDef](./type_defs.md#describeparametersresponsetypedef) 
 
 
 ### paginate
@@ -243,10 +273,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dax.paginator import DescribeSubnetGroupsPaginator
 
 session = get_session()
-async with session.create_client("dax") as client:
-    client: DAXClient
-    paginator: DescribeSubnetGroupsPaginator = client.get_paginator("describe_subnet_groups")
+async with session.create_client("dax") as client:  # (1)
+    paginator: DescribeSubnetGroupsPaginator = client.get_paginator("describe_subnet_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSubnetGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DAXClient](./client.md)
+2. paginator: [DescribeSubnetGroupsPaginator](./paginators.md#describesubnetgroupspaginator)
+3. item: [:material-code-braces: DescribeSubnetGroupsResponseTypeDef](./type_defs.md#describesubnetgroupsresponsetypedef) 
 
 
 ### paginate
@@ -287,10 +323,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dax.paginator import ListTagsPaginator
 
 session = get_session()
-async with session.create_client("dax") as client:
-    client: DAXClient
-    paginator: ListTagsPaginator = client.get_paginator("list_tags")
+async with session.create_client("dax") as client:  # (1)
+    paginator: ListTagsPaginator = client.get_paginator("list_tags")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DAXClient](./client.md)
+2. paginator: [ListTagsPaginator](./paginators.md#listtagspaginator)
+3. item: [:material-code-braces: ListTagsResponseTypeDef](./type_defs.md#listtagsresponsetypedef) 
 
 
 ### paginate

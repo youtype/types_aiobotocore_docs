@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicediscovery.paginator import ListInstancesPaginator
 
 session = get_session()
-async with session.create_client("servicediscovery") as client:
-    client: ServiceDiscoveryClient
-    paginator: ListInstancesPaginator = client.get_paginator("list_instances")
+async with session.create_client("servicediscovery") as client:  # (1)
+    paginator: ListInstancesPaginator = client.get_paginator("list_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListInstancesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceDiscoveryClient](./client.md)
+2. paginator: [ListInstancesPaginator](./paginators.md#listinstancespaginator)
+3. item: [:material-code-braces: ListInstancesResponseTypeDef](./type_defs.md#listinstancesresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicediscovery.paginator import ListNamespacesPaginator
 
 session = get_session()
-async with session.create_client("servicediscovery") as client:
-    client: ServiceDiscoveryClient
-    paginator: ListNamespacesPaginator = client.get_paginator("list_namespaces")
+async with session.create_client("servicediscovery") as client:  # (1)
+    paginator: ListNamespacesPaginator = client.get_paginator("list_namespaces")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListNamespacesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceDiscoveryClient](./client.md)
+2. paginator: [ListNamespacesPaginator](./paginators.md#listnamespacespaginator)
+3. item: [:material-code-braces: ListNamespacesResponseTypeDef](./type_defs.md#listnamespacesresponsetypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicediscovery.paginator import ListOperationsPaginator
 
 session = get_session()
-async with session.create_client("servicediscovery") as client:
-    client: ServiceDiscoveryClient
-    paginator: ListOperationsPaginator = client.get_paginator("list_operations")
+async with session.create_client("servicediscovery") as client:  # (1)
+    paginator: ListOperationsPaginator = client.get_paginator("list_operations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListOperationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceDiscoveryClient](./client.md)
+2. paginator: [ListOperationsPaginator](./paginators.md#listoperationspaginator)
+3. item: [:material-code-braces: ListOperationsResponseTypeDef](./type_defs.md#listoperationsresponsetypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicediscovery.paginator import ListServicesPaginator
 
 session = get_session()
-async with session.create_client("servicediscovery") as client:
-    client: ServiceDiscoveryClient
-    paginator: ListServicesPaginator = client.get_paginator("list_services")
+async with session.create_client("servicediscovery") as client:  # (1)
+    paginator: ListServicesPaginator = client.get_paginator("list_services")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServicesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceDiscoveryClient](./client.md)
+2. paginator: [ListServicesPaginator](./paginators.md#listservicespaginator)
+3. item: [:material-code-braces: ListServicesResponseTypeDef](./type_defs.md#listservicesresponsetypedef) 
 
 
 ### paginate

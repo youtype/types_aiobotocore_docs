@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Chime`.
 
 ### From PyPI with pip
 
@@ -174,6 +169,7 @@ def get_value() -> AccountSettingsTypeDef:
 
 - [AccountSettingsTypeDef](./type_defs.md#accountsettingstypedef)
 - [SigninDelegateGroupTypeDef](./type_defs.md#signindelegategrouptypedef)
+- [AddressTypeDef](./type_defs.md#addresstypedef)
 - [AlexaForBusinessMetadataTypeDef](./type_defs.md#alexaforbusinessmetadatatypedef)
 - [IdentityTypeDef](./type_defs.md#identitytypedef)
 - [ChannelRetentionSettingsTypeDef](./type_defs.md#channelretentionsettingstypedef)
@@ -204,6 +200,7 @@ def get_value() -> AccountSettingsTypeDef:
 - [UpdatePhoneNumberRequestItemTypeDef](./type_defs.md#updatephonenumberrequestitemtypedef)
 - [BotTypeDef](./type_defs.md#bottypedef)
 - [BusinessCallingSettingsTypeDef](./type_defs.md#businesscallingsettingstypedef)
+- [CandidateAddressTypeDef](./type_defs.md#candidateaddresstypedef)
 - [ChannelSummaryTypeDef](./type_defs.md#channelsummarytypedef)
 - [ConversationRetentionSettingsTypeDef](./type_defs.md#conversationretentionsettingstypedef)
 - [CreateAccountRequestRequestTypeDef](./type_defs.md#createaccountrequestrequesttypedef)
@@ -384,6 +381,7 @@ def get_value() -> AccountSettingsTypeDef:
 - [UpdateRoomRequestRequestTypeDef](./type_defs.md#updateroomrequestrequesttypedef)
 - [UpdateSipMediaApplicationCallRequestRequestTypeDef](./type_defs.md#updatesipmediaapplicationcallrequestrequesttypedef)
 - [UpdateVoiceConnectorRequestRequestTypeDef](./type_defs.md#updatevoiceconnectorrequestrequesttypedef)
+- [ValidateE911AddressRequestRequestTypeDef](./type_defs.md#validatee911addressrequestrequesttypedef)
 - [UpdateAccountSettingsRequestRequestTypeDef](./type_defs.md#updateaccountsettingsrequestrequesttypedef)
 - [AccountTypeDef](./type_defs.md#accounttypedef)
 - [AssociateSigninDelegateGroupsWithAccountRequestRequestTypeDef](./type_defs.md#associatesignindelegategroupswithaccountrequestrequesttypedef)
@@ -452,6 +450,7 @@ def get_value() -> AccountSettingsTypeDef:
 - [ListBotsResponseTypeDef](./type_defs.md#listbotsresponsetypedef)
 - [RegenerateSecurityTokenResponseTypeDef](./type_defs.md#regeneratesecuritytokenresponsetypedef)
 - [UpdateBotResponseTypeDef](./type_defs.md#updatebotresponsetypedef)
+- [ValidateE911AddressResponseTypeDef](./type_defs.md#validatee911addressresponsetypedef)
 - [ChannelMembershipForAppInstanceUserSummaryTypeDef](./type_defs.md#channelmembershipforappinstanceusersummarytypedef)
 - [ChannelModeratedByAppInstanceUserSummaryTypeDef](./type_defs.md#channelmoderatedbyappinstanceusersummarytypedef)
 - [ListChannelsResponseTypeDef](./type_defs.md#listchannelsresponsetypedef)

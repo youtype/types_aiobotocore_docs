@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListActionsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListActionsPaginator = client.get_paginator("list_actions")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListActionsPaginator = client.get_paginator("list_actions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListActionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListActionsPaginator](./paginators.md#listactionspaginator)
+3. item: [:material-code-braces: ListActionsResponseTypeDef](./type_defs.md#listactionsresponsetypedef) 
 
 
 ### paginate
@@ -69,10 +75,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListAlgorithmsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListAlgorithmsPaginator = client.get_paginator("list_algorithms")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListAlgorithmsPaginator = client.get_paginator("list_algorithms")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAlgorithmsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListAlgorithmsPaginator](./paginators.md#listalgorithmspaginator)
+3. item: [:material-code-braces: ListAlgorithmsOutputTypeDef](./type_defs.md#listalgorithmsoutputtypedef) 
 
 
 ### paginate
@@ -119,10 +131,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListAppImageConfigsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListAppImageConfigsPaginator = client.get_paginator("list_app_image_configs")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListAppImageConfigsPaginator = client.get_paginator("list_app_image_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAppImageConfigsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListAppImageConfigsPaginator](./paginators.md#listappimageconfigspaginator)
+3. item: [:material-code-braces: ListAppImageConfigsResponseTypeDef](./type_defs.md#listappimageconfigsresponsetypedef) 
 
 
 ### paginate
@@ -171,10 +189,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListAppsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListAppsPaginator = client.get_paginator("list_apps")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListAppsPaginator = client.get_paginator("list_apps")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAppsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListAppsPaginator](./paginators.md#listappspaginator)
+3. item: [:material-code-braces: ListAppsResponseTypeDef](./type_defs.md#listappsresponsetypedef) 
 
 
 ### paginate
@@ -220,10 +244,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListArtifactsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListArtifactsPaginator = client.get_paginator("list_artifacts")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListArtifactsPaginator = client.get_paginator("list_artifacts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListArtifactsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListArtifactsPaginator](./paginators.md#listartifactspaginator)
+3. item: [:material-code-braces: ListArtifactsResponseTypeDef](./type_defs.md#listartifactsresponsetypedef) 
 
 
 ### paginate
@@ -271,10 +301,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListAssociationsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListAssociationsPaginator = client.get_paginator("list_associations")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListAssociationsPaginator = client.get_paginator("list_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssociationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListAssociationsPaginator](./paginators.md#listassociationspaginator)
+3. item: [:material-code-braces: ListAssociationsResponseTypeDef](./type_defs.md#listassociationsresponsetypedef) 
 
 
 ### paginate
@@ -326,10 +362,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListAutoMLJobsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListAutoMLJobsPaginator = client.get_paginator("list_auto_ml_jobs")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListAutoMLJobsPaginator = client.get_paginator("list_auto_ml_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAutoMLJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListAutoMLJobsPaginator](./paginators.md#listautomljobspaginator)
+3. item: [:material-code-braces: ListAutoMLJobsResponseTypeDef](./type_defs.md#listautomljobsresponsetypedef) 
 
 
 ### paginate
@@ -380,10 +422,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListCandidatesForAutoMLJobPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListCandidatesForAutoMLJobPaginator = client.get_paginator("list_candidates_for_auto_ml_job")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListCandidatesForAutoMLJobPaginator = client.get_paginator("list_candidates_for_auto_ml_job")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCandidatesForAutoMLJobResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListCandidatesForAutoMLJobPaginator](./paginators.md#listcandidatesforautomljobpaginator)
+3. item: [:material-code-braces: ListCandidatesForAutoMLJobResponseTypeDef](./type_defs.md#listcandidatesforautomljobresponsetypedef) 
 
 
 ### paginate
@@ -431,10 +479,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListCodeRepositoriesPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListCodeRepositoriesPaginator = client.get_paginator("list_code_repositories")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListCodeRepositoriesPaginator = client.get_paginator("list_code_repositories")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCodeRepositoriesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListCodeRepositoriesPaginator](./paginators.md#listcoderepositoriespaginator)
+3. item: [:material-code-braces: ListCodeRepositoriesOutputTypeDef](./type_defs.md#listcoderepositoriesoutputtypedef) 
 
 
 ### paginate
@@ -483,10 +537,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListCompilationJobsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListCompilationJobsPaginator = client.get_paginator("list_compilation_jobs")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListCompilationJobsPaginator = client.get_paginator("list_compilation_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCompilationJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListCompilationJobsPaginator](./paginators.md#listcompilationjobspaginator)
+3. item: [:material-code-braces: ListCompilationJobsResponseTypeDef](./type_defs.md#listcompilationjobsresponsetypedef) 
 
 
 ### paginate
@@ -537,10 +597,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListContextsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListContextsPaginator = client.get_paginator("list_contexts")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListContextsPaginator = client.get_paginator("list_contexts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListContextsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListContextsPaginator](./paginators.md#listcontextspaginator)
+3. item: [:material-code-braces: ListContextsResponseTypeDef](./type_defs.md#listcontextsresponsetypedef) 
 
 
 ### paginate
@@ -588,10 +654,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListDataQualityJobDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListDataQualityJobDefinitionsPaginator = client.get_paginator("list_data_quality_job_definitions")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListDataQualityJobDefinitionsPaginator = client.get_paginator("list_data_quality_job_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDataQualityJobDefinitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListDataQualityJobDefinitionsPaginator](./paginators.md#listdataqualityjobdefinitionspaginator)
+3. item: [:material-code-braces: ListDataQualityJobDefinitionsResponseTypeDef](./type_defs.md#listdataqualityjobdefinitionsresponsetypedef) 
 
 
 ### paginate
@@ -639,10 +711,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListDeviceFleetsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListDeviceFleetsPaginator = client.get_paginator("list_device_fleets")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListDeviceFleetsPaginator = client.get_paginator("list_device_fleets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeviceFleetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListDeviceFleetsPaginator](./paginators.md#listdevicefleetspaginator)
+3. item: [:material-code-braces: ListDeviceFleetsResponseTypeDef](./type_defs.md#listdevicefleetsresponsetypedef) 
 
 
 ### paginate
@@ -691,10 +769,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListDevicesPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListDevicesPaginator = client.get_paginator("list_devices")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListDevicesPaginator = client.get_paginator("list_devices")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDevicesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListDevicesPaginator](./paginators.md#listdevicespaginator)
+3. item: [:material-code-braces: ListDevicesResponseTypeDef](./type_defs.md#listdevicesresponsetypedef) 
 
 
 ### paginate
@@ -737,10 +821,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListDomainsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListDomainsPaginator = client.get_paginator("list_domains")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListDomainsPaginator = client.get_paginator("list_domains")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDomainsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListDomainsPaginator](./paginators.md#listdomainspaginator)
+3. item: [:material-code-braces: ListDomainsResponseTypeDef](./type_defs.md#listdomainsresponsetypedef) 
 
 
 ### paginate
@@ -769,6 +859,65 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListDomainsRequestListDomainsPaginateTypeDef](./type_defs.md#listdomainsrequestlistdomainspaginatetypedef) 
+## ListEdgeDeploymentPlansPaginator
+
+Type annotations and code completion for `#!python session.create_client("sagemaker").get_paginator("list_edge_deployment_plans")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Paginator.ListEdgeDeploymentPlans)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_sagemaker.paginator import ListEdgeDeploymentPlansPaginator
+
+session = get_session()
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListEdgeDeploymentPlansPaginator = client.get_paginator("list_edge_deployment_plans")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEdgeDeploymentPlansResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListEdgeDeploymentPlansPaginator](./paginators.md#listedgedeploymentplanspaginator)
+3. item: [:material-code-braces: ListEdgeDeploymentPlansResponseTypeDef](./type_defs.md#listedgedeploymentplansresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListEdgeDeploymentPlansPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    CreationTimeAfter: Union[datetime, str] = ...,
+    CreationTimeBefore: Union[datetime, str] = ...,
+    LastModifiedTimeAfter: Union[datetime, str] = ...,
+    LastModifiedTimeBefore: Union[datetime, str] = ...,
+    NameContains: str = ...,
+    DeviceFleetNameContains: str = ...,
+    SortBy: ListEdgeDeploymentPlansSortByType = ...,  # (1)
+    SortOrder: SortOrderType = ...,  # (2)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (3)
+) -> AsyncIterator[ListEdgeDeploymentPlansResponseTypeDef]:  # (4)
+    ...
+```
+
+1. See [:material-code-brackets: ListEdgeDeploymentPlansSortByType](./literals.md#listedgedeploymentplanssortbytype) 
+2. See [:material-code-brackets: SortOrderType](./literals.md#sortordertype) 
+3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+4. See [:material-code-braces: ListEdgeDeploymentPlansResponseTypeDef](./type_defs.md#listedgedeploymentplansresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListEdgeDeploymentPlansRequestListEdgeDeploymentPlansPaginateTypeDef = {  # (1)
+    "CreationTimeAfter": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListEdgeDeploymentPlansRequestListEdgeDeploymentPlansPaginateTypeDef](./type_defs.md#listedgedeploymentplansrequestlistedgedeploymentplanspaginatetypedef) 
 ## ListEdgePackagingJobsPaginator
 
 Type annotations and code completion for `#!python session.create_client("sagemaker").get_paginator("list_edge_packaging_jobs")`.
@@ -780,10 +929,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListEdgePackagingJobsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListEdgePackagingJobsPaginator = client.get_paginator("list_edge_packaging_jobs")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListEdgePackagingJobsPaginator = client.get_paginator("list_edge_packaging_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEdgePackagingJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListEdgePackagingJobsPaginator](./paginators.md#listedgepackagingjobspaginator)
+3. item: [:material-code-braces: ListEdgePackagingJobsResponseTypeDef](./type_defs.md#listedgepackagingjobsresponsetypedef) 
 
 
 ### paginate
@@ -835,10 +990,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListEndpointConfigsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListEndpointConfigsPaginator = client.get_paginator("list_endpoint_configs")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListEndpointConfigsPaginator = client.get_paginator("list_endpoint_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEndpointConfigsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListEndpointConfigsPaginator](./paginators.md#listendpointconfigspaginator)
+3. item: [:material-code-braces: ListEndpointConfigsOutputTypeDef](./type_defs.md#listendpointconfigsoutputtypedef) 
 
 
 ### paginate
@@ -885,10 +1046,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListEndpointsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListEndpointsPaginator = client.get_paginator("list_endpoints")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListEndpointsPaginator = client.get_paginator("list_endpoints")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEndpointsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListEndpointsPaginator](./paginators.md#listendpointspaginator)
+3. item: [:material-code-braces: ListEndpointsOutputTypeDef](./type_defs.md#listendpointsoutputtypedef) 
 
 
 ### paginate
@@ -939,10 +1106,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListExperimentsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListExperimentsPaginator = client.get_paginator("list_experiments")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListExperimentsPaginator = client.get_paginator("list_experiments")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListExperimentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListExperimentsPaginator](./paginators.md#listexperimentspaginator)
+3. item: [:material-code-braces: ListExperimentsResponseTypeDef](./type_defs.md#listexperimentsresponsetypedef) 
 
 
 ### paginate
@@ -988,10 +1161,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListFeatureGroupsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListFeatureGroupsPaginator = client.get_paginator("list_feature_groups")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListFeatureGroupsPaginator = client.get_paginator("list_feature_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFeatureGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListFeatureGroupsPaginator](./paginators.md#listfeaturegroupspaginator)
+3. item: [:material-code-braces: ListFeatureGroupsResponseTypeDef](./type_defs.md#listfeaturegroupsresponsetypedef) 
 
 
 ### paginate
@@ -1042,10 +1221,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListFlowDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListFlowDefinitionsPaginator = client.get_paginator("list_flow_definitions")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListFlowDefinitionsPaginator = client.get_paginator("list_flow_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFlowDefinitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListFlowDefinitionsPaginator](./paginators.md#listflowdefinitionspaginator)
+3. item: [:material-code-braces: ListFlowDefinitionsResponseTypeDef](./type_defs.md#listflowdefinitionsresponsetypedef) 
 
 
 ### paginate
@@ -1089,10 +1274,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListHumanTaskUisPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListHumanTaskUisPaginator = client.get_paginator("list_human_task_uis")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListHumanTaskUisPaginator = client.get_paginator("list_human_task_uis")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListHumanTaskUisResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListHumanTaskUisPaginator](./paginators.md#listhumantaskuispaginator)
+3. item: [:material-code-braces: ListHumanTaskUisResponseTypeDef](./type_defs.md#listhumantaskuisresponsetypedef) 
 
 
 ### paginate
@@ -1136,10 +1327,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListHyperParameterTuningJobsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListHyperParameterTuningJobsPaginator = client.get_paginator("list_hyper_parameter_tuning_jobs")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListHyperParameterTuningJobsPaginator = client.get_paginator("list_hyper_parameter_tuning_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListHyperParameterTuningJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListHyperParameterTuningJobsPaginator](./paginators.md#listhyperparametertuningjobspaginator)
+3. item: [:material-code-braces: ListHyperParameterTuningJobsResponseTypeDef](./type_defs.md#listhyperparametertuningjobsresponsetypedef) 
 
 
 ### paginate
@@ -1190,10 +1387,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListImageVersionsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListImageVersionsPaginator = client.get_paginator("list_image_versions")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListImageVersionsPaginator = client.get_paginator("list_image_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListImageVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListImageVersionsPaginator](./paginators.md#listimageversionspaginator)
+3. item: [:material-code-braces: ListImageVersionsResponseTypeDef](./type_defs.md#listimageversionsresponsetypedef) 
 
 
 ### paginate
@@ -1242,10 +1445,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListImagesPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListImagesPaginator = client.get_paginator("list_images")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListImagesPaginator = client.get_paginator("list_images")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListImagesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListImagesPaginator](./paginators.md#listimagespaginator)
+3. item: [:material-code-braces: ListImagesResponseTypeDef](./type_defs.md#listimagesresponsetypedef) 
 
 
 ### paginate
@@ -1294,10 +1503,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListInferenceRecommendationsJobsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListInferenceRecommendationsJobsPaginator = client.get_paginator("list_inference_recommendations_jobs")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListInferenceRecommendationsJobsPaginator = client.get_paginator("list_inference_recommendations_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListInferenceRecommendationsJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListInferenceRecommendationsJobsPaginator](./paginators.md#listinferencerecommendationsjobspaginator)
+3. item: [:material-code-braces: ListInferenceRecommendationsJobsResponseTypeDef](./type_defs.md#listinferencerecommendationsjobsresponsetypedef) 
 
 
 ### paginate
@@ -1348,10 +1563,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListLabelingJobsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListLabelingJobsPaginator = client.get_paginator("list_labeling_jobs")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListLabelingJobsPaginator = client.get_paginator("list_labeling_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLabelingJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListLabelingJobsPaginator](./paginators.md#listlabelingjobspaginator)
+3. item: [:material-code-braces: ListLabelingJobsResponseTypeDef](./type_defs.md#listlabelingjobsresponsetypedef) 
 
 
 ### paginate
@@ -1402,10 +1623,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListLabelingJobsForWorkteamPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListLabelingJobsForWorkteamPaginator = client.get_paginator("list_labeling_jobs_for_workteam")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListLabelingJobsForWorkteamPaginator = client.get_paginator("list_labeling_jobs_for_workteam")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLabelingJobsForWorkteamResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListLabelingJobsForWorkteamPaginator](./paginators.md#listlabelingjobsforworkteampaginator)
+3. item: [:material-code-braces: ListLabelingJobsForWorkteamResponseTypeDef](./type_defs.md#listlabelingjobsforworkteamresponsetypedef) 
 
 
 ### paginate
@@ -1453,10 +1680,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListLineageGroupsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListLineageGroupsPaginator = client.get_paginator("list_lineage_groups")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListLineageGroupsPaginator = client.get_paginator("list_lineage_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLineageGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListLineageGroupsPaginator](./paginators.md#listlineagegroupspaginator)
+3. item: [:material-code-braces: ListLineageGroupsResponseTypeDef](./type_defs.md#listlineagegroupsresponsetypedef) 
 
 
 ### paginate
@@ -1502,10 +1735,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListModelBiasJobDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListModelBiasJobDefinitionsPaginator = client.get_paginator("list_model_bias_job_definitions")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListModelBiasJobDefinitionsPaginator = client.get_paginator("list_model_bias_job_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListModelBiasJobDefinitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListModelBiasJobDefinitionsPaginator](./paginators.md#listmodelbiasjobdefinitionspaginator)
+3. item: [:material-code-braces: ListModelBiasJobDefinitionsResponseTypeDef](./type_defs.md#listmodelbiasjobdefinitionsresponsetypedef) 
 
 
 ### paginate
@@ -1553,10 +1792,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListModelExplainabilityJobDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListModelExplainabilityJobDefinitionsPaginator = client.get_paginator("list_model_explainability_job_definitions")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListModelExplainabilityJobDefinitionsPaginator = client.get_paginator("list_model_explainability_job_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListModelExplainabilityJobDefinitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListModelExplainabilityJobDefinitionsPaginator](./paginators.md#listmodelexplainabilityjobdefinitionspaginator)
+3. item: [:material-code-braces: ListModelExplainabilityJobDefinitionsResponseTypeDef](./type_defs.md#listmodelexplainabilityjobdefinitionsresponsetypedef) 
 
 
 ### paginate
@@ -1604,10 +1849,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListModelMetadataPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListModelMetadataPaginator = client.get_paginator("list_model_metadata")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListModelMetadataPaginator = client.get_paginator("list_model_metadata")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListModelMetadataResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListModelMetadataPaginator](./paginators.md#listmodelmetadatapaginator)
+3. item: [:material-code-braces: ListModelMetadataResponseTypeDef](./type_defs.md#listmodelmetadataresponsetypedef) 
 
 
 ### paginate
@@ -1649,10 +1900,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListModelPackageGroupsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListModelPackageGroupsPaginator = client.get_paginator("list_model_package_groups")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListModelPackageGroupsPaginator = client.get_paginator("list_model_package_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListModelPackageGroupsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListModelPackageGroupsPaginator](./paginators.md#listmodelpackagegroupspaginator)
+3. item: [:material-code-braces: ListModelPackageGroupsOutputTypeDef](./type_defs.md#listmodelpackagegroupsoutputtypedef) 
 
 
 ### paginate
@@ -1699,10 +1956,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListModelPackagesPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListModelPackagesPaginator = client.get_paginator("list_model_packages")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListModelPackagesPaginator = client.get_paginator("list_model_packages")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListModelPackagesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListModelPackagesPaginator](./paginators.md#listmodelpackagespaginator)
+3. item: [:material-code-braces: ListModelPackagesOutputTypeDef](./type_defs.md#listmodelpackagesoutputtypedef) 
 
 
 ### paginate
@@ -1754,10 +2017,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListModelQualityJobDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListModelQualityJobDefinitionsPaginator = client.get_paginator("list_model_quality_job_definitions")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListModelQualityJobDefinitionsPaginator = client.get_paginator("list_model_quality_job_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListModelQualityJobDefinitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListModelQualityJobDefinitionsPaginator](./paginators.md#listmodelqualityjobdefinitionspaginator)
+3. item: [:material-code-braces: ListModelQualityJobDefinitionsResponseTypeDef](./type_defs.md#listmodelqualityjobdefinitionsresponsetypedef) 
 
 
 ### paginate
@@ -1805,10 +2074,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListModelsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListModelsPaginator = client.get_paginator("list_models")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListModelsPaginator = client.get_paginator("list_models")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListModelsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListModelsPaginator](./paginators.md#listmodelspaginator)
+3. item: [:material-code-braces: ListModelsOutputTypeDef](./type_defs.md#listmodelsoutputtypedef) 
 
 
 ### paginate
@@ -1855,10 +2130,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListMonitoringExecutionsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListMonitoringExecutionsPaginator = client.get_paginator("list_monitoring_executions")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListMonitoringExecutionsPaginator = client.get_paginator("list_monitoring_executions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMonitoringExecutionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListMonitoringExecutionsPaginator](./paginators.md#listmonitoringexecutionspaginator)
+3. item: [:material-code-braces: ListMonitoringExecutionsResponseTypeDef](./type_defs.md#listmonitoringexecutionsresponsetypedef) 
 
 
 ### paginate
@@ -1915,10 +2196,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListMonitoringSchedulesPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListMonitoringSchedulesPaginator = client.get_paginator("list_monitoring_schedules")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListMonitoringSchedulesPaginator = client.get_paginator("list_monitoring_schedules")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMonitoringSchedulesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListMonitoringSchedulesPaginator](./paginators.md#listmonitoringschedulespaginator)
+3. item: [:material-code-braces: ListMonitoringSchedulesResponseTypeDef](./type_defs.md#listmonitoringschedulesresponsetypedef) 
 
 
 ### paginate
@@ -1973,10 +2260,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListNotebookInstanceLifecycleConfigsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListNotebookInstanceLifecycleConfigsPaginator = client.get_paginator("list_notebook_instance_lifecycle_configs")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListNotebookInstanceLifecycleConfigsPaginator = client.get_paginator("list_notebook_instance_lifecycle_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListNotebookInstanceLifecycleConfigsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListNotebookInstanceLifecycleConfigsPaginator](./paginators.md#listnotebookinstancelifecycleconfigspaginator)
+3. item: [:material-code-braces: ListNotebookInstanceLifecycleConfigsOutputTypeDef](./type_defs.md#listnotebookinstancelifecycleconfigsoutputtypedef) 
 
 
 ### paginate
@@ -2025,10 +2318,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListNotebookInstancesPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListNotebookInstancesPaginator = client.get_paginator("list_notebook_instances")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListNotebookInstancesPaginator = client.get_paginator("list_notebook_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListNotebookInstancesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListNotebookInstancesPaginator](./paginators.md#listnotebookinstancespaginator)
+3. item: [:material-code-braces: ListNotebookInstancesOutputTypeDef](./type_defs.md#listnotebookinstancesoutputtypedef) 
 
 
 ### paginate
@@ -2082,10 +2381,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListPipelineExecutionStepsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListPipelineExecutionStepsPaginator = client.get_paginator("list_pipeline_execution_steps")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListPipelineExecutionStepsPaginator = client.get_paginator("list_pipeline_execution_steps")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPipelineExecutionStepsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListPipelineExecutionStepsPaginator](./paginators.md#listpipelineexecutionstepspaginator)
+3. item: [:material-code-braces: ListPipelineExecutionStepsResponseTypeDef](./type_defs.md#listpipelineexecutionstepsresponsetypedef) 
 
 
 ### paginate
@@ -2128,10 +2433,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListPipelineExecutionsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListPipelineExecutionsPaginator = client.get_paginator("list_pipeline_executions")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListPipelineExecutionsPaginator = client.get_paginator("list_pipeline_executions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPipelineExecutionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListPipelineExecutionsPaginator](./paginators.md#listpipelineexecutionspaginator)
+3. item: [:material-code-braces: ListPipelineExecutionsResponseTypeDef](./type_defs.md#listpipelineexecutionsresponsetypedef) 
 
 
 ### paginate
@@ -2178,10 +2489,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListPipelineParametersForExecutionPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListPipelineParametersForExecutionPaginator = client.get_paginator("list_pipeline_parameters_for_execution")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListPipelineParametersForExecutionPaginator = client.get_paginator("list_pipeline_parameters_for_execution")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPipelineParametersForExecutionResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListPipelineParametersForExecutionPaginator](./paginators.md#listpipelineparametersforexecutionpaginator)
+3. item: [:material-code-braces: ListPipelineParametersForExecutionResponseTypeDef](./type_defs.md#listpipelineparametersforexecutionresponsetypedef) 
 
 
 ### paginate
@@ -2222,10 +2539,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListPipelinesPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListPipelinesPaginator = client.get_paginator("list_pipelines")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListPipelinesPaginator = client.get_paginator("list_pipelines")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPipelinesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListPipelinesPaginator](./paginators.md#listpipelinespaginator)
+3. item: [:material-code-braces: ListPipelinesResponseTypeDef](./type_defs.md#listpipelinesresponsetypedef) 
 
 
 ### paginate
@@ -2272,10 +2595,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListProcessingJobsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListProcessingJobsPaginator = client.get_paginator("list_processing_jobs")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListProcessingJobsPaginator = client.get_paginator("list_processing_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProcessingJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListProcessingJobsPaginator](./paginators.md#listprocessingjobspaginator)
+3. item: [:material-code-braces: ListProcessingJobsResponseTypeDef](./type_defs.md#listprocessingjobsresponsetypedef) 
 
 
 ### paginate
@@ -2315,6 +2644,59 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListProcessingJobsRequestListProcessingJobsPaginateTypeDef](./type_defs.md#listprocessingjobsrequestlistprocessingjobspaginatetypedef) 
+## ListStageDevicesPaginator
+
+Type annotations and code completion for `#!python session.create_client("sagemaker").get_paginator("list_stage_devices")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Paginator.ListStageDevices)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_sagemaker.paginator import ListStageDevicesPaginator
+
+session = get_session()
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListStageDevicesPaginator = client.get_paginator("list_stage_devices")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStageDevicesResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListStageDevicesPaginator](./paginators.md#liststagedevicespaginator)
+3. item: [:material-code-braces: ListStageDevicesResponseTypeDef](./type_defs.md#liststagedevicesresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListStageDevicesPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    EdgeDeploymentPlanName: str,
+    StageName: str,
+    ExcludeDevicesDeployedInOtherStage: bool = ...,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListStageDevicesResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListStageDevicesResponseTypeDef](./type_defs.md#liststagedevicesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListStageDevicesRequestListStageDevicesPaginateTypeDef = {  # (1)
+    "EdgeDeploymentPlanName": ...,
+    "StageName": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListStageDevicesRequestListStageDevicesPaginateTypeDef](./type_defs.md#liststagedevicesrequestliststagedevicespaginatetypedef) 
 ## ListStudioLifecycleConfigsPaginator
 
 Type annotations and code completion for `#!python session.create_client("sagemaker").get_paginator("list_studio_lifecycle_configs")`.
@@ -2326,10 +2708,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListStudioLifecycleConfigsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListStudioLifecycleConfigsPaginator = client.get_paginator("list_studio_lifecycle_configs")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListStudioLifecycleConfigsPaginator = client.get_paginator("list_studio_lifecycle_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStudioLifecycleConfigsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListStudioLifecycleConfigsPaginator](./paginators.md#liststudiolifecycleconfigspaginator)
+3. item: [:material-code-braces: ListStudioLifecycleConfigsResponseTypeDef](./type_defs.md#liststudiolifecycleconfigsresponsetypedef) 
 
 
 ### paginate
@@ -2380,10 +2768,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListSubscribedWorkteamsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListSubscribedWorkteamsPaginator = client.get_paginator("list_subscribed_workteams")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListSubscribedWorkteamsPaginator = client.get_paginator("list_subscribed_workteams")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSubscribedWorkteamsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListSubscribedWorkteamsPaginator](./paginators.md#listsubscribedworkteamspaginator)
+3. item: [:material-code-braces: ListSubscribedWorkteamsResponseTypeDef](./type_defs.md#listsubscribedworkteamsresponsetypedef) 
 
 
 ### paginate
@@ -2424,10 +2818,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListTagsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListTagsPaginator = client.get_paginator("list_tags")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListTagsPaginator = client.get_paginator("list_tags")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListTagsPaginator](./paginators.md#listtagspaginator)
+3. item: [:material-code-braces: ListTagsOutputTypeDef](./type_defs.md#listtagsoutputtypedef) 
 
 
 ### paginate
@@ -2468,10 +2868,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListTrainingJobsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListTrainingJobsPaginator = client.get_paginator("list_training_jobs")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListTrainingJobsPaginator = client.get_paginator("list_training_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTrainingJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListTrainingJobsPaginator](./paginators.md#listtrainingjobspaginator)
+3. item: [:material-code-braces: ListTrainingJobsResponseTypeDef](./type_defs.md#listtrainingjobsresponsetypedef) 
 
 
 ### paginate
@@ -2522,10 +2928,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListTrainingJobsForHyperParameterTuningJobPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListTrainingJobsForHyperParameterTuningJobPaginator = client.get_paginator("list_training_jobs_for_hyper_parameter_tuning_job")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListTrainingJobsForHyperParameterTuningJobPaginator = client.get_paginator("list_training_jobs_for_hyper_parameter_tuning_job")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTrainingJobsForHyperParameterTuningJobResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListTrainingJobsForHyperParameterTuningJobPaginator](./paginators.md#listtrainingjobsforhyperparametertuningjobpaginator)
+3. item: [:material-code-braces: ListTrainingJobsForHyperParameterTuningJobResponseTypeDef](./type_defs.md#listtrainingjobsforhyperparametertuningjobresponsetypedef) 
 
 
 ### paginate
@@ -2572,10 +2984,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListTransformJobsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListTransformJobsPaginator = client.get_paginator("list_transform_jobs")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListTransformJobsPaginator = client.get_paginator("list_transform_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTransformJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListTransformJobsPaginator](./paginators.md#listtransformjobspaginator)
+3. item: [:material-code-braces: ListTransformJobsResponseTypeDef](./type_defs.md#listtransformjobsresponsetypedef) 
 
 
 ### paginate
@@ -2626,10 +3044,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListTrialComponentsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListTrialComponentsPaginator = client.get_paginator("list_trial_components")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListTrialComponentsPaginator = client.get_paginator("list_trial_components")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTrialComponentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListTrialComponentsPaginator](./paginators.md#listtrialcomponentspaginator)
+3. item: [:material-code-braces: ListTrialComponentsResponseTypeDef](./type_defs.md#listtrialcomponentsresponsetypedef) 
 
 
 ### paginate
@@ -2678,10 +3102,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListTrialsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListTrialsPaginator = client.get_paginator("list_trials")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListTrialsPaginator = client.get_paginator("list_trials")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTrialsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListTrialsPaginator](./paginators.md#listtrialspaginator)
+3. item: [:material-code-braces: ListTrialsResponseTypeDef](./type_defs.md#listtrialsresponsetypedef) 
 
 
 ### paginate
@@ -2729,10 +3159,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListUserProfilesPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListUserProfilesPaginator = client.get_paginator("list_user_profiles")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListUserProfilesPaginator = client.get_paginator("list_user_profiles")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUserProfilesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListUserProfilesPaginator](./paginators.md#listuserprofilespaginator)
+3. item: [:material-code-braces: ListUserProfilesResponseTypeDef](./type_defs.md#listuserprofilesresponsetypedef) 
 
 
 ### paginate
@@ -2778,10 +3214,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListWorkforcesPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListWorkforcesPaginator = client.get_paginator("list_workforces")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListWorkforcesPaginator = client.get_paginator("list_workforces")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListWorkforcesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListWorkforcesPaginator](./paginators.md#listworkforcespaginator)
+3. item: [:material-code-braces: ListWorkforcesResponseTypeDef](./type_defs.md#listworkforcesresponsetypedef) 
 
 
 ### paginate
@@ -2826,10 +3268,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import ListWorkteamsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: ListWorkteamsPaginator = client.get_paginator("list_workteams")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: ListWorkteamsPaginator = client.get_paginator("list_workteams")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListWorkteamsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListWorkteamsPaginator](./paginators.md#listworkteamspaginator)
+3. item: [:material-code-braces: ListWorkteamsResponseTypeDef](./type_defs.md#listworkteamsresponsetypedef) 
 
 
 ### paginate
@@ -2874,10 +3322,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.paginator import SearchPaginator
 
 session = get_session()
-async with session.create_client("sagemaker") as client:
-    client: SageMakerClient
-    paginator: SearchPaginator = client.get_paginator("search")
+async with session.create_client("sagemaker") as client:  # (1)
+    paginator: SearchPaginator = client.get_paginator("search")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [SearchPaginator](./paginators.md#searchpaginator)
+3. item: [:material-code-braces: SearchResponseTypeDef](./type_defs.md#searchresponsetypedef) 
 
 
 ### paginate

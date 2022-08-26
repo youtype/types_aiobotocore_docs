@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_autoscaling_plans.paginator import DescribeScalingPlanResourcesPaginator
 
 session = get_session()
-async with session.create_client("autoscaling-plans") as client:
-    client: AutoScalingPlansClient
-    paginator: DescribeScalingPlanResourcesPaginator = client.get_paginator("describe_scaling_plan_resources")
+async with session.create_client("autoscaling-plans") as client:  # (1)
+    paginator: DescribeScalingPlanResourcesPaginator = client.get_paginator("describe_scaling_plan_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeScalingPlanResourcesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AutoScalingPlansClient](./client.md)
+2. paginator: [DescribeScalingPlanResourcesPaginator](./paginators.md#describescalingplanresourcespaginator)
+3. item: [:material-code-braces: DescribeScalingPlanResourcesResponseTypeDef](./type_defs.md#describescalingplanresourcesresponsetypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_autoscaling_plans.paginator import DescribeScalingPlansPaginator
 
 session = get_session()
-async with session.create_client("autoscaling-plans") as client:
-    client: AutoScalingPlansClient
-    paginator: DescribeScalingPlansPaginator = client.get_paginator("describe_scaling_plans")
+async with session.create_client("autoscaling-plans") as client:  # (1)
+    paginator: DescribeScalingPlansPaginator = client.get_paginator("describe_scaling_plans")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeScalingPlansResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AutoScalingPlansClient](./client.md)
+2. paginator: [DescribeScalingPlansPaginator](./paginators.md#describescalingplanspaginator)
+3. item: [:material-code-braces: DescribeScalingPlansResponseTypeDef](./type_defs.md#describescalingplansresponsetypedef) 
 
 
 ### paginate

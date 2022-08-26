@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_acm.paginator import ListCertificatesPaginator
 
 session = get_session()
-async with session.create_client("acm") as client:
-    client: ACMClient
-    paginator: ListCertificatesPaginator = client.get_paginator("list_certificates")
+async with session.create_client("acm") as client:  # (1)
+    paginator: ListCertificatesPaginator = client.get_paginator("list_certificates")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCertificatesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ACMClient](./client.md)
+2. paginator: [ListCertificatesPaginator](./paginators.md#listcertificatespaginator)
+3. item: [:material-code-braces: ListCertificatesResponseTypeDef](./type_defs.md#listcertificatesresponsetypedef) 
 
 
 ### paginate

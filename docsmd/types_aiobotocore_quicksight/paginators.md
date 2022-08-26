@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_quicksight.paginator import ListAnalysesPaginator
 
 session = get_session()
-async with session.create_client("quicksight") as client:
-    client: QuickSightClient
-    paginator: ListAnalysesPaginator = client.get_paginator("list_analyses")
+async with session.create_client("quicksight") as client:  # (1)
+    paginator: ListAnalysesPaginator = client.get_paginator("list_analyses")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAnalysesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [QuickSightClient](./client.md)
+2. paginator: [ListAnalysesPaginator](./paginators.md#listanalysespaginator)
+3. item: [:material-code-braces: ListAnalysesResponseTypeDef](./type_defs.md#listanalysesresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_quicksight.paginator import ListDashboardVersionsPaginator
 
 session = get_session()
-async with session.create_client("quicksight") as client:
-    client: QuickSightClient
-    paginator: ListDashboardVersionsPaginator = client.get_paginator("list_dashboard_versions")
+async with session.create_client("quicksight") as client:  # (1)
+    paginator: ListDashboardVersionsPaginator = client.get_paginator("list_dashboard_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDashboardVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [QuickSightClient](./client.md)
+2. paginator: [ListDashboardVersionsPaginator](./paginators.md#listdashboardversionspaginator)
+3. item: [:material-code-braces: ListDashboardVersionsResponseTypeDef](./type_defs.md#listdashboardversionsresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_quicksight.paginator import ListDashboardsPaginator
 
 session = get_session()
-async with session.create_client("quicksight") as client:
-    client: QuickSightClient
-    paginator: ListDashboardsPaginator = client.get_paginator("list_dashboards")
+async with session.create_client("quicksight") as client:  # (1)
+    paginator: ListDashboardsPaginator = client.get_paginator("list_dashboards")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDashboardsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [QuickSightClient](./client.md)
+2. paginator: [ListDashboardsPaginator](./paginators.md#listdashboardspaginator)
+3. item: [:material-code-braces: ListDashboardsResponseTypeDef](./type_defs.md#listdashboardsresponsetypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_quicksight.paginator import ListDataSetsPaginator
 
 session = get_session()
-async with session.create_client("quicksight") as client:
-    client: QuickSightClient
-    paginator: ListDataSetsPaginator = client.get_paginator("list_data_sets")
+async with session.create_client("quicksight") as client:  # (1)
+    paginator: ListDataSetsPaginator = client.get_paginator("list_data_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDataSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [QuickSightClient](./client.md)
+2. paginator: [ListDataSetsPaginator](./paginators.md#listdatasetspaginator)
+3. item: [:material-code-braces: ListDataSetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef) 
 
 
 ### paginate
@@ -196,10 +220,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_quicksight.paginator import ListDataSourcesPaginator
 
 session = get_session()
-async with session.create_client("quicksight") as client:
-    client: QuickSightClient
-    paginator: ListDataSourcesPaginator = client.get_paginator("list_data_sources")
+async with session.create_client("quicksight") as client:  # (1)
+    paginator: ListDataSourcesPaginator = client.get_paginator("list_data_sources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDataSourcesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [QuickSightClient](./client.md)
+2. paginator: [ListDataSourcesPaginator](./paginators.md#listdatasourcespaginator)
+3. item: [:material-code-braces: ListDataSourcesResponseTypeDef](./type_defs.md#listdatasourcesresponsetypedef) 
 
 
 ### paginate
@@ -240,10 +270,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_quicksight.paginator import ListIngestionsPaginator
 
 session = get_session()
-async with session.create_client("quicksight") as client:
-    client: QuickSightClient
-    paginator: ListIngestionsPaginator = client.get_paginator("list_ingestions")
+async with session.create_client("quicksight") as client:  # (1)
+    paginator: ListIngestionsPaginator = client.get_paginator("list_ingestions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListIngestionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [QuickSightClient](./client.md)
+2. paginator: [ListIngestionsPaginator](./paginators.md#listingestionspaginator)
+3. item: [:material-code-braces: ListIngestionsResponseTypeDef](./type_defs.md#listingestionsresponsetypedef) 
 
 
 ### paginate
@@ -286,10 +322,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_quicksight.paginator import ListNamespacesPaginator
 
 session = get_session()
-async with session.create_client("quicksight") as client:
-    client: QuickSightClient
-    paginator: ListNamespacesPaginator = client.get_paginator("list_namespaces")
+async with session.create_client("quicksight") as client:  # (1)
+    paginator: ListNamespacesPaginator = client.get_paginator("list_namespaces")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListNamespacesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [QuickSightClient](./client.md)
+2. paginator: [ListNamespacesPaginator](./paginators.md#listnamespacespaginator)
+3. item: [:material-code-braces: ListNamespacesResponseTypeDef](./type_defs.md#listnamespacesresponsetypedef) 
 
 
 ### paginate
@@ -330,10 +372,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_quicksight.paginator import ListTemplateAliasesPaginator
 
 session = get_session()
-async with session.create_client("quicksight") as client:
-    client: QuickSightClient
-    paginator: ListTemplateAliasesPaginator = client.get_paginator("list_template_aliases")
+async with session.create_client("quicksight") as client:  # (1)
+    paginator: ListTemplateAliasesPaginator = client.get_paginator("list_template_aliases")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTemplateAliasesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [QuickSightClient](./client.md)
+2. paginator: [ListTemplateAliasesPaginator](./paginators.md#listtemplatealiasespaginator)
+3. item: [:material-code-braces: ListTemplateAliasesResponseTypeDef](./type_defs.md#listtemplatealiasesresponsetypedef) 
 
 
 ### paginate
@@ -376,10 +424,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_quicksight.paginator import ListTemplateVersionsPaginator
 
 session = get_session()
-async with session.create_client("quicksight") as client:
-    client: QuickSightClient
-    paginator: ListTemplateVersionsPaginator = client.get_paginator("list_template_versions")
+async with session.create_client("quicksight") as client:  # (1)
+    paginator: ListTemplateVersionsPaginator = client.get_paginator("list_template_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTemplateVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [QuickSightClient](./client.md)
+2. paginator: [ListTemplateVersionsPaginator](./paginators.md#listtemplateversionspaginator)
+3. item: [:material-code-braces: ListTemplateVersionsResponseTypeDef](./type_defs.md#listtemplateversionsresponsetypedef) 
 
 
 ### paginate
@@ -422,10 +476,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_quicksight.paginator import ListTemplatesPaginator
 
 session = get_session()
-async with session.create_client("quicksight") as client:
-    client: QuickSightClient
-    paginator: ListTemplatesPaginator = client.get_paginator("list_templates")
+async with session.create_client("quicksight") as client:  # (1)
+    paginator: ListTemplatesPaginator = client.get_paginator("list_templates")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTemplatesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [QuickSightClient](./client.md)
+2. paginator: [ListTemplatesPaginator](./paginators.md#listtemplatespaginator)
+3. item: [:material-code-braces: ListTemplatesResponseTypeDef](./type_defs.md#listtemplatesresponsetypedef) 
 
 
 ### paginate
@@ -466,10 +526,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_quicksight.paginator import ListThemeVersionsPaginator
 
 session = get_session()
-async with session.create_client("quicksight") as client:
-    client: QuickSightClient
-    paginator: ListThemeVersionsPaginator = client.get_paginator("list_theme_versions")
+async with session.create_client("quicksight") as client:  # (1)
+    paginator: ListThemeVersionsPaginator = client.get_paginator("list_theme_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListThemeVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [QuickSightClient](./client.md)
+2. paginator: [ListThemeVersionsPaginator](./paginators.md#listthemeversionspaginator)
+3. item: [:material-code-braces: ListThemeVersionsResponseTypeDef](./type_defs.md#listthemeversionsresponsetypedef) 
 
 
 ### paginate
@@ -512,10 +578,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_quicksight.paginator import ListThemesPaginator
 
 session = get_session()
-async with session.create_client("quicksight") as client:
-    client: QuickSightClient
-    paginator: ListThemesPaginator = client.get_paginator("list_themes")
+async with session.create_client("quicksight") as client:  # (1)
+    paginator: ListThemesPaginator = client.get_paginator("list_themes")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListThemesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [QuickSightClient](./client.md)
+2. paginator: [ListThemesPaginator](./paginators.md#listthemespaginator)
+3. item: [:material-code-braces: ListThemesResponseTypeDef](./type_defs.md#listthemesresponsetypedef) 
 
 
 ### paginate
@@ -558,10 +630,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_quicksight.paginator import SearchAnalysesPaginator
 
 session = get_session()
-async with session.create_client("quicksight") as client:
-    client: QuickSightClient
-    paginator: SearchAnalysesPaginator = client.get_paginator("search_analyses")
+async with session.create_client("quicksight") as client:  # (1)
+    paginator: SearchAnalysesPaginator = client.get_paginator("search_analyses")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchAnalysesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [QuickSightClient](./client.md)
+2. paginator: [SearchAnalysesPaginator](./paginators.md#searchanalysespaginator)
+3. item: [:material-code-braces: SearchAnalysesResponseTypeDef](./type_defs.md#searchanalysesresponsetypedef) 
 
 
 ### paginate
@@ -605,10 +683,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_quicksight.paginator import SearchDashboardsPaginator
 
 session = get_session()
-async with session.create_client("quicksight") as client:
-    client: QuickSightClient
-    paginator: SearchDashboardsPaginator = client.get_paginator("search_dashboards")
+async with session.create_client("quicksight") as client:  # (1)
+    paginator: SearchDashboardsPaginator = client.get_paginator("search_dashboards")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchDashboardsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [QuickSightClient](./client.md)
+2. paginator: [SearchDashboardsPaginator](./paginators.md#searchdashboardspaginator)
+3. item: [:material-code-braces: SearchDashboardsResponseTypeDef](./type_defs.md#searchdashboardsresponsetypedef) 
 
 
 ### paginate

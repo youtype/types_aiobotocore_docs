@@ -361,6 +361,20 @@ ListFacesPaginatorName = Literal[
     "list_faces",
 ]
 ```
+## ListProjectPoliciesPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.literals import ListProjectPoliciesPaginatorName
+
+def get_value() -> ListProjectPoliciesPaginatorName:
+    return "list_project_policies"
+```
+
+```python title="Definition"
+ListProjectPoliciesPaginatorName = Literal[
+    "list_project_policies",
+]
+```
 ## ListStreamProcessorsPaginatorName
 
 ```python title="Usage Example"
@@ -443,11 +457,14 @@ ProjectVersionRunningWaiterName = Literal[
 from types_aiobotocore_rekognition.literals import ProjectVersionStatusType
 
 def get_value() -> ProjectVersionStatusType:
-    return "DELETING"
+    return "COPYING_COMPLETED"
 ```
 
 ```python title="Definition"
 ProjectVersionStatusType = Literal[
+    "COPYING_COMPLETED",
+    "COPYING_FAILED",
+    "COPYING_IN_PROGRESS",
     "DELETING",
     "FAILED",
     "RUNNING",
@@ -696,6 +713,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -841,6 +859,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -894,6 +913,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -904,11 +924,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -954,6 +976,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -1017,6 +1040,7 @@ PaginatorName = Literal[
     "list_dataset_entries",
     "list_dataset_labels",
     "list_faces",
+    "list_project_policies",
     "list_stream_processors",
 ]
 ```

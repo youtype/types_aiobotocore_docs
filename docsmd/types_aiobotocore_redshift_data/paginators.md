@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift_data.paginator import DescribeTablePaginator
 
 session = get_session()
-async with session.create_client("redshift-data") as client:
-    client: RedshiftDataAPIServiceClient
-    paginator: DescribeTablePaginator = client.get_paginator("describe_table")
+async with session.create_client("redshift-data") as client:  # (1)
+    paginator: DescribeTablePaginator = client.get_paginator("describe_table")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTableResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftDataAPIServiceClient](./client.md)
+2. paginator: [DescribeTablePaginator](./paginators.md#describetablepaginator)
+3. item: [:material-code-braces: DescribeTableResponseTypeDef](./type_defs.md#describetableresponsetypedef) 
 
 
 ### paginate
@@ -69,10 +75,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift_data.paginator import GetStatementResultPaginator
 
 session = get_session()
-async with session.create_client("redshift-data") as client:
-    client: RedshiftDataAPIServiceClient
-    paginator: GetStatementResultPaginator = client.get_paginator("get_statement_result")
+async with session.create_client("redshift-data") as client:  # (1)
+    paginator: GetStatementResultPaginator = client.get_paginator("get_statement_result")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetStatementResultResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftDataAPIServiceClient](./client.md)
+2. paginator: [GetStatementResultPaginator](./paginators.md#getstatementresultpaginator)
+3. item: [:material-code-braces: GetStatementResultResponseTypeDef](./type_defs.md#getstatementresultresponsetypedef) 
 
 
 ### paginate
@@ -113,10 +125,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift_data.paginator import ListDatabasesPaginator
 
 session = get_session()
-async with session.create_client("redshift-data") as client:
-    client: RedshiftDataAPIServiceClient
-    paginator: ListDatabasesPaginator = client.get_paginator("list_databases")
+async with session.create_client("redshift-data") as client:  # (1)
+    paginator: ListDatabasesPaginator = client.get_paginator("list_databases")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDatabasesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftDataAPIServiceClient](./client.md)
+2. paginator: [ListDatabasesPaginator](./paginators.md#listdatabasespaginator)
+3. item: [:material-code-braces: ListDatabasesResponseTypeDef](./type_defs.md#listdatabasesresponsetypedef) 
 
 
 ### paginate
@@ -161,10 +179,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift_data.paginator import ListSchemasPaginator
 
 session = get_session()
-async with session.create_client("redshift-data") as client:
-    client: RedshiftDataAPIServiceClient
-    paginator: ListSchemasPaginator = client.get_paginator("list_schemas")
+async with session.create_client("redshift-data") as client:  # (1)
+    paginator: ListSchemasPaginator = client.get_paginator("list_schemas")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSchemasResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftDataAPIServiceClient](./client.md)
+2. paginator: [ListSchemasPaginator](./paginators.md#listschemaspaginator)
+3. item: [:material-code-braces: ListSchemasResponseTypeDef](./type_defs.md#listschemasresponsetypedef) 
 
 
 ### paginate
@@ -211,10 +235,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift_data.paginator import ListStatementsPaginator
 
 session = get_session()
-async with session.create_client("redshift-data") as client:
-    client: RedshiftDataAPIServiceClient
-    paginator: ListStatementsPaginator = client.get_paginator("list_statements")
+async with session.create_client("redshift-data") as client:  # (1)
+    paginator: ListStatementsPaginator = client.get_paginator("list_statements")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStatementsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftDataAPIServiceClient](./client.md)
+2. paginator: [ListStatementsPaginator](./paginators.md#liststatementspaginator)
+3. item: [:material-code-braces: ListStatementsResponseTypeDef](./type_defs.md#liststatementsresponsetypedef) 
 
 
 ### paginate
@@ -258,10 +288,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_redshift_data.paginator import ListTablesPaginator
 
 session = get_session()
-async with session.create_client("redshift-data") as client:
-    client: RedshiftDataAPIServiceClient
-    paginator: ListTablesPaginator = client.get_paginator("list_tables")
+async with session.create_client("redshift-data") as client:  # (1)
+    paginator: ListTablesPaginator = client.get_paginator("list_tables")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTablesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RedshiftDataAPIServiceClient](./client.md)
+2. paginator: [ListTablesPaginator](./paginators.md#listtablespaginator)
+3. item: [:material-code-braces: ListTablesResponseTypeDef](./type_defs.md#listtablesresponsetypedef) 
 
 
 ### paginate

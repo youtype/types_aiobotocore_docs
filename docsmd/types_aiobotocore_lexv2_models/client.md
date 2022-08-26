@@ -328,7 +328,8 @@ await def create_intent(
     inputContexts: Sequence[InputContextTypeDef] = ...,  # (6)
     outputContexts: Sequence[OutputContextTypeDef] = ...,  # (7)
     kendraConfiguration: KendraConfigurationTypeDef = ...,  # (8)
-) -> CreateIntentResponseTypeDef:  # (9)
+    initialResponseSetting: InitialResponseSettingTypeDef = ...,  # (9)
+) -> CreateIntentResponseTypeDef:  # (10)
     ...
 ```
 
@@ -340,7 +341,8 @@ await def create_intent(
 6. See [:material-code-braces: InputContextTypeDef](./type_defs.md#inputcontexttypedef) 
 7. See [:material-code-braces: OutputContextTypeDef](./type_defs.md#outputcontexttypedef) 
 8. See [:material-code-braces: KendraConfigurationTypeDef](./type_defs.md#kendraconfigurationtypedef) 
-9. See [:material-code-braces: CreateIntentResponseTypeDef](./type_defs.md#createintentresponsetypedef) 
+9. See [:material-code-braces: InitialResponseSettingTypeDef](./type_defs.md#initialresponsesettingtypedef) 
+10. See [:material-code-braces: CreateIntentResponseTypeDef](./type_defs.md#createintentresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2016,6 +2018,41 @@ parent.start_import(**kwargs)
 
 1. See [:material-code-braces: StartImportRequestRequestTypeDef](./type_defs.md#startimportrequestrequesttypedef) 
 
+### stop\_bot\_recommendation
+
+Stop an already running Bot Recommendation request.
+
+Type annotations and code completion for `#!python session.create_client("lexv2-models").stop_bot_recommendation` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.stop_bot_recommendation)
+
+```python title="Method definition"
+await def stop_bot_recommendation(
+    self,
+    *,
+    botId: str,
+    botVersion: str,
+    localeId: str,
+    botRecommendationId: str,
+) -> StopBotRecommendationResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: StopBotRecommendationResponseTypeDef](./type_defs.md#stopbotrecommendationresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: StopBotRecommendationRequestRequestTypeDef = {  # (1)
+    "botId": ...,
+    "botVersion": ...,
+    "localeId": ...,
+    "botRecommendationId": ...,
+}
+
+parent.stop_bot_recommendation(**kwargs)
+```
+
+1. See [:material-code-braces: StopBotRecommendationRequestRequestTypeDef](./type_defs.md#stopbotrecommendationrequestrequesttypedef) 
+
 ### tag\_resource
 
 Adds the specified tags to the specified resource.
@@ -2289,7 +2326,8 @@ await def update_intent(
     inputContexts: Sequence[InputContextTypeDef] = ...,  # (7)
     outputContexts: Sequence[OutputContextTypeDef] = ...,  # (8)
     kendraConfiguration: KendraConfigurationTypeDef = ...,  # (9)
-) -> UpdateIntentResponseTypeDef:  # (10)
+    initialResponseSetting: InitialResponseSettingTypeDef = ...,  # (10)
+) -> UpdateIntentResponseTypeDef:  # (11)
     ...
 ```
 
@@ -2302,7 +2340,8 @@ await def update_intent(
 7. See [:material-code-braces: InputContextTypeDef](./type_defs.md#inputcontexttypedef) 
 8. See [:material-code-braces: OutputContextTypeDef](./type_defs.md#outputcontexttypedef) 
 9. See [:material-code-braces: KendraConfigurationTypeDef](./type_defs.md#kendraconfigurationtypedef) 
-10. See [:material-code-braces: UpdateIntentResponseTypeDef](./type_defs.md#updateintentresponsetypedef) 
+10. See [:material-code-braces: InitialResponseSettingTypeDef](./type_defs.md#initialresponsesettingtypedef) 
+11. See [:material-code-braces: UpdateIntentResponseTypeDef](./type_defs.md#updateintentresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"

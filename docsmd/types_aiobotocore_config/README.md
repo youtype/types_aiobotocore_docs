@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `ConfigService`.
 
 ### From PyPI with pip
 
@@ -184,6 +179,8 @@ def get_value() -> AggregateConformancePackComplianceSummaryGroupKeyType:
 - [ResourceValueTypeType](./literals.md#resourcevaluetypetype)
 - [SelectAggregateResourceConfigPaginatorName](./literals.md#selectaggregateresourceconfigpaginatorname)
 - [SelectResourceConfigPaginatorName](./literals.md#selectresourceconfigpaginatorname)
+- [SortByType](./literals.md#sortbytype)
+- [SortOrderType](./literals.md#sortordertype)
 - [ConfigServiceServiceName](./literals.md#configserviceservicename)
 - [ServiceName](./literals.md#servicename)
 - [ResourceServiceName](./literals.md#resourceservicename)
@@ -230,8 +227,11 @@ def get_value() -> AccountAggregationSourceTypeDef:
 - [ConfigurationRecorderStatusTypeDef](./type_defs.md#configurationrecorderstatustypedef)
 - [RecordingGroupTypeDef](./type_defs.md#recordinggrouptypedef)
 - [ConformancePackComplianceFiltersTypeDef](./type_defs.md#conformancepackcompliancefilterstypedef)
+- [ConformancePackComplianceScoreTypeDef](./type_defs.md#conformancepackcompliancescoretypedef)
+- [ConformancePackComplianceScoresFiltersTypeDef](./type_defs.md#conformancepackcompliancescoresfilterstypedef)
 - [ConformancePackComplianceSummaryTypeDef](./type_defs.md#conformancepackcompliancesummarytypedef)
 - [ConformancePackInputParameterTypeDef](./type_defs.md#conformancepackinputparametertypedef)
+- [TemplateSSMDocumentDetailsTypeDef](./type_defs.md#templatessmdocumentdetailstypedef)
 - [ConformancePackEvaluationFiltersTypeDef](./type_defs.md#conformancepackevaluationfilterstypedef)
 - [ConformancePackRuleComplianceTypeDef](./type_defs.md#conformancepackrulecompliancetypedef)
 - [ConformancePackStatusDetailTypeDef](./type_defs.md#conformancepackstatusdetailtypedef)
@@ -360,11 +360,13 @@ def get_value() -> AccountAggregationSourceTypeDef:
 - [DescribeConfigurationRecorderStatusResponseTypeDef](./type_defs.md#describeconfigurationrecorderstatusresponsetypedef)
 - [ConfigurationRecorderTypeDef](./type_defs.md#configurationrecordertypedef)
 - [DescribeConformancePackComplianceRequestRequestTypeDef](./type_defs.md#describeconformancepackcompliancerequestrequesttypedef)
+- [ListConformancePackComplianceScoresResponseTypeDef](./type_defs.md#listconformancepackcompliancescoresresponsetypedef)
+- [ListConformancePackComplianceScoresRequestRequestTypeDef](./type_defs.md#listconformancepackcompliancescoresrequestrequesttypedef)
 - [GetConformancePackComplianceSummaryResponseTypeDef](./type_defs.md#getconformancepackcompliancesummaryresponsetypedef)
-- [ConformancePackDetailTypeDef](./type_defs.md#conformancepackdetailtypedef)
 - [OrganizationConformancePackTypeDef](./type_defs.md#organizationconformancepacktypedef)
-- [PutConformancePackRequestRequestTypeDef](./type_defs.md#putconformancepackrequestrequesttypedef)
 - [PutOrganizationConformancePackRequestRequestTypeDef](./type_defs.md#putorganizationconformancepackrequestrequesttypedef)
+- [ConformancePackDetailTypeDef](./type_defs.md#conformancepackdetailtypedef)
+- [PutConformancePackRequestRequestTypeDef](./type_defs.md#putconformancepackrequestrequesttypedef)
 - [GetConformancePackComplianceDetailsRequestRequestTypeDef](./type_defs.md#getconformancepackcompliancedetailsrequestrequesttypedef)
 - [DescribeConformancePackComplianceResponseTypeDef](./type_defs.md#describeconformancepackcomplianceresponsetypedef)
 - [DescribeConformancePackStatusResponseTypeDef](./type_defs.md#describeconformancepackstatusresponsetypedef)
@@ -453,8 +455,8 @@ def get_value() -> AccountAggregationSourceTypeDef:
 - [GetResourceConfigHistoryResponseTypeDef](./type_defs.md#getresourceconfighistoryresponsetypedef)
 - [DescribeConfigurationRecordersResponseTypeDef](./type_defs.md#describeconfigurationrecordersresponsetypedef)
 - [PutConfigurationRecorderRequestRequestTypeDef](./type_defs.md#putconfigurationrecorderrequestrequesttypedef)
-- [DescribeConformancePacksResponseTypeDef](./type_defs.md#describeconformancepacksresponsetypedef)
 - [DescribeOrganizationConformancePacksResponseTypeDef](./type_defs.md#describeorganizationconformancepacksresponsetypedef)
+- [DescribeConformancePacksResponseTypeDef](./type_defs.md#describeconformancepacksresponsetypedef)
 - [DeleteRemediationExceptionsResponseTypeDef](./type_defs.md#deleteremediationexceptionsresponsetypedef)
 - [PutRemediationExceptionsResponseTypeDef](./type_defs.md#putremediationexceptionsresponsetypedef)
 - [AggregateEvaluationResultTypeDef](./type_defs.md#aggregateevaluationresulttypedef)

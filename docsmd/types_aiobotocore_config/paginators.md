@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeAggregateComplianceByConfigRulesPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeAggregateComplianceByConfigRulesPaginator = client.get_paginator("describe_aggregate_compliance_by_config_rules")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeAggregateComplianceByConfigRulesPaginator = client.get_paginator("describe_aggregate_compliance_by_config_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAggregateComplianceByConfigRulesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeAggregateComplianceByConfigRulesPaginator](./paginators.md#describeaggregatecompliancebyconfigrulespaginator)
+3. item: [:material-code-braces: DescribeAggregateComplianceByConfigRulesResponseTypeDef](./type_defs.md#describeaggregatecompliancebyconfigrulesresponsetypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeAggregateComplianceByConformancePacksPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeAggregateComplianceByConformancePacksPaginator = client.get_paginator("describe_aggregate_compliance_by_conformance_packs")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeAggregateComplianceByConformancePacksPaginator = client.get_paginator("describe_aggregate_compliance_by_conformance_packs")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAggregateComplianceByConformancePacksResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeAggregateComplianceByConformancePacksPaginator](./paginators.md#describeaggregatecompliancebyconformancepackspaginator)
+3. item: [:material-code-braces: DescribeAggregateComplianceByConformancePacksResponseTypeDef](./type_defs.md#describeaggregatecompliancebyconformancepacksresponsetypedef) 
 
 
 ### paginate
@@ -110,10 +122,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeAggregationAuthorizationsPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeAggregationAuthorizationsPaginator = client.get_paginator("describe_aggregation_authorizations")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeAggregationAuthorizationsPaginator = client.get_paginator("describe_aggregation_authorizations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAggregationAuthorizationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeAggregationAuthorizationsPaginator](./paginators.md#describeaggregationauthorizationspaginator)
+3. item: [:material-code-braces: DescribeAggregationAuthorizationsResponseTypeDef](./type_defs.md#describeaggregationauthorizationsresponsetypedef) 
 
 
 ### paginate
@@ -153,10 +171,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeComplianceByConfigRulePaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeComplianceByConfigRulePaginator = client.get_paginator("describe_compliance_by_config_rule")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeComplianceByConfigRulePaginator = client.get_paginator("describe_compliance_by_config_rule")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeComplianceByConfigRuleResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeComplianceByConfigRulePaginator](./paginators.md#describecompliancebyconfigrulepaginator)
+3. item: [:material-code-braces: DescribeComplianceByConfigRuleResponseTypeDef](./type_defs.md#describecompliancebyconfigruleresponsetypedef) 
 
 
 ### paginate
@@ -199,10 +223,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeComplianceByResourcePaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeComplianceByResourcePaginator = client.get_paginator("describe_compliance_by_resource")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeComplianceByResourcePaginator = client.get_paginator("describe_compliance_by_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeComplianceByResourceResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeComplianceByResourcePaginator](./paginators.md#describecompliancebyresourcepaginator)
+3. item: [:material-code-braces: DescribeComplianceByResourceResponseTypeDef](./type_defs.md#describecompliancebyresourceresponsetypedef) 
 
 
 ### paginate
@@ -246,10 +276,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeConfigRuleEvaluationStatusPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeConfigRuleEvaluationStatusPaginator = client.get_paginator("describe_config_rule_evaluation_status")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeConfigRuleEvaluationStatusPaginator = client.get_paginator("describe_config_rule_evaluation_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeConfigRuleEvaluationStatusResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeConfigRuleEvaluationStatusPaginator](./paginators.md#describeconfigruleevaluationstatuspaginator)
+3. item: [:material-code-braces: DescribeConfigRuleEvaluationStatusResponseTypeDef](./type_defs.md#describeconfigruleevaluationstatusresponsetypedef) 
 
 
 ### paginate
@@ -290,10 +326,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeConfigRulesPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeConfigRulesPaginator = client.get_paginator("describe_config_rules")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeConfigRulesPaginator = client.get_paginator("describe_config_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeConfigRulesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeConfigRulesPaginator](./paginators.md#describeconfigrulespaginator)
+3. item: [:material-code-braces: DescribeConfigRulesResponseTypeDef](./type_defs.md#describeconfigrulesresponsetypedef) 
 
 
 ### paginate
@@ -334,10 +376,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeConfigurationAggregatorSourcesStatusPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeConfigurationAggregatorSourcesStatusPaginator = client.get_paginator("describe_configuration_aggregator_sources_status")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeConfigurationAggregatorSourcesStatusPaginator = client.get_paginator("describe_configuration_aggregator_sources_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeConfigurationAggregatorSourcesStatusResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeConfigurationAggregatorSourcesStatusPaginator](./paginators.md#describeconfigurationaggregatorsourcesstatuspaginator)
+3. item: [:material-code-braces: DescribeConfigurationAggregatorSourcesStatusResponseTypeDef](./type_defs.md#describeconfigurationaggregatorsourcesstatusresponsetypedef) 
 
 
 ### paginate
@@ -380,10 +428,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeConfigurationAggregatorsPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeConfigurationAggregatorsPaginator = client.get_paginator("describe_configuration_aggregators")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeConfigurationAggregatorsPaginator = client.get_paginator("describe_configuration_aggregators")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeConfigurationAggregatorsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeConfigurationAggregatorsPaginator](./paginators.md#describeconfigurationaggregatorspaginator)
+3. item: [:material-code-braces: DescribeConfigurationAggregatorsResponseTypeDef](./type_defs.md#describeconfigurationaggregatorsresponsetypedef) 
 
 
 ### paginate
@@ -424,10 +478,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeConformancePackStatusPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeConformancePackStatusPaginator = client.get_paginator("describe_conformance_pack_status")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeConformancePackStatusPaginator = client.get_paginator("describe_conformance_pack_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeConformancePackStatusResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeConformancePackStatusPaginator](./paginators.md#describeconformancepackstatuspaginator)
+3. item: [:material-code-braces: DescribeConformancePackStatusResponseTypeDef](./type_defs.md#describeconformancepackstatusresponsetypedef) 
 
 
 ### paginate
@@ -468,10 +528,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeConformancePacksPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeConformancePacksPaginator = client.get_paginator("describe_conformance_packs")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeConformancePacksPaginator = client.get_paginator("describe_conformance_packs")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeConformancePacksResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeConformancePacksPaginator](./paginators.md#describeconformancepackspaginator)
+3. item: [:material-code-braces: DescribeConformancePacksResponseTypeDef](./type_defs.md#describeconformancepacksresponsetypedef) 
 
 
 ### paginate
@@ -512,10 +578,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeOrganizationConfigRuleStatusesPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeOrganizationConfigRuleStatusesPaginator = client.get_paginator("describe_organization_config_rule_statuses")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeOrganizationConfigRuleStatusesPaginator = client.get_paginator("describe_organization_config_rule_statuses")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeOrganizationConfigRuleStatusesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeOrganizationConfigRuleStatusesPaginator](./paginators.md#describeorganizationconfigrulestatusespaginator)
+3. item: [:material-code-braces: DescribeOrganizationConfigRuleStatusesResponseTypeDef](./type_defs.md#describeorganizationconfigrulestatusesresponsetypedef) 
 
 
 ### paginate
@@ -556,10 +628,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeOrganizationConfigRulesPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeOrganizationConfigRulesPaginator = client.get_paginator("describe_organization_config_rules")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeOrganizationConfigRulesPaginator = client.get_paginator("describe_organization_config_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeOrganizationConfigRulesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeOrganizationConfigRulesPaginator](./paginators.md#describeorganizationconfigrulespaginator)
+3. item: [:material-code-braces: DescribeOrganizationConfigRulesResponseTypeDef](./type_defs.md#describeorganizationconfigrulesresponsetypedef) 
 
 
 ### paginate
@@ -600,10 +678,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeOrganizationConformancePackStatusesPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeOrganizationConformancePackStatusesPaginator = client.get_paginator("describe_organization_conformance_pack_statuses")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeOrganizationConformancePackStatusesPaginator = client.get_paginator("describe_organization_conformance_pack_statuses")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeOrganizationConformancePackStatusesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeOrganizationConformancePackStatusesPaginator](./paginators.md#describeorganizationconformancepackstatusespaginator)
+3. item: [:material-code-braces: DescribeOrganizationConformancePackStatusesResponseTypeDef](./type_defs.md#describeorganizationconformancepackstatusesresponsetypedef) 
 
 
 ### paginate
@@ -644,10 +728,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeOrganizationConformancePacksPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeOrganizationConformancePacksPaginator = client.get_paginator("describe_organization_conformance_packs")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeOrganizationConformancePacksPaginator = client.get_paginator("describe_organization_conformance_packs")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeOrganizationConformancePacksResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeOrganizationConformancePacksPaginator](./paginators.md#describeorganizationconformancepackspaginator)
+3. item: [:material-code-braces: DescribeOrganizationConformancePacksResponseTypeDef](./type_defs.md#describeorganizationconformancepacksresponsetypedef) 
 
 
 ### paginate
@@ -688,10 +778,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribePendingAggregationRequestsPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribePendingAggregationRequestsPaginator = client.get_paginator("describe_pending_aggregation_requests")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribePendingAggregationRequestsPaginator = client.get_paginator("describe_pending_aggregation_requests")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribePendingAggregationRequestsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribePendingAggregationRequestsPaginator](./paginators.md#describependingaggregationrequestspaginator)
+3. item: [:material-code-braces: DescribePendingAggregationRequestsResponseTypeDef](./type_defs.md#describependingaggregationrequestsresponsetypedef) 
 
 
 ### paginate
@@ -731,10 +827,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeRemediationExecutionStatusPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeRemediationExecutionStatusPaginator = client.get_paginator("describe_remediation_execution_status")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeRemediationExecutionStatusPaginator = client.get_paginator("describe_remediation_execution_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeRemediationExecutionStatusResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeRemediationExecutionStatusPaginator](./paginators.md#describeremediationexecutionstatuspaginator)
+3. item: [:material-code-braces: DescribeRemediationExecutionStatusResponseTypeDef](./type_defs.md#describeremediationexecutionstatusresponsetypedef) 
 
 
 ### paginate
@@ -777,10 +879,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import DescribeRetentionConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: DescribeRetentionConfigurationsPaginator = client.get_paginator("describe_retention_configurations")
+async with session.create_client("config") as client:  # (1)
+    paginator: DescribeRetentionConfigurationsPaginator = client.get_paginator("describe_retention_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeRetentionConfigurationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [DescribeRetentionConfigurationsPaginator](./paginators.md#describeretentionconfigurationspaginator)
+3. item: [:material-code-braces: DescribeRetentionConfigurationsResponseTypeDef](./type_defs.md#describeretentionconfigurationsresponsetypedef) 
 
 
 ### paginate
@@ -821,10 +929,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import GetAggregateComplianceDetailsByConfigRulePaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: GetAggregateComplianceDetailsByConfigRulePaginator = client.get_paginator("get_aggregate_compliance_details_by_config_rule")
+async with session.create_client("config") as client:  # (1)
+    paginator: GetAggregateComplianceDetailsByConfigRulePaginator = client.get_paginator("get_aggregate_compliance_details_by_config_rule")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetAggregateComplianceDetailsByConfigRuleResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [GetAggregateComplianceDetailsByConfigRulePaginator](./paginators.md#getaggregatecompliancedetailsbyconfigrulepaginator)
+3. item: [:material-code-braces: GetAggregateComplianceDetailsByConfigRuleResponseTypeDef](./type_defs.md#getaggregatecompliancedetailsbyconfigruleresponsetypedef) 
 
 
 ### paginate
@@ -873,10 +987,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import GetComplianceDetailsByConfigRulePaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: GetComplianceDetailsByConfigRulePaginator = client.get_paginator("get_compliance_details_by_config_rule")
+async with session.create_client("config") as client:  # (1)
+    paginator: GetComplianceDetailsByConfigRulePaginator = client.get_paginator("get_compliance_details_by_config_rule")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetComplianceDetailsByConfigRuleResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [GetComplianceDetailsByConfigRulePaginator](./paginators.md#getcompliancedetailsbyconfigrulepaginator)
+3. item: [:material-code-braces: GetComplianceDetailsByConfigRuleResponseTypeDef](./type_defs.md#getcompliancedetailsbyconfigruleresponsetypedef) 
 
 
 ### paginate
@@ -919,10 +1039,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import GetComplianceDetailsByResourcePaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: GetComplianceDetailsByResourcePaginator = client.get_paginator("get_compliance_details_by_resource")
+async with session.create_client("config") as client:  # (1)
+    paginator: GetComplianceDetailsByResourcePaginator = client.get_paginator("get_compliance_details_by_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetComplianceDetailsByResourceResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [GetComplianceDetailsByResourcePaginator](./paginators.md#getcompliancedetailsbyresourcepaginator)
+3. item: [:material-code-braces: GetComplianceDetailsByResourceResponseTypeDef](./type_defs.md#getcompliancedetailsbyresourceresponsetypedef) 
 
 
 ### paginate
@@ -967,10 +1093,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import GetConformancePackComplianceSummaryPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: GetConformancePackComplianceSummaryPaginator = client.get_paginator("get_conformance_pack_compliance_summary")
+async with session.create_client("config") as client:  # (1)
+    paginator: GetConformancePackComplianceSummaryPaginator = client.get_paginator("get_conformance_pack_compliance_summary")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetConformancePackComplianceSummaryResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [GetConformancePackComplianceSummaryPaginator](./paginators.md#getconformancepackcompliancesummarypaginator)
+3. item: [:material-code-braces: GetConformancePackComplianceSummaryResponseTypeDef](./type_defs.md#getconformancepackcompliancesummaryresponsetypedef) 
 
 
 ### paginate
@@ -1011,10 +1143,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import GetOrganizationConfigRuleDetailedStatusPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: GetOrganizationConfigRuleDetailedStatusPaginator = client.get_paginator("get_organization_config_rule_detailed_status")
+async with session.create_client("config") as client:  # (1)
+    paginator: GetOrganizationConfigRuleDetailedStatusPaginator = client.get_paginator("get_organization_config_rule_detailed_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetOrganizationConfigRuleDetailedStatusResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [GetOrganizationConfigRuleDetailedStatusPaginator](./paginators.md#getorganizationconfigruledetailedstatuspaginator)
+3. item: [:material-code-braces: GetOrganizationConfigRuleDetailedStatusResponseTypeDef](./type_defs.md#getorganizationconfigruledetailedstatusresponsetypedef) 
 
 
 ### paginate
@@ -1057,10 +1195,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import GetOrganizationConformancePackDetailedStatusPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: GetOrganizationConformancePackDetailedStatusPaginator = client.get_paginator("get_organization_conformance_pack_detailed_status")
+async with session.create_client("config") as client:  # (1)
+    paginator: GetOrganizationConformancePackDetailedStatusPaginator = client.get_paginator("get_organization_conformance_pack_detailed_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetOrganizationConformancePackDetailedStatusResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [GetOrganizationConformancePackDetailedStatusPaginator](./paginators.md#getorganizationconformancepackdetailedstatuspaginator)
+3. item: [:material-code-braces: GetOrganizationConformancePackDetailedStatusResponseTypeDef](./type_defs.md#getorganizationconformancepackdetailedstatusresponsetypedef) 
 
 
 ### paginate
@@ -1103,10 +1247,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import GetResourceConfigHistoryPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: GetResourceConfigHistoryPaginator = client.get_paginator("get_resource_config_history")
+async with session.create_client("config") as client:  # (1)
+    paginator: GetResourceConfigHistoryPaginator = client.get_paginator("get_resource_config_history")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetResourceConfigHistoryResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [GetResourceConfigHistoryPaginator](./paginators.md#getresourceconfighistorypaginator)
+3. item: [:material-code-braces: GetResourceConfigHistoryResponseTypeDef](./type_defs.md#getresourceconfighistoryresponsetypedef) 
 
 
 ### paginate
@@ -1154,10 +1304,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import ListAggregateDiscoveredResourcesPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: ListAggregateDiscoveredResourcesPaginator = client.get_paginator("list_aggregate_discovered_resources")
+async with session.create_client("config") as client:  # (1)
+    paginator: ListAggregateDiscoveredResourcesPaginator = client.get_paginator("list_aggregate_discovered_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAggregateDiscoveredResourcesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [ListAggregateDiscoveredResourcesPaginator](./paginators.md#listaggregatediscoveredresourcespaginator)
+3. item: [:material-code-braces: ListAggregateDiscoveredResourcesResponseTypeDef](./type_defs.md#listaggregatediscoveredresourcesresponsetypedef) 
 
 
 ### paginate
@@ -1203,10 +1359,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import ListDiscoveredResourcesPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: ListDiscoveredResourcesPaginator = client.get_paginator("list_discovered_resources")
+async with session.create_client("config") as client:  # (1)
+    paginator: ListDiscoveredResourcesPaginator = client.get_paginator("list_discovered_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDiscoveredResourcesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [ListDiscoveredResourcesPaginator](./paginators.md#listdiscoveredresourcespaginator)
+3. item: [:material-code-braces: ListDiscoveredResourcesResponseTypeDef](./type_defs.md#listdiscoveredresourcesresponsetypedef) 
 
 
 ### paginate
@@ -1251,10 +1413,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import ListTagsForResourcePaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
+async with session.create_client("config") as client:  # (1)
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsForResourceResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
+3. item: [:material-code-braces: ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef) 
 
 
 ### paginate
@@ -1295,10 +1463,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import SelectAggregateResourceConfigPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: SelectAggregateResourceConfigPaginator = client.get_paginator("select_aggregate_resource_config")
+async with session.create_client("config") as client:  # (1)
+    paginator: SelectAggregateResourceConfigPaginator = client.get_paginator("select_aggregate_resource_config")  # (2)
+    async for item in paginator.paginate(...):
+        item: SelectAggregateResourceConfigResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [SelectAggregateResourceConfigPaginator](./paginators.md#selectaggregateresourceconfigpaginator)
+3. item: [:material-code-braces: SelectAggregateResourceConfigResponseTypeDef](./type_defs.md#selectaggregateresourceconfigresponsetypedef) 
 
 
 ### paginate
@@ -1342,10 +1516,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_config.paginator import SelectResourceConfigPaginator
 
 session = get_session()
-async with session.create_client("config") as client:
-    client: ConfigServiceClient
-    paginator: SelectResourceConfigPaginator = client.get_paginator("select_resource_config")
+async with session.create_client("config") as client:  # (1)
+    paginator: SelectResourceConfigPaginator = client.get_paginator("select_resource_config")  # (2)
+    async for item in paginator.paginate(...):
+        item: SelectResourceConfigResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ConfigServiceClient](./client.md)
+2. paginator: [SelectResourceConfigPaginator](./paginators.md#selectresourceconfigpaginator)
+3. item: [:material-code-braces: SelectResourceConfigResponseTypeDef](./type_defs.md#selectresourceconfigresponsetypedef) 
 
 
 ### paginate

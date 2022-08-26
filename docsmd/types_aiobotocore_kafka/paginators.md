@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kafka.paginator import ListClusterOperationsPaginator
 
 session = get_session()
-async with session.create_client("kafka") as client:
-    client: KafkaClient
-    paginator: ListClusterOperationsPaginator = client.get_paginator("list_cluster_operations")
+async with session.create_client("kafka") as client:  # (1)
+    paginator: ListClusterOperationsPaginator = client.get_paginator("list_cluster_operations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListClusterOperationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KafkaClient](./client.md)
+2. paginator: [ListClusterOperationsPaginator](./paginators.md#listclusteroperationspaginator)
+3. item: [:material-code-braces: ListClusterOperationsResponseTypeDef](./type_defs.md#listclusteroperationsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kafka.paginator import ListClustersPaginator
 
 session = get_session()
-async with session.create_client("kafka") as client:
-    client: KafkaClient
-    paginator: ListClustersPaginator = client.get_paginator("list_clusters")
+async with session.create_client("kafka") as client:  # (1)
+    paginator: ListClustersPaginator = client.get_paginator("list_clusters")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListClustersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KafkaClient](./client.md)
+2. paginator: [ListClustersPaginator](./paginators.md#listclusterspaginator)
+3. item: [:material-code-braces: ListClustersResponseTypeDef](./type_defs.md#listclustersresponsetypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kafka.paginator import ListClustersV2Paginator
 
 session = get_session()
-async with session.create_client("kafka") as client:
-    client: KafkaClient
-    paginator: ListClustersV2Paginator = client.get_paginator("list_clusters_v2")
+async with session.create_client("kafka") as client:  # (1)
+    paginator: ListClustersV2Paginator = client.get_paginator("list_clusters_v2")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListClustersV2ResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KafkaClient](./client.md)
+2. paginator: [ListClustersV2Paginator](./paginators.md#listclustersv2paginator)
+3. item: [:material-code-braces: ListClustersV2ResponseTypeDef](./type_defs.md#listclustersv2responsetypedef) 
 
 
 ### paginate
@@ -151,10 +169,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kafka.paginator import ListConfigurationRevisionsPaginator
 
 session = get_session()
-async with session.create_client("kafka") as client:
-    client: KafkaClient
-    paginator: ListConfigurationRevisionsPaginator = client.get_paginator("list_configuration_revisions")
+async with session.create_client("kafka") as client:  # (1)
+    paginator: ListConfigurationRevisionsPaginator = client.get_paginator("list_configuration_revisions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListConfigurationRevisionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KafkaClient](./client.md)
+2. paginator: [ListConfigurationRevisionsPaginator](./paginators.md#listconfigurationrevisionspaginator)
+3. item: [:material-code-braces: ListConfigurationRevisionsResponseTypeDef](./type_defs.md#listconfigurationrevisionsresponsetypedef) 
 
 
 ### paginate
@@ -195,10 +219,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kafka.paginator import ListConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("kafka") as client:
-    client: KafkaClient
-    paginator: ListConfigurationsPaginator = client.get_paginator("list_configurations")
+async with session.create_client("kafka") as client:  # (1)
+    paginator: ListConfigurationsPaginator = client.get_paginator("list_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListConfigurationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KafkaClient](./client.md)
+2. paginator: [ListConfigurationsPaginator](./paginators.md#listconfigurationspaginator)
+3. item: [:material-code-braces: ListConfigurationsResponseTypeDef](./type_defs.md#listconfigurationsresponsetypedef) 
 
 
 ### paginate
@@ -238,10 +268,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kafka.paginator import ListKafkaVersionsPaginator
 
 session = get_session()
-async with session.create_client("kafka") as client:
-    client: KafkaClient
-    paginator: ListKafkaVersionsPaginator = client.get_paginator("list_kafka_versions")
+async with session.create_client("kafka") as client:  # (1)
+    paginator: ListKafkaVersionsPaginator = client.get_paginator("list_kafka_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListKafkaVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KafkaClient](./client.md)
+2. paginator: [ListKafkaVersionsPaginator](./paginators.md#listkafkaversionspaginator)
+3. item: [:material-code-braces: ListKafkaVersionsResponseTypeDef](./type_defs.md#listkafkaversionsresponsetypedef) 
 
 
 ### paginate
@@ -281,10 +317,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kafka.paginator import ListNodesPaginator
 
 session = get_session()
-async with session.create_client("kafka") as client:
-    client: KafkaClient
-    paginator: ListNodesPaginator = client.get_paginator("list_nodes")
+async with session.create_client("kafka") as client:  # (1)
+    paginator: ListNodesPaginator = client.get_paginator("list_nodes")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListNodesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KafkaClient](./client.md)
+2. paginator: [ListNodesPaginator](./paginators.md#listnodespaginator)
+3. item: [:material-code-braces: ListNodesResponseTypeDef](./type_defs.md#listnodesresponsetypedef) 
 
 
 ### paginate
@@ -325,10 +367,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kafka.paginator import ListScramSecretsPaginator
 
 session = get_session()
-async with session.create_client("kafka") as client:
-    client: KafkaClient
-    paginator: ListScramSecretsPaginator = client.get_paginator("list_scram_secrets")
+async with session.create_client("kafka") as client:  # (1)
+    paginator: ListScramSecretsPaginator = client.get_paginator("list_scram_secrets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListScramSecretsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KafkaClient](./client.md)
+2. paginator: [ListScramSecretsPaginator](./paginators.md#listscramsecretspaginator)
+3. item: [:material-code-braces: ListScramSecretsResponseTypeDef](./type_defs.md#listscramsecretsresponsetypedef) 
 
 
 ### paginate

@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Lambda`.
 
 ### From PyPI with pip
 
@@ -35,30 +30,6 @@ python -m pip install 'types-aiobotocore-lite[lambda]'
 python -m pip install types-aiobotocore-lambda
 ```
 
-
-### From conda-forge
-
-Installing `types-aiobotocore-lambda` from the `conda-forge` channel
-can be achieved by adding `conda-forge` to your channels with:
-
-```bash
-conda config --add channels conda-forge
-conda config --set channel_priority strict
-```
-
-Once the `conda-forge` channel has been enabled, `types-aiobotocore-lambda`
-can be installed with:
-
-```bash
-conda install types-aiobotocore-lambda
-```
-
-It is possible to list all of the versions of `types-aiobotocore-lambda`
-available on your platform with:
-
-```bash
-conda search types-aiobotocore-lambda --channel conda-forge
-```
 
 
 ## How to uninstall
@@ -215,10 +186,12 @@ def get_value() -> AccountLimitTypeDef:
 - [AddPermissionRequestRequestTypeDef](./type_defs.md#addpermissionrequestrequesttypedef)
 - [AliasRoutingConfigurationTypeDef](./type_defs.md#aliasroutingconfigurationtypedef)
 - [AllowedPublishersTypeDef](./type_defs.md#allowedpublisherstypedef)
+- [AmazonManagedKafkaEventSourceConfigTypeDef](./type_defs.md#amazonmanagedkafkaeventsourceconfigtypedef)
 - [CodeSigningPoliciesTypeDef](./type_defs.md#codesigningpoliciestypedef)
 - [ConcurrencyTypeDef](./type_defs.md#concurrencytypedef)
 - [CorsTypeDef](./type_defs.md#corstypedef)
 - [SelfManagedEventSourceTypeDef](./type_defs.md#selfmanagedeventsourcetypedef)
+- [SelfManagedKafkaEventSourceConfigTypeDef](./type_defs.md#selfmanagedkafkaeventsourceconfigtypedef)
 - [SourceAccessConfigurationTypeDef](./type_defs.md#sourceaccessconfigurationtypedef)
 - [DeadLetterConfigTypeDef](./type_defs.md#deadletterconfigtypedef)
 - [EnvironmentTypeDef](./type_defs.md#environmenttypedef)
@@ -264,7 +237,6 @@ def get_value() -> AccountLimitTypeDef:
 - [GetProvisionedConcurrencyConfigRequestRequestTypeDef](./type_defs.md#getprovisionedconcurrencyconfigrequestrequesttypedef)
 - [ImageConfigErrorTypeDef](./type_defs.md#imageconfigerrortypedef)
 - [InvocationRequestRequestTypeDef](./type_defs.md#invocationrequestrequesttypedef)
-- [InvocationResponseTypeDef](./type_defs.md#invocationresponsetypedef)
 - [InvokeAsyncRequestRequestTypeDef](./type_defs.md#invokeasyncrequestrequesttypedef)
 - [LayerVersionContentInputTypeDef](./type_defs.md#layerversioncontentinputtypedef)
 - [LayerVersionsListItemTypeDef](./type_defs.md#layerversionslistitemtypedef)
@@ -301,6 +273,7 @@ def get_value() -> AccountLimitTypeDef:
 - [GetLayerVersionPolicyResponseTypeDef](./type_defs.md#getlayerversionpolicyresponsetypedef)
 - [GetPolicyResponseTypeDef](./type_defs.md#getpolicyresponsetypedef)
 - [GetProvisionedConcurrencyConfigResponseTypeDef](./type_defs.md#getprovisionedconcurrencyconfigresponsetypedef)
+- [InvocationResponseTypeDef](./type_defs.md#invocationresponsetypedef)
 - [InvokeAsyncResponseTypeDef](./type_defs.md#invokeasyncresponsetypedef)
 - [ListFunctionsByCodeSigningConfigResponseTypeDef](./type_defs.md#listfunctionsbycodesigningconfigresponsetypedef)
 - [ListTagsResponseTypeDef](./type_defs.md#listtagsresponsetypedef)

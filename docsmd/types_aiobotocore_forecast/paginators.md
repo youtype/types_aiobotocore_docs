@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_forecast.paginator import ListDatasetGroupsPaginator
 
 session = get_session()
-async with session.create_client("forecast") as client:
-    client: ForecastServiceClient
-    paginator: ListDatasetGroupsPaginator = client.get_paginator("list_dataset_groups")
+async with session.create_client("forecast") as client:  # (1)
+    paginator: ListDatasetGroupsPaginator = client.get_paginator("list_dataset_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDatasetGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ForecastServiceClient](./client.md)
+2. paginator: [ListDatasetGroupsPaginator](./paginators.md#listdatasetgroupspaginator)
+3. item: [:material-code-braces: ListDatasetGroupsResponseTypeDef](./type_defs.md#listdatasetgroupsresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_forecast.paginator import ListDatasetImportJobsPaginator
 
 session = get_session()
-async with session.create_client("forecast") as client:
-    client: ForecastServiceClient
-    paginator: ListDatasetImportJobsPaginator = client.get_paginator("list_dataset_import_jobs")
+async with session.create_client("forecast") as client:  # (1)
+    paginator: ListDatasetImportJobsPaginator = client.get_paginator("list_dataset_import_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDatasetImportJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ForecastServiceClient](./client.md)
+2. paginator: [ListDatasetImportJobsPaginator](./paginators.md#listdatasetimportjobspaginator)
+3. item: [:material-code-braces: ListDatasetImportJobsResponseTypeDef](./type_defs.md#listdatasetimportjobsresponsetypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_forecast.paginator import ListDatasetsPaginator
 
 session = get_session()
-async with session.create_client("forecast") as client:
-    client: ForecastServiceClient
-    paginator: ListDatasetsPaginator = client.get_paginator("list_datasets")
+async with session.create_client("forecast") as client:  # (1)
+    paginator: ListDatasetsPaginator = client.get_paginator("list_datasets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDatasetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ForecastServiceClient](./client.md)
+2. paginator: [ListDatasetsPaginator](./paginators.md#listdatasetspaginator)
+3. item: [:material-code-braces: ListDatasetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef) 
 
 
 ### paginate
@@ -149,10 +167,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_forecast.paginator import ListExplainabilitiesPaginator
 
 session = get_session()
-async with session.create_client("forecast") as client:
-    client: ForecastServiceClient
-    paginator: ListExplainabilitiesPaginator = client.get_paginator("list_explainabilities")
+async with session.create_client("forecast") as client:  # (1)
+    paginator: ListExplainabilitiesPaginator = client.get_paginator("list_explainabilities")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListExplainabilitiesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ForecastServiceClient](./client.md)
+2. paginator: [ListExplainabilitiesPaginator](./paginators.md#listexplainabilitiespaginator)
+3. item: [:material-code-braces: ListExplainabilitiesResponseTypeDef](./type_defs.md#listexplainabilitiesresponsetypedef) 
 
 
 ### paginate
@@ -194,10 +218,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_forecast.paginator import ListExplainabilityExportsPaginator
 
 session = get_session()
-async with session.create_client("forecast") as client:
-    client: ForecastServiceClient
-    paginator: ListExplainabilityExportsPaginator = client.get_paginator("list_explainability_exports")
+async with session.create_client("forecast") as client:  # (1)
+    paginator: ListExplainabilityExportsPaginator = client.get_paginator("list_explainability_exports")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListExplainabilityExportsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ForecastServiceClient](./client.md)
+2. paginator: [ListExplainabilityExportsPaginator](./paginators.md#listexplainabilityexportspaginator)
+3. item: [:material-code-braces: ListExplainabilityExportsResponseTypeDef](./type_defs.md#listexplainabilityexportsresponsetypedef) 
 
 
 ### paginate
@@ -239,10 +269,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_forecast.paginator import ListForecastExportJobsPaginator
 
 session = get_session()
-async with session.create_client("forecast") as client:
-    client: ForecastServiceClient
-    paginator: ListForecastExportJobsPaginator = client.get_paginator("list_forecast_export_jobs")
+async with session.create_client("forecast") as client:  # (1)
+    paginator: ListForecastExportJobsPaginator = client.get_paginator("list_forecast_export_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListForecastExportJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ForecastServiceClient](./client.md)
+2. paginator: [ListForecastExportJobsPaginator](./paginators.md#listforecastexportjobspaginator)
+3. item: [:material-code-braces: ListForecastExportJobsResponseTypeDef](./type_defs.md#listforecastexportjobsresponsetypedef) 
 
 
 ### paginate
@@ -284,10 +320,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_forecast.paginator import ListForecastsPaginator
 
 session = get_session()
-async with session.create_client("forecast") as client:
-    client: ForecastServiceClient
-    paginator: ListForecastsPaginator = client.get_paginator("list_forecasts")
+async with session.create_client("forecast") as client:  # (1)
+    paginator: ListForecastsPaginator = client.get_paginator("list_forecasts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListForecastsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ForecastServiceClient](./client.md)
+2. paginator: [ListForecastsPaginator](./paginators.md#listforecastspaginator)
+3. item: [:material-code-braces: ListForecastsResponseTypeDef](./type_defs.md#listforecastsresponsetypedef) 
 
 
 ### paginate
@@ -329,10 +371,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_forecast.paginator import ListMonitorEvaluationsPaginator
 
 session = get_session()
-async with session.create_client("forecast") as client:
-    client: ForecastServiceClient
-    paginator: ListMonitorEvaluationsPaginator = client.get_paginator("list_monitor_evaluations")
+async with session.create_client("forecast") as client:  # (1)
+    paginator: ListMonitorEvaluationsPaginator = client.get_paginator("list_monitor_evaluations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMonitorEvaluationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ForecastServiceClient](./client.md)
+2. paginator: [ListMonitorEvaluationsPaginator](./paginators.md#listmonitorevaluationspaginator)
+3. item: [:material-code-braces: ListMonitorEvaluationsResponseTypeDef](./type_defs.md#listmonitorevaluationsresponsetypedef) 
 
 
 ### paginate
@@ -375,10 +423,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_forecast.paginator import ListMonitorsPaginator
 
 session = get_session()
-async with session.create_client("forecast") as client:
-    client: ForecastServiceClient
-    paginator: ListMonitorsPaginator = client.get_paginator("list_monitors")
+async with session.create_client("forecast") as client:  # (1)
+    paginator: ListMonitorsPaginator = client.get_paginator("list_monitors")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMonitorsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ForecastServiceClient](./client.md)
+2. paginator: [ListMonitorsPaginator](./paginators.md#listmonitorspaginator)
+3. item: [:material-code-braces: ListMonitorsResponseTypeDef](./type_defs.md#listmonitorsresponsetypedef) 
 
 
 ### paginate
@@ -420,10 +474,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_forecast.paginator import ListPredictorBacktestExportJobsPaginator
 
 session = get_session()
-async with session.create_client("forecast") as client:
-    client: ForecastServiceClient
-    paginator: ListPredictorBacktestExportJobsPaginator = client.get_paginator("list_predictor_backtest_export_jobs")
+async with session.create_client("forecast") as client:  # (1)
+    paginator: ListPredictorBacktestExportJobsPaginator = client.get_paginator("list_predictor_backtest_export_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPredictorBacktestExportJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ForecastServiceClient](./client.md)
+2. paginator: [ListPredictorBacktestExportJobsPaginator](./paginators.md#listpredictorbacktestexportjobspaginator)
+3. item: [:material-code-braces: ListPredictorBacktestExportJobsResponseTypeDef](./type_defs.md#listpredictorbacktestexportjobsresponsetypedef) 
 
 
 ### paginate
@@ -465,10 +525,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_forecast.paginator import ListPredictorsPaginator
 
 session = get_session()
-async with session.create_client("forecast") as client:
-    client: ForecastServiceClient
-    paginator: ListPredictorsPaginator = client.get_paginator("list_predictors")
+async with session.create_client("forecast") as client:  # (1)
+    paginator: ListPredictorsPaginator = client.get_paginator("list_predictors")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPredictorsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ForecastServiceClient](./client.md)
+2. paginator: [ListPredictorsPaginator](./paginators.md#listpredictorspaginator)
+3. item: [:material-code-braces: ListPredictorsResponseTypeDef](./type_defs.md#listpredictorsresponsetypedef) 
 
 
 ### paginate
@@ -499,3 +565,156 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListPredictorsRequestListPredictorsPaginateTypeDef](./type_defs.md#listpredictorsrequestlistpredictorspaginatetypedef) 
+## ListWhatIfAnalysesPaginator
+
+Type annotations and code completion for `#!python session.create_client("forecast").get_paginator("list_what_if_analyses")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Paginator.ListWhatIfAnalyses)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_forecast.paginator import ListWhatIfAnalysesPaginator
+
+session = get_session()
+async with session.create_client("forecast") as client:  # (1)
+    paginator: ListWhatIfAnalysesPaginator = client.get_paginator("list_what_if_analyses")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListWhatIfAnalysesResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [ForecastServiceClient](./client.md)
+2. paginator: [ListWhatIfAnalysesPaginator](./paginators.md#listwhatifanalysespaginator)
+3. item: [:material-code-braces: ListWhatIfAnalysesResponseTypeDef](./type_defs.md#listwhatifanalysesresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListWhatIfAnalysesPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[ListWhatIfAnalysesResponseTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: ListWhatIfAnalysesResponseTypeDef](./type_defs.md#listwhatifanalysesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListWhatIfAnalysesRequestListWhatIfAnalysesPaginateTypeDef = {  # (1)
+    "Filters": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListWhatIfAnalysesRequestListWhatIfAnalysesPaginateTypeDef](./type_defs.md#listwhatifanalysesrequestlistwhatifanalysespaginatetypedef) 
+## ListWhatIfForecastExportsPaginator
+
+Type annotations and code completion for `#!python session.create_client("forecast").get_paginator("list_what_if_forecast_exports")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Paginator.ListWhatIfForecastExports)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_forecast.paginator import ListWhatIfForecastExportsPaginator
+
+session = get_session()
+async with session.create_client("forecast") as client:  # (1)
+    paginator: ListWhatIfForecastExportsPaginator = client.get_paginator("list_what_if_forecast_exports")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListWhatIfForecastExportsResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [ForecastServiceClient](./client.md)
+2. paginator: [ListWhatIfForecastExportsPaginator](./paginators.md#listwhatifforecastexportspaginator)
+3. item: [:material-code-braces: ListWhatIfForecastExportsResponseTypeDef](./type_defs.md#listwhatifforecastexportsresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListWhatIfForecastExportsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[ListWhatIfForecastExportsResponseTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: ListWhatIfForecastExportsResponseTypeDef](./type_defs.md#listwhatifforecastexportsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListWhatIfForecastExportsRequestListWhatIfForecastExportsPaginateTypeDef = {  # (1)
+    "Filters": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListWhatIfForecastExportsRequestListWhatIfForecastExportsPaginateTypeDef](./type_defs.md#listwhatifforecastexportsrequestlistwhatifforecastexportspaginatetypedef) 
+## ListWhatIfForecastsPaginator
+
+Type annotations and code completion for `#!python session.create_client("forecast").get_paginator("list_what_if_forecasts")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Paginator.ListWhatIfForecasts)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_forecast.paginator import ListWhatIfForecastsPaginator
+
+session = get_session()
+async with session.create_client("forecast") as client:  # (1)
+    paginator: ListWhatIfForecastsPaginator = client.get_paginator("list_what_if_forecasts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListWhatIfForecastsResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [ForecastServiceClient](./client.md)
+2. paginator: [ListWhatIfForecastsPaginator](./paginators.md#listwhatifforecastspaginator)
+3. item: [:material-code-braces: ListWhatIfForecastsResponseTypeDef](./type_defs.md#listwhatifforecastsresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListWhatIfForecastsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[ListWhatIfForecastsResponseTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: ListWhatIfForecastsResponseTypeDef](./type_defs.md#listwhatifforecastsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListWhatIfForecastsRequestListWhatIfForecastsPaginateTypeDef = {  # (1)
+    "Filters": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListWhatIfForecastsRequestListWhatIfForecastsPaginateTypeDef](./type_defs.md#listwhatifforecastsrequestlistwhatifforecastspaginatetypedef) 

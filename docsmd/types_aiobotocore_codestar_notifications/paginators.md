@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codestar_notifications.paginator import ListEventTypesPaginator
 
 session = get_session()
-async with session.create_client("codestar-notifications") as client:
-    client: CodeStarNotificationsClient
-    paginator: ListEventTypesPaginator = client.get_paginator("list_event_types")
+async with session.create_client("codestar-notifications") as client:  # (1)
+    paginator: ListEventTypesPaginator = client.get_paginator("list_event_types")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEventTypesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeStarNotificationsClient](./client.md)
+2. paginator: [ListEventTypesPaginator](./paginators.md#listeventtypespaginator)
+3. item: [:material-code-braces: ListEventTypesResultTypeDef](./type_defs.md#listeventtypesresulttypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codestar_notifications.paginator import ListNotificationRulesPaginator
 
 session = get_session()
-async with session.create_client("codestar-notifications") as client:
-    client: CodeStarNotificationsClient
-    paginator: ListNotificationRulesPaginator = client.get_paginator("list_notification_rules")
+async with session.create_client("codestar-notifications") as client:  # (1)
+    paginator: ListNotificationRulesPaginator = client.get_paginator("list_notification_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListNotificationRulesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeStarNotificationsClient](./client.md)
+2. paginator: [ListNotificationRulesPaginator](./paginators.md#listnotificationrulespaginator)
+3. item: [:material-code-braces: ListNotificationRulesResultTypeDef](./type_defs.md#listnotificationrulesresulttypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codestar_notifications.paginator import ListTargetsPaginator
 
 session = get_session()
-async with session.create_client("codestar-notifications") as client:
-    client: CodeStarNotificationsClient
-    paginator: ListTargetsPaginator = client.get_paginator("list_targets")
+async with session.create_client("codestar-notifications") as client:  # (1)
+    paginator: ListTargetsPaginator = client.get_paginator("list_targets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTargetsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeStarNotificationsClient](./client.md)
+2. paginator: [ListTargetsPaginator](./paginators.md#listtargetspaginator)
+3. item: [:material-code-braces: ListTargetsResultTypeDef](./type_defs.md#listtargetsresulttypedef) 
 
 
 ### paginate

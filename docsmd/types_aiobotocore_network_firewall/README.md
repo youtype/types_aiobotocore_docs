@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `NetworkFirewall`.
 
 ### From PyPI with pip
 
@@ -150,6 +145,7 @@ def get_value() -> AddressTypeDef:
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
 - [SubnetMappingTypeDef](./type_defs.md#subnetmappingtypedef)
 - [AttachmentTypeDef](./type_defs.md#attachmenttypedef)
+- [IPSetMetadataTypeDef](./type_defs.md#ipsetmetadatatypedef)
 - [EncryptionConfigurationTypeDef](./type_defs.md#encryptionconfigurationtypedef)
 - [TagTypeDef](./type_defs.md#tagtypedef)
 - [SourceMetadataTypeDef](./type_defs.md#sourcemetadatatypedef)
@@ -171,6 +167,7 @@ def get_value() -> AddressTypeDef:
 - [StatefulEngineOptionsTypeDef](./type_defs.md#statefulengineoptionstypedef)
 - [StatelessRuleGroupReferenceTypeDef](./type_defs.md#statelessrulegroupreferencetypedef)
 - [HeaderTypeDef](./type_defs.md#headertypedef)
+- [IPSetReferenceTypeDef](./type_defs.md#ipsetreferencetypedef)
 - [IPSetTypeDef](./type_defs.md#ipsettypedef)
 - [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 - [ListFirewallPoliciesRequestRequestTypeDef](./type_defs.md#listfirewallpoliciesrequestrequesttypedef)
@@ -201,6 +198,7 @@ def get_value() -> AddressTypeDef:
 - [AssociateSubnetsRequestRequestTypeDef](./type_defs.md#associatesubnetsrequestrequesttypedef)
 - [AssociateSubnetsResponseTypeDef](./type_defs.md#associatesubnetsresponsetypedef)
 - [DisassociateSubnetsResponseTypeDef](./type_defs.md#disassociatesubnetsresponsetypedef)
+- [CIDRSummaryTypeDef](./type_defs.md#cidrsummarytypedef)
 - [UpdateFirewallEncryptionConfigurationRequestRequestTypeDef](./type_defs.md#updatefirewallencryptionconfigurationrequestrequesttypedef)
 - [UpdateFirewallEncryptionConfigurationResponseTypeDef](./type_defs.md#updatefirewallencryptionconfigurationresponsetypedef)
 - [CreateFirewallRequestRequestTypeDef](./type_defs.md#createfirewallrequestrequesttypedef)
@@ -213,6 +211,7 @@ def get_value() -> AddressTypeDef:
 - [PublishMetricActionTypeDef](./type_defs.md#publishmetricactiontypedef)
 - [ListFirewallsResponseTypeDef](./type_defs.md#listfirewallsresponsetypedef)
 - [ListFirewallPoliciesResponseTypeDef](./type_defs.md#listfirewallpoliciesresponsetypedef)
+- [ReferenceSetsTypeDef](./type_defs.md#referencesetstypedef)
 - [ListFirewallPoliciesRequestListFirewallPoliciesPaginateTypeDef](./type_defs.md#listfirewallpoliciesrequestlistfirewallpoliciespaginatetypedef)
 - [ListFirewallsRequestListFirewallsPaginateTypeDef](./type_defs.md#listfirewallsrequestlistfirewallspaginatetypedef)
 - [ListRuleGroupsRequestListRuleGroupsPaginateTypeDef](./type_defs.md#listrulegroupsrequestlistrulegroupspaginatetypedef)
@@ -224,6 +223,7 @@ def get_value() -> AddressTypeDef:
 - [RuleVariablesTypeDef](./type_defs.md#rulevariablestypedef)
 - [StatefulRuleTypeDef](./type_defs.md#statefulruletypedef)
 - [StatefulRuleGroupReferenceTypeDef](./type_defs.md#statefulrulegroupreferencetypedef)
+- [CapacityUsageSummaryTypeDef](./type_defs.md#capacityusagesummarytypedef)
 - [CreateFirewallPolicyResponseTypeDef](./type_defs.md#createfirewallpolicyresponsetypedef)
 - [DeleteFirewallPolicyResponseTypeDef](./type_defs.md#deletefirewallpolicyresponsetypedef)
 - [UpdateFirewallPolicyResponseTypeDef](./type_defs.md#updatefirewallpolicyresponsetypedef)

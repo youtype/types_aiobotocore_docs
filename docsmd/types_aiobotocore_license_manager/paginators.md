@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_license_manager.paginator import ListAssociationsForLicenseConfigurationPaginator
 
 session = get_session()
-async with session.create_client("license-manager") as client:
-    client: LicenseManagerClient
-    paginator: ListAssociationsForLicenseConfigurationPaginator = client.get_paginator("list_associations_for_license_configuration")
+async with session.create_client("license-manager") as client:  # (1)
+    paginator: ListAssociationsForLicenseConfigurationPaginator = client.get_paginator("list_associations_for_license_configuration")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssociationsForLicenseConfigurationResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LicenseManagerClient](./client.md)
+2. paginator: [ListAssociationsForLicenseConfigurationPaginator](./paginators.md#listassociationsforlicenseconfigurationpaginator)
+3. item: [:material-code-braces: ListAssociationsForLicenseConfigurationResponseTypeDef](./type_defs.md#listassociationsforlicenseconfigurationresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_license_manager.paginator import ListLicenseConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("license-manager") as client:
-    client: LicenseManagerClient
-    paginator: ListLicenseConfigurationsPaginator = client.get_paginator("list_license_configurations")
+async with session.create_client("license-manager") as client:  # (1)
+    paginator: ListLicenseConfigurationsPaginator = client.get_paginator("list_license_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLicenseConfigurationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LicenseManagerClient](./client.md)
+2. paginator: [ListLicenseConfigurationsPaginator](./paginators.md#listlicenseconfigurationspaginator)
+3. item: [:material-code-braces: ListLicenseConfigurationsResponseTypeDef](./type_defs.md#listlicenseconfigurationsresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_license_manager.paginator import ListLicenseSpecificationsForResourcePaginator
 
 session = get_session()
-async with session.create_client("license-manager") as client:
-    client: LicenseManagerClient
-    paginator: ListLicenseSpecificationsForResourcePaginator = client.get_paginator("list_license_specifications_for_resource")
+async with session.create_client("license-manager") as client:  # (1)
+    paginator: ListLicenseSpecificationsForResourcePaginator = client.get_paginator("list_license_specifications_for_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLicenseSpecificationsForResourceResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LicenseManagerClient](./client.md)
+2. paginator: [ListLicenseSpecificationsForResourcePaginator](./paginators.md#listlicensespecificationsforresourcepaginator)
+3. item: [:material-code-braces: ListLicenseSpecificationsForResourceResponseTypeDef](./type_defs.md#listlicensespecificationsforresourceresponsetypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_license_manager.paginator import ListResourceInventoryPaginator
 
 session = get_session()
-async with session.create_client("license-manager") as client:
-    client: LicenseManagerClient
-    paginator: ListResourceInventoryPaginator = client.get_paginator("list_resource_inventory")
+async with session.create_client("license-manager") as client:  # (1)
+    paginator: ListResourceInventoryPaginator = client.get_paginator("list_resource_inventory")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResourceInventoryResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LicenseManagerClient](./client.md)
+2. paginator: [ListResourceInventoryPaginator](./paginators.md#listresourceinventorypaginator)
+3. item: [:material-code-braces: ListResourceInventoryResponseTypeDef](./type_defs.md#listresourceinventoryresponsetypedef) 
 
 
 ### paginate
@@ -197,10 +221,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_license_manager.paginator import ListUsageForLicenseConfigurationPaginator
 
 session = get_session()
-async with session.create_client("license-manager") as client:
-    client: LicenseManagerClient
-    paginator: ListUsageForLicenseConfigurationPaginator = client.get_paginator("list_usage_for_license_configuration")
+async with session.create_client("license-manager") as client:  # (1)
+    paginator: ListUsageForLicenseConfigurationPaginator = client.get_paginator("list_usage_for_license_configuration")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUsageForLicenseConfigurationResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LicenseManagerClient](./client.md)
+2. paginator: [ListUsageForLicenseConfigurationPaginator](./paginators.md#listusageforlicenseconfigurationpaginator)
+3. item: [:material-code-braces: ListUsageForLicenseConfigurationResponseTypeDef](./type_defs.md#listusageforlicenseconfigurationresponsetypedef) 
 
 
 ### paginate

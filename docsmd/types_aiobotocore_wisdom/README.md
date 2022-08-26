@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `ConnectWisdomService`.
 
 ### From PyPI with pip
 
@@ -120,8 +115,10 @@ def get_value() -> AssistantStatusType:
 - [RecommendationTriggerTypeType](./literals.md#recommendationtriggertypetype)
 - [RecommendationTypeType](./literals.md#recommendationtypetype)
 - [RelevanceLevelType](./literals.md#relevanceleveltype)
+- [RelevanceType](./literals.md#relevancetype)
 - [SearchContentPaginatorName](./literals.md#searchcontentpaginatorname)
 - [SearchSessionsPaginatorName](./literals.md#searchsessionspaginatorname)
+- [TargetTypeType](./literals.md#targettypetype)
 - [ConnectWisdomServiceServiceName](./literals.md#connectwisdomserviceservicename)
 - [ServiceName](./literals.md#servicename)
 - [ResourceServiceName](./literals.md#resourceservicename)
@@ -162,6 +159,7 @@ def get_value() -> AppIntegrationsConfigurationTypeDef:
 - [DeleteContentRequestRequestTypeDef](./type_defs.md#deletecontentrequestrequesttypedef)
 - [DeleteKnowledgeBaseRequestRequestTypeDef](./type_defs.md#deleteknowledgebaserequestrequesttypedef)
 - [HighlightTypeDef](./type_defs.md#highlighttypedef)
+- [FeedbackDataTypeDef](./type_defs.md#feedbackdatatypedef)
 - [FilterTypeDef](./type_defs.md#filtertypedef)
 - [GetAssistantAssociationRequestRequestTypeDef](./type_defs.md#getassistantassociationrequestrequesttypedef)
 - [GetAssistantRequestRequestTypeDef](./type_defs.md#getassistantrequestrequesttypedef)
@@ -204,6 +202,8 @@ def get_value() -> AppIntegrationsConfigurationTypeDef:
 - [CreateSessionResponseTypeDef](./type_defs.md#createsessionresponsetypedef)
 - [GetSessionResponseTypeDef](./type_defs.md#getsessionresponsetypedef)
 - [DocumentTextTypeDef](./type_defs.md#documenttexttypedef)
+- [PutFeedbackRequestRequestTypeDef](./type_defs.md#putfeedbackrequestrequesttypedef)
+- [PutFeedbackResponseTypeDef](./type_defs.md#putfeedbackresponsetypedef)
 - [SearchExpressionTypeDef](./type_defs.md#searchexpressiontypedef)
 - [ListAssistantAssociationsRequestListAssistantAssociationsPaginateTypeDef](./type_defs.md#listassistantassociationsrequestlistassistantassociationspaginatetypedef)
 - [ListAssistantsRequestListAssistantsPaginateTypeDef](./type_defs.md#listassistantsrequestlistassistantspaginatetypedef)

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iot_data.paginator import ListRetainedMessagesPaginator
 
 session = get_session()
-async with session.create_client("iot-data") as client:
-    client: IoTDataPlaneClient
-    paginator: ListRetainedMessagesPaginator = client.get_paginator("list_retained_messages")
+async with session.create_client("iot-data") as client:  # (1)
+    paginator: ListRetainedMessagesPaginator = client.get_paginator("list_retained_messages")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRetainedMessagesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTDataPlaneClient](./client.md)
+2. paginator: [ListRetainedMessagesPaginator](./paginators.md#listretainedmessagespaginator)
+3. item: [:material-code-braces: ListRetainedMessagesResponseTypeDef](./type_defs.md#listretainedmessagesresponsetypedef) 
 
 
 ### paginate

@@ -22,6 +22,23 @@ ActivityStreamModeType = Literal[
     "sync",
 ]
 ```
+## ActivityStreamPolicyStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_rds.literals import ActivityStreamPolicyStatusType
+
+def get_value() -> ActivityStreamPolicyStatusType:
+    return "locked"
+```
+
+```python title="Definition"
+ActivityStreamPolicyStatusType = Literal[
+    "locked",
+    "locking-policy",
+    "unlocked",
+    "unlocking-policy",
+]
+```
 ## ActivityStreamStatusType
 
 ```python title="Usage Example"
@@ -52,6 +69,21 @@ def get_value() -> ApplyMethodType:
 ApplyMethodType = Literal[
     "immediate",
     "pending-reboot",
+]
+```
+## AuditPolicyStateType
+
+```python title="Usage Example"
+from types_aiobotocore_rds.literals import AuditPolicyStateType
+
+def get_value() -> AuditPolicyStateType:
+    return "locked"
+```
+
+```python title="Definition"
+AuditPolicyStateType = Literal[
+    "locked",
+    "unlocked",
 ]
 ```
 ## AuthSchemeType
@@ -97,6 +129,34 @@ CustomEngineVersionStatusType = Literal[
     "available",
     "inactive",
     "inactive-except-restore",
+]
+```
+## DBClusterAvailableWaiterName
+
+```python title="Usage Example"
+from types_aiobotocore_rds.literals import DBClusterAvailableWaiterName
+
+def get_value() -> DBClusterAvailableWaiterName:
+    return "db_cluster_available"
+```
+
+```python title="Definition"
+DBClusterAvailableWaiterName = Literal[
+    "db_cluster_available",
+]
+```
+## DBClusterDeletedWaiterName
+
+```python title="Usage Example"
+from types_aiobotocore_rds.literals import DBClusterDeletedWaiterName
+
+def get_value() -> DBClusterDeletedWaiterName:
+    return "db_cluster_deleted"
+```
+
+```python title="Definition"
+DBClusterDeletedWaiterName = Literal[
+    "db_cluster_deleted",
 ]
 ```
 ## DBClusterSnapshotAvailableWaiterName
@@ -949,6 +1009,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -1094,6 +1155,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -1147,6 +1209,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -1157,11 +1220,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -1207,6 +1272,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -1306,11 +1372,13 @@ PaginatorName = Literal[
 from types_aiobotocore_rds.literals import WaiterName
 
 def get_value() -> WaiterName:
-    return "db_cluster_snapshot_available"
+    return "db_cluster_available"
 ```
 
 ```python title="Definition"
 WaiterName = Literal[
+    "db_cluster_available",
+    "db_cluster_deleted",
     "db_cluster_snapshot_available",
     "db_cluster_snapshot_deleted",
     "db_instance_available",

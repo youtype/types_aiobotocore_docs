@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sso.paginator import ListAccountRolesPaginator
 
 session = get_session()
-async with session.create_client("sso") as client:
-    client: SSOClient
-    paginator: ListAccountRolesPaginator = client.get_paginator("list_account_roles")
+async with session.create_client("sso") as client:  # (1)
+    paginator: ListAccountRolesPaginator = client.get_paginator("list_account_roles")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAccountRolesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSOClient](./client.md)
+2. paginator: [ListAccountRolesPaginator](./paginators.md#listaccountrolespaginator)
+3. item: [:material-code-braces: ListAccountRolesResponseTypeDef](./type_defs.md#listaccountrolesresponsetypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sso.paginator import ListAccountsPaginator
 
 session = get_session()
-async with session.create_client("sso") as client:
-    client: SSOClient
-    paginator: ListAccountsPaginator = client.get_paginator("list_accounts")
+async with session.create_client("sso") as client:  # (1)
+    paginator: ListAccountsPaginator = client.get_paginator("list_accounts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAccountsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SSOClient](./client.md)
+2. paginator: [ListAccountsPaginator](./paginators.md#listaccountspaginator)
+3. item: [:material-code-braces: ListAccountsResponseTypeDef](./type_defs.md#listaccountsresponsetypedef) 
 
 
 ### paginate

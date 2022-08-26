@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector2.paginator import ListAccountPermissionsPaginator
 
 session = get_session()
-async with session.create_client("inspector2") as client:
-    client: Inspector2Client
-    paginator: ListAccountPermissionsPaginator = client.get_paginator("list_account_permissions")
+async with session.create_client("inspector2") as client:  # (1)
+    paginator: ListAccountPermissionsPaginator = client.get_paginator("list_account_permissions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAccountPermissionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Inspector2Client](./client.md)
+2. paginator: [ListAccountPermissionsPaginator](./paginators.md#listaccountpermissionspaginator)
+3. item: [:material-code-braces: ListAccountPermissionsResponseTypeDef](./type_defs.md#listaccountpermissionsresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector2.paginator import ListCoveragePaginator
 
 session = get_session()
-async with session.create_client("inspector2") as client:
-    client: Inspector2Client
-    paginator: ListCoveragePaginator = client.get_paginator("list_coverage")
+async with session.create_client("inspector2") as client:  # (1)
+    paginator: ListCoveragePaginator = client.get_paginator("list_coverage")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCoverageResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Inspector2Client](./client.md)
+2. paginator: [ListCoveragePaginator](./paginators.md#listcoveragepaginator)
+3. item: [:material-code-braces: ListCoverageResponseTypeDef](./type_defs.md#listcoverageresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector2.paginator import ListCoverageStatisticsPaginator
 
 session = get_session()
-async with session.create_client("inspector2") as client:
-    client: Inspector2Client
-    paginator: ListCoverageStatisticsPaginator = client.get_paginator("list_coverage_statistics")
+async with session.create_client("inspector2") as client:  # (1)
+    paginator: ListCoverageStatisticsPaginator = client.get_paginator("list_coverage_statistics")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCoverageStatisticsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Inspector2Client](./client.md)
+2. paginator: [ListCoverageStatisticsPaginator](./paginators.md#listcoveragestatisticspaginator)
+3. item: [:material-code-braces: ListCoverageStatisticsResponseTypeDef](./type_defs.md#listcoveragestatisticsresponsetypedef) 
 
 
 ### paginate
@@ -155,10 +173,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector2.paginator import ListDelegatedAdminAccountsPaginator
 
 session = get_session()
-async with session.create_client("inspector2") as client:
-    client: Inspector2Client
-    paginator: ListDelegatedAdminAccountsPaginator = client.get_paginator("list_delegated_admin_accounts")
+async with session.create_client("inspector2") as client:  # (1)
+    paginator: ListDelegatedAdminAccountsPaginator = client.get_paginator("list_delegated_admin_accounts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDelegatedAdminAccountsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Inspector2Client](./client.md)
+2. paginator: [ListDelegatedAdminAccountsPaginator](./paginators.md#listdelegatedadminaccountspaginator)
+3. item: [:material-code-braces: ListDelegatedAdminAccountsResponseTypeDef](./type_defs.md#listdelegatedadminaccountsresponsetypedef) 
 
 
 ### paginate
@@ -198,10 +222,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector2.paginator import ListFiltersPaginator
 
 session = get_session()
-async with session.create_client("inspector2") as client:
-    client: Inspector2Client
-    paginator: ListFiltersPaginator = client.get_paginator("list_filters")
+async with session.create_client("inspector2") as client:  # (1)
+    paginator: ListFiltersPaginator = client.get_paginator("list_filters")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFiltersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Inspector2Client](./client.md)
+2. paginator: [ListFiltersPaginator](./paginators.md#listfilterspaginator)
+3. item: [:material-code-braces: ListFiltersResponseTypeDef](./type_defs.md#listfiltersresponsetypedef) 
 
 
 ### paginate
@@ -244,10 +274,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector2.paginator import ListFindingAggregationsPaginator
 
 session = get_session()
-async with session.create_client("inspector2") as client:
-    client: Inspector2Client
-    paginator: ListFindingAggregationsPaginator = client.get_paginator("list_finding_aggregations")
+async with session.create_client("inspector2") as client:  # (1)
+    paginator: ListFindingAggregationsPaginator = client.get_paginator("list_finding_aggregations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFindingAggregationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Inspector2Client](./client.md)
+2. paginator: [ListFindingAggregationsPaginator](./paginators.md#listfindingaggregationspaginator)
+3. item: [:material-code-braces: ListFindingAggregationsResponseTypeDef](./type_defs.md#listfindingaggregationsresponsetypedef) 
 
 
 ### paginate
@@ -293,10 +329,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector2.paginator import ListFindingsPaginator
 
 session = get_session()
-async with session.create_client("inspector2") as client:
-    client: Inspector2Client
-    paginator: ListFindingsPaginator = client.get_paginator("list_findings")
+async with session.create_client("inspector2") as client:  # (1)
+    paginator: ListFindingsPaginator = client.get_paginator("list_findings")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFindingsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Inspector2Client](./client.md)
+2. paginator: [ListFindingsPaginator](./paginators.md#listfindingspaginator)
+3. item: [:material-code-braces: ListFindingsResponseTypeDef](./type_defs.md#listfindingsresponsetypedef) 
 
 
 ### paginate
@@ -340,10 +382,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector2.paginator import ListMembersPaginator
 
 session = get_session()
-async with session.create_client("inspector2") as client:
-    client: Inspector2Client
-    paginator: ListMembersPaginator = client.get_paginator("list_members")
+async with session.create_client("inspector2") as client:  # (1)
+    paginator: ListMembersPaginator = client.get_paginator("list_members")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMembersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Inspector2Client](./client.md)
+2. paginator: [ListMembersPaginator](./paginators.md#listmemberspaginator)
+3. item: [:material-code-braces: ListMembersResponseTypeDef](./type_defs.md#listmembersresponsetypedef) 
 
 
 ### paginate
@@ -384,10 +432,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector2.paginator import ListUsageTotalsPaginator
 
 session = get_session()
-async with session.create_client("inspector2") as client:
-    client: Inspector2Client
-    paginator: ListUsageTotalsPaginator = client.get_paginator("list_usage_totals")
+async with session.create_client("inspector2") as client:  # (1)
+    paginator: ListUsageTotalsPaginator = client.get_paginator("list_usage_totals")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUsageTotalsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Inspector2Client](./client.md)
+2. paginator: [ListUsageTotalsPaginator](./paginators.md#listusagetotalspaginator)
+3. item: [:material-code-braces: ListUsageTotalsResponseTypeDef](./type_defs.md#listusagetotalsresponsetypedef) 
 
 
 ### paginate

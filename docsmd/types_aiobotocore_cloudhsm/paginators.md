@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudhsm.paginator import ListHapgsPaginator
 
 session = get_session()
-async with session.create_client("cloudhsm") as client:
-    client: CloudHSMClient
-    paginator: ListHapgsPaginator = client.get_paginator("list_hapgs")
+async with session.create_client("cloudhsm") as client:  # (1)
+    paginator: ListHapgsPaginator = client.get_paginator("list_hapgs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListHapgsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudHSMClient](./client.md)
+2. paginator: [ListHapgsPaginator](./paginators.md#listhapgspaginator)
+3. item: [:material-code-braces: ListHapgsResponseTypeDef](./type_defs.md#listhapgsresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudhsm.paginator import ListHsmsPaginator
 
 session = get_session()
-async with session.create_client("cloudhsm") as client:
-    client: CloudHSMClient
-    paginator: ListHsmsPaginator = client.get_paginator("list_hsms")
+async with session.create_client("cloudhsm") as client:  # (1)
+    paginator: ListHsmsPaginator = client.get_paginator("list_hsms")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListHsmsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudHSMClient](./client.md)
+2. paginator: [ListHsmsPaginator](./paginators.md#listhsmspaginator)
+3. item: [:material-code-braces: ListHsmsResponseTypeDef](./type_defs.md#listhsmsresponsetypedef) 
 
 
 ### paginate
@@ -104,10 +116,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cloudhsm.paginator import ListLunaClientsPaginator
 
 session = get_session()
-async with session.create_client("cloudhsm") as client:
-    client: CloudHSMClient
-    paginator: ListLunaClientsPaginator = client.get_paginator("list_luna_clients")
+async with session.create_client("cloudhsm") as client:  # (1)
+    paginator: ListLunaClientsPaginator = client.get_paginator("list_luna_clients")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLunaClientsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CloudHSMClient](./client.md)
+2. paginator: [ListLunaClientsPaginator](./paginators.md#listlunaclientspaginator)
+3. item: [:material-code-braces: ListLunaClientsResponseTypeDef](./type_defs.md#listlunaclientsresponsetypedef) 
 
 
 ### paginate

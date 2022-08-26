@@ -2102,6 +2102,42 @@ parent.list_aggregate_discovered_resources(**kwargs)
 
 1. See [:material-code-braces: ListAggregateDiscoveredResourcesRequestRequestTypeDef](./type_defs.md#listaggregatediscoveredresourcesrequestrequesttypedef) 
 
+### list\_conformance\_pack\_compliance\_scores
+
+Returns a list of conformance pack compliance scores.
+
+Type annotations and code completion for `#!python session.create_client("config").list_conformance_pack_compliance_scores` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.list_conformance_pack_compliance_scores)
+
+```python title="Method definition"
+await def list_conformance_pack_compliance_scores(
+    self,
+    *,
+    Filters: ConformancePackComplianceScoresFiltersTypeDef = ...,  # (1)
+    SortOrder: SortOrderType = ...,  # (2)
+    SortBy: SortByType = ...,  # (3)
+    Limit: int = ...,
+    NextToken: str = ...,
+) -> ListConformancePackComplianceScoresResponseTypeDef:  # (4)
+    ...
+```
+
+1. See [:material-code-braces: ConformancePackComplianceScoresFiltersTypeDef](./type_defs.md#conformancepackcompliancescoresfilterstypedef) 
+2. See [:material-code-brackets: SortOrderType](./literals.md#sortordertype) 
+3. See [:material-code-brackets: SortByType](./literals.md#sortbytype) 
+4. See [:material-code-braces: ListConformancePackComplianceScoresResponseTypeDef](./type_defs.md#listconformancepackcompliancescoresresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListConformancePackComplianceScoresRequestRequestTypeDef = {  # (1)
+    "Filters": ...,
+}
+
+parent.list_conformance_pack_compliance_scores(**kwargs)
+```
+
+1. See [:material-code-braces: ListConformancePackComplianceScoresRequestRequestTypeDef](./type_defs.md#listconformancepackcompliancescoresrequestrequesttypedef) 
+
 ### list\_discovered\_resources
 
 Accepts a resource type and returns a list of resource identifiers for the
@@ -2236,8 +2272,7 @@ parent.put_aggregation_authorization(**kwargs)
 
 ### put\_config\_rule
 
-Adds or updates an Config rule for evaluating whether your Amazon Web Services
-resources comply with your desired configurations.
+.
 
 Type annotations and code completion for `#!python session.create_client("config").put_config_rule` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.put_config_rule)
@@ -2336,7 +2371,7 @@ parent.put_configuration_recorder(**kwargs)
 
 ### put\_conformance\_pack
 
-Creates or updates a conformance pack.
+.
 
 Type annotations and code completion for `#!python session.create_client("config").put_conformance_pack` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.put_conformance_pack)
@@ -2351,12 +2386,14 @@ await def put_conformance_pack(
     DeliveryS3Bucket: str = ...,
     DeliveryS3KeyPrefix: str = ...,
     ConformancePackInputParameters: Sequence[ConformancePackInputParameterTypeDef] = ...,  # (1)
-) -> PutConformancePackResponseTypeDef:  # (2)
+    TemplateSSMDocumentDetails: TemplateSSMDocumentDetailsTypeDef = ...,  # (2)
+) -> PutConformancePackResponseTypeDef:  # (3)
     ...
 ```
 
 1. See [:material-code-braces: ConformancePackInputParameterTypeDef](./type_defs.md#conformancepackinputparametertypedef) 
-2. See [:material-code-braces: PutConformancePackResponseTypeDef](./type_defs.md#putconformancepackresponsetypedef) 
+2. See [:material-code-braces: TemplateSSMDocumentDetailsTypeDef](./type_defs.md#templatessmdocumentdetailstypedef) 
+3. See [:material-code-braces: PutConformancePackResponseTypeDef](./type_defs.md#putconformancepackresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2465,9 +2502,7 @@ parent.put_external_evaluation(**kwargs)
 
 ### put\_organization\_config\_rule
 
-Adds or updates organization Config rule for your entire organization evaluating
-whether your Amazon Web Services resources comply with your desired
-configurations.
+.
 
 Type annotations and code completion for `#!python session.create_client("config").put_organization_config_rule` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.put_organization_config_rule)
@@ -2503,8 +2538,7 @@ parent.put_organization_config_rule(**kwargs)
 
 ### put\_organization\_conformance\_pack
 
-Deploys conformance packs across member accounts in an Amazon Web Services
-Organization.
+.
 
 Type annotations and code completion for `#!python session.create_client("config").put_organization_conformance_pack` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.put_organization_conformance_pack)

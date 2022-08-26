@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_emr_containers.paginator import ListJobRunsPaginator
 
 session = get_session()
-async with session.create_client("emr-containers") as client:
-    client: EMRContainersClient
-    paginator: ListJobRunsPaginator = client.get_paginator("list_job_runs")
+async with session.create_client("emr-containers") as client:  # (1)
+    paginator: ListJobRunsPaginator = client.get_paginator("list_job_runs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListJobRunsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EMRContainersClient](./client.md)
+2. paginator: [ListJobRunsPaginator](./paginators.md#listjobrunspaginator)
+3. item: [:material-code-braces: ListJobRunsResponseTypeDef](./type_defs.md#listjobrunsresponsetypedef) 
 
 
 ### paginate
@@ -67,10 +73,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_emr_containers.paginator import ListManagedEndpointsPaginator
 
 session = get_session()
-async with session.create_client("emr-containers") as client:
-    client: EMRContainersClient
-    paginator: ListManagedEndpointsPaginator = client.get_paginator("list_managed_endpoints")
+async with session.create_client("emr-containers") as client:  # (1)
+    paginator: ListManagedEndpointsPaginator = client.get_paginator("list_managed_endpoints")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListManagedEndpointsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EMRContainersClient](./client.md)
+2. paginator: [ListManagedEndpointsPaginator](./paginators.md#listmanagedendpointspaginator)
+3. item: [:material-code-braces: ListManagedEndpointsResponseTypeDef](./type_defs.md#listmanagedendpointsresponsetypedef) 
 
 
 ### paginate
@@ -116,10 +128,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_emr_containers.paginator import ListVirtualClustersPaginator
 
 session = get_session()
-async with session.create_client("emr-containers") as client:
-    client: EMRContainersClient
-    paginator: ListVirtualClustersPaginator = client.get_paginator("list_virtual_clusters")
+async with session.create_client("emr-containers") as client:  # (1)
+    paginator: ListVirtualClustersPaginator = client.get_paginator("list_virtual_clusters")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListVirtualClustersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EMRContainersClient](./client.md)
+2. paginator: [ListVirtualClustersPaginator](./paginators.md#listvirtualclusterspaginator)
+3. item: [:material-code-braces: ListVirtualClustersResponseTypeDef](./type_defs.md#listvirtualclustersresponsetypedef) 
 
 
 ### paginate

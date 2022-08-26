@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector.paginator import ListAssessmentRunAgentsPaginator
 
 session = get_session()
-async with session.create_client("inspector") as client:
-    client: InspectorClient
-    paginator: ListAssessmentRunAgentsPaginator = client.get_paginator("list_assessment_run_agents")
+async with session.create_client("inspector") as client:  # (1)
+    paginator: ListAssessmentRunAgentsPaginator = client.get_paginator("list_assessment_run_agents")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssessmentRunAgentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [InspectorClient](./client.md)
+2. paginator: [ListAssessmentRunAgentsPaginator](./paginators.md#listassessmentrunagentspaginator)
+3. item: [:material-code-braces: ListAssessmentRunAgentsResponseTypeDef](./type_defs.md#listassessmentrunagentsresponsetypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector.paginator import ListAssessmentRunsPaginator
 
 session = get_session()
-async with session.create_client("inspector") as client:
-    client: InspectorClient
-    paginator: ListAssessmentRunsPaginator = client.get_paginator("list_assessment_runs")
+async with session.create_client("inspector") as client:  # (1)
+    paginator: ListAssessmentRunsPaginator = client.get_paginator("list_assessment_runs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssessmentRunsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [InspectorClient](./client.md)
+2. paginator: [ListAssessmentRunsPaginator](./paginators.md#listassessmentrunspaginator)
+3. item: [:material-code-braces: ListAssessmentRunsResponseTypeDef](./type_defs.md#listassessmentrunsresponsetypedef) 
 
 
 ### paginate
@@ -110,10 +122,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector.paginator import ListAssessmentTargetsPaginator
 
 session = get_session()
-async with session.create_client("inspector") as client:
-    client: InspectorClient
-    paginator: ListAssessmentTargetsPaginator = client.get_paginator("list_assessment_targets")
+async with session.create_client("inspector") as client:  # (1)
+    paginator: ListAssessmentTargetsPaginator = client.get_paginator("list_assessment_targets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssessmentTargetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [InspectorClient](./client.md)
+2. paginator: [ListAssessmentTargetsPaginator](./paginators.md#listassessmenttargetspaginator)
+3. item: [:material-code-braces: ListAssessmentTargetsResponseTypeDef](./type_defs.md#listassessmenttargetsresponsetypedef) 
 
 
 ### paginate
@@ -155,10 +173,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector.paginator import ListAssessmentTemplatesPaginator
 
 session = get_session()
-async with session.create_client("inspector") as client:
-    client: InspectorClient
-    paginator: ListAssessmentTemplatesPaginator = client.get_paginator("list_assessment_templates")
+async with session.create_client("inspector") as client:  # (1)
+    paginator: ListAssessmentTemplatesPaginator = client.get_paginator("list_assessment_templates")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssessmentTemplatesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [InspectorClient](./client.md)
+2. paginator: [ListAssessmentTemplatesPaginator](./paginators.md#listassessmenttemplatespaginator)
+3. item: [:material-code-braces: ListAssessmentTemplatesResponseTypeDef](./type_defs.md#listassessmenttemplatesresponsetypedef) 
 
 
 ### paginate
@@ -201,10 +225,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector.paginator import ListEventSubscriptionsPaginator
 
 session = get_session()
-async with session.create_client("inspector") as client:
-    client: InspectorClient
-    paginator: ListEventSubscriptionsPaginator = client.get_paginator("list_event_subscriptions")
+async with session.create_client("inspector") as client:  # (1)
+    paginator: ListEventSubscriptionsPaginator = client.get_paginator("list_event_subscriptions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEventSubscriptionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [InspectorClient](./client.md)
+2. paginator: [ListEventSubscriptionsPaginator](./paginators.md#listeventsubscriptionspaginator)
+3. item: [:material-code-braces: ListEventSubscriptionsResponseTypeDef](./type_defs.md#listeventsubscriptionsresponsetypedef) 
 
 
 ### paginate
@@ -245,10 +275,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector.paginator import ListExclusionsPaginator
 
 session = get_session()
-async with session.create_client("inspector") as client:
-    client: InspectorClient
-    paginator: ListExclusionsPaginator = client.get_paginator("list_exclusions")
+async with session.create_client("inspector") as client:  # (1)
+    paginator: ListExclusionsPaginator = client.get_paginator("list_exclusions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListExclusionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [InspectorClient](./client.md)
+2. paginator: [ListExclusionsPaginator](./paginators.md#listexclusionspaginator)
+3. item: [:material-code-braces: ListExclusionsResponseTypeDef](./type_defs.md#listexclusionsresponsetypedef) 
 
 
 ### paginate
@@ -289,10 +325,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector.paginator import ListFindingsPaginator
 
 session = get_session()
-async with session.create_client("inspector") as client:
-    client: InspectorClient
-    paginator: ListFindingsPaginator = client.get_paginator("list_findings")
+async with session.create_client("inspector") as client:  # (1)
+    paginator: ListFindingsPaginator = client.get_paginator("list_findings")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFindingsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [InspectorClient](./client.md)
+2. paginator: [ListFindingsPaginator](./paginators.md#listfindingspaginator)
+3. item: [:material-code-braces: ListFindingsResponseTypeDef](./type_defs.md#listfindingsresponsetypedef) 
 
 
 ### paginate
@@ -335,10 +377,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector.paginator import ListRulesPackagesPaginator
 
 session = get_session()
-async with session.create_client("inspector") as client:
-    client: InspectorClient
-    paginator: ListRulesPackagesPaginator = client.get_paginator("list_rules_packages")
+async with session.create_client("inspector") as client:  # (1)
+    paginator: ListRulesPackagesPaginator = client.get_paginator("list_rules_packages")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRulesPackagesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [InspectorClient](./client.md)
+2. paginator: [ListRulesPackagesPaginator](./paginators.md#listrulespackagespaginator)
+3. item: [:material-code-braces: ListRulesPackagesResponseTypeDef](./type_defs.md#listrulespackagesresponsetypedef) 
 
 
 ### paginate
@@ -378,10 +426,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_inspector.paginator import PreviewAgentsPaginator
 
 session = get_session()
-async with session.create_client("inspector") as client:
-    client: InspectorClient
-    paginator: PreviewAgentsPaginator = client.get_paginator("preview_agents")
+async with session.create_client("inspector") as client:  # (1)
+    paginator: PreviewAgentsPaginator = client.get_paginator("preview_agents")  # (2)
+    async for item in paginator.paginate(...):
+        item: PreviewAgentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [InspectorClient](./client.md)
+2. paginator: [PreviewAgentsPaginator](./paginators.md#previewagentspaginator)
+3. item: [:material-code-braces: PreviewAgentsResponseTypeDef](./type_defs.md#previewagentsresponsetypedef) 
 
 
 ### paginate

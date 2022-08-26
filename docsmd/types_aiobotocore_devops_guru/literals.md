@@ -302,6 +302,20 @@ ListAnomaliesForInsightPaginatorName = Literal[
     "list_anomalies_for_insight",
 ]
 ```
+## ListAnomalousLogGroupsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_devops_guru.literals import ListAnomalousLogGroupsPaginatorName
+
+def get_value() -> ListAnomalousLogGroupsPaginatorName:
+    return "list_anomalous_log_groups"
+```
+
+```python title="Definition"
+ListAnomalousLogGroupsPaginatorName = Literal[
+    "list_anomalous_log_groups",
+]
+```
 ## ListEventsPaginatorName
 
 ```python title="Usage Example"
@@ -328,6 +342,20 @@ def get_value() -> ListInsightsPaginatorName:
 ```python title="Definition"
 ListInsightsPaginatorName = Literal[
     "list_insights",
+]
+```
+## ListMonitoredResourcesPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_devops_guru.literals import ListMonitoredResourcesPaginatorName
+
+def get_value() -> ListMonitoredResourcesPaginatorName:
+    return "list_monitored_resources"
+```
+
+```python title="Definition"
+ListMonitoredResourcesPaginatorName = Literal[
+    "list_monitored_resources",
 ]
 ```
 ## ListNotificationChannelsPaginatorName
@@ -396,6 +424,27 @@ LocaleType = Literal[
     "ZH_TW",
 ]
 ```
+## LogAnomalyTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_devops_guru.literals import LogAnomalyTypeType
+
+def get_value() -> LogAnomalyTypeType:
+    return "BLOCK_FORMAT"
+```
+
+```python title="Definition"
+LogAnomalyTypeType = Literal[
+    "BLOCK_FORMAT",
+    "FORMAT",
+    "HTTP_CODE",
+    "KEYWORD",
+    "KEYWORD_TOKEN",
+    "NEW_FIELD_NAME",
+    "NUMERICAL_NAN",
+    "NUMERICAL_POINT",
+]
+```
 ## OptInStatusType
 
 ```python title="Usage Example"
@@ -442,6 +491,35 @@ ResourceCollectionTypeType = Literal[
     "AWS_CLOUD_FORMATION",
     "AWS_SERVICE",
     "AWS_TAGS",
+]
+```
+## ResourcePermissionType
+
+```python title="Usage Example"
+from types_aiobotocore_devops_guru.literals import ResourcePermissionType
+
+def get_value() -> ResourcePermissionType:
+    return "FULL_PERMISSION"
+```
+
+```python title="Definition"
+ResourcePermissionType = Literal[
+    "FULL_PERMISSION",
+    "MISSING_PERMISSION",
+]
+```
+## ResourceTypeFilterType
+
+```python title="Usage Example"
+from types_aiobotocore_devops_guru.literals import ResourceTypeFilterType
+
+def get_value() -> ResourceTypeFilterType:
+    return "LOG_GROUPS"
+```
+
+```python title="Definition"
+ResourceTypeFilterType = Literal[
+    "LOG_GROUPS",
 ]
 ```
 ## SearchInsightsPaginatorName
@@ -579,6 +657,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -724,6 +803,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -777,6 +857,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -787,11 +868,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -837,6 +920,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -899,12 +983,36 @@ PaginatorName = Literal[
     "get_cost_estimation",
     "get_resource_collection",
     "list_anomalies_for_insight",
+    "list_anomalous_log_groups",
     "list_events",
     "list_insights",
+    "list_monitored_resources",
     "list_notification_channels",
     "list_organization_insights",
     "list_recommendations",
     "search_insights",
     "search_organization_insights",
+]
+```
+## RegionName
+
+```python title="Usage Example"
+from types_aiobotocore_devops_guru.literals import RegionName
+
+def get_value() -> RegionName:
+    return "ap-northeast-1"
+```
+
+```python title="Definition"
+RegionName = Literal[
+    "ap-northeast-1",
+    "ap-southeast-1",
+    "ap-southeast-2",
+    "eu-central-1",
+    "eu-north-1",
+    "eu-west-1",
+    "us-east-1",
+    "us-east-2",
+    "us-west-2",
 ]
 ```

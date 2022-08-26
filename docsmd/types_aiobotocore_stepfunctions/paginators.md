@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_stepfunctions.paginator import GetExecutionHistoryPaginator
 
 session = get_session()
-async with session.create_client("stepfunctions") as client:
-    client: SFNClient
-    paginator: GetExecutionHistoryPaginator = client.get_paginator("get_execution_history")
+async with session.create_client("stepfunctions") as client:  # (1)
+    paginator: GetExecutionHistoryPaginator = client.get_paginator("get_execution_history")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetExecutionHistoryOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SFNClient](./client.md)
+2. paginator: [GetExecutionHistoryPaginator](./paginators.md#getexecutionhistorypaginator)
+3. item: [:material-code-braces: GetExecutionHistoryOutputTypeDef](./type_defs.md#getexecutionhistoryoutputtypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_stepfunctions.paginator import ListActivitiesPaginator
 
 session = get_session()
-async with session.create_client("stepfunctions") as client:
-    client: SFNClient
-    paginator: ListActivitiesPaginator = client.get_paginator("list_activities")
+async with session.create_client("stepfunctions") as client:  # (1)
+    paginator: ListActivitiesPaginator = client.get_paginator("list_activities")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListActivitiesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SFNClient](./client.md)
+2. paginator: [ListActivitiesPaginator](./paginators.md#listactivitiespaginator)
+3. item: [:material-code-braces: ListActivitiesOutputTypeDef](./type_defs.md#listactivitiesoutputtypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_stepfunctions.paginator import ListExecutionsPaginator
 
 session = get_session()
-async with session.create_client("stepfunctions") as client:
-    client: SFNClient
-    paginator: ListExecutionsPaginator = client.get_paginator("list_executions")
+async with session.create_client("stepfunctions") as client:  # (1)
+    paginator: ListExecutionsPaginator = client.get_paginator("list_executions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListExecutionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SFNClient](./client.md)
+2. paginator: [ListExecutionsPaginator](./paginators.md#listexecutionspaginator)
+3. item: [:material-code-braces: ListExecutionsOutputTypeDef](./type_defs.md#listexecutionsoutputtypedef) 
 
 
 ### paginate
@@ -153,10 +171,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_stepfunctions.paginator import ListStateMachinesPaginator
 
 session = get_session()
-async with session.create_client("stepfunctions") as client:
-    client: SFNClient
-    paginator: ListStateMachinesPaginator = client.get_paginator("list_state_machines")
+async with session.create_client("stepfunctions") as client:  # (1)
+    paginator: ListStateMachinesPaginator = client.get_paginator("list_state_machines")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStateMachinesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SFNClient](./client.md)
+2. paginator: [ListStateMachinesPaginator](./paginators.md#liststatemachinespaginator)
+3. item: [:material-code-braces: ListStateMachinesOutputTypeDef](./type_defs.md#liststatemachinesoutputtypedef) 
 
 
 ### paginate

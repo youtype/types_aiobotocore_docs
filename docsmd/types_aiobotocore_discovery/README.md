@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `ApplicationDiscoveryService`.
 
 ### From PyPI with pip
 
@@ -151,6 +146,7 @@ def get_value() -> AgentConfigurationStatusTypeDef:
 - [CreateApplicationRequestRequestTypeDef](./type_defs.md#createapplicationrequestrequesttypedef)
 - [TagTypeDef](./type_defs.md#tagtypedef)
 - [CustomerAgentInfoTypeDef](./type_defs.md#customeragentinfotypedef)
+- [CustomerAgentlessCollectorInfoTypeDef](./type_defs.md#customeragentlesscollectorinfotypedef)
 - [CustomerConnectorInfoTypeDef](./type_defs.md#customerconnectorinfotypedef)
 - [CustomerMeCollectorInfoTypeDef](./type_defs.md#customermecollectorinfotypedef)
 - [DeleteApplicationsRequestRequestTypeDef](./type_defs.md#deleteapplicationsrequestrequesttypedef)

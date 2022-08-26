@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_emr.paginator import ListBootstrapActionsPaginator
 
 session = get_session()
-async with session.create_client("emr") as client:
-    client: EMRClient
-    paginator: ListBootstrapActionsPaginator = client.get_paginator("list_bootstrap_actions")
+async with session.create_client("emr") as client:  # (1)
+    paginator: ListBootstrapActionsPaginator = client.get_paginator("list_bootstrap_actions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBootstrapActionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EMRClient](./client.md)
+2. paginator: [ListBootstrapActionsPaginator](./paginators.md#listbootstrapactionspaginator)
+3. item: [:material-code-braces: ListBootstrapActionsOutputTypeDef](./type_defs.md#listbootstrapactionsoutputtypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_emr.paginator import ListClustersPaginator
 
 session = get_session()
-async with session.create_client("emr") as client:
-    client: EMRClient
-    paginator: ListClustersPaginator = client.get_paginator("list_clusters")
+async with session.create_client("emr") as client:  # (1)
+    paginator: ListClustersPaginator = client.get_paginator("list_clusters")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListClustersOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EMRClient](./client.md)
+2. paginator: [ListClustersPaginator](./paginators.md#listclusterspaginator)
+3. item: [:material-code-braces: ListClustersOutputTypeDef](./type_defs.md#listclustersoutputtypedef) 
 
 
 ### paginate
@@ -109,10 +121,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_emr.paginator import ListInstanceFleetsPaginator
 
 session = get_session()
-async with session.create_client("emr") as client:
-    client: EMRClient
-    paginator: ListInstanceFleetsPaginator = client.get_paginator("list_instance_fleets")
+async with session.create_client("emr") as client:  # (1)
+    paginator: ListInstanceFleetsPaginator = client.get_paginator("list_instance_fleets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListInstanceFleetsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EMRClient](./client.md)
+2. paginator: [ListInstanceFleetsPaginator](./paginators.md#listinstancefleetspaginator)
+3. item: [:material-code-braces: ListInstanceFleetsOutputTypeDef](./type_defs.md#listinstancefleetsoutputtypedef) 
 
 
 ### paginate
@@ -153,10 +171,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_emr.paginator import ListInstanceGroupsPaginator
 
 session = get_session()
-async with session.create_client("emr") as client:
-    client: EMRClient
-    paginator: ListInstanceGroupsPaginator = client.get_paginator("list_instance_groups")
+async with session.create_client("emr") as client:  # (1)
+    paginator: ListInstanceGroupsPaginator = client.get_paginator("list_instance_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListInstanceGroupsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EMRClient](./client.md)
+2. paginator: [ListInstanceGroupsPaginator](./paginators.md#listinstancegroupspaginator)
+3. item: [:material-code-braces: ListInstanceGroupsOutputTypeDef](./type_defs.md#listinstancegroupsoutputtypedef) 
 
 
 ### paginate
@@ -197,10 +221,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_emr.paginator import ListInstancesPaginator
 
 session = get_session()
-async with session.create_client("emr") as client:
-    client: EMRClient
-    paginator: ListInstancesPaginator = client.get_paginator("list_instances")
+async with session.create_client("emr") as client:  # (1)
+    paginator: ListInstancesPaginator = client.get_paginator("list_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListInstancesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EMRClient](./client.md)
+2. paginator: [ListInstancesPaginator](./paginators.md#listinstancespaginator)
+3. item: [:material-code-braces: ListInstancesOutputTypeDef](./type_defs.md#listinstancesoutputtypedef) 
 
 
 ### paginate
@@ -249,10 +279,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_emr.paginator import ListNotebookExecutionsPaginator
 
 session = get_session()
-async with session.create_client("emr") as client:
-    client: EMRClient
-    paginator: ListNotebookExecutionsPaginator = client.get_paginator("list_notebook_executions")
+async with session.create_client("emr") as client:  # (1)
+    paginator: ListNotebookExecutionsPaginator = client.get_paginator("list_notebook_executions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListNotebookExecutionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EMRClient](./client.md)
+2. paginator: [ListNotebookExecutionsPaginator](./paginators.md#listnotebookexecutionspaginator)
+3. item: [:material-code-braces: ListNotebookExecutionsOutputTypeDef](./type_defs.md#listnotebookexecutionsoutputtypedef) 
 
 
 ### paginate
@@ -297,10 +333,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_emr.paginator import ListSecurityConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("emr") as client:
-    client: EMRClient
-    paginator: ListSecurityConfigurationsPaginator = client.get_paginator("list_security_configurations")
+async with session.create_client("emr") as client:  # (1)
+    paginator: ListSecurityConfigurationsPaginator = client.get_paginator("list_security_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSecurityConfigurationsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EMRClient](./client.md)
+2. paginator: [ListSecurityConfigurationsPaginator](./paginators.md#listsecurityconfigurationspaginator)
+3. item: [:material-code-braces: ListSecurityConfigurationsOutputTypeDef](./type_defs.md#listsecurityconfigurationsoutputtypedef) 
 
 
 ### paginate
@@ -340,10 +382,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_emr.paginator import ListStepsPaginator
 
 session = get_session()
-async with session.create_client("emr") as client:
-    client: EMRClient
-    paginator: ListStepsPaginator = client.get_paginator("list_steps")
+async with session.create_client("emr") as client:  # (1)
+    paginator: ListStepsPaginator = client.get_paginator("list_steps")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStepsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EMRClient](./client.md)
+2. paginator: [ListStepsPaginator](./paginators.md#liststepspaginator)
+3. item: [:material-code-braces: ListStepsOutputTypeDef](./type_defs.md#liststepsoutputtypedef) 
 
 
 ### paginate
@@ -387,10 +435,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_emr.paginator import ListStudioSessionMappingsPaginator
 
 session = get_session()
-async with session.create_client("emr") as client:
-    client: EMRClient
-    paginator: ListStudioSessionMappingsPaginator = client.get_paginator("list_studio_session_mappings")
+async with session.create_client("emr") as client:  # (1)
+    paginator: ListStudioSessionMappingsPaginator = client.get_paginator("list_studio_session_mappings")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStudioSessionMappingsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EMRClient](./client.md)
+2. paginator: [ListStudioSessionMappingsPaginator](./paginators.md#liststudiosessionmappingspaginator)
+3. item: [:material-code-braces: ListStudioSessionMappingsOutputTypeDef](./type_defs.md#liststudiosessionmappingsoutputtypedef) 
 
 
 ### paginate
@@ -433,10 +487,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_emr.paginator import ListStudiosPaginator
 
 session = get_session()
-async with session.create_client("emr") as client:
-    client: EMRClient
-    paginator: ListStudiosPaginator = client.get_paginator("list_studios")
+async with session.create_client("emr") as client:  # (1)
+    paginator: ListStudiosPaginator = client.get_paginator("list_studios")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStudiosOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [EMRClient](./client.md)
+2. paginator: [ListStudiosPaginator](./paginators.md#liststudiospaginator)
+3. item: [:material-code-braces: ListStudiosOutputTypeDef](./type_defs.md#liststudiosoutputtypedef) 
 
 
 ### paginate

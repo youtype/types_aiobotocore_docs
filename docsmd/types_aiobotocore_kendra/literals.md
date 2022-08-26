@@ -21,6 +21,22 @@ AdditionalResultAttributeValueTypeType = Literal[
     "TEXT_WITH_HIGHLIGHTS_VALUE",
 ]
 ```
+## AlfrescoEntityType
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.literals import AlfrescoEntityType
+
+def get_value() -> AlfrescoEntityType:
+    return "blog"
+```
+
+```python title="Definition"
+AlfrescoEntityType = Literal[
+    "blog",
+    "documentLibrary",
+    "wiki",
+]
+```
 ## ConditionOperatorType
 
 ```python title="Usage Example"
@@ -67,6 +83,21 @@ ConfluenceAttachmentFieldNameType = Literal[
     "SPACE_NAME",
     "URL",
     "VERSION",
+]
+```
+## ConfluenceAuthenticationTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.literals import ConfluenceAuthenticationTypeType
+
+def get_value() -> ConfluenceAuthenticationTypeType:
+    return "HTTP_BASIC"
+```
+
+```python title="Definition"
+ConfluenceAuthenticationTypeType = Literal[
+    "HTTP_BASIC",
+    "PAT",
 ]
 ```
 ## ConfluenceBlogFieldNameType
@@ -210,11 +241,12 @@ DataSourceSyncJobStatusType = Literal[
 from types_aiobotocore_kendra.literals import DataSourceTypeType
 
 def get_value() -> DataSourceTypeType:
-    return "BOX"
+    return "ALFRESCO"
 ```
 
 ```python title="Definition"
 DataSourceTypeType = Literal[
+    "ALFRESCO",
     "BOX",
     "CONFLUENCE",
     "CUSTOM",
@@ -230,6 +262,7 @@ DataSourceTypeType = Literal[
     "SERVICENOW",
     "SHAREPOINT",
     "SLACK",
+    "TEMPLATE",
     "WEBCRAWLER",
     "WORKDOCS",
 ]
@@ -796,6 +829,21 @@ ServiceNowBuildVersionTypeType = Literal[
     "OTHERS",
 ]
 ```
+## SharePointOnlineAuthenticationTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.literals import SharePointOnlineAuthenticationTypeType
+
+def get_value() -> SharePointOnlineAuthenticationTypeType:
+    return "HTTP_BASIC"
+```
+
+```python title="Definition"
+SharePointOnlineAuthenticationTypeType = Literal[
+    "HTTP_BASIC",
+    "OAUTH2",
+]
+```
 ## SharePointVersionType
 
 ```python title="Usage Example"
@@ -992,6 +1040,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -1137,6 +1186,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -1190,6 +1240,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -1200,11 +1251,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -1250,6 +1303,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

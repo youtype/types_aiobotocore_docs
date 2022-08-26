@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mturk.paginator import ListAssignmentsForHITPaginator
 
 session = get_session()
-async with session.create_client("mturk") as client:
-    client: MTurkClient
-    paginator: ListAssignmentsForHITPaginator = client.get_paginator("list_assignments_for_hit")
+async with session.create_client("mturk") as client:  # (1)
+    paginator: ListAssignmentsForHITPaginator = client.get_paginator("list_assignments_for_hit")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssignmentsForHITResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MTurkClient](./client.md)
+2. paginator: [ListAssignmentsForHITPaginator](./paginators.md#listassignmentsforhitpaginator)
+3. item: [:material-code-braces: ListAssignmentsForHITResponseTypeDef](./type_defs.md#listassignmentsforhitresponsetypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mturk.paginator import ListBonusPaymentsPaginator
 
 session = get_session()
-async with session.create_client("mturk") as client:
-    client: MTurkClient
-    paginator: ListBonusPaymentsPaginator = client.get_paginator("list_bonus_payments")
+async with session.create_client("mturk") as client:  # (1)
+    paginator: ListBonusPaymentsPaginator = client.get_paginator("list_bonus_payments")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBonusPaymentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MTurkClient](./client.md)
+2. paginator: [ListBonusPaymentsPaginator](./paginators.md#listbonuspaymentspaginator)
+3. item: [:material-code-braces: ListBonusPaymentsResponseTypeDef](./type_defs.md#listbonuspaymentsresponsetypedef) 
 
 
 ### paginate
@@ -109,10 +121,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mturk.paginator import ListHITsPaginator
 
 session = get_session()
-async with session.create_client("mturk") as client:
-    client: MTurkClient
-    paginator: ListHITsPaginator = client.get_paginator("list_hits")
+async with session.create_client("mturk") as client:  # (1)
+    paginator: ListHITsPaginator = client.get_paginator("list_hits")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListHITsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MTurkClient](./client.md)
+2. paginator: [ListHITsPaginator](./paginators.md#listhitspaginator)
+3. item: [:material-code-braces: ListHITsResponseTypeDef](./type_defs.md#listhitsresponsetypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mturk.paginator import ListHITsForQualificationTypePaginator
 
 session = get_session()
-async with session.create_client("mturk") as client:
-    client: MTurkClient
-    paginator: ListHITsForQualificationTypePaginator = client.get_paginator("list_hits_for_qualification_type")
+async with session.create_client("mturk") as client:  # (1)
+    paginator: ListHITsForQualificationTypePaginator = client.get_paginator("list_hits_for_qualification_type")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListHITsForQualificationTypeResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MTurkClient](./client.md)
+2. paginator: [ListHITsForQualificationTypePaginator](./paginators.md#listhitsforqualificationtypepaginator)
+3. item: [:material-code-braces: ListHITsForQualificationTypeResponseTypeDef](./type_defs.md#listhitsforqualificationtyperesponsetypedef) 
 
 
 ### paginate
@@ -196,10 +220,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mturk.paginator import ListQualificationRequestsPaginator
 
 session = get_session()
-async with session.create_client("mturk") as client:
-    client: MTurkClient
-    paginator: ListQualificationRequestsPaginator = client.get_paginator("list_qualification_requests")
+async with session.create_client("mturk") as client:  # (1)
+    paginator: ListQualificationRequestsPaginator = client.get_paginator("list_qualification_requests")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListQualificationRequestsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MTurkClient](./client.md)
+2. paginator: [ListQualificationRequestsPaginator](./paginators.md#listqualificationrequestspaginator)
+3. item: [:material-code-braces: ListQualificationRequestsResponseTypeDef](./type_defs.md#listqualificationrequestsresponsetypedef) 
 
 
 ### paginate
@@ -240,10 +270,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mturk.paginator import ListQualificationTypesPaginator
 
 session = get_session()
-async with session.create_client("mturk") as client:
-    client: MTurkClient
-    paginator: ListQualificationTypesPaginator = client.get_paginator("list_qualification_types")
+async with session.create_client("mturk") as client:  # (1)
+    paginator: ListQualificationTypesPaginator = client.get_paginator("list_qualification_types")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListQualificationTypesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MTurkClient](./client.md)
+2. paginator: [ListQualificationTypesPaginator](./paginators.md#listqualificationtypespaginator)
+3. item: [:material-code-braces: ListQualificationTypesResponseTypeDef](./type_defs.md#listqualificationtypesresponsetypedef) 
 
 
 ### paginate
@@ -286,10 +322,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mturk.paginator import ListReviewableHITsPaginator
 
 session = get_session()
-async with session.create_client("mturk") as client:
-    client: MTurkClient
-    paginator: ListReviewableHITsPaginator = client.get_paginator("list_reviewable_hits")
+async with session.create_client("mturk") as client:  # (1)
+    paginator: ListReviewableHITsPaginator = client.get_paginator("list_reviewable_hits")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListReviewableHITsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MTurkClient](./client.md)
+2. paginator: [ListReviewableHITsPaginator](./paginators.md#listreviewablehitspaginator)
+3. item: [:material-code-braces: ListReviewableHITsResponseTypeDef](./type_defs.md#listreviewablehitsresponsetypedef) 
 
 
 ### paginate
@@ -332,10 +374,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mturk.paginator import ListWorkerBlocksPaginator
 
 session = get_session()
-async with session.create_client("mturk") as client:
-    client: MTurkClient
-    paginator: ListWorkerBlocksPaginator = client.get_paginator("list_worker_blocks")
+async with session.create_client("mturk") as client:  # (1)
+    paginator: ListWorkerBlocksPaginator = client.get_paginator("list_worker_blocks")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListWorkerBlocksResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MTurkClient](./client.md)
+2. paginator: [ListWorkerBlocksPaginator](./paginators.md#listworkerblockspaginator)
+3. item: [:material-code-braces: ListWorkerBlocksResponseTypeDef](./type_defs.md#listworkerblocksresponsetypedef) 
 
 
 ### paginate
@@ -375,10 +423,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mturk.paginator import ListWorkersWithQualificationTypePaginator
 
 session = get_session()
-async with session.create_client("mturk") as client:
-    client: MTurkClient
-    paginator: ListWorkersWithQualificationTypePaginator = client.get_paginator("list_workers_with_qualification_type")
+async with session.create_client("mturk") as client:  # (1)
+    paginator: ListWorkersWithQualificationTypePaginator = client.get_paginator("list_workers_with_qualification_type")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListWorkersWithQualificationTypeResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MTurkClient](./client.md)
+2. paginator: [ListWorkersWithQualificationTypePaginator](./paginators.md#listworkerswithqualificationtypepaginator)
+3. item: [:material-code-braces: ListWorkersWithQualificationTypeResponseTypeDef](./type_defs.md#listworkerswithqualificationtyperesponsetypedef) 
 
 
 ### paginate

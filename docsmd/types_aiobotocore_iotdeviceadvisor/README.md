@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `IoTDeviceAdvisor`.
 
 ### From PyPI with pip
 
@@ -75,17 +70,21 @@ async with session.create_client("iotdeviceadvisor") as client:
 Type annotations for [literals](./literals.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_iotdeviceadvisor.literals import StatusType
+from types_aiobotocore_iotdeviceadvisor.literals import ProtocolType
 
-def get_value() -> StatusType:
-    return "CANCELED"
+def get_value() -> ProtocolType:
+    return "MqttV3_1_1"
 ```
 
+- [ProtocolType](./literals.md#protocoltype)
 - [StatusType](./literals.md#statustype)
 - [SuiteRunStatusType](./literals.md#suiterunstatustype)
+- [TestCaseScenarioStatusType](./literals.md#testcasescenariostatustype)
+- [TestCaseScenarioTypeType](./literals.md#testcasescenariotypetype)
 - [IoTDeviceAdvisorServiceName](./literals.md#iotdeviceadvisorservicename)
 - [ServiceName](./literals.md#servicename)
 - [ResourceServiceName](./literals.md#resourceservicename)
+- [RegionName](./literals.md#regionname)
 
 
 
@@ -114,13 +113,13 @@ def get_value() -> ResponseMetadataTypeDef:
 - [GetSuiteDefinitionRequestRequestTypeDef](./type_defs.md#getsuitedefinitionrequestrequesttypedef)
 - [GetSuiteRunReportRequestRequestTypeDef](./type_defs.md#getsuiterunreportrequestrequesttypedef)
 - [GetSuiteRunRequestRequestTypeDef](./type_defs.md#getsuiterunrequestrequesttypedef)
-- [TestCaseRunTypeDef](./type_defs.md#testcaseruntypedef)
 - [ListSuiteDefinitionsRequestRequestTypeDef](./type_defs.md#listsuitedefinitionsrequestrequesttypedef)
 - [ListSuiteRunsRequestRequestTypeDef](./type_defs.md#listsuiterunsrequestrequesttypedef)
 - [SuiteRunInformationTypeDef](./type_defs.md#suiteruninformationtypedef)
 - [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
 - [StopSuiteRunRequestRequestTypeDef](./type_defs.md#stopsuiterunrequestrequesttypedef)
 - [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
+- [TestCaseScenarioTypeDef](./type_defs.md#testcasescenariotypedef)
 - [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
 - [CreateSuiteDefinitionResponseTypeDef](./type_defs.md#createsuitedefinitionresponsetypedef)
 - [GetEndpointResponseTypeDef](./type_defs.md#getendpointresponsetypedef)
@@ -131,13 +130,14 @@ def get_value() -> ResponseMetadataTypeDef:
 - [SuiteDefinitionConfigurationTypeDef](./type_defs.md#suitedefinitionconfigurationtypedef)
 - [SuiteDefinitionInformationTypeDef](./type_defs.md#suitedefinitioninformationtypedef)
 - [SuiteRunConfigurationTypeDef](./type_defs.md#suiterunconfigurationtypedef)
-- [GroupResultTypeDef](./type_defs.md#groupresulttypedef)
 - [ListSuiteRunsResponseTypeDef](./type_defs.md#listsuiterunsresponsetypedef)
+- [TestCaseRunTypeDef](./type_defs.md#testcaseruntypedef)
 - [CreateSuiteDefinitionRequestRequestTypeDef](./type_defs.md#createsuitedefinitionrequestrequesttypedef)
 - [GetSuiteDefinitionResponseTypeDef](./type_defs.md#getsuitedefinitionresponsetypedef)
 - [UpdateSuiteDefinitionRequestRequestTypeDef](./type_defs.md#updatesuitedefinitionrequestrequesttypedef)
 - [ListSuiteDefinitionsResponseTypeDef](./type_defs.md#listsuitedefinitionsresponsetypedef)
 - [StartSuiteRunRequestRequestTypeDef](./type_defs.md#startsuiterunrequestrequesttypedef)
+- [GroupResultTypeDef](./type_defs.md#groupresulttypedef)
 - [TestResultTypeDef](./type_defs.md#testresulttypedef)
 - [GetSuiteRunResponseTypeDef](./type_defs.md#getsuiterunresponsetypedef)
 

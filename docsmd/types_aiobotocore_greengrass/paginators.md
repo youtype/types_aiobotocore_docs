@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListBulkDeploymentDetailedReportsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListBulkDeploymentDetailedReportsPaginator = client.get_paginator("list_bulk_deployment_detailed_reports")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListBulkDeploymentDetailedReportsPaginator = client.get_paginator("list_bulk_deployment_detailed_reports")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBulkDeploymentDetailedReportsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListBulkDeploymentDetailedReportsPaginator](./paginators.md#listbulkdeploymentdetailedreportspaginator)
+3. item: [:material-code-braces: ListBulkDeploymentDetailedReportsResponseTypeDef](./type_defs.md#listbulkdeploymentdetailedreportsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListBulkDeploymentsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListBulkDeploymentsPaginator = client.get_paginator("list_bulk_deployments")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListBulkDeploymentsPaginator = client.get_paginator("list_bulk_deployments")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBulkDeploymentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListBulkDeploymentsPaginator](./paginators.md#listbulkdeploymentspaginator)
+3. item: [:material-code-braces: ListBulkDeploymentsResponseTypeDef](./type_defs.md#listbulkdeploymentsresponsetypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListConnectorDefinitionVersionsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListConnectorDefinitionVersionsPaginator = client.get_paginator("list_connector_definition_versions")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListConnectorDefinitionVersionsPaginator = client.get_paginator("list_connector_definition_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListConnectorDefinitionVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListConnectorDefinitionVersionsPaginator](./paginators.md#listconnectordefinitionversionspaginator)
+3. item: [:material-code-braces: ListConnectorDefinitionVersionsResponseTypeDef](./type_defs.md#listconnectordefinitionversionsresponsetypedef) 
 
 
 ### paginate
@@ -149,10 +167,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListConnectorDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListConnectorDefinitionsPaginator = client.get_paginator("list_connector_definitions")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListConnectorDefinitionsPaginator = client.get_paginator("list_connector_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListConnectorDefinitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListConnectorDefinitionsPaginator](./paginators.md#listconnectordefinitionspaginator)
+3. item: [:material-code-braces: ListConnectorDefinitionsResponseTypeDef](./type_defs.md#listconnectordefinitionsresponsetypedef) 
 
 
 ### paginate
@@ -192,10 +216,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListCoreDefinitionVersionsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListCoreDefinitionVersionsPaginator = client.get_paginator("list_core_definition_versions")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListCoreDefinitionVersionsPaginator = client.get_paginator("list_core_definition_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCoreDefinitionVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListCoreDefinitionVersionsPaginator](./paginators.md#listcoredefinitionversionspaginator)
+3. item: [:material-code-braces: ListCoreDefinitionVersionsResponseTypeDef](./type_defs.md#listcoredefinitionversionsresponsetypedef) 
 
 
 ### paginate
@@ -236,10 +266,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListCoreDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListCoreDefinitionsPaginator = client.get_paginator("list_core_definitions")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListCoreDefinitionsPaginator = client.get_paginator("list_core_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCoreDefinitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListCoreDefinitionsPaginator](./paginators.md#listcoredefinitionspaginator)
+3. item: [:material-code-braces: ListCoreDefinitionsResponseTypeDef](./type_defs.md#listcoredefinitionsresponsetypedef) 
 
 
 ### paginate
@@ -279,10 +315,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListDeploymentsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListDeploymentsPaginator = client.get_paginator("list_deployments")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListDeploymentsPaginator = client.get_paginator("list_deployments")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeploymentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListDeploymentsPaginator](./paginators.md#listdeploymentspaginator)
+3. item: [:material-code-braces: ListDeploymentsResponseTypeDef](./type_defs.md#listdeploymentsresponsetypedef) 
 
 
 ### paginate
@@ -323,10 +365,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListDeviceDefinitionVersionsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListDeviceDefinitionVersionsPaginator = client.get_paginator("list_device_definition_versions")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListDeviceDefinitionVersionsPaginator = client.get_paginator("list_device_definition_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeviceDefinitionVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListDeviceDefinitionVersionsPaginator](./paginators.md#listdevicedefinitionversionspaginator)
+3. item: [:material-code-braces: ListDeviceDefinitionVersionsResponseTypeDef](./type_defs.md#listdevicedefinitionversionsresponsetypedef) 
 
 
 ### paginate
@@ -367,10 +415,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListDeviceDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListDeviceDefinitionsPaginator = client.get_paginator("list_device_definitions")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListDeviceDefinitionsPaginator = client.get_paginator("list_device_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeviceDefinitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListDeviceDefinitionsPaginator](./paginators.md#listdevicedefinitionspaginator)
+3. item: [:material-code-braces: ListDeviceDefinitionsResponseTypeDef](./type_defs.md#listdevicedefinitionsresponsetypedef) 
 
 
 ### paginate
@@ -410,10 +464,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListFunctionDefinitionVersionsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListFunctionDefinitionVersionsPaginator = client.get_paginator("list_function_definition_versions")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListFunctionDefinitionVersionsPaginator = client.get_paginator("list_function_definition_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFunctionDefinitionVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListFunctionDefinitionVersionsPaginator](./paginators.md#listfunctiondefinitionversionspaginator)
+3. item: [:material-code-braces: ListFunctionDefinitionVersionsResponseTypeDef](./type_defs.md#listfunctiondefinitionversionsresponsetypedef) 
 
 
 ### paginate
@@ -454,10 +514,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListFunctionDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListFunctionDefinitionsPaginator = client.get_paginator("list_function_definitions")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListFunctionDefinitionsPaginator = client.get_paginator("list_function_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFunctionDefinitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListFunctionDefinitionsPaginator](./paginators.md#listfunctiondefinitionspaginator)
+3. item: [:material-code-braces: ListFunctionDefinitionsResponseTypeDef](./type_defs.md#listfunctiondefinitionsresponsetypedef) 
 
 
 ### paginate
@@ -497,10 +563,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListGroupVersionsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListGroupVersionsPaginator = client.get_paginator("list_group_versions")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListGroupVersionsPaginator = client.get_paginator("list_group_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGroupVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListGroupVersionsPaginator](./paginators.md#listgroupversionspaginator)
+3. item: [:material-code-braces: ListGroupVersionsResponseTypeDef](./type_defs.md#listgroupversionsresponsetypedef) 
 
 
 ### paginate
@@ -541,10 +613,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListGroupsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListGroupsPaginator = client.get_paginator("list_groups")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListGroupsPaginator = client.get_paginator("list_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListGroupsPaginator](./paginators.md#listgroupspaginator)
+3. item: [:material-code-braces: ListGroupsResponseTypeDef](./type_defs.md#listgroupsresponsetypedef) 
 
 
 ### paginate
@@ -584,10 +662,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListLoggerDefinitionVersionsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListLoggerDefinitionVersionsPaginator = client.get_paginator("list_logger_definition_versions")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListLoggerDefinitionVersionsPaginator = client.get_paginator("list_logger_definition_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLoggerDefinitionVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListLoggerDefinitionVersionsPaginator](./paginators.md#listloggerdefinitionversionspaginator)
+3. item: [:material-code-braces: ListLoggerDefinitionVersionsResponseTypeDef](./type_defs.md#listloggerdefinitionversionsresponsetypedef) 
 
 
 ### paginate
@@ -628,10 +712,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListLoggerDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListLoggerDefinitionsPaginator = client.get_paginator("list_logger_definitions")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListLoggerDefinitionsPaginator = client.get_paginator("list_logger_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLoggerDefinitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListLoggerDefinitionsPaginator](./paginators.md#listloggerdefinitionspaginator)
+3. item: [:material-code-braces: ListLoggerDefinitionsResponseTypeDef](./type_defs.md#listloggerdefinitionsresponsetypedef) 
 
 
 ### paginate
@@ -671,10 +761,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListResourceDefinitionVersionsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListResourceDefinitionVersionsPaginator = client.get_paginator("list_resource_definition_versions")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListResourceDefinitionVersionsPaginator = client.get_paginator("list_resource_definition_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResourceDefinitionVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListResourceDefinitionVersionsPaginator](./paginators.md#listresourcedefinitionversionspaginator)
+3. item: [:material-code-braces: ListResourceDefinitionVersionsResponseTypeDef](./type_defs.md#listresourcedefinitionversionsresponsetypedef) 
 
 
 ### paginate
@@ -715,10 +811,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListResourceDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListResourceDefinitionsPaginator = client.get_paginator("list_resource_definitions")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListResourceDefinitionsPaginator = client.get_paginator("list_resource_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResourceDefinitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListResourceDefinitionsPaginator](./paginators.md#listresourcedefinitionspaginator)
+3. item: [:material-code-braces: ListResourceDefinitionsResponseTypeDef](./type_defs.md#listresourcedefinitionsresponsetypedef) 
 
 
 ### paginate
@@ -758,10 +860,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListSubscriptionDefinitionVersionsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListSubscriptionDefinitionVersionsPaginator = client.get_paginator("list_subscription_definition_versions")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListSubscriptionDefinitionVersionsPaginator = client.get_paginator("list_subscription_definition_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSubscriptionDefinitionVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListSubscriptionDefinitionVersionsPaginator](./paginators.md#listsubscriptiondefinitionversionspaginator)
+3. item: [:material-code-braces: ListSubscriptionDefinitionVersionsResponseTypeDef](./type_defs.md#listsubscriptiondefinitionversionsresponsetypedef) 
 
 
 ### paginate
@@ -802,10 +910,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.paginator import ListSubscriptionDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("greengrass") as client:
-    client: GreengrassClient
-    paginator: ListSubscriptionDefinitionsPaginator = client.get_paginator("list_subscription_definitions")
+async with session.create_client("greengrass") as client:  # (1)
+    paginator: ListSubscriptionDefinitionsPaginator = client.get_paginator("list_subscription_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSubscriptionDefinitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GreengrassClient](./client.md)
+2. paginator: [ListSubscriptionDefinitionsPaginator](./paginators.md#listsubscriptiondefinitionspaginator)
+3. item: [:material-code-braces: ListSubscriptionDefinitionsResponseTypeDef](./type_defs.md#listsubscriptiondefinitionsresponsetypedef) 
 
 
 ### paginate

@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_ssm.waiter import CommandExecutedWaiter
 
-def get_command_executed_waiter() -> CommandExecutedWaiter:
-    return Session().client("ssm").get_waiter("command_executed")
+session = get_session()
+async with session.create_client("ssm") as client:  # (1)
+    waiter: CommandExecutedWaiter = client.get_waiter("command_executed")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [SSMClient](./client.md)
+2. waiter: [CommandExecutedWaiter](./waiters.md#commandexecutedwaiter)
 
 
 ### wait

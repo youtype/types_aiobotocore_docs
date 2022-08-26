@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import DescribeGlobalNetworksPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: DescribeGlobalNetworksPaginator = client.get_paginator("describe_global_networks")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: DescribeGlobalNetworksPaginator = client.get_paginator("describe_global_networks")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeGlobalNetworksResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [DescribeGlobalNetworksPaginator](./paginators.md#describeglobalnetworkspaginator)
+3. item: [:material-code-braces: DescribeGlobalNetworksResponseTypeDef](./type_defs.md#describeglobalnetworksresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import GetConnectPeerAssociationsPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: GetConnectPeerAssociationsPaginator = client.get_paginator("get_connect_peer_associations")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: GetConnectPeerAssociationsPaginator = client.get_paginator("get_connect_peer_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetConnectPeerAssociationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [GetConnectPeerAssociationsPaginator](./paginators.md#getconnectpeerassociationspaginator)
+3. item: [:material-code-braces: GetConnectPeerAssociationsResponseTypeDef](./type_defs.md#getconnectpeerassociationsresponsetypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import GetConnectionsPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: GetConnectionsPaginator = client.get_paginator("get_connections")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: GetConnectionsPaginator = client.get_paginator("get_connections")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetConnectionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [GetConnectionsPaginator](./paginators.md#getconnectionspaginator)
+3. item: [:material-code-braces: GetConnectionsResponseTypeDef](./type_defs.md#getconnectionsresponsetypedef) 
 
 
 ### paginate
@@ -142,6 +160,58 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: GetConnectionsRequestGetConnectionsPaginateTypeDef](./type_defs.md#getconnectionsrequestgetconnectionspaginatetypedef) 
+## GetCoreNetworkChangeEventsPaginator
+
+Type annotations and code completion for `#!python session.create_client("networkmanager").get_paginator("get_core_network_change_events")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Paginator.GetCoreNetworkChangeEvents)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_networkmanager.paginator import GetCoreNetworkChangeEventsPaginator
+
+session = get_session()
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: GetCoreNetworkChangeEventsPaginator = client.get_paginator("get_core_network_change_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetCoreNetworkChangeEventsResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [GetCoreNetworkChangeEventsPaginator](./paginators.md#getcorenetworkchangeeventspaginator)
+3. item: [:material-code-braces: GetCoreNetworkChangeEventsResponseTypeDef](./type_defs.md#getcorenetworkchangeeventsresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python GetCoreNetworkChangeEventsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    CoreNetworkId: str,
+    PolicyVersionId: int,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[GetCoreNetworkChangeEventsResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: GetCoreNetworkChangeEventsResponseTypeDef](./type_defs.md#getcorenetworkchangeeventsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetCoreNetworkChangeEventsRequestGetCoreNetworkChangeEventsPaginateTypeDef = {  # (1)
+    "CoreNetworkId": ...,
+    "PolicyVersionId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: GetCoreNetworkChangeEventsRequestGetCoreNetworkChangeEventsPaginateTypeDef](./type_defs.md#getcorenetworkchangeeventsrequestgetcorenetworkchangeeventspaginatetypedef) 
 ## GetCoreNetworkChangeSetPaginator
 
 Type annotations and code completion for `#!python session.create_client("networkmanager").get_paginator("get_core_network_change_set")`.
@@ -153,10 +223,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import GetCoreNetworkChangeSetPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: GetCoreNetworkChangeSetPaginator = client.get_paginator("get_core_network_change_set")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: GetCoreNetworkChangeSetPaginator = client.get_paginator("get_core_network_change_set")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetCoreNetworkChangeSetResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [GetCoreNetworkChangeSetPaginator](./paginators.md#getcorenetworkchangesetpaginator)
+3. item: [:material-code-braces: GetCoreNetworkChangeSetResponseTypeDef](./type_defs.md#getcorenetworkchangesetresponsetypedef) 
 
 
 ### paginate
@@ -199,10 +275,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import GetCustomerGatewayAssociationsPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: GetCustomerGatewayAssociationsPaginator = client.get_paginator("get_customer_gateway_associations")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: GetCustomerGatewayAssociationsPaginator = client.get_paginator("get_customer_gateway_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetCustomerGatewayAssociationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [GetCustomerGatewayAssociationsPaginator](./paginators.md#getcustomergatewayassociationspaginator)
+3. item: [:material-code-braces: GetCustomerGatewayAssociationsResponseTypeDef](./type_defs.md#getcustomergatewayassociationsresponsetypedef) 
 
 
 ### paginate
@@ -244,10 +326,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import GetDevicesPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: GetDevicesPaginator = client.get_paginator("get_devices")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: GetDevicesPaginator = client.get_paginator("get_devices")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetDevicesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [GetDevicesPaginator](./paginators.md#getdevicespaginator)
+3. item: [:material-code-braces: GetDevicesResponseTypeDef](./type_defs.md#getdevicesresponsetypedef) 
 
 
 ### paginate
@@ -290,10 +378,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import GetLinkAssociationsPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: GetLinkAssociationsPaginator = client.get_paginator("get_link_associations")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: GetLinkAssociationsPaginator = client.get_paginator("get_link_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetLinkAssociationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [GetLinkAssociationsPaginator](./paginators.md#getlinkassociationspaginator)
+3. item: [:material-code-braces: GetLinkAssociationsResponseTypeDef](./type_defs.md#getlinkassociationsresponsetypedef) 
 
 
 ### paginate
@@ -336,10 +430,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import GetLinksPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: GetLinksPaginator = client.get_paginator("get_links")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: GetLinksPaginator = client.get_paginator("get_links")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetLinksResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [GetLinksPaginator](./paginators.md#getlinkspaginator)
+3. item: [:material-code-braces: GetLinksResponseTypeDef](./type_defs.md#getlinksresponsetypedef) 
 
 
 ### paginate
@@ -384,10 +484,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import GetNetworkResourceCountsPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: GetNetworkResourceCountsPaginator = client.get_paginator("get_network_resource_counts")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: GetNetworkResourceCountsPaginator = client.get_paginator("get_network_resource_counts")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetNetworkResourceCountsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [GetNetworkResourceCountsPaginator](./paginators.md#getnetworkresourcecountspaginator)
+3. item: [:material-code-braces: GetNetworkResourceCountsResponseTypeDef](./type_defs.md#getnetworkresourcecountsresponsetypedef) 
 
 
 ### paginate
@@ -429,10 +535,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import GetNetworkResourceRelationshipsPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: GetNetworkResourceRelationshipsPaginator = client.get_paginator("get_network_resource_relationships")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: GetNetworkResourceRelationshipsPaginator = client.get_paginator("get_network_resource_relationships")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetNetworkResourceRelationshipsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [GetNetworkResourceRelationshipsPaginator](./paginators.md#getnetworkresourcerelationshipspaginator)
+3. item: [:material-code-braces: GetNetworkResourceRelationshipsResponseTypeDef](./type_defs.md#getnetworkresourcerelationshipsresponsetypedef) 
 
 
 ### paginate
@@ -479,10 +591,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import GetNetworkResourcesPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: GetNetworkResourcesPaginator = client.get_paginator("get_network_resources")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: GetNetworkResourcesPaginator = client.get_paginator("get_network_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetNetworkResourcesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [GetNetworkResourcesPaginator](./paginators.md#getnetworkresourcespaginator)
+3. item: [:material-code-braces: GetNetworkResourcesResponseTypeDef](./type_defs.md#getnetworkresourcesresponsetypedef) 
 
 
 ### paginate
@@ -529,10 +647,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import GetNetworkTelemetryPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: GetNetworkTelemetryPaginator = client.get_paginator("get_network_telemetry")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: GetNetworkTelemetryPaginator = client.get_paginator("get_network_telemetry")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetNetworkTelemetryResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [GetNetworkTelemetryPaginator](./paginators.md#getnetworktelemetrypaginator)
+3. item: [:material-code-braces: GetNetworkTelemetryResponseTypeDef](./type_defs.md#getnetworktelemetryresponsetypedef) 
 
 
 ### paginate
@@ -579,10 +703,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import GetSitesPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: GetSitesPaginator = client.get_paginator("get_sites")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: GetSitesPaginator = client.get_paginator("get_sites")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetSitesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [GetSitesPaginator](./paginators.md#getsitespaginator)
+3. item: [:material-code-braces: GetSitesResponseTypeDef](./type_defs.md#getsitesresponsetypedef) 
 
 
 ### paginate
@@ -624,10 +754,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import GetTransitGatewayConnectPeerAssociationsPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: GetTransitGatewayConnectPeerAssociationsPaginator = client.get_paginator("get_transit_gateway_connect_peer_associations")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: GetTransitGatewayConnectPeerAssociationsPaginator = client.get_paginator("get_transit_gateway_connect_peer_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTransitGatewayConnectPeerAssociationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [GetTransitGatewayConnectPeerAssociationsPaginator](./paginators.md#gettransitgatewayconnectpeerassociationspaginator)
+3. item: [:material-code-braces: GetTransitGatewayConnectPeerAssociationsResponseTypeDef](./type_defs.md#gettransitgatewayconnectpeerassociationsresponsetypedef) 
 
 
 ### paginate
@@ -669,10 +805,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import GetTransitGatewayRegistrationsPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: GetTransitGatewayRegistrationsPaginator = client.get_paginator("get_transit_gateway_registrations")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: GetTransitGatewayRegistrationsPaginator = client.get_paginator("get_transit_gateway_registrations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTransitGatewayRegistrationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [GetTransitGatewayRegistrationsPaginator](./paginators.md#gettransitgatewayregistrationspaginator)
+3. item: [:material-code-braces: GetTransitGatewayRegistrationsResponseTypeDef](./type_defs.md#gettransitgatewayregistrationsresponsetypedef) 
 
 
 ### paginate
@@ -714,10 +856,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import ListAttachmentsPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: ListAttachmentsPaginator = client.get_paginator("list_attachments")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: ListAttachmentsPaginator = client.get_paginator("list_attachments")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAttachmentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [ListAttachmentsPaginator](./paginators.md#listattachmentspaginator)
+3. item: [:material-code-braces: ListAttachmentsResponseTypeDef](./type_defs.md#listattachmentsresponsetypedef) 
 
 
 ### paginate
@@ -763,10 +911,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import ListConnectPeersPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: ListConnectPeersPaginator = client.get_paginator("list_connect_peers")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: ListConnectPeersPaginator = client.get_paginator("list_connect_peers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListConnectPeersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [ListConnectPeersPaginator](./paginators.md#listconnectpeerspaginator)
+3. item: [:material-code-braces: ListConnectPeersResponseTypeDef](./type_defs.md#listconnectpeersresponsetypedef) 
 
 
 ### paginate
@@ -808,10 +962,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import ListCoreNetworkPolicyVersionsPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: ListCoreNetworkPolicyVersionsPaginator = client.get_paginator("list_core_network_policy_versions")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: ListCoreNetworkPolicyVersionsPaginator = client.get_paginator("list_core_network_policy_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCoreNetworkPolicyVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [ListCoreNetworkPolicyVersionsPaginator](./paginators.md#listcorenetworkpolicyversionspaginator)
+3. item: [:material-code-braces: ListCoreNetworkPolicyVersionsResponseTypeDef](./type_defs.md#listcorenetworkpolicyversionsresponsetypedef) 
 
 
 ### paginate
@@ -852,10 +1012,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.paginator import ListCoreNetworksPaginator
 
 session = get_session()
-async with session.create_client("networkmanager") as client:
-    client: NetworkManagerClient
-    paginator: ListCoreNetworksPaginator = client.get_paginator("list_core_networks")
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: ListCoreNetworksPaginator = client.get_paginator("list_core_networks")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCoreNetworksResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [ListCoreNetworksPaginator](./paginators.md#listcorenetworkspaginator)
+3. item: [:material-code-braces: ListCoreNetworksResponseTypeDef](./type_defs.md#listcorenetworksresponsetypedef) 
 
 
 ### paginate
@@ -884,3 +1050,58 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListCoreNetworksRequestListCoreNetworksPaginateTypeDef](./type_defs.md#listcorenetworksrequestlistcorenetworkspaginatetypedef) 
+## ListPeeringsPaginator
+
+Type annotations and code completion for `#!python session.create_client("networkmanager").get_paginator("list_peerings")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Paginator.ListPeerings)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_networkmanager.paginator import ListPeeringsPaginator
+
+session = get_session()
+async with session.create_client("networkmanager") as client:  # (1)
+    paginator: ListPeeringsPaginator = client.get_paginator("list_peerings")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPeeringsResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [ListPeeringsPaginator](./paginators.md#listpeeringspaginator)
+3. item: [:material-code-braces: ListPeeringsResponseTypeDef](./type_defs.md#listpeeringsresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListPeeringsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    CoreNetworkId: str = ...,
+    PeeringType: PeeringTypeType = ...,  # (1)
+    EdgeLocation: str = ...,
+    State: PeeringStateType = ...,  # (2)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (3)
+) -> AsyncIterator[ListPeeringsResponseTypeDef]:  # (4)
+    ...
+```
+
+1. See [:material-code-brackets: PeeringTypeType](./literals.md#peeringtypetype) 
+2. See [:material-code-brackets: PeeringStateType](./literals.md#peeringstatetype) 
+3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+4. See [:material-code-braces: ListPeeringsResponseTypeDef](./type_defs.md#listpeeringsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListPeeringsRequestListPeeringsPaginateTypeDef = {  # (1)
+    "CoreNetworkId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListPeeringsRequestListPeeringsPaginateTypeDef](./type_defs.md#listpeeringsrequestlistpeeringspaginatetypedef) 

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_email.paginator import GetDedicatedIpsPaginator
 
 session = get_session()
-async with session.create_client("pinpoint-email") as client:
-    client: PinpointEmailClient
-    paginator: GetDedicatedIpsPaginator = client.get_paginator("get_dedicated_ips")
+async with session.create_client("pinpoint-email") as client:  # (1)
+    paginator: GetDedicatedIpsPaginator = client.get_paginator("get_dedicated_ips")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetDedicatedIpsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PinpointEmailClient](./client.md)
+2. paginator: [GetDedicatedIpsPaginator](./paginators.md#getdedicatedipspaginator)
+3. item: [:material-code-braces: GetDedicatedIpsResponseTypeDef](./type_defs.md#getdedicatedipsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_email.paginator import ListConfigurationSetsPaginator
 
 session = get_session()
-async with session.create_client("pinpoint-email") as client:
-    client: PinpointEmailClient
-    paginator: ListConfigurationSetsPaginator = client.get_paginator("list_configuration_sets")
+async with session.create_client("pinpoint-email") as client:  # (1)
+    paginator: ListConfigurationSetsPaginator = client.get_paginator("list_configuration_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListConfigurationSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PinpointEmailClient](./client.md)
+2. paginator: [ListConfigurationSetsPaginator](./paginators.md#listconfigurationsetspaginator)
+3. item: [:material-code-braces: ListConfigurationSetsResponseTypeDef](./type_defs.md#listconfigurationsetsresponsetypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_email.paginator import ListDedicatedIpPoolsPaginator
 
 session = get_session()
-async with session.create_client("pinpoint-email") as client:
-    client: PinpointEmailClient
-    paginator: ListDedicatedIpPoolsPaginator = client.get_paginator("list_dedicated_ip_pools")
+async with session.create_client("pinpoint-email") as client:  # (1)
+    paginator: ListDedicatedIpPoolsPaginator = client.get_paginator("list_dedicated_ip_pools")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDedicatedIpPoolsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PinpointEmailClient](./client.md)
+2. paginator: [ListDedicatedIpPoolsPaginator](./paginators.md#listdedicatedippoolspaginator)
+3. item: [:material-code-braces: ListDedicatedIpPoolsResponseTypeDef](./type_defs.md#listdedicatedippoolsresponsetypedef) 
 
 
 ### paginate
@@ -148,10 +166,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_email.paginator import ListDeliverabilityTestReportsPaginator
 
 session = get_session()
-async with session.create_client("pinpoint-email") as client:
-    client: PinpointEmailClient
-    paginator: ListDeliverabilityTestReportsPaginator = client.get_paginator("list_deliverability_test_reports")
+async with session.create_client("pinpoint-email") as client:  # (1)
+    paginator: ListDeliverabilityTestReportsPaginator = client.get_paginator("list_deliverability_test_reports")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeliverabilityTestReportsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PinpointEmailClient](./client.md)
+2. paginator: [ListDeliverabilityTestReportsPaginator](./paginators.md#listdeliverabilitytestreportspaginator)
+3. item: [:material-code-braces: ListDeliverabilityTestReportsResponseTypeDef](./type_defs.md#listdeliverabilitytestreportsresponsetypedef) 
 
 
 ### paginate
@@ -191,10 +215,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_email.paginator import ListEmailIdentitiesPaginator
 
 session = get_session()
-async with session.create_client("pinpoint-email") as client:
-    client: PinpointEmailClient
-    paginator: ListEmailIdentitiesPaginator = client.get_paginator("list_email_identities")
+async with session.create_client("pinpoint-email") as client:  # (1)
+    paginator: ListEmailIdentitiesPaginator = client.get_paginator("list_email_identities")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEmailIdentitiesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [PinpointEmailClient](./client.md)
+2. paginator: [ListEmailIdentitiesPaginator](./paginators.md#listemailidentitiespaginator)
+3. item: [:material-code-braces: ListEmailIdentitiesResponseTypeDef](./type_defs.md#listemailidentitiesresponsetypedef) 
 
 
 ### paginate

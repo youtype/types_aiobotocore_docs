@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_waf.paginator import GetRateBasedRuleManagedKeysPaginator
 
 session = get_session()
-async with session.create_client("waf") as client:
-    client: WAFClient
-    paginator: GetRateBasedRuleManagedKeysPaginator = client.get_paginator("get_rate_based_rule_managed_keys")
+async with session.create_client("waf") as client:  # (1)
+    paginator: GetRateBasedRuleManagedKeysPaginator = client.get_paginator("get_rate_based_rule_managed_keys")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetRateBasedRuleManagedKeysResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WAFClient](./client.md)
+2. paginator: [GetRateBasedRuleManagedKeysPaginator](./paginators.md#getratebasedrulemanagedkeyspaginator)
+3. item: [:material-code-braces: GetRateBasedRuleManagedKeysResponseTypeDef](./type_defs.md#getratebasedrulemanagedkeysresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_waf.paginator import ListActivatedRulesInRuleGroupPaginator
 
 session = get_session()
-async with session.create_client("waf") as client:
-    client: WAFClient
-    paginator: ListActivatedRulesInRuleGroupPaginator = client.get_paginator("list_activated_rules_in_rule_group")
+async with session.create_client("waf") as client:  # (1)
+    paginator: ListActivatedRulesInRuleGroupPaginator = client.get_paginator("list_activated_rules_in_rule_group")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListActivatedRulesInRuleGroupResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WAFClient](./client.md)
+2. paginator: [ListActivatedRulesInRuleGroupPaginator](./paginators.md#listactivatedrulesinrulegrouppaginator)
+3. item: [:material-code-braces: ListActivatedRulesInRuleGroupResponseTypeDef](./type_defs.md#listactivatedrulesinrulegroupresponsetypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_waf.paginator import ListByteMatchSetsPaginator
 
 session = get_session()
-async with session.create_client("waf") as client:
-    client: WAFClient
-    paginator: ListByteMatchSetsPaginator = client.get_paginator("list_byte_match_sets")
+async with session.create_client("waf") as client:  # (1)
+    paginator: ListByteMatchSetsPaginator = client.get_paginator("list_byte_match_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListByteMatchSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WAFClient](./client.md)
+2. paginator: [ListByteMatchSetsPaginator](./paginators.md#listbytematchsetspaginator)
+3. item: [:material-code-braces: ListByteMatchSetsResponseTypeDef](./type_defs.md#listbytematchsetsresponsetypedef) 
 
 
 ### paginate
@@ -149,10 +167,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_waf.paginator import ListGeoMatchSetsPaginator
 
 session = get_session()
-async with session.create_client("waf") as client:
-    client: WAFClient
-    paginator: ListGeoMatchSetsPaginator = client.get_paginator("list_geo_match_sets")
+async with session.create_client("waf") as client:  # (1)
+    paginator: ListGeoMatchSetsPaginator = client.get_paginator("list_geo_match_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGeoMatchSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WAFClient](./client.md)
+2. paginator: [ListGeoMatchSetsPaginator](./paginators.md#listgeomatchsetspaginator)
+3. item: [:material-code-braces: ListGeoMatchSetsResponseTypeDef](./type_defs.md#listgeomatchsetsresponsetypedef) 
 
 
 ### paginate
@@ -192,10 +216,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_waf.paginator import ListIPSetsPaginator
 
 session = get_session()
-async with session.create_client("waf") as client:
-    client: WAFClient
-    paginator: ListIPSetsPaginator = client.get_paginator("list_ip_sets")
+async with session.create_client("waf") as client:  # (1)
+    paginator: ListIPSetsPaginator = client.get_paginator("list_ip_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListIPSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WAFClient](./client.md)
+2. paginator: [ListIPSetsPaginator](./paginators.md#listipsetspaginator)
+3. item: [:material-code-braces: ListIPSetsResponseTypeDef](./type_defs.md#listipsetsresponsetypedef) 
 
 
 ### paginate
@@ -235,10 +265,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_waf.paginator import ListLoggingConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("waf") as client:
-    client: WAFClient
-    paginator: ListLoggingConfigurationsPaginator = client.get_paginator("list_logging_configurations")
+async with session.create_client("waf") as client:  # (1)
+    paginator: ListLoggingConfigurationsPaginator = client.get_paginator("list_logging_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLoggingConfigurationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WAFClient](./client.md)
+2. paginator: [ListLoggingConfigurationsPaginator](./paginators.md#listloggingconfigurationspaginator)
+3. item: [:material-code-braces: ListLoggingConfigurationsResponseTypeDef](./type_defs.md#listloggingconfigurationsresponsetypedef) 
 
 
 ### paginate
@@ -278,10 +314,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_waf.paginator import ListRateBasedRulesPaginator
 
 session = get_session()
-async with session.create_client("waf") as client:
-    client: WAFClient
-    paginator: ListRateBasedRulesPaginator = client.get_paginator("list_rate_based_rules")
+async with session.create_client("waf") as client:  # (1)
+    paginator: ListRateBasedRulesPaginator = client.get_paginator("list_rate_based_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRateBasedRulesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WAFClient](./client.md)
+2. paginator: [ListRateBasedRulesPaginator](./paginators.md#listratebasedrulespaginator)
+3. item: [:material-code-braces: ListRateBasedRulesResponseTypeDef](./type_defs.md#listratebasedrulesresponsetypedef) 
 
 
 ### paginate
@@ -321,10 +363,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_waf.paginator import ListRegexMatchSetsPaginator
 
 session = get_session()
-async with session.create_client("waf") as client:
-    client: WAFClient
-    paginator: ListRegexMatchSetsPaginator = client.get_paginator("list_regex_match_sets")
+async with session.create_client("waf") as client:  # (1)
+    paginator: ListRegexMatchSetsPaginator = client.get_paginator("list_regex_match_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRegexMatchSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WAFClient](./client.md)
+2. paginator: [ListRegexMatchSetsPaginator](./paginators.md#listregexmatchsetspaginator)
+3. item: [:material-code-braces: ListRegexMatchSetsResponseTypeDef](./type_defs.md#listregexmatchsetsresponsetypedef) 
 
 
 ### paginate
@@ -364,10 +412,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_waf.paginator import ListRegexPatternSetsPaginator
 
 session = get_session()
-async with session.create_client("waf") as client:
-    client: WAFClient
-    paginator: ListRegexPatternSetsPaginator = client.get_paginator("list_regex_pattern_sets")
+async with session.create_client("waf") as client:  # (1)
+    paginator: ListRegexPatternSetsPaginator = client.get_paginator("list_regex_pattern_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRegexPatternSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WAFClient](./client.md)
+2. paginator: [ListRegexPatternSetsPaginator](./paginators.md#listregexpatternsetspaginator)
+3. item: [:material-code-braces: ListRegexPatternSetsResponseTypeDef](./type_defs.md#listregexpatternsetsresponsetypedef) 
 
 
 ### paginate
@@ -407,10 +461,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_waf.paginator import ListRuleGroupsPaginator
 
 session = get_session()
-async with session.create_client("waf") as client:
-    client: WAFClient
-    paginator: ListRuleGroupsPaginator = client.get_paginator("list_rule_groups")
+async with session.create_client("waf") as client:  # (1)
+    paginator: ListRuleGroupsPaginator = client.get_paginator("list_rule_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRuleGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WAFClient](./client.md)
+2. paginator: [ListRuleGroupsPaginator](./paginators.md#listrulegroupspaginator)
+3. item: [:material-code-braces: ListRuleGroupsResponseTypeDef](./type_defs.md#listrulegroupsresponsetypedef) 
 
 
 ### paginate
@@ -450,10 +510,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_waf.paginator import ListRulesPaginator
 
 session = get_session()
-async with session.create_client("waf") as client:
-    client: WAFClient
-    paginator: ListRulesPaginator = client.get_paginator("list_rules")
+async with session.create_client("waf") as client:  # (1)
+    paginator: ListRulesPaginator = client.get_paginator("list_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRulesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WAFClient](./client.md)
+2. paginator: [ListRulesPaginator](./paginators.md#listrulespaginator)
+3. item: [:material-code-braces: ListRulesResponseTypeDef](./type_defs.md#listrulesresponsetypedef) 
 
 
 ### paginate
@@ -493,10 +559,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_waf.paginator import ListSizeConstraintSetsPaginator
 
 session = get_session()
-async with session.create_client("waf") as client:
-    client: WAFClient
-    paginator: ListSizeConstraintSetsPaginator = client.get_paginator("list_size_constraint_sets")
+async with session.create_client("waf") as client:  # (1)
+    paginator: ListSizeConstraintSetsPaginator = client.get_paginator("list_size_constraint_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSizeConstraintSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WAFClient](./client.md)
+2. paginator: [ListSizeConstraintSetsPaginator](./paginators.md#listsizeconstraintsetspaginator)
+3. item: [:material-code-braces: ListSizeConstraintSetsResponseTypeDef](./type_defs.md#listsizeconstraintsetsresponsetypedef) 
 
 
 ### paginate
@@ -536,10 +608,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_waf.paginator import ListSqlInjectionMatchSetsPaginator
 
 session = get_session()
-async with session.create_client("waf") as client:
-    client: WAFClient
-    paginator: ListSqlInjectionMatchSetsPaginator = client.get_paginator("list_sql_injection_match_sets")
+async with session.create_client("waf") as client:  # (1)
+    paginator: ListSqlInjectionMatchSetsPaginator = client.get_paginator("list_sql_injection_match_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSqlInjectionMatchSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WAFClient](./client.md)
+2. paginator: [ListSqlInjectionMatchSetsPaginator](./paginators.md#listsqlinjectionmatchsetspaginator)
+3. item: [:material-code-braces: ListSqlInjectionMatchSetsResponseTypeDef](./type_defs.md#listsqlinjectionmatchsetsresponsetypedef) 
 
 
 ### paginate
@@ -579,10 +657,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_waf.paginator import ListSubscribedRuleGroupsPaginator
 
 session = get_session()
-async with session.create_client("waf") as client:
-    client: WAFClient
-    paginator: ListSubscribedRuleGroupsPaginator = client.get_paginator("list_subscribed_rule_groups")
+async with session.create_client("waf") as client:  # (1)
+    paginator: ListSubscribedRuleGroupsPaginator = client.get_paginator("list_subscribed_rule_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSubscribedRuleGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WAFClient](./client.md)
+2. paginator: [ListSubscribedRuleGroupsPaginator](./paginators.md#listsubscribedrulegroupspaginator)
+3. item: [:material-code-braces: ListSubscribedRuleGroupsResponseTypeDef](./type_defs.md#listsubscribedrulegroupsresponsetypedef) 
 
 
 ### paginate
@@ -622,10 +706,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_waf.paginator import ListWebACLsPaginator
 
 session = get_session()
-async with session.create_client("waf") as client:
-    client: WAFClient
-    paginator: ListWebACLsPaginator = client.get_paginator("list_web_acls")
+async with session.create_client("waf") as client:  # (1)
+    paginator: ListWebACLsPaginator = client.get_paginator("list_web_acls")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListWebACLsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WAFClient](./client.md)
+2. paginator: [ListWebACLsPaginator](./paginators.md#listwebaclspaginator)
+3. item: [:material-code-braces: ListWebACLsResponseTypeDef](./type_defs.md#listwebaclsresponsetypedef) 
 
 
 ### paginate
@@ -665,10 +755,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_waf.paginator import ListXssMatchSetsPaginator
 
 session = get_session()
-async with session.create_client("waf") as client:
-    client: WAFClient
-    paginator: ListXssMatchSetsPaginator = client.get_paginator("list_xss_match_sets")
+async with session.create_client("waf") as client:  # (1)
+    paginator: ListXssMatchSetsPaginator = client.get_paginator("list_xss_match_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListXssMatchSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [WAFClient](./client.md)
+2. paginator: [ListXssMatchSetsPaginator](./paginators.md#listxssmatchsetspaginator)
+3. item: [:material-code-braces: ListXssMatchSetsResponseTypeDef](./type_defs.md#listxssmatchsetsresponsetypedef) 
 
 
 ### paginate

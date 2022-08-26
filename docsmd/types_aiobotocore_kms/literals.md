@@ -36,6 +36,7 @@ def get_value() -> ConnectionErrorCodeTypeType:
 ConnectionErrorCodeTypeType = Literal[
     "CLUSTER_NOT_FOUND",
     "INSUFFICIENT_CLOUDHSM_HSMS",
+    "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET",
     "INTERNAL_ERROR",
     "INVALID_CREDENTIALS",
     "NETWORK_ERRORS",
@@ -85,6 +86,7 @@ CustomerMasterKeySpecType = Literal[
     "RSA_2048",
     "RSA_3072",
     "RSA_4096",
+    "SM2",
     "SYMMETRIC_DEFAULT",
 ]
 ```
@@ -106,6 +108,7 @@ DataKeyPairSpecType = Literal[
     "RSA_2048",
     "RSA_3072",
     "RSA_4096",
+    "SM2",
 ]
 ```
 ## DataKeySpecType
@@ -123,6 +126,20 @@ DataKeySpecType = Literal[
     "AES_256",
 ]
 ```
+## DescribeCustomKeyStoresPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_kms.literals import DescribeCustomKeyStoresPaginatorName
+
+def get_value() -> DescribeCustomKeyStoresPaginatorName:
+    return "describe_custom_key_stores"
+```
+
+```python title="Definition"
+DescribeCustomKeyStoresPaginatorName = Literal[
+    "describe_custom_key_stores",
+]
+```
 ## EncryptionAlgorithmSpecType
 
 ```python title="Usage Example"
@@ -136,6 +153,7 @@ def get_value() -> EncryptionAlgorithmSpecType:
 EncryptionAlgorithmSpecType = Literal[
     "RSAES_OAEP_SHA_1",
     "RSAES_OAEP_SHA_256",
+    "SM2PKE",
     "SYMMETRIC_DEFAULT",
 ]
 ```
@@ -220,6 +238,7 @@ KeySpecType = Literal[
     "RSA_2048",
     "RSA_3072",
     "RSA_4096",
+    "SM2",
     "SYMMETRIC_DEFAULT",
 ]
 ```
@@ -316,6 +335,34 @@ ListKeysPaginatorName = Literal[
     "list_keys",
 ]
 ```
+## ListResourceTagsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_kms.literals import ListResourceTagsPaginatorName
+
+def get_value() -> ListResourceTagsPaginatorName:
+    return "list_resource_tags"
+```
+
+```python title="Definition"
+ListResourceTagsPaginatorName = Literal[
+    "list_resource_tags",
+]
+```
+## ListRetirableGrantsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_kms.literals import ListRetirableGrantsPaginatorName
+
+def get_value() -> ListRetirableGrantsPaginatorName:
+    return "list_retirable_grants"
+```
+
+```python title="Definition"
+ListRetirableGrantsPaginatorName = Literal[
+    "list_retirable_grants",
+]
+```
 ## MacAlgorithmSpecType
 
 ```python title="Usage Example"
@@ -399,6 +446,7 @@ SigningAlgorithmSpecType = Literal[
     "RSASSA_PSS_SHA_256",
     "RSASSA_PSS_SHA_384",
     "RSASSA_PSS_SHA_512",
+    "SM2DSA",
 ]
 ```
 ## WrappingKeySpecType
@@ -469,6 +517,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -614,6 +663,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -667,6 +717,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -677,11 +728,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -727,6 +780,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -779,15 +833,18 @@ ResourceServiceName = Literal[
 from types_aiobotocore_kms.literals import PaginatorName
 
 def get_value() -> PaginatorName:
-    return "list_aliases"
+    return "describe_custom_key_stores"
 ```
 
 ```python title="Definition"
 PaginatorName = Literal[
+    "describe_custom_key_stores",
     "list_aliases",
     "list_grants",
     "list_key_policies",
     "list_keys",
+    "list_resource_tags",
+    "list_retirable_grants",
 ]
 ```
 ## RegionName

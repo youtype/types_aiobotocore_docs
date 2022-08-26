@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `LocationService`.
 
 ### From PyPI with pip
 
@@ -127,6 +122,7 @@ def get_value() -> BatchItemErrorCodeType:
 - [ServiceName](./literals.md#servicename)
 - [ResourceServiceName](./literals.md#resourceservicename)
 - [PaginatorName](./literals.md#paginatorname)
+- [RegionName](./literals.md#regionname)
 
 
 
@@ -151,13 +147,13 @@ def get_value() -> AssociateTrackerConsumerRequestRequestTypeDef:
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
 - [BatchDeleteGeofenceRequestRequestTypeDef](./type_defs.md#batchdeletegeofencerequestrequesttypedef)
 - [BatchGetDevicePositionRequestRequestTypeDef](./type_defs.md#batchgetdevicepositionrequestrequesttypedef)
-- [GeofenceGeometryTypeDef](./type_defs.md#geofencegeometrytypedef)
 - [BatchPutGeofenceSuccessTypeDef](./type_defs.md#batchputgeofencesuccesstypedef)
 - [CalculateRouteCarModeOptionsTypeDef](./type_defs.md#calculateroutecarmodeoptionstypedef)
 - [CalculateRouteMatrixSummaryTypeDef](./type_defs.md#calculateroutematrixsummarytypedef)
 - [CalculateRouteSummaryTypeDef](./type_defs.md#calculateroutesummarytypedef)
 - [TruckDimensionsTypeDef](./type_defs.md#truckdimensionstypedef)
 - [TruckWeightTypeDef](./type_defs.md#truckweighttypedef)
+- [CircleTypeDef](./type_defs.md#circletypedef)
 - [CreateGeofenceCollectionRequestRequestTypeDef](./type_defs.md#creategeofencecollectionrequestrequesttypedef)
 - [MapConfigurationTypeDef](./type_defs.md#mapconfigurationtypedef)
 - [DataSourceConfigurationTypeDef](./type_defs.md#datasourceconfigurationtypedef)
@@ -241,11 +237,8 @@ def get_value() -> AssociateTrackerConsumerRequestRequestTypeDef:
 - [UpdatePlaceIndexResponseTypeDef](./type_defs.md#updateplaceindexresponsetypedef)
 - [UpdateRouteCalculatorResponseTypeDef](./type_defs.md#updateroutecalculatorresponsetypedef)
 - [UpdateTrackerResponseTypeDef](./type_defs.md#updatetrackerresponsetypedef)
-- [BatchPutGeofenceRequestEntryTypeDef](./type_defs.md#batchputgeofencerequestentrytypedef)
-- [GetGeofenceResponseTypeDef](./type_defs.md#getgeofenceresponsetypedef)
-- [ListGeofenceResponseEntryTypeDef](./type_defs.md#listgeofenceresponseentrytypedef)
-- [PutGeofenceRequestRequestTypeDef](./type_defs.md#putgeofencerequestrequesttypedef)
 - [CalculateRouteTruckModeOptionsTypeDef](./type_defs.md#calculateroutetruckmodeoptionstypedef)
+- [GeofenceGeometryTypeDef](./type_defs.md#geofencegeometrytypedef)
 - [CreateMapRequestRequestTypeDef](./type_defs.md#createmaprequestrequesttypedef)
 - [DescribeMapResponseTypeDef](./type_defs.md#describemapresponsetypedef)
 - [CreatePlaceIndexRequestRequestTypeDef](./type_defs.md#createplaceindexrequestrequesttypedef)
@@ -278,10 +271,12 @@ def get_value() -> AssociateTrackerConsumerRequestRequestTypeDef:
 - [BatchEvaluateGeofencesResponseTypeDef](./type_defs.md#batchevaluategeofencesresponsetypedef)
 - [BatchPutGeofenceResponseTypeDef](./type_defs.md#batchputgeofenceresponsetypedef)
 - [BatchUpdateDevicePositionResponseTypeDef](./type_defs.md#batchupdatedevicepositionresponsetypedef)
-- [BatchPutGeofenceRequestRequestTypeDef](./type_defs.md#batchputgeofencerequestrequesttypedef)
-- [ListGeofencesResponseTypeDef](./type_defs.md#listgeofencesresponsetypedef)
 - [CalculateRouteMatrixRequestRequestTypeDef](./type_defs.md#calculateroutematrixrequestrequesttypedef)
 - [CalculateRouteRequestRequestTypeDef](./type_defs.md#calculaterouterequestrequesttypedef)
+- [BatchPutGeofenceRequestEntryTypeDef](./type_defs.md#batchputgeofencerequestentrytypedef)
+- [GetGeofenceResponseTypeDef](./type_defs.md#getgeofenceresponsetypedef)
+- [ListGeofenceResponseEntryTypeDef](./type_defs.md#listgeofenceresponseentrytypedef)
+- [PutGeofenceRequestRequestTypeDef](./type_defs.md#putgeofencerequestrequesttypedef)
 - [BatchGetDevicePositionResponseTypeDef](./type_defs.md#batchgetdevicepositionresponsetypedef)
 - [GetDevicePositionHistoryResponseTypeDef](./type_defs.md#getdevicepositionhistoryresponsetypedef)
 - [BatchEvaluateGeofencesRequestRequestTypeDef](./type_defs.md#batchevaluategeofencesrequestrequesttypedef)
@@ -291,6 +286,8 @@ def get_value() -> AssociateTrackerConsumerRequestRequestTypeDef:
 - [SearchForPositionResultTypeDef](./type_defs.md#searchforpositionresulttypedef)
 - [SearchForTextResultTypeDef](./type_defs.md#searchfortextresulttypedef)
 - [CalculateRouteMatrixResponseTypeDef](./type_defs.md#calculateroutematrixresponsetypedef)
+- [BatchPutGeofenceRequestRequestTypeDef](./type_defs.md#batchputgeofencerequestrequesttypedef)
+- [ListGeofencesResponseTypeDef](./type_defs.md#listgeofencesresponsetypedef)
 - [SearchPlaceIndexForPositionResponseTypeDef](./type_defs.md#searchplaceindexforpositionresponsetypedef)
 - [SearchPlaceIndexForTextResponseTypeDef](./type_defs.md#searchplaceindexfortextresponsetypedef)
 

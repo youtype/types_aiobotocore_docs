@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_opsworkscm.paginator import DescribeBackupsPaginator
 
 session = get_session()
-async with session.create_client("opsworkscm") as client:
-    client: OpsWorksCMClient
-    paginator: DescribeBackupsPaginator = client.get_paginator("describe_backups")
+async with session.create_client("opsworkscm") as client:  # (1)
+    paginator: DescribeBackupsPaginator = client.get_paginator("describe_backups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeBackupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [OpsWorksCMClient](./client.md)
+2. paginator: [DescribeBackupsPaginator](./paginators.md#describebackupspaginator)
+3. item: [:material-code-braces: DescribeBackupsResponseTypeDef](./type_defs.md#describebackupsresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_opsworkscm.paginator import DescribeEventsPaginator
 
 session = get_session()
-async with session.create_client("opsworkscm") as client:
-    client: OpsWorksCMClient
-    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")
+async with session.create_client("opsworkscm") as client:  # (1)
+    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeEventsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [OpsWorksCMClient](./client.md)
+2. paginator: [DescribeEventsPaginator](./paginators.md#describeeventspaginator)
+3. item: [:material-code-braces: DescribeEventsResponseTypeDef](./type_defs.md#describeeventsresponsetypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_opsworkscm.paginator import DescribeServersPaginator
 
 session = get_session()
-async with session.create_client("opsworkscm") as client:
-    client: OpsWorksCMClient
-    paginator: DescribeServersPaginator = client.get_paginator("describe_servers")
+async with session.create_client("opsworkscm") as client:  # (1)
+    paginator: DescribeServersPaginator = client.get_paginator("describe_servers")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeServersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [OpsWorksCMClient](./client.md)
+2. paginator: [DescribeServersPaginator](./paginators.md#describeserverspaginator)
+3. item: [:material-code-braces: DescribeServersResponseTypeDef](./type_defs.md#describeserversresponsetypedef) 
 
 
 ### paginate
@@ -151,10 +169,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_opsworkscm.paginator import ListTagsForResourcePaginator
 
 session = get_session()
-async with session.create_client("opsworkscm") as client:
-    client: OpsWorksCMClient
-    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
+async with session.create_client("opsworkscm") as client:  # (1)
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsForResourceResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [OpsWorksCMClient](./client.md)
+2. paginator: [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
+3. item: [:material-code-braces: ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef) 
 
 
 ### paginate

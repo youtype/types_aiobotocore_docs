@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elastic_inference.paginator import DescribeAcceleratorsPaginator
 
 session = get_session()
-async with session.create_client("elastic-inference") as client:
-    client: ElasticInferenceClient
-    paginator: DescribeAcceleratorsPaginator = client.get_paginator("describe_accelerators")
+async with session.create_client("elastic-inference") as client:  # (1)
+    paginator: DescribeAcceleratorsPaginator = client.get_paginator("describe_accelerators")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAcceleratorsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticInferenceClient](./client.md)
+2. paginator: [DescribeAcceleratorsPaginator](./paginators.md#describeacceleratorspaginator)
+3. item: [:material-code-braces: DescribeAcceleratorsResponseTypeDef](./type_defs.md#describeacceleratorsresponsetypedef) 
 
 
 ### paginate

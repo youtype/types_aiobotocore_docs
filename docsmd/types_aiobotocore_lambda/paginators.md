@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lambda.paginator import ListAliasesPaginator
 
 session = get_session()
-async with session.create_client("lambda") as client:
-    client: LambdaClient
-    paginator: ListAliasesPaginator = client.get_paginator("list_aliases")
+async with session.create_client("lambda") as client:  # (1)
+    paginator: ListAliasesPaginator = client.get_paginator("list_aliases")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAliasesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LambdaClient](./client.md)
+2. paginator: [ListAliasesPaginator](./paginators.md#listaliasespaginator)
+3. item: [:material-code-braces: ListAliasesResponseTypeDef](./type_defs.md#listaliasesresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lambda.paginator import ListCodeSigningConfigsPaginator
 
 session = get_session()
-async with session.create_client("lambda") as client:
-    client: LambdaClient
-    paginator: ListCodeSigningConfigsPaginator = client.get_paginator("list_code_signing_configs")
+async with session.create_client("lambda") as client:  # (1)
+    paginator: ListCodeSigningConfigsPaginator = client.get_paginator("list_code_signing_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCodeSigningConfigsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LambdaClient](./client.md)
+2. paginator: [ListCodeSigningConfigsPaginator](./paginators.md#listcodesigningconfigspaginator)
+3. item: [:material-code-braces: ListCodeSigningConfigsResponseTypeDef](./type_defs.md#listcodesigningconfigsresponsetypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lambda.paginator import ListEventSourceMappingsPaginator
 
 session = get_session()
-async with session.create_client("lambda") as client:
-    client: LambdaClient
-    paginator: ListEventSourceMappingsPaginator = client.get_paginator("list_event_source_mappings")
+async with session.create_client("lambda") as client:  # (1)
+    paginator: ListEventSourceMappingsPaginator = client.get_paginator("list_event_source_mappings")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEventSourceMappingsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LambdaClient](./client.md)
+2. paginator: [ListEventSourceMappingsPaginator](./paginators.md#listeventsourcemappingspaginator)
+3. item: [:material-code-braces: ListEventSourceMappingsResponseTypeDef](./type_defs.md#listeventsourcemappingsresponsetypedef) 
 
 
 ### paginate
@@ -151,10 +169,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lambda.paginator import ListFunctionEventInvokeConfigsPaginator
 
 session = get_session()
-async with session.create_client("lambda") as client:
-    client: LambdaClient
-    paginator: ListFunctionEventInvokeConfigsPaginator = client.get_paginator("list_function_event_invoke_configs")
+async with session.create_client("lambda") as client:  # (1)
+    paginator: ListFunctionEventInvokeConfigsPaginator = client.get_paginator("list_function_event_invoke_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFunctionEventInvokeConfigsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LambdaClient](./client.md)
+2. paginator: [ListFunctionEventInvokeConfigsPaginator](./paginators.md#listfunctioneventinvokeconfigspaginator)
+3. item: [:material-code-braces: ListFunctionEventInvokeConfigsResponseTypeDef](./type_defs.md#listfunctioneventinvokeconfigsresponsetypedef) 
 
 
 ### paginate
@@ -195,10 +219,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lambda.paginator import ListFunctionUrlConfigsPaginator
 
 session = get_session()
-async with session.create_client("lambda") as client:
-    client: LambdaClient
-    paginator: ListFunctionUrlConfigsPaginator = client.get_paginator("list_function_url_configs")
+async with session.create_client("lambda") as client:  # (1)
+    paginator: ListFunctionUrlConfigsPaginator = client.get_paginator("list_function_url_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFunctionUrlConfigsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LambdaClient](./client.md)
+2. paginator: [ListFunctionUrlConfigsPaginator](./paginators.md#listfunctionurlconfigspaginator)
+3. item: [:material-code-braces: ListFunctionUrlConfigsResponseTypeDef](./type_defs.md#listfunctionurlconfigsresponsetypedef) 
 
 
 ### paginate
@@ -239,10 +269,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lambda.paginator import ListFunctionsPaginator
 
 session = get_session()
-async with session.create_client("lambda") as client:
-    client: LambdaClient
-    paginator: ListFunctionsPaginator = client.get_paginator("list_functions")
+async with session.create_client("lambda") as client:  # (1)
+    paginator: ListFunctionsPaginator = client.get_paginator("list_functions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFunctionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LambdaClient](./client.md)
+2. paginator: [ListFunctionsPaginator](./paginators.md#listfunctionspaginator)
+3. item: [:material-code-braces: ListFunctionsResponseTypeDef](./type_defs.md#listfunctionsresponsetypedef) 
 
 
 ### paginate
@@ -285,10 +321,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lambda.paginator import ListFunctionsByCodeSigningConfigPaginator
 
 session = get_session()
-async with session.create_client("lambda") as client:
-    client: LambdaClient
-    paginator: ListFunctionsByCodeSigningConfigPaginator = client.get_paginator("list_functions_by_code_signing_config")
+async with session.create_client("lambda") as client:  # (1)
+    paginator: ListFunctionsByCodeSigningConfigPaginator = client.get_paginator("list_functions_by_code_signing_config")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFunctionsByCodeSigningConfigResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LambdaClient](./client.md)
+2. paginator: [ListFunctionsByCodeSigningConfigPaginator](./paginators.md#listfunctionsbycodesigningconfigpaginator)
+3. item: [:material-code-braces: ListFunctionsByCodeSigningConfigResponseTypeDef](./type_defs.md#listfunctionsbycodesigningconfigresponsetypedef) 
 
 
 ### paginate
@@ -329,10 +371,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lambda.paginator import ListLayerVersionsPaginator
 
 session = get_session()
-async with session.create_client("lambda") as client:
-    client: LambdaClient
-    paginator: ListLayerVersionsPaginator = client.get_paginator("list_layer_versions")
+async with session.create_client("lambda") as client:  # (1)
+    paginator: ListLayerVersionsPaginator = client.get_paginator("list_layer_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLayerVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LambdaClient](./client.md)
+2. paginator: [ListLayerVersionsPaginator](./paginators.md#listlayerversionspaginator)
+3. item: [:material-code-braces: ListLayerVersionsResponseTypeDef](./type_defs.md#listlayerversionsresponsetypedef) 
 
 
 ### paginate
@@ -377,10 +425,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lambda.paginator import ListLayersPaginator
 
 session = get_session()
-async with session.create_client("lambda") as client:
-    client: LambdaClient
-    paginator: ListLayersPaginator = client.get_paginator("list_layers")
+async with session.create_client("lambda") as client:  # (1)
+    paginator: ListLayersPaginator = client.get_paginator("list_layers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLayersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LambdaClient](./client.md)
+2. paginator: [ListLayersPaginator](./paginators.md#listlayerspaginator)
+3. item: [:material-code-braces: ListLayersResponseTypeDef](./type_defs.md#listlayersresponsetypedef) 
 
 
 ### paginate
@@ -424,10 +478,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lambda.paginator import ListProvisionedConcurrencyConfigsPaginator
 
 session = get_session()
-async with session.create_client("lambda") as client:
-    client: LambdaClient
-    paginator: ListProvisionedConcurrencyConfigsPaginator = client.get_paginator("list_provisioned_concurrency_configs")
+async with session.create_client("lambda") as client:  # (1)
+    paginator: ListProvisionedConcurrencyConfigsPaginator = client.get_paginator("list_provisioned_concurrency_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProvisionedConcurrencyConfigsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LambdaClient](./client.md)
+2. paginator: [ListProvisionedConcurrencyConfigsPaginator](./paginators.md#listprovisionedconcurrencyconfigspaginator)
+3. item: [:material-code-braces: ListProvisionedConcurrencyConfigsResponseTypeDef](./type_defs.md#listprovisionedconcurrencyconfigsresponsetypedef) 
 
 
 ### paginate
@@ -468,10 +528,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lambda.paginator import ListVersionsByFunctionPaginator
 
 session = get_session()
-async with session.create_client("lambda") as client:
-    client: LambdaClient
-    paginator: ListVersionsByFunctionPaginator = client.get_paginator("list_versions_by_function")
+async with session.create_client("lambda") as client:  # (1)
+    paginator: ListVersionsByFunctionPaginator = client.get_paginator("list_versions_by_function")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListVersionsByFunctionResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LambdaClient](./client.md)
+2. paginator: [ListVersionsByFunctionPaginator](./paginators.md#listversionsbyfunctionpaginator)
+3. item: [:material-code-braces: ListVersionsByFunctionResponseTypeDef](./type_defs.md#listversionsbyfunctionresponsetypedef) 
 
 
 ### paginate

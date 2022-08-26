@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `S3`.
 
 ### From PyPI with pip
 
@@ -35,30 +30,6 @@ python -m pip install 'types-aiobotocore-lite[s3]'
 python -m pip install types-aiobotocore-s3
 ```
 
-
-### From conda-forge
-
-Installing `types-aiobotocore-s3` from the `conda-forge` channel
-can be achieved by adding `conda-forge` to your channels with:
-
-```bash
-conda config --add channels conda-forge
-conda config --set channel_priority strict
-```
-
-Once the `conda-forge` channel has been enabled, `types-aiobotocore-s3`
-can be installed with:
-
-```bash
-conda install types-aiobotocore-s3
-```
-
-It is possible to list all of the versions of `types-aiobotocore-s3`
-available on your platform with:
-
-```bash
-conda search types-aiobotocore-s3 --channel conda-forge
-```
 
 
 ## How to uninstall

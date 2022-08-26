@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elastictranscoder.paginator import ListJobsByPipelinePaginator
 
 session = get_session()
-async with session.create_client("elastictranscoder") as client:
-    client: ElasticTranscoderClient
-    paginator: ListJobsByPipelinePaginator = client.get_paginator("list_jobs_by_pipeline")
+async with session.create_client("elastictranscoder") as client:  # (1)
+    paginator: ListJobsByPipelinePaginator = client.get_paginator("list_jobs_by_pipeline")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListJobsByPipelineResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticTranscoderClient](./client.md)
+2. paginator: [ListJobsByPipelinePaginator](./paginators.md#listjobsbypipelinepaginator)
+3. item: [:material-code-braces: ListJobsByPipelineResponseTypeDef](./type_defs.md#listjobsbypipelineresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elastictranscoder.paginator import ListJobsByStatusPaginator
 
 session = get_session()
-async with session.create_client("elastictranscoder") as client:
-    client: ElasticTranscoderClient
-    paginator: ListJobsByStatusPaginator = client.get_paginator("list_jobs_by_status")
+async with session.create_client("elastictranscoder") as client:  # (1)
+    paginator: ListJobsByStatusPaginator = client.get_paginator("list_jobs_by_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListJobsByStatusResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticTranscoderClient](./client.md)
+2. paginator: [ListJobsByStatusPaginator](./paginators.md#listjobsbystatuspaginator)
+3. item: [:material-code-braces: ListJobsByStatusResponseTypeDef](./type_defs.md#listjobsbystatusresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elastictranscoder.paginator import ListPipelinesPaginator
 
 session = get_session()
-async with session.create_client("elastictranscoder") as client:
-    client: ElasticTranscoderClient
-    paginator: ListPipelinesPaginator = client.get_paginator("list_pipelines")
+async with session.create_client("elastictranscoder") as client:  # (1)
+    paginator: ListPipelinesPaginator = client.get_paginator("list_pipelines")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPipelinesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticTranscoderClient](./client.md)
+2. paginator: [ListPipelinesPaginator](./paginators.md#listpipelinespaginator)
+3. item: [:material-code-braces: ListPipelinesResponseTypeDef](./type_defs.md#listpipelinesresponsetypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elastictranscoder.paginator import ListPresetsPaginator
 
 session = get_session()
-async with session.create_client("elastictranscoder") as client:
-    client: ElasticTranscoderClient
-    paginator: ListPresetsPaginator = client.get_paginator("list_presets")
+async with session.create_client("elastictranscoder") as client:  # (1)
+    paginator: ListPresetsPaginator = client.get_paginator("list_presets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPresetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticTranscoderClient](./client.md)
+2. paginator: [ListPresetsPaginator](./paginators.md#listpresetspaginator)
+3. item: [:material-code-braces: ListPresetsResponseTypeDef](./type_defs.md#listpresetsresponsetypedef) 
 
 
 ### paginate

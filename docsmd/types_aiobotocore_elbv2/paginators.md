@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elbv2.paginator import DescribeAccountLimitsPaginator
 
 session = get_session()
-async with session.create_client("elbv2") as client:
-    client: ElasticLoadBalancingv2Client
-    paginator: DescribeAccountLimitsPaginator = client.get_paginator("describe_account_limits")
+async with session.create_client("elbv2") as client:  # (1)
+    paginator: DescribeAccountLimitsPaginator = client.get_paginator("describe_account_limits")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAccountLimitsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticLoadBalancingv2Client](./client.md)
+2. paginator: [DescribeAccountLimitsPaginator](./paginators.md#describeaccountlimitspaginator)
+3. item: [:material-code-braces: DescribeAccountLimitsOutputTypeDef](./type_defs.md#describeaccountlimitsoutputtypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elbv2.paginator import DescribeListenerCertificatesPaginator
 
 session = get_session()
-async with session.create_client("elbv2") as client:
-    client: ElasticLoadBalancingv2Client
-    paginator: DescribeListenerCertificatesPaginator = client.get_paginator("describe_listener_certificates")
+async with session.create_client("elbv2") as client:  # (1)
+    paginator: DescribeListenerCertificatesPaginator = client.get_paginator("describe_listener_certificates")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeListenerCertificatesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticLoadBalancingv2Client](./client.md)
+2. paginator: [DescribeListenerCertificatesPaginator](./paginators.md#describelistenercertificatespaginator)
+3. item: [:material-code-braces: DescribeListenerCertificatesOutputTypeDef](./type_defs.md#describelistenercertificatesoutputtypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elbv2.paginator import DescribeListenersPaginator
 
 session = get_session()
-async with session.create_client("elbv2") as client:
-    client: ElasticLoadBalancingv2Client
-    paginator: DescribeListenersPaginator = client.get_paginator("describe_listeners")
+async with session.create_client("elbv2") as client:  # (1)
+    paginator: DescribeListenersPaginator = client.get_paginator("describe_listeners")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeListenersOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticLoadBalancingv2Client](./client.md)
+2. paginator: [DescribeListenersPaginator](./paginators.md#describelistenerspaginator)
+3. item: [:material-code-braces: DescribeListenersOutputTypeDef](./type_defs.md#describelistenersoutputtypedef) 
 
 
 ### paginate
@@ -150,10 +168,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elbv2.paginator import DescribeLoadBalancersPaginator
 
 session = get_session()
-async with session.create_client("elbv2") as client:
-    client: ElasticLoadBalancingv2Client
-    paginator: DescribeLoadBalancersPaginator = client.get_paginator("describe_load_balancers")
+async with session.create_client("elbv2") as client:  # (1)
+    paginator: DescribeLoadBalancersPaginator = client.get_paginator("describe_load_balancers")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeLoadBalancersOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticLoadBalancingv2Client](./client.md)
+2. paginator: [DescribeLoadBalancersPaginator](./paginators.md#describeloadbalancerspaginator)
+3. item: [:material-code-braces: DescribeLoadBalancersOutputTypeDef](./type_defs.md#describeloadbalancersoutputtypedef) 
 
 
 ### paginate
@@ -195,10 +219,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elbv2.paginator import DescribeRulesPaginator
 
 session = get_session()
-async with session.create_client("elbv2") as client:
-    client: ElasticLoadBalancingv2Client
-    paginator: DescribeRulesPaginator = client.get_paginator("describe_rules")
+async with session.create_client("elbv2") as client:  # (1)
+    paginator: DescribeRulesPaginator = client.get_paginator("describe_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeRulesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticLoadBalancingv2Client](./client.md)
+2. paginator: [DescribeRulesPaginator](./paginators.md#describerulespaginator)
+3. item: [:material-code-braces: DescribeRulesOutputTypeDef](./type_defs.md#describerulesoutputtypedef) 
 
 
 ### paginate
@@ -240,10 +270,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elbv2.paginator import DescribeSSLPoliciesPaginator
 
 session = get_session()
-async with session.create_client("elbv2") as client:
-    client: ElasticLoadBalancingv2Client
-    paginator: DescribeSSLPoliciesPaginator = client.get_paginator("describe_ssl_policies")
+async with session.create_client("elbv2") as client:  # (1)
+    paginator: DescribeSSLPoliciesPaginator = client.get_paginator("describe_ssl_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSSLPoliciesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticLoadBalancingv2Client](./client.md)
+2. paginator: [DescribeSSLPoliciesPaginator](./paginators.md#describesslpoliciespaginator)
+3. item: [:material-code-braces: DescribeSSLPoliciesOutputTypeDef](./type_defs.md#describesslpoliciesoutputtypedef) 
 
 
 ### paginate
@@ -286,10 +322,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elbv2.paginator import DescribeTargetGroupsPaginator
 
 session = get_session()
-async with session.create_client("elbv2") as client:
-    client: ElasticLoadBalancingv2Client
-    paginator: DescribeTargetGroupsPaginator = client.get_paginator("describe_target_groups")
+async with session.create_client("elbv2") as client:  # (1)
+    paginator: DescribeTargetGroupsPaginator = client.get_paginator("describe_target_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTargetGroupsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticLoadBalancingv2Client](./client.md)
+2. paginator: [DescribeTargetGroupsPaginator](./paginators.md#describetargetgroupspaginator)
+3. item: [:material-code-braces: DescribeTargetGroupsOutputTypeDef](./type_defs.md#describetargetgroupsoutputtypedef) 
 
 
 ### paginate

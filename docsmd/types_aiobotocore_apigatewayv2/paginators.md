@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigatewayv2.paginator import GetApisPaginator
 
 session = get_session()
-async with session.create_client("apigatewayv2") as client:
-    client: ApiGatewayV2Client
-    paginator: GetApisPaginator = client.get_paginator("get_apis")
+async with session.create_client("apigatewayv2") as client:  # (1)
+    paginator: GetApisPaginator = client.get_paginator("get_apis")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetApisResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApiGatewayV2Client](./client.md)
+2. paginator: [GetApisPaginator](./paginators.md#getapispaginator)
+3. item: [:material-code-braces: GetApisResponseTypeDef](./type_defs.md#getapisresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigatewayv2.paginator import GetAuthorizersPaginator
 
 session = get_session()
-async with session.create_client("apigatewayv2") as client:
-    client: ApiGatewayV2Client
-    paginator: GetAuthorizersPaginator = client.get_paginator("get_authorizers")
+async with session.create_client("apigatewayv2") as client:  # (1)
+    paginator: GetAuthorizersPaginator = client.get_paginator("get_authorizers")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetAuthorizersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApiGatewayV2Client](./client.md)
+2. paginator: [GetAuthorizersPaginator](./paginators.md#getauthorizerspaginator)
+3. item: [:material-code-braces: GetAuthorizersResponseTypeDef](./type_defs.md#getauthorizersresponsetypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigatewayv2.paginator import GetDeploymentsPaginator
 
 session = get_session()
-async with session.create_client("apigatewayv2") as client:
-    client: ApiGatewayV2Client
-    paginator: GetDeploymentsPaginator = client.get_paginator("get_deployments")
+async with session.create_client("apigatewayv2") as client:  # (1)
+    paginator: GetDeploymentsPaginator = client.get_paginator("get_deployments")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetDeploymentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApiGatewayV2Client](./client.md)
+2. paginator: [GetDeploymentsPaginator](./paginators.md#getdeploymentspaginator)
+3. item: [:material-code-braces: GetDeploymentsResponseTypeDef](./type_defs.md#getdeploymentsresponsetypedef) 
 
 
 ### paginate
@@ -149,10 +167,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigatewayv2.paginator import GetDomainNamesPaginator
 
 session = get_session()
-async with session.create_client("apigatewayv2") as client:
-    client: ApiGatewayV2Client
-    paginator: GetDomainNamesPaginator = client.get_paginator("get_domain_names")
+async with session.create_client("apigatewayv2") as client:  # (1)
+    paginator: GetDomainNamesPaginator = client.get_paginator("get_domain_names")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetDomainNamesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApiGatewayV2Client](./client.md)
+2. paginator: [GetDomainNamesPaginator](./paginators.md#getdomainnamespaginator)
+3. item: [:material-code-braces: GetDomainNamesResponseTypeDef](./type_defs.md#getdomainnamesresponsetypedef) 
 
 
 ### paginate
@@ -192,10 +216,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigatewayv2.paginator import GetIntegrationResponsesPaginator
 
 session = get_session()
-async with session.create_client("apigatewayv2") as client:
-    client: ApiGatewayV2Client
-    paginator: GetIntegrationResponsesPaginator = client.get_paginator("get_integration_responses")
+async with session.create_client("apigatewayv2") as client:  # (1)
+    paginator: GetIntegrationResponsesPaginator = client.get_paginator("get_integration_responses")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetIntegrationResponsesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApiGatewayV2Client](./client.md)
+2. paginator: [GetIntegrationResponsesPaginator](./paginators.md#getintegrationresponsespaginator)
+3. item: [:material-code-braces: GetIntegrationResponsesResponseTypeDef](./type_defs.md#getintegrationresponsesresponsetypedef) 
 
 
 ### paginate
@@ -238,10 +268,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigatewayv2.paginator import GetIntegrationsPaginator
 
 session = get_session()
-async with session.create_client("apigatewayv2") as client:
-    client: ApiGatewayV2Client
-    paginator: GetIntegrationsPaginator = client.get_paginator("get_integrations")
+async with session.create_client("apigatewayv2") as client:  # (1)
+    paginator: GetIntegrationsPaginator = client.get_paginator("get_integrations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetIntegrationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApiGatewayV2Client](./client.md)
+2. paginator: [GetIntegrationsPaginator](./paginators.md#getintegrationspaginator)
+3. item: [:material-code-braces: GetIntegrationsResponseTypeDef](./type_defs.md#getintegrationsresponsetypedef) 
 
 
 ### paginate
@@ -282,10 +318,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigatewayv2.paginator import GetModelsPaginator
 
 session = get_session()
-async with session.create_client("apigatewayv2") as client:
-    client: ApiGatewayV2Client
-    paginator: GetModelsPaginator = client.get_paginator("get_models")
+async with session.create_client("apigatewayv2") as client:  # (1)
+    paginator: GetModelsPaginator = client.get_paginator("get_models")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetModelsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApiGatewayV2Client](./client.md)
+2. paginator: [GetModelsPaginator](./paginators.md#getmodelspaginator)
+3. item: [:material-code-braces: GetModelsResponseTypeDef](./type_defs.md#getmodelsresponsetypedef) 
 
 
 ### paginate
@@ -326,10 +368,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigatewayv2.paginator import GetRouteResponsesPaginator
 
 session = get_session()
-async with session.create_client("apigatewayv2") as client:
-    client: ApiGatewayV2Client
-    paginator: GetRouteResponsesPaginator = client.get_paginator("get_route_responses")
+async with session.create_client("apigatewayv2") as client:  # (1)
+    paginator: GetRouteResponsesPaginator = client.get_paginator("get_route_responses")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetRouteResponsesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApiGatewayV2Client](./client.md)
+2. paginator: [GetRouteResponsesPaginator](./paginators.md#getrouteresponsespaginator)
+3. item: [:material-code-braces: GetRouteResponsesResponseTypeDef](./type_defs.md#getrouteresponsesresponsetypedef) 
 
 
 ### paginate
@@ -372,10 +420,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigatewayv2.paginator import GetRoutesPaginator
 
 session = get_session()
-async with session.create_client("apigatewayv2") as client:
-    client: ApiGatewayV2Client
-    paginator: GetRoutesPaginator = client.get_paginator("get_routes")
+async with session.create_client("apigatewayv2") as client:  # (1)
+    paginator: GetRoutesPaginator = client.get_paginator("get_routes")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetRoutesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApiGatewayV2Client](./client.md)
+2. paginator: [GetRoutesPaginator](./paginators.md#getroutespaginator)
+3. item: [:material-code-braces: GetRoutesResponseTypeDef](./type_defs.md#getroutesresponsetypedef) 
 
 
 ### paginate
@@ -416,10 +470,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigatewayv2.paginator import GetStagesPaginator
 
 session = get_session()
-async with session.create_client("apigatewayv2") as client:
-    client: ApiGatewayV2Client
-    paginator: GetStagesPaginator = client.get_paginator("get_stages")
+async with session.create_client("apigatewayv2") as client:  # (1)
+    paginator: GetStagesPaginator = client.get_paginator("get_stages")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetStagesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ApiGatewayV2Client](./client.md)
+2. paginator: [GetStagesPaginator](./paginators.md#getstagespaginator)
+3. item: [:material-code-braces: GetStagesResponseTypeDef](./type_defs.md#getstagesresponsetypedef) 
 
 
 ### paginate

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kafkaconnect.paginator import ListConnectorsPaginator
 
 session = get_session()
-async with session.create_client("kafkaconnect") as client:
-    client: KafkaConnectClient
-    paginator: ListConnectorsPaginator = client.get_paginator("list_connectors")
+async with session.create_client("kafkaconnect") as client:  # (1)
+    paginator: ListConnectorsPaginator = client.get_paginator("list_connectors")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListConnectorsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KafkaConnectClient](./client.md)
+2. paginator: [ListConnectorsPaginator](./paginators.md#listconnectorspaginator)
+3. item: [:material-code-braces: ListConnectorsResponseTypeDef](./type_defs.md#listconnectorsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kafkaconnect.paginator import ListCustomPluginsPaginator
 
 session = get_session()
-async with session.create_client("kafkaconnect") as client:
-    client: KafkaConnectClient
-    paginator: ListCustomPluginsPaginator = client.get_paginator("list_custom_plugins")
+async with session.create_client("kafkaconnect") as client:  # (1)
+    paginator: ListCustomPluginsPaginator = client.get_paginator("list_custom_plugins")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCustomPluginsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KafkaConnectClient](./client.md)
+2. paginator: [ListCustomPluginsPaginator](./paginators.md#listcustompluginspaginator)
+3. item: [:material-code-braces: ListCustomPluginsResponseTypeDef](./type_defs.md#listcustompluginsresponsetypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kafkaconnect.paginator import ListWorkerConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("kafkaconnect") as client:
-    client: KafkaConnectClient
-    paginator: ListWorkerConfigurationsPaginator = client.get_paginator("list_worker_configurations")
+async with session.create_client("kafkaconnect") as client:  # (1)
+    paginator: ListWorkerConfigurationsPaginator = client.get_paginator("list_worker_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListWorkerConfigurationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KafkaConnectClient](./client.md)
+2. paginator: [ListWorkerConfigurationsPaginator](./paginators.md#listworkerconfigurationspaginator)
+3. item: [:material-code-braces: ListWorkerConfigurationsResponseTypeDef](./type_defs.md#listworkerconfigurationsresponsetypedef) 
 
 
 ### paginate

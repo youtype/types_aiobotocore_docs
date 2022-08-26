@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_service_quotas.paginator import ListAWSDefaultServiceQuotasPaginator
 
 session = get_session()
-async with session.create_client("service-quotas") as client:
-    client: ServiceQuotasClient
-    paginator: ListAWSDefaultServiceQuotasPaginator = client.get_paginator("list_aws_default_service_quotas")
+async with session.create_client("service-quotas") as client:  # (1)
+    paginator: ListAWSDefaultServiceQuotasPaginator = client.get_paginator("list_aws_default_service_quotas")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAWSDefaultServiceQuotasResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceQuotasClient](./client.md)
+2. paginator: [ListAWSDefaultServiceQuotasPaginator](./paginators.md#listawsdefaultservicequotaspaginator)
+3. item: [:material-code-braces: ListAWSDefaultServiceQuotasResponseTypeDef](./type_defs.md#listawsdefaultservicequotasresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_service_quotas.paginator import ListRequestedServiceQuotaChangeHistoryPaginator
 
 session = get_session()
-async with session.create_client("service-quotas") as client:
-    client: ServiceQuotasClient
-    paginator: ListRequestedServiceQuotaChangeHistoryPaginator = client.get_paginator("list_requested_service_quota_change_history")
+async with session.create_client("service-quotas") as client:  # (1)
+    paginator: ListRequestedServiceQuotaChangeHistoryPaginator = client.get_paginator("list_requested_service_quota_change_history")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRequestedServiceQuotaChangeHistoryResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceQuotasClient](./client.md)
+2. paginator: [ListRequestedServiceQuotaChangeHistoryPaginator](./paginators.md#listrequestedservicequotachangehistorypaginator)
+3. item: [:material-code-braces: ListRequestedServiceQuotaChangeHistoryResponseTypeDef](./type_defs.md#listrequestedservicequotachangehistoryresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_service_quotas.paginator import ListRequestedServiceQuotaChangeHistoryByQuotaPaginator
 
 session = get_session()
-async with session.create_client("service-quotas") as client:
-    client: ServiceQuotasClient
-    paginator: ListRequestedServiceQuotaChangeHistoryByQuotaPaginator = client.get_paginator("list_requested_service_quota_change_history_by_quota")
+async with session.create_client("service-quotas") as client:  # (1)
+    paginator: ListRequestedServiceQuotaChangeHistoryByQuotaPaginator = client.get_paginator("list_requested_service_quota_change_history_by_quota")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRequestedServiceQuotaChangeHistoryByQuotaResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceQuotasClient](./client.md)
+2. paginator: [ListRequestedServiceQuotaChangeHistoryByQuotaPaginator](./paginators.md#listrequestedservicequotachangehistorybyquotapaginator)
+3. item: [:material-code-braces: ListRequestedServiceQuotaChangeHistoryByQuotaResponseTypeDef](./type_defs.md#listrequestedservicequotachangehistorybyquotaresponsetypedef) 
 
 
 ### paginate
@@ -156,10 +174,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_service_quotas.paginator import ListServiceQuotaIncreaseRequestsInTemplatePaginator
 
 session = get_session()
-async with session.create_client("service-quotas") as client:
-    client: ServiceQuotasClient
-    paginator: ListServiceQuotaIncreaseRequestsInTemplatePaginator = client.get_paginator("list_service_quota_increase_requests_in_template")
+async with session.create_client("service-quotas") as client:  # (1)
+    paginator: ListServiceQuotaIncreaseRequestsInTemplatePaginator = client.get_paginator("list_service_quota_increase_requests_in_template")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServiceQuotaIncreaseRequestsInTemplateResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceQuotasClient](./client.md)
+2. paginator: [ListServiceQuotaIncreaseRequestsInTemplatePaginator](./paginators.md#listservicequotaincreaserequestsintemplatepaginator)
+3. item: [:material-code-braces: ListServiceQuotaIncreaseRequestsInTemplateResponseTypeDef](./type_defs.md#listservicequotaincreaserequestsintemplateresponsetypedef) 
 
 
 ### paginate
@@ -201,10 +225,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_service_quotas.paginator import ListServiceQuotasPaginator
 
 session = get_session()
-async with session.create_client("service-quotas") as client:
-    client: ServiceQuotasClient
-    paginator: ListServiceQuotasPaginator = client.get_paginator("list_service_quotas")
+async with session.create_client("service-quotas") as client:  # (1)
+    paginator: ListServiceQuotasPaginator = client.get_paginator("list_service_quotas")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServiceQuotasResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceQuotasClient](./client.md)
+2. paginator: [ListServiceQuotasPaginator](./paginators.md#listservicequotaspaginator)
+3. item: [:material-code-braces: ListServiceQuotasResponseTypeDef](./type_defs.md#listservicequotasresponsetypedef) 
 
 
 ### paginate
@@ -245,10 +275,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_service_quotas.paginator import ListServicesPaginator
 
 session = get_session()
-async with session.create_client("service-quotas") as client:
-    client: ServiceQuotasClient
-    paginator: ListServicesPaginator = client.get_paginator("list_services")
+async with session.create_client("service-quotas") as client:  # (1)
+    paginator: ListServicesPaginator = client.get_paginator("list_services")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServicesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceQuotasClient](./client.md)
+2. paginator: [ListServicesPaginator](./paginators.md#listservicespaginator)
+3. item: [:material-code-braces: ListServicesResponseTypeDef](./type_defs.md#listservicesresponsetypedef) 
 
 
 ### paginate

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lookoutvision.paginator import ListDatasetEntriesPaginator
 
 session = get_session()
-async with session.create_client("lookoutvision") as client:
-    client: LookoutforVisionClient
-    paginator: ListDatasetEntriesPaginator = client.get_paginator("list_dataset_entries")
+async with session.create_client("lookoutvision") as client:  # (1)
+    paginator: ListDatasetEntriesPaginator = client.get_paginator("list_dataset_entries")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDatasetEntriesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LookoutforVisionClient](./client.md)
+2. paginator: [ListDatasetEntriesPaginator](./paginators.md#listdatasetentriespaginator)
+3. item: [:material-code-braces: ListDatasetEntriesResponseTypeDef](./type_defs.md#listdatasetentriesresponsetypedef) 
 
 
 ### paginate
@@ -69,10 +75,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lookoutvision.paginator import ListModelPackagingJobsPaginator
 
 session = get_session()
-async with session.create_client("lookoutvision") as client:
-    client: LookoutforVisionClient
-    paginator: ListModelPackagingJobsPaginator = client.get_paginator("list_model_packaging_jobs")
+async with session.create_client("lookoutvision") as client:  # (1)
+    paginator: ListModelPackagingJobsPaginator = client.get_paginator("list_model_packaging_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListModelPackagingJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LookoutforVisionClient](./client.md)
+2. paginator: [ListModelPackagingJobsPaginator](./paginators.md#listmodelpackagingjobspaginator)
+3. item: [:material-code-braces: ListModelPackagingJobsResponseTypeDef](./type_defs.md#listmodelpackagingjobsresponsetypedef) 
 
 
 ### paginate
@@ -113,10 +125,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lookoutvision.paginator import ListModelsPaginator
 
 session = get_session()
-async with session.create_client("lookoutvision") as client:
-    client: LookoutforVisionClient
-    paginator: ListModelsPaginator = client.get_paginator("list_models")
+async with session.create_client("lookoutvision") as client:  # (1)
+    paginator: ListModelsPaginator = client.get_paginator("list_models")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListModelsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LookoutforVisionClient](./client.md)
+2. paginator: [ListModelsPaginator](./paginators.md#listmodelspaginator)
+3. item: [:material-code-braces: ListModelsResponseTypeDef](./type_defs.md#listmodelsresponsetypedef) 
 
 
 ### paginate
@@ -157,10 +175,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_lookoutvision.paginator import ListProjectsPaginator
 
 session = get_session()
-async with session.create_client("lookoutvision") as client:
-    client: LookoutforVisionClient
-    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
+async with session.create_client("lookoutvision") as client:  # (1)
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProjectsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LookoutforVisionClient](./client.md)
+2. paginator: [ListProjectsPaginator](./paginators.md#listprojectspaginator)
+3. item: [:material-code-braces: ListProjectsResponseTypeDef](./type_defs.md#listprojectsresponsetypedef) 
 
 
 ### paginate

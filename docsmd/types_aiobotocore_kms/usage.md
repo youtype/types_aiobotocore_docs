@@ -44,14 +44,14 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("kms") as client:  # (1)
-        paginator = client.get_paginator("list_aliases")  # (2)
+        paginator = client.get_paginator("describe_custom_key_stores")  # (2)
         async for item in paginator.paginate(...):
             print(item)  # (3)
     ```
 
     1. client: [KMSClient](./client.md)
-    2. paginator: [ListAliasesPaginator](./paginators.md#listaliasespaginator)
-    3. item: [:material-code-braces: ListAliasesResponseTypeDef](./type_defs.md#listaliasesresponsetypedef) 
+    2. paginator: [DescribeCustomKeyStoresPaginator](./paginators.md#describecustomkeystorespaginator)
+    3. item: [:material-code-braces: DescribeCustomKeyStoresResponseTypeDef](./type_defs.md#describecustomkeystoresresponsetypedef) 
 
 
 
@@ -92,17 +92,17 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_kms.client import KMSClient
-    from types_aiobotocore_kms.paginator import ListAliasesPaginator
-    from types_aiobotocore_kms.type_defs import ListAliasesResponseTypeDef
+    from types_aiobotocore_kms.paginator import DescribeCustomKeyStoresPaginator
+    from types_aiobotocore_kms.type_defs import DescribeCustomKeyStoresResponseTypeDef
 
 
     session = get_session()
 
     async with session.create_client("kms") as client:
         client: KMSClient
-        paginator: ListAliasesPaginator = client.get_paginator("list_aliases")
+        paginator: DescribeCustomKeyStoresPaginator = client.get_paginator("describe_custom_key_stores")
         async for item in paginator.paginate(...):
-            item: ListAliasesResponseTypeDef
+            item: DescribeCustomKeyStoresResponseTypeDef
             print(item)
     ```
 

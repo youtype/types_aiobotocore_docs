@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `RDS`.
 
 ### From PyPI with pip
 
@@ -35,30 +30,6 @@ python -m pip install 'types-aiobotocore-lite[rds]'
 python -m pip install types-aiobotocore-rds
 ```
 
-
-### From conda-forge
-
-Installing `types-aiobotocore-rds` from the `conda-forge` channel
-can be achieved by adding `conda-forge` to your channels with:
-
-```bash
-conda config --add channels conda-forge
-conda config --set channel_priority strict
-```
-
-Once the `conda-forge` channel has been enabled, `types-aiobotocore-rds`
-can be installed with:
-
-```bash
-conda install types-aiobotocore-rds
-```
-
-It is possible to list all of the versions of `types-aiobotocore-rds`
-available on your platform with:
-
-```bash
-conda search types-aiobotocore-rds --channel conda-forge
-```
 
 
 ## How to uninstall
@@ -146,12 +117,14 @@ Type annotations and code completion for
 from `#!python session.create_client("rds").get_waiter("...")`.
 
 ```python title="Usage example"
-from types_aiobotocore_rds.waiter import DBClusterSnapshotAvailableWaiter
+from types_aiobotocore_rds.waiter import DBClusterAvailableWaiter
 
-def get_db_cluster_snapshot_available_waiter() -> DBClusterSnapshotAvailableWaiter:
-    return Session().client("rds").get_waiter("db_cluster_snapshot_available")
+def get_db_cluster_available_waiter() -> DBClusterAvailableWaiter:
+    return Session().client("rds").get_waiter("db_cluster_available")
 ```
 
+- [DBClusterAvailableWaiter](./waiters.md#dbclusteravailablewaiter)
+- [DBClusterDeletedWaiter](./waiters.md#dbclusterdeletedwaiter)
 - [DBClusterSnapshotAvailableWaiter](./waiters.md#dbclustersnapshotavailablewaiter)
 - [DBClusterSnapshotDeletedWaiter](./waiters.md#dbclustersnapshotdeletedwaiter)
 - [DBInstanceAvailableWaiter](./waiters.md#dbinstanceavailablewaiter)
@@ -177,11 +150,15 @@ def get_value() -> ActivityStreamModeType:
 ```
 
 - [ActivityStreamModeType](./literals.md#activitystreammodetype)
+- [ActivityStreamPolicyStatusType](./literals.md#activitystreampolicystatustype)
 - [ActivityStreamStatusType](./literals.md#activitystreamstatustype)
 - [ApplyMethodType](./literals.md#applymethodtype)
+- [AuditPolicyStateType](./literals.md#auditpolicystatetype)
 - [AuthSchemeType](./literals.md#authschemetype)
 - [AutomationModeType](./literals.md#automationmodetype)
 - [CustomEngineVersionStatusType](./literals.md#customengineversionstatustype)
+- [DBClusterAvailableWaiterName](./literals.md#dbclusteravailablewaitername)
+- [DBClusterDeletedWaiterName](./literals.md#dbclusterdeletedwaitername)
 - [DBClusterSnapshotAvailableWaiterName](./literals.md#dbclustersnapshotavailablewaitername)
 - [DBClusterSnapshotDeletedWaiterName](./literals.md#dbclustersnapshotdeletedwaitername)
 - [DBInstanceAvailableWaiterName](./literals.md#dbinstanceavailablewaitername)
@@ -347,6 +324,7 @@ def get_value() -> AccountQuotaTypeDef:
 - [FailoverStateTypeDef](./type_defs.md#failoverstatetypedef)
 - [GlobalClusterMemberTypeDef](./type_defs.md#globalclustermembertypedef)
 - [MinimumEngineVersionPerAllowedValueTypeDef](./type_defs.md#minimumengineversionperallowedvaluetypedef)
+- [ModifyActivityStreamRequestRequestTypeDef](./type_defs.md#modifyactivitystreamrequestrequesttypedef)
 - [ModifyCertificatesMessageRequestTypeDef](./type_defs.md#modifycertificatesmessagerequesttypedef)
 - [ModifyCurrentDBClusterCapacityMessageRequestTypeDef](./type_defs.md#modifycurrentdbclustercapacitymessagerequesttypedef)
 - [ModifyCustomDBEngineVersionMessageRequestTypeDef](./type_defs.md#modifycustomdbengineversionmessagerequesttypedef)
@@ -385,6 +363,7 @@ def get_value() -> AccountQuotaTypeDef:
 - [StopDBClusterMessageRequestTypeDef](./type_defs.md#stopdbclustermessagerequesttypedef)
 - [StopDBInstanceAutomatedBackupsReplicationMessageRequestTypeDef](./type_defs.md#stopdbinstanceautomatedbackupsreplicationmessagerequesttypedef)
 - [StopDBInstanceMessageRequestTypeDef](./type_defs.md#stopdbinstancemessagerequesttypedef)
+- [SwitchoverReadReplicaMessageRequestTypeDef](./type_defs.md#switchoverreadreplicamessagerequesttypedef)
 - [AccountAttributesMessageTypeDef](./type_defs.md#accountattributesmessagetypedef)
 - [DBClusterBacktrackResponseMetadataTypeDef](./type_defs.md#dbclusterbacktrackresponsemetadatatypedef)
 - [DBClusterCapacityInfoTypeDef](./type_defs.md#dbclustercapacityinfotypedef)
@@ -394,6 +373,7 @@ def get_value() -> AccountQuotaTypeDef:
 - [DownloadDBLogFilePortionDetailsTypeDef](./type_defs.md#downloaddblogfileportiondetailstypedef)
 - [EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef)
 - [ExportTaskResponseMetadataTypeDef](./type_defs.md#exporttaskresponsemetadatatypedef)
+- [ModifyActivityStreamResponseTypeDef](./type_defs.md#modifyactivitystreamresponsetypedef)
 - [StartActivityStreamResponseTypeDef](./type_defs.md#startactivitystreamresponsetypedef)
 - [StopActivityStreamResponseTypeDef](./type_defs.md#stopactivitystreamresponsetypedef)
 - [AddSourceIdentifierToSubscriptionResultTypeDef](./type_defs.md#addsourceidentifiertosubscriptionresulttypedef)
@@ -541,6 +521,8 @@ def get_value() -> AccountQuotaTypeDef:
 - [DownloadDBLogFilePortionMessageDownloadDBLogFilePortionPaginateTypeDef](./type_defs.md#downloaddblogfileportionmessagedownloaddblogfileportionpaginatetypedef)
 - [DescribeDBClusterSnapshotsMessageDBClusterSnapshotAvailableWaitTypeDef](./type_defs.md#describedbclustersnapshotsmessagedbclustersnapshotavailablewaittypedef)
 - [DescribeDBClusterSnapshotsMessageDBClusterSnapshotDeletedWaitTypeDef](./type_defs.md#describedbclustersnapshotsmessagedbclustersnapshotdeletedwaittypedef)
+- [DescribeDBClustersMessageDBClusterAvailableWaitTypeDef](./type_defs.md#describedbclustersmessagedbclusteravailablewaittypedef)
+- [DescribeDBClustersMessageDBClusterDeletedWaitTypeDef](./type_defs.md#describedbclustersmessagedbclusterdeletedwaittypedef)
 - [DescribeDBInstancesMessageDBInstanceAvailableWaitTypeDef](./type_defs.md#describedbinstancesmessagedbinstanceavailablewaittypedef)
 - [DescribeDBInstancesMessageDBInstanceDeletedWaitTypeDef](./type_defs.md#describedbinstancesmessagedbinstancedeletedwaittypedef)
 - [DescribeDBSnapshotsMessageDBSnapshotAvailableWaitTypeDef](./type_defs.md#describedbsnapshotsmessagedbsnapshotavailablewaittypedef)
@@ -644,4 +626,5 @@ def get_value() -> AccountQuotaTypeDef:
 - [RestoreDBInstanceToPointInTimeResultTypeDef](./type_defs.md#restoredbinstancetopointintimeresulttypedef)
 - [StartDBInstanceResultTypeDef](./type_defs.md#startdbinstanceresulttypedef)
 - [StopDBInstanceResultTypeDef](./type_defs.md#stopdbinstanceresulttypedef)
+- [SwitchoverReadReplicaResultTypeDef](./type_defs.md#switchoverreadreplicaresulttypedef)
 

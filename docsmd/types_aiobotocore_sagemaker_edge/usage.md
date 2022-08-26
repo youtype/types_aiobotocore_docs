@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("sagemaker-edge") as client:  # (1)
-        result = await client.get_device_registration()  # (2)
+        result = await client.get_deployments()  # (2)
     ```
 
     1. client: [SagemakerEdgeManagerClient](./client.md)
-    2. result: [:material-code-braces: GetDeviceRegistrationResultTypeDef](./type_defs.md#getdeviceregistrationresulttypedef) 
+    2. result: [:material-code-braces: GetDeploymentsResultTypeDef](./type_defs.md#getdeploymentsresulttypedef) 
 
 
 
@@ -54,16 +54,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_sagemaker_edge.client import SagemakerEdgeManagerClient
-    from types_aiobotocore_sagemaker_edge.type_defs import GetDeviceRegistrationResultTypeDef
-    from types_aiobotocore_sagemaker_edge.type_defs import GetDeviceRegistrationRequestRequestTypeDef
+    from types_aiobotocore_sagemaker_edge.type_defs import GetDeploymentsResultTypeDef
+    from types_aiobotocore_sagemaker_edge.type_defs import GetDeploymentsRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("sagemaker-edge") as client:
         client: SagemakerEdgeManagerClient
-        kwargs: GetDeviceRegistrationRequestRequestTypeDef = {...}
-        result: GetDeviceRegistrationResultTypeDef = await client.get_device_registration(**kwargs)
+        kwargs: GetDeploymentsRequestRequestTypeDef = {...}
+        result: GetDeploymentsResultTypeDef = await client.get_deployments(**kwargs)
     ```
 
 

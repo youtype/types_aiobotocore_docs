@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_backup.paginator import ListBackupJobsPaginator
 
 session = get_session()
-async with session.create_client("backup") as client:
-    client: BackupClient
-    paginator: ListBackupJobsPaginator = client.get_paginator("list_backup_jobs")
+async with session.create_client("backup") as client:  # (1)
+    paginator: ListBackupJobsPaginator = client.get_paginator("list_backup_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBackupJobsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BackupClient](./client.md)
+2. paginator: [ListBackupJobsPaginator](./paginators.md#listbackupjobspaginator)
+3. item: [:material-code-braces: ListBackupJobsOutputTypeDef](./type_defs.md#listbackupjobsoutputtypedef) 
 
 
 ### paginate
@@ -71,10 +77,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_backup.paginator import ListBackupPlanTemplatesPaginator
 
 session = get_session()
-async with session.create_client("backup") as client:
-    client: BackupClient
-    paginator: ListBackupPlanTemplatesPaginator = client.get_paginator("list_backup_plan_templates")
+async with session.create_client("backup") as client:  # (1)
+    paginator: ListBackupPlanTemplatesPaginator = client.get_paginator("list_backup_plan_templates")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBackupPlanTemplatesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BackupClient](./client.md)
+2. paginator: [ListBackupPlanTemplatesPaginator](./paginators.md#listbackupplantemplatespaginator)
+3. item: [:material-code-braces: ListBackupPlanTemplatesOutputTypeDef](./type_defs.md#listbackupplantemplatesoutputtypedef) 
 
 
 ### paginate
@@ -114,10 +126,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_backup.paginator import ListBackupPlanVersionsPaginator
 
 session = get_session()
-async with session.create_client("backup") as client:
-    client: BackupClient
-    paginator: ListBackupPlanVersionsPaginator = client.get_paginator("list_backup_plan_versions")
+async with session.create_client("backup") as client:  # (1)
+    paginator: ListBackupPlanVersionsPaginator = client.get_paginator("list_backup_plan_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBackupPlanVersionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BackupClient](./client.md)
+2. paginator: [ListBackupPlanVersionsPaginator](./paginators.md#listbackupplanversionspaginator)
+3. item: [:material-code-braces: ListBackupPlanVersionsOutputTypeDef](./type_defs.md#listbackupplanversionsoutputtypedef) 
 
 
 ### paginate
@@ -158,10 +176,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_backup.paginator import ListBackupPlansPaginator
 
 session = get_session()
-async with session.create_client("backup") as client:
-    client: BackupClient
-    paginator: ListBackupPlansPaginator = client.get_paginator("list_backup_plans")
+async with session.create_client("backup") as client:  # (1)
+    paginator: ListBackupPlansPaginator = client.get_paginator("list_backup_plans")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBackupPlansOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BackupClient](./client.md)
+2. paginator: [ListBackupPlansPaginator](./paginators.md#listbackupplanspaginator)
+3. item: [:material-code-braces: ListBackupPlansOutputTypeDef](./type_defs.md#listbackupplansoutputtypedef) 
 
 
 ### paginate
@@ -202,10 +226,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_backup.paginator import ListBackupSelectionsPaginator
 
 session = get_session()
-async with session.create_client("backup") as client:
-    client: BackupClient
-    paginator: ListBackupSelectionsPaginator = client.get_paginator("list_backup_selections")
+async with session.create_client("backup") as client:  # (1)
+    paginator: ListBackupSelectionsPaginator = client.get_paginator("list_backup_selections")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBackupSelectionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BackupClient](./client.md)
+2. paginator: [ListBackupSelectionsPaginator](./paginators.md#listbackupselectionspaginator)
+3. item: [:material-code-braces: ListBackupSelectionsOutputTypeDef](./type_defs.md#listbackupselectionsoutputtypedef) 
 
 
 ### paginate
@@ -246,10 +276,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_backup.paginator import ListBackupVaultsPaginator
 
 session = get_session()
-async with session.create_client("backup") as client:
-    client: BackupClient
-    paginator: ListBackupVaultsPaginator = client.get_paginator("list_backup_vaults")
+async with session.create_client("backup") as client:  # (1)
+    paginator: ListBackupVaultsPaginator = client.get_paginator("list_backup_vaults")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBackupVaultsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BackupClient](./client.md)
+2. paginator: [ListBackupVaultsPaginator](./paginators.md#listbackupvaultspaginator)
+3. item: [:material-code-braces: ListBackupVaultsOutputTypeDef](./type_defs.md#listbackupvaultsoutputtypedef) 
 
 
 ### paginate
@@ -289,10 +325,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_backup.paginator import ListCopyJobsPaginator
 
 session = get_session()
-async with session.create_client("backup") as client:
-    client: BackupClient
-    paginator: ListCopyJobsPaginator = client.get_paginator("list_copy_jobs")
+async with session.create_client("backup") as client:  # (1)
+    paginator: ListCopyJobsPaginator = client.get_paginator("list_copy_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCopyJobsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BackupClient](./client.md)
+2. paginator: [ListCopyJobsPaginator](./paginators.md#listcopyjobspaginator)
+3. item: [:material-code-braces: ListCopyJobsOutputTypeDef](./type_defs.md#listcopyjobsoutputtypedef) 
 
 
 ### paginate
@@ -342,10 +384,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_backup.paginator import ListProtectedResourcesPaginator
 
 session = get_session()
-async with session.create_client("backup") as client:
-    client: BackupClient
-    paginator: ListProtectedResourcesPaginator = client.get_paginator("list_protected_resources")
+async with session.create_client("backup") as client:  # (1)
+    paginator: ListProtectedResourcesPaginator = client.get_paginator("list_protected_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProtectedResourcesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BackupClient](./client.md)
+2. paginator: [ListProtectedResourcesPaginator](./paginators.md#listprotectedresourcespaginator)
+3. item: [:material-code-braces: ListProtectedResourcesOutputTypeDef](./type_defs.md#listprotectedresourcesoutputtypedef) 
 
 
 ### paginate
@@ -385,10 +433,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_backup.paginator import ListRecoveryPointsByBackupVaultPaginator
 
 session = get_session()
-async with session.create_client("backup") as client:
-    client: BackupClient
-    paginator: ListRecoveryPointsByBackupVaultPaginator = client.get_paginator("list_recovery_points_by_backup_vault")
+async with session.create_client("backup") as client:  # (1)
+    paginator: ListRecoveryPointsByBackupVaultPaginator = client.get_paginator("list_recovery_points_by_backup_vault")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRecoveryPointsByBackupVaultOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BackupClient](./client.md)
+2. paginator: [ListRecoveryPointsByBackupVaultPaginator](./paginators.md#listrecoverypointsbybackupvaultpaginator)
+3. item: [:material-code-braces: ListRecoveryPointsByBackupVaultOutputTypeDef](./type_defs.md#listrecoverypointsbybackupvaultoutputtypedef) 
 
 
 ### paginate
@@ -434,10 +488,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_backup.paginator import ListRecoveryPointsByResourcePaginator
 
 session = get_session()
-async with session.create_client("backup") as client:
-    client: BackupClient
-    paginator: ListRecoveryPointsByResourcePaginator = client.get_paginator("list_recovery_points_by_resource")
+async with session.create_client("backup") as client:  # (1)
+    paginator: ListRecoveryPointsByResourcePaginator = client.get_paginator("list_recovery_points_by_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRecoveryPointsByResourceOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BackupClient](./client.md)
+2. paginator: [ListRecoveryPointsByResourcePaginator](./paginators.md#listrecoverypointsbyresourcepaginator)
+3. item: [:material-code-braces: ListRecoveryPointsByResourceOutputTypeDef](./type_defs.md#listrecoverypointsbyresourceoutputtypedef) 
 
 
 ### paginate
@@ -478,10 +538,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_backup.paginator import ListRestoreJobsPaginator
 
 session = get_session()
-async with session.create_client("backup") as client:
-    client: BackupClient
-    paginator: ListRestoreJobsPaginator = client.get_paginator("list_restore_jobs")
+async with session.create_client("backup") as client:  # (1)
+    paginator: ListRestoreJobsPaginator = client.get_paginator("list_restore_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRestoreJobsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [BackupClient](./client.md)
+2. paginator: [ListRestoreJobsPaginator](./paginators.md#listrestorejobspaginator)
+3. item: [:material-code-braces: ListRestoreJobsOutputTypeDef](./type_defs.md#listrestorejobsoutputtypedef) 
 
 
 ### paginate

@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `SQS`.
 
 ### From PyPI with pip
 
@@ -35,30 +30,6 @@ python -m pip install 'types-aiobotocore-lite[sqs]'
 python -m pip install types-aiobotocore-sqs
 ```
 
-
-### From conda-forge
-
-Installing `types-aiobotocore-sqs` from the `conda-forge` channel
-can be achieved by adding `conda-forge` to your channels with:
-
-```bash
-conda config --add channels conda-forge
-conda config --set channel_priority strict
-```
-
-Once the `conda-forge` channel has been enabled, `types-aiobotocore-sqs`
-can be installed with:
-
-```bash
-conda install types-aiobotocore-sqs
-```
-
-It is possible to list all of the versions of `types-aiobotocore-sqs`
-available on your platform with:
-
-```bash
-conda search types-aiobotocore-sqs --channel conda-forge
-```
 
 
 ## How to uninstall
@@ -171,6 +142,7 @@ def get_value() -> ListDeadLetterSourceQueuesPaginatorName:
 - [ListQueuesPaginatorName](./literals.md#listqueuespaginatorname)
 - [MessageSystemAttributeNameForSendsType](./literals.md#messagesystemattributenameforsendstype)
 - [MessageSystemAttributeNameType](./literals.md#messagesystemattributenametype)
+- [QueueAttributeFilterType](./literals.md#queueattributefiltertype)
 - [QueueAttributeNameType](./literals.md#queueattributenametype)
 - [SQSServiceName](./literals.md#sqsservicename)
 - [ServiceName](./literals.md#servicename)

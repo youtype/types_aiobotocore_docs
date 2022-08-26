@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_cloudcontrol.waiter import ResourceRequestSuccessWaiter
 
-def get_resource_request_success_waiter() -> ResourceRequestSuccessWaiter:
-    return Session().client("cloudcontrol").get_waiter("resource_request_success")
+session = get_session()
+async with session.create_client("cloudcontrol") as client:  # (1)
+    waiter: ResourceRequestSuccessWaiter = client.get_waiter("resource_request_success")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [CloudControlApiClient](./client.md)
+2. waiter: [ResourceRequestSuccessWaiter](./waiters.md#resourcerequestsuccesswaiter)
 
 
 ### wait

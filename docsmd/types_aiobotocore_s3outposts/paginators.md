@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_s3outposts.paginator import ListEndpointsPaginator
 
 session = get_session()
-async with session.create_client("s3outposts") as client:
-    client: S3OutpostsClient
-    paginator: ListEndpointsPaginator = client.get_paginator("list_endpoints")
+async with session.create_client("s3outposts") as client:  # (1)
+    paginator: ListEndpointsPaginator = client.get_paginator("list_endpoints")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEndpointsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [S3OutpostsClient](./client.md)
+2. paginator: [ListEndpointsPaginator](./paginators.md#listendpointspaginator)
+3. item: [:material-code-braces: ListEndpointsResultTypeDef](./type_defs.md#listendpointsresulttypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_s3outposts.paginator import ListSharedEndpointsPaginator
 
 session = get_session()
-async with session.create_client("s3outposts") as client:
-    client: S3OutpostsClient
-    paginator: ListSharedEndpointsPaginator = client.get_paginator("list_shared_endpoints")
+async with session.create_client("s3outposts") as client:  # (1)
+    paginator: ListSharedEndpointsPaginator = client.get_paginator("list_shared_endpoints")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSharedEndpointsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [S3OutpostsClient](./client.md)
+2. paginator: [ListSharedEndpointsPaginator](./paginators.md#listsharedendpointspaginator)
+3. item: [:material-code-braces: ListSharedEndpointsResultTypeDef](./type_defs.md#listsharedendpointsresulttypedef) 
 
 
 ### paginate

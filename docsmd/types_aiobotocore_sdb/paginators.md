@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sdb.paginator import ListDomainsPaginator
 
 session = get_session()
-async with session.create_client("sdb") as client:
-    client: SimpleDBClient
-    paginator: ListDomainsPaginator = client.get_paginator("list_domains")
+async with session.create_client("sdb") as client:  # (1)
+    paginator: ListDomainsPaginator = client.get_paginator("list_domains")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDomainsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SimpleDBClient](./client.md)
+2. paginator: [ListDomainsPaginator](./paginators.md#listdomainspaginator)
+3. item: [:material-code-braces: ListDomainsResultTypeDef](./type_defs.md#listdomainsresulttypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sdb.paginator import SelectPaginator
 
 session = get_session()
-async with session.create_client("sdb") as client:
-    client: SimpleDBClient
-    paginator: SelectPaginator = client.get_paginator("select")
+async with session.create_client("sdb") as client:  # (1)
+    paginator: SelectPaginator = client.get_paginator("select")  # (2)
+    async for item in paginator.paginate(...):
+        item: SelectResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SimpleDBClient](./client.md)
+2. paginator: [SelectPaginator](./paginators.md#selectpaginator)
+3. item: [:material-code-braces: SelectResultTypeDef](./type_defs.md#selectresulttypedef) 
 
 
 ### paginate

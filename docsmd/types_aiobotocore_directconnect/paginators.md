@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_directconnect.paginator import DescribeDirectConnectGatewayAssociationsPaginator
 
 session = get_session()
-async with session.create_client("directconnect") as client:
-    client: DirectConnectClient
-    paginator: DescribeDirectConnectGatewayAssociationsPaginator = client.get_paginator("describe_direct_connect_gateway_associations")
+async with session.create_client("directconnect") as client:  # (1)
+    paginator: DescribeDirectConnectGatewayAssociationsPaginator = client.get_paginator("describe_direct_connect_gateway_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeDirectConnectGatewayAssociationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DirectConnectClient](./client.md)
+2. paginator: [DescribeDirectConnectGatewayAssociationsPaginator](./paginators.md#describedirectconnectgatewayassociationspaginator)
+3. item: [:material-code-braces: DescribeDirectConnectGatewayAssociationsResultTypeDef](./type_defs.md#describedirectconnectgatewayassociationsresulttypedef) 
 
 
 ### paginate
@@ -65,10 +71,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_directconnect.paginator import DescribeDirectConnectGatewayAttachmentsPaginator
 
 session = get_session()
-async with session.create_client("directconnect") as client:
-    client: DirectConnectClient
-    paginator: DescribeDirectConnectGatewayAttachmentsPaginator = client.get_paginator("describe_direct_connect_gateway_attachments")
+async with session.create_client("directconnect") as client:  # (1)
+    paginator: DescribeDirectConnectGatewayAttachmentsPaginator = client.get_paginator("describe_direct_connect_gateway_attachments")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeDirectConnectGatewayAttachmentsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DirectConnectClient](./client.md)
+2. paginator: [DescribeDirectConnectGatewayAttachmentsPaginator](./paginators.md#describedirectconnectgatewayattachmentspaginator)
+3. item: [:material-code-braces: DescribeDirectConnectGatewayAttachmentsResultTypeDef](./type_defs.md#describedirectconnectgatewayattachmentsresulttypedef) 
 
 
 ### paginate
@@ -110,10 +122,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_directconnect.paginator import DescribeDirectConnectGatewaysPaginator
 
 session = get_session()
-async with session.create_client("directconnect") as client:
-    client: DirectConnectClient
-    paginator: DescribeDirectConnectGatewaysPaginator = client.get_paginator("describe_direct_connect_gateways")
+async with session.create_client("directconnect") as client:  # (1)
+    paginator: DescribeDirectConnectGatewaysPaginator = client.get_paginator("describe_direct_connect_gateways")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeDirectConnectGatewaysResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DirectConnectClient](./client.md)
+2. paginator: [DescribeDirectConnectGatewaysPaginator](./paginators.md#describedirectconnectgatewayspaginator)
+3. item: [:material-code-braces: DescribeDirectConnectGatewaysResultTypeDef](./type_defs.md#describedirectconnectgatewaysresulttypedef) 
 
 
 ### paginate

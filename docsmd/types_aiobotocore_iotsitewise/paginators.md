@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotsitewise.paginator import GetAssetPropertyAggregatesPaginator
 
 session = get_session()
-async with session.create_client("iotsitewise") as client:
-    client: IoTSiteWiseClient
-    paginator: GetAssetPropertyAggregatesPaginator = client.get_paginator("get_asset_property_aggregates")
+async with session.create_client("iotsitewise") as client:  # (1)
+    paginator: GetAssetPropertyAggregatesPaginator = client.get_paginator("get_asset_property_aggregates")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetAssetPropertyAggregatesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTSiteWiseClient](./client.md)
+2. paginator: [GetAssetPropertyAggregatesPaginator](./paginators.md#getassetpropertyaggregatespaginator)
+3. item: [:material-code-braces: GetAssetPropertyAggregatesResponseTypeDef](./type_defs.md#getassetpropertyaggregatesresponsetypedef) 
 
 
 ### paginate
@@ -76,10 +82,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotsitewise.paginator import GetAssetPropertyValueHistoryPaginator
 
 session = get_session()
-async with session.create_client("iotsitewise") as client:
-    client: IoTSiteWiseClient
-    paginator: GetAssetPropertyValueHistoryPaginator = client.get_paginator("get_asset_property_value_history")
+async with session.create_client("iotsitewise") as client:  # (1)
+    paginator: GetAssetPropertyValueHistoryPaginator = client.get_paginator("get_asset_property_value_history")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetAssetPropertyValueHistoryResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTSiteWiseClient](./client.md)
+2. paginator: [GetAssetPropertyValueHistoryPaginator](./paginators.md#getassetpropertyvaluehistorypaginator)
+3. item: [:material-code-braces: GetAssetPropertyValueHistoryResponseTypeDef](./type_defs.md#getassetpropertyvaluehistoryresponsetypedef) 
 
 
 ### paginate
@@ -128,10 +140,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotsitewise.paginator import GetInterpolatedAssetPropertyValuesPaginator
 
 session = get_session()
-async with session.create_client("iotsitewise") as client:
-    client: IoTSiteWiseClient
-    paginator: GetInterpolatedAssetPropertyValuesPaginator = client.get_paginator("get_interpolated_asset_property_values")
+async with session.create_client("iotsitewise") as client:  # (1)
+    paginator: GetInterpolatedAssetPropertyValuesPaginator = client.get_paginator("get_interpolated_asset_property_values")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetInterpolatedAssetPropertyValuesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTSiteWiseClient](./client.md)
+2. paginator: [GetInterpolatedAssetPropertyValuesPaginator](./paginators.md#getinterpolatedassetpropertyvaluespaginator)
+3. item: [:material-code-braces: GetInterpolatedAssetPropertyValuesResponseTypeDef](./type_defs.md#getinterpolatedassetpropertyvaluesresponsetypedef) 
 
 
 ### paginate
@@ -187,10 +205,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotsitewise.paginator import ListAccessPoliciesPaginator
 
 session = get_session()
-async with session.create_client("iotsitewise") as client:
-    client: IoTSiteWiseClient
-    paginator: ListAccessPoliciesPaginator = client.get_paginator("list_access_policies")
+async with session.create_client("iotsitewise") as client:  # (1)
+    paginator: ListAccessPoliciesPaginator = client.get_paginator("list_access_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAccessPoliciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTSiteWiseClient](./client.md)
+2. paginator: [ListAccessPoliciesPaginator](./paginators.md#listaccesspoliciespaginator)
+3. item: [:material-code-braces: ListAccessPoliciesResponseTypeDef](./type_defs.md#listaccesspoliciesresponsetypedef) 
 
 
 ### paginate
@@ -237,10 +261,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotsitewise.paginator import ListAssetModelsPaginator
 
 session = get_session()
-async with session.create_client("iotsitewise") as client:
-    client: IoTSiteWiseClient
-    paginator: ListAssetModelsPaginator = client.get_paginator("list_asset_models")
+async with session.create_client("iotsitewise") as client:  # (1)
+    paginator: ListAssetModelsPaginator = client.get_paginator("list_asset_models")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssetModelsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTSiteWiseClient](./client.md)
+2. paginator: [ListAssetModelsPaginator](./paginators.md#listassetmodelspaginator)
+3. item: [:material-code-braces: ListAssetModelsResponseTypeDef](./type_defs.md#listassetmodelsresponsetypedef) 
 
 
 ### paginate
@@ -280,10 +310,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotsitewise.paginator import ListAssetRelationshipsPaginator
 
 session = get_session()
-async with session.create_client("iotsitewise") as client:
-    client: IoTSiteWiseClient
-    paginator: ListAssetRelationshipsPaginator = client.get_paginator("list_asset_relationships")
+async with session.create_client("iotsitewise") as client:  # (1)
+    paginator: ListAssetRelationshipsPaginator = client.get_paginator("list_asset_relationships")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssetRelationshipsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTSiteWiseClient](./client.md)
+2. paginator: [ListAssetRelationshipsPaginator](./paginators.md#listassetrelationshipspaginator)
+3. item: [:material-code-braces: ListAssetRelationshipsResponseTypeDef](./type_defs.md#listassetrelationshipsresponsetypedef) 
 
 
 ### paginate
@@ -327,10 +363,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotsitewise.paginator import ListAssetsPaginator
 
 session = get_session()
-async with session.create_client("iotsitewise") as client:
-    client: IoTSiteWiseClient
-    paginator: ListAssetsPaginator = client.get_paginator("list_assets")
+async with session.create_client("iotsitewise") as client:  # (1)
+    paginator: ListAssetsPaginator = client.get_paginator("list_assets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTSiteWiseClient](./client.md)
+2. paginator: [ListAssetsPaginator](./paginators.md#listassetspaginator)
+3. item: [:material-code-braces: ListAssetsResponseTypeDef](./type_defs.md#listassetsresponsetypedef) 
 
 
 ### paginate
@@ -373,10 +415,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotsitewise.paginator import ListAssociatedAssetsPaginator
 
 session = get_session()
-async with session.create_client("iotsitewise") as client:
-    client: IoTSiteWiseClient
-    paginator: ListAssociatedAssetsPaginator = client.get_paginator("list_associated_assets")
+async with session.create_client("iotsitewise") as client:  # (1)
+    paginator: ListAssociatedAssetsPaginator = client.get_paginator("list_associated_assets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAssociatedAssetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTSiteWiseClient](./client.md)
+2. paginator: [ListAssociatedAssetsPaginator](./paginators.md#listassociatedassetspaginator)
+3. item: [:material-code-braces: ListAssociatedAssetsResponseTypeDef](./type_defs.md#listassociatedassetsresponsetypedef) 
 
 
 ### paginate
@@ -409,6 +457,57 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListAssociatedAssetsRequestListAssociatedAssetsPaginateTypeDef](./type_defs.md#listassociatedassetsrequestlistassociatedassetspaginatetypedef) 
+## ListBulkImportJobsPaginator
+
+Type annotations and code completion for `#!python session.create_client("iotsitewise").get_paginator("list_bulk_import_jobs")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Paginator.ListBulkImportJobs)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_iotsitewise.paginator import ListBulkImportJobsPaginator
+
+session = get_session()
+async with session.create_client("iotsitewise") as client:  # (1)
+    paginator: ListBulkImportJobsPaginator = client.get_paginator("list_bulk_import_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBulkImportJobsResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [IoTSiteWiseClient](./client.md)
+2. paginator: [ListBulkImportJobsPaginator](./paginators.md#listbulkimportjobspaginator)
+3. item: [:material-code-braces: ListBulkImportJobsResponseTypeDef](./type_defs.md#listbulkimportjobsresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListBulkImportJobsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    filter: ListBulkImportJobsFilterType = ...,  # (1)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[ListBulkImportJobsResponseTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-brackets: ListBulkImportJobsFilterType](./literals.md#listbulkimportjobsfiltertype) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: ListBulkImportJobsResponseTypeDef](./type_defs.md#listbulkimportjobsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListBulkImportJobsRequestListBulkImportJobsPaginateTypeDef = {  # (1)
+    "filter": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListBulkImportJobsRequestListBulkImportJobsPaginateTypeDef](./type_defs.md#listbulkimportjobsrequestlistbulkimportjobspaginatetypedef) 
 ## ListDashboardsPaginator
 
 Type annotations and code completion for `#!python session.create_client("iotsitewise").get_paginator("list_dashboards")`.
@@ -420,10 +519,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotsitewise.paginator import ListDashboardsPaginator
 
 session = get_session()
-async with session.create_client("iotsitewise") as client:
-    client: IoTSiteWiseClient
-    paginator: ListDashboardsPaginator = client.get_paginator("list_dashboards")
+async with session.create_client("iotsitewise") as client:  # (1)
+    paginator: ListDashboardsPaginator = client.get_paginator("list_dashboards")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDashboardsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTSiteWiseClient](./client.md)
+2. paginator: [ListDashboardsPaginator](./paginators.md#listdashboardspaginator)
+3. item: [:material-code-braces: ListDashboardsResponseTypeDef](./type_defs.md#listdashboardsresponsetypedef) 
 
 
 ### paginate
@@ -464,10 +569,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotsitewise.paginator import ListGatewaysPaginator
 
 session = get_session()
-async with session.create_client("iotsitewise") as client:
-    client: IoTSiteWiseClient
-    paginator: ListGatewaysPaginator = client.get_paginator("list_gateways")
+async with session.create_client("iotsitewise") as client:  # (1)
+    paginator: ListGatewaysPaginator = client.get_paginator("list_gateways")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGatewaysResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTSiteWiseClient](./client.md)
+2. paginator: [ListGatewaysPaginator](./paginators.md#listgatewayspaginator)
+3. item: [:material-code-braces: ListGatewaysResponseTypeDef](./type_defs.md#listgatewaysresponsetypedef) 
 
 
 ### paginate
@@ -507,10 +618,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotsitewise.paginator import ListPortalsPaginator
 
 session = get_session()
-async with session.create_client("iotsitewise") as client:
-    client: IoTSiteWiseClient
-    paginator: ListPortalsPaginator = client.get_paginator("list_portals")
+async with session.create_client("iotsitewise") as client:  # (1)
+    paginator: ListPortalsPaginator = client.get_paginator("list_portals")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPortalsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTSiteWiseClient](./client.md)
+2. paginator: [ListPortalsPaginator](./paginators.md#listportalspaginator)
+3. item: [:material-code-braces: ListPortalsResponseTypeDef](./type_defs.md#listportalsresponsetypedef) 
 
 
 ### paginate
@@ -550,10 +667,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotsitewise.paginator import ListProjectAssetsPaginator
 
 session = get_session()
-async with session.create_client("iotsitewise") as client:
-    client: IoTSiteWiseClient
-    paginator: ListProjectAssetsPaginator = client.get_paginator("list_project_assets")
+async with session.create_client("iotsitewise") as client:  # (1)
+    paginator: ListProjectAssetsPaginator = client.get_paginator("list_project_assets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProjectAssetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTSiteWiseClient](./client.md)
+2. paginator: [ListProjectAssetsPaginator](./paginators.md#listprojectassetspaginator)
+3. item: [:material-code-braces: ListProjectAssetsResponseTypeDef](./type_defs.md#listprojectassetsresponsetypedef) 
 
 
 ### paginate
@@ -594,10 +717,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotsitewise.paginator import ListProjectsPaginator
 
 session = get_session()
-async with session.create_client("iotsitewise") as client:
-    client: IoTSiteWiseClient
-    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
+async with session.create_client("iotsitewise") as client:  # (1)
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProjectsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTSiteWiseClient](./client.md)
+2. paginator: [ListProjectsPaginator](./paginators.md#listprojectspaginator)
+3. item: [:material-code-braces: ListProjectsResponseTypeDef](./type_defs.md#listprojectsresponsetypedef) 
 
 
 ### paginate
@@ -638,10 +767,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_iotsitewise.paginator import ListTimeSeriesPaginator
 
 session = get_session()
-async with session.create_client("iotsitewise") as client:
-    client: IoTSiteWiseClient
-    paginator: ListTimeSeriesPaginator = client.get_paginator("list_time_series")
+async with session.create_client("iotsitewise") as client:  # (1)
+    paginator: ListTimeSeriesPaginator = client.get_paginator("list_time_series")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTimeSeriesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IoTSiteWiseClient](./client.md)
+2. paginator: [ListTimeSeriesPaginator](./paginators.md#listtimeseriespaginator)
+3. item: [:material-code-braces: ListTimeSeriesResponseTypeDef](./type_defs.md#listtimeseriesresponsetypedef) 
 
 
 ### paginate

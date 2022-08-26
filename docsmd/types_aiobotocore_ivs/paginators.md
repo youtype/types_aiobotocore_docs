@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ivs.paginator import ListChannelsPaginator
 
 session = get_session()
-async with session.create_client("ivs") as client:
-    client: IVSClient
-    paginator: ListChannelsPaginator = client.get_paginator("list_channels")
+async with session.create_client("ivs") as client:  # (1)
+    paginator: ListChannelsPaginator = client.get_paginator("list_channels")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListChannelsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IVSClient](./client.md)
+2. paginator: [ListChannelsPaginator](./paginators.md#listchannelspaginator)
+3. item: [:material-code-braces: ListChannelsResponseTypeDef](./type_defs.md#listchannelsresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ivs.paginator import ListPlaybackKeyPairsPaginator
 
 session = get_session()
-async with session.create_client("ivs") as client:
-    client: IVSClient
-    paginator: ListPlaybackKeyPairsPaginator = client.get_paginator("list_playback_key_pairs")
+async with session.create_client("ivs") as client:  # (1)
+    paginator: ListPlaybackKeyPairsPaginator = client.get_paginator("list_playback_key_pairs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPlaybackKeyPairsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IVSClient](./client.md)
+2. paginator: [ListPlaybackKeyPairsPaginator](./paginators.md#listplaybackkeypairspaginator)
+3. item: [:material-code-braces: ListPlaybackKeyPairsResponseTypeDef](./type_defs.md#listplaybackkeypairsresponsetypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ivs.paginator import ListRecordingConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("ivs") as client:
-    client: IVSClient
-    paginator: ListRecordingConfigurationsPaginator = client.get_paginator("list_recording_configurations")
+async with session.create_client("ivs") as client:  # (1)
+    paginator: ListRecordingConfigurationsPaginator = client.get_paginator("list_recording_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRecordingConfigurationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IVSClient](./client.md)
+2. paginator: [ListRecordingConfigurationsPaginator](./paginators.md#listrecordingconfigurationspaginator)
+3. item: [:material-code-braces: ListRecordingConfigurationsResponseTypeDef](./type_defs.md#listrecordingconfigurationsresponsetypedef) 
 
 
 ### paginate
@@ -149,10 +167,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ivs.paginator import ListStreamKeysPaginator
 
 session = get_session()
-async with session.create_client("ivs") as client:
-    client: IVSClient
-    paginator: ListStreamKeysPaginator = client.get_paginator("list_stream_keys")
+async with session.create_client("ivs") as client:  # (1)
+    paginator: ListStreamKeysPaginator = client.get_paginator("list_stream_keys")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStreamKeysResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IVSClient](./client.md)
+2. paginator: [ListStreamKeysPaginator](./paginators.md#liststreamkeyspaginator)
+3. item: [:material-code-braces: ListStreamKeysResponseTypeDef](./type_defs.md#liststreamkeysresponsetypedef) 
 
 
 ### paginate
@@ -193,10 +217,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_ivs.paginator import ListStreamsPaginator
 
 session = get_session()
-async with session.create_client("ivs") as client:
-    client: IVSClient
-    paginator: ListStreamsPaginator = client.get_paginator("list_streams")
+async with session.create_client("ivs") as client:  # (1)
+    paginator: ListStreamsPaginator = client.get_paginator("list_streams")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStreamsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [IVSClient](./client.md)
+2. paginator: [ListStreamsPaginator](./paginators.md#liststreamspaginator)
+3. item: [:material-code-braces: ListStreamsResponseTypeDef](./type_defs.md#liststreamsresponsetypedef) 
 
 
 ### paginate

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_migrationhubstrategy.paginator import GetServerDetailsPaginator
 
 session = get_session()
-async with session.create_client("migrationhubstrategy") as client:
-    client: MigrationHubStrategyRecommendationsClient
-    paginator: GetServerDetailsPaginator = client.get_paginator("get_server_details")
+async with session.create_client("migrationhubstrategy") as client:  # (1)
+    paginator: GetServerDetailsPaginator = client.get_paginator("get_server_details")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetServerDetailsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MigrationHubStrategyRecommendationsClient](./client.md)
+2. paginator: [GetServerDetailsPaginator](./paginators.md#getserverdetailspaginator)
+3. item: [:material-code-braces: GetServerDetailsResponseTypeDef](./type_defs.md#getserverdetailsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_migrationhubstrategy.paginator import ListApplicationComponentsPaginator
 
 session = get_session()
-async with session.create_client("migrationhubstrategy") as client:
-    client: MigrationHubStrategyRecommendationsClient
-    paginator: ListApplicationComponentsPaginator = client.get_paginator("list_application_components")
+async with session.create_client("migrationhubstrategy") as client:  # (1)
+    paginator: ListApplicationComponentsPaginator = client.get_paginator("list_application_components")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListApplicationComponentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MigrationHubStrategyRecommendationsClient](./client.md)
+2. paginator: [ListApplicationComponentsPaginator](./paginators.md#listapplicationcomponentspaginator)
+3. item: [:material-code-braces: ListApplicationComponentsResponseTypeDef](./type_defs.md#listapplicationcomponentsresponsetypedef) 
 
 
 ### paginate
@@ -112,10 +124,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_migrationhubstrategy.paginator import ListCollectorsPaginator
 
 session = get_session()
-async with session.create_client("migrationhubstrategy") as client:
-    client: MigrationHubStrategyRecommendationsClient
-    paginator: ListCollectorsPaginator = client.get_paginator("list_collectors")
+async with session.create_client("migrationhubstrategy") as client:  # (1)
+    paginator: ListCollectorsPaginator = client.get_paginator("list_collectors")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCollectorsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MigrationHubStrategyRecommendationsClient](./client.md)
+2. paginator: [ListCollectorsPaginator](./paginators.md#listcollectorspaginator)
+3. item: [:material-code-braces: ListCollectorsResponseTypeDef](./type_defs.md#listcollectorsresponsetypedef) 
 
 
 ### paginate
@@ -155,10 +173,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_migrationhubstrategy.paginator import ListImportFileTaskPaginator
 
 session = get_session()
-async with session.create_client("migrationhubstrategy") as client:
-    client: MigrationHubStrategyRecommendationsClient
-    paginator: ListImportFileTaskPaginator = client.get_paginator("list_import_file_task")
+async with session.create_client("migrationhubstrategy") as client:  # (1)
+    paginator: ListImportFileTaskPaginator = client.get_paginator("list_import_file_task")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListImportFileTaskResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MigrationHubStrategyRecommendationsClient](./client.md)
+2. paginator: [ListImportFileTaskPaginator](./paginators.md#listimportfiletaskpaginator)
+3. item: [:material-code-braces: ListImportFileTaskResponseTypeDef](./type_defs.md#listimportfiletaskresponsetypedef) 
 
 
 ### paginate
@@ -198,10 +222,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_migrationhubstrategy.paginator import ListServersPaginator
 
 session = get_session()
-async with session.create_client("migrationhubstrategy") as client:
-    client: MigrationHubStrategyRecommendationsClient
-    paginator: ListServersPaginator = client.get_paginator("list_servers")
+async with session.create_client("migrationhubstrategy") as client:  # (1)
+    paginator: ListServersPaginator = client.get_paginator("list_servers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MigrationHubStrategyRecommendationsClient](./client.md)
+2. paginator: [ListServersPaginator](./paginators.md#listserverspaginator)
+3. item: [:material-code-braces: ListServersResponseTypeDef](./type_defs.md#listserversresponsetypedef) 
 
 
 ### paginate

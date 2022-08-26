@@ -291,9 +291,47 @@ await def close(
 ```
 
 
+### create\_access\_control\_configuration
+
+Creates an access configuration for your documents.
+
+Type annotations and code completion for `#!python session.create_client("kendra").create_access_control_configuration` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.create_access_control_configuration)
+
+```python title="Method definition"
+await def create_access_control_configuration(
+    self,
+    *,
+    IndexId: str,
+    Name: str,
+    Description: str = ...,
+    AccessControlList: Sequence[PrincipalTypeDef] = ...,  # (1)
+    HierarchicalAccessControlList: Sequence[HierarchicalPrincipalTypeDef] = ...,  # (2)
+    ClientToken: str = ...,
+) -> CreateAccessControlConfigurationResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: PrincipalTypeDef](./type_defs.md#principaltypedef) 
+2. See [:material-code-braces: HierarchicalPrincipalTypeDef](./type_defs.md#hierarchicalprincipaltypedef) 
+3. See [:material-code-braces: CreateAccessControlConfigurationResponseTypeDef](./type_defs.md#createaccesscontrolconfigurationresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: CreateAccessControlConfigurationRequestRequestTypeDef = {  # (1)
+    "IndexId": ...,
+    "Name": ...,
+}
+
+parent.create_access_control_configuration(**kwargs)
+```
+
+1. See [:material-code-braces: CreateAccessControlConfigurationRequestRequestTypeDef](./type_defs.md#createaccesscontrolconfigurationrequestrequesttypedef) 
+
 ### create\_data\_source
 
-Creates a data source that you want to use with an Amazon Kendra index.
+Creates a data source connector that you want to use with an Amazon Kendra
+index.
 
 Type annotations and code completion for `#!python session.create_client("kendra").create_data_source` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.create_data_source)
@@ -306,22 +344,24 @@ await def create_data_source(
     IndexId: str,
     Type: DataSourceTypeType,  # (1)
     Configuration: DataSourceConfigurationTypeDef = ...,  # (2)
+    VpcConfiguration: DataSourceVpcConfigurationTypeDef = ...,  # (3)
     Description: str = ...,
     Schedule: str = ...,
     RoleArn: str = ...,
-    Tags: Sequence[TagTypeDef] = ...,  # (3)
+    Tags: Sequence[TagTypeDef] = ...,  # (4)
     ClientToken: str = ...,
     LanguageCode: str = ...,
-    CustomDocumentEnrichmentConfiguration: CustomDocumentEnrichmentConfigurationTypeDef = ...,  # (4)
-) -> CreateDataSourceResponseTypeDef:  # (5)
+    CustomDocumentEnrichmentConfiguration: CustomDocumentEnrichmentConfigurationTypeDef = ...,  # (5)
+) -> CreateDataSourceResponseTypeDef:  # (6)
     ...
 ```
 
 1. See [:material-code-brackets: DataSourceTypeType](./literals.md#datasourcetypetype) 
 2. See [:material-code-braces: DataSourceConfigurationTypeDef](./type_defs.md#datasourceconfigurationtypedef) 
-3. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-4. See [:material-code-braces: CustomDocumentEnrichmentConfigurationTypeDef](./type_defs.md#customdocumentenrichmentconfigurationtypedef) 
-5. See [:material-code-braces: CreateDataSourceResponseTypeDef](./type_defs.md#createdatasourceresponsetypedef) 
+3. See [:material-code-braces: DataSourceVpcConfigurationTypeDef](./type_defs.md#datasourcevpcconfigurationtypedef) 
+4. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+5. See [:material-code-braces: CustomDocumentEnrichmentConfigurationTypeDef](./type_defs.md#customdocumentenrichmentconfigurationtypedef) 
+6. See [:material-code-braces: CreateDataSourceResponseTypeDef](./type_defs.md#createdatasourceresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -417,7 +457,7 @@ parent.create_faq(**kwargs)
 
 ### create\_index
 
-Creates a new Amazon Kendra index.
+Creates an Amazon Kendra index.
 
 Type annotations and code completion for `#!python session.create_client("kendra").create_index` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.create_index)
@@ -540,9 +580,40 @@ parent.create_thesaurus(**kwargs)
 
 1. See [:material-code-braces: CreateThesaurusRequestRequestTypeDef](./type_defs.md#createthesaurusrequestrequesttypedef) 
 
+### delete\_access\_control\_configuration
+
+Deletes an access control configuration that you created for your documents in
+an index.
+
+Type annotations and code completion for `#!python session.create_client("kendra").delete_access_control_configuration` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.delete_access_control_configuration)
+
+```python title="Method definition"
+await def delete_access_control_configuration(
+    self,
+    *,
+    IndexId: str,
+    Id: str,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python title="Usage example with kwargs"
+kwargs: DeleteAccessControlConfigurationRequestRequestTypeDef = {  # (1)
+    "IndexId": ...,
+    "Id": ...,
+}
+
+parent.delete_access_control_configuration(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteAccessControlConfigurationRequestRequestTypeDef](./type_defs.md#deleteaccesscontrolconfigurationrequestrequesttypedef) 
+
 ### delete\_data\_source
 
-Deletes an Amazon Kendra data source.
+Deletes an Amazon Kendra data source connector.
 
 Type annotations and code completion for `#!python session.create_client("kendra").delete_data_source` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.delete_data_source)
@@ -757,9 +828,41 @@ parent.delete_thesaurus(**kwargs)
 
 1. See [:material-code-braces: DeleteThesaurusRequestRequestTypeDef](./type_defs.md#deletethesaurusrequestrequesttypedef) 
 
+### describe\_access\_control\_configuration
+
+Gets information about an access control configuration that you created for your
+documents in an index.
+
+Type annotations and code completion for `#!python session.create_client("kendra").describe_access_control_configuration` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.describe_access_control_configuration)
+
+```python title="Method definition"
+await def describe_access_control_configuration(
+    self,
+    *,
+    IndexId: str,
+    Id: str,
+) -> DescribeAccessControlConfigurationResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DescribeAccessControlConfigurationResponseTypeDef](./type_defs.md#describeaccesscontrolconfigurationresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeAccessControlConfigurationRequestRequestTypeDef = {  # (1)
+    "IndexId": ...,
+    "Id": ...,
+}
+
+parent.describe_access_control_configuration(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeAccessControlConfigurationRequestRequestTypeDef](./type_defs.md#describeaccesscontrolconfigurationrequestrequesttypedef) 
+
 ### describe\_data\_source
 
-Gets information about an Amazon Kendra data source.
+Gets information about an Amazon Kendra data source connector.
 
 Type annotations and code completion for `#!python session.create_client("kendra").describe_data_source` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.describe_data_source)
@@ -853,7 +956,7 @@ parent.describe_faq(**kwargs)
 
 ### describe\_index
 
-Describes an existing Amazon Kendra index.
+Gets information about an existing Amazon Kendra index.
 
 Type annotations and code completion for `#!python session.create_client("kendra").describe_index` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.describe_index)
@@ -915,7 +1018,7 @@ parent.describe_principal_mapping(**kwargs)
 
 ### describe\_query\_suggestions\_block\_list
 
-Describes a block list used for query suggestions for an index.
+Gets information about a block list used for query suggestions for an index.
 
 Type annotations and code completion for `#!python session.create_client("kendra").describe_query_suggestions_block_list` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.describe_query_suggestions_block_list)
@@ -946,7 +1049,7 @@ parent.describe_query_suggestions_block_list(**kwargs)
 
 ### describe\_query\_suggestions\_config
 
-Describes the settings of query suggestions for an index.
+Gets information on the settings of query suggestions for an index.
 
 Type annotations and code completion for `#!python session.create_client("kendra").describe_query_suggestions_config` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.describe_query_suggestions_config)
@@ -975,7 +1078,7 @@ parent.describe_query_suggestions_config(**kwargs)
 
 ### describe\_thesaurus
 
-Describes an existing Amazon Kendra thesaurus.
+Gets information about an existing Amazon Kendra thesaurus.
 
 Type annotations and code completion for `#!python session.create_client("kendra").describe_thesaurus` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.describe_thesaurus)
@@ -1161,9 +1264,40 @@ parent.get_snapshots(**kwargs)
 
 1. See [:material-code-braces: GetSnapshotsRequestRequestTypeDef](./type_defs.md#getsnapshotsrequestrequesttypedef) 
 
+### list\_access\_control\_configurations
+
+Lists one or more access control configurations for an index.
+
+Type annotations and code completion for `#!python session.create_client("kendra").list_access_control_configurations` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.list_access_control_configurations)
+
+```python title="Method definition"
+await def list_access_control_configurations(
+    self,
+    *,
+    IndexId: str,
+    NextToken: str = ...,
+    MaxResults: int = ...,
+) -> ListAccessControlConfigurationsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListAccessControlConfigurationsResponseTypeDef](./type_defs.md#listaccesscontrolconfigurationsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListAccessControlConfigurationsRequestRequestTypeDef = {  # (1)
+    "IndexId": ...,
+}
+
+parent.list_access_control_configurations(**kwargs)
+```
+
+1. See [:material-code-braces: ListAccessControlConfigurationsRequestRequestTypeDef](./type_defs.md#listaccesscontrolconfigurationsrequestrequesttypedef) 
+
 ### list\_data\_source\_sync\_jobs
 
-Gets statistics about synchronizing Amazon Kendra with a data source.
+Gets statistics about synchronizing a data source connector.
 
 Type annotations and code completion for `#!python session.create_client("kendra").list_data_source_sync_jobs` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.list_data_source_sync_jobs)
@@ -1200,7 +1334,7 @@ parent.list_data_source_sync_jobs(**kwargs)
 
 ### list\_data\_sources
 
-Lists the data sources that you have created.
+Lists the data source connectors that you have created.
 
 Type annotations and code completion for `#!python session.create_client("kendra").list_data_sources` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.list_data_sources)
@@ -1485,7 +1619,7 @@ parent.list_tags_for_resource(**kwargs)
 
 ### list\_thesauri
 
-Lists the Amazon Kendra thesauri associated with an index.
+Lists the thesauri for an index.
 
 Type annotations and code completion for `#!python session.create_client("kendra").list_thesauri` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.list_thesauri)
@@ -1602,7 +1736,7 @@ parent.query(**kwargs)
 
 ### start\_data\_source\_sync\_job
 
-Starts a synchronization job for a data source.
+Starts a synchronization job for a data source connector.
 
 Type annotations and code completion for `#!python session.create_client("kendra").start_data_source_sync_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.start_data_source_sync_job)
@@ -1759,9 +1893,45 @@ parent.untag_resource(**kwargs)
 
 1. See [:material-code-braces: UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef) 
 
+### update\_access\_control\_configuration
+
+Updates an access control configuration for your documents in an index.
+
+Type annotations and code completion for `#!python session.create_client("kendra").update_access_control_configuration` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.update_access_control_configuration)
+
+```python title="Method definition"
+await def update_access_control_configuration(
+    self,
+    *,
+    IndexId: str,
+    Id: str,
+    Name: str = ...,
+    Description: str = ...,
+    AccessControlList: Sequence[PrincipalTypeDef] = ...,  # (1)
+    HierarchicalAccessControlList: Sequence[HierarchicalPrincipalTypeDef] = ...,  # (2)
+) -> Dict[str, Any]:
+    ...
+```
+
+1. See [:material-code-braces: PrincipalTypeDef](./type_defs.md#principaltypedef) 
+2. See [:material-code-braces: HierarchicalPrincipalTypeDef](./type_defs.md#hierarchicalprincipaltypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: UpdateAccessControlConfigurationRequestRequestTypeDef = {  # (1)
+    "IndexId": ...,
+    "Id": ...,
+}
+
+parent.update_access_control_configuration(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateAccessControlConfigurationRequestRequestTypeDef](./type_defs.md#updateaccesscontrolconfigurationrequestrequesttypedef) 
+
 ### update\_data\_source
 
-Updates an existing Amazon Kendra data source.
+Updates an existing Amazon Kendra data source connector.
 
 Type annotations and code completion for `#!python session.create_client("kendra").update_data_source` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.update_data_source)
@@ -1774,18 +1944,20 @@ await def update_data_source(
     IndexId: str,
     Name: str = ...,
     Configuration: DataSourceConfigurationTypeDef = ...,  # (1)
+    VpcConfiguration: DataSourceVpcConfigurationTypeDef = ...,  # (2)
     Description: str = ...,
     Schedule: str = ...,
     RoleArn: str = ...,
     LanguageCode: str = ...,
-    CustomDocumentEnrichmentConfiguration: CustomDocumentEnrichmentConfigurationTypeDef = ...,  # (2)
-) -> EmptyResponseMetadataTypeDef:  # (3)
+    CustomDocumentEnrichmentConfiguration: CustomDocumentEnrichmentConfigurationTypeDef = ...,  # (3)
+) -> EmptyResponseMetadataTypeDef:  # (4)
     ...
 ```
 
 1. See [:material-code-braces: DataSourceConfigurationTypeDef](./type_defs.md#datasourceconfigurationtypedef) 
-2. See [:material-code-braces: CustomDocumentEnrichmentConfigurationTypeDef](./type_defs.md#customdocumentenrichmentconfigurationtypedef) 
-3. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
+2. See [:material-code-braces: DataSourceVpcConfigurationTypeDef](./type_defs.md#datasourcevpcconfigurationtypedef) 
+3. See [:material-code-braces: CustomDocumentEnrichmentConfigurationTypeDef](./type_defs.md#customdocumentenrichmentconfigurationtypedef) 
+4. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1950,7 +2122,7 @@ parent.update_query_suggestions_config(**kwargs)
 
 ### update\_thesaurus
 
-Updates a thesaurus file associated with an index.
+Updates a thesaurus for an index.
 
 Type annotations and code completion for `#!python session.create_client("kendra").update_thesaurus` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.update_thesaurus)

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import DescribeFleetAttributesPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: DescribeFleetAttributesPaginator = client.get_paginator("describe_fleet_attributes")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: DescribeFleetAttributesPaginator = client.get_paginator("describe_fleet_attributes")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeFleetAttributesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [DescribeFleetAttributesPaginator](./paginators.md#describefleetattributespaginator)
+3. item: [:material-code-braces: DescribeFleetAttributesOutputTypeDef](./type_defs.md#describefleetattributesoutputtypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import DescribeFleetCapacityPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: DescribeFleetCapacityPaginator = client.get_paginator("describe_fleet_capacity")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: DescribeFleetCapacityPaginator = client.get_paginator("describe_fleet_capacity")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeFleetCapacityOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [DescribeFleetCapacityPaginator](./paginators.md#describefleetcapacitypaginator)
+3. item: [:material-code-braces: DescribeFleetCapacityOutputTypeDef](./type_defs.md#describefleetcapacityoutputtypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import DescribeFleetEventsPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: DescribeFleetEventsPaginator = client.get_paginator("describe_fleet_events")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: DescribeFleetEventsPaginator = client.get_paginator("describe_fleet_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeFleetEventsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [DescribeFleetEventsPaginator](./paginators.md#describefleeteventspaginator)
+3. item: [:material-code-braces: DescribeFleetEventsOutputTypeDef](./type_defs.md#describefleeteventsoutputtypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import DescribeFleetUtilizationPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: DescribeFleetUtilizationPaginator = client.get_paginator("describe_fleet_utilization")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: DescribeFleetUtilizationPaginator = client.get_paginator("describe_fleet_utilization")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeFleetUtilizationOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [DescribeFleetUtilizationPaginator](./paginators.md#describefleetutilizationpaginator)
+3. item: [:material-code-braces: DescribeFleetUtilizationOutputTypeDef](./type_defs.md#describefleetutilizationoutputtypedef) 
 
 
 ### paginate
@@ -196,10 +220,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import DescribeGameServerInstancesPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: DescribeGameServerInstancesPaginator = client.get_paginator("describe_game_server_instances")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: DescribeGameServerInstancesPaginator = client.get_paginator("describe_game_server_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeGameServerInstancesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [DescribeGameServerInstancesPaginator](./paginators.md#describegameserverinstancespaginator)
+3. item: [:material-code-braces: DescribeGameServerInstancesOutputTypeDef](./type_defs.md#describegameserverinstancesoutputtypedef) 
 
 
 ### paginate
@@ -241,10 +271,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import DescribeGameSessionDetailsPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: DescribeGameSessionDetailsPaginator = client.get_paginator("describe_game_session_details")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: DescribeGameSessionDetailsPaginator = client.get_paginator("describe_game_session_details")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeGameSessionDetailsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [DescribeGameSessionDetailsPaginator](./paginators.md#describegamesessiondetailspaginator)
+3. item: [:material-code-braces: DescribeGameSessionDetailsOutputTypeDef](./type_defs.md#describegamesessiondetailsoutputtypedef) 
 
 
 ### paginate
@@ -289,10 +325,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import DescribeGameSessionQueuesPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: DescribeGameSessionQueuesPaginator = client.get_paginator("describe_game_session_queues")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: DescribeGameSessionQueuesPaginator = client.get_paginator("describe_game_session_queues")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeGameSessionQueuesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [DescribeGameSessionQueuesPaginator](./paginators.md#describegamesessionqueuespaginator)
+3. item: [:material-code-braces: DescribeGameSessionQueuesOutputTypeDef](./type_defs.md#describegamesessionqueuesoutputtypedef) 
 
 
 ### paginate
@@ -333,10 +375,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import DescribeGameSessionsPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: DescribeGameSessionsPaginator = client.get_paginator("describe_game_sessions")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: DescribeGameSessionsPaginator = client.get_paginator("describe_game_sessions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeGameSessionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [DescribeGameSessionsPaginator](./paginators.md#describegamesessionspaginator)
+3. item: [:material-code-braces: DescribeGameSessionsOutputTypeDef](./type_defs.md#describegamesessionsoutputtypedef) 
 
 
 ### paginate
@@ -381,10 +429,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import DescribeInstancesPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: DescribeInstancesPaginator = client.get_paginator("describe_instances")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: DescribeInstancesPaginator = client.get_paginator("describe_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeInstancesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [DescribeInstancesPaginator](./paginators.md#describeinstancespaginator)
+3. item: [:material-code-braces: DescribeInstancesOutputTypeDef](./type_defs.md#describeinstancesoutputtypedef) 
 
 
 ### paginate
@@ -427,10 +481,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import DescribeMatchmakingConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: DescribeMatchmakingConfigurationsPaginator = client.get_paginator("describe_matchmaking_configurations")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: DescribeMatchmakingConfigurationsPaginator = client.get_paginator("describe_matchmaking_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeMatchmakingConfigurationsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [DescribeMatchmakingConfigurationsPaginator](./paginators.md#describematchmakingconfigurationspaginator)
+3. item: [:material-code-braces: DescribeMatchmakingConfigurationsOutputTypeDef](./type_defs.md#describematchmakingconfigurationsoutputtypedef) 
 
 
 ### paginate
@@ -472,10 +532,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import DescribeMatchmakingRuleSetsPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: DescribeMatchmakingRuleSetsPaginator = client.get_paginator("describe_matchmaking_rule_sets")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: DescribeMatchmakingRuleSetsPaginator = client.get_paginator("describe_matchmaking_rule_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeMatchmakingRuleSetsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [DescribeMatchmakingRuleSetsPaginator](./paginators.md#describematchmakingrulesetspaginator)
+3. item: [:material-code-braces: DescribeMatchmakingRuleSetsOutputTypeDef](./type_defs.md#describematchmakingrulesetsoutputtypedef) 
 
 
 ### paginate
@@ -516,10 +582,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import DescribePlayerSessionsPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: DescribePlayerSessionsPaginator = client.get_paginator("describe_player_sessions")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: DescribePlayerSessionsPaginator = client.get_paginator("describe_player_sessions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribePlayerSessionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [DescribePlayerSessionsPaginator](./paginators.md#describeplayersessionspaginator)
+3. item: [:material-code-braces: DescribePlayerSessionsOutputTypeDef](./type_defs.md#describeplayersessionsoutputtypedef) 
 
 
 ### paginate
@@ -563,10 +635,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import DescribeScalingPoliciesPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: DescribeScalingPoliciesPaginator = client.get_paginator("describe_scaling_policies")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: DescribeScalingPoliciesPaginator = client.get_paginator("describe_scaling_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeScalingPoliciesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [DescribeScalingPoliciesPaginator](./paginators.md#describescalingpoliciespaginator)
+3. item: [:material-code-braces: DescribeScalingPoliciesOutputTypeDef](./type_defs.md#describescalingpoliciesoutputtypedef) 
 
 
 ### paginate
@@ -610,10 +688,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import ListAliasesPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: ListAliasesPaginator = client.get_paginator("list_aliases")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: ListAliasesPaginator = client.get_paginator("list_aliases")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAliasesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [ListAliasesPaginator](./paginators.md#listaliasespaginator)
+3. item: [:material-code-braces: ListAliasesOutputTypeDef](./type_defs.md#listaliasesoutputtypedef) 
 
 
 ### paginate
@@ -656,10 +740,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import ListBuildsPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: ListBuildsPaginator = client.get_paginator("list_builds")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: ListBuildsPaginator = client.get_paginator("list_builds")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBuildsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [ListBuildsPaginator](./paginators.md#listbuildspaginator)
+3. item: [:material-code-braces: ListBuildsOutputTypeDef](./type_defs.md#listbuildsoutputtypedef) 
 
 
 ### paginate
@@ -701,10 +791,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import ListFleetsPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: ListFleetsPaginator = client.get_paginator("list_fleets")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: ListFleetsPaginator = client.get_paginator("list_fleets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFleetsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [ListFleetsPaginator](./paginators.md#listfleetspaginator)
+3. item: [:material-code-braces: ListFleetsOutputTypeDef](./type_defs.md#listfleetsoutputtypedef) 
 
 
 ### paginate
@@ -746,10 +842,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import ListGameServerGroupsPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: ListGameServerGroupsPaginator = client.get_paginator("list_game_server_groups")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: ListGameServerGroupsPaginator = client.get_paginator("list_game_server_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGameServerGroupsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [ListGameServerGroupsPaginator](./paginators.md#listgameservergroupspaginator)
+3. item: [:material-code-braces: ListGameServerGroupsOutputTypeDef](./type_defs.md#listgameservergroupsoutputtypedef) 
 
 
 ### paginate
@@ -789,10 +891,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import ListGameServersPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: ListGameServersPaginator = client.get_paginator("list_game_servers")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: ListGameServersPaginator = client.get_paginator("list_game_servers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGameServersOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [ListGameServersPaginator](./paginators.md#listgameserverspaginator)
+3. item: [:material-code-braces: ListGameServersOutputTypeDef](./type_defs.md#listgameserversoutputtypedef) 
 
 
 ### paginate
@@ -835,10 +943,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import ListScriptsPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: ListScriptsPaginator = client.get_paginator("list_scripts")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: ListScriptsPaginator = client.get_paginator("list_scripts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListScriptsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [ListScriptsPaginator](./paginators.md#listscriptspaginator)
+3. item: [:material-code-braces: ListScriptsOutputTypeDef](./type_defs.md#listscriptsoutputtypedef) 
 
 
 ### paginate
@@ -878,10 +992,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.paginator import SearchGameSessionsPaginator
 
 session = get_session()
-async with session.create_client("gamelift") as client:
-    client: GameLiftClient
-    paginator: SearchGameSessionsPaginator = client.get_paginator("search_game_sessions")
+async with session.create_client("gamelift") as client:  # (1)
+    paginator: SearchGameSessionsPaginator = client.get_paginator("search_game_sessions")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchGameSessionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GameLiftClient](./client.md)
+2. paginator: [SearchGameSessionsPaginator](./paginators.md#searchgamesessionspaginator)
+3. item: [:material-code-braces: SearchGameSessionsOutputTypeDef](./type_defs.md#searchgamesessionsoutputtypedef) 
 
 
 ### paginate

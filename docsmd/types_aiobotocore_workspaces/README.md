@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `WorkSpaces`.
 
 ### From PyPI with pip
 
@@ -114,6 +109,7 @@ def get_value() -> AccessPropertyValueType:
 - [DedicatedTenancyModificationStateEnumType](./literals.md#dedicatedtenancymodificationstateenumtype)
 - [DedicatedTenancySupportEnumType](./literals.md#dedicatedtenancysupportenumtype)
 - [DedicatedTenancySupportResultEnumType](./literals.md#dedicatedtenancysupportresultenumtype)
+- [DeletableSamlPropertyType](./literals.md#deletablesamlpropertytype)
 - [DescribeAccountModificationsPaginatorName](./literals.md#describeaccountmodificationspaginatorname)
 - [DescribeIpGroupsPaginatorName](./literals.md#describeipgroupspaginatorname)
 - [DescribeWorkspaceBundlesPaginatorName](./literals.md#describeworkspacebundlespaginatorname)
@@ -128,6 +124,7 @@ def get_value() -> AccessPropertyValueType:
 - [OperatingSystemTypeType](./literals.md#operatingsystemtypetype)
 - [ReconnectEnumType](./literals.md#reconnectenumtype)
 - [RunningModeType](./literals.md#runningmodetype)
+- [SamlStatusEnumType](./literals.md#samlstatusenumtype)
 - [TargetWorkspaceStateType](./literals.md#targetworkspacestatetype)
 - [TenancyType](./literals.md#tenancytype)
 - [WorkspaceDirectoryStateType](./literals.md#workspacedirectorystatetype)
@@ -172,6 +169,7 @@ def get_value() -> AccountModificationTypeDef:
 - [CreateConnectClientAddInRequestRequestTypeDef](./type_defs.md#createconnectclientaddinrequestrequesttypedef)
 - [RootStorageTypeDef](./type_defs.md#rootstoragetypedef)
 - [UserStorageTypeDef](./type_defs.md#userstoragetypedef)
+- [OperatingSystemTypeDef](./type_defs.md#operatingsystemtypedef)
 - [DefaultClientBrandingAttributesTypeDef](./type_defs.md#defaultclientbrandingattributestypedef)
 - [DefaultImportClientBrandingAttributesTypeDef](./type_defs.md#defaultimportclientbrandingattributestypedef)
 - [DefaultWorkspaceCreationPropertiesTypeDef](./type_defs.md#defaultworkspacecreationpropertiestypedef)
@@ -211,12 +209,12 @@ def get_value() -> AccountModificationTypeDef:
 - [MigrateWorkspaceRequestRequestTypeDef](./type_defs.md#migrateworkspacerequestrequesttypedef)
 - [ModificationStateTypeDef](./type_defs.md#modificationstatetypedef)
 - [ModifyAccountRequestRequestTypeDef](./type_defs.md#modifyaccountrequestrequesttypedef)
+- [SamlPropertiesTypeDef](./type_defs.md#samlpropertiestypedef)
 - [SelfservicePermissionsTypeDef](./type_defs.md#selfservicepermissionstypedef)
 - [WorkspaceAccessPropertiesTypeDef](./type_defs.md#workspaceaccesspropertiestypedef)
 - [WorkspaceCreationPropertiesTypeDef](./type_defs.md#workspacecreationpropertiestypedef)
 - [WorkspacePropertiesTypeDef](./type_defs.md#workspacepropertiestypedef)
 - [ModifyWorkspaceStateRequestRequestTypeDef](./type_defs.md#modifyworkspacestaterequestrequesttypedef)
-- [OperatingSystemTypeDef](./type_defs.md#operatingsystemtypedef)
 - [RebootRequestTypeDef](./type_defs.md#rebootrequesttypedef)
 - [RebuildRequestTypeDef](./type_defs.md#rebuildrequesttypedef)
 - [RestoreWorkspaceRequestRequestTypeDef](./type_defs.md#restoreworkspacerequestrequesttypedef)
@@ -253,11 +251,13 @@ def get_value() -> AccountModificationTypeDef:
 - [CreateIpGroupRequestRequestTypeDef](./type_defs.md#createipgrouprequestrequesttypedef)
 - [CreateTagsRequestRequestTypeDef](./type_defs.md#createtagsrequestrequesttypedef)
 - [CreateUpdatedWorkspaceImageRequestRequestTypeDef](./type_defs.md#createupdatedworkspaceimagerequestrequesttypedef)
+- [CreateWorkspaceImageRequestRequestTypeDef](./type_defs.md#createworkspaceimagerequestrequesttypedef)
 - [DescribeTagsResultTypeDef](./type_defs.md#describetagsresulttypedef)
 - [ImportWorkspaceImageRequestRequestTypeDef](./type_defs.md#importworkspaceimagerequestrequesttypedef)
 - [RegisterWorkspaceDirectoryRequestRequestTypeDef](./type_defs.md#registerworkspacedirectoryrequestrequesttypedef)
 - [CreateWorkspaceBundleRequestRequestTypeDef](./type_defs.md#createworkspacebundlerequestrequesttypedef)
 - [WorkspaceBundleTypeDef](./type_defs.md#workspacebundletypedef)
+- [CreateWorkspaceImageResultTypeDef](./type_defs.md#createworkspaceimageresulttypedef)
 - [DescribeAccountModificationsRequestDescribeAccountModificationsPaginateTypeDef](./type_defs.md#describeaccountmodificationsrequestdescribeaccountmodificationspaginatetypedef)
 - [DescribeIpGroupsRequestDescribeIpGroupsPaginateTypeDef](./type_defs.md#describeipgroupsrequestdescribeipgroupspaginatetypedef)
 - [DescribeWorkspaceBundlesRequestDescribeWorkspaceBundlesPaginateTypeDef](./type_defs.md#describeworkspacebundlesrequestdescribeworkspacebundlespaginatetypedef)
@@ -277,6 +277,7 @@ def get_value() -> AccountModificationTypeDef:
 - [StopWorkspacesResultTypeDef](./type_defs.md#stopworkspacesresulttypedef)
 - [TerminateWorkspacesResultTypeDef](./type_defs.md#terminateworkspacesresulttypedef)
 - [ImportClientBrandingRequestRequestTypeDef](./type_defs.md#importclientbrandingrequestrequesttypedef)
+- [ModifySamlPropertiesRequestRequestTypeDef](./type_defs.md#modifysamlpropertiesrequestrequesttypedef)
 - [ModifySelfservicePermissionsRequestRequestTypeDef](./type_defs.md#modifyselfservicepermissionsrequestrequesttypedef)
 - [ModifyWorkspaceAccessPropertiesRequestRequestTypeDef](./type_defs.md#modifyworkspaceaccesspropertiesrequestrequesttypedef)
 - [WorkspaceDirectoryTypeDef](./type_defs.md#workspacedirectorytypedef)

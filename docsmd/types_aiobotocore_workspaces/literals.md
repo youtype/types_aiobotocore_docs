@@ -173,6 +173,21 @@ DedicatedTenancySupportResultEnumType = Literal[
     "ENABLED",
 ]
 ```
+## DeletableSamlPropertyType
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.literals import DeletableSamlPropertyType
+
+def get_value() -> DeletableSamlPropertyType:
+    return "SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME"
+```
+
+```python title="Definition"
+DeletableSamlPropertyType = Literal[
+    "SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME",
+    "SAML_PROPERTIES_USER_ACCESS_URL",
+]
+```
 ## DescribeAccountModificationsPaginatorName
 
 ```python title="Usage Example"
@@ -376,6 +391,22 @@ RunningModeType = Literal[
     "AUTO_STOP",
 ]
 ```
+## SamlStatusEnumType
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.literals import SamlStatusEnumType
+
+def get_value() -> SamlStatusEnumType:
+    return "DISABLED"
+```
+
+```python title="Definition"
+SamlStatusEnumType = Literal[
+    "DISABLED",
+    "ENABLED",
+    "ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK",
+]
+```
 ## TargetWorkspaceStateType
 
 ```python title="Usage Example"
@@ -572,6 +603,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -717,6 +749,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -770,6 +803,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -780,11 +814,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -830,6 +866,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

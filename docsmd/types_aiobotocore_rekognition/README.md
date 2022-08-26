@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Rekognition`.
 
 ### From PyPI with pip
 
@@ -83,6 +78,7 @@ def get_describe_project_versions_paginator() -> DescribeProjectVersionsPaginato
 - [ListDatasetEntriesPaginator](./paginators.md#listdatasetentriespaginator)
 - [ListDatasetLabelsPaginator](./paginators.md#listdatasetlabelspaginator)
 - [ListFacesPaginator](./paginators.md#listfacespaginator)
+- [ListProjectPoliciesPaginator](./paginators.md#listprojectpoliciespaginator)
 - [ListStreamProcessorsPaginator](./paginators.md#liststreamprocessorspaginator)
 
 
@@ -141,6 +137,7 @@ def get_value() -> AttributeType:
 - [ListDatasetEntriesPaginatorName](./literals.md#listdatasetentriespaginatorname)
 - [ListDatasetLabelsPaginatorName](./literals.md#listdatasetlabelspaginatorname)
 - [ListFacesPaginatorName](./literals.md#listfacespaginatorname)
+- [ListProjectPoliciesPaginatorName](./literals.md#listprojectpoliciespaginatorname)
 - [ListStreamProcessorsPaginatorName](./literals.md#liststreamprocessorspaginatorname)
 - [OrientationCorrectionType](./literals.md#orientationcorrectiontype)
 - [PersonTrackingSortByType](./literals.md#persontrackingsortbytype)
@@ -196,10 +193,10 @@ def get_value() -> AgeRangeTypeDef:
 - [ConnectedHomeSettingsForUpdateTypeDef](./type_defs.md#connectedhomesettingsforupdatetypedef)
 - [ConnectedHomeSettingsTypeDef](./type_defs.md#connectedhomesettingstypedef)
 - [ModerationLabelTypeDef](./type_defs.md#moderationlabeltypedef)
+- [OutputConfigTypeDef](./type_defs.md#outputconfigtypedef)
 - [CoversBodyPartTypeDef](./type_defs.md#coversbodyparttypedef)
 - [CreateCollectionRequestRequestTypeDef](./type_defs.md#createcollectionrequestrequesttypedef)
 - [CreateProjectRequestRequestTypeDef](./type_defs.md#createprojectrequestrequesttypedef)
-- [OutputConfigTypeDef](./type_defs.md#outputconfigtypedef)
 - [StreamProcessorDataSharingPreferenceTypeDef](./type_defs.md#streamprocessordatasharingpreferencetypedef)
 - [StreamProcessorNotificationChannelTypeDef](./type_defs.md#streamprocessornotificationchanneltypedef)
 - [DatasetChangesTypeDef](./type_defs.md#datasetchangestypedef)
@@ -209,6 +206,7 @@ def get_value() -> AgeRangeTypeDef:
 - [DeleteCollectionRequestRequestTypeDef](./type_defs.md#deletecollectionrequestrequesttypedef)
 - [DeleteDatasetRequestRequestTypeDef](./type_defs.md#deletedatasetrequestrequesttypedef)
 - [DeleteFacesRequestRequestTypeDef](./type_defs.md#deletefacesrequestrequesttypedef)
+- [DeleteProjectPolicyRequestRequestTypeDef](./type_defs.md#deleteprojectpolicyrequestrequesttypedef)
 - [DeleteProjectRequestRequestTypeDef](./type_defs.md#deleteprojectrequestrequesttypedef)
 - [DeleteProjectVersionRequestRequestTypeDef](./type_defs.md#deleteprojectversionrequestrequesttypedef)
 - [DeleteStreamProcessorRequestRequestTypeDef](./type_defs.md#deletestreamprocessorrequestrequesttypedef)
@@ -253,10 +251,13 @@ def get_value() -> AgeRangeTypeDef:
 - [ListDatasetEntriesRequestRequestTypeDef](./type_defs.md#listdatasetentriesrequestrequesttypedef)
 - [ListDatasetLabelsRequestRequestTypeDef](./type_defs.md#listdatasetlabelsrequestrequesttypedef)
 - [ListFacesRequestRequestTypeDef](./type_defs.md#listfacesrequestrequesttypedef)
+- [ListProjectPoliciesRequestRequestTypeDef](./type_defs.md#listprojectpoliciesrequestrequesttypedef)
+- [ProjectPolicyTypeDef](./type_defs.md#projectpolicytypedef)
 - [ListStreamProcessorsRequestRequestTypeDef](./type_defs.md#liststreamprocessorsrequestrequesttypedef)
 - [StreamProcessorTypeDef](./type_defs.md#streamprocessortypedef)
 - [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
 - [NotificationChannelTypeDef](./type_defs.md#notificationchanneltypedef)
+- [PutProjectPolicyRequestRequestTypeDef](./type_defs.md#putprojectpolicyrequestrequesttypedef)
 - [S3DestinationTypeDef](./type_defs.md#s3destinationtypedef)
 - [SearchFacesRequestRequestTypeDef](./type_defs.md#searchfacesrequestrequesttypedef)
 - [ShotSegmentTypeDef](./type_defs.md#shotsegmenttypedef)
@@ -272,6 +273,7 @@ def get_value() -> AgeRangeTypeDef:
 - [ComparedSourceImageFaceTypeDef](./type_defs.md#comparedsourceimagefacetypedef)
 - [FaceTypeDef](./type_defs.md#facetypedef)
 - [InstanceTypeDef](./type_defs.md#instancetypedef)
+- [CopyProjectVersionResponseTypeDef](./type_defs.md#copyprojectversionresponsetypedef)
 - [CreateCollectionResponseTypeDef](./type_defs.md#createcollectionresponsetypedef)
 - [CreateDatasetResponseTypeDef](./type_defs.md#createdatasetresponsetypedef)
 - [CreateProjectResponseTypeDef](./type_defs.md#createprojectresponsetypedef)
@@ -286,6 +288,7 @@ def get_value() -> AgeRangeTypeDef:
 - [ListCollectionsResponseTypeDef](./type_defs.md#listcollectionsresponsetypedef)
 - [ListDatasetEntriesResponseTypeDef](./type_defs.md#listdatasetentriesresponsetypedef)
 - [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
+- [PutProjectPolicyResponseTypeDef](./type_defs.md#putprojectpolicyresponsetypedef)
 - [StartCelebrityRecognitionResponseTypeDef](./type_defs.md#startcelebrityrecognitionresponsetypedef)
 - [StartContentModerationResponseTypeDef](./type_defs.md#startcontentmoderationresponsetypedef)
 - [StartFaceDetectionResponseTypeDef](./type_defs.md#startfacedetectionresponsetypedef)
@@ -300,6 +303,7 @@ def get_value() -> AgeRangeTypeDef:
 - [ComparedFaceTypeDef](./type_defs.md#comparedfacetypedef)
 - [StreamProcessorSettingsForUpdateTypeDef](./type_defs.md#streamprocessorsettingsforupdatetypedef)
 - [ContentModerationDetectionTypeDef](./type_defs.md#contentmoderationdetectiontypedef)
+- [CopyProjectVersionRequestRequestTypeDef](./type_defs.md#copyprojectversionrequestrequesttypedef)
 - [EquipmentDetectionTypeDef](./type_defs.md#equipmentdetectiontypedef)
 - [UpdateDatasetEntriesRequestRequestTypeDef](./type_defs.md#updatedatasetentriesrequestrequesttypedef)
 - [DatasetDescriptionTypeDef](./type_defs.md#datasetdescriptiontypedef)
@@ -311,6 +315,7 @@ def get_value() -> AgeRangeTypeDef:
 - [ListDatasetEntriesRequestListDatasetEntriesPaginateTypeDef](./type_defs.md#listdatasetentriesrequestlistdatasetentriespaginatetypedef)
 - [ListDatasetLabelsRequestListDatasetLabelsPaginateTypeDef](./type_defs.md#listdatasetlabelsrequestlistdatasetlabelspaginatetypedef)
 - [ListFacesRequestListFacesPaginateTypeDef](./type_defs.md#listfacesrequestlistfacespaginatetypedef)
+- [ListProjectPoliciesRequestListProjectPoliciesPaginateTypeDef](./type_defs.md#listprojectpoliciesrequestlistprojectpoliciespaginatetypedef)
 - [ListStreamProcessorsRequestListStreamProcessorsPaginateTypeDef](./type_defs.md#liststreamprocessorsrequestliststreamprocessorspaginatetypedef)
 - [DescribeProjectVersionsRequestProjectVersionRunningWaitTypeDef](./type_defs.md#describeprojectversionsrequestprojectversionrunningwaittypedef)
 - [DescribeProjectVersionsRequestProjectVersionTrainingCompletedWaitTypeDef](./type_defs.md#describeprojectversionsrequestprojectversiontrainingcompletedwaittypedef)
@@ -327,6 +332,7 @@ def get_value() -> AgeRangeTypeDef:
 - [HumanLoopConfigTypeDef](./type_defs.md#humanloopconfigtypedef)
 - [StreamProcessingStartSelectorTypeDef](./type_defs.md#streamprocessingstartselectortypedef)
 - [StreamProcessorInputTypeDef](./type_defs.md#streamprocessorinputtypedef)
+- [ListProjectPoliciesResponseTypeDef](./type_defs.md#listprojectpoliciesresponsetypedef)
 - [ListStreamProcessorsResponseTypeDef](./type_defs.md#liststreamprocessorsresponsetypedef)
 - [StreamProcessorOutputTypeDef](./type_defs.md#streamprocessoroutputtypedef)
 - [SegmentDetectionTypeDef](./type_defs.md#segmentdetectiontypedef)

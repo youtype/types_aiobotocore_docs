@@ -7,6 +7,108 @@
     Auto-generated documentation for [RDS](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS)
     type annotations stubs module [types-aiobotocore-rds](https://pypi.org/project/types-aiobotocore-rds/).
 
+## DBClusterAvailableWaiter
+
+Type annotations and code completion for `#!python session.create_client("rds").get_waiter("db_cluster_available")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Waiter.DBClusterAvailable)
+
+```python title="Usage example"
+from aiobotocore.session import Session
+
+from types_aiobotocore_rds.waiter import DBClusterAvailableWaiter
+
+session = get_session()
+async with session.create_client("rds") as client:  # (1)
+    waiter: DBClusterAvailableWaiter = client.get_waiter("db_cluster_available")  # (2)
+    await waiter.wait()
+```
+
+1. client: [RDSClient](./client.md)
+2. waiter: [DBClusterAvailableWaiter](./waiters.md#dbclusteravailablewaiter)
+
+
+### wait
+
+Type annotations and code completion for `#!python DBClusterAvailableWaiter.wait` method.
+
+```python title="Method definition"
+await def wait(
+    self,
+    *,
+    DBClusterIdentifier: str = ...,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    MaxRecords: int = ...,
+    Marker: str = ...,
+    IncludeShared: bool = ...,
+    WaiterConfig: WaiterConfigTypeDef = ...,  # (2)
+) -> None:
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeDBClustersMessageDBClusterAvailableWaitTypeDef = {  # (1)
+    "DBClusterIdentifier": ...,
+}
+
+parent.wait(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeDBClustersMessageDBClusterAvailableWaitTypeDef](./type_defs.md#describedbclustersmessagedbclusteravailablewaittypedef) 
+## DBClusterDeletedWaiter
+
+Type annotations and code completion for `#!python session.create_client("rds").get_waiter("db_cluster_deleted")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Waiter.DBClusterDeleted)
+
+```python title="Usage example"
+from aiobotocore.session import Session
+
+from types_aiobotocore_rds.waiter import DBClusterDeletedWaiter
+
+session = get_session()
+async with session.create_client("rds") as client:  # (1)
+    waiter: DBClusterDeletedWaiter = client.get_waiter("db_cluster_deleted")  # (2)
+    await waiter.wait()
+```
+
+1. client: [RDSClient](./client.md)
+2. waiter: [DBClusterDeletedWaiter](./waiters.md#dbclusterdeletedwaiter)
+
+
+### wait
+
+Type annotations and code completion for `#!python DBClusterDeletedWaiter.wait` method.
+
+```python title="Method definition"
+await def wait(
+    self,
+    *,
+    DBClusterIdentifier: str = ...,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    MaxRecords: int = ...,
+    Marker: str = ...,
+    IncludeShared: bool = ...,
+    WaiterConfig: WaiterConfigTypeDef = ...,  # (2)
+) -> None:
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeDBClustersMessageDBClusterDeletedWaitTypeDef = {  # (1)
+    "DBClusterIdentifier": ...,
+}
+
+parent.wait(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeDBClustersMessageDBClusterDeletedWaitTypeDef](./type_defs.md#describedbclustersmessagedbclusterdeletedwaittypedef) 
 ## DBClusterSnapshotAvailableWaiter
 
 Type annotations and code completion for `#!python session.create_client("rds").get_waiter("db_cluster_snapshot_available")`.
@@ -17,9 +119,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_rds.waiter import DBClusterSnapshotAvailableWaiter
 
-def get_db_cluster_snapshot_available_waiter() -> DBClusterSnapshotAvailableWaiter:
-    return Session().client("rds").get_waiter("db_cluster_snapshot_available")
+session = get_session()
+async with session.create_client("rds") as client:  # (1)
+    waiter: DBClusterSnapshotAvailableWaiter = client.get_waiter("db_cluster_snapshot_available")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [RDSClient](./client.md)
+2. waiter: [DBClusterSnapshotAvailableWaiter](./waiters.md#dbclustersnapshotavailablewaiter)
 
 
 ### wait
@@ -66,9 +173,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_rds.waiter import DBClusterSnapshotDeletedWaiter
 
-def get_db_cluster_snapshot_deleted_waiter() -> DBClusterSnapshotDeletedWaiter:
-    return Session().client("rds").get_waiter("db_cluster_snapshot_deleted")
+session = get_session()
+async with session.create_client("rds") as client:  # (1)
+    waiter: DBClusterSnapshotDeletedWaiter = client.get_waiter("db_cluster_snapshot_deleted")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [RDSClient](./client.md)
+2. waiter: [DBClusterSnapshotDeletedWaiter](./waiters.md#dbclustersnapshotdeletedwaiter)
 
 
 ### wait
@@ -115,9 +227,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_rds.waiter import DBInstanceAvailableWaiter
 
-def get_db_instance_available_waiter() -> DBInstanceAvailableWaiter:
-    return Session().client("rds").get_waiter("db_instance_available")
+session = get_session()
+async with session.create_client("rds") as client:  # (1)
+    waiter: DBInstanceAvailableWaiter = client.get_waiter("db_instance_available")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [RDSClient](./client.md)
+2. waiter: [DBInstanceAvailableWaiter](./waiters.md#dbinstanceavailablewaiter)
 
 
 ### wait
@@ -160,9 +277,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_rds.waiter import DBInstanceDeletedWaiter
 
-def get_db_instance_deleted_waiter() -> DBInstanceDeletedWaiter:
-    return Session().client("rds").get_waiter("db_instance_deleted")
+session = get_session()
+async with session.create_client("rds") as client:  # (1)
+    waiter: DBInstanceDeletedWaiter = client.get_waiter("db_instance_deleted")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [RDSClient](./client.md)
+2. waiter: [DBInstanceDeletedWaiter](./waiters.md#dbinstancedeletedwaiter)
 
 
 ### wait
@@ -205,9 +327,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_rds.waiter import DBSnapshotAvailableWaiter
 
-def get_db_snapshot_available_waiter() -> DBSnapshotAvailableWaiter:
-    return Session().client("rds").get_waiter("db_snapshot_available")
+session = get_session()
+async with session.create_client("rds") as client:  # (1)
+    waiter: DBSnapshotAvailableWaiter = client.get_waiter("db_snapshot_available")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [RDSClient](./client.md)
+2. waiter: [DBSnapshotAvailableWaiter](./waiters.md#dbsnapshotavailablewaiter)
 
 
 ### wait
@@ -255,9 +382,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_rds.waiter import DBSnapshotCompletedWaiter
 
-def get_db_snapshot_completed_waiter() -> DBSnapshotCompletedWaiter:
-    return Session().client("rds").get_waiter("db_snapshot_completed")
+session = get_session()
+async with session.create_client("rds") as client:  # (1)
+    waiter: DBSnapshotCompletedWaiter = client.get_waiter("db_snapshot_completed")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [RDSClient](./client.md)
+2. waiter: [DBSnapshotCompletedWaiter](./waiters.md#dbsnapshotcompletedwaiter)
 
 
 ### wait
@@ -305,9 +437,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_rds.waiter import DBSnapshotDeletedWaiter
 
-def get_db_snapshot_deleted_waiter() -> DBSnapshotDeletedWaiter:
-    return Session().client("rds").get_waiter("db_snapshot_deleted")
+session = get_session()
+async with session.create_client("rds") as client:  # (1)
+    waiter: DBSnapshotDeletedWaiter = client.get_waiter("db_snapshot_deleted")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [RDSClient](./client.md)
+2. waiter: [DBSnapshotDeletedWaiter](./waiters.md#dbsnapshotdeletedwaiter)
 
 
 ### wait

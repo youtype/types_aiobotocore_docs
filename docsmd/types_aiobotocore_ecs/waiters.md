@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_ecs.waiter import ServicesInactiveWaiter
 
-def get_services_inactive_waiter() -> ServicesInactiveWaiter:
-    return Session().client("ecs").get_waiter("services_inactive")
+session = get_session()
+async with session.create_client("ecs") as client:  # (1)
+    waiter: ServicesInactiveWaiter = client.get_waiter("services_inactive")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ECSClient](./client.md)
+2. waiter: [ServicesInactiveWaiter](./waiters.md#servicesinactivewaiter)
 
 
 ### wait
@@ -61,9 +66,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_ecs.waiter import ServicesStableWaiter
 
-def get_services_stable_waiter() -> ServicesStableWaiter:
-    return Session().client("ecs").get_waiter("services_stable")
+session = get_session()
+async with session.create_client("ecs") as client:  # (1)
+    waiter: ServicesStableWaiter = client.get_waiter("services_stable")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ECSClient](./client.md)
+2. waiter: [ServicesStableWaiter](./waiters.md#servicesstablewaiter)
 
 
 ### wait
@@ -105,9 +115,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_ecs.waiter import TasksRunningWaiter
 
-def get_tasks_running_waiter() -> TasksRunningWaiter:
-    return Session().client("ecs").get_waiter("tasks_running")
+session = get_session()
+async with session.create_client("ecs") as client:  # (1)
+    waiter: TasksRunningWaiter = client.get_waiter("tasks_running")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ECSClient](./client.md)
+2. waiter: [TasksRunningWaiter](./waiters.md#tasksrunningwaiter)
 
 
 ### wait
@@ -149,9 +164,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_ecs.waiter import TasksStoppedWaiter
 
-def get_tasks_stopped_waiter() -> TasksStoppedWaiter:
-    return Session().client("ecs").get_waiter("tasks_stopped")
+session = get_session()
+async with session.create_client("ecs") as client:  # (1)
+    waiter: TasksStoppedWaiter = client.get_waiter("tasks_stopped")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ECSClient](./client.md)
+2. waiter: [TasksStoppedWaiter](./waiters.md#tasksstoppedwaiter)
 
 
 ### wait

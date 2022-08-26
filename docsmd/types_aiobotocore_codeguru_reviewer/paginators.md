@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codeguru_reviewer.paginator import ListRepositoryAssociationsPaginator
 
 session = get_session()
-async with session.create_client("codeguru-reviewer") as client:
-    client: CodeGuruReviewerClient
-    paginator: ListRepositoryAssociationsPaginator = client.get_paginator("list_repository_associations")
+async with session.create_client("codeguru-reviewer") as client:  # (1)
+    paginator: ListRepositoryAssociationsPaginator = client.get_paginator("list_repository_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRepositoryAssociationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeGuruReviewerClient](./client.md)
+2. paginator: [ListRepositoryAssociationsPaginator](./paginators.md#listrepositoryassociationspaginator)
+3. item: [:material-code-braces: ListRepositoryAssociationsResponseTypeDef](./type_defs.md#listrepositoryassociationsresponsetypedef) 
 
 
 ### paginate

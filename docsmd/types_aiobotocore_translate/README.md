@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Translate`.
 
 ### From PyPI with pip
 
@@ -98,6 +93,7 @@ def get_value() -> DirectionalityType:
 ```
 
 - [DirectionalityType](./literals.md#directionalitytype)
+- [DisplayLanguageCodeType](./literals.md#displaylanguagecodetype)
 - [EncryptionKeyTypeType](./literals.md#encryptionkeytypetype)
 - [FormalityType](./literals.md#formalitytype)
 - [JobStatusType](./literals.md#jobstatustype)
@@ -143,6 +139,8 @@ def get_value() -> TermTypeDef:
 - [TerminologyDataTypeDef](./type_defs.md#terminologydatatypedef)
 - [InputDataConfigTypeDef](./type_defs.md#inputdataconfigtypedef)
 - [JobDetailsTypeDef](./type_defs.md#jobdetailstypedef)
+- [LanguageTypeDef](./type_defs.md#languagetypedef)
+- [ListLanguagesRequestRequestTypeDef](./type_defs.md#listlanguagesrequestrequesttypedef)
 - [ListParallelDataRequestRequestTypeDef](./type_defs.md#listparalleldatarequestrequesttypedef)
 - [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 - [ListTerminologiesRequestRequestTypeDef](./type_defs.md#listterminologiesrequestrequesttypedef)
@@ -162,6 +160,7 @@ def get_value() -> TermTypeDef:
 - [StopTextTranslationJobResponseTypeDef](./type_defs.md#stoptexttranslationjobresponsetypedef)
 - [UpdateParallelDataResponseTypeDef](./type_defs.md#updateparalleldataresponsetypedef)
 - [ImportTerminologyRequestRequestTypeDef](./type_defs.md#importterminologyrequestrequesttypedef)
+- [ListLanguagesResponseTypeDef](./type_defs.md#listlanguagesresponsetypedef)
 - [ListTerminologiesRequestListTerminologiesPaginateTypeDef](./type_defs.md#listterminologiesrequestlistterminologiespaginatetypedef)
 - [ListTextTranslationJobsRequestRequestTypeDef](./type_defs.md#listtexttranslationjobsrequestrequesttypedef)
 - [TranslateTextRequestRequestTypeDef](./type_defs.md#translatetextrequestrequesttypedef)

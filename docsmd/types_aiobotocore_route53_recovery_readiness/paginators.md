@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53_recovery_readiness.paginator import GetCellReadinessSummaryPaginator
 
 session = get_session()
-async with session.create_client("route53-recovery-readiness") as client:
-    client: Route53RecoveryReadinessClient
-    paginator: GetCellReadinessSummaryPaginator = client.get_paginator("get_cell_readiness_summary")
+async with session.create_client("route53-recovery-readiness") as client:  # (1)
+    paginator: GetCellReadinessSummaryPaginator = client.get_paginator("get_cell_readiness_summary")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetCellReadinessSummaryResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53RecoveryReadinessClient](./client.md)
+2. paginator: [GetCellReadinessSummaryPaginator](./paginators.md#getcellreadinesssummarypaginator)
+3. item: [:material-code-braces: GetCellReadinessSummaryResponseTypeDef](./type_defs.md#getcellreadinesssummaryresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53_recovery_readiness.paginator import GetReadinessCheckResourceStatusPaginator
 
 session = get_session()
-async with session.create_client("route53-recovery-readiness") as client:
-    client: Route53RecoveryReadinessClient
-    paginator: GetReadinessCheckResourceStatusPaginator = client.get_paginator("get_readiness_check_resource_status")
+async with session.create_client("route53-recovery-readiness") as client:  # (1)
+    paginator: GetReadinessCheckResourceStatusPaginator = client.get_paginator("get_readiness_check_resource_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetReadinessCheckResourceStatusResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53RecoveryReadinessClient](./client.md)
+2. paginator: [GetReadinessCheckResourceStatusPaginator](./paginators.md#getreadinesscheckresourcestatuspaginator)
+3. item: [:material-code-braces: GetReadinessCheckResourceStatusResponseTypeDef](./type_defs.md#getreadinesscheckresourcestatusresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53_recovery_readiness.paginator import GetReadinessCheckStatusPaginator
 
 session = get_session()
-async with session.create_client("route53-recovery-readiness") as client:
-    client: Route53RecoveryReadinessClient
-    paginator: GetReadinessCheckStatusPaginator = client.get_paginator("get_readiness_check_status")
+async with session.create_client("route53-recovery-readiness") as client:  # (1)
+    paginator: GetReadinessCheckStatusPaginator = client.get_paginator("get_readiness_check_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetReadinessCheckStatusResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53RecoveryReadinessClient](./client.md)
+2. paginator: [GetReadinessCheckStatusPaginator](./paginators.md#getreadinesscheckstatuspaginator)
+3. item: [:material-code-braces: GetReadinessCheckStatusResponseTypeDef](./type_defs.md#getreadinesscheckstatusresponsetypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53_recovery_readiness.paginator import GetRecoveryGroupReadinessSummaryPaginator
 
 session = get_session()
-async with session.create_client("route53-recovery-readiness") as client:
-    client: Route53RecoveryReadinessClient
-    paginator: GetRecoveryGroupReadinessSummaryPaginator = client.get_paginator("get_recovery_group_readiness_summary")
+async with session.create_client("route53-recovery-readiness") as client:  # (1)
+    paginator: GetRecoveryGroupReadinessSummaryPaginator = client.get_paginator("get_recovery_group_readiness_summary")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetRecoveryGroupReadinessSummaryResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53RecoveryReadinessClient](./client.md)
+2. paginator: [GetRecoveryGroupReadinessSummaryPaginator](./paginators.md#getrecoverygroupreadinesssummarypaginator)
+3. item: [:material-code-braces: GetRecoveryGroupReadinessSummaryResponseTypeDef](./type_defs.md#getrecoverygroupreadinesssummaryresponsetypedef) 
 
 
 ### paginate
@@ -196,10 +220,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53_recovery_readiness.paginator import ListCellsPaginator
 
 session = get_session()
-async with session.create_client("route53-recovery-readiness") as client:
-    client: Route53RecoveryReadinessClient
-    paginator: ListCellsPaginator = client.get_paginator("list_cells")
+async with session.create_client("route53-recovery-readiness") as client:  # (1)
+    paginator: ListCellsPaginator = client.get_paginator("list_cells")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCellsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53RecoveryReadinessClient](./client.md)
+2. paginator: [ListCellsPaginator](./paginators.md#listcellspaginator)
+3. item: [:material-code-braces: ListCellsResponseTypeDef](./type_defs.md#listcellsresponsetypedef) 
 
 
 ### paginate
@@ -239,10 +269,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53_recovery_readiness.paginator import ListCrossAccountAuthorizationsPaginator
 
 session = get_session()
-async with session.create_client("route53-recovery-readiness") as client:
-    client: Route53RecoveryReadinessClient
-    paginator: ListCrossAccountAuthorizationsPaginator = client.get_paginator("list_cross_account_authorizations")
+async with session.create_client("route53-recovery-readiness") as client:  # (1)
+    paginator: ListCrossAccountAuthorizationsPaginator = client.get_paginator("list_cross_account_authorizations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCrossAccountAuthorizationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53RecoveryReadinessClient](./client.md)
+2. paginator: [ListCrossAccountAuthorizationsPaginator](./paginators.md#listcrossaccountauthorizationspaginator)
+3. item: [:material-code-braces: ListCrossAccountAuthorizationsResponseTypeDef](./type_defs.md#listcrossaccountauthorizationsresponsetypedef) 
 
 
 ### paginate
@@ -282,10 +318,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53_recovery_readiness.paginator import ListReadinessChecksPaginator
 
 session = get_session()
-async with session.create_client("route53-recovery-readiness") as client:
-    client: Route53RecoveryReadinessClient
-    paginator: ListReadinessChecksPaginator = client.get_paginator("list_readiness_checks")
+async with session.create_client("route53-recovery-readiness") as client:  # (1)
+    paginator: ListReadinessChecksPaginator = client.get_paginator("list_readiness_checks")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListReadinessChecksResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53RecoveryReadinessClient](./client.md)
+2. paginator: [ListReadinessChecksPaginator](./paginators.md#listreadinesscheckspaginator)
+3. item: [:material-code-braces: ListReadinessChecksResponseTypeDef](./type_defs.md#listreadinesschecksresponsetypedef) 
 
 
 ### paginate
@@ -325,10 +367,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53_recovery_readiness.paginator import ListRecoveryGroupsPaginator
 
 session = get_session()
-async with session.create_client("route53-recovery-readiness") as client:
-    client: Route53RecoveryReadinessClient
-    paginator: ListRecoveryGroupsPaginator = client.get_paginator("list_recovery_groups")
+async with session.create_client("route53-recovery-readiness") as client:  # (1)
+    paginator: ListRecoveryGroupsPaginator = client.get_paginator("list_recovery_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRecoveryGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53RecoveryReadinessClient](./client.md)
+2. paginator: [ListRecoveryGroupsPaginator](./paginators.md#listrecoverygroupspaginator)
+3. item: [:material-code-braces: ListRecoveryGroupsResponseTypeDef](./type_defs.md#listrecoverygroupsresponsetypedef) 
 
 
 ### paginate
@@ -368,10 +416,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53_recovery_readiness.paginator import ListResourceSetsPaginator
 
 session = get_session()
-async with session.create_client("route53-recovery-readiness") as client:
-    client: Route53RecoveryReadinessClient
-    paginator: ListResourceSetsPaginator = client.get_paginator("list_resource_sets")
+async with session.create_client("route53-recovery-readiness") as client:  # (1)
+    paginator: ListResourceSetsPaginator = client.get_paginator("list_resource_sets")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResourceSetsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53RecoveryReadinessClient](./client.md)
+2. paginator: [ListResourceSetsPaginator](./paginators.md#listresourcesetspaginator)
+3. item: [:material-code-braces: ListResourceSetsResponseTypeDef](./type_defs.md#listresourcesetsresponsetypedef) 
 
 
 ### paginate
@@ -411,10 +465,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53_recovery_readiness.paginator import ListRulesPaginator
 
 session = get_session()
-async with session.create_client("route53-recovery-readiness") as client:
-    client: Route53RecoveryReadinessClient
-    paginator: ListRulesPaginator = client.get_paginator("list_rules")
+async with session.create_client("route53-recovery-readiness") as client:  # (1)
+    paginator: ListRulesPaginator = client.get_paginator("list_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRulesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53RecoveryReadinessClient](./client.md)
+2. paginator: [ListRulesPaginator](./paginators.md#listrulespaginator)
+3. item: [:material-code-braces: ListRulesResponseTypeDef](./type_defs.md#listrulesresponsetypedef) 
 
 
 ### paginate

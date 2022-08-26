@@ -7,6 +7,36 @@
     Auto-generated documentation for [CodeArtifact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact)
     type annotations stubs module [types-aiobotocore-codeartifact](https://pypi.org/project/types-aiobotocore-codeartifact/).
 
+## AllowPublishType
+
+```python title="Usage Example"
+from types_aiobotocore_codeartifact.literals import AllowPublishType
+
+def get_value() -> AllowPublishType:
+    return "ALLOW"
+```
+
+```python title="Definition"
+AllowPublishType = Literal[
+    "ALLOW",
+    "BLOCK",
+]
+```
+## AllowUpstreamType
+
+```python title="Usage Example"
+from types_aiobotocore_codeartifact.literals import AllowUpstreamType
+
+def get_value() -> AllowUpstreamType:
+    return "ALLOW"
+```
+
+```python title="Definition"
+AllowUpstreamType = Literal[
+    "ALLOW",
+    "BLOCK",
+]
+```
 ## DomainStatusType
 
 ```python title="Usage Example"
@@ -173,6 +203,22 @@ PackageVersionErrorCodeType = Literal[
     "SKIPPED",
 ]
 ```
+## PackageVersionOriginTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_codeartifact.literals import PackageVersionOriginTypeType
+
+def get_value() -> PackageVersionOriginTypeType:
+    return "EXTERNAL"
+```
+
+```python title="Definition"
+PackageVersionOriginTypeType = Literal[
+    "EXTERNAL",
+    "INTERNAL",
+    "UNKNOWN",
+]
+```
 ## PackageVersionSortTypeType
 
 ```python title="Usage Example"
@@ -260,6 +306,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -405,6 +452,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -458,6 +506,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -468,11 +517,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -518,6 +569,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `ChimeSDKMeetings`.
 
 ### From PyPI with pip
 
@@ -123,6 +118,7 @@ def get_value() -> AttendeeCapabilitiesTypeDef:
 - [CreateAttendeeErrorTypeDef](./type_defs.md#createattendeeerrortypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
 - [NotificationsConfigurationTypeDef](./type_defs.md#notificationsconfigurationtypedef)
+- [TagTypeDef](./type_defs.md#tagtypedef)
 - [DeleteAttendeeRequestRequestTypeDef](./type_defs.md#deleteattendeerequestrequesttypedef)
 - [DeleteMeetingRequestRequestTypeDef](./type_defs.md#deletemeetingrequestrequesttypedef)
 - [EngineTranscribeMedicalSettingsTypeDef](./type_defs.md#enginetranscribemedicalsettingstypedef)
@@ -130,8 +126,10 @@ def get_value() -> AttendeeCapabilitiesTypeDef:
 - [GetAttendeeRequestRequestTypeDef](./type_defs.md#getattendeerequestrequesttypedef)
 - [GetMeetingRequestRequestTypeDef](./type_defs.md#getmeetingrequestrequesttypedef)
 - [ListAttendeesRequestRequestTypeDef](./type_defs.md#listattendeesrequestrequesttypedef)
+- [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
 - [MediaPlacementTypeDef](./type_defs.md#mediaplacementtypedef)
 - [StopMeetingTranscriptionRequestRequestTypeDef](./type_defs.md#stopmeetingtranscriptionrequestrequesttypedef)
+- [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
 - [AttendeeTypeDef](./type_defs.md#attendeetypedef)
 - [CreateAttendeeRequestItemTypeDef](./type_defs.md#createattendeerequestitemtypedef)
 - [CreateAttendeeRequestRequestTypeDef](./type_defs.md#createattendeerequestrequesttypedef)
@@ -139,6 +137,8 @@ def get_value() -> AttendeeCapabilitiesTypeDef:
 - [BatchUpdateAttendeeCapabilitiesExceptRequestRequestTypeDef](./type_defs.md#batchupdateattendeecapabilitiesexceptrequestrequesttypedef)
 - [MeetingFeaturesConfigurationTypeDef](./type_defs.md#meetingfeaturesconfigurationtypedef)
 - [EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef)
+- [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
+- [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
 - [TranscriptionConfigurationTypeDef](./type_defs.md#transcriptionconfigurationtypedef)
 - [BatchCreateAttendeeResponseTypeDef](./type_defs.md#batchcreateattendeeresponsetypedef)
 - [CreateAttendeeResponseTypeDef](./type_defs.md#createattendeeresponsetypedef)

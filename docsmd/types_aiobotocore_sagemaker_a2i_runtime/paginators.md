@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker_a2i_runtime.paginator import ListHumanLoopsPaginator
 
 session = get_session()
-async with session.create_client("sagemaker-a2i-runtime") as client:
-    client: AugmentedAIRuntimeClient
-    paginator: ListHumanLoopsPaginator = client.get_paginator("list_human_loops")
+async with session.create_client("sagemaker-a2i-runtime") as client:  # (1)
+    paginator: ListHumanLoopsPaginator = client.get_paginator("list_human_loops")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListHumanLoopsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AugmentedAIRuntimeClient](./client.md)
+2. paginator: [ListHumanLoopsPaginator](./paginators.md#listhumanloopspaginator)
+3. item: [:material-code-braces: ListHumanLoopsResponseTypeDef](./type_defs.md#listhumanloopsresponsetypedef) 
 
 
 ### paginate

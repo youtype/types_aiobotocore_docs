@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mediastore.paginator import ListContainersPaginator
 
 session = get_session()
-async with session.create_client("mediastore") as client:
-    client: MediaStoreClient
-    paginator: ListContainersPaginator = client.get_paginator("list_containers")
+async with session.create_client("mediastore") as client:  # (1)
+    paginator: ListContainersPaginator = client.get_paginator("list_containers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListContainersOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MediaStoreClient](./client.md)
+2. paginator: [ListContainersPaginator](./paginators.md#listcontainerspaginator)
+3. item: [:material-code-braces: ListContainersOutputTypeDef](./type_defs.md#listcontainersoutputtypedef) 
 
 
 ### paginate

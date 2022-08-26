@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kinesisvideo.paginator import ListSignalingChannelsPaginator
 
 session = get_session()
-async with session.create_client("kinesisvideo") as client:
-    client: KinesisVideoClient
-    paginator: ListSignalingChannelsPaginator = client.get_paginator("list_signaling_channels")
+async with session.create_client("kinesisvideo") as client:  # (1)
+    paginator: ListSignalingChannelsPaginator = client.get_paginator("list_signaling_channels")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSignalingChannelsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KinesisVideoClient](./client.md)
+2. paginator: [ListSignalingChannelsPaginator](./paginators.md#listsignalingchannelspaginator)
+3. item: [:material-code-braces: ListSignalingChannelsOutputTypeDef](./type_defs.md#listsignalingchannelsoutputtypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_kinesisvideo.paginator import ListStreamsPaginator
 
 session = get_session()
-async with session.create_client("kinesisvideo") as client:
-    client: KinesisVideoClient
-    paginator: ListStreamsPaginator = client.get_paginator("list_streams")
+async with session.create_client("kinesisvideo") as client:  # (1)
+    paginator: ListStreamsPaginator = client.get_paginator("list_streams")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStreamsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KinesisVideoClient](./client.md)
+2. paginator: [ListStreamsPaginator](./paginators.md#liststreamspaginator)
+3. item: [:material-code-braces: ListStreamsOutputTypeDef](./type_defs.md#liststreamsoutputtypedef) 
 
 
 ### paginate

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_autoscaling.paginator import DescribeAutoScalingGroupsPaginator
 
 session = get_session()
-async with session.create_client("autoscaling") as client:
-    client: AutoScalingClient
-    paginator: DescribeAutoScalingGroupsPaginator = client.get_paginator("describe_auto_scaling_groups")
+async with session.create_client("autoscaling") as client:  # (1)
+    paginator: DescribeAutoScalingGroupsPaginator = client.get_paginator("describe_auto_scaling_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: AutoScalingGroupsTypeTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AutoScalingClient](./client.md)
+2. paginator: [DescribeAutoScalingGroupsPaginator](./paginators.md#describeautoscalinggroupspaginator)
+3. item: [:material-code-braces: AutoScalingGroupsTypeTypeDef](./type_defs.md#autoscalinggroupstypetypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_autoscaling.paginator import DescribeAutoScalingInstancesPaginator
 
 session = get_session()
-async with session.create_client("autoscaling") as client:
-    client: AutoScalingClient
-    paginator: DescribeAutoScalingInstancesPaginator = client.get_paginator("describe_auto_scaling_instances")
+async with session.create_client("autoscaling") as client:  # (1)
+    paginator: DescribeAutoScalingInstancesPaginator = client.get_paginator("describe_auto_scaling_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: AutoScalingInstancesTypeTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AutoScalingClient](./client.md)
+2. paginator: [DescribeAutoScalingInstancesPaginator](./paginators.md#describeautoscalinginstancespaginator)
+3. item: [:material-code-braces: AutoScalingInstancesTypeTypeDef](./type_defs.md#autoscalinginstancestypetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_autoscaling.paginator import DescribeLaunchConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("autoscaling") as client:
-    client: AutoScalingClient
-    paginator: DescribeLaunchConfigurationsPaginator = client.get_paginator("describe_launch_configurations")
+async with session.create_client("autoscaling") as client:  # (1)
+    paginator: DescribeLaunchConfigurationsPaginator = client.get_paginator("describe_launch_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: LaunchConfigurationsTypeTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AutoScalingClient](./client.md)
+2. paginator: [DescribeLaunchConfigurationsPaginator](./paginators.md#describelaunchconfigurationspaginator)
+3. item: [:material-code-braces: LaunchConfigurationsTypeTypeDef](./type_defs.md#launchconfigurationstypetypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_autoscaling.paginator import DescribeLoadBalancerTargetGroupsPaginator
 
 session = get_session()
-async with session.create_client("autoscaling") as client:
-    client: AutoScalingClient
-    paginator: DescribeLoadBalancerTargetGroupsPaginator = client.get_paginator("describe_load_balancer_target_groups")
+async with session.create_client("autoscaling") as client:  # (1)
+    paginator: DescribeLoadBalancerTargetGroupsPaginator = client.get_paginator("describe_load_balancer_target_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeLoadBalancerTargetGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AutoScalingClient](./client.md)
+2. paginator: [DescribeLoadBalancerTargetGroupsPaginator](./paginators.md#describeloadbalancertargetgroupspaginator)
+3. item: [:material-code-braces: DescribeLoadBalancerTargetGroupsResponseTypeDef](./type_defs.md#describeloadbalancertargetgroupsresponsetypedef) 
 
 
 ### paginate
@@ -196,10 +220,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_autoscaling.paginator import DescribeLoadBalancersPaginator
 
 session = get_session()
-async with session.create_client("autoscaling") as client:
-    client: AutoScalingClient
-    paginator: DescribeLoadBalancersPaginator = client.get_paginator("describe_load_balancers")
+async with session.create_client("autoscaling") as client:  # (1)
+    paginator: DescribeLoadBalancersPaginator = client.get_paginator("describe_load_balancers")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeLoadBalancersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AutoScalingClient](./client.md)
+2. paginator: [DescribeLoadBalancersPaginator](./paginators.md#describeloadbalancerspaginator)
+3. item: [:material-code-braces: DescribeLoadBalancersResponseTypeDef](./type_defs.md#describeloadbalancersresponsetypedef) 
 
 
 ### paginate
@@ -240,10 +270,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_autoscaling.paginator import DescribeNotificationConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("autoscaling") as client:
-    client: AutoScalingClient
-    paginator: DescribeNotificationConfigurationsPaginator = client.get_paginator("describe_notification_configurations")
+async with session.create_client("autoscaling") as client:  # (1)
+    paginator: DescribeNotificationConfigurationsPaginator = client.get_paginator("describe_notification_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeNotificationConfigurationsAnswerTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AutoScalingClient](./client.md)
+2. paginator: [DescribeNotificationConfigurationsPaginator](./paginators.md#describenotificationconfigurationspaginator)
+3. item: [:material-code-braces: DescribeNotificationConfigurationsAnswerTypeDef](./type_defs.md#describenotificationconfigurationsanswertypedef) 
 
 
 ### paginate
@@ -284,10 +320,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_autoscaling.paginator import DescribePoliciesPaginator
 
 session = get_session()
-async with session.create_client("autoscaling") as client:
-    client: AutoScalingClient
-    paginator: DescribePoliciesPaginator = client.get_paginator("describe_policies")
+async with session.create_client("autoscaling") as client:  # (1)
+    paginator: DescribePoliciesPaginator = client.get_paginator("describe_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: PoliciesTypeTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AutoScalingClient](./client.md)
+2. paginator: [DescribePoliciesPaginator](./paginators.md#describepoliciespaginator)
+3. item: [:material-code-braces: PoliciesTypeTypeDef](./type_defs.md#policiestypetypedef) 
 
 
 ### paginate
@@ -330,10 +372,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_autoscaling.paginator import DescribeScalingActivitiesPaginator
 
 session = get_session()
-async with session.create_client("autoscaling") as client:
-    client: AutoScalingClient
-    paginator: DescribeScalingActivitiesPaginator = client.get_paginator("describe_scaling_activities")
+async with session.create_client("autoscaling") as client:  # (1)
+    paginator: DescribeScalingActivitiesPaginator = client.get_paginator("describe_scaling_activities")  # (2)
+    async for item in paginator.paginate(...):
+        item: ActivitiesTypeTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AutoScalingClient](./client.md)
+2. paginator: [DescribeScalingActivitiesPaginator](./paginators.md#describescalingactivitiespaginator)
+3. item: [:material-code-braces: ActivitiesTypeTypeDef](./type_defs.md#activitiestypetypedef) 
 
 
 ### paginate
@@ -376,10 +424,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_autoscaling.paginator import DescribeScheduledActionsPaginator
 
 session = get_session()
-async with session.create_client("autoscaling") as client:
-    client: AutoScalingClient
-    paginator: DescribeScheduledActionsPaginator = client.get_paginator("describe_scheduled_actions")
+async with session.create_client("autoscaling") as client:  # (1)
+    paginator: DescribeScheduledActionsPaginator = client.get_paginator("describe_scheduled_actions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ScheduledActionsTypeTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AutoScalingClient](./client.md)
+2. paginator: [DescribeScheduledActionsPaginator](./paginators.md#describescheduledactionspaginator)
+3. item: [:material-code-braces: ScheduledActionsTypeTypeDef](./type_defs.md#scheduledactionstypetypedef) 
 
 
 ### paginate
@@ -423,10 +477,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_autoscaling.paginator import DescribeTagsPaginator
 
 session = get_session()
-async with session.create_client("autoscaling") as client:
-    client: AutoScalingClient
-    paginator: DescribeTagsPaginator = client.get_paginator("describe_tags")
+async with session.create_client("autoscaling") as client:  # (1)
+    paginator: DescribeTagsPaginator = client.get_paginator("describe_tags")  # (2)
+    async for item in paginator.paginate(...):
+        item: TagsTypeTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AutoScalingClient](./client.md)
+2. paginator: [DescribeTagsPaginator](./paginators.md#describetagspaginator)
+3. item: [:material-code-braces: TagsTypeTypeDef](./type_defs.md#tagstypetypedef) 
 
 
 ### paginate

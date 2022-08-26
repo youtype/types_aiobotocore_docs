@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glacier.paginator import ListJobsPaginator
 
 session = get_session()
-async with session.create_client("glacier") as client:
-    client: GlacierClient
-    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
+async with session.create_client("glacier") as client:  # (1)
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListJobsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlacierClient](./client.md)
+2. paginator: [ListJobsPaginator](./paginators.md#listjobspaginator)
+3. item: [:material-code-braces: ListJobsOutputTypeDef](./type_defs.md#listjobsoutputtypedef) 
 
 
 ### paginate
@@ -66,10 +72,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glacier.paginator import ListMultipartUploadsPaginator
 
 session = get_session()
-async with session.create_client("glacier") as client:
-    client: GlacierClient
-    paginator: ListMultipartUploadsPaginator = client.get_paginator("list_multipart_uploads")
+async with session.create_client("glacier") as client:  # (1)
+    paginator: ListMultipartUploadsPaginator = client.get_paginator("list_multipart_uploads")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMultipartUploadsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlacierClient](./client.md)
+2. paginator: [ListMultipartUploadsPaginator](./paginators.md#listmultipartuploadspaginator)
+3. item: [:material-code-braces: ListMultipartUploadsOutputTypeDef](./type_defs.md#listmultipartuploadsoutputtypedef) 
 
 
 ### paginate
@@ -112,10 +124,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glacier.paginator import ListPartsPaginator
 
 session = get_session()
-async with session.create_client("glacier") as client:
-    client: GlacierClient
-    paginator: ListPartsPaginator = client.get_paginator("list_parts")
+async with session.create_client("glacier") as client:  # (1)
+    paginator: ListPartsPaginator = client.get_paginator("list_parts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPartsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlacierClient](./client.md)
+2. paginator: [ListPartsPaginator](./paginators.md#listpartspaginator)
+3. item: [:material-code-braces: ListPartsOutputTypeDef](./type_defs.md#listpartsoutputtypedef) 
 
 
 ### paginate
@@ -160,10 +178,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glacier.paginator import ListVaultsPaginator
 
 session = get_session()
-async with session.create_client("glacier") as client:
-    client: GlacierClient
-    paginator: ListVaultsPaginator = client.get_paginator("list_vaults")
+async with session.create_client("glacier") as client:  # (1)
+    paginator: ListVaultsPaginator = client.get_paginator("list_vaults")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListVaultsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlacierClient](./client.md)
+2. paginator: [ListVaultsPaginator](./paginators.md#listvaultspaginator)
+3. item: [:material-code-braces: ListVaultsOutputTypeDef](./type_defs.md#listvaultsoutputtypedef) 
 
 
 ### paginate

@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_acm.waiter import CertificateValidatedWaiter
 
-def get_certificate_validated_waiter() -> CertificateValidatedWaiter:
-    return Session().client("acm").get_waiter("certificate_validated")
+session = get_session()
+async with session.create_client("acm") as client:  # (1)
+    waiter: CertificateValidatedWaiter = client.get_waiter("certificate_validated")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [ACMClient](./client.md)
+2. waiter: [CertificateValidatedWaiter](./waiters.md#certificatevalidatedwaiter)
 
 
 ### wait

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_serverlessrepo.paginator import ListApplicationDependenciesPaginator
 
 session = get_session()
-async with session.create_client("serverlessrepo") as client:
-    client: ServerlessApplicationRepositoryClient
-    paginator: ListApplicationDependenciesPaginator = client.get_paginator("list_application_dependencies")
+async with session.create_client("serverlessrepo") as client:  # (1)
+    paginator: ListApplicationDependenciesPaginator = client.get_paginator("list_application_dependencies")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListApplicationDependenciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServerlessApplicationRepositoryClient](./client.md)
+2. paginator: [ListApplicationDependenciesPaginator](./paginators.md#listapplicationdependenciespaginator)
+3. item: [:material-code-braces: ListApplicationDependenciesResponseTypeDef](./type_defs.md#listapplicationdependenciesresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_serverlessrepo.paginator import ListApplicationVersionsPaginator
 
 session = get_session()
-async with session.create_client("serverlessrepo") as client:
-    client: ServerlessApplicationRepositoryClient
-    paginator: ListApplicationVersionsPaginator = client.get_paginator("list_application_versions")
+async with session.create_client("serverlessrepo") as client:  # (1)
+    paginator: ListApplicationVersionsPaginator = client.get_paginator("list_application_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListApplicationVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServerlessApplicationRepositoryClient](./client.md)
+2. paginator: [ListApplicationVersionsPaginator](./paginators.md#listapplicationversionspaginator)
+3. item: [:material-code-braces: ListApplicationVersionsResponseTypeDef](./type_defs.md#listapplicationversionsresponsetypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_serverlessrepo.paginator import ListApplicationsPaginator
 
 session = get_session()
-async with session.create_client("serverlessrepo") as client:
-    client: ServerlessApplicationRepositoryClient
-    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")
+async with session.create_client("serverlessrepo") as client:  # (1)
+    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListApplicationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServerlessApplicationRepositoryClient](./client.md)
+2. paginator: [ListApplicationsPaginator](./paginators.md#listapplicationspaginator)
+3. item: [:material-code-braces: ListApplicationsResponseTypeDef](./type_defs.md#listapplicationsresponsetypedef) 
 
 
 ### paginate

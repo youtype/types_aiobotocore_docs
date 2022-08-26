@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mq.paginator import ListBrokersPaginator
 
 session = get_session()
-async with session.create_client("mq") as client:
-    client: MQClient
-    paginator: ListBrokersPaginator = client.get_paginator("list_brokers")
+async with session.create_client("mq") as client:  # (1)
+    paginator: ListBrokersPaginator = client.get_paginator("list_brokers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBrokersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MQClient](./client.md)
+2. paginator: [ListBrokersPaginator](./paginators.md#listbrokerspaginator)
+3. item: [:material-code-braces: ListBrokersResponseTypeDef](./type_defs.md#listbrokersresponsetypedef) 
 
 
 ### paginate

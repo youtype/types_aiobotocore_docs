@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import GetOfferingStatusPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: GetOfferingStatusPaginator = client.get_paginator("get_offering_status")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: GetOfferingStatusPaginator = client.get_paginator("get_offering_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetOfferingStatusResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [GetOfferingStatusPaginator](./paginators.md#getofferingstatuspaginator)
+3. item: [:material-code-braces: GetOfferingStatusResultTypeDef](./type_defs.md#getofferingstatusresulttypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListArtifactsPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListArtifactsPaginator = client.get_paginator("list_artifacts")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListArtifactsPaginator = client.get_paginator("list_artifacts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListArtifactsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListArtifactsPaginator](./paginators.md#listartifactspaginator)
+3. item: [:material-code-braces: ListArtifactsResultTypeDef](./type_defs.md#listartifactsresulttypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListDeviceInstancesPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListDeviceInstancesPaginator = client.get_paginator("list_device_instances")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListDeviceInstancesPaginator = client.get_paginator("list_device_instances")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeviceInstancesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListDeviceInstancesPaginator](./paginators.md#listdeviceinstancespaginator)
+3. item: [:material-code-braces: ListDeviceInstancesResultTypeDef](./type_defs.md#listdeviceinstancesresulttypedef) 
 
 
 ### paginate
@@ -151,10 +169,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListDevicePoolsPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListDevicePoolsPaginator = client.get_paginator("list_device_pools")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListDevicePoolsPaginator = client.get_paginator("list_device_pools")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDevicePoolsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListDevicePoolsPaginator](./paginators.md#listdevicepoolspaginator)
+3. item: [:material-code-braces: ListDevicePoolsResultTypeDef](./type_defs.md#listdevicepoolsresulttypedef) 
 
 
 ### paginate
@@ -197,10 +221,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListDevicesPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListDevicesPaginator = client.get_paginator("list_devices")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListDevicesPaginator = client.get_paginator("list_devices")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDevicesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListDevicesPaginator](./paginators.md#listdevicespaginator)
+3. item: [:material-code-braces: ListDevicesResultTypeDef](./type_defs.md#listdevicesresulttypedef) 
 
 
 ### paginate
@@ -243,10 +273,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListInstanceProfilesPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListInstanceProfilesPaginator = client.get_paginator("list_instance_profiles")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListInstanceProfilesPaginator = client.get_paginator("list_instance_profiles")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListInstanceProfilesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListInstanceProfilesPaginator](./paginators.md#listinstanceprofilespaginator)
+3. item: [:material-code-braces: ListInstanceProfilesResultTypeDef](./type_defs.md#listinstanceprofilesresulttypedef) 
 
 
 ### paginate
@@ -286,10 +322,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListJobsPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListJobsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListJobsPaginator](./paginators.md#listjobspaginator)
+3. item: [:material-code-braces: ListJobsResultTypeDef](./type_defs.md#listjobsresulttypedef) 
 
 
 ### paginate
@@ -330,10 +372,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListNetworkProfilesPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListNetworkProfilesPaginator = client.get_paginator("list_network_profiles")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListNetworkProfilesPaginator = client.get_paginator("list_network_profiles")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListNetworkProfilesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListNetworkProfilesPaginator](./paginators.md#listnetworkprofilespaginator)
+3. item: [:material-code-braces: ListNetworkProfilesResultTypeDef](./type_defs.md#listnetworkprofilesresulttypedef) 
 
 
 ### paginate
@@ -376,10 +424,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListOfferingPromotionsPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListOfferingPromotionsPaginator = client.get_paginator("list_offering_promotions")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListOfferingPromotionsPaginator = client.get_paginator("list_offering_promotions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListOfferingPromotionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListOfferingPromotionsPaginator](./paginators.md#listofferingpromotionspaginator)
+3. item: [:material-code-braces: ListOfferingPromotionsResultTypeDef](./type_defs.md#listofferingpromotionsresulttypedef) 
 
 
 ### paginate
@@ -419,10 +473,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListOfferingTransactionsPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListOfferingTransactionsPaginator = client.get_paginator("list_offering_transactions")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListOfferingTransactionsPaginator = client.get_paginator("list_offering_transactions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListOfferingTransactionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListOfferingTransactionsPaginator](./paginators.md#listofferingtransactionspaginator)
+3. item: [:material-code-braces: ListOfferingTransactionsResultTypeDef](./type_defs.md#listofferingtransactionsresulttypedef) 
 
 
 ### paginate
@@ -462,10 +522,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListOfferingsPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListOfferingsPaginator = client.get_paginator("list_offerings")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListOfferingsPaginator = client.get_paginator("list_offerings")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListOfferingsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListOfferingsPaginator](./paginators.md#listofferingspaginator)
+3. item: [:material-code-braces: ListOfferingsResultTypeDef](./type_defs.md#listofferingsresulttypedef) 
 
 
 ### paginate
@@ -505,10 +571,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListProjectsPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProjectsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListProjectsPaginator](./paginators.md#listprojectspaginator)
+3. item: [:material-code-braces: ListProjectsResultTypeDef](./type_defs.md#listprojectsresulttypedef) 
 
 
 ### paginate
@@ -549,10 +621,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListRemoteAccessSessionsPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListRemoteAccessSessionsPaginator = client.get_paginator("list_remote_access_sessions")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListRemoteAccessSessionsPaginator = client.get_paginator("list_remote_access_sessions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRemoteAccessSessionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListRemoteAccessSessionsPaginator](./paginators.md#listremoteaccesssessionspaginator)
+3. item: [:material-code-braces: ListRemoteAccessSessionsResultTypeDef](./type_defs.md#listremoteaccesssessionsresulttypedef) 
 
 
 ### paginate
@@ -593,10 +671,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListRunsPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListRunsPaginator = client.get_paginator("list_runs")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListRunsPaginator = client.get_paginator("list_runs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRunsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListRunsPaginator](./paginators.md#listrunspaginator)
+3. item: [:material-code-braces: ListRunsResultTypeDef](./type_defs.md#listrunsresulttypedef) 
 
 
 ### paginate
@@ -637,10 +721,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListSamplesPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListSamplesPaginator = client.get_paginator("list_samples")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListSamplesPaginator = client.get_paginator("list_samples")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSamplesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListSamplesPaginator](./paginators.md#listsamplespaginator)
+3. item: [:material-code-braces: ListSamplesResultTypeDef](./type_defs.md#listsamplesresulttypedef) 
 
 
 ### paginate
@@ -681,10 +771,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListSuitesPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListSuitesPaginator = client.get_paginator("list_suites")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListSuitesPaginator = client.get_paginator("list_suites")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSuitesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListSuitesPaginator](./paginators.md#listsuitespaginator)
+3. item: [:material-code-braces: ListSuitesResultTypeDef](./type_defs.md#listsuitesresulttypedef) 
 
 
 ### paginate
@@ -725,10 +821,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListTestsPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListTestsPaginator = client.get_paginator("list_tests")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListTestsPaginator = client.get_paginator("list_tests")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTestsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListTestsPaginator](./paginators.md#listtestspaginator)
+3. item: [:material-code-braces: ListTestsResultTypeDef](./type_defs.md#listtestsresulttypedef) 
 
 
 ### paginate
@@ -769,10 +871,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListUniqueProblemsPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListUniqueProblemsPaginator = client.get_paginator("list_unique_problems")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListUniqueProblemsPaginator = client.get_paginator("list_unique_problems")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUniqueProblemsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListUniqueProblemsPaginator](./paginators.md#listuniqueproblemspaginator)
+3. item: [:material-code-braces: ListUniqueProblemsResultTypeDef](./type_defs.md#listuniqueproblemsresulttypedef) 
 
 
 ### paginate
@@ -813,10 +921,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListUploadsPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListUploadsPaginator = client.get_paginator("list_uploads")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListUploadsPaginator = client.get_paginator("list_uploads")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUploadsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListUploadsPaginator](./paginators.md#listuploadspaginator)
+3. item: [:material-code-braces: ListUploadsResultTypeDef](./type_defs.md#listuploadsresulttypedef) 
 
 
 ### paginate
@@ -859,10 +973,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.paginator import ListVPCEConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("devicefarm") as client:
-    client: DeviceFarmClient
-    paginator: ListVPCEConfigurationsPaginator = client.get_paginator("list_vpce_configurations")
+async with session.create_client("devicefarm") as client:  # (1)
+    paginator: ListVPCEConfigurationsPaginator = client.get_paginator("list_vpce_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListVPCEConfigurationsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DeviceFarmClient](./client.md)
+2. paginator: [ListVPCEConfigurationsPaginator](./paginators.md#listvpceconfigurationspaginator)
+3. item: [:material-code-braces: ListVPCEConfigurationsResultTypeDef](./type_defs.md#listvpceconfigurationsresulttypedef) 
 
 
 ### paginate

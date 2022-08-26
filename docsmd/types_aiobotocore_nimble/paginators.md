@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_nimble.paginator import ListEulaAcceptancesPaginator
 
 session = get_session()
-async with session.create_client("nimble") as client:
-    client: NimbleStudioClient
-    paginator: ListEulaAcceptancesPaginator = client.get_paginator("list_eula_acceptances")
+async with session.create_client("nimble") as client:  # (1)
+    paginator: ListEulaAcceptancesPaginator = client.get_paginator("list_eula_acceptances")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEulaAcceptancesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NimbleStudioClient](./client.md)
+2. paginator: [ListEulaAcceptancesPaginator](./paginators.md#listeulaacceptancespaginator)
+3. item: [:material-code-braces: ListEulaAcceptancesResponseTypeDef](./type_defs.md#listeulaacceptancesresponsetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_nimble.paginator import ListEulasPaginator
 
 session = get_session()
-async with session.create_client("nimble") as client:
-    client: NimbleStudioClient
-    paginator: ListEulasPaginator = client.get_paginator("list_eulas")
+async with session.create_client("nimble") as client:  # (1)
+    paginator: ListEulasPaginator = client.get_paginator("list_eulas")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEulasResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NimbleStudioClient](./client.md)
+2. paginator: [ListEulasPaginator](./paginators.md#listeulaspaginator)
+3. item: [:material-code-braces: ListEulasResponseTypeDef](./type_defs.md#listeulasresponsetypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_nimble.paginator import ListLaunchProfileMembersPaginator
 
 session = get_session()
-async with session.create_client("nimble") as client:
-    client: NimbleStudioClient
-    paginator: ListLaunchProfileMembersPaginator = client.get_paginator("list_launch_profile_members")
+async with session.create_client("nimble") as client:  # (1)
+    paginator: ListLaunchProfileMembersPaginator = client.get_paginator("list_launch_profile_members")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLaunchProfileMembersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NimbleStudioClient](./client.md)
+2. paginator: [ListLaunchProfileMembersPaginator](./paginators.md#listlaunchprofilememberspaginator)
+3. item: [:material-code-braces: ListLaunchProfileMembersResponseTypeDef](./type_defs.md#listlaunchprofilemembersresponsetypedef) 
 
 
 ### paginate
@@ -153,10 +171,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_nimble.paginator import ListLaunchProfilesPaginator
 
 session = get_session()
-async with session.create_client("nimble") as client:
-    client: NimbleStudioClient
-    paginator: ListLaunchProfilesPaginator = client.get_paginator("list_launch_profiles")
+async with session.create_client("nimble") as client:  # (1)
+    paginator: ListLaunchProfilesPaginator = client.get_paginator("list_launch_profiles")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLaunchProfilesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NimbleStudioClient](./client.md)
+2. paginator: [ListLaunchProfilesPaginator](./paginators.md#listlaunchprofilespaginator)
+3. item: [:material-code-braces: ListLaunchProfilesResponseTypeDef](./type_defs.md#listlaunchprofilesresponsetypedef) 
 
 
 ### paginate
@@ -200,10 +224,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_nimble.paginator import ListStreamingImagesPaginator
 
 session = get_session()
-async with session.create_client("nimble") as client:
-    client: NimbleStudioClient
-    paginator: ListStreamingImagesPaginator = client.get_paginator("list_streaming_images")
+async with session.create_client("nimble") as client:  # (1)
+    paginator: ListStreamingImagesPaginator = client.get_paginator("list_streaming_images")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStreamingImagesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NimbleStudioClient](./client.md)
+2. paginator: [ListStreamingImagesPaginator](./paginators.md#liststreamingimagespaginator)
+3. item: [:material-code-braces: ListStreamingImagesResponseTypeDef](./type_defs.md#liststreamingimagesresponsetypedef) 
 
 
 ### paginate
@@ -245,10 +275,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_nimble.paginator import ListStreamingSessionsPaginator
 
 session = get_session()
-async with session.create_client("nimble") as client:
-    client: NimbleStudioClient
-    paginator: ListStreamingSessionsPaginator = client.get_paginator("list_streaming_sessions")
+async with session.create_client("nimble") as client:  # (1)
+    paginator: ListStreamingSessionsPaginator = client.get_paginator("list_streaming_sessions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStreamingSessionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NimbleStudioClient](./client.md)
+2. paginator: [ListStreamingSessionsPaginator](./paginators.md#liststreamingsessionspaginator)
+3. item: [:material-code-braces: ListStreamingSessionsResponseTypeDef](./type_defs.md#liststreamingsessionsresponsetypedef) 
 
 
 ### paginate
@@ -292,10 +328,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_nimble.paginator import ListStudioComponentsPaginator
 
 session = get_session()
-async with session.create_client("nimble") as client:
-    client: NimbleStudioClient
-    paginator: ListStudioComponentsPaginator = client.get_paginator("list_studio_components")
+async with session.create_client("nimble") as client:  # (1)
+    paginator: ListStudioComponentsPaginator = client.get_paginator("list_studio_components")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStudioComponentsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NimbleStudioClient](./client.md)
+2. paginator: [ListStudioComponentsPaginator](./paginators.md#liststudiocomponentspaginator)
+3. item: [:material-code-braces: ListStudioComponentsResponseTypeDef](./type_defs.md#liststudiocomponentsresponsetypedef) 
 
 
 ### paginate
@@ -340,10 +382,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_nimble.paginator import ListStudioMembersPaginator
 
 session = get_session()
-async with session.create_client("nimble") as client:
-    client: NimbleStudioClient
-    paginator: ListStudioMembersPaginator = client.get_paginator("list_studio_members")
+async with session.create_client("nimble") as client:  # (1)
+    paginator: ListStudioMembersPaginator = client.get_paginator("list_studio_members")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStudioMembersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NimbleStudioClient](./client.md)
+2. paginator: [ListStudioMembersPaginator](./paginators.md#liststudiomemberspaginator)
+3. item: [:material-code-braces: ListStudioMembersResponseTypeDef](./type_defs.md#liststudiomembersresponsetypedef) 
 
 
 ### paginate
@@ -384,10 +432,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_nimble.paginator import ListStudiosPaginator
 
 session = get_session()
-async with session.create_client("nimble") as client:
-    client: NimbleStudioClient
-    paginator: ListStudiosPaginator = client.get_paginator("list_studios")
+async with session.create_client("nimble") as client:  # (1)
+    paginator: ListStudiosPaginator = client.get_paginator("list_studios")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStudiosResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [NimbleStudioClient](./client.md)
+2. paginator: [ListStudiosPaginator](./paginators.md#liststudiospaginator)
+3. item: [:material-code-braces: ListStudiosResponseTypeDef](./type_defs.md#liststudiosresponsetypedef) 
 
 
 ### paginate

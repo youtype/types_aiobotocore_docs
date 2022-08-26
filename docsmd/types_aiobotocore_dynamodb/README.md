@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `DynamoDB`.
 
 ### From PyPI with pip
 
@@ -35,30 +30,6 @@ python -m pip install 'types-aiobotocore-lite[dynamodb]'
 python -m pip install types-aiobotocore-dynamodb
 ```
 
-
-### From conda-forge
-
-Installing `types-aiobotocore-dynamodb` from the `conda-forge` channel
-can be achieved by adding `conda-forge` to your channels with:
-
-```bash
-conda config --add channels conda-forge
-conda config --set channel_priority strict
-```
-
-Once the `conda-forge` channel has been enabled, `types-aiobotocore-dynamodb`
-can be installed with:
-
-```bash
-conda install types-aiobotocore-dynamodb
-```
-
-It is possible to list all of the versions of `types-aiobotocore-dynamodb`
-available on your platform with:
-
-```bash
-conda search types-aiobotocore-dynamodb --channel conda-forge
-```
 
 
 ## How to uninstall
@@ -201,7 +172,10 @@ def get_value() -> AttributeActionType:
 - [ExportFormatType](./literals.md#exportformattype)
 - [ExportStatusType](./literals.md#exportstatustype)
 - [GlobalTableStatusType](./literals.md#globaltablestatustype)
+- [ImportStatusType](./literals.md#importstatustype)
 - [IndexStatusType](./literals.md#indexstatustype)
+- [InputCompressionTypeType](./literals.md#inputcompressiontypetype)
+- [InputFormatType](./literals.md#inputformattype)
 - [KeyTypeType](./literals.md#keytypetype)
 - [ListBackupsPaginatorName](./literals.md#listbackupspaginatorname)
 - [ListTablesPaginatorName](./literals.md#listtablespaginatorname)
@@ -296,6 +270,7 @@ def get_value() -> ResponseMetadataTypeDef:
 - [SSESpecificationServiceResourceTypeDef](./type_defs.md#ssespecificationserviceresourcetypedef)
 - [StreamSpecificationServiceResourceTypeDef](./type_defs.md#streamspecificationserviceresourcetypedef)
 - [TagServiceResourceTypeDef](./type_defs.md#tagserviceresourcetypedef)
+- [CsvOptionsTypeDef](./type_defs.md#csvoptionstypedef)
 - [DeleteBackupInputRequestTypeDef](./type_defs.md#deletebackupinputrequesttypedef)
 - [DeleteGlobalSecondaryIndexActionTableTypeDef](./type_defs.md#deleteglobalsecondaryindexactiontabletypedef)
 - [DeleteGlobalSecondaryIndexActionTypeDef](./type_defs.md#deleteglobalsecondaryindexactiontypedef)
@@ -315,6 +290,7 @@ def get_value() -> ResponseMetadataTypeDef:
 - [ExportDescriptionTypeDef](./type_defs.md#exportdescriptiontypedef)
 - [DescribeGlobalTableInputRequestTypeDef](./type_defs.md#describeglobaltableinputrequesttypedef)
 - [DescribeGlobalTableSettingsInputRequestTypeDef](./type_defs.md#describeglobaltablesettingsinputrequesttypedef)
+- [DescribeImportInputRequestTypeDef](./type_defs.md#describeimportinputrequesttypedef)
 - [DescribeKinesisStreamingDestinationInputRequestTypeDef](./type_defs.md#describekinesisstreamingdestinationinputrequesttypedef)
 - [KinesisDataStreamDestinationTypeDef](./type_defs.md#kinesisdatastreamdestinationtypedef)
 - [DescribeTableInputRequestTypeDef](./type_defs.md#describetableinputrequesttypedef)
@@ -328,12 +304,14 @@ def get_value() -> ResponseMetadataTypeDef:
 - [ProvisionedThroughputDescriptionTableTypeDef](./type_defs.md#provisionedthroughputdescriptiontabletypedef)
 - [ProvisionedThroughputDescriptionTypeDef](./type_defs.md#provisionedthroughputdescriptiontypedef)
 - [ProjectionServiceResourceTypeDef](./type_defs.md#projectionserviceresourcetypedef)
+- [S3BucketSourceTypeDef](./type_defs.md#s3bucketsourcetypedef)
 - [KinesisStreamingDestinationInputRequestTypeDef](./type_defs.md#kinesisstreamingdestinationinputrequesttypedef)
 - [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 - [ListBackupsInputRequestTypeDef](./type_defs.md#listbackupsinputrequesttypedef)
 - [ListContributorInsightsInputRequestTypeDef](./type_defs.md#listcontributorinsightsinputrequesttypedef)
 - [ListExportsInputRequestTypeDef](./type_defs.md#listexportsinputrequesttypedef)
 - [ListGlobalTablesInputRequestTypeDef](./type_defs.md#listglobaltablesinputrequesttypedef)
+- [ListImportsInputRequestTypeDef](./type_defs.md#listimportsinputrequesttypedef)
 - [ListTablesInputRequestTypeDef](./type_defs.md#listtablesinputrequesttypedef)
 - [ListTagsOfResourceInputRequestTypeDef](./type_defs.md#listtagsofresourceinputrequesttypedef)
 - [TagTableTypeDef](./type_defs.md#tagtabletypedef)
@@ -415,6 +393,7 @@ def get_value() -> ResponseMetadataTypeDef:
 - [ReplicaGlobalSecondaryIndexTypeDef](./type_defs.md#replicaglobalsecondaryindextypedef)
 - [ListTagsOfResourceOutputTypeDef](./type_defs.md#listtagsofresourceoutputtypedef)
 - [TagResourceInputRequestTypeDef](./type_defs.md#tagresourceinputrequesttypedef)
+- [InputFormatOptionsTypeDef](./type_defs.md#inputformatoptionstypedef)
 - [DeleteItemInputTableDeleteItemTypeDef](./type_defs.md#deleteiteminputtabledeleteitemtypedef)
 - [PutItemInputTablePutItemTypeDef](./type_defs.md#putiteminputtableputitemtypedef)
 - [UpdateItemInputTableUpdateItemTypeDef](./type_defs.md#updateiteminputtableupdateitemtypedef)
@@ -432,6 +411,7 @@ def get_value() -> ResponseMetadataTypeDef:
 - [GlobalSecondaryIndexDescriptionTypeDef](./type_defs.md#globalsecondaryindexdescriptiontypedef)
 - [GlobalSecondaryIndexServiceResourceTypeDef](./type_defs.md#globalsecondaryindexserviceresourcetypedef)
 - [LocalSecondaryIndexServiceResourceTypeDef](./type_defs.md#localsecondaryindexserviceresourcetypedef)
+- [ImportSummaryTypeDef](./type_defs.md#importsummarytypedef)
 - [ListBackupsInputListBackupsPaginateTypeDef](./type_defs.md#listbackupsinputlistbackupspaginatetypedef)
 - [ListTablesInputListTablesPaginateTypeDef](./type_defs.md#listtablesinputlisttablespaginatetypedef)
 - [ListTagsOfResourceInputListTagsOfResourcePaginateTypeDef](./type_defs.md#listtagsofresourceinputlisttagsofresourcepaginatetypedef)
@@ -481,6 +461,7 @@ def get_value() -> ResponseMetadataTypeDef:
 - [CreateTableInputRequestTypeDef](./type_defs.md#createtableinputrequesttypedef)
 - [RestoreTableFromBackupInputRequestTypeDef](./type_defs.md#restoretablefrombackupinputrequesttypedef)
 - [RestoreTableToPointInTimeInputRequestTypeDef](./type_defs.md#restoretabletopointintimeinputrequesttypedef)
+- [TableCreationParametersTypeDef](./type_defs.md#tablecreationparameterstypedef)
 - [GlobalSecondaryIndexUpdateTypeDef](./type_defs.md#globalsecondaryindexupdatetypedef)
 - [ListGlobalTablesOutputTypeDef](./type_defs.md#listglobaltablesoutputtypedef)
 - [ReplicaDescriptionTableTypeDef](./type_defs.md#replicadescriptiontabletypedef)
@@ -491,6 +472,7 @@ def get_value() -> ResponseMetadataTypeDef:
 - [UpdateReplicationGroupMemberActionTypeDef](./type_defs.md#updatereplicationgroupmemberactiontypedef)
 - [UpdateGlobalTableInputRequestTypeDef](./type_defs.md#updateglobaltableinputrequesttypedef)
 - [CreateTableInputServiceResourceCreateTableTypeDef](./type_defs.md#createtableinputserviceresourcecreatetabletypedef)
+- [ListImportsOutputTypeDef](./type_defs.md#listimportsoutputtypedef)
 - [BatchWriteItemInputServiceResourceBatchWriteItemTypeDef](./type_defs.md#batchwriteiteminputserviceresourcebatchwriteitemtypedef)
 - [BatchWriteItemOutputServiceResourceTypeDef](./type_defs.md#batchwriteitemoutputserviceresourcetypedef)
 - [TransactGetItemsInputRequestTypeDef](./type_defs.md#transactgetitemsinputrequesttypedef)
@@ -504,6 +486,8 @@ def get_value() -> ResponseMetadataTypeDef:
 - [ReplicaGlobalSecondaryIndexAutoScalingUpdateTypeDef](./type_defs.md#replicaglobalsecondaryindexautoscalingupdatetypedef)
 - [ReplicaGlobalSecondaryIndexSettingsUpdateTypeDef](./type_defs.md#replicaglobalsecondaryindexsettingsupdatetypedef)
 - [BackupDescriptionTypeDef](./type_defs.md#backupdescriptiontypedef)
+- [ImportTableDescriptionTypeDef](./type_defs.md#importtabledescriptiontypedef)
+- [ImportTableInputRequestTypeDef](./type_defs.md#importtableinputrequesttypedef)
 - [TableDescriptionTableTypeDef](./type_defs.md#tabledescriptiontabletypedef)
 - [ReplicationGroupUpdateTableTypeDef](./type_defs.md#replicationgroupupdatetabletypedef)
 - [GlobalTableDescriptionTypeDef](./type_defs.md#globaltabledescriptiontypedef)
@@ -515,6 +499,8 @@ def get_value() -> ResponseMetadataTypeDef:
 - [ReplicaSettingsUpdateTypeDef](./type_defs.md#replicasettingsupdatetypedef)
 - [DeleteBackupOutputTypeDef](./type_defs.md#deletebackupoutputtypedef)
 - [DescribeBackupOutputTypeDef](./type_defs.md#describebackupoutputtypedef)
+- [DescribeImportOutputTypeDef](./type_defs.md#describeimportoutputtypedef)
+- [ImportTableOutputTypeDef](./type_defs.md#importtableoutputtypedef)
 - [DeleteTableOutputTableTypeDef](./type_defs.md#deletetableoutputtabletypedef)
 - [UpdateTableInputTableUpdateTypeDef](./type_defs.md#updatetableinputtableupdatetypedef)
 - [CreateGlobalTableOutputTypeDef](./type_defs.md#createglobaltableoutputtypedef)

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_xray.paginator import BatchGetTracesPaginator
 
 session = get_session()
-async with session.create_client("xray") as client:
-    client: XRayClient
-    paginator: BatchGetTracesPaginator = client.get_paginator("batch_get_traces")
+async with session.create_client("xray") as client:  # (1)
+    paginator: BatchGetTracesPaginator = client.get_paginator("batch_get_traces")  # (2)
+    async for item in paginator.paginate(...):
+        item: BatchGetTracesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [XRayClient](./client.md)
+2. paginator: [BatchGetTracesPaginator](./paginators.md#batchgettracespaginator)
+3. item: [:material-code-braces: BatchGetTracesResultTypeDef](./type_defs.md#batchgettracesresulttypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_xray.paginator import GetGroupsPaginator
 
 session = get_session()
-async with session.create_client("xray") as client:
-    client: XRayClient
-    paginator: GetGroupsPaginator = client.get_paginator("get_groups")
+async with session.create_client("xray") as client:  # (1)
+    paginator: GetGroupsPaginator = client.get_paginator("get_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetGroupsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [XRayClient](./client.md)
+2. paginator: [GetGroupsPaginator](./paginators.md#getgroupspaginator)
+3. item: [:material-code-braces: GetGroupsResultTypeDef](./type_defs.md#getgroupsresulttypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_xray.paginator import GetSamplingRulesPaginator
 
 session = get_session()
-async with session.create_client("xray") as client:
-    client: XRayClient
-    paginator: GetSamplingRulesPaginator = client.get_paginator("get_sampling_rules")
+async with session.create_client("xray") as client:  # (1)
+    paginator: GetSamplingRulesPaginator = client.get_paginator("get_sampling_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetSamplingRulesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [XRayClient](./client.md)
+2. paginator: [GetSamplingRulesPaginator](./paginators.md#getsamplingrulespaginator)
+3. item: [:material-code-braces: GetSamplingRulesResultTypeDef](./type_defs.md#getsamplingrulesresulttypedef) 
 
 
 ### paginate
@@ -148,10 +166,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_xray.paginator import GetSamplingStatisticSummariesPaginator
 
 session = get_session()
-async with session.create_client("xray") as client:
-    client: XRayClient
-    paginator: GetSamplingStatisticSummariesPaginator = client.get_paginator("get_sampling_statistic_summaries")
+async with session.create_client("xray") as client:  # (1)
+    paginator: GetSamplingStatisticSummariesPaginator = client.get_paginator("get_sampling_statistic_summaries")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetSamplingStatisticSummariesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [XRayClient](./client.md)
+2. paginator: [GetSamplingStatisticSummariesPaginator](./paginators.md#getsamplingstatisticsummariespaginator)
+3. item: [:material-code-braces: GetSamplingStatisticSummariesResultTypeDef](./type_defs.md#getsamplingstatisticsummariesresulttypedef) 
 
 
 ### paginate
@@ -191,10 +215,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_xray.paginator import GetServiceGraphPaginator
 
 session = get_session()
-async with session.create_client("xray") as client:
-    client: XRayClient
-    paginator: GetServiceGraphPaginator = client.get_paginator("get_service_graph")
+async with session.create_client("xray") as client:  # (1)
+    paginator: GetServiceGraphPaginator = client.get_paginator("get_service_graph")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetServiceGraphResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [XRayClient](./client.md)
+2. paginator: [GetServiceGraphPaginator](./paginators.md#getservicegraphpaginator)
+3. item: [:material-code-braces: GetServiceGraphResultTypeDef](./type_defs.md#getservicegraphresulttypedef) 
 
 
 ### paginate
@@ -239,10 +269,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_xray.paginator import GetTimeSeriesServiceStatisticsPaginator
 
 session = get_session()
-async with session.create_client("xray") as client:
-    client: XRayClient
-    paginator: GetTimeSeriesServiceStatisticsPaginator = client.get_paginator("get_time_series_service_statistics")
+async with session.create_client("xray") as client:  # (1)
+    paginator: GetTimeSeriesServiceStatisticsPaginator = client.get_paginator("get_time_series_service_statistics")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTimeSeriesServiceStatisticsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [XRayClient](./client.md)
+2. paginator: [GetTimeSeriesServiceStatisticsPaginator](./paginators.md#gettimeseriesservicestatisticspaginator)
+3. item: [:material-code-braces: GetTimeSeriesServiceStatisticsResultTypeDef](./type_defs.md#gettimeseriesservicestatisticsresulttypedef) 
 
 
 ### paginate
@@ -290,10 +326,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_xray.paginator import GetTraceGraphPaginator
 
 session = get_session()
-async with session.create_client("xray") as client:
-    client: XRayClient
-    paginator: GetTraceGraphPaginator = client.get_paginator("get_trace_graph")
+async with session.create_client("xray") as client:  # (1)
+    paginator: GetTraceGraphPaginator = client.get_paginator("get_trace_graph")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTraceGraphResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [XRayClient](./client.md)
+2. paginator: [GetTraceGraphPaginator](./paginators.md#gettracegraphpaginator)
+3. item: [:material-code-braces: GetTraceGraphResultTypeDef](./type_defs.md#gettracegraphresulttypedef) 
 
 
 ### paginate
@@ -334,10 +376,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_xray.paginator import GetTraceSummariesPaginator
 
 session = get_session()
-async with session.create_client("xray") as client:
-    client: XRayClient
-    paginator: GetTraceSummariesPaginator = client.get_paginator("get_trace_summaries")
+async with session.create_client("xray") as client:  # (1)
+    paginator: GetTraceSummariesPaginator = client.get_paginator("get_trace_summaries")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTraceSummariesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [XRayClient](./client.md)
+2. paginator: [GetTraceSummariesPaginator](./paginators.md#gettracesummariespaginator)
+3. item: [:material-code-braces: GetTraceSummariesResultTypeDef](./type_defs.md#gettracesummariesresulttypedef) 
 
 
 ### paginate

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_macie.paginator import ListMemberAccountsPaginator
 
 session = get_session()
-async with session.create_client("macie") as client:
-    client: MacieClient
-    paginator: ListMemberAccountsPaginator = client.get_paginator("list_member_accounts")
+async with session.create_client("macie") as client:  # (1)
+    paginator: ListMemberAccountsPaginator = client.get_paginator("list_member_accounts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMemberAccountsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MacieClient](./client.md)
+2. paginator: [ListMemberAccountsPaginator](./paginators.md#listmemberaccountspaginator)
+3. item: [:material-code-braces: ListMemberAccountsResultTypeDef](./type_defs.md#listmemberaccountsresulttypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_macie.paginator import ListS3ResourcesPaginator
 
 session = get_session()
-async with session.create_client("macie") as client:
-    client: MacieClient
-    paginator: ListS3ResourcesPaginator = client.get_paginator("list_s3_resources")
+async with session.create_client("macie") as client:  # (1)
+    paginator: ListS3ResourcesPaginator = client.get_paginator("list_s3_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListS3ResourcesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MacieClient](./client.md)
+2. paginator: [ListS3ResourcesPaginator](./paginators.md#lists3resourcespaginator)
+3. item: [:material-code-braces: ListS3ResourcesResultTypeDef](./type_defs.md#lists3resourcesresulttypedef) 
 
 
 ### paginate

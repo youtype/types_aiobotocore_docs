@@ -297,6 +297,7 @@ class ElasticsearchSettingsTypeDef(TypedDict):
     EndpointUri: str,
     FullLoadErrorPercentage: NotRequired[int],
     ErrorRetryDuration: NotRequired[int],
+    UseNewMappingType: NotRequired[bool],
 ```
 
 ## GcpMySQLSettingsTypeDef
@@ -442,6 +443,7 @@ class MicrosoftSQLServerSettingsTypeDef(TypedDict):
     UseThirdPartyBackupDevice: NotRequired[bool],
     SecretsManagerAccessRoleArn: NotRequired[str],
     SecretsManagerSecretId: NotRequired[str],
+    TrimSpaceInChar: NotRequired[bool],
 ```
 
 1. See [:material-code-brackets: SafeguardPolicyType](./literals.md#safeguardpolicytype) 
@@ -583,6 +585,7 @@ class OracleSettingsTypeDef(TypedDict):
     SecretsManagerSecretId: NotRequired[str],
     SecretsManagerOracleAsmAccessRoleArn: NotRequired[str],
     SecretsManagerOracleAsmSecretId: NotRequired[str],
+    TrimSpaceInChar: NotRequired[bool],
 ```
 
 1. See [:material-code-brackets: CharLengthSemanticsType](./literals.md#charlengthsemanticstype) 
@@ -617,6 +620,7 @@ class PostgreSQLSettingsTypeDef(TypedDict):
     PluginName: NotRequired[PluginNameValueType],  # (1)
     SecretsManagerAccessRoleArn: NotRequired[str],
     SecretsManagerSecretId: NotRequired[str],
+    TrimSpaceInChar: NotRequired[bool],
 ```
 
 1. See [:material-code-brackets: PluginNameValueType](./literals.md#pluginnamevaluetype) 
@@ -742,6 +746,8 @@ class S3SettingsTypeDef(TypedDict):
     MaxFileSize: NotRequired[int],
     Rfc4180: NotRequired[bool],
     DatePartitionTimezone: NotRequired[str],
+    AddTrailingPaddingCharacter: NotRequired[bool],
+    ExpectedBucketOwner: NotRequired[str],
 ```
 
 1. See [:material-code-brackets: CompressionTypeValueType](./literals.md#compressiontypevaluetype) 
@@ -1915,6 +1921,22 @@ class TestConnectionMessageRequestTypeDef(TypedDict):
     EndpointArn: str,
 ```
 
+## UpdateSubscriptionsToEventBridgeMessageRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_dms.type_defs import UpdateSubscriptionsToEventBridgeMessageRequestTypeDef
+
+def get_value() -> UpdateSubscriptionsToEventBridgeMessageRequestTypeDef:
+    return {
+        "ForceMove": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateSubscriptionsToEventBridgeMessageRequestTypeDef(TypedDict):
+    ForceMove: NotRequired[bool],
+```
+
 ## AddTagsToResourceMessageRequestTypeDef
 
 ```python title="Usage Example"
@@ -2250,6 +2272,25 @@ def get_value() -> RunFleetAdvisorLsaAnalysisResponseTypeDef:
 class RunFleetAdvisorLsaAnalysisResponseTypeDef(TypedDict):
     LsaAnalysisId: str,
     Status: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## UpdateSubscriptionsToEventBridgeResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_dms.type_defs import UpdateSubscriptionsToEventBridgeResponseTypeDef
+
+def get_value() -> UpdateSubscriptionsToEventBridgeResponseTypeDef:
+    return {
+        "Result": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateSubscriptionsToEventBridgeResponseTypeDef(TypedDict):
+    Result: str,
     ResponseMetadata: ResponseMetadataTypeDef,  # (1)
 ```
 

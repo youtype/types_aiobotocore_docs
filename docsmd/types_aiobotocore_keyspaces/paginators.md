@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_keyspaces.paginator import ListKeyspacesPaginator
 
 session = get_session()
-async with session.create_client("keyspaces") as client:
-    client: KeyspacesClient
-    paginator: ListKeyspacesPaginator = client.get_paginator("list_keyspaces")
+async with session.create_client("keyspaces") as client:  # (1)
+    paginator: ListKeyspacesPaginator = client.get_paginator("list_keyspaces")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListKeyspacesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KeyspacesClient](./client.md)
+2. paginator: [ListKeyspacesPaginator](./paginators.md#listkeyspacespaginator)
+3. item: [:material-code-braces: ListKeyspacesResponseTypeDef](./type_defs.md#listkeyspacesresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_keyspaces.paginator import ListTablesPaginator
 
 session = get_session()
-async with session.create_client("keyspaces") as client:
-    client: KeyspacesClient
-    paginator: ListTablesPaginator = client.get_paginator("list_tables")
+async with session.create_client("keyspaces") as client:  # (1)
+    paginator: ListTablesPaginator = client.get_paginator("list_tables")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTablesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KeyspacesClient](./client.md)
+2. paginator: [ListTablesPaginator](./paginators.md#listtablespaginator)
+3. item: [:material-code-braces: ListTablesResponseTypeDef](./type_defs.md#listtablesresponsetypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_keyspaces.paginator import ListTagsForResourcePaginator
 
 session = get_session()
-async with session.create_client("keyspaces") as client:
-    client: KeyspacesClient
-    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
+async with session.create_client("keyspaces") as client:  # (1)
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsForResourceResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [KeyspacesClient](./client.md)
+2. paginator: [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
+3. item: [:material-code-braces: ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef) 
 
 
 ### paginate

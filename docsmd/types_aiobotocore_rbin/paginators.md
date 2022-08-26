@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_rbin.paginator import ListRulesPaginator
 
 session = get_session()
-async with session.create_client("rbin") as client:
-    client: RecycleBinClient
-    paginator: ListRulesPaginator = client.get_paginator("list_rules")
+async with session.create_client("rbin") as client:  # (1)
+    paginator: ListRulesPaginator = client.get_paginator("list_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRulesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [RecycleBinClient](./client.md)
+2. paginator: [ListRulesPaginator](./paginators.md#listrulespaginator)
+3. item: [:material-code-braces: ListRulesResponseTypeDef](./type_defs.md#listrulesresponsetypedef) 
 
 
 ### paginate

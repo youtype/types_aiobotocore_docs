@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeCacheClustersPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeCacheClustersPaginator = client.get_paginator("describe_cache_clusters")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeCacheClustersPaginator = client.get_paginator("describe_cache_clusters")  # (2)
+    async for item in paginator.paginate(...):
+        item: CacheClusterMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeCacheClustersPaginator](./paginators.md#describecacheclusterspaginator)
+3. item: [:material-code-braces: CacheClusterMessageTypeDef](./type_defs.md#cacheclustermessagetypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeCacheEngineVersionsPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeCacheEngineVersionsPaginator = client.get_paginator("describe_cache_engine_versions")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeCacheEngineVersionsPaginator = client.get_paginator("describe_cache_engine_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: CacheEngineVersionMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeCacheEngineVersionsPaginator](./paginators.md#describecacheengineversionspaginator)
+3. item: [:material-code-braces: CacheEngineVersionMessageTypeDef](./type_defs.md#cacheengineversionmessagetypedef) 
 
 
 ### paginate
@@ -111,10 +123,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeCacheParameterGroupsPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeCacheParameterGroupsPaginator = client.get_paginator("describe_cache_parameter_groups")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeCacheParameterGroupsPaginator = client.get_paginator("describe_cache_parameter_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: CacheParameterGroupsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeCacheParameterGroupsPaginator](./paginators.md#describecacheparametergroupspaginator)
+3. item: [:material-code-braces: CacheParameterGroupsMessageTypeDef](./type_defs.md#cacheparametergroupsmessagetypedef) 
 
 
 ### paginate
@@ -155,10 +173,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeCacheParametersPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeCacheParametersPaginator = client.get_paginator("describe_cache_parameters")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeCacheParametersPaginator = client.get_paginator("describe_cache_parameters")  # (2)
+    async for item in paginator.paginate(...):
+        item: CacheParameterGroupDetailsTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeCacheParametersPaginator](./paginators.md#describecacheparameterspaginator)
+3. item: [:material-code-braces: CacheParameterGroupDetailsTypeDef](./type_defs.md#cacheparametergroupdetailstypedef) 
 
 
 ### paginate
@@ -200,10 +224,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeCacheSecurityGroupsPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeCacheSecurityGroupsPaginator = client.get_paginator("describe_cache_security_groups")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeCacheSecurityGroupsPaginator = client.get_paginator("describe_cache_security_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: CacheSecurityGroupMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeCacheSecurityGroupsPaginator](./paginators.md#describecachesecuritygroupspaginator)
+3. item: [:material-code-braces: CacheSecurityGroupMessageTypeDef](./type_defs.md#cachesecuritygroupmessagetypedef) 
 
 
 ### paginate
@@ -244,10 +274,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeCacheSubnetGroupsPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeCacheSubnetGroupsPaginator = client.get_paginator("describe_cache_subnet_groups")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeCacheSubnetGroupsPaginator = client.get_paginator("describe_cache_subnet_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: CacheSubnetGroupMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeCacheSubnetGroupsPaginator](./paginators.md#describecachesubnetgroupspaginator)
+3. item: [:material-code-braces: CacheSubnetGroupMessageTypeDef](./type_defs.md#cachesubnetgroupmessagetypedef) 
 
 
 ### paginate
@@ -288,10 +324,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeEngineDefaultParametersPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeEngineDefaultParametersPaginator = client.get_paginator("describe_engine_default_parameters")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeEngineDefaultParametersPaginator = client.get_paginator("describe_engine_default_parameters")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeEngineDefaultParametersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeEngineDefaultParametersPaginator](./paginators.md#describeenginedefaultparameterspaginator)
+3. item: [:material-code-braces: DescribeEngineDefaultParametersResultTypeDef](./type_defs.md#describeenginedefaultparametersresulttypedef) 
 
 
 ### paginate
@@ -332,10 +374,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeEventsPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: EventsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeEventsPaginator](./paginators.md#describeeventspaginator)
+3. item: [:material-code-braces: EventsMessageTypeDef](./type_defs.md#eventsmessagetypedef) 
 
 
 ### paginate
@@ -381,10 +429,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeGlobalReplicationGroupsPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeGlobalReplicationGroupsPaginator = client.get_paginator("describe_global_replication_groups")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeGlobalReplicationGroupsPaginator = client.get_paginator("describe_global_replication_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeGlobalReplicationGroupsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeGlobalReplicationGroupsPaginator](./paginators.md#describeglobalreplicationgroupspaginator)
+3. item: [:material-code-braces: DescribeGlobalReplicationGroupsResultTypeDef](./type_defs.md#describeglobalreplicationgroupsresulttypedef) 
 
 
 ### paginate
@@ -426,10 +480,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeReplicationGroupsPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeReplicationGroupsPaginator = client.get_paginator("describe_replication_groups")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeReplicationGroupsPaginator = client.get_paginator("describe_replication_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ReplicationGroupMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeReplicationGroupsPaginator](./paginators.md#describereplicationgroupspaginator)
+3. item: [:material-code-braces: ReplicationGroupMessageTypeDef](./type_defs.md#replicationgroupmessagetypedef) 
 
 
 ### paginate
@@ -470,10 +530,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeReservedCacheNodesPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeReservedCacheNodesPaginator = client.get_paginator("describe_reserved_cache_nodes")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeReservedCacheNodesPaginator = client.get_paginator("describe_reserved_cache_nodes")  # (2)
+    async for item in paginator.paginate(...):
+        item: ReservedCacheNodeMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeReservedCacheNodesPaginator](./paginators.md#describereservedcachenodespaginator)
+3. item: [:material-code-braces: ReservedCacheNodeMessageTypeDef](./type_defs.md#reservedcachenodemessagetypedef) 
 
 
 ### paginate
@@ -519,10 +585,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeReservedCacheNodesOfferingsPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeReservedCacheNodesOfferingsPaginator = client.get_paginator("describe_reserved_cache_nodes_offerings")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeReservedCacheNodesOfferingsPaginator = client.get_paginator("describe_reserved_cache_nodes_offerings")  # (2)
+    async for item in paginator.paginate(...):
+        item: ReservedCacheNodesOfferingMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeReservedCacheNodesOfferingsPaginator](./paginators.md#describereservedcachenodesofferingspaginator)
+3. item: [:material-code-braces: ReservedCacheNodesOfferingMessageTypeDef](./type_defs.md#reservedcachenodesofferingmessagetypedef) 
 
 
 ### paginate
@@ -567,10 +639,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeServiceUpdatesPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeServiceUpdatesPaginator = client.get_paginator("describe_service_updates")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeServiceUpdatesPaginator = client.get_paginator("describe_service_updates")  # (2)
+    async for item in paginator.paginate(...):
+        item: ServiceUpdatesMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeServiceUpdatesPaginator](./paginators.md#describeserviceupdatespaginator)
+3. item: [:material-code-braces: ServiceUpdatesMessageTypeDef](./type_defs.md#serviceupdatesmessagetypedef) 
 
 
 ### paginate
@@ -613,10 +691,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeSnapshotsPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeSnapshotsPaginator = client.get_paginator("describe_snapshots")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeSnapshotsPaginator = client.get_paginator("describe_snapshots")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeSnapshotsListMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeSnapshotsPaginator](./paginators.md#describesnapshotspaginator)
+3. item: [:material-code-braces: DescribeSnapshotsListMessageTypeDef](./type_defs.md#describesnapshotslistmessagetypedef) 
 
 
 ### paginate
@@ -661,10 +745,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeUpdateActionsPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeUpdateActionsPaginator = client.get_paginator("describe_update_actions")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeUpdateActionsPaginator = client.get_paginator("describe_update_actions")  # (2)
+    async for item in paginator.paginate(...):
+        item: UpdateActionsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeUpdateActionsPaginator](./paginators.md#describeupdateactionspaginator)
+3. item: [:material-code-braces: UpdateActionsMessageTypeDef](./type_defs.md#updateactionsmessagetypedef) 
 
 
 ### paginate
@@ -715,10 +805,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeUserGroupsPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeUserGroupsPaginator = client.get_paginator("describe_user_groups")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeUserGroupsPaginator = client.get_paginator("describe_user_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeUserGroupsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeUserGroupsPaginator](./paginators.md#describeusergroupspaginator)
+3. item: [:material-code-braces: DescribeUserGroupsResultTypeDef](./type_defs.md#describeusergroupsresulttypedef) 
 
 
 ### paginate
@@ -759,10 +855,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.paginator import DescribeUsersPaginator
 
 session = get_session()
-async with session.create_client("elasticache") as client:
-    client: ElastiCacheClient
-    paginator: DescribeUsersPaginator = client.get_paginator("describe_users")
+async with session.create_client("elasticache") as client:  # (1)
+    paginator: DescribeUsersPaginator = client.get_paginator("describe_users")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeUsersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElastiCacheClient](./client.md)
+2. paginator: [DescribeUsersPaginator](./paginators.md#describeuserspaginator)
+3. item: [:material-code-braces: DescribeUsersResultTypeDef](./type_defs.md#describeusersresulttypedef) 
 
 
 ### paginate

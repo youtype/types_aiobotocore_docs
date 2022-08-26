@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_snowball.paginator import DescribeAddressesPaginator
 
 session = get_session()
-async with session.create_client("snowball") as client:
-    client: SnowballClient
-    paginator: DescribeAddressesPaginator = client.get_paginator("describe_addresses")
+async with session.create_client("snowball") as client:  # (1)
+    paginator: DescribeAddressesPaginator = client.get_paginator("describe_addresses")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAddressesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SnowballClient](./client.md)
+2. paginator: [DescribeAddressesPaginator](./paginators.md#describeaddressespaginator)
+3. item: [:material-code-braces: DescribeAddressesResultTypeDef](./type_defs.md#describeaddressesresulttypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_snowball.paginator import ListClusterJobsPaginator
 
 session = get_session()
-async with session.create_client("snowball") as client:
-    client: SnowballClient
-    paginator: ListClusterJobsPaginator = client.get_paginator("list_cluster_jobs")
+async with session.create_client("snowball") as client:  # (1)
+    paginator: ListClusterJobsPaginator = client.get_paginator("list_cluster_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListClusterJobsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SnowballClient](./client.md)
+2. paginator: [ListClusterJobsPaginator](./paginators.md#listclusterjobspaginator)
+3. item: [:material-code-braces: ListClusterJobsResultTypeDef](./type_defs.md#listclusterjobsresulttypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_snowball.paginator import ListClustersPaginator
 
 session = get_session()
-async with session.create_client("snowball") as client:
-    client: SnowballClient
-    paginator: ListClustersPaginator = client.get_paginator("list_clusters")
+async with session.create_client("snowball") as client:  # (1)
+    paginator: ListClustersPaginator = client.get_paginator("list_clusters")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListClustersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SnowballClient](./client.md)
+2. paginator: [ListClustersPaginator](./paginators.md#listclusterspaginator)
+3. item: [:material-code-braces: ListClustersResultTypeDef](./type_defs.md#listclustersresulttypedef) 
 
 
 ### paginate
@@ -148,10 +166,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_snowball.paginator import ListCompatibleImagesPaginator
 
 session = get_session()
-async with session.create_client("snowball") as client:
-    client: SnowballClient
-    paginator: ListCompatibleImagesPaginator = client.get_paginator("list_compatible_images")
+async with session.create_client("snowball") as client:  # (1)
+    paginator: ListCompatibleImagesPaginator = client.get_paginator("list_compatible_images")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCompatibleImagesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SnowballClient](./client.md)
+2. paginator: [ListCompatibleImagesPaginator](./paginators.md#listcompatibleimagespaginator)
+3. item: [:material-code-braces: ListCompatibleImagesResultTypeDef](./type_defs.md#listcompatibleimagesresulttypedef) 
 
 
 ### paginate
@@ -191,10 +215,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_snowball.paginator import ListJobsPaginator
 
 session = get_session()
-async with session.create_client("snowball") as client:
-    client: SnowballClient
-    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
+async with session.create_client("snowball") as client:  # (1)
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListJobsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SnowballClient](./client.md)
+2. paginator: [ListJobsPaginator](./paginators.md#listjobspaginator)
+3. item: [:material-code-braces: ListJobsResultTypeDef](./type_defs.md#listjobsresulttypedef) 
 
 
 ### paginate

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_marketplace_entitlement.paginator import GetEntitlementsPaginator
 
 session = get_session()
-async with session.create_client("marketplace-entitlement") as client:
-    client: MarketplaceEntitlementServiceClient
-    paginator: GetEntitlementsPaginator = client.get_paginator("get_entitlements")
+async with session.create_client("marketplace-entitlement") as client:  # (1)
+    paginator: GetEntitlementsPaginator = client.get_paginator("get_entitlements")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetEntitlementsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MarketplaceEntitlementServiceClient](./client.md)
+2. paginator: [GetEntitlementsPaginator](./paginators.md#getentitlementspaginator)
+3. item: [:material-code-braces: GetEntitlementsResultTypeDef](./type_defs.md#getentitlementsresulttypedef) 
 
 
 ### paginate

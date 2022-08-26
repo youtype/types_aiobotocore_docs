@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_cur.paginator import DescribeReportDefinitionsPaginator
 
 session = get_session()
-async with session.create_client("cur") as client:
-    client: CostandUsageReportServiceClient
-    paginator: DescribeReportDefinitionsPaginator = client.get_paginator("describe_report_definitions")
+async with session.create_client("cur") as client:  # (1)
+    paginator: DescribeReportDefinitionsPaginator = client.get_paginator("describe_report_definitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeReportDefinitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CostandUsageReportServiceClient](./client.md)
+2. paginator: [DescribeReportDefinitionsPaginator](./paginators.md#describereportdefinitionspaginator)
+3. item: [:material-code-braces: DescribeReportDefinitionsResponseTypeDef](./type_defs.md#describereportdefinitionsresponsetypedef) 
 
 
 ### paginate

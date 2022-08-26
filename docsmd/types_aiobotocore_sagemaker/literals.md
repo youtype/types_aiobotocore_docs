@@ -791,6 +791,41 @@ DetailedModelPackageStatusType = Literal[
     "NotStarted",
 ]
 ```
+## DeviceDeploymentStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.literals import DeviceDeploymentStatusType
+
+def get_value() -> DeviceDeploymentStatusType:
+    return "DEPLOYED"
+```
+
+```python title="Definition"
+DeviceDeploymentStatusType = Literal[
+    "DEPLOYED",
+    "FAILED",
+    "INPROGRESS",
+    "READYTODEPLOY",
+    "STOPPED",
+    "STOPPING",
+]
+```
+## DeviceSubsetTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.literals import DeviceSubsetTypeType
+
+def get_value() -> DeviceSubsetTypeType:
+    return "NAMECONTAINS"
+```
+
+```python title="Definition"
+DeviceSubsetTypeType = Literal[
+    "NAMECONTAINS",
+    "PERCENTAGE",
+    "SELECTION",
+]
+```
 ## DirectInternetAccessType
 
 ```python title="Usage Example"
@@ -990,6 +1025,21 @@ ExecutionStatusType = Literal[
     "Stopping",
 ]
 ```
+## FailureHandlingPolicyType
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.literals import FailureHandlingPolicyType
+
+def get_value() -> FailureHandlingPolicyType:
+    return "DO_NOTHING"
+```
+
+```python title="Definition"
+FailureHandlingPolicyType = Literal[
+    "DO_NOTHING",
+    "ROLLBACK_ON_FAILURE",
+]
+```
 ## FeatureGroupSortByType
 
 ```python title="Usage Example"
@@ -1155,6 +1205,20 @@ HyperParameterScalingTypeType = Literal[
     "Linear",
     "Logarithmic",
     "ReverseLogarithmic",
+]
+```
+## HyperParameterTuningAllocationStrategyType
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.literals import HyperParameterTuningAllocationStrategyType
+
+def get_value() -> HyperParameterTuningAllocationStrategyType:
+    return "Prioritized"
+```
+
+```python title="Definition"
+HyperParameterTuningAllocationStrategyType = Literal[
+    "Prioritized",
 ]
 ```
 ## HyperParameterTuningJobObjectiveTypeType
@@ -1552,6 +1616,22 @@ LabelingJobStatusType = Literal[
     "Stopping",
 ]
 ```
+## LastUpdateStatusValueType
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.literals import LastUpdateStatusValueType
+
+def get_value() -> LastUpdateStatusValueType:
+    return "Failed"
+```
+
+```python title="Definition"
+LastUpdateStatusValueType = Literal[
+    "Failed",
+    "InProgress",
+    "Successful",
+]
+```
 ## LineageTypeType
 
 ```python title="Usage Example"
@@ -1809,6 +1889,37 @@ def get_value() -> ListDomainsPaginatorName:
 ```python title="Definition"
 ListDomainsPaginatorName = Literal[
     "list_domains",
+]
+```
+## ListEdgeDeploymentPlansPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.literals import ListEdgeDeploymentPlansPaginatorName
+
+def get_value() -> ListEdgeDeploymentPlansPaginatorName:
+    return "list_edge_deployment_plans"
+```
+
+```python title="Definition"
+ListEdgeDeploymentPlansPaginatorName = Literal[
+    "list_edge_deployment_plans",
+]
+```
+## ListEdgeDeploymentPlansSortByType
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.literals import ListEdgeDeploymentPlansSortByType
+
+def get_value() -> ListEdgeDeploymentPlansSortByType:
+    return "CREATION_TIME"
+```
+
+```python title="Definition"
+ListEdgeDeploymentPlansSortByType = Literal[
+    "CREATION_TIME",
+    "DEVICE_FLEET_NAME",
+    "LAST_MODIFIED_TIME",
+    "NAME",
 ]
 ```
 ## ListEdgePackagingJobsPaginatorName
@@ -2277,6 +2388,20 @@ def get_value() -> ListProcessingJobsPaginatorName:
 ```python title="Definition"
 ListProcessingJobsPaginatorName = Literal[
     "list_processing_jobs",
+]
+```
+## ListStageDevicesPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.literals import ListStageDevicesPaginatorName
+
+def get_value() -> ListStageDevicesPaginatorName:
+    return "list_stage_devices"
+```
+
+```python title="Definition"
+ListStageDevicesPaginatorName = Literal[
+    "list_stage_devices",
 ]
 ```
 ## ListStudioLifecycleConfigsPaginatorName
@@ -3209,12 +3334,29 @@ ProductionVariantInstanceTypeType = Literal[
     "ml.c5d.9xlarge",
     "ml.c5d.large",
     "ml.c5d.xlarge",
+    "ml.c6i.12xlarge",
+    "ml.c6i.16xlarge",
+    "ml.c6i.24xlarge",
+    "ml.c6i.2xlarge",
+    "ml.c6i.32xlarge",
+    "ml.c6i.4xlarge",
+    "ml.c6i.8xlarge",
+    "ml.c6i.large",
+    "ml.c6i.xlarge",
     "ml.g4dn.12xlarge",
     "ml.g4dn.16xlarge",
     "ml.g4dn.2xlarge",
     "ml.g4dn.4xlarge",
     "ml.g4dn.8xlarge",
     "ml.g4dn.xlarge",
+    "ml.g5.12xlarge",
+    "ml.g5.16xlarge",
+    "ml.g5.24xlarge",
+    "ml.g5.2xlarge",
+    "ml.g5.48xlarge",
+    "ml.g5.4xlarge",
+    "ml.g5.8xlarge",
+    "ml.g5.xlarge",
     "ml.inf1.24xlarge",
     "ml.inf1.2xlarge",
     "ml.inf1.6xlarge",
@@ -3242,6 +3384,7 @@ ProductionVariantInstanceTypeType = Literal[
     "ml.p3.16xlarge",
     "ml.p3.2xlarge",
     "ml.p3.8xlarge",
+    "ml.p4d.24xlarge",
     "ml.r5.12xlarge",
     "ml.r5.24xlarge",
     "ml.r5.2xlarge",
@@ -3471,6 +3614,7 @@ ResourceTypeType = Literal[
     "ExperimentTrial",
     "ExperimentTrialComponent",
     "FeatureGroup",
+    "FeatureMetadata",
     "ModelPackage",
     "ModelPackageGroup",
     "Pipeline",
@@ -3847,6 +3991,27 @@ SplitTypeType = Literal[
     "None",
     "RecordIO",
     "TFRecord",
+]
+```
+## StageStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.literals import StageStatusType
+
+def get_value() -> StageStatusType:
+    return "CREATING"
+```
+
+```python title="Definition"
+StageStatusType = Literal[
+    "CREATING",
+    "DEPLOYED",
+    "FAILED",
+    "INPROGRESS",
+    "READYTODEPLOY",
+    "STARTING",
+    "STOPPED",
+    "STOPPING",
 ]
 ```
 ## StepStatusType
@@ -4400,6 +4565,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -4545,6 +4711,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -4598,6 +4765,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -4608,11 +4776,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -4658,6 +4828,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -4730,6 +4901,7 @@ PaginatorName = Literal[
     "list_device_fleets",
     "list_devices",
     "list_domains",
+    "list_edge_deployment_plans",
     "list_edge_packaging_jobs",
     "list_endpoint_configs",
     "list_endpoints",
@@ -4760,6 +4932,7 @@ PaginatorName = Literal[
     "list_pipeline_parameters_for_execution",
     "list_pipelines",
     "list_processing_jobs",
+    "list_stage_devices",
     "list_studio_lifecycle_configs",
     "list_subscribed_workteams",
     "list_tags",
@@ -4819,6 +4992,7 @@ RegionName = Literal[
     "ap-south-1",
     "ap-southeast-1",
     "ap-southeast-2",
+    "ap-southeast-3",
     "ca-central-1",
     "eu-central-1",
     "eu-north-1",

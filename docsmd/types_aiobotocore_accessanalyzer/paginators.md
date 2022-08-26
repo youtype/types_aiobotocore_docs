@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_accessanalyzer.paginator import ListAccessPreviewFindingsPaginator
 
 session = get_session()
-async with session.create_client("accessanalyzer") as client:
-    client: AccessAnalyzerClient
-    paginator: ListAccessPreviewFindingsPaginator = client.get_paginator("list_access_preview_findings")
+async with session.create_client("accessanalyzer") as client:  # (1)
+    paginator: ListAccessPreviewFindingsPaginator = client.get_paginator("list_access_preview_findings")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAccessPreviewFindingsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AccessAnalyzerClient](./client.md)
+2. paginator: [ListAccessPreviewFindingsPaginator](./paginators.md#listaccesspreviewfindingspaginator)
+3. item: [:material-code-braces: ListAccessPreviewFindingsResponseTypeDef](./type_defs.md#listaccesspreviewfindingsresponsetypedef) 
 
 
 ### paginate
@@ -66,10 +72,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_accessanalyzer.paginator import ListAccessPreviewsPaginator
 
 session = get_session()
-async with session.create_client("accessanalyzer") as client:
-    client: AccessAnalyzerClient
-    paginator: ListAccessPreviewsPaginator = client.get_paginator("list_access_previews")
+async with session.create_client("accessanalyzer") as client:  # (1)
+    paginator: ListAccessPreviewsPaginator = client.get_paginator("list_access_previews")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAccessPreviewsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AccessAnalyzerClient](./client.md)
+2. paginator: [ListAccessPreviewsPaginator](./paginators.md#listaccesspreviewspaginator)
+3. item: [:material-code-braces: ListAccessPreviewsResponseTypeDef](./type_defs.md#listaccesspreviewsresponsetypedef) 
 
 
 ### paginate
@@ -110,10 +122,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_accessanalyzer.paginator import ListAnalyzedResourcesPaginator
 
 session = get_session()
-async with session.create_client("accessanalyzer") as client:
-    client: AccessAnalyzerClient
-    paginator: ListAnalyzedResourcesPaginator = client.get_paginator("list_analyzed_resources")
+async with session.create_client("accessanalyzer") as client:  # (1)
+    paginator: ListAnalyzedResourcesPaginator = client.get_paginator("list_analyzed_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAnalyzedResourcesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AccessAnalyzerClient](./client.md)
+2. paginator: [ListAnalyzedResourcesPaginator](./paginators.md#listanalyzedresourcespaginator)
+3. item: [:material-code-braces: ListAnalyzedResourcesResponseTypeDef](./type_defs.md#listanalyzedresourcesresponsetypedef) 
 
 
 ### paginate
@@ -156,10 +174,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_accessanalyzer.paginator import ListAnalyzersPaginator
 
 session = get_session()
-async with session.create_client("accessanalyzer") as client:
-    client: AccessAnalyzerClient
-    paginator: ListAnalyzersPaginator = client.get_paginator("list_analyzers")
+async with session.create_client("accessanalyzer") as client:  # (1)
+    paginator: ListAnalyzersPaginator = client.get_paginator("list_analyzers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAnalyzersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AccessAnalyzerClient](./client.md)
+2. paginator: [ListAnalyzersPaginator](./paginators.md#listanalyzerspaginator)
+3. item: [:material-code-braces: ListAnalyzersResponseTypeDef](./type_defs.md#listanalyzersresponsetypedef) 
 
 
 ### paginate
@@ -201,10 +225,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_accessanalyzer.paginator import ListArchiveRulesPaginator
 
 session = get_session()
-async with session.create_client("accessanalyzer") as client:
-    client: AccessAnalyzerClient
-    paginator: ListArchiveRulesPaginator = client.get_paginator("list_archive_rules")
+async with session.create_client("accessanalyzer") as client:  # (1)
+    paginator: ListArchiveRulesPaginator = client.get_paginator("list_archive_rules")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListArchiveRulesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AccessAnalyzerClient](./client.md)
+2. paginator: [ListArchiveRulesPaginator](./paginators.md#listarchiverulespaginator)
+3. item: [:material-code-braces: ListArchiveRulesResponseTypeDef](./type_defs.md#listarchiverulesresponsetypedef) 
 
 
 ### paginate
@@ -245,10 +275,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_accessanalyzer.paginator import ListFindingsPaginator
 
 session = get_session()
-async with session.create_client("accessanalyzer") as client:
-    client: AccessAnalyzerClient
-    paginator: ListFindingsPaginator = client.get_paginator("list_findings")
+async with session.create_client("accessanalyzer") as client:  # (1)
+    paginator: ListFindingsPaginator = client.get_paginator("list_findings")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListFindingsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AccessAnalyzerClient](./client.md)
+2. paginator: [ListFindingsPaginator](./paginators.md#listfindingspaginator)
+3. item: [:material-code-braces: ListFindingsResponseTypeDef](./type_defs.md#listfindingsresponsetypedef) 
 
 
 ### paginate
@@ -293,10 +329,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_accessanalyzer.paginator import ListPolicyGenerationsPaginator
 
 session = get_session()
-async with session.create_client("accessanalyzer") as client:
-    client: AccessAnalyzerClient
-    paginator: ListPolicyGenerationsPaginator = client.get_paginator("list_policy_generations")
+async with session.create_client("accessanalyzer") as client:  # (1)
+    paginator: ListPolicyGenerationsPaginator = client.get_paginator("list_policy_generations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPolicyGenerationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AccessAnalyzerClient](./client.md)
+2. paginator: [ListPolicyGenerationsPaginator](./paginators.md#listpolicygenerationspaginator)
+3. item: [:material-code-braces: ListPolicyGenerationsResponseTypeDef](./type_defs.md#listpolicygenerationsresponsetypedef) 
 
 
 ### paginate
@@ -337,10 +379,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_accessanalyzer.paginator import ValidatePolicyPaginator
 
 session = get_session()
-async with session.create_client("accessanalyzer") as client:
-    client: AccessAnalyzerClient
-    paginator: ValidatePolicyPaginator = client.get_paginator("validate_policy")
+async with session.create_client("accessanalyzer") as client:  # (1)
+    paginator: ValidatePolicyPaginator = client.get_paginator("validate_policy")  # (2)
+    async for item in paginator.paginate(...):
+        item: ValidatePolicyResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [AccessAnalyzerClient](./client.md)
+2. paginator: [ValidatePolicyPaginator](./paginators.md#validatepolicypaginator)
+3. item: [:material-code-braces: ValidatePolicyResponseTypeDef](./type_defs.md#validatepolicyresponsetypedef) 
 
 
 ### paginate

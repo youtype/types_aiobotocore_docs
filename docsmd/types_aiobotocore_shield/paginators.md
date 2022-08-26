@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_shield.paginator import ListAttacksPaginator
 
 session = get_session()
-async with session.create_client("shield") as client:
-    client: ShieldClient
-    paginator: ListAttacksPaginator = client.get_paginator("list_attacks")
+async with session.create_client("shield") as client:  # (1)
+    paginator: ListAttacksPaginator = client.get_paginator("list_attacks")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAttacksResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ShieldClient](./client.md)
+2. paginator: [ListAttacksPaginator](./paginators.md#listattackspaginator)
+3. item: [:material-code-braces: ListAttacksResponseTypeDef](./type_defs.md#listattacksresponsetypedef) 
 
 
 ### paginate
@@ -66,10 +72,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_shield.paginator import ListProtectionsPaginator
 
 session = get_session()
-async with session.create_client("shield") as client:
-    client: ShieldClient
-    paginator: ListProtectionsPaginator = client.get_paginator("list_protections")
+async with session.create_client("shield") as client:  # (1)
+    paginator: ListProtectionsPaginator = client.get_paginator("list_protections")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProtectionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ShieldClient](./client.md)
+2. paginator: [ListProtectionsPaginator](./paginators.md#listprotectionspaginator)
+3. item: [:material-code-braces: ListProtectionsResponseTypeDef](./type_defs.md#listprotectionsresponsetypedef) 
 
 
 ### paginate
@@ -80,18 +92,20 @@ Type annotations and code completion for `#!python ListProtectionsPaginator.pagi
 def paginate(
     self,
     *,
-    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
-) -> AsyncIterator[ListProtectionsResponseTypeDef]:  # (2)
+    InclusionFilters: InclusionProtectionFiltersTypeDef = ...,  # (1)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[ListProtectionsResponseTypeDef]:  # (3)
     ...
 ```
 
-1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-2. See [:material-code-braces: ListProtectionsResponseTypeDef](./type_defs.md#listprotectionsresponsetypedef) 
+1. See [:material-code-braces: InclusionProtectionFiltersTypeDef](./type_defs.md#inclusionprotectionfilterstypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: ListProtectionsResponseTypeDef](./type_defs.md#listprotectionsresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
 kwargs: ListProtectionsRequestListProtectionsPaginateTypeDef = {  # (1)
-    "PaginationConfig": ...,
+    "InclusionFilters": ...,
 }
 
 parent.paginate(**kwargs)

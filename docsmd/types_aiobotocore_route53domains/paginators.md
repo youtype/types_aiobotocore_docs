@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53domains.paginator import ListDomainsPaginator
 
 session = get_session()
-async with session.create_client("route53domains") as client:
-    client: Route53DomainsClient
-    paginator: ListDomainsPaginator = client.get_paginator("list_domains")
+async with session.create_client("route53domains") as client:  # (1)
+    paginator: ListDomainsPaginator = client.get_paginator("list_domains")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDomainsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53DomainsClient](./client.md)
+2. paginator: [ListDomainsPaginator](./paginators.md#listdomainspaginator)
+3. item: [:material-code-braces: ListDomainsResponseTypeDef](./type_defs.md#listdomainsresponsetypedef) 
 
 
 ### paginate
@@ -65,10 +71,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53domains.paginator import ListOperationsPaginator
 
 session = get_session()
-async with session.create_client("route53domains") as client:
-    client: Route53DomainsClient
-    paginator: ListOperationsPaginator = client.get_paginator("list_operations")
+async with session.create_client("route53domains") as client:  # (1)
+    paginator: ListOperationsPaginator = client.get_paginator("list_operations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListOperationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53DomainsClient](./client.md)
+2. paginator: [ListOperationsPaginator](./paginators.md#listoperationspaginator)
+3. item: [:material-code-braces: ListOperationsResponseTypeDef](./type_defs.md#listoperationsresponsetypedef) 
 
 
 ### paginate
@@ -109,10 +121,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53domains.paginator import ListPricesPaginator
 
 session = get_session()
-async with session.create_client("route53domains") as client:
-    client: Route53DomainsClient
-    paginator: ListPricesPaginator = client.get_paginator("list_prices")
+async with session.create_client("route53domains") as client:  # (1)
+    paginator: ListPricesPaginator = client.get_paginator("list_prices")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPricesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53DomainsClient](./client.md)
+2. paginator: [ListPricesPaginator](./paginators.md#listpricespaginator)
+3. item: [:material-code-braces: ListPricesResponseTypeDef](./type_defs.md#listpricesresponsetypedef) 
 
 
 ### paginate
@@ -153,10 +171,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_route53domains.paginator import ViewBillingPaginator
 
 session = get_session()
-async with session.create_client("route53domains") as client:
-    client: Route53DomainsClient
-    paginator: ViewBillingPaginator = client.get_paginator("view_billing")
+async with session.create_client("route53domains") as client:  # (1)
+    paginator: ViewBillingPaginator = client.get_paginator("view_billing")  # (2)
+    async for item in paginator.paginate(...):
+        item: ViewBillingResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [Route53DomainsClient](./client.md)
+2. paginator: [ViewBillingPaginator](./paginators.md#viewbillingpaginator)
+3. item: [:material-code-braces: ViewBillingResponseTypeDef](./type_defs.md#viewbillingresponsetypedef) 
 
 
 ### paginate

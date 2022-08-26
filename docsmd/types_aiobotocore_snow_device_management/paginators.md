@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_snow_device_management.paginator import ListDeviceResourcesPaginator
 
 session = get_session()
-async with session.create_client("snow-device-management") as client:
-    client: SnowDeviceManagementClient
-    paginator: ListDeviceResourcesPaginator = client.get_paginator("list_device_resources")
+async with session.create_client("snow-device-management") as client:  # (1)
+    paginator: ListDeviceResourcesPaginator = client.get_paginator("list_device_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDeviceResourcesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SnowDeviceManagementClient](./client.md)
+2. paginator: [ListDeviceResourcesPaginator](./paginators.md#listdeviceresourcespaginator)
+3. item: [:material-code-braces: ListDeviceResourcesOutputTypeDef](./type_defs.md#listdeviceresourcesoutputtypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_snow_device_management.paginator import ListDevicesPaginator
 
 session = get_session()
-async with session.create_client("snow-device-management") as client:
-    client: SnowDeviceManagementClient
-    paginator: ListDevicesPaginator = client.get_paginator("list_devices")
+async with session.create_client("snow-device-management") as client:  # (1)
+    paginator: ListDevicesPaginator = client.get_paginator("list_devices")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDevicesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SnowDeviceManagementClient](./client.md)
+2. paginator: [ListDevicesPaginator](./paginators.md#listdevicespaginator)
+3. item: [:material-code-braces: ListDevicesOutputTypeDef](./type_defs.md#listdevicesoutputtypedef) 
 
 
 ### paginate
@@ -107,10 +119,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_snow_device_management.paginator import ListExecutionsPaginator
 
 session = get_session()
-async with session.create_client("snow-device-management") as client:
-    client: SnowDeviceManagementClient
-    paginator: ListExecutionsPaginator = client.get_paginator("list_executions")
+async with session.create_client("snow-device-management") as client:  # (1)
+    paginator: ListExecutionsPaginator = client.get_paginator("list_executions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListExecutionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SnowDeviceManagementClient](./client.md)
+2. paginator: [ListExecutionsPaginator](./paginators.md#listexecutionspaginator)
+3. item: [:material-code-braces: ListExecutionsOutputTypeDef](./type_defs.md#listexecutionsoutputtypedef) 
 
 
 ### paginate
@@ -153,10 +171,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_snow_device_management.paginator import ListTasksPaginator
 
 session = get_session()
-async with session.create_client("snow-device-management") as client:
-    client: SnowDeviceManagementClient
-    paginator: ListTasksPaginator = client.get_paginator("list_tasks")
+async with session.create_client("snow-device-management") as client:  # (1)
+    paginator: ListTasksPaginator = client.get_paginator("list_tasks")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTasksOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SnowDeviceManagementClient](./client.md)
+2. paginator: [ListTasksPaginator](./paginators.md#listtaskspaginator)
+3. item: [:material-code-braces: ListTasksOutputTypeDef](./type_defs.md#listtasksoutputtypedef) 
 
 
 ### paginate

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codestar.paginator import ListProjectsPaginator
 
 session = get_session()
-async with session.create_client("codestar") as client:
-    client: CodeStarClient
-    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
+async with session.create_client("codestar") as client:  # (1)
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProjectsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeStarClient](./client.md)
+2. paginator: [ListProjectsPaginator](./paginators.md#listprojectspaginator)
+3. item: [:material-code-braces: ListProjectsResultTypeDef](./type_defs.md#listprojectsresulttypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codestar.paginator import ListResourcesPaginator
 
 session = get_session()
-async with session.create_client("codestar") as client:
-    client: CodeStarClient
-    paginator: ListResourcesPaginator = client.get_paginator("list_resources")
+async with session.create_client("codestar") as client:  # (1)
+    paginator: ListResourcesPaginator = client.get_paginator("list_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResourcesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeStarClient](./client.md)
+2. paginator: [ListResourcesPaginator](./paginators.md#listresourcespaginator)
+3. item: [:material-code-braces: ListResourcesResultTypeDef](./type_defs.md#listresourcesresulttypedef) 
 
 
 ### paginate
@@ -105,10 +117,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codestar.paginator import ListTeamMembersPaginator
 
 session = get_session()
-async with session.create_client("codestar") as client:
-    client: CodeStarClient
-    paginator: ListTeamMembersPaginator = client.get_paginator("list_team_members")
+async with session.create_client("codestar") as client:  # (1)
+    paginator: ListTeamMembersPaginator = client.get_paginator("list_team_members")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTeamMembersResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeStarClient](./client.md)
+2. paginator: [ListTeamMembersPaginator](./paginators.md#listteammemberspaginator)
+3. item: [:material-code-braces: ListTeamMembersResultTypeDef](./type_defs.md#listteammembersresulttypedef) 
 
 
 ### paginate
@@ -149,10 +167,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codestar.paginator import ListUserProfilesPaginator
 
 session = get_session()
-async with session.create_client("codestar") as client:
-    client: CodeStarClient
-    paginator: ListUserProfilesPaginator = client.get_paginator("list_user_profiles")
+async with session.create_client("codestar") as client:  # (1)
+    paginator: ListUserProfilesPaginator = client.get_paginator("list_user_profiles")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListUserProfilesResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodeStarClient](./client.md)
+2. paginator: [ListUserProfilesPaginator](./paginators.md#listuserprofilespaginator)
+3. item: [:material-code-braces: ListUserProfilesResultTypeDef](./type_defs.md#listuserprofilesresulttypedef) 
 
 
 ### paginate

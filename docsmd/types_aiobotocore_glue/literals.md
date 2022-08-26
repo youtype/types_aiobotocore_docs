@@ -267,6 +267,7 @@ def get_value() -> CrawlStateType:
 CrawlStateType = Literal[
     "CANCELLED",
     "CANCELLING",
+    "ERROR",
     "FAILED",
     "RUNNING",
     "SUCCEEDED",
@@ -381,6 +382,21 @@ def get_value() -> EnableHybridValuesType:
 EnableHybridValuesType = Literal[
     "FALSE",
     "TRUE",
+]
+```
+## ExecutionClassType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import ExecutionClassType
+
+def get_value() -> ExecutionClassType:
+    return "FLEX"
+```
+
+```python title="Definition"
+ExecutionClassType = Literal[
+    "FLEX",
+    "STANDARD",
 ]
 ```
 ## ExistConditionType
@@ -806,11 +822,12 @@ JobBookmarksEncryptionModeType = Literal[
 from types_aiobotocore_glue.literals import JobRunStateType
 
 def get_value() -> JobRunStateType:
-    return "FAILED"
+    return "ERROR"
 ```
 
 ```python title="Definition"
 JobRunStateType = Literal[
+    "ERROR",
     "FAILED",
     "RUNNING",
     "STARTING",
@@ -818,6 +835,7 @@ JobRunStateType = Literal[
     "STOPPING",
     "SUCCEEDED",
     "TIMEOUT",
+    "WAITING",
 ]
 ```
 ## JoinTypeType
@@ -1546,11 +1564,12 @@ UpdateCatalogBehaviorType = Literal[
 from types_aiobotocore_glue.literals import WorkerTypeType
 
 def get_value() -> WorkerTypeType:
-    return "G.1X"
+    return "G.025X"
 ```
 
 ```python title="Definition"
 WorkerTypeType = Literal[
+    "G.025X",
     "G.1X",
     "G.2X",
     "Standard",
@@ -1628,6 +1647,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -1773,6 +1793,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -1826,6 +1847,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -1836,11 +1858,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -1886,6 +1910,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -1983,6 +2008,7 @@ RegionName = Literal[
     "ap-south-1",
     "ap-southeast-1",
     "ap-southeast-2",
+    "ap-southeast-3",
     "ca-central-1",
     "eu-central-1",
     "eu-north-1",

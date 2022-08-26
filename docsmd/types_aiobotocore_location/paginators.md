@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_location.paginator import GetDevicePositionHistoryPaginator
 
 session = get_session()
-async with session.create_client("location") as client:
-    client: LocationServiceClient
-    paginator: GetDevicePositionHistoryPaginator = client.get_paginator("get_device_position_history")
+async with session.create_client("location") as client:  # (1)
+    paginator: GetDevicePositionHistoryPaginator = client.get_paginator("get_device_position_history")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetDevicePositionHistoryResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LocationServiceClient](./client.md)
+2. paginator: [GetDevicePositionHistoryPaginator](./paginators.md#getdevicepositionhistorypaginator)
+3. item: [:material-code-braces: GetDevicePositionHistoryResponseTypeDef](./type_defs.md#getdevicepositionhistoryresponsetypedef) 
 
 
 ### paginate
@@ -66,10 +72,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_location.paginator import ListDevicePositionsPaginator
 
 session = get_session()
-async with session.create_client("location") as client:
-    client: LocationServiceClient
-    paginator: ListDevicePositionsPaginator = client.get_paginator("list_device_positions")
+async with session.create_client("location") as client:  # (1)
+    paginator: ListDevicePositionsPaginator = client.get_paginator("list_device_positions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDevicePositionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LocationServiceClient](./client.md)
+2. paginator: [ListDevicePositionsPaginator](./paginators.md#listdevicepositionspaginator)
+3. item: [:material-code-braces: ListDevicePositionsResponseTypeDef](./type_defs.md#listdevicepositionsresponsetypedef) 
 
 
 ### paginate
@@ -110,10 +122,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_location.paginator import ListGeofenceCollectionsPaginator
 
 session = get_session()
-async with session.create_client("location") as client:
-    client: LocationServiceClient
-    paginator: ListGeofenceCollectionsPaginator = client.get_paginator("list_geofence_collections")
+async with session.create_client("location") as client:  # (1)
+    paginator: ListGeofenceCollectionsPaginator = client.get_paginator("list_geofence_collections")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGeofenceCollectionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LocationServiceClient](./client.md)
+2. paginator: [ListGeofenceCollectionsPaginator](./paginators.md#listgeofencecollectionspaginator)
+3. item: [:material-code-braces: ListGeofenceCollectionsResponseTypeDef](./type_defs.md#listgeofencecollectionsresponsetypedef) 
 
 
 ### paginate
@@ -153,10 +171,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_location.paginator import ListGeofencesPaginator
 
 session = get_session()
-async with session.create_client("location") as client:
-    client: LocationServiceClient
-    paginator: ListGeofencesPaginator = client.get_paginator("list_geofences")
+async with session.create_client("location") as client:  # (1)
+    paginator: ListGeofencesPaginator = client.get_paginator("list_geofences")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGeofencesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LocationServiceClient](./client.md)
+2. paginator: [ListGeofencesPaginator](./paginators.md#listgeofencespaginator)
+3. item: [:material-code-braces: ListGeofencesResponseTypeDef](./type_defs.md#listgeofencesresponsetypedef) 
 
 
 ### paginate
@@ -197,10 +221,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_location.paginator import ListMapsPaginator
 
 session = get_session()
-async with session.create_client("location") as client:
-    client: LocationServiceClient
-    paginator: ListMapsPaginator = client.get_paginator("list_maps")
+async with session.create_client("location") as client:  # (1)
+    paginator: ListMapsPaginator = client.get_paginator("list_maps")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMapsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LocationServiceClient](./client.md)
+2. paginator: [ListMapsPaginator](./paginators.md#listmapspaginator)
+3. item: [:material-code-braces: ListMapsResponseTypeDef](./type_defs.md#listmapsresponsetypedef) 
 
 
 ### paginate
@@ -240,10 +270,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_location.paginator import ListPlaceIndexesPaginator
 
 session = get_session()
-async with session.create_client("location") as client:
-    client: LocationServiceClient
-    paginator: ListPlaceIndexesPaginator = client.get_paginator("list_place_indexes")
+async with session.create_client("location") as client:  # (1)
+    paginator: ListPlaceIndexesPaginator = client.get_paginator("list_place_indexes")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPlaceIndexesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LocationServiceClient](./client.md)
+2. paginator: [ListPlaceIndexesPaginator](./paginators.md#listplaceindexespaginator)
+3. item: [:material-code-braces: ListPlaceIndexesResponseTypeDef](./type_defs.md#listplaceindexesresponsetypedef) 
 
 
 ### paginate
@@ -283,10 +319,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_location.paginator import ListRouteCalculatorsPaginator
 
 session = get_session()
-async with session.create_client("location") as client:
-    client: LocationServiceClient
-    paginator: ListRouteCalculatorsPaginator = client.get_paginator("list_route_calculators")
+async with session.create_client("location") as client:  # (1)
+    paginator: ListRouteCalculatorsPaginator = client.get_paginator("list_route_calculators")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRouteCalculatorsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LocationServiceClient](./client.md)
+2. paginator: [ListRouteCalculatorsPaginator](./paginators.md#listroutecalculatorspaginator)
+3. item: [:material-code-braces: ListRouteCalculatorsResponseTypeDef](./type_defs.md#listroutecalculatorsresponsetypedef) 
 
 
 ### paginate
@@ -326,10 +368,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_location.paginator import ListTrackerConsumersPaginator
 
 session = get_session()
-async with session.create_client("location") as client:
-    client: LocationServiceClient
-    paginator: ListTrackerConsumersPaginator = client.get_paginator("list_tracker_consumers")
+async with session.create_client("location") as client:  # (1)
+    paginator: ListTrackerConsumersPaginator = client.get_paginator("list_tracker_consumers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTrackerConsumersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LocationServiceClient](./client.md)
+2. paginator: [ListTrackerConsumersPaginator](./paginators.md#listtrackerconsumerspaginator)
+3. item: [:material-code-braces: ListTrackerConsumersResponseTypeDef](./type_defs.md#listtrackerconsumersresponsetypedef) 
 
 
 ### paginate
@@ -370,10 +418,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_location.paginator import ListTrackersPaginator
 
 session = get_session()
-async with session.create_client("location") as client:
-    client: LocationServiceClient
-    paginator: ListTrackersPaginator = client.get_paginator("list_trackers")
+async with session.create_client("location") as client:  # (1)
+    paginator: ListTrackersPaginator = client.get_paginator("list_trackers")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTrackersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [LocationServiceClient](./client.md)
+2. paginator: [ListTrackersPaginator](./paginators.md#listtrackerspaginator)
+3. item: [:material-code-braces: ListTrackersResponseTypeDef](./type_defs.md#listtrackersresponsetypedef) 
 
 
 ### paginate

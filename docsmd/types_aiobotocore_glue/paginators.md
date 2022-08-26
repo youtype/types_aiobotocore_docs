@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import GetClassifiersPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: GetClassifiersPaginator = client.get_paginator("get_classifiers")
+async with session.create_client("glue") as client:  # (1)
+    paginator: GetClassifiersPaginator = client.get_paginator("get_classifiers")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetClassifiersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [GetClassifiersPaginator](./paginators.md#getclassifierspaginator)
+3. item: [:material-code-braces: GetClassifiersResponseTypeDef](./type_defs.md#getclassifiersresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import GetConnectionsPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: GetConnectionsPaginator = client.get_paginator("get_connections")
+async with session.create_client("glue") as client:  # (1)
+    paginator: GetConnectionsPaginator = client.get_paginator("get_connections")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetConnectionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [GetConnectionsPaginator](./paginators.md#getconnectionspaginator)
+3. item: [:material-code-braces: GetConnectionsResponseTypeDef](./type_defs.md#getconnectionsresponsetypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import GetCrawlerMetricsPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: GetCrawlerMetricsPaginator = client.get_paginator("get_crawler_metrics")
+async with session.create_client("glue") as client:  # (1)
+    paginator: GetCrawlerMetricsPaginator = client.get_paginator("get_crawler_metrics")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetCrawlerMetricsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [GetCrawlerMetricsPaginator](./paginators.md#getcrawlermetricspaginator)
+3. item: [:material-code-braces: GetCrawlerMetricsResponseTypeDef](./type_defs.md#getcrawlermetricsresponsetypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import GetCrawlersPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: GetCrawlersPaginator = client.get_paginator("get_crawlers")
+async with session.create_client("glue") as client:  # (1)
+    paginator: GetCrawlersPaginator = client.get_paginator("get_crawlers")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetCrawlersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [GetCrawlersPaginator](./paginators.md#getcrawlerspaginator)
+3. item: [:material-code-braces: GetCrawlersResponseTypeDef](./type_defs.md#getcrawlersresponsetypedef) 
 
 
 ### paginate
@@ -195,10 +219,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import GetDatabasesPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: GetDatabasesPaginator = client.get_paginator("get_databases")
+async with session.create_client("glue") as client:  # (1)
+    paginator: GetDatabasesPaginator = client.get_paginator("get_databases")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetDatabasesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [GetDatabasesPaginator](./paginators.md#getdatabasespaginator)
+3. item: [:material-code-braces: GetDatabasesResponseTypeDef](./type_defs.md#getdatabasesresponsetypedef) 
 
 
 ### paginate
@@ -241,10 +271,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import GetDevEndpointsPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: GetDevEndpointsPaginator = client.get_paginator("get_dev_endpoints")
+async with session.create_client("glue") as client:  # (1)
+    paginator: GetDevEndpointsPaginator = client.get_paginator("get_dev_endpoints")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetDevEndpointsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [GetDevEndpointsPaginator](./paginators.md#getdevendpointspaginator)
+3. item: [:material-code-braces: GetDevEndpointsResponseTypeDef](./type_defs.md#getdevendpointsresponsetypedef) 
 
 
 ### paginate
@@ -284,10 +320,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import GetJobRunsPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: GetJobRunsPaginator = client.get_paginator("get_job_runs")
+async with session.create_client("glue") as client:  # (1)
+    paginator: GetJobRunsPaginator = client.get_paginator("get_job_runs")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetJobRunsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [GetJobRunsPaginator](./paginators.md#getjobrunspaginator)
+3. item: [:material-code-braces: GetJobRunsResponseTypeDef](./type_defs.md#getjobrunsresponsetypedef) 
 
 
 ### paginate
@@ -328,10 +370,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import GetJobsPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: GetJobsPaginator = client.get_paginator("get_jobs")
+async with session.create_client("glue") as client:  # (1)
+    paginator: GetJobsPaginator = client.get_paginator("get_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetJobsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [GetJobsPaginator](./paginators.md#getjobspaginator)
+3. item: [:material-code-braces: GetJobsResponseTypeDef](./type_defs.md#getjobsresponsetypedef) 
 
 
 ### paginate
@@ -371,10 +419,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import GetPartitionIndexesPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: GetPartitionIndexesPaginator = client.get_paginator("get_partition_indexes")
+async with session.create_client("glue") as client:  # (1)
+    paginator: GetPartitionIndexesPaginator = client.get_paginator("get_partition_indexes")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetPartitionIndexesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [GetPartitionIndexesPaginator](./paginators.md#getpartitionindexespaginator)
+3. item: [:material-code-braces: GetPartitionIndexesResponseTypeDef](./type_defs.md#getpartitionindexesresponsetypedef) 
 
 
 ### paginate
@@ -418,10 +472,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import GetPartitionsPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: GetPartitionsPaginator = client.get_paginator("get_partitions")
+async with session.create_client("glue") as client:  # (1)
+    paginator: GetPartitionsPaginator = client.get_paginator("get_partitions")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetPartitionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [GetPartitionsPaginator](./paginators.md#getpartitionspaginator)
+3. item: [:material-code-braces: GetPartitionsResponseTypeDef](./type_defs.md#getpartitionsresponsetypedef) 
 
 
 ### paginate
@@ -471,10 +531,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import GetResourcePoliciesPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: GetResourcePoliciesPaginator = client.get_paginator("get_resource_policies")
+async with session.create_client("glue") as client:  # (1)
+    paginator: GetResourcePoliciesPaginator = client.get_paginator("get_resource_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetResourcePoliciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [GetResourcePoliciesPaginator](./paginators.md#getresourcepoliciespaginator)
+3. item: [:material-code-braces: GetResourcePoliciesResponseTypeDef](./type_defs.md#getresourcepoliciesresponsetypedef) 
 
 
 ### paginate
@@ -514,10 +580,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import GetSecurityConfigurationsPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: GetSecurityConfigurationsPaginator = client.get_paginator("get_security_configurations")
+async with session.create_client("glue") as client:  # (1)
+    paginator: GetSecurityConfigurationsPaginator = client.get_paginator("get_security_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetSecurityConfigurationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [GetSecurityConfigurationsPaginator](./paginators.md#getsecurityconfigurationspaginator)
+3. item: [:material-code-braces: GetSecurityConfigurationsResponseTypeDef](./type_defs.md#getsecurityconfigurationsresponsetypedef) 
 
 
 ### paginate
@@ -557,10 +629,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import GetTableVersionsPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: GetTableVersionsPaginator = client.get_paginator("get_table_versions")
+async with session.create_client("glue") as client:  # (1)
+    paginator: GetTableVersionsPaginator = client.get_paginator("get_table_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTableVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [GetTableVersionsPaginator](./paginators.md#gettableversionspaginator)
+3. item: [:material-code-braces: GetTableVersionsResponseTypeDef](./type_defs.md#gettableversionsresponsetypedef) 
 
 
 ### paginate
@@ -604,10 +682,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import GetTablesPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: GetTablesPaginator = client.get_paginator("get_tables")
+async with session.create_client("glue") as client:  # (1)
+    paginator: GetTablesPaginator = client.get_paginator("get_tables")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTablesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [GetTablesPaginator](./paginators.md#gettablespaginator)
+3. item: [:material-code-braces: GetTablesResponseTypeDef](./type_defs.md#gettablesresponsetypedef) 
 
 
 ### paginate
@@ -652,10 +736,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import GetTriggersPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: GetTriggersPaginator = client.get_paginator("get_triggers")
+async with session.create_client("glue") as client:  # (1)
+    paginator: GetTriggersPaginator = client.get_paginator("get_triggers")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTriggersResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [GetTriggersPaginator](./paginators.md#gettriggerspaginator)
+3. item: [:material-code-braces: GetTriggersResponseTypeDef](./type_defs.md#gettriggersresponsetypedef) 
 
 
 ### paginate
@@ -696,10 +786,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import GetUserDefinedFunctionsPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: GetUserDefinedFunctionsPaginator = client.get_paginator("get_user_defined_functions")
+async with session.create_client("glue") as client:  # (1)
+    paginator: GetUserDefinedFunctionsPaginator = client.get_paginator("get_user_defined_functions")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetUserDefinedFunctionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [GetUserDefinedFunctionsPaginator](./paginators.md#getuserdefinedfunctionspaginator)
+3. item: [:material-code-braces: GetUserDefinedFunctionsResponseTypeDef](./type_defs.md#getuserdefinedfunctionsresponsetypedef) 
 
 
 ### paginate
@@ -742,10 +838,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import ListRegistriesPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: ListRegistriesPaginator = client.get_paginator("list_registries")
+async with session.create_client("glue") as client:  # (1)
+    paginator: ListRegistriesPaginator = client.get_paginator("list_registries")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRegistriesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [ListRegistriesPaginator](./paginators.md#listregistriespaginator)
+3. item: [:material-code-braces: ListRegistriesResponseTypeDef](./type_defs.md#listregistriesresponsetypedef) 
 
 
 ### paginate
@@ -785,10 +887,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import ListSchemaVersionsPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: ListSchemaVersionsPaginator = client.get_paginator("list_schema_versions")
+async with session.create_client("glue") as client:  # (1)
+    paginator: ListSchemaVersionsPaginator = client.get_paginator("list_schema_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSchemaVersionsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [ListSchemaVersionsPaginator](./paginators.md#listschemaversionspaginator)
+3. item: [:material-code-braces: ListSchemaVersionsResponseTypeDef](./type_defs.md#listschemaversionsresponsetypedef) 
 
 
 ### paginate
@@ -830,10 +938,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_glue.paginator import ListSchemasPaginator
 
 session = get_session()
-async with session.create_client("glue") as client:
-    client: GlueClient
-    paginator: ListSchemasPaginator = client.get_paginator("list_schemas")
+async with session.create_client("glue") as client:  # (1)
+    paginator: ListSchemasPaginator = client.get_paginator("list_schemas")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSchemasResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GlueClient](./client.md)
+2. paginator: [ListSchemasPaginator](./paginators.md#listschemaspaginator)
+3. item: [:material-code-braces: ListSchemasResponseTypeDef](./type_defs.md#listschemasresponsetypedef) 
 
 
 ### paginate

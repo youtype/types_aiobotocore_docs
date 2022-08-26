@@ -70,6 +70,49 @@ MessageSystemAttributeNameType = Literal[
     "SequenceNumber",
 ]
 ```
+## QueueAttributeFilterType
+
+```python title="Usage Example"
+from types_aiobotocore_sqs.literals import QueueAttributeFilterType
+
+def get_value() -> QueueAttributeFilterType:
+    return "AWSTraceHeader"
+```
+
+```python title="Definition"
+QueueAttributeFilterType = Literal[
+    "All",
+    "ApproximateFirstReceiveTimestamp",
+    "ApproximateNumberOfMessages",
+    "ApproximateNumberOfMessagesDelayed",
+    "ApproximateNumberOfMessagesNotVisible",
+    "ApproximateReceiveCount",
+    "AWSTraceHeader",
+    "ContentBasedDeduplication",
+    "CreatedTimestamp",
+    "DeduplicationScope",
+    "DelaySeconds",
+    "FifoQueue",
+    "FifoThroughputLimit",
+    "KmsDataKeyReusePeriodSeconds",
+    "KmsMasterKeyId",
+    "LastModifiedTimestamp",
+    "MaximumMessageSize",
+    "MessageDeduplicationId",
+    "MessageGroupId",
+    "MessageRetentionPeriod",
+    "Policy",
+    "QueueArn",
+    "ReceiveMessageWaitTimeSeconds",
+    "RedriveAllowPolicy",
+    "RedrivePolicy",
+    "SenderId",
+    "SentTimestamp",
+    "SequenceNumber",
+    "SqsManagedSseEnabled",
+    "VisibilityTimeout",
+]
+```
 ## QueueAttributeNameType
 
 ```python title="Usage Example"
@@ -159,6 +202,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -304,6 +348,7 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
@@ -357,6 +402,7 @@ ServiceName = Literal[
     "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -367,11 +413,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -417,6 +465,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

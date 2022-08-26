@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_fms.paginator import ListAppsListsPaginator
 
 session = get_session()
-async with session.create_client("fms") as client:
-    client: FMSClient
-    paginator: ListAppsListsPaginator = client.get_paginator("list_apps_lists")
+async with session.create_client("fms") as client:  # (1)
+    paginator: ListAppsListsPaginator = client.get_paginator("list_apps_lists")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAppsListsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [FMSClient](./client.md)
+2. paginator: [ListAppsListsPaginator](./paginators.md#listappslistspaginator)
+3. item: [:material-code-braces: ListAppsListsResponseTypeDef](./type_defs.md#listappslistsresponsetypedef) 
 
 
 ### paginate
@@ -62,10 +68,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_fms.paginator import ListComplianceStatusPaginator
 
 session = get_session()
-async with session.create_client("fms") as client:
-    client: FMSClient
-    paginator: ListComplianceStatusPaginator = client.get_paginator("list_compliance_status")
+async with session.create_client("fms") as client:  # (1)
+    paginator: ListComplianceStatusPaginator = client.get_paginator("list_compliance_status")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListComplianceStatusResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [FMSClient](./client.md)
+2. paginator: [ListComplianceStatusPaginator](./paginators.md#listcompliancestatuspaginator)
+3. item: [:material-code-braces: ListComplianceStatusResponseTypeDef](./type_defs.md#listcompliancestatusresponsetypedef) 
 
 
 ### paginate
@@ -106,10 +118,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_fms.paginator import ListMemberAccountsPaginator
 
 session = get_session()
-async with session.create_client("fms") as client:
-    client: FMSClient
-    paginator: ListMemberAccountsPaginator = client.get_paginator("list_member_accounts")
+async with session.create_client("fms") as client:  # (1)
+    paginator: ListMemberAccountsPaginator = client.get_paginator("list_member_accounts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMemberAccountsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [FMSClient](./client.md)
+2. paginator: [ListMemberAccountsPaginator](./paginators.md#listmemberaccountspaginator)
+3. item: [:material-code-braces: ListMemberAccountsResponseTypeDef](./type_defs.md#listmemberaccountsresponsetypedef) 
 
 
 ### paginate
@@ -149,10 +167,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_fms.paginator import ListPoliciesPaginator
 
 session = get_session()
-async with session.create_client("fms") as client:
-    client: FMSClient
-    paginator: ListPoliciesPaginator = client.get_paginator("list_policies")
+async with session.create_client("fms") as client:  # (1)
+    paginator: ListPoliciesPaginator = client.get_paginator("list_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPoliciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [FMSClient](./client.md)
+2. paginator: [ListPoliciesPaginator](./paginators.md#listpoliciespaginator)
+3. item: [:material-code-braces: ListPoliciesResponseTypeDef](./type_defs.md#listpoliciesresponsetypedef) 
 
 
 ### paginate
@@ -192,10 +216,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_fms.paginator import ListProtocolsListsPaginator
 
 session = get_session()
-async with session.create_client("fms") as client:
-    client: FMSClient
-    paginator: ListProtocolsListsPaginator = client.get_paginator("list_protocols_lists")
+async with session.create_client("fms") as client:  # (1)
+    paginator: ListProtocolsListsPaginator = client.get_paginator("list_protocols_lists")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProtocolsListsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [FMSClient](./client.md)
+2. paginator: [ListProtocolsListsPaginator](./paginators.md#listprotocolslistspaginator)
+3. item: [:material-code-braces: ListProtocolsListsResponseTypeDef](./type_defs.md#listprotocolslistsresponsetypedef) 
 
 
 ### paginate
@@ -236,10 +266,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_fms.paginator import ListThirdPartyFirewallFirewallPoliciesPaginator
 
 session = get_session()
-async with session.create_client("fms") as client:
-    client: FMSClient
-    paginator: ListThirdPartyFirewallFirewallPoliciesPaginator = client.get_paginator("list_third_party_firewall_firewall_policies")
+async with session.create_client("fms") as client:  # (1)
+    paginator: ListThirdPartyFirewallFirewallPoliciesPaginator = client.get_paginator("list_third_party_firewall_firewall_policies")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListThirdPartyFirewallFirewallPoliciesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [FMSClient](./client.md)
+2. paginator: [ListThirdPartyFirewallFirewallPoliciesPaginator](./paginators.md#listthirdpartyfirewallfirewallpoliciespaginator)
+3. item: [:material-code-braces: ListThirdPartyFirewallFirewallPoliciesResponseTypeDef](./type_defs.md#listthirdpartyfirewallfirewallpoliciesresponsetypedef) 
 
 
 ### paginate

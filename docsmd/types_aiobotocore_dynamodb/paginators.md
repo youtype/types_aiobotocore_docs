@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dynamodb.paginator import ListBackupsPaginator
 
 session = get_session()
-async with session.create_client("dynamodb") as client:
-    client: DynamoDBClient
-    paginator: ListBackupsPaginator = client.get_paginator("list_backups")
+async with session.create_client("dynamodb") as client:  # (1)
+    paginator: ListBackupsPaginator = client.get_paginator("list_backups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBackupsOutputTableTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DynamoDBClient](./client.md)
+2. paginator: [ListBackupsPaginator](./paginators.md#listbackupspaginator)
+3. item: [:material-code-braces: ListBackupsOutputTableTypeDef](./type_defs.md#listbackupsoutputtabletypedef) 
 
 
 ### paginate
@@ -66,10 +72,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dynamodb.paginator import ListTablesPaginator
 
 session = get_session()
-async with session.create_client("dynamodb") as client:
-    client: DynamoDBClient
-    paginator: ListTablesPaginator = client.get_paginator("list_tables")
+async with session.create_client("dynamodb") as client:  # (1)
+    paginator: ListTablesPaginator = client.get_paginator("list_tables")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTablesOutputTableTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DynamoDBClient](./client.md)
+2. paginator: [ListTablesPaginator](./paginators.md#listtablespaginator)
+3. item: [:material-code-braces: ListTablesOutputTableTypeDef](./type_defs.md#listtablesoutputtabletypedef) 
 
 
 ### paginate
@@ -109,10 +121,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dynamodb.paginator import ListTagsOfResourcePaginator
 
 session = get_session()
-async with session.create_client("dynamodb") as client:
-    client: DynamoDBClient
-    paginator: ListTagsOfResourcePaginator = client.get_paginator("list_tags_of_resource")
+async with session.create_client("dynamodb") as client:  # (1)
+    paginator: ListTagsOfResourcePaginator = client.get_paginator("list_tags_of_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsOfResourceOutputTableTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DynamoDBClient](./client.md)
+2. paginator: [ListTagsOfResourcePaginator](./paginators.md#listtagsofresourcepaginator)
+3. item: [:material-code-braces: ListTagsOfResourceOutputTableTypeDef](./type_defs.md#listtagsofresourceoutputtabletypedef) 
 
 
 ### paginate
@@ -153,10 +171,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dynamodb.paginator import QueryPaginator
 
 session = get_session()
-async with session.create_client("dynamodb") as client:
-    client: DynamoDBClient
-    paginator: QueryPaginator = client.get_paginator("query")
+async with session.create_client("dynamodb") as client:  # (1)
+    paginator: QueryPaginator = client.get_paginator("query")  # (2)
+    async for item in paginator.paginate(...):
+        item: QueryOutputTableTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DynamoDBClient](./client.md)
+2. paginator: [QueryPaginator](./paginators.md#querypaginator)
+3. item: [:material-code-braces: QueryOutputTableTypeDef](./type_defs.md#queryoutputtabletypedef) 
 
 
 ### paginate
@@ -216,10 +240,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_dynamodb.paginator import ScanPaginator
 
 session = get_session()
-async with session.create_client("dynamodb") as client:
-    client: DynamoDBClient
-    paginator: ScanPaginator = client.get_paginator("scan")
+async with session.create_client("dynamodb") as client:  # (1)
+    paginator: ScanPaginator = client.get_paginator("scan")  # (2)
+    async for item in paginator.paginate(...):
+        item: ScanOutputTableTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [DynamoDBClient](./client.md)
+2. paginator: [ScanPaginator](./paginators.md#scanpaginator)
+3. item: [:material-code-braces: ScanOutputTableTypeDef](./type_defs.md#scanoutputtabletypedef) 
 
 
 ### paginate

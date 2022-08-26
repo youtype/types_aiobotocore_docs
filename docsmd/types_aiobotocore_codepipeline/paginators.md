@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codepipeline.paginator import ListActionExecutionsPaginator
 
 session = get_session()
-async with session.create_client("codepipeline") as client:
-    client: CodePipelineClient
-    paginator: ListActionExecutionsPaginator = client.get_paginator("list_action_executions")
+async with session.create_client("codepipeline") as client:  # (1)
+    paginator: ListActionExecutionsPaginator = client.get_paginator("list_action_executions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListActionExecutionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodePipelineClient](./client.md)
+2. paginator: [ListActionExecutionsPaginator](./paginators.md#listactionexecutionspaginator)
+3. item: [:material-code-braces: ListActionExecutionsOutputTypeDef](./type_defs.md#listactionexecutionsoutputtypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codepipeline.paginator import ListActionTypesPaginator
 
 session = get_session()
-async with session.create_client("codepipeline") as client:
-    client: CodePipelineClient
-    paginator: ListActionTypesPaginator = client.get_paginator("list_action_types")
+async with session.create_client("codepipeline") as client:  # (1)
+    paginator: ListActionTypesPaginator = client.get_paginator("list_action_types")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListActionTypesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodePipelineClient](./client.md)
+2. paginator: [ListActionTypesPaginator](./paginators.md#listactiontypespaginator)
+3. item: [:material-code-braces: ListActionTypesOutputTypeDef](./type_defs.md#listactiontypesoutputtypedef) 
 
 
 ### paginate
@@ -110,10 +122,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codepipeline.paginator import ListPipelineExecutionsPaginator
 
 session = get_session()
-async with session.create_client("codepipeline") as client:
-    client: CodePipelineClient
-    paginator: ListPipelineExecutionsPaginator = client.get_paginator("list_pipeline_executions")
+async with session.create_client("codepipeline") as client:  # (1)
+    paginator: ListPipelineExecutionsPaginator = client.get_paginator("list_pipeline_executions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPipelineExecutionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodePipelineClient](./client.md)
+2. paginator: [ListPipelineExecutionsPaginator](./paginators.md#listpipelineexecutionspaginator)
+3. item: [:material-code-braces: ListPipelineExecutionsOutputTypeDef](./type_defs.md#listpipelineexecutionsoutputtypedef) 
 
 
 ### paginate
@@ -154,10 +172,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codepipeline.paginator import ListPipelinesPaginator
 
 session = get_session()
-async with session.create_client("codepipeline") as client:
-    client: CodePipelineClient
-    paginator: ListPipelinesPaginator = client.get_paginator("list_pipelines")
+async with session.create_client("codepipeline") as client:  # (1)
+    paginator: ListPipelinesPaginator = client.get_paginator("list_pipelines")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPipelinesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodePipelineClient](./client.md)
+2. paginator: [ListPipelinesPaginator](./paginators.md#listpipelinespaginator)
+3. item: [:material-code-braces: ListPipelinesOutputTypeDef](./type_defs.md#listpipelinesoutputtypedef) 
 
 
 ### paginate
@@ -197,10 +221,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codepipeline.paginator import ListTagsForResourcePaginator
 
 session = get_session()
-async with session.create_client("codepipeline") as client:
-    client: CodePipelineClient
-    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
+async with session.create_client("codepipeline") as client:  # (1)
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagsForResourceOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodePipelineClient](./client.md)
+2. paginator: [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
+3. item: [:material-code-braces: ListTagsForResourceOutputTypeDef](./type_defs.md#listtagsforresourceoutputtypedef) 
 
 
 ### paginate
@@ -241,10 +271,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_codepipeline.paginator import ListWebhooksPaginator
 
 session = get_session()
-async with session.create_client("codepipeline") as client:
-    client: CodePipelineClient
-    paginator: ListWebhooksPaginator = client.get_paginator("list_webhooks")
+async with session.create_client("codepipeline") as client:  # (1)
+    paginator: ListWebhooksPaginator = client.get_paginator("list_webhooks")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListWebhooksOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [CodePipelineClient](./client.md)
+2. paginator: [ListWebhooksPaginator](./paginators.md#listwebhookspaginator)
+3. item: [:material-code-braces: ListWebhooksOutputTypeDef](./type_defs.md#listwebhooksoutputtypedef) 
 
 
 ### paginate

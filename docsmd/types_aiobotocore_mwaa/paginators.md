@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_mwaa.paginator import ListEnvironmentsPaginator
 
 session = get_session()
-async with session.create_client("mwaa") as client:
-    client: MWAAClient
-    paginator: ListEnvironmentsPaginator = client.get_paginator("list_environments")
+async with session.create_client("mwaa") as client:  # (1)
+    paginator: ListEnvironmentsPaginator = client.get_paginator("list_environments")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEnvironmentsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [MWAAClient](./client.md)
+2. paginator: [ListEnvironmentsPaginator](./paginators.md#listenvironmentspaginator)
+3. item: [:material-code-braces: ListEnvironmentsOutputTypeDef](./type_defs.md#listenvironmentsoutputtypedef) 
 
 
 ### paginate

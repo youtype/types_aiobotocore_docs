@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `LakeFormation`.
 
 ### From PyPI with pip
 
@@ -144,6 +139,7 @@ def get_value() -> LFTagPairTypeDef:
 - [LFTagPairTypeDef](./type_defs.md#lftagpairtypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
 - [AddObjectInputTypeDef](./type_defs.md#addobjectinputtypedef)
+- [AssumeDecoratedRoleWithSAMLRequestRequestTypeDef](./type_defs.md#assumedecoratedrolewithsamlrequestrequesttypedef)
 - [AuditContextTypeDef](./type_defs.md#auditcontexttypedef)
 - [ErrorDetailTypeDef](./type_defs.md#errordetailtypedef)
 - [DataLakePrincipalTypeDef](./type_defs.md#datalakeprincipaltypedef)
@@ -195,6 +191,7 @@ def get_value() -> LFTagPairTypeDef:
 - [UpdateResourceRequestRequestTypeDef](./type_defs.md#updateresourcerequestrequesttypedef)
 - [UpdateTableStorageOptimizerRequestRequestTypeDef](./type_defs.md#updatetablestorageoptimizerrequestrequesttypedef)
 - [ColumnLFTagTypeDef](./type_defs.md#columnlftagtypedef)
+- [AssumeDecoratedRoleWithSAMLResponseTypeDef](./type_defs.md#assumedecoratedrolewithsamlresponsetypedef)
 - [CommitTransactionResponseTypeDef](./type_defs.md#committransactionresponsetypedef)
 - [GetLFTagResponseTypeDef](./type_defs.md#getlftagresponsetypedef)
 - [GetQueryStateResponseTypeDef](./type_defs.md#getquerystateresponsetypedef)

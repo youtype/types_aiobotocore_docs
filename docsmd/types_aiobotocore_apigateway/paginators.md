@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetApiKeysPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetApiKeysPaginator = client.get_paginator("get_api_keys")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetApiKeysPaginator = client.get_paginator("get_api_keys")  # (2)
+    async for item in paginator.paginate(...):
+        item: ApiKeysTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetApiKeysPaginator](./paginators.md#getapikeyspaginator)
+3. item: [:material-code-braces: ApiKeysTypeDef](./type_defs.md#apikeystypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetAuthorizersPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetAuthorizersPaginator = client.get_paginator("get_authorizers")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetAuthorizersPaginator = client.get_paginator("get_authorizers")  # (2)
+    async for item in paginator.paginate(...):
+        item: AuthorizersTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetAuthorizersPaginator](./paginators.md#getauthorizerspaginator)
+3. item: [:material-code-braces: AuthorizersTypeDef](./type_defs.md#authorizerstypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetBasePathMappingsPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetBasePathMappingsPaginator = client.get_paginator("get_base_path_mappings")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetBasePathMappingsPaginator = client.get_paginator("get_base_path_mappings")  # (2)
+    async for item in paginator.paginate(...):
+        item: BasePathMappingsTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetBasePathMappingsPaginator](./paginators.md#getbasepathmappingspaginator)
+3. item: [:material-code-braces: BasePathMappingsTypeDef](./type_defs.md#basepathmappingstypedef) 
 
 
 ### paginate
@@ -152,10 +170,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetClientCertificatesPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetClientCertificatesPaginator = client.get_paginator("get_client_certificates")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetClientCertificatesPaginator = client.get_paginator("get_client_certificates")  # (2)
+    async for item in paginator.paginate(...):
+        item: ClientCertificatesTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetClientCertificatesPaginator](./paginators.md#getclientcertificatespaginator)
+3. item: [:material-code-braces: ClientCertificatesTypeDef](./type_defs.md#clientcertificatestypedef) 
 
 
 ### paginate
@@ -195,10 +219,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetDeploymentsPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetDeploymentsPaginator = client.get_paginator("get_deployments")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetDeploymentsPaginator = client.get_paginator("get_deployments")  # (2)
+    async for item in paginator.paginate(...):
+        item: DeploymentsTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetDeploymentsPaginator](./paginators.md#getdeploymentspaginator)
+3. item: [:material-code-braces: DeploymentsTypeDef](./type_defs.md#deploymentstypedef) 
 
 
 ### paginate
@@ -239,10 +269,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetDocumentationPartsPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetDocumentationPartsPaginator = client.get_paginator("get_documentation_parts")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetDocumentationPartsPaginator = client.get_paginator("get_documentation_parts")  # (2)
+    async for item in paginator.paginate(...):
+        item: DocumentationPartsTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetDocumentationPartsPaginator](./paginators.md#getdocumentationpartspaginator)
+3. item: [:material-code-braces: DocumentationPartsTypeDef](./type_defs.md#documentationpartstypedef) 
 
 
 ### paginate
@@ -289,10 +325,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetDocumentationVersionsPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetDocumentationVersionsPaginator = client.get_paginator("get_documentation_versions")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetDocumentationVersionsPaginator = client.get_paginator("get_documentation_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: DocumentationVersionsTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetDocumentationVersionsPaginator](./paginators.md#getdocumentationversionspaginator)
+3. item: [:material-code-braces: DocumentationVersionsTypeDef](./type_defs.md#documentationversionstypedef) 
 
 
 ### paginate
@@ -333,10 +375,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetDomainNamesPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetDomainNamesPaginator = client.get_paginator("get_domain_names")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetDomainNamesPaginator = client.get_paginator("get_domain_names")  # (2)
+    async for item in paginator.paginate(...):
+        item: DomainNamesTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetDomainNamesPaginator](./paginators.md#getdomainnamespaginator)
+3. item: [:material-code-braces: DomainNamesTypeDef](./type_defs.md#domainnamestypedef) 
 
 
 ### paginate
@@ -376,10 +424,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetGatewayResponsesPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetGatewayResponsesPaginator = client.get_paginator("get_gateway_responses")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetGatewayResponsesPaginator = client.get_paginator("get_gateway_responses")  # (2)
+    async for item in paginator.paginate(...):
+        item: GatewayResponsesTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetGatewayResponsesPaginator](./paginators.md#getgatewayresponsespaginator)
+3. item: [:material-code-braces: GatewayResponsesTypeDef](./type_defs.md#gatewayresponsestypedef) 
 
 
 ### paginate
@@ -420,10 +474,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetModelsPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetModelsPaginator = client.get_paginator("get_models")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetModelsPaginator = client.get_paginator("get_models")  # (2)
+    async for item in paginator.paginate(...):
+        item: ModelsTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetModelsPaginator](./paginators.md#getmodelspaginator)
+3. item: [:material-code-braces: ModelsTypeDef](./type_defs.md#modelstypedef) 
 
 
 ### paginate
@@ -464,10 +524,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetRequestValidatorsPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetRequestValidatorsPaginator = client.get_paginator("get_request_validators")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetRequestValidatorsPaginator = client.get_paginator("get_request_validators")  # (2)
+    async for item in paginator.paginate(...):
+        item: RequestValidatorsTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetRequestValidatorsPaginator](./paginators.md#getrequestvalidatorspaginator)
+3. item: [:material-code-braces: RequestValidatorsTypeDef](./type_defs.md#requestvalidatorstypedef) 
 
 
 ### paginate
@@ -508,10 +574,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetResourcesPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetResourcesPaginator = client.get_paginator("get_resources")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetResourcesPaginator = client.get_paginator("get_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ResourcesTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetResourcesPaginator](./paginators.md#getresourcespaginator)
+3. item: [:material-code-braces: ResourcesTypeDef](./type_defs.md#resourcestypedef) 
 
 
 ### paginate
@@ -553,10 +625,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetRestApisPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetRestApisPaginator = client.get_paginator("get_rest_apis")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetRestApisPaginator = client.get_paginator("get_rest_apis")  # (2)
+    async for item in paginator.paginate(...):
+        item: RestApisTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetRestApisPaginator](./paginators.md#getrestapispaginator)
+3. item: [:material-code-braces: RestApisTypeDef](./type_defs.md#restapistypedef) 
 
 
 ### paginate
@@ -596,10 +674,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetSdkTypesPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetSdkTypesPaginator = client.get_paginator("get_sdk_types")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetSdkTypesPaginator = client.get_paginator("get_sdk_types")  # (2)
+    async for item in paginator.paginate(...):
+        item: SdkTypesTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetSdkTypesPaginator](./paginators.md#getsdktypespaginator)
+3. item: [:material-code-braces: SdkTypesTypeDef](./type_defs.md#sdktypestypedef) 
 
 
 ### paginate
@@ -639,10 +723,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetUsagePaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetUsagePaginator = client.get_paginator("get_usage")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetUsagePaginator = client.get_paginator("get_usage")  # (2)
+    async for item in paginator.paginate(...):
+        item: UsageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetUsagePaginator](./paginators.md#getusagepaginator)
+3. item: [:material-code-braces: UsageTypeDef](./type_defs.md#usagetypedef) 
 
 
 ### paginate
@@ -688,10 +778,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetUsagePlanKeysPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetUsagePlanKeysPaginator = client.get_paginator("get_usage_plan_keys")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetUsagePlanKeysPaginator = client.get_paginator("get_usage_plan_keys")  # (2)
+    async for item in paginator.paginate(...):
+        item: UsagePlanKeysTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetUsagePlanKeysPaginator](./paginators.md#getusageplankeyspaginator)
+3. item: [:material-code-braces: UsagePlanKeysTypeDef](./type_defs.md#usageplankeystypedef) 
 
 
 ### paginate
@@ -733,10 +829,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetUsagePlansPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetUsagePlansPaginator = client.get_paginator("get_usage_plans")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetUsagePlansPaginator = client.get_paginator("get_usage_plans")  # (2)
+    async for item in paginator.paginate(...):
+        item: UsagePlansTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetUsagePlansPaginator](./paginators.md#getusageplanspaginator)
+3. item: [:material-code-braces: UsagePlansTypeDef](./type_defs.md#usageplanstypedef) 
 
 
 ### paginate
@@ -777,10 +879,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.paginator import GetVpcLinksPaginator
 
 session = get_session()
-async with session.create_client("apigateway") as client:
-    client: APIGatewayClient
-    paginator: GetVpcLinksPaginator = client.get_paginator("get_vpc_links")
+async with session.create_client("apigateway") as client:  # (1)
+    paginator: GetVpcLinksPaginator = client.get_paginator("get_vpc_links")  # (2)
+    async for item in paginator.paginate(...):
+        item: VpcLinksTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [APIGatewayClient](./client.md)
+2. paginator: [GetVpcLinksPaginator](./paginators.md#getvpclinkspaginator)
+3. item: [:material-code-braces: VpcLinksTypeDef](./type_defs.md#vpclinkstypedef) 
 
 
 ### paginate

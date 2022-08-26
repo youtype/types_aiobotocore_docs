@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `LookoutMetrics`.
 
 ### From PyPI with pip
 
@@ -89,6 +84,7 @@ def get_value() -> AggregationFunctionType:
 - [AnomalyDetectorStatusType](./literals.md#anomalydetectorstatustype)
 - [CSVFileCompressionType](./literals.md#csvfilecompressiontype)
 - [ConfidenceType](./literals.md#confidencetype)
+- [DataQualityMetricTypeType](./literals.md#dataqualitymetrictypetype)
 - [FrequencyType](./literals.md#frequencytype)
 - [JsonFileCompressionType](./literals.md#jsonfilecompressiontype)
 - [RelationshipTypeType](./literals.md#relationshiptypetype)
@@ -136,6 +132,7 @@ def get_value() -> LambdaConfigurationTypeDef:
 - [MetricTypeDef](./type_defs.md#metrictypedef)
 - [TimestampColumnTypeDef](./type_defs.md#timestampcolumntypedef)
 - [CsvFormatDescriptorTypeDef](./type_defs.md#csvformatdescriptortypedef)
+- [DataQualityMetricTypeDef](./type_defs.md#dataqualitymetrictypedef)
 - [DeactivateAnomalyDetectorRequestRequestTypeDef](./type_defs.md#deactivateanomalydetectorrequestrequesttypedef)
 - [DeleteAlertRequestRequestTypeDef](./type_defs.md#deletealertrequestrequesttypedef)
 - [DeleteAnomalyDetectorRequestRequestTypeDef](./type_defs.md#deleteanomalydetectorrequestrequesttypedef)
@@ -148,6 +145,7 @@ def get_value() -> LambdaConfigurationTypeDef:
 - [DimensionNameValueTypeDef](./type_defs.md#dimensionnamevaluetypedef)
 - [JsonFormatDescriptorTypeDef](./type_defs.md#jsonformatdescriptortypedef)
 - [GetAnomalyGroupRequestRequestTypeDef](./type_defs.md#getanomalygrouprequestrequesttypedef)
+- [GetDataQualityMetricsRequestRequestTypeDef](./type_defs.md#getdataqualitymetricsrequestrequesttypedef)
 - [TimeSeriesFeedbackTypeDef](./type_defs.md#timeseriesfeedbacktypedef)
 - [InterMetricImpactDetailsTypeDef](./type_defs.md#intermetricimpactdetailstypedef)
 - [ListAlertsRequestRequestTypeDef](./type_defs.md#listalertsrequestrequesttypedef)
@@ -183,6 +181,7 @@ def get_value() -> LambdaConfigurationTypeDef:
 - [UpdateAlertResponseTypeDef](./type_defs.md#updatealertresponsetypedef)
 - [UpdateAnomalyDetectorResponseTypeDef](./type_defs.md#updateanomalydetectorresponsetypedef)
 - [UpdateMetricSetResponseTypeDef](./type_defs.md#updatemetricsetresponsetypedef)
+- [MetricSetDataQualityMetricTypeDef](./type_defs.md#metricsetdataqualitymetrictypedef)
 - [DescribeAnomalyDetectionExecutionsResponseTypeDef](./type_defs.md#describeanomalydetectionexecutionsresponsetypedef)
 - [DimensionContributionTypeDef](./type_defs.md#dimensioncontributiontypedef)
 - [TimeSeriesTypeDef](./type_defs.md#timeseriestypedef)
@@ -199,12 +198,14 @@ def get_value() -> LambdaConfigurationTypeDef:
 - [DetectedCsvFormatDescriptorTypeDef](./type_defs.md#detectedcsvformatdescriptortypedef)
 - [DetectedJsonFormatDescriptorTypeDef](./type_defs.md#detectedjsonformatdescriptortypedef)
 - [DetectMetricSetConfigRequestRequestTypeDef](./type_defs.md#detectmetricsetconfigrequestrequesttypedef)
+- [AnomalyDetectorDataQualityMetricTypeDef](./type_defs.md#anomalydetectordataqualitymetrictypedef)
 - [ContributionMatrixTypeDef](./type_defs.md#contributionmatrixtypedef)
 - [ListAnomalyGroupTimeSeriesResponseTypeDef](./type_defs.md#listanomalygrouptimeseriesresponsetypedef)
 - [S3SourceConfigTypeDef](./type_defs.md#s3sourceconfigtypedef)
 - [SampleDataS3SourceConfigTypeDef](./type_defs.md#sampledatas3sourceconfigtypedef)
 - [DescribeAlertResponseTypeDef](./type_defs.md#describealertresponsetypedef)
 - [DetectedFileFormatDescriptorTypeDef](./type_defs.md#detectedfileformatdescriptortypedef)
+- [GetDataQualityMetricsResponseTypeDef](./type_defs.md#getdataqualitymetricsresponsetypedef)
 - [MetricLevelImpactTypeDef](./type_defs.md#metriclevelimpacttypedef)
 - [MetricSourceTypeDef](./type_defs.md#metricsourcetypedef)
 - [GetSampleDataRequestRequestTypeDef](./type_defs.md#getsampledatarequestrequesttypedef)

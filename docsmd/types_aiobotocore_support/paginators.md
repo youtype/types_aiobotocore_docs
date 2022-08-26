@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_support.paginator import DescribeCasesPaginator
 
 session = get_session()
-async with session.create_client("support") as client:
-    client: SupportClient
-    paginator: DescribeCasesPaginator = client.get_paginator("describe_cases")
+async with session.create_client("support") as client:  # (1)
+    paginator: DescribeCasesPaginator = client.get_paginator("describe_cases")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeCasesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SupportClient](./client.md)
+2. paginator: [DescribeCasesPaginator](./paginators.md#describecasespaginator)
+3. item: [:material-code-braces: DescribeCasesResponseTypeDef](./type_defs.md#describecasesresponsetypedef) 
 
 
 ### paginate
@@ -68,10 +74,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_support.paginator import DescribeCommunicationsPaginator
 
 session = get_session()
-async with session.create_client("support") as client:
-    client: SupportClient
-    paginator: DescribeCommunicationsPaginator = client.get_paginator("describe_communications")
+async with session.create_client("support") as client:  # (1)
+    paginator: DescribeCommunicationsPaginator = client.get_paginator("describe_communications")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeCommunicationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [SupportClient](./client.md)
+2. paginator: [DescribeCommunicationsPaginator](./paginators.md#describecommunicationspaginator)
+3. item: [:material-code-braces: DescribeCommunicationsResponseTypeDef](./type_defs.md#describecommunicationsresponsetypedef) 
 
 
 ### paginate

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticbeanstalk.paginator import DescribeApplicationVersionsPaginator
 
 session = get_session()
-async with session.create_client("elasticbeanstalk") as client:
-    client: ElasticBeanstalkClient
-    paginator: DescribeApplicationVersionsPaginator = client.get_paginator("describe_application_versions")
+async with session.create_client("elasticbeanstalk") as client:  # (1)
+    paginator: DescribeApplicationVersionsPaginator = client.get_paginator("describe_application_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ApplicationVersionDescriptionsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticBeanstalkClient](./client.md)
+2. paginator: [DescribeApplicationVersionsPaginator](./paginators.md#describeapplicationversionspaginator)
+3. item: [:material-code-braces: ApplicationVersionDescriptionsMessageTypeDef](./type_defs.md#applicationversiondescriptionsmessagetypedef) 
 
 
 ### paginate
@@ -63,10 +69,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticbeanstalk.paginator import DescribeEnvironmentManagedActionHistoryPaginator
 
 session = get_session()
-async with session.create_client("elasticbeanstalk") as client:
-    client: ElasticBeanstalkClient
-    paginator: DescribeEnvironmentManagedActionHistoryPaginator = client.get_paginator("describe_environment_managed_action_history")
+async with session.create_client("elasticbeanstalk") as client:  # (1)
+    paginator: DescribeEnvironmentManagedActionHistoryPaginator = client.get_paginator("describe_environment_managed_action_history")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeEnvironmentManagedActionHistoryResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticBeanstalkClient](./client.md)
+2. paginator: [DescribeEnvironmentManagedActionHistoryPaginator](./paginators.md#describeenvironmentmanagedactionhistorypaginator)
+3. item: [:material-code-braces: DescribeEnvironmentManagedActionHistoryResultTypeDef](./type_defs.md#describeenvironmentmanagedactionhistoryresulttypedef) 
 
 
 ### paginate
@@ -108,10 +120,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticbeanstalk.paginator import DescribeEnvironmentsPaginator
 
 session = get_session()
-async with session.create_client("elasticbeanstalk") as client:
-    client: ElasticBeanstalkClient
-    paginator: DescribeEnvironmentsPaginator = client.get_paginator("describe_environments")
+async with session.create_client("elasticbeanstalk") as client:  # (1)
+    paginator: DescribeEnvironmentsPaginator = client.get_paginator("describe_environments")  # (2)
+    async for item in paginator.paginate(...):
+        item: EnvironmentDescriptionsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticBeanstalkClient](./client.md)
+2. paginator: [DescribeEnvironmentsPaginator](./paginators.md#describeenvironmentspaginator)
+3. item: [:material-code-braces: EnvironmentDescriptionsMessageTypeDef](./type_defs.md#environmentdescriptionsmessagetypedef) 
 
 
 ### paginate
@@ -157,10 +175,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticbeanstalk.paginator import DescribeEventsPaginator
 
 session = get_session()
-async with session.create_client("elasticbeanstalk") as client:
-    client: ElasticBeanstalkClient
-    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")
+async with session.create_client("elasticbeanstalk") as client:  # (1)
+    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: EventDescriptionsMessageTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticBeanstalkClient](./client.md)
+2. paginator: [DescribeEventsPaginator](./paginators.md#describeeventspaginator)
+3. item: [:material-code-braces: EventDescriptionsMessageTypeDef](./type_defs.md#eventdescriptionsmessagetypedef) 
 
 
 ### paginate
@@ -211,10 +235,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_elasticbeanstalk.paginator import ListPlatformVersionsPaginator
 
 session = get_session()
-async with session.create_client("elasticbeanstalk") as client:
-    client: ElasticBeanstalkClient
-    paginator: ListPlatformVersionsPaginator = client.get_paginator("list_platform_versions")
+async with session.create_client("elasticbeanstalk") as client:  # (1)
+    paginator: ListPlatformVersionsPaginator = client.get_paginator("list_platform_versions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPlatformVersionsResultTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ElasticBeanstalkClient](./client.md)
+2. paginator: [ListPlatformVersionsPaginator](./paginators.md#listplatformversionspaginator)
+3. item: [:material-code-braces: ListPlatformVersionsResultTypeDef](./type_defs.md#listplatformversionsresulttypedef) 
 
 
 ### paginate

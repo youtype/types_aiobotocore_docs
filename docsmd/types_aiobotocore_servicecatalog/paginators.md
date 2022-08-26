@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.paginator import ListAcceptedPortfolioSharesPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog") as client:
-    client: ServiceCatalogClient
-    paginator: ListAcceptedPortfolioSharesPaginator = client.get_paginator("list_accepted_portfolio_shares")
+async with session.create_client("servicecatalog") as client:  # (1)
+    paginator: ListAcceptedPortfolioSharesPaginator = client.get_paginator("list_accepted_portfolio_shares")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAcceptedPortfolioSharesOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceCatalogClient](./client.md)
+2. paginator: [ListAcceptedPortfolioSharesPaginator](./paginators.md#listacceptedportfoliosharespaginator)
+3. item: [:material-code-braces: ListAcceptedPortfolioSharesOutputTypeDef](./type_defs.md#listacceptedportfoliosharesoutputtypedef) 
 
 
 ### paginate
@@ -64,10 +70,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.paginator import ListConstraintsForPortfolioPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog") as client:
-    client: ServiceCatalogClient
-    paginator: ListConstraintsForPortfolioPaginator = client.get_paginator("list_constraints_for_portfolio")
+async with session.create_client("servicecatalog") as client:  # (1)
+    paginator: ListConstraintsForPortfolioPaginator = client.get_paginator("list_constraints_for_portfolio")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListConstraintsForPortfolioOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceCatalogClient](./client.md)
+2. paginator: [ListConstraintsForPortfolioPaginator](./paginators.md#listconstraintsforportfoliopaginator)
+3. item: [:material-code-braces: ListConstraintsForPortfolioOutputTypeDef](./type_defs.md#listconstraintsforportfoliooutputtypedef) 
 
 
 ### paginate
@@ -110,10 +122,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.paginator import ListLaunchPathsPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog") as client:
-    client: ServiceCatalogClient
-    paginator: ListLaunchPathsPaginator = client.get_paginator("list_launch_paths")
+async with session.create_client("servicecatalog") as client:  # (1)
+    paginator: ListLaunchPathsPaginator = client.get_paginator("list_launch_paths")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListLaunchPathsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceCatalogClient](./client.md)
+2. paginator: [ListLaunchPathsPaginator](./paginators.md#listlaunchpathspaginator)
+3. item: [:material-code-braces: ListLaunchPathsOutputTypeDef](./type_defs.md#listlaunchpathsoutputtypedef) 
 
 
 ### paginate
@@ -155,10 +173,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.paginator import ListOrganizationPortfolioAccessPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog") as client:
-    client: ServiceCatalogClient
-    paginator: ListOrganizationPortfolioAccessPaginator = client.get_paginator("list_organization_portfolio_access")
+async with session.create_client("servicecatalog") as client:  # (1)
+    paginator: ListOrganizationPortfolioAccessPaginator = client.get_paginator("list_organization_portfolio_access")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListOrganizationPortfolioAccessOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceCatalogClient](./client.md)
+2. paginator: [ListOrganizationPortfolioAccessPaginator](./paginators.md#listorganizationportfolioaccesspaginator)
+3. item: [:material-code-braces: ListOrganizationPortfolioAccessOutputTypeDef](./type_defs.md#listorganizationportfolioaccessoutputtypedef) 
 
 
 ### paginate
@@ -203,10 +227,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.paginator import ListPortfoliosPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog") as client:
-    client: ServiceCatalogClient
-    paginator: ListPortfoliosPaginator = client.get_paginator("list_portfolios")
+async with session.create_client("servicecatalog") as client:  # (1)
+    paginator: ListPortfoliosPaginator = client.get_paginator("list_portfolios")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPortfoliosOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceCatalogClient](./client.md)
+2. paginator: [ListPortfoliosPaginator](./paginators.md#listportfoliospaginator)
+3. item: [:material-code-braces: ListPortfoliosOutputTypeDef](./type_defs.md#listportfoliosoutputtypedef) 
 
 
 ### paginate
@@ -247,10 +277,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.paginator import ListPortfoliosForProductPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog") as client:
-    client: ServiceCatalogClient
-    paginator: ListPortfoliosForProductPaginator = client.get_paginator("list_portfolios_for_product")
+async with session.create_client("servicecatalog") as client:  # (1)
+    paginator: ListPortfoliosForProductPaginator = client.get_paginator("list_portfolios_for_product")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPortfoliosForProductOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceCatalogClient](./client.md)
+2. paginator: [ListPortfoliosForProductPaginator](./paginators.md#listportfoliosforproductpaginator)
+3. item: [:material-code-braces: ListPortfoliosForProductOutputTypeDef](./type_defs.md#listportfoliosforproductoutputtypedef) 
 
 
 ### paginate
@@ -292,10 +328,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.paginator import ListPrincipalsForPortfolioPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog") as client:
-    client: ServiceCatalogClient
-    paginator: ListPrincipalsForPortfolioPaginator = client.get_paginator("list_principals_for_portfolio")
+async with session.create_client("servicecatalog") as client:  # (1)
+    paginator: ListPrincipalsForPortfolioPaginator = client.get_paginator("list_principals_for_portfolio")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPrincipalsForPortfolioOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceCatalogClient](./client.md)
+2. paginator: [ListPrincipalsForPortfolioPaginator](./paginators.md#listprincipalsforportfoliopaginator)
+3. item: [:material-code-braces: ListPrincipalsForPortfolioOutputTypeDef](./type_defs.md#listprincipalsforportfoliooutputtypedef) 
 
 
 ### paginate
@@ -337,10 +379,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.paginator import ListProvisionedProductPlansPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog") as client:
-    client: ServiceCatalogClient
-    paginator: ListProvisionedProductPlansPaginator = client.get_paginator("list_provisioned_product_plans")
+async with session.create_client("servicecatalog") as client:  # (1)
+    paginator: ListProvisionedProductPlansPaginator = client.get_paginator("list_provisioned_product_plans")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProvisionedProductPlansOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceCatalogClient](./client.md)
+2. paginator: [ListProvisionedProductPlansPaginator](./paginators.md#listprovisionedproductplanspaginator)
+3. item: [:material-code-braces: ListProvisionedProductPlansOutputTypeDef](./type_defs.md#listprovisionedproductplansoutputtypedef) 
 
 
 ### paginate
@@ -384,10 +432,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.paginator import ListProvisioningArtifactsForServiceActionPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog") as client:
-    client: ServiceCatalogClient
-    paginator: ListProvisioningArtifactsForServiceActionPaginator = client.get_paginator("list_provisioning_artifacts_for_service_action")
+async with session.create_client("servicecatalog") as client:  # (1)
+    paginator: ListProvisioningArtifactsForServiceActionPaginator = client.get_paginator("list_provisioning_artifacts_for_service_action")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListProvisioningArtifactsForServiceActionOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceCatalogClient](./client.md)
+2. paginator: [ListProvisioningArtifactsForServiceActionPaginator](./paginators.md#listprovisioningartifactsforserviceactionpaginator)
+3. item: [:material-code-braces: ListProvisioningArtifactsForServiceActionOutputTypeDef](./type_defs.md#listprovisioningartifactsforserviceactionoutputtypedef) 
 
 
 ### paginate
@@ -429,10 +483,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.paginator import ListRecordHistoryPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog") as client:
-    client: ServiceCatalogClient
-    paginator: ListRecordHistoryPaginator = client.get_paginator("list_record_history")
+async with session.create_client("servicecatalog") as client:  # (1)
+    paginator: ListRecordHistoryPaginator = client.get_paginator("list_record_history")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRecordHistoryOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceCatalogClient](./client.md)
+2. paginator: [ListRecordHistoryPaginator](./paginators.md#listrecordhistorypaginator)
+3. item: [:material-code-braces: ListRecordHistoryOutputTypeDef](./type_defs.md#listrecordhistoryoutputtypedef) 
 
 
 ### paginate
@@ -477,10 +537,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.paginator import ListResourcesForTagOptionPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog") as client:
-    client: ServiceCatalogClient
-    paginator: ListResourcesForTagOptionPaginator = client.get_paginator("list_resources_for_tag_option")
+async with session.create_client("servicecatalog") as client:  # (1)
+    paginator: ListResourcesForTagOptionPaginator = client.get_paginator("list_resources_for_tag_option")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListResourcesForTagOptionOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceCatalogClient](./client.md)
+2. paginator: [ListResourcesForTagOptionPaginator](./paginators.md#listresourcesfortagoptionpaginator)
+3. item: [:material-code-braces: ListResourcesForTagOptionOutputTypeDef](./type_defs.md#listresourcesfortagoptionoutputtypedef) 
 
 
 ### paginate
@@ -522,10 +588,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.paginator import ListServiceActionsPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog") as client:
-    client: ServiceCatalogClient
-    paginator: ListServiceActionsPaginator = client.get_paginator("list_service_actions")
+async with session.create_client("servicecatalog") as client:  # (1)
+    paginator: ListServiceActionsPaginator = client.get_paginator("list_service_actions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServiceActionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceCatalogClient](./client.md)
+2. paginator: [ListServiceActionsPaginator](./paginators.md#listserviceactionspaginator)
+3. item: [:material-code-braces: ListServiceActionsOutputTypeDef](./type_defs.md#listserviceactionsoutputtypedef) 
 
 
 ### paginate
@@ -566,10 +638,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.paginator import ListServiceActionsForProvisioningArtifactPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog") as client:
-    client: ServiceCatalogClient
-    paginator: ListServiceActionsForProvisioningArtifactPaginator = client.get_paginator("list_service_actions_for_provisioning_artifact")
+async with session.create_client("servicecatalog") as client:  # (1)
+    paginator: ListServiceActionsForProvisioningArtifactPaginator = client.get_paginator("list_service_actions_for_provisioning_artifact")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListServiceActionsForProvisioningArtifactOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceCatalogClient](./client.md)
+2. paginator: [ListServiceActionsForProvisioningArtifactPaginator](./paginators.md#listserviceactionsforprovisioningartifactpaginator)
+3. item: [:material-code-braces: ListServiceActionsForProvisioningArtifactOutputTypeDef](./type_defs.md#listserviceactionsforprovisioningartifactoutputtypedef) 
 
 
 ### paginate
@@ -613,10 +691,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.paginator import ListTagOptionsPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog") as client:
-    client: ServiceCatalogClient
-    paginator: ListTagOptionsPaginator = client.get_paginator("list_tag_options")
+async with session.create_client("servicecatalog") as client:  # (1)
+    paginator: ListTagOptionsPaginator = client.get_paginator("list_tag_options")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListTagOptionsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceCatalogClient](./client.md)
+2. paginator: [ListTagOptionsPaginator](./paginators.md#listtagoptionspaginator)
+3. item: [:material-code-braces: ListTagOptionsOutputTypeDef](./type_defs.md#listtagoptionsoutputtypedef) 
 
 
 ### paginate
@@ -658,10 +742,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.paginator import ScanProvisionedProductsPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog") as client:
-    client: ServiceCatalogClient
-    paginator: ScanProvisionedProductsPaginator = client.get_paginator("scan_provisioned_products")
+async with session.create_client("servicecatalog") as client:  # (1)
+    paginator: ScanProvisionedProductsPaginator = client.get_paginator("scan_provisioned_products")  # (2)
+    async for item in paginator.paginate(...):
+        item: ScanProvisionedProductsOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceCatalogClient](./client.md)
+2. paginator: [ScanProvisionedProductsPaginator](./paginators.md#scanprovisionedproductspaginator)
+3. item: [:material-code-braces: ScanProvisionedProductsOutputTypeDef](./type_defs.md#scanprovisionedproductsoutputtypedef) 
 
 
 ### paginate
@@ -704,10 +794,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.paginator import SearchProductsAsAdminPaginator
 
 session = get_session()
-async with session.create_client("servicecatalog") as client:
-    client: ServiceCatalogClient
-    paginator: SearchProductsAsAdminPaginator = client.get_paginator("search_products_as_admin")
+async with session.create_client("servicecatalog") as client:  # (1)
+    paginator: SearchProductsAsAdminPaginator = client.get_paginator("search_products_as_admin")  # (2)
+    async for item in paginator.paginate(...):
+        item: SearchProductsAsAdminOutputTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [ServiceCatalogClient](./client.md)
+2. paginator: [SearchProductsAsAdminPaginator](./paginators.md#searchproductsasadminpaginator)
+3. item: [:material-code-braces: SearchProductsAsAdminOutputTypeDef](./type_defs.md#searchproductsasadminoutputtypedef) 
 
 
 ### paginate

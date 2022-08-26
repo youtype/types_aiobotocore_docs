@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `EC2`.
 
 ### From PyPI with pip
 
@@ -35,30 +30,6 @@ python -m pip install 'types-aiobotocore-lite[ec2]'
 python -m pip install types-aiobotocore-ec2
 ```
 
-
-### From conda-forge
-
-Installing `types-aiobotocore-ec2` from the `conda-forge` channel
-can be achieved by adding `conda-forge` to your channels with:
-
-```bash
-conda config --add channels conda-forge
-conda config --set channel_priority strict
-```
-
-Once the `conda-forge` channel has been enabled, `types-aiobotocore-ec2`
-can be installed with:
-
-```bash
-conda install types-aiobotocore-ec2
-```
-
-It is possible to list all of the versions of `types-aiobotocore-ec2`
-available on your platform with:
-
-```bash
-conda search types-aiobotocore-ec2 --channel conda-forge
-```
 
 
 ## How to uninstall
@@ -185,6 +156,8 @@ def get_describe_addresses_attribute_paginator() -> DescribeAddressesAttributePa
 - [DescribeTransitGatewayConnectsPaginator](./paginators.md#describetransitgatewayconnectspaginator)
 - [DescribeTransitGatewayMulticastDomainsPaginator](./paginators.md#describetransitgatewaymulticastdomainspaginator)
 - [DescribeTransitGatewayPeeringAttachmentsPaginator](./paginators.md#describetransitgatewaypeeringattachmentspaginator)
+- [DescribeTransitGatewayPolicyTablesPaginator](./paginators.md#describetransitgatewaypolicytablespaginator)
+- [DescribeTransitGatewayRouteTableAnnouncementsPaginator](./paginators.md#describetransitgatewayroutetableannouncementspaginator)
 - [DescribeTransitGatewayRouteTablesPaginator](./paginators.md#describetransitgatewayroutetablespaginator)
 - [DescribeTransitGatewayVpcAttachmentsPaginator](./paginators.md#describetransitgatewayvpcattachmentspaginator)
 - [DescribeTransitGatewaysPaginator](./paginators.md#describetransitgatewayspaginator)
@@ -213,6 +186,7 @@ def get_describe_addresses_attribute_paginator() -> DescribeAddressesAttributePa
 - [GetSpotPlacementScoresPaginator](./paginators.md#getspotplacementscorespaginator)
 - [GetTransitGatewayAttachmentPropagationsPaginator](./paginators.md#gettransitgatewayattachmentpropagationspaginator)
 - [GetTransitGatewayMulticastDomainAssociationsPaginator](./paginators.md#gettransitgatewaymulticastdomainassociationspaginator)
+- [GetTransitGatewayPolicyTableAssociationsPaginator](./paginators.md#gettransitgatewaypolicytableassociationspaginator)
 - [GetTransitGatewayPrefixListReferencesPaginator](./paginators.md#gettransitgatewayprefixlistreferencespaginator)
 - [GetTransitGatewayRouteTableAssociationsPaginator](./paginators.md#gettransitgatewayroutetableassociationspaginator)
 - [GetTransitGatewayRouteTablePropagationsPaginator](./paginators.md#gettransitgatewayroutetablepropagationspaginator)
@@ -519,6 +493,8 @@ def get_value() -> AcceleratorManufacturerType:
 - [DescribeTransitGatewayConnectsPaginatorName](./literals.md#describetransitgatewayconnectspaginatorname)
 - [DescribeTransitGatewayMulticastDomainsPaginatorName](./literals.md#describetransitgatewaymulticastdomainspaginatorname)
 - [DescribeTransitGatewayPeeringAttachmentsPaginatorName](./literals.md#describetransitgatewaypeeringattachmentspaginatorname)
+- [DescribeTransitGatewayPolicyTablesPaginatorName](./literals.md#describetransitgatewaypolicytablespaginatorname)
+- [DescribeTransitGatewayRouteTableAnnouncementsPaginatorName](./literals.md#describetransitgatewayroutetableannouncementspaginatorname)
 - [DescribeTransitGatewayRouteTablesPaginatorName](./literals.md#describetransitgatewayroutetablespaginatorname)
 - [DescribeTransitGatewayVpcAttachmentsPaginatorName](./literals.md#describetransitgatewayvpcattachmentspaginatorname)
 - [DescribeTransitGatewaysPaginatorName](./literals.md#describetransitgatewayspaginatorname)
@@ -543,6 +519,7 @@ def get_value() -> AcceleratorManufacturerType:
 - [DnsRecordIpTypeType](./literals.md#dnsrecordiptypetype)
 - [DnsSupportValueType](./literals.md#dnssupportvaluetype)
 - [DomainTypeType](./literals.md#domaintypetype)
+- [DynamicRoutingValueType](./literals.md#dynamicroutingvaluetype)
 - [EbsEncryptionSupportType](./literals.md#ebsencryptionsupporttype)
 - [EbsNvmeSupportType](./literals.md#ebsnvmesupporttype)
 - [EbsOptimizedSupportType](./literals.md#ebsoptimizedsupporttype)
@@ -589,6 +566,7 @@ def get_value() -> AcceleratorManufacturerType:
 - [GetSpotPlacementScoresPaginatorName](./literals.md#getspotplacementscorespaginatorname)
 - [GetTransitGatewayAttachmentPropagationsPaginatorName](./literals.md#gettransitgatewayattachmentpropagationspaginatorname)
 - [GetTransitGatewayMulticastDomainAssociationsPaginatorName](./literals.md#gettransitgatewaymulticastdomainassociationspaginatorname)
+- [GetTransitGatewayPolicyTableAssociationsPaginatorName](./literals.md#gettransitgatewaypolicytableassociationspaginatorname)
 - [GetTransitGatewayPrefixListReferencesPaginatorName](./literals.md#gettransitgatewayprefixlistreferencespaginatorname)
 - [GetTransitGatewayRouteTableAssociationsPaginatorName](./literals.md#gettransitgatewayroutetableassociationspaginatorname)
 - [GetTransitGatewayRouteTablePropagationsPaginatorName](./literals.md#gettransitgatewayroutetablepropagationspaginatorname)
@@ -762,9 +740,12 @@ def get_value() -> AcceleratorManufacturerType:
 - [TransitGatewayConnectPeerStateType](./literals.md#transitgatewayconnectpeerstatetype)
 - [TransitGatewayMulitcastDomainAssociationStateType](./literals.md#transitgatewaymulitcastdomainassociationstatetype)
 - [TransitGatewayMulticastDomainStateType](./literals.md#transitgatewaymulticastdomainstatetype)
+- [TransitGatewayPolicyTableStateType](./literals.md#transitgatewaypolicytablestatetype)
 - [TransitGatewayPrefixListReferenceStateType](./literals.md#transitgatewayprefixlistreferencestatetype)
 - [TransitGatewayPropagationStateType](./literals.md#transitgatewaypropagationstatetype)
 - [TransitGatewayRouteStateType](./literals.md#transitgatewayroutestatetype)
+- [TransitGatewayRouteTableAnnouncementDirectionType](./literals.md#transitgatewayroutetableannouncementdirectiontype)
+- [TransitGatewayRouteTableAnnouncementStateType](./literals.md#transitgatewayroutetableannouncementstatetype)
 - [TransitGatewayRouteTableStateType](./literals.md#transitgatewayroutetablestatetype)
 - [TransitGatewayRouteTypeType](./literals.md#transitgatewayroutetypetype)
 - [TransitGatewayStateType](./literals.md#transitgatewaystatetype)
@@ -874,6 +855,8 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [RouteTableAssociationStateTypeDef](./type_defs.md#routetableassociationstatetypedef)
 - [AssociateSubnetCidrBlockRequestRequestTypeDef](./type_defs.md#associatesubnetcidrblockrequestrequesttypedef)
 - [AssociateTransitGatewayMulticastDomainRequestRequestTypeDef](./type_defs.md#associatetransitgatewaymulticastdomainrequestrequesttypedef)
+- [AssociateTransitGatewayPolicyTableRequestRequestTypeDef](./type_defs.md#associatetransitgatewaypolicytablerequestrequesttypedef)
+- [TransitGatewayPolicyTableAssociationTypeDef](./type_defs.md#transitgatewaypolicytableassociationtypedef)
 - [AssociateTransitGatewayRouteTableRequestRequestTypeDef](./type_defs.md#associatetransitgatewayroutetablerequestrequesttypedef)
 - [TransitGatewayAssociationTypeDef](./type_defs.md#transitgatewayassociationtypedef)
 - [AssociateTrunkInterfaceRequestRequestTypeDef](./type_defs.md#associatetrunkinterfacerequestrequesttypedef)
@@ -946,6 +929,8 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [ClientVpnEndpointStatusTypeDef](./type_defs.md#clientvpnendpointstatustypedef)
 - [ConnectionLogResponseOptionsTypeDef](./type_defs.md#connectionlogresponseoptionstypedef)
 - [ClientVpnRouteStatusTypeDef](./type_defs.md#clientvpnroutestatustypedef)
+- [CloudWatchLogOptionsSpecificationTypeDef](./type_defs.md#cloudwatchlogoptionsspecificationtypedef)
+- [CloudWatchLogOptionsTypeDef](./type_defs.md#cloudwatchlogoptionstypedef)
 - [CoipAddressUsageTypeDef](./type_defs.md#coipaddressusagetypedef)
 - [ConfirmProductInstanceRequestRequestTypeDef](./type_defs.md#confirmproductinstancerequestrequesttypedef)
 - [ConnectionLogOptionsTypeDef](./type_defs.md#connectionlogoptionstypedef)
@@ -983,6 +968,7 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [TransitGatewayConnectRequestBgpOptionsTypeDef](./type_defs.md#transitgatewayconnectrequestbgpoptionstypedef)
 - [CreateTransitGatewayConnectRequestOptionsTypeDef](./type_defs.md#createtransitgatewayconnectrequestoptionstypedef)
 - [CreateTransitGatewayMulticastDomainRequestOptionsTypeDef](./type_defs.md#createtransitgatewaymulticastdomainrequestoptionstypedef)
+- [CreateTransitGatewayPeeringAttachmentRequestOptionsTypeDef](./type_defs.md#createtransitgatewaypeeringattachmentrequestoptionstypedef)
 - [CreateTransitGatewayPrefixListReferenceRequestRequestTypeDef](./type_defs.md#createtransitgatewayprefixlistreferencerequestrequesttypedef)
 - [TransitGatewayRequestOptionsTypeDef](./type_defs.md#transitgatewayrequestoptionstypedef)
 - [CreateTransitGatewayRouteRequestRequestTypeDef](./type_defs.md#createtransitgatewayrouterequestrequesttypedef)
@@ -1061,9 +1047,11 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [DeleteTransitGatewayConnectRequestRequestTypeDef](./type_defs.md#deletetransitgatewayconnectrequestrequesttypedef)
 - [DeleteTransitGatewayMulticastDomainRequestRequestTypeDef](./type_defs.md#deletetransitgatewaymulticastdomainrequestrequesttypedef)
 - [DeleteTransitGatewayPeeringAttachmentRequestRequestTypeDef](./type_defs.md#deletetransitgatewaypeeringattachmentrequestrequesttypedef)
+- [DeleteTransitGatewayPolicyTableRequestRequestTypeDef](./type_defs.md#deletetransitgatewaypolicytablerequestrequesttypedef)
 - [DeleteTransitGatewayPrefixListReferenceRequestRequestTypeDef](./type_defs.md#deletetransitgatewayprefixlistreferencerequestrequesttypedef)
 - [DeleteTransitGatewayRequestRequestTypeDef](./type_defs.md#deletetransitgatewayrequestrequesttypedef)
 - [DeleteTransitGatewayRouteRequestRequestTypeDef](./type_defs.md#deletetransitgatewayrouterequestrequesttypedef)
+- [DeleteTransitGatewayRouteTableAnnouncementRequestRequestTypeDef](./type_defs.md#deletetransitgatewayroutetableannouncementrequestrequesttypedef)
 - [DeleteTransitGatewayRouteTableRequestRequestTypeDef](./type_defs.md#deletetransitgatewayroutetablerequestrequesttypedef)
 - [DeleteTransitGatewayVpcAttachmentRequestRequestTypeDef](./type_defs.md#deletetransitgatewayvpcattachmentrequestrequesttypedef)
 - [DeleteVolumeRequestRequestTypeDef](./type_defs.md#deletevolumerequestrequesttypedef)
@@ -1180,6 +1168,7 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [DisassociateRouteTableRequestServiceResourceDisassociateRouteTableTypeDef](./type_defs.md#disassociateroutetablerequestserviceresourcedisassociateroutetabletypedef)
 - [DisassociateSubnetCidrBlockRequestRequestTypeDef](./type_defs.md#disassociatesubnetcidrblockrequestrequesttypedef)
 - [DisassociateTransitGatewayMulticastDomainRequestRequestTypeDef](./type_defs.md#disassociatetransitgatewaymulticastdomainrequestrequesttypedef)
+- [DisassociateTransitGatewayPolicyTableRequestRequestTypeDef](./type_defs.md#disassociatetransitgatewaypolicytablerequestrequesttypedef)
 - [DisassociateTransitGatewayRouteTableRequestRequestTypeDef](./type_defs.md#disassociatetransitgatewayroutetablerequestrequesttypedef)
 - [DisassociateTrunkInterfaceRequestRequestTypeDef](./type_defs.md#disassociatetrunkinterfacerequestrequesttypedef)
 - [DisassociateVpcCidrBlockRequestRequestTypeDef](./type_defs.md#disassociatevpccidrblockrequestrequesttypedef)
@@ -1562,6 +1551,8 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [TransitGatewayConnectOptionsTypeDef](./type_defs.md#transitgatewayconnectoptionstypedef)
 - [TransitGatewayMulticastDomainOptionsTypeDef](./type_defs.md#transitgatewaymulticastdomainoptionstypedef)
 - [TransitGatewayOptionsTypeDef](./type_defs.md#transitgatewayoptionstypedef)
+- [TransitGatewayPeeringAttachmentOptionsTypeDef](./type_defs.md#transitgatewaypeeringattachmentoptionstypedef)
+- [TransitGatewayPolicyRuleMetaDataTypeDef](./type_defs.md#transitgatewaypolicyrulemetadatatypedef)
 - [TransitGatewayPrefixListAttachmentTypeDef](./type_defs.md#transitgatewayprefixlistattachmenttypedef)
 - [TransitGatewayRouteAttachmentTypeDef](./type_defs.md#transitgatewayrouteattachmenttypedef)
 - [TransitGatewayVpcAttachmentOptionsTypeDef](./type_defs.md#transitgatewayvpcattachmentoptionstypedef)
@@ -1765,6 +1756,8 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef)
 - [TrafficMirrorSessionTypeDef](./type_defs.md#trafficmirrorsessiontypedef)
 - [TrafficMirrorTargetTypeDef](./type_defs.md#trafficmirrortargettypedef)
+- [TransitGatewayPolicyTableTypeDef](./type_defs.md#transitgatewaypolicytabletypedef)
+- [TransitGatewayRouteTableAnnouncementTypeDef](./type_defs.md#transitgatewayroutetableannouncementtypedef)
 - [TransitGatewayRouteTableTypeDef](./type_defs.md#transitgatewayroutetabletypedef)
 - [TrunkInterfaceAssociationTypeDef](./type_defs.md#trunkinterfaceassociationtypedef)
 - [VpcClassicLinkTypeDef](./type_defs.md#vpcclassiclinktypedef)
@@ -1789,6 +1782,9 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [AssociateRouteTableResultTypeDef](./type_defs.md#associateroutetableresulttypedef)
 - [ReplaceRouteTableAssociationResultTypeDef](./type_defs.md#replaceroutetableassociationresulttypedef)
 - [RouteTableAssociationTypeDef](./type_defs.md#routetableassociationtypedef)
+- [AssociateTransitGatewayPolicyTableResultTypeDef](./type_defs.md#associatetransitgatewaypolicytableresulttypedef)
+- [DisassociateTransitGatewayPolicyTableResultTypeDef](./type_defs.md#disassociatetransitgatewaypolicytableresulttypedef)
+- [GetTransitGatewayPolicyTableAssociationsResultTypeDef](./type_defs.md#gettransitgatewaypolicytableassociationsresulttypedef)
 - [AssociateTransitGatewayRouteTableResultTypeDef](./type_defs.md#associatetransitgatewayroutetableresulttypedef)
 - [DisassociateTransitGatewayRouteTableResultTypeDef](./type_defs.md#disassociatetransitgatewayroutetableresulttypedef)
 - [GetAssociatedEnclaveCertificateIamRolesResultTypeDef](./type_defs.md#getassociatedenclavecertificateiamrolesresulttypedef)
@@ -1835,6 +1831,8 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [ClientVpnRouteTypeDef](./type_defs.md#clientvpnroutetypedef)
 - [CreateClientVpnRouteResultTypeDef](./type_defs.md#createclientvpnrouteresulttypedef)
 - [DeleteClientVpnRouteResultTypeDef](./type_defs.md#deleteclientvpnrouteresulttypedef)
+- [VpnTunnelLogOptionsSpecificationTypeDef](./type_defs.md#vpntunnellogoptionsspecificationtypedef)
+- [VpnTunnelLogOptionsTypeDef](./type_defs.md#vpntunnellogoptionstypedef)
 - [GetCoipPoolUsageResultTypeDef](./type_defs.md#getcoippoolusageresulttypedef)
 - [CreateVpcEndpointConnectionNotificationResultTypeDef](./type_defs.md#createvpcendpointconnectionnotificationresulttypedef)
 - [DescribeVpcEndpointConnectionNotificationsResultTypeDef](./type_defs.md#describevpcendpointconnectionnotificationsresulttypedef)
@@ -2045,6 +2043,10 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [DescribeTransitGatewayMulticastDomainsRequestRequestTypeDef](./type_defs.md#describetransitgatewaymulticastdomainsrequestrequesttypedef)
 - [DescribeTransitGatewayPeeringAttachmentsRequestDescribeTransitGatewayPeeringAttachmentsPaginateTypeDef](./type_defs.md#describetransitgatewaypeeringattachmentsrequestdescribetransitgatewaypeeringattachmentspaginatetypedef)
 - [DescribeTransitGatewayPeeringAttachmentsRequestRequestTypeDef](./type_defs.md#describetransitgatewaypeeringattachmentsrequestrequesttypedef)
+- [DescribeTransitGatewayPolicyTablesRequestDescribeTransitGatewayPolicyTablesPaginateTypeDef](./type_defs.md#describetransitgatewaypolicytablesrequestdescribetransitgatewaypolicytablespaginatetypedef)
+- [DescribeTransitGatewayPolicyTablesRequestRequestTypeDef](./type_defs.md#describetransitgatewaypolicytablesrequestrequesttypedef)
+- [DescribeTransitGatewayRouteTableAnnouncementsRequestDescribeTransitGatewayRouteTableAnnouncementsPaginateTypeDef](./type_defs.md#describetransitgatewayroutetableannouncementsrequestdescribetransitgatewayroutetableannouncementspaginatetypedef)
+- [DescribeTransitGatewayRouteTableAnnouncementsRequestRequestTypeDef](./type_defs.md#describetransitgatewayroutetableannouncementsrequestrequesttypedef)
 - [DescribeTransitGatewayRouteTablesRequestDescribeTransitGatewayRouteTablesPaginateTypeDef](./type_defs.md#describetransitgatewayroutetablesrequestdescribetransitgatewayroutetablespaginatetypedef)
 - [DescribeTransitGatewayRouteTablesRequestRequestTypeDef](./type_defs.md#describetransitgatewayroutetablesrequestrequesttypedef)
 - [DescribeTransitGatewayVpcAttachmentsRequestDescribeTransitGatewayVpcAttachmentsPaginateTypeDef](./type_defs.md#describetransitgatewayvpcattachmentsrequestdescribetransitgatewayvpcattachmentspaginatetypedef)
@@ -2092,6 +2094,9 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [GetTransitGatewayAttachmentPropagationsRequestRequestTypeDef](./type_defs.md#gettransitgatewayattachmentpropagationsrequestrequesttypedef)
 - [GetTransitGatewayMulticastDomainAssociationsRequestGetTransitGatewayMulticastDomainAssociationsPaginateTypeDef](./type_defs.md#gettransitgatewaymulticastdomainassociationsrequestgettransitgatewaymulticastdomainassociationspaginatetypedef)
 - [GetTransitGatewayMulticastDomainAssociationsRequestRequestTypeDef](./type_defs.md#gettransitgatewaymulticastdomainassociationsrequestrequesttypedef)
+- [GetTransitGatewayPolicyTableAssociationsRequestGetTransitGatewayPolicyTableAssociationsPaginateTypeDef](./type_defs.md#gettransitgatewaypolicytableassociationsrequestgettransitgatewaypolicytableassociationspaginatetypedef)
+- [GetTransitGatewayPolicyTableAssociationsRequestRequestTypeDef](./type_defs.md#gettransitgatewaypolicytableassociationsrequestrequesttypedef)
+- [GetTransitGatewayPolicyTableEntriesRequestRequestTypeDef](./type_defs.md#gettransitgatewaypolicytableentriesrequestrequesttypedef)
 - [GetTransitGatewayPrefixListReferencesRequestGetTransitGatewayPrefixListReferencesPaginateTypeDef](./type_defs.md#gettransitgatewayprefixlistreferencesrequestgettransitgatewayprefixlistreferencespaginatetypedef)
 - [GetTransitGatewayPrefixListReferencesRequestRequestTypeDef](./type_defs.md#gettransitgatewayprefixlistreferencesrequestrequesttypedef)
 - [GetTransitGatewayRouteTableAssociationsRequestGetTransitGatewayRouteTableAssociationsPaginateTypeDef](./type_defs.md#gettransitgatewayroutetableassociationsrequestgettransitgatewayroutetableassociationspaginatetypedef)
@@ -2253,8 +2258,6 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [ModifyTransitGatewayVpcAttachmentRequestRequestTypeDef](./type_defs.md#modifytransitgatewayvpcattachmentrequestrequesttypedef)
 - [ModifyVpcPeeringConnectionOptionsRequestRequestTypeDef](./type_defs.md#modifyvpcpeeringconnectionoptionsrequestrequesttypedef)
 - [ModifyVpcPeeringConnectionOptionsResultTypeDef](./type_defs.md#modifyvpcpeeringconnectionoptionsresulttypedef)
-- [ModifyVpnTunnelOptionsSpecificationTypeDef](./type_defs.md#modifyvpntunneloptionsspecificationtypedef)
-- [VpnTunnelOptionsSpecificationTypeDef](./type_defs.md#vpntunneloptionsspecificationtypedef)
 - [NatGatewayTypeDef](./type_defs.md#natgatewaytypedef)
 - [NetworkInfoTypeDef](./type_defs.md#networkinfotypedef)
 - [NetworkInterfacePrivateIpAddressTypeDef](./type_defs.md#networkinterfaceprivateipaddresstypedef)
@@ -2263,8 +2266,6 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [ThroughResourcesStatementRequestTypeDef](./type_defs.md#throughresourcesstatementrequesttypedef)
 - [PathStatementTypeDef](./type_defs.md#pathstatementtypedef)
 - [ThroughResourcesStatementTypeDef](./type_defs.md#throughresourcesstatementtypedef)
-- [TransitGatewayPeeringAttachmentTypeDef](./type_defs.md#transitgatewaypeeringattachmenttypedef)
-- [TunnelOptionTypeDef](./type_defs.md#tunneloptiontypedef)
 - [ReservedInstancesListingTypeDef](./type_defs.md#reservedinstanceslistingtypedef)
 - [ProvisionPublicIpv4PoolCidrResultTypeDef](./type_defs.md#provisionpublicipv4poolcidrresulttypedef)
 - [PublicIpv4PoolTypeDef](./type_defs.md#publicipv4pooltypedef)
@@ -2301,6 +2302,8 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [TransitGatewayConnectTypeDef](./type_defs.md#transitgatewayconnecttypedef)
 - [TransitGatewayMulticastDomainTypeDef](./type_defs.md#transitgatewaymulticastdomaintypedef)
 - [TransitGatewayTypeDef](./type_defs.md#transitgatewaytypedef)
+- [TransitGatewayPeeringAttachmentTypeDef](./type_defs.md#transitgatewaypeeringattachmenttypedef)
+- [TransitGatewayPolicyRuleTypeDef](./type_defs.md#transitgatewaypolicyruletypedef)
 - [TransitGatewayPrefixListReferenceTypeDef](./type_defs.md#transitgatewayprefixlistreferencetypedef)
 - [TransitGatewayRouteTypeDef](./type_defs.md#transitgatewayroutetypedef)
 - [TransitGatewayVpcAttachmentTypeDef](./type_defs.md#transitgatewayvpcattachmenttypedef)
@@ -2425,7 +2428,9 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [CreateTransitGatewayConnectRequestRequestTypeDef](./type_defs.md#createtransitgatewayconnectrequestrequesttypedef)
 - [CreateTransitGatewayMulticastDomainRequestRequestTypeDef](./type_defs.md#createtransitgatewaymulticastdomainrequestrequesttypedef)
 - [CreateTransitGatewayPeeringAttachmentRequestRequestTypeDef](./type_defs.md#createtransitgatewaypeeringattachmentrequestrequesttypedef)
+- [CreateTransitGatewayPolicyTableRequestRequestTypeDef](./type_defs.md#createtransitgatewaypolicytablerequestrequesttypedef)
 - [CreateTransitGatewayRequestRequestTypeDef](./type_defs.md#createtransitgatewayrequestrequesttypedef)
+- [CreateTransitGatewayRouteTableAnnouncementRequestRequestTypeDef](./type_defs.md#createtransitgatewayroutetableannouncementrequestrequesttypedef)
 - [CreateTransitGatewayRouteTableRequestRequestTypeDef](./type_defs.md#createtransitgatewayroutetablerequestrequesttypedef)
 - [CreateTransitGatewayVpcAttachmentRequestRequestTypeDef](./type_defs.md#createtransitgatewayvpcattachmentrequestrequesttypedef)
 - [CreateVolumeRequestRequestTypeDef](./type_defs.md#createvolumerequestrequesttypedef)
@@ -2450,6 +2455,12 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [ModifyTrafficMirrorSessionResultTypeDef](./type_defs.md#modifytrafficmirrorsessionresulttypedef)
 - [CreateTrafficMirrorTargetResultTypeDef](./type_defs.md#createtrafficmirrortargetresulttypedef)
 - [DescribeTrafficMirrorTargetsResultTypeDef](./type_defs.md#describetrafficmirrortargetsresulttypedef)
+- [CreateTransitGatewayPolicyTableResultTypeDef](./type_defs.md#createtransitgatewaypolicytableresulttypedef)
+- [DeleteTransitGatewayPolicyTableResultTypeDef](./type_defs.md#deletetransitgatewaypolicytableresulttypedef)
+- [DescribeTransitGatewayPolicyTablesResultTypeDef](./type_defs.md#describetransitgatewaypolicytablesresulttypedef)
+- [CreateTransitGatewayRouteTableAnnouncementResultTypeDef](./type_defs.md#createtransitgatewayroutetableannouncementresulttypedef)
+- [DeleteTransitGatewayRouteTableAnnouncementResultTypeDef](./type_defs.md#deletetransitgatewayroutetableannouncementresulttypedef)
+- [DescribeTransitGatewayRouteTableAnnouncementsResultTypeDef](./type_defs.md#describetransitgatewayroutetableannouncementsresulttypedef)
 - [CreateTransitGatewayRouteTableResultTypeDef](./type_defs.md#createtransitgatewayroutetableresulttypedef)
 - [DeleteTransitGatewayRouteTableResultTypeDef](./type_defs.md#deletetransitgatewayroutetableresulttypedef)
 - [DescribeTransitGatewayRouteTablesResultTypeDef](./type_defs.md#describetransitgatewayroutetablesresulttypedef)
@@ -2483,6 +2494,9 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [DescribeClientVpnConnectionsResultTypeDef](./type_defs.md#describeclientvpnconnectionsresulttypedef)
 - [TerminateClientVpnConnectionsResultTypeDef](./type_defs.md#terminateclientvpnconnectionsresulttypedef)
 - [DescribeClientVpnRoutesResultTypeDef](./type_defs.md#describeclientvpnroutesresulttypedef)
+- [ModifyVpnTunnelOptionsSpecificationTypeDef](./type_defs.md#modifyvpntunneloptionsspecificationtypedef)
+- [VpnTunnelOptionsSpecificationTypeDef](./type_defs.md#vpntunneloptionsspecificationtypedef)
+- [TunnelOptionTypeDef](./type_defs.md#tunneloptiontypedef)
 - [NetworkAclTypeDef](./type_defs.md#networkacltypedef)
 - [LaunchSpecificationTypeDef](./type_defs.md#launchspecificationtypedef)
 - [RequestSpotLaunchSpecificationTypeDef](./type_defs.md#requestspotlaunchspecificationtypedef)
@@ -2576,8 +2590,6 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [ResponseLaunchTemplateDataTypeDef](./type_defs.md#responselaunchtemplatedatatypedef)
 - [ModifyFpgaImageAttributeRequestRequestTypeDef](./type_defs.md#modifyfpgaimageattributerequestrequesttypedef)
 - [ReservedInstancesModificationTypeDef](./type_defs.md#reservedinstancesmodificationtypedef)
-- [ModifyVpnTunnelOptionsRequestRequestTypeDef](./type_defs.md#modifyvpntunneloptionsrequestrequesttypedef)
-- [VpnConnectionOptionsSpecificationTypeDef](./type_defs.md#vpnconnectionoptionsspecificationtypedef)
 - [CreateNatGatewayResultTypeDef](./type_defs.md#createnatgatewayresulttypedef)
 - [DescribeNatGatewaysResultTypeDef](./type_defs.md#describenatgatewaysresulttypedef)
 - [NetworkInterfaceTypeDef](./type_defs.md#networkinterfacetypedef)
@@ -2585,12 +2597,6 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [DescribeNetworkInterfacePermissionsResultTypeDef](./type_defs.md#describenetworkinterfacepermissionsresulttypedef)
 - [AccessScopePathRequestTypeDef](./type_defs.md#accessscopepathrequesttypedef)
 - [AccessScopePathTypeDef](./type_defs.md#accessscopepathtypedef)
-- [AcceptTransitGatewayPeeringAttachmentResultTypeDef](./type_defs.md#accepttransitgatewaypeeringattachmentresulttypedef)
-- [CreateTransitGatewayPeeringAttachmentResultTypeDef](./type_defs.md#createtransitgatewaypeeringattachmentresulttypedef)
-- [DeleteTransitGatewayPeeringAttachmentResultTypeDef](./type_defs.md#deletetransitgatewaypeeringattachmentresulttypedef)
-- [DescribeTransitGatewayPeeringAttachmentsResultTypeDef](./type_defs.md#describetransitgatewaypeeringattachmentsresulttypedef)
-- [RejectTransitGatewayPeeringAttachmentResultTypeDef](./type_defs.md#rejecttransitgatewaypeeringattachmentresulttypedef)
-- [VpnConnectionOptionsTypeDef](./type_defs.md#vpnconnectionoptionstypedef)
 - [CancelReservedInstancesListingResultTypeDef](./type_defs.md#cancelreservedinstanceslistingresulttypedef)
 - [CreateReservedInstancesListingResultTypeDef](./type_defs.md#createreservedinstanceslistingresulttypedef)
 - [DescribeReservedInstancesListingsResultTypeDef](./type_defs.md#describereservedinstanceslistingsresulttypedef)
@@ -2643,6 +2649,12 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [DeleteTransitGatewayResultTypeDef](./type_defs.md#deletetransitgatewayresulttypedef)
 - [DescribeTransitGatewaysResultTypeDef](./type_defs.md#describetransitgatewaysresulttypedef)
 - [ModifyTransitGatewayResultTypeDef](./type_defs.md#modifytransitgatewayresulttypedef)
+- [AcceptTransitGatewayPeeringAttachmentResultTypeDef](./type_defs.md#accepttransitgatewaypeeringattachmentresulttypedef)
+- [CreateTransitGatewayPeeringAttachmentResultTypeDef](./type_defs.md#createtransitgatewaypeeringattachmentresulttypedef)
+- [DeleteTransitGatewayPeeringAttachmentResultTypeDef](./type_defs.md#deletetransitgatewaypeeringattachmentresulttypedef)
+- [DescribeTransitGatewayPeeringAttachmentsResultTypeDef](./type_defs.md#describetransitgatewaypeeringattachmentsresulttypedef)
+- [RejectTransitGatewayPeeringAttachmentResultTypeDef](./type_defs.md#rejecttransitgatewaypeeringattachmentresulttypedef)
+- [TransitGatewayPolicyTableEntryTypeDef](./type_defs.md#transitgatewaypolicytableentrytypedef)
 - [CreateTransitGatewayPrefixListReferenceResultTypeDef](./type_defs.md#createtransitgatewayprefixlistreferenceresulttypedef)
 - [DeleteTransitGatewayPrefixListReferenceResultTypeDef](./type_defs.md#deletetransitgatewayprefixlistreferenceresulttypedef)
 - [GetTransitGatewayPrefixListReferencesResultTypeDef](./type_defs.md#gettransitgatewayprefixlistreferencesresulttypedef)
@@ -2688,6 +2700,9 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [DescribeHostsResultTypeDef](./type_defs.md#describehostsresulttypedef)
 - [DescribeImagesResultTypeDef](./type_defs.md#describeimagesresulttypedef)
 - [DescribeClientVpnEndpointsResultTypeDef](./type_defs.md#describeclientvpnendpointsresulttypedef)
+- [ModifyVpnTunnelOptionsRequestRequestTypeDef](./type_defs.md#modifyvpntunneloptionsrequestrequesttypedef)
+- [VpnConnectionOptionsSpecificationTypeDef](./type_defs.md#vpnconnectionoptionsspecificationtypedef)
+- [VpnConnectionOptionsTypeDef](./type_defs.md#vpnconnectionoptionstypedef)
 - [CreateNetworkAclResultTypeDef](./type_defs.md#createnetworkaclresulttypedef)
 - [DescribeNetworkAclsResultTypeDef](./type_defs.md#describenetworkaclsresulttypedef)
 - [SpotInstanceRequestTypeDef](./type_defs.md#spotinstancerequesttypedef)
@@ -2711,12 +2726,10 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [GetLaunchTemplateDataResultTypeDef](./type_defs.md#getlaunchtemplatedataresulttypedef)
 - [LaunchTemplateVersionTypeDef](./type_defs.md#launchtemplateversiontypedef)
 - [DescribeReservedInstancesModificationsResultTypeDef](./type_defs.md#describereservedinstancesmodificationsresulttypedef)
-- [CreateVpnConnectionRequestRequestTypeDef](./type_defs.md#createvpnconnectionrequestrequesttypedef)
 - [CreateNetworkInterfaceResultTypeDef](./type_defs.md#createnetworkinterfaceresulttypedef)
 - [DescribeNetworkInterfacesResultTypeDef](./type_defs.md#describenetworkinterfacesresulttypedef)
 - [CreateNetworkInsightsAccessScopeRequestRequestTypeDef](./type_defs.md#createnetworkinsightsaccessscoperequestrequesttypedef)
 - [NetworkInsightsAccessScopeContentTypeDef](./type_defs.md#networkinsightsaccessscopecontenttypedef)
-- [VpnConnectionTypeDef](./type_defs.md#vpnconnectiontypedef)
 - [BundleInstanceResultTypeDef](./type_defs.md#bundleinstanceresulttypedef)
 - [CancelBundleTaskResultTypeDef](./type_defs.md#cancelbundletaskresulttypedef)
 - [DescribeBundleTasksResultTypeDef](./type_defs.md#describebundletasksresulttypedef)
@@ -2732,6 +2745,7 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [CreateTransitGatewayConnectPeerResultTypeDef](./type_defs.md#createtransitgatewayconnectpeerresulttypedef)
 - [DeleteTransitGatewayConnectPeerResultTypeDef](./type_defs.md#deletetransitgatewayconnectpeerresulttypedef)
 - [DescribeTransitGatewayConnectPeersResultTypeDef](./type_defs.md#describetransitgatewayconnectpeersresulttypedef)
+- [GetTransitGatewayPolicyTableEntriesResultTypeDef](./type_defs.md#gettransitgatewaypolicytableentriesresulttypedef)
 - [DescribeVolumeStatusResultTypeDef](./type_defs.md#describevolumestatusresulttypedef)
 - [CreateDefaultVpcResultTypeDef](./type_defs.md#createdefaultvpcresulttypedef)
 - [CreateVpcResultTypeDef](./type_defs.md#createvpcresulttypedef)
@@ -2742,6 +2756,8 @@ def get_value() -> AcceleratorCountRequestTypeDef:
 - [GetNetworkInsightsAccessScopeAnalysisFindingsResultTypeDef](./type_defs.md#getnetworkinsightsaccessscopeanalysisfindingsresulttypedef)
 - [DescribeNetworkInsightsAnalysesResultTypeDef](./type_defs.md#describenetworkinsightsanalysesresulttypedef)
 - [StartNetworkInsightsAnalysisResultTypeDef](./type_defs.md#startnetworkinsightsanalysisresulttypedef)
+- [CreateVpnConnectionRequestRequestTypeDef](./type_defs.md#createvpnconnectionrequestrequesttypedef)
+- [VpnConnectionTypeDef](./type_defs.md#vpnconnectiontypedef)
 - [DescribeSpotInstanceRequestsResultTypeDef](./type_defs.md#describespotinstancerequestsresulttypedef)
 - [RequestSpotInstancesResultTypeDef](./type_defs.md#requestspotinstancesresulttypedef)
 - [DescribeConversionTasksResultTypeDef](./type_defs.md#describeconversiontasksresulttypedef)

@@ -18,10 +18,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_groundstation.paginator import ListConfigsPaginator
 
 session = get_session()
-async with session.create_client("groundstation") as client:
-    client: GroundStationClient
-    paginator: ListConfigsPaginator = client.get_paginator("list_configs")
+async with session.create_client("groundstation") as client:  # (1)
+    paginator: ListConfigsPaginator = client.get_paginator("list_configs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListConfigsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GroundStationClient](./client.md)
+2. paginator: [ListConfigsPaginator](./paginators.md#listconfigspaginator)
+3. item: [:material-code-braces: ListConfigsResponseTypeDef](./type_defs.md#listconfigsresponsetypedef) 
 
 
 ### paginate
@@ -61,10 +67,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_groundstation.paginator import ListContactsPaginator
 
 session = get_session()
-async with session.create_client("groundstation") as client:
-    client: GroundStationClient
-    paginator: ListContactsPaginator = client.get_paginator("list_contacts")
+async with session.create_client("groundstation") as client:  # (1)
+    paginator: ListContactsPaginator = client.get_paginator("list_contacts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListContactsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GroundStationClient](./client.md)
+2. paginator: [ListContactsPaginator](./paginators.md#listcontactspaginator)
+3. item: [:material-code-braces: ListContactsResponseTypeDef](./type_defs.md#listcontactsresponsetypedef) 
 
 
 ### paginate
@@ -113,10 +125,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_groundstation.paginator import ListDataflowEndpointGroupsPaginator
 
 session = get_session()
-async with session.create_client("groundstation") as client:
-    client: GroundStationClient
-    paginator: ListDataflowEndpointGroupsPaginator = client.get_paginator("list_dataflow_endpoint_groups")
+async with session.create_client("groundstation") as client:  # (1)
+    paginator: ListDataflowEndpointGroupsPaginator = client.get_paginator("list_dataflow_endpoint_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListDataflowEndpointGroupsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GroundStationClient](./client.md)
+2. paginator: [ListDataflowEndpointGroupsPaginator](./paginators.md#listdataflowendpointgroupspaginator)
+3. item: [:material-code-braces: ListDataflowEndpointGroupsResponseTypeDef](./type_defs.md#listdataflowendpointgroupsresponsetypedef) 
 
 
 ### paginate
@@ -156,10 +174,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_groundstation.paginator import ListGroundStationsPaginator
 
 session = get_session()
-async with session.create_client("groundstation") as client:
-    client: GroundStationClient
-    paginator: ListGroundStationsPaginator = client.get_paginator("list_ground_stations")
+async with session.create_client("groundstation") as client:  # (1)
+    paginator: ListGroundStationsPaginator = client.get_paginator("list_ground_stations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListGroundStationsResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GroundStationClient](./client.md)
+2. paginator: [ListGroundStationsPaginator](./paginators.md#listgroundstationspaginator)
+3. item: [:material-code-braces: ListGroundStationsResponseTypeDef](./type_defs.md#listgroundstationsresponsetypedef) 
 
 
 ### paginate
@@ -200,10 +224,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_groundstation.paginator import ListMissionProfilesPaginator
 
 session = get_session()
-async with session.create_client("groundstation") as client:
-    client: GroundStationClient
-    paginator: ListMissionProfilesPaginator = client.get_paginator("list_mission_profiles")
+async with session.create_client("groundstation") as client:  # (1)
+    paginator: ListMissionProfilesPaginator = client.get_paginator("list_mission_profiles")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMissionProfilesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GroundStationClient](./client.md)
+2. paginator: [ListMissionProfilesPaginator](./paginators.md#listmissionprofilespaginator)
+3. item: [:material-code-braces: ListMissionProfilesResponseTypeDef](./type_defs.md#listmissionprofilesresponsetypedef) 
 
 
 ### paginate
@@ -243,10 +273,16 @@ from aiobotocore.session import get_session
 from types_aiobotocore_groundstation.paginator import ListSatellitesPaginator
 
 session = get_session()
-async with session.create_client("groundstation") as client:
-    client: GroundStationClient
-    paginator: ListSatellitesPaginator = client.get_paginator("list_satellites")
+async with session.create_client("groundstation") as client:  # (1)
+    paginator: ListSatellitesPaginator = client.get_paginator("list_satellites")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListSatellitesResponseTypeDef
+        print(item)  # (3)
 ```
+
+1. client: [GroundStationClient](./client.md)
+2. paginator: [ListSatellitesPaginator](./paginators.md#listsatellitespaginator)
+3. item: [:material-code-braces: ListSatellitesResponseTypeDef](./type_defs.md#listsatellitesresponsetypedef) 
 
 
 ### paginate

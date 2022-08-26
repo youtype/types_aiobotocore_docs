@@ -17,9 +17,14 @@ from aiobotocore.session import Session
 
 from types_aiobotocore_signer.waiter import SuccessfulSigningJobWaiter
 
-def get_successful_signing_job_waiter() -> SuccessfulSigningJobWaiter:
-    return Session().client("signer").get_waiter("successful_signing_job")
+session = get_session()
+async with session.create_client("signer") as client:  # (1)
+    waiter: SuccessfulSigningJobWaiter = client.get_waiter("successful_signing_job")  # (2)
+    await waiter.wait()
 ```
+
+1. client: [signerClient](./client.md)
+2. waiter: [SuccessfulSigningJobWaiter](./waiters.md#successfulsigningjobwaiter)
 
 
 ### wait
