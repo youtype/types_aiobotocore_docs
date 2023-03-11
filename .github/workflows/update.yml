@@ -60,10 +60,10 @@ jobs:
           git config --global user.name "github-actions"
       - name: Update marker file
         run: |
-          echo $VERSION > ./aioboto3_version.txt
+          echo $VERSION > ./aiobotocore_version.txt
       - name: Commit marker file
         run: |
-          git add aioboto3_version.txt
+          git add aiobotocore_version.txt
           git commit -m "Update marker to ${VERSION}"
           git push
 
