@@ -19,7 +19,7 @@ jobs:
     outputs:
       version: ${{ steps.vars.outputs.version }}
       current-version: ${{ steps.vars.outputs.current-version }}
-      aiobotocore-version: ${{ steps.vars.outputs.aioboto3-version }}
+      aiobotocore-version: ${{ steps.vars.outputs.aiobotocore-version }}
     steps:
       - uses: actions/checkout@v3
       - name: Extract versions
@@ -42,8 +42,8 @@ jobs:
 
             core.info(`Updating to ${aioBotocoreVersion} over ${currentAioBotocoreVersion}`)
             core.setOutput('version', aioBotocoreVersion)
-            core.setOutput('aiobotocore-version', aioBotocoreVersion)
             core.setOutput('current-version', currentAioBotocoreVersion)
+            core.setOutput('aiobotocore-version', aioBotocoreVersion)
 
   update-marker:
     name: Update marker file
@@ -100,12 +100,12 @@ jobs:
         with:
           python-version: "3.11"
           cache: "pip"
-      - name: Install boto3
+      - name: Install aiobotocore
         run: |
           mkdir installtemp
           cd installtemp
           wget ${{ steps.links.outputs.aiobotocore-url }}
-          python -m pip install aiobotocore*
+          python -m pip install aiobotocore*.whl
           cd ..
           rm -rf installtemp
       - name: Install dependencies
