@@ -28,7 +28,9 @@ jobs:
         with:
           script: |
             const fs = require('fs')
-            const { getAioBotocoreVersion } = require('./.github/workflows/helpers.js')
+            const { setupGlobals, getAioBotocoreVersion } = require('./.github/workflows/helpers.js')
+            setupGlobals({ core, context, fetch })
+
             core.setOutput('version', '')
 
             const currentAioBotocoreVersion = fs.readFileSync('./aiobotocore_version.txt', 'utf8').trim()
@@ -71,7 +73,9 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const { extractAioBotocoreDownloadLinks } = require('./.github/workflows/helpers.js')
+            const { setupGlobals, extractAioBotocoreDownloadLinks } = require('./.github/workflows/helpers.js')
+            setupGlobals({ core, context, fetch })
+
             await extractAioBotocoreDownloadLinks({ core })
       - name: Set up Python
         uses: actions/setup-python@v4
