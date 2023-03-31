@@ -76,7 +76,7 @@ jobs:
             const { setupGlobals, extractAioBotocoreDownloadLinks } = require('./.github/workflows/helpers.js')
             setupGlobals({ core, context, fetch })
 
-            await extractAioBotocoreDownloadLinks({ core })
+            await extractAioBotocoreDownloadLinks()
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
