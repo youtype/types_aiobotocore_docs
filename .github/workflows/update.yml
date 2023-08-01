@@ -1,4 +1,4 @@
-name: Update docs
+name: Update types-aiobotocore docs
 concurrency: update
 
 on:
