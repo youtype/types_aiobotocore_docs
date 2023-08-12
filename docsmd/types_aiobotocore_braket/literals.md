@@ -1,0 +1,774 @@
+# Literals
+
+> [Index](../README.md) > [Braket](./README.md) > Literals
+
+!!! note ""
+
+    Auto-generated documentation for [Braket](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html#Braket)
+    type annotations stubs module [types-aiobotocore-braket](https://pypi.org/project/types-aiobotocore-braket/).
+
+## CancellationStatusType
+
+```python
+# CancellationStatusType usage example
+
+from types_aiobotocore_braket.literals import CancellationStatusType
+
+def get_value() -> CancellationStatusType:
+    return "CANCELLED"
+```
+
+```python
+# CancellationStatusType definition
+
+CancellationStatusType = Literal[
+    "CANCELLED",
+    "CANCELLING",
+]
+```
+## CompressionTypeType
+
+```python
+# CompressionTypeType usage example
+
+from types_aiobotocore_braket.literals import CompressionTypeType
+
+def get_value() -> CompressionTypeType:
+    return "GZIP"
+```
+
+```python
+# CompressionTypeType definition
+
+CompressionTypeType = Literal[
+    "GZIP",
+    "NONE",
+]
+```
+## DeviceStatusType
+
+```python
+# DeviceStatusType usage example
+
+from types_aiobotocore_braket.literals import DeviceStatusType
+
+def get_value() -> DeviceStatusType:
+    return "OFFLINE"
+```
+
+```python
+# DeviceStatusType definition
+
+DeviceStatusType = Literal[
+    "OFFLINE",
+    "ONLINE",
+    "RETIRED",
+]
+```
+## DeviceTypeType
+
+```python
+# DeviceTypeType usage example
+
+from types_aiobotocore_braket.literals import DeviceTypeType
+
+def get_value() -> DeviceTypeType:
+    return "QPU"
+```
+
+```python
+# DeviceTypeType definition
+
+DeviceTypeType = Literal[
+    "QPU",
+    "SIMULATOR",
+]
+```
+## InstanceTypeType
+
+```python
+# InstanceTypeType usage example
+
+from types_aiobotocore_braket.literals import InstanceTypeType
+
+def get_value() -> InstanceTypeType:
+    return "ml.c4.2xlarge"
+```
+
+```python
+# InstanceTypeType definition
+
+InstanceTypeType = Literal[
+    "ml.c4.2xlarge",
+    "ml.c4.4xlarge",
+    "ml.c4.8xlarge",
+    "ml.c4.xlarge",
+    "ml.c5.18xlarge",
+    "ml.c5.2xlarge",
+    "ml.c5.4xlarge",
+    "ml.c5.9xlarge",
+    "ml.c5.xlarge",
+    "ml.c5n.18xlarge",
+    "ml.c5n.2xlarge",
+    "ml.c5n.4xlarge",
+    "ml.c5n.9xlarge",
+    "ml.c5n.xlarge",
+    "ml.g4dn.12xlarge",
+    "ml.g4dn.16xlarge",
+    "ml.g4dn.2xlarge",
+    "ml.g4dn.4xlarge",
+    "ml.g4dn.8xlarge",
+    "ml.g4dn.xlarge",
+    "ml.m4.10xlarge",
+    "ml.m4.16xlarge",
+    "ml.m4.2xlarge",
+    "ml.m4.4xlarge",
+    "ml.m4.xlarge",
+    "ml.m5.12xlarge",
+    "ml.m5.24xlarge",
+    "ml.m5.2xlarge",
+    "ml.m5.4xlarge",
+    "ml.m5.large",
+    "ml.m5.xlarge",
+    "ml.p2.16xlarge",
+    "ml.p2.8xlarge",
+    "ml.p2.xlarge",
+    "ml.p3.16xlarge",
+    "ml.p3.2xlarge",
+    "ml.p3.8xlarge",
+    "ml.p3dn.24xlarge",
+    "ml.p4d.24xlarge",
+]
+```
+## JobEventTypeType
+
+```python
+# JobEventTypeType usage example
+
+from types_aiobotocore_braket.literals import JobEventTypeType
+
+def get_value() -> JobEventTypeType:
+    return "CANCELLED"
+```
+
+```python
+# JobEventTypeType definition
+
+JobEventTypeType = Literal[
+    "CANCELLED",
+    "COMPLETED",
+    "DEPRIORITIZED_DUE_TO_INACTIVITY",
+    "DOWNLOADING_DATA",
+    "FAILED",
+    "MAX_RUNTIME_EXCEEDED",
+    "QUEUED_FOR_EXECUTION",
+    "RUNNING",
+    "STARTING_INSTANCE",
+    "UPLOADING_RESULTS",
+    "WAITING_FOR_PRIORITY",
+]
+```
+## JobPrimaryStatusType
+
+```python
+# JobPrimaryStatusType usage example
+
+from types_aiobotocore_braket.literals import JobPrimaryStatusType
+
+def get_value() -> JobPrimaryStatusType:
+    return "CANCELLED"
+```
+
+```python
+# JobPrimaryStatusType definition
+
+JobPrimaryStatusType = Literal[
+    "CANCELLED",
+    "CANCELLING",
+    "COMPLETED",
+    "FAILED",
+    "QUEUED",
+    "RUNNING",
+]
+```
+## QuantumTaskStatusType
+
+```python
+# QuantumTaskStatusType usage example
+
+from types_aiobotocore_braket.literals import QuantumTaskStatusType
+
+def get_value() -> QuantumTaskStatusType:
+    return "CANCELLED"
+```
+
+```python
+# QuantumTaskStatusType definition
+
+QuantumTaskStatusType = Literal[
+    "CANCELLED",
+    "CANCELLING",
+    "COMPLETED",
+    "CREATED",
+    "FAILED",
+    "QUEUED",
+    "RUNNING",
+]
+```
+## SearchDevicesPaginatorName
+
+```python
+# SearchDevicesPaginatorName usage example
+
+from types_aiobotocore_braket.literals import SearchDevicesPaginatorName
+
+def get_value() -> SearchDevicesPaginatorName:
+    return "search_devices"
+```
+
+```python
+# SearchDevicesPaginatorName definition
+
+SearchDevicesPaginatorName = Literal[
+    "search_devices",
+]
+```
+## SearchJobsFilterOperatorType
+
+```python
+# SearchJobsFilterOperatorType usage example
+
+from types_aiobotocore_braket.literals import SearchJobsFilterOperatorType
+
+def get_value() -> SearchJobsFilterOperatorType:
+    return "BETWEEN"
+```
+
+```python
+# SearchJobsFilterOperatorType definition
+
+SearchJobsFilterOperatorType = Literal[
+    "BETWEEN",
+    "CONTAINS",
+    "EQUAL",
+    "GT",
+    "GTE",
+    "LT",
+    "LTE",
+]
+```
+## SearchJobsPaginatorName
+
+```python
+# SearchJobsPaginatorName usage example
+
+from types_aiobotocore_braket.literals import SearchJobsPaginatorName
+
+def get_value() -> SearchJobsPaginatorName:
+    return "search_jobs"
+```
+
+```python
+# SearchJobsPaginatorName definition
+
+SearchJobsPaginatorName = Literal[
+    "search_jobs",
+]
+```
+## SearchQuantumTasksFilterOperatorType
+
+```python
+# SearchQuantumTasksFilterOperatorType usage example
+
+from types_aiobotocore_braket.literals import SearchQuantumTasksFilterOperatorType
+
+def get_value() -> SearchQuantumTasksFilterOperatorType:
+    return "BETWEEN"
+```
+
+```python
+# SearchQuantumTasksFilterOperatorType definition
+
+SearchQuantumTasksFilterOperatorType = Literal[
+    "BETWEEN",
+    "EQUAL",
+    "GT",
+    "GTE",
+    "LT",
+    "LTE",
+]
+```
+## SearchQuantumTasksPaginatorName
+
+```python
+# SearchQuantumTasksPaginatorName usage example
+
+from types_aiobotocore_braket.literals import SearchQuantumTasksPaginatorName
+
+def get_value() -> SearchQuantumTasksPaginatorName:
+    return "search_quantum_tasks"
+```
+
+```python
+# SearchQuantumTasksPaginatorName definition
+
+SearchQuantumTasksPaginatorName = Literal[
+    "search_quantum_tasks",
+]
+```
+## BraketServiceName
+
+```python
+# BraketServiceName usage example
+
+from types_aiobotocore_braket.literals import BraketServiceName
+
+def get_value() -> BraketServiceName:
+    return "braket"
+```
+
+```python
+# BraketServiceName definition
+
+BraketServiceName = Literal[
+    "braket",
+]
+```
+## ServiceName
+
+```python
+# ServiceName usage example
+
+from types_aiobotocore_braket.literals import ServiceName
+
+def get_value() -> ServiceName:
+    return "accessanalyzer"
+```
+
+```python
+# ServiceName definition
+
+ServiceName = Literal[
+    "accessanalyzer",
+    "account",
+    "acm",
+    "acm-pca",
+    "alexaforbusiness",
+    "amp",
+    "amplify",
+    "amplifybackend",
+    "amplifyuibuilder",
+    "apigateway",
+    "apigatewaymanagementapi",
+    "apigatewayv2",
+    "appconfig",
+    "appconfigdata",
+    "appfabric",
+    "appflow",
+    "appintegrations",
+    "application-autoscaling",
+    "application-insights",
+    "applicationcostprofiler",
+    "appmesh",
+    "apprunner",
+    "appstream",
+    "appsync",
+    "arc-zonal-shift",
+    "athena",
+    "auditmanager",
+    "autoscaling",
+    "autoscaling-plans",
+    "backup",
+    "backup-gateway",
+    "backupstorage",
+    "batch",
+    "billingconductor",
+    "braket",
+    "budgets",
+    "ce",
+    "chime",
+    "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
+    "chime-sdk-meetings",
+    "chime-sdk-messaging",
+    "chime-sdk-voice",
+    "cleanrooms",
+    "cloud9",
+    "cloudcontrol",
+    "clouddirectory",
+    "cloudformation",
+    "cloudfront",
+    "cloudhsm",
+    "cloudhsmv2",
+    "cloudsearch",
+    "cloudsearchdomain",
+    "cloudtrail",
+    "cloudtrail-data",
+    "cloudwatch",
+    "codeartifact",
+    "codebuild",
+    "codecatalyst",
+    "codecommit",
+    "codedeploy",
+    "codeguru-reviewer",
+    "codeguru-security",
+    "codeguruprofiler",
+    "codepipeline",
+    "codestar",
+    "codestar-connections",
+    "codestar-notifications",
+    "cognito-identity",
+    "cognito-idp",
+    "cognito-sync",
+    "comprehend",
+    "comprehendmedical",
+    "compute-optimizer",
+    "config",
+    "connect",
+    "connect-contact-lens",
+    "connectcampaigns",
+    "connectcases",
+    "connectparticipant",
+    "controltower",
+    "cur",
+    "customer-profiles",
+    "databrew",
+    "dataexchange",
+    "datapipeline",
+    "datasync",
+    "dax",
+    "detective",
+    "devicefarm",
+    "devops-guru",
+    "directconnect",
+    "discovery",
+    "dlm",
+    "dms",
+    "docdb",
+    "docdb-elastic",
+    "drs",
+    "ds",
+    "dynamodb",
+    "dynamodbstreams",
+    "ebs",
+    "ec2",
+    "ec2-instance-connect",
+    "ecr",
+    "ecr-public",
+    "ecs",
+    "efs",
+    "eks",
+    "elastic-inference",
+    "elasticache",
+    "elasticbeanstalk",
+    "elastictranscoder",
+    "elb",
+    "elbv2",
+    "emr",
+    "emr-containers",
+    "emr-serverless",
+    "entityresolution",
+    "es",
+    "events",
+    "evidently",
+    "finspace",
+    "finspace-data",
+    "firehose",
+    "fis",
+    "fms",
+    "forecast",
+    "forecastquery",
+    "frauddetector",
+    "fsx",
+    "gamelift",
+    "gamesparks",
+    "glacier",
+    "globalaccelerator",
+    "glue",
+    "grafana",
+    "greengrass",
+    "greengrassv2",
+    "groundstation",
+    "guardduty",
+    "health",
+    "healthlake",
+    "honeycode",
+    "iam",
+    "identitystore",
+    "imagebuilder",
+    "importexport",
+    "inspector",
+    "inspector2",
+    "internetmonitor",
+    "iot",
+    "iot-data",
+    "iot-jobs-data",
+    "iot-roborunner",
+    "iot1click-devices",
+    "iot1click-projects",
+    "iotanalytics",
+    "iotdeviceadvisor",
+    "iotevents",
+    "iotevents-data",
+    "iotfleethub",
+    "iotfleetwise",
+    "iotsecuretunneling",
+    "iotsitewise",
+    "iotthingsgraph",
+    "iottwinmaker",
+    "iotwireless",
+    "ivs",
+    "ivs-realtime",
+    "ivschat",
+    "kafka",
+    "kafkaconnect",
+    "kendra",
+    "kendra-ranking",
+    "keyspaces",
+    "kinesis",
+    "kinesis-video-archived-media",
+    "kinesis-video-media",
+    "kinesis-video-signaling",
+    "kinesis-video-webrtc-storage",
+    "kinesisanalytics",
+    "kinesisanalyticsv2",
+    "kinesisvideo",
+    "kms",
+    "lakeformation",
+    "lambda",
+    "lex-models",
+    "lex-runtime",
+    "lexv2-models",
+    "lexv2-runtime",
+    "license-manager",
+    "license-manager-linux-subscriptions",
+    "license-manager-user-subscriptions",
+    "lightsail",
+    "location",
+    "logs",
+    "lookoutequipment",
+    "lookoutmetrics",
+    "lookoutvision",
+    "m2",
+    "machinelearning",
+    "macie",
+    "macie2",
+    "managedblockchain",
+    "managedblockchain-query",
+    "marketplace-catalog",
+    "marketplace-entitlement",
+    "marketplacecommerceanalytics",
+    "mediaconnect",
+    "mediaconvert",
+    "medialive",
+    "mediapackage",
+    "mediapackage-vod",
+    "mediapackagev2",
+    "mediastore",
+    "mediastore-data",
+    "mediatailor",
+    "medical-imaging",
+    "memorydb",
+    "meteringmarketplace",
+    "mgh",
+    "mgn",
+    "migration-hub-refactor-spaces",
+    "migrationhub-config",
+    "migrationhuborchestrator",
+    "migrationhubstrategy",
+    "mobile",
+    "mq",
+    "mturk",
+    "mwaa",
+    "neptune",
+    "network-firewall",
+    "networkmanager",
+    "nimble",
+    "oam",
+    "omics",
+    "opensearch",
+    "opensearchserverless",
+    "opsworks",
+    "opsworkscm",
+    "organizations",
+    "osis",
+    "outposts",
+    "panorama",
+    "payment-cryptography",
+    "payment-cryptography-data",
+    "personalize",
+    "personalize-events",
+    "personalize-runtime",
+    "pi",
+    "pinpoint",
+    "pinpoint-email",
+    "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
+    "pipes",
+    "polly",
+    "pricing",
+    "privatenetworks",
+    "proton",
+    "qldb",
+    "qldb-session",
+    "quicksight",
+    "ram",
+    "rbin",
+    "rds",
+    "rds-data",
+    "redshift",
+    "redshift-data",
+    "redshift-serverless",
+    "rekognition",
+    "resiliencehub",
+    "resource-explorer-2",
+    "resource-groups",
+    "resourcegroupstaggingapi",
+    "robomaker",
+    "rolesanywhere",
+    "route53",
+    "route53-recovery-cluster",
+    "route53-recovery-control-config",
+    "route53-recovery-readiness",
+    "route53domains",
+    "route53resolver",
+    "rum",
+    "s3",
+    "s3control",
+    "s3outposts",
+    "sagemaker",
+    "sagemaker-a2i-runtime",
+    "sagemaker-edge",
+    "sagemaker-featurestore-runtime",
+    "sagemaker-geospatial",
+    "sagemaker-metrics",
+    "sagemaker-runtime",
+    "savingsplans",
+    "scheduler",
+    "schemas",
+    "sdb",
+    "secretsmanager",
+    "securityhub",
+    "securitylake",
+    "serverlessrepo",
+    "service-quotas",
+    "servicecatalog",
+    "servicecatalog-appregistry",
+    "servicediscovery",
+    "ses",
+    "sesv2",
+    "shield",
+    "signer",
+    "simspaceweaver",
+    "sms",
+    "sms-voice",
+    "snow-device-management",
+    "snowball",
+    "sns",
+    "sqs",
+    "ssm",
+    "ssm-contacts",
+    "ssm-incidents",
+    "ssm-sap",
+    "sso",
+    "sso-admin",
+    "sso-oidc",
+    "stepfunctions",
+    "storagegateway",
+    "sts",
+    "support",
+    "support-app",
+    "swf",
+    "synthetics",
+    "textract",
+    "timestream-query",
+    "timestream-write",
+    "tnb",
+    "transcribe",
+    "transfer",
+    "translate",
+    "verifiedpermissions",
+    "voice-id",
+    "vpc-lattice",
+    "waf",
+    "waf-regional",
+    "wafv2",
+    "wellarchitected",
+    "wisdom",
+    "workdocs",
+    "worklink",
+    "workmail",
+    "workmailmessageflow",
+    "workspaces",
+    "workspaces-web",
+    "xray",
+]
+```
+## ResourceServiceName
+
+```python
+# ResourceServiceName usage example
+
+from types_aiobotocore_braket.literals import ResourceServiceName
+
+def get_value() -> ResourceServiceName:
+    return "cloudformation"
+```
+
+```python
+# ResourceServiceName definition
+
+ResourceServiceName = Literal[
+    "cloudformation",
+    "cloudwatch",
+    "dynamodb",
+    "ec2",
+    "glacier",
+    "iam",
+    "opsworks",
+    "s3",
+    "sns",
+    "sqs",
+]
+```
+## PaginatorName
+
+```python
+# PaginatorName usage example
+
+from types_aiobotocore_braket.literals import PaginatorName
+
+def get_value() -> PaginatorName:
+    return "search_devices"
+```
+
+```python
+# PaginatorName definition
+
+PaginatorName = Literal[
+    "search_devices",
+    "search_jobs",
+    "search_quantum_tasks",
+]
+```
+## RegionName
+
+```python
+# RegionName usage example
+
+from types_aiobotocore_braket.literals import RegionName
+
+def get_value() -> RegionName:
+    return "eu-west-2"
+```
+
+```python
+# RegionName definition
+
+RegionName = Literal[
+    "eu-west-2",
+    "us-east-1",
+    "us-west-1",
+    "us-west-2",
+]
+```

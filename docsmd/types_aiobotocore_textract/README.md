@@ -1,0 +1,174 @@
+# Textract module
+
+> [Index](../README.md) > Textract
+
+
+!!! note ""
+
+    Auto-generated documentation for [Textract](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract)
+    type annotations stubs module [types-aiobotocore-textract](https://pypi.org/project/types-aiobotocore-textract/).
+
+## How to install
+
+
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `Textract` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[textract]'
+
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[textract]'
+
+
+# standalone installation
+python -m pip install types-aiobotocore-textract
+```
+
+
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-textract
+```
+
+## Usage
+
+Code samples can be found in [Examples](./usage.md).
+
+## TextractClient
+
+Type annotations and code completion for  `#!python session.create_client("textract")` as [TextractClient](./client.md)
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract.Client)
+
+```python
+# TextractClient usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_textract.client import TextractClient
+
+
+session = get_session()
+async with session.create_client("textract") as client:
+    client: TextractClient
+```
+
+
+
+
+
+
+
+
+## Literals
+
+Type annotations for [literals](./literals.md) used in methods and schema.
+
+```python
+# BlockTypeType usage example
+
+from types_aiobotocore_textract.literals import BlockTypeType
+
+def get_value() -> BlockTypeType:
+    return "CELL"
+```
+
+- [BlockTypeType](./literals.md#blocktypetype)
+- [ContentClassifierType](./literals.md#contentclassifiertype)
+- [EntityTypeType](./literals.md#entitytypetype)
+- [FeatureTypeType](./literals.md#featuretypetype)
+- [JobStatusType](./literals.md#jobstatustype)
+- [RelationshipTypeType](./literals.md#relationshiptypetype)
+- [SelectionStatusType](./literals.md#selectionstatustype)
+- [TextTypeType](./literals.md#texttypetype)
+- [ValueTypeType](./literals.md#valuetypetype)
+- [TextractServiceName](./literals.md#textractservicename)
+- [ServiceName](./literals.md#servicename)
+- [ResourceServiceName](./literals.md#resourceservicename)
+- [RegionName](./literals.md#regionname)
+
+
+
+
+## Type definitions
+
+Type annotations for [type definitions](./type_defs.md) used in methods and schema.
+
+- [DocumentMetadataTypeDef](./type_defs.md#documentmetadatatypedef)
+- [HumanLoopActivationOutputTypeDef](./type_defs.md#humanloopactivationoutputtypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [NormalizedValueTypeDef](./type_defs.md#normalizedvaluetypedef)
+- [BlobTypeDef](./type_defs.md#blobtypedef)
+- [QueryTypeDef](./type_defs.md#querytypedef)
+- [RelationshipTypeDef](./type_defs.md#relationshiptypedef)
+- [BoundingBoxTypeDef](./type_defs.md#boundingboxtypedef)
+- [DetectedSignatureTypeDef](./type_defs.md#detectedsignaturetypedef)
+- [SplitDocumentTypeDef](./type_defs.md#splitdocumenttypedef)
+- [UndetectedSignatureTypeDef](./type_defs.md#undetectedsignaturetypedef)
+- [S3ObjectTypeDef](./type_defs.md#s3objecttypedef)
+- [ExpenseCurrencyTypeDef](./type_defs.md#expensecurrencytypedef)
+- [ExpenseGroupPropertyTypeDef](./type_defs.md#expensegrouppropertytypedef)
+- [ExpenseTypeTypeDef](./type_defs.md#expensetypetypedef)
+- [PointTypeDef](./type_defs.md#pointtypedef)
+- [GetDocumentAnalysisRequestRequestTypeDef](./type_defs.md#getdocumentanalysisrequestrequesttypedef)
+- [WarningTypeDef](./type_defs.md#warningtypedef)
+- [GetDocumentTextDetectionRequestRequestTypeDef](./type_defs.md#getdocumenttextdetectionrequestrequesttypedef)
+- [GetExpenseAnalysisRequestRequestTypeDef](./type_defs.md#getexpenseanalysisrequestrequesttypedef)
+- [GetLendingAnalysisRequestRequestTypeDef](./type_defs.md#getlendinganalysisrequestrequesttypedef)
+- [GetLendingAnalysisSummaryRequestRequestTypeDef](./type_defs.md#getlendinganalysissummaryrequestrequesttypedef)
+- [HumanLoopDataAttributesTypeDef](./type_defs.md#humanloopdataattributestypedef)
+- [NotificationChannelTypeDef](./type_defs.md#notificationchanneltypedef)
+- [OutputConfigTypeDef](./type_defs.md#outputconfigtypedef)
+- [PredictionTypeDef](./type_defs.md#predictiontypedef)
+- [StartDocumentAnalysisResponseTypeDef](./type_defs.md#startdocumentanalysisresponsetypedef)
+- [StartDocumentTextDetectionResponseTypeDef](./type_defs.md#startdocumenttextdetectionresponsetypedef)
+- [StartExpenseAnalysisResponseTypeDef](./type_defs.md#startexpenseanalysisresponsetypedef)
+- [StartLendingAnalysisResponseTypeDef](./type_defs.md#startlendinganalysisresponsetypedef)
+- [AnalyzeIDDetectionsTypeDef](./type_defs.md#analyzeiddetectionstypedef)
+- [QueriesConfigTypeDef](./type_defs.md#queriesconfigtypedef)
+- [DocumentGroupTypeDef](./type_defs.md#documentgrouptypedef)
+- [DocumentLocationTypeDef](./type_defs.md#documentlocationtypedef)
+- [DocumentTypeDef](./type_defs.md#documenttypedef)
+- [GeometryTypeDef](./type_defs.md#geometrytypedef)
+- [HumanLoopConfigTypeDef](./type_defs.md#humanloopconfigtypedef)
+- [PageClassificationTypeDef](./type_defs.md#pageclassificationtypedef)
+- [IdentityDocumentFieldTypeDef](./type_defs.md#identitydocumentfieldtypedef)
+- [LendingSummaryTypeDef](./type_defs.md#lendingsummarytypedef)
+- [StartDocumentAnalysisRequestRequestTypeDef](./type_defs.md#startdocumentanalysisrequestrequesttypedef)
+- [StartDocumentTextDetectionRequestRequestTypeDef](./type_defs.md#startdocumenttextdetectionrequestrequesttypedef)
+- [StartExpenseAnalysisRequestRequestTypeDef](./type_defs.md#startexpenseanalysisrequestrequesttypedef)
+- [StartLendingAnalysisRequestRequestTypeDef](./type_defs.md#startlendinganalysisrequestrequesttypedef)
+- [AnalyzeExpenseRequestRequestTypeDef](./type_defs.md#analyzeexpenserequestrequesttypedef)
+- [AnalyzeIDRequestRequestTypeDef](./type_defs.md#analyzeidrequestrequesttypedef)
+- [DetectDocumentTextRequestRequestTypeDef](./type_defs.md#detectdocumenttextrequestrequesttypedef)
+- [BlockTypeDef](./type_defs.md#blocktypedef)
+- [ExpenseDetectionTypeDef](./type_defs.md#expensedetectiontypedef)
+- [LendingDetectionTypeDef](./type_defs.md#lendingdetectiontypedef)
+- [SignatureDetectionTypeDef](./type_defs.md#signaturedetectiontypedef)
+- [AnalyzeDocumentRequestRequestTypeDef](./type_defs.md#analyzedocumentrequestrequesttypedef)
+- [GetLendingAnalysisSummaryResponseTypeDef](./type_defs.md#getlendinganalysissummaryresponsetypedef)
+- [AnalyzeDocumentResponseTypeDef](./type_defs.md#analyzedocumentresponsetypedef)
+- [DetectDocumentTextResponseTypeDef](./type_defs.md#detectdocumenttextresponsetypedef)
+- [GetDocumentAnalysisResponseTypeDef](./type_defs.md#getdocumentanalysisresponsetypedef)
+- [GetDocumentTextDetectionResponseTypeDef](./type_defs.md#getdocumenttextdetectionresponsetypedef)
+- [IdentityDocumentTypeDef](./type_defs.md#identitydocumenttypedef)
+- [ExpenseFieldTypeDef](./type_defs.md#expensefieldtypedef)
+- [LendingFieldTypeDef](./type_defs.md#lendingfieldtypedef)
+- [AnalyzeIDResponseTypeDef](./type_defs.md#analyzeidresponsetypedef)
+- [LineItemFieldsTypeDef](./type_defs.md#lineitemfieldstypedef)
+- [LendingDocumentTypeDef](./type_defs.md#lendingdocumenttypedef)
+- [LineItemGroupTypeDef](./type_defs.md#lineitemgrouptypedef)
+- [ExpenseDocumentTypeDef](./type_defs.md#expensedocumenttypedef)
+- [AnalyzeExpenseResponseTypeDef](./type_defs.md#analyzeexpenseresponsetypedef)
+- [ExtractionTypeDef](./type_defs.md#extractiontypedef)
+- [GetExpenseAnalysisResponseTypeDef](./type_defs.md#getexpenseanalysisresponsetypedef)
+- [LendingResultTypeDef](./type_defs.md#lendingresulttypedef)
+- [GetLendingAnalysisResponseTypeDef](./type_defs.md#getlendinganalysisresponsetypedef)
+

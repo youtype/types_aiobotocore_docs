@@ -1,0 +1,320 @@
+# Kafka module
+
+> [Index](../README.md) > Kafka
+
+
+!!! note ""
+
+    Auto-generated documentation for [Kafka](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka)
+    type annotations stubs module [types-aiobotocore-kafka](https://pypi.org/project/types-aiobotocore-kafka/).
+
+## How to install
+
+
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `Kafka` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[kafka]'
+
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[kafka]'
+
+
+# standalone installation
+python -m pip install types-aiobotocore-kafka
+```
+
+
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-kafka
+```
+
+## Usage
+
+Code samples can be found in [Examples](./usage.md).
+
+## KafkaClient
+
+Type annotations and code completion for  `#!python session.create_client("kafka")` as [KafkaClient](./client.md)
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client)
+
+```python
+# KafkaClient usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_kafka.client import KafkaClient
+
+
+session = get_session()
+async with session.create_client("kafka") as client:
+    client: KafkaClient
+```
+
+
+## Paginators
+
+Type annotations and code completion for
+[paginators](./paginators.md)
+from `#!python session.create_client("kafka").get_paginator("...")`.
+
+```python
+# ListClientVpcConnectionsPaginator usage example
+
+from types_aiobotocore_kafka.paginator import ListClientVpcConnectionsPaginator
+
+def get_list_client_vpc_connections_paginator() -> ListClientVpcConnectionsPaginator:
+    return client.get_paginator("list_client_vpc_connections"))
+```
+
+- [ListClientVpcConnectionsPaginator](./paginators.md#listclientvpcconnectionspaginator)
+- [ListClusterOperationsPaginator](./paginators.md#listclusteroperationspaginator)
+- [ListClusterOperationsV2Paginator](./paginators.md#listclusteroperationsv2paginator)
+- [ListClustersPaginator](./paginators.md#listclusterspaginator)
+- [ListClustersV2Paginator](./paginators.md#listclustersv2paginator)
+- [ListConfigurationRevisionsPaginator](./paginators.md#listconfigurationrevisionspaginator)
+- [ListConfigurationsPaginator](./paginators.md#listconfigurationspaginator)
+- [ListKafkaVersionsPaginator](./paginators.md#listkafkaversionspaginator)
+- [ListNodesPaginator](./paginators.md#listnodespaginator)
+- [ListScramSecretsPaginator](./paginators.md#listscramsecretspaginator)
+- [ListVpcConnectionsPaginator](./paginators.md#listvpcconnectionspaginator)
+
+
+
+
+
+
+
+
+## Literals
+
+Type annotations for [literals](./literals.md) used in methods and schema.
+
+```python
+# BrokerAZDistributionType usage example
+
+from types_aiobotocore_kafka.literals import BrokerAZDistributionType
+
+def get_value() -> BrokerAZDistributionType:
+    return "DEFAULT"
+```
+
+- [BrokerAZDistributionType](./literals.md#brokerazdistributiontype)
+- [ClientBrokerType](./literals.md#clientbrokertype)
+- [ClusterStateType](./literals.md#clusterstatetype)
+- [ClusterTypeType](./literals.md#clustertypetype)
+- [ConfigurationStateType](./literals.md#configurationstatetype)
+- [EnhancedMonitoringType](./literals.md#enhancedmonitoringtype)
+- [KafkaVersionStatusType](./literals.md#kafkaversionstatustype)
+- [ListClientVpcConnectionsPaginatorName](./literals.md#listclientvpcconnectionspaginatorname)
+- [ListClusterOperationsPaginatorName](./literals.md#listclusteroperationspaginatorname)
+- [ListClusterOperationsV2PaginatorName](./literals.md#listclusteroperationsv2paginatorname)
+- [ListClustersPaginatorName](./literals.md#listclusterspaginatorname)
+- [ListClustersV2PaginatorName](./literals.md#listclustersv2paginatorname)
+- [ListConfigurationRevisionsPaginatorName](./literals.md#listconfigurationrevisionspaginatorname)
+- [ListConfigurationsPaginatorName](./literals.md#listconfigurationspaginatorname)
+- [ListKafkaVersionsPaginatorName](./literals.md#listkafkaversionspaginatorname)
+- [ListNodesPaginatorName](./literals.md#listnodespaginatorname)
+- [ListScramSecretsPaginatorName](./literals.md#listscramsecretspaginatorname)
+- [ListVpcConnectionsPaginatorName](./literals.md#listvpcconnectionspaginatorname)
+- [NodeTypeType](./literals.md#nodetypetype)
+- [StorageModeType](./literals.md#storagemodetype)
+- [UserIdentityTypeType](./literals.md#useridentitytypetype)
+- [VpcConnectionStateType](./literals.md#vpcconnectionstatetype)
+- [KafkaServiceName](./literals.md#kafkaservicename)
+- [ServiceName](./literals.md#servicename)
+- [ResourceServiceName](./literals.md#resourceservicename)
+- [PaginatorName](./literals.md#paginatorname)
+- [RegionName](./literals.md#regionname)
+
+
+
+
+## Type definitions
+
+Type annotations for [type definitions](./type_defs.md) used in methods and schema.
+
+- [BatchAssociateScramSecretRequestRequestTypeDef](./type_defs.md#batchassociatescramsecretrequestrequesttypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [UnprocessedScramSecretTypeDef](./type_defs.md#unprocessedscramsecrettypedef)
+- [BatchDisassociateScramSecretRequestRequestTypeDef](./type_defs.md#batchdisassociatescramsecretrequestrequesttypedef)
+- [BlobTypeDef](./type_defs.md#blobtypedef)
+- [ProvisionedThroughputTypeDef](./type_defs.md#provisionedthroughputtypedef)
+- [CloudWatchLogsTypeDef](./type_defs.md#cloudwatchlogstypedef)
+- [FirehoseTypeDef](./type_defs.md#firehosetypedef)
+- [S3TypeDef](./type_defs.md#s3typedef)
+- [BrokerSoftwareInfoTypeDef](./type_defs.md#brokersoftwareinfotypedef)
+- [TlsTypeDef](./type_defs.md#tlstypedef)
+- [UnauthenticatedTypeDef](./type_defs.md#unauthenticatedtypedef)
+- [ClientVpcConnectionTypeDef](./type_defs.md#clientvpcconnectiontypedef)
+- [StateInfoTypeDef](./type_defs.md#stateinfotypedef)
+- [ErrorInfoTypeDef](./type_defs.md#errorinfotypedef)
+- [ClusterOperationStepInfoTypeDef](./type_defs.md#clusteroperationstepinfotypedef)
+- [ClusterOperationV2SummaryTypeDef](./type_defs.md#clusteroperationv2summarytypedef)
+- [CompatibleKafkaVersionTypeDef](./type_defs.md#compatiblekafkaversiontypedef)
+- [ConfigurationInfoTypeDef](./type_defs.md#configurationinfotypedef)
+- [ConfigurationRevisionTypeDef](./type_defs.md#configurationrevisiontypedef)
+- [PublicAccessTypeDef](./type_defs.md#publicaccesstypedef)
+- [CreateVpcConnectionRequestRequestTypeDef](./type_defs.md#createvpcconnectionrequestrequesttypedef)
+- [DeleteClusterPolicyRequestRequestTypeDef](./type_defs.md#deleteclusterpolicyrequestrequesttypedef)
+- [DeleteClusterRequestRequestTypeDef](./type_defs.md#deleteclusterrequestrequesttypedef)
+- [DeleteConfigurationRequestRequestTypeDef](./type_defs.md#deleteconfigurationrequestrequesttypedef)
+- [DeleteVpcConnectionRequestRequestTypeDef](./type_defs.md#deletevpcconnectionrequestrequesttypedef)
+- [DescribeClusterOperationRequestRequestTypeDef](./type_defs.md#describeclusteroperationrequestrequesttypedef)
+- [DescribeClusterOperationV2RequestRequestTypeDef](./type_defs.md#describeclusteroperationv2requestrequesttypedef)
+- [DescribeClusterRequestRequestTypeDef](./type_defs.md#describeclusterrequestrequesttypedef)
+- [DescribeClusterV2RequestRequestTypeDef](./type_defs.md#describeclusterv2requestrequesttypedef)
+- [DescribeConfigurationRequestRequestTypeDef](./type_defs.md#describeconfigurationrequestrequesttypedef)
+- [DescribeConfigurationRevisionRequestRequestTypeDef](./type_defs.md#describeconfigurationrevisionrequestrequesttypedef)
+- [DescribeVpcConnectionRequestRequestTypeDef](./type_defs.md#describevpcconnectionrequestrequesttypedef)
+- [EncryptionAtRestTypeDef](./type_defs.md#encryptionatresttypedef)
+- [EncryptionInTransitTypeDef](./type_defs.md#encryptionintransittypedef)
+- [GetBootstrapBrokersRequestRequestTypeDef](./type_defs.md#getbootstrapbrokersrequestrequesttypedef)
+- [GetClusterPolicyRequestRequestTypeDef](./type_defs.md#getclusterpolicyrequestrequesttypedef)
+- [GetCompatibleKafkaVersionsRequestRequestTypeDef](./type_defs.md#getcompatiblekafkaversionsrequestrequesttypedef)
+- [IamTypeDef](./type_defs.md#iamtypedef)
+- [JmxExporterInfoTypeDef](./type_defs.md#jmxexporterinfotypedef)
+- [JmxExporterTypeDef](./type_defs.md#jmxexportertypedef)
+- [KafkaVersionTypeDef](./type_defs.md#kafkaversiontypedef)
+- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+- [ListClientVpcConnectionsRequestRequestTypeDef](./type_defs.md#listclientvpcconnectionsrequestrequesttypedef)
+- [ListClusterOperationsRequestRequestTypeDef](./type_defs.md#listclusteroperationsrequestrequesttypedef)
+- [ListClusterOperationsV2RequestRequestTypeDef](./type_defs.md#listclusteroperationsv2requestrequesttypedef)
+- [ListClustersRequestRequestTypeDef](./type_defs.md#listclustersrequestrequesttypedef)
+- [ListClustersV2RequestRequestTypeDef](./type_defs.md#listclustersv2requestrequesttypedef)
+- [ListConfigurationRevisionsRequestRequestTypeDef](./type_defs.md#listconfigurationrevisionsrequestrequesttypedef)
+- [ListConfigurationsRequestRequestTypeDef](./type_defs.md#listconfigurationsrequestrequesttypedef)
+- [ListKafkaVersionsRequestRequestTypeDef](./type_defs.md#listkafkaversionsrequestrequesttypedef)
+- [ListNodesRequestRequestTypeDef](./type_defs.md#listnodesrequestrequesttypedef)
+- [ListScramSecretsRequestRequestTypeDef](./type_defs.md#listscramsecretsrequestrequesttypedef)
+- [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
+- [ListVpcConnectionsRequestRequestTypeDef](./type_defs.md#listvpcconnectionsrequestrequesttypedef)
+- [VpcConnectionTypeDef](./type_defs.md#vpcconnectiontypedef)
+- [NodeExporterInfoTypeDef](./type_defs.md#nodeexporterinfotypedef)
+- [NodeExporterTypeDef](./type_defs.md#nodeexportertypedef)
+- [ZookeeperNodeInfoTypeDef](./type_defs.md#zookeepernodeinfotypedef)
+- [PutClusterPolicyRequestRequestTypeDef](./type_defs.md#putclusterpolicyrequestrequesttypedef)
+- [RebootBrokerRequestRequestTypeDef](./type_defs.md#rebootbrokerrequestrequesttypedef)
+- [RejectClientVpcConnectionRequestRequestTypeDef](./type_defs.md#rejectclientvpcconnectionrequestrequesttypedef)
+- [ScramTypeDef](./type_defs.md#scramtypedef)
+- [VpcConfigTypeDef](./type_defs.md#vpcconfigtypedef)
+- [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
+- [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
+- [UpdateBrokerCountRequestRequestTypeDef](./type_defs.md#updatebrokercountrequestrequesttypedef)
+- [UpdateBrokerTypeRequestRequestTypeDef](./type_defs.md#updatebrokertyperequestrequesttypedef)
+- [UserIdentityTypeDef](./type_defs.md#useridentitytypedef)
+- [VpcConnectivityTlsTypeDef](./type_defs.md#vpcconnectivitytlstypedef)
+- [VpcConnectivityIamTypeDef](./type_defs.md#vpcconnectivityiamtypedef)
+- [VpcConnectivityScramTypeDef](./type_defs.md#vpcconnectivityscramtypedef)
+- [CreateClusterResponseTypeDef](./type_defs.md#createclusterresponsetypedef)
+- [CreateClusterV2ResponseTypeDef](./type_defs.md#createclusterv2responsetypedef)
+- [CreateVpcConnectionResponseTypeDef](./type_defs.md#createvpcconnectionresponsetypedef)
+- [DeleteClusterResponseTypeDef](./type_defs.md#deleteclusterresponsetypedef)
+- [DeleteConfigurationResponseTypeDef](./type_defs.md#deleteconfigurationresponsetypedef)
+- [DeleteVpcConnectionResponseTypeDef](./type_defs.md#deletevpcconnectionresponsetypedef)
+- [DescribeConfigurationRevisionResponseTypeDef](./type_defs.md#describeconfigurationrevisionresponsetypedef)
+- [DescribeVpcConnectionResponseTypeDef](./type_defs.md#describevpcconnectionresponsetypedef)
+- [EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef)
+- [GetBootstrapBrokersResponseTypeDef](./type_defs.md#getbootstrapbrokersresponsetypedef)
+- [GetClusterPolicyResponseTypeDef](./type_defs.md#getclusterpolicyresponsetypedef)
+- [ListScramSecretsResponseTypeDef](./type_defs.md#listscramsecretsresponsetypedef)
+- [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
+- [PutClusterPolicyResponseTypeDef](./type_defs.md#putclusterpolicyresponsetypedef)
+- [RebootBrokerResponseTypeDef](./type_defs.md#rebootbrokerresponsetypedef)
+- [UpdateBrokerCountResponseTypeDef](./type_defs.md#updatebrokercountresponsetypedef)
+- [UpdateBrokerStorageResponseTypeDef](./type_defs.md#updatebrokerstorageresponsetypedef)
+- [UpdateBrokerTypeResponseTypeDef](./type_defs.md#updatebrokertyperesponsetypedef)
+- [UpdateClusterConfigurationResponseTypeDef](./type_defs.md#updateclusterconfigurationresponsetypedef)
+- [UpdateClusterKafkaVersionResponseTypeDef](./type_defs.md#updateclusterkafkaversionresponsetypedef)
+- [UpdateConnectivityResponseTypeDef](./type_defs.md#updateconnectivityresponsetypedef)
+- [UpdateMonitoringResponseTypeDef](./type_defs.md#updatemonitoringresponsetypedef)
+- [UpdateSecurityResponseTypeDef](./type_defs.md#updatesecurityresponsetypedef)
+- [UpdateStorageResponseTypeDef](./type_defs.md#updatestorageresponsetypedef)
+- [BatchAssociateScramSecretResponseTypeDef](./type_defs.md#batchassociatescramsecretresponsetypedef)
+- [BatchDisassociateScramSecretResponseTypeDef](./type_defs.md#batchdisassociatescramsecretresponsetypedef)
+- [CreateConfigurationRequestRequestTypeDef](./type_defs.md#createconfigurationrequestrequesttypedef)
+- [UpdateConfigurationRequestRequestTypeDef](./type_defs.md#updateconfigurationrequestrequesttypedef)
+- [BrokerEBSVolumeInfoTypeDef](./type_defs.md#brokerebsvolumeinfotypedef)
+- [EBSStorageInfoTypeDef](./type_defs.md#ebsstorageinfotypedef)
+- [UpdateStorageRequestRequestTypeDef](./type_defs.md#updatestoragerequestrequesttypedef)
+- [BrokerLogsTypeDef](./type_defs.md#brokerlogstypedef)
+- [BrokerNodeInfoTypeDef](./type_defs.md#brokernodeinfotypedef)
+- [ListClientVpcConnectionsResponseTypeDef](./type_defs.md#listclientvpcconnectionsresponsetypedef)
+- [ClusterOperationStepTypeDef](./type_defs.md#clusteroperationsteptypedef)
+- [ListClusterOperationsV2ResponseTypeDef](./type_defs.md#listclusteroperationsv2responsetypedef)
+- [GetCompatibleKafkaVersionsResponseTypeDef](./type_defs.md#getcompatiblekafkaversionsresponsetypedef)
+- [UpdateClusterConfigurationRequestRequestTypeDef](./type_defs.md#updateclusterconfigurationrequestrequesttypedef)
+- [UpdateClusterKafkaVersionRequestRequestTypeDef](./type_defs.md#updateclusterkafkaversionrequestrequesttypedef)
+- [ConfigurationTypeDef](./type_defs.md#configurationtypedef)
+- [CreateConfigurationResponseTypeDef](./type_defs.md#createconfigurationresponsetypedef)
+- [DescribeConfigurationResponseTypeDef](./type_defs.md#describeconfigurationresponsetypedef)
+- [ListConfigurationRevisionsResponseTypeDef](./type_defs.md#listconfigurationrevisionsresponsetypedef)
+- [UpdateConfigurationResponseTypeDef](./type_defs.md#updateconfigurationresponsetypedef)
+- [EncryptionInfoTypeDef](./type_defs.md#encryptioninfotypedef)
+- [ServerlessSaslTypeDef](./type_defs.md#serverlesssasltypedef)
+- [ListKafkaVersionsResponseTypeDef](./type_defs.md#listkafkaversionsresponsetypedef)
+- [ListClientVpcConnectionsRequestListClientVpcConnectionsPaginateTypeDef](./type_defs.md#listclientvpcconnectionsrequestlistclientvpcconnectionspaginatetypedef)
+- [ListClusterOperationsRequestListClusterOperationsPaginateTypeDef](./type_defs.md#listclusteroperationsrequestlistclusteroperationspaginatetypedef)
+- [ListClusterOperationsV2RequestListClusterOperationsV2PaginateTypeDef](./type_defs.md#listclusteroperationsv2requestlistclusteroperationsv2paginatetypedef)
+- [ListClustersRequestListClustersPaginateTypeDef](./type_defs.md#listclustersrequestlistclusterspaginatetypedef)
+- [ListClustersV2RequestListClustersV2PaginateTypeDef](./type_defs.md#listclustersv2requestlistclustersv2paginatetypedef)
+- [ListConfigurationRevisionsRequestListConfigurationRevisionsPaginateTypeDef](./type_defs.md#listconfigurationrevisionsrequestlistconfigurationrevisionspaginatetypedef)
+- [ListConfigurationsRequestListConfigurationsPaginateTypeDef](./type_defs.md#listconfigurationsrequestlistconfigurationspaginatetypedef)
+- [ListKafkaVersionsRequestListKafkaVersionsPaginateTypeDef](./type_defs.md#listkafkaversionsrequestlistkafkaversionspaginatetypedef)
+- [ListNodesRequestListNodesPaginateTypeDef](./type_defs.md#listnodesrequestlistnodespaginatetypedef)
+- [ListScramSecretsRequestListScramSecretsPaginateTypeDef](./type_defs.md#listscramsecretsrequestlistscramsecretspaginatetypedef)
+- [ListVpcConnectionsRequestListVpcConnectionsPaginateTypeDef](./type_defs.md#listvpcconnectionsrequestlistvpcconnectionspaginatetypedef)
+- [ListVpcConnectionsResponseTypeDef](./type_defs.md#listvpcconnectionsresponsetypedef)
+- [PrometheusInfoTypeDef](./type_defs.md#prometheusinfotypedef)
+- [PrometheusTypeDef](./type_defs.md#prometheustypedef)
+- [SaslTypeDef](./type_defs.md#sasltypedef)
+- [VpcConnectionInfoServerlessTypeDef](./type_defs.md#vpcconnectioninfoserverlesstypedef)
+- [VpcConnectionInfoTypeDef](./type_defs.md#vpcconnectioninfotypedef)
+- [VpcConnectivitySaslTypeDef](./type_defs.md#vpcconnectivitysasltypedef)
+- [UpdateBrokerStorageRequestRequestTypeDef](./type_defs.md#updatebrokerstoragerequestrequesttypedef)
+- [StorageInfoTypeDef](./type_defs.md#storageinfotypedef)
+- [LoggingInfoTypeDef](./type_defs.md#logginginfotypedef)
+- [NodeInfoTypeDef](./type_defs.md#nodeinfotypedef)
+- [ListConfigurationsResponseTypeDef](./type_defs.md#listconfigurationsresponsetypedef)
+- [ServerlessClientAuthenticationTypeDef](./type_defs.md#serverlessclientauthenticationtypedef)
+- [OpenMonitoringInfoTypeDef](./type_defs.md#openmonitoringinfotypedef)
+- [OpenMonitoringTypeDef](./type_defs.md#openmonitoringtypedef)
+- [ClientAuthenticationTypeDef](./type_defs.md#clientauthenticationtypedef)
+- [ClusterOperationV2ServerlessTypeDef](./type_defs.md#clusteroperationv2serverlesstypedef)
+- [VpcConnectivityClientAuthenticationTypeDef](./type_defs.md#vpcconnectivityclientauthenticationtypedef)
+- [ListNodesResponseTypeDef](./type_defs.md#listnodesresponsetypedef)
+- [ServerlessRequestTypeDef](./type_defs.md#serverlessrequesttypedef)
+- [ServerlessTypeDef](./type_defs.md#serverlesstypedef)
+- [UpdateMonitoringRequestRequestTypeDef](./type_defs.md#updatemonitoringrequestrequesttypedef)
+- [UpdateSecurityRequestRequestTypeDef](./type_defs.md#updatesecurityrequestrequesttypedef)
+- [VpcConnectivityTypeDef](./type_defs.md#vpcconnectivitytypedef)
+- [ConnectivityInfoTypeDef](./type_defs.md#connectivityinfotypedef)
+- [BrokerNodeGroupInfoTypeDef](./type_defs.md#brokernodegroupinfotypedef)
+- [MutableClusterInfoTypeDef](./type_defs.md#mutableclusterinfotypedef)
+- [UpdateConnectivityRequestRequestTypeDef](./type_defs.md#updateconnectivityrequestrequesttypedef)
+- [ClusterInfoTypeDef](./type_defs.md#clusterinfotypedef)
+- [CreateClusterRequestRequestTypeDef](./type_defs.md#createclusterrequestrequesttypedef)
+- [ProvisionedRequestTypeDef](./type_defs.md#provisionedrequesttypedef)
+- [ProvisionedTypeDef](./type_defs.md#provisionedtypedef)
+- [ClusterOperationInfoTypeDef](./type_defs.md#clusteroperationinfotypedef)
+- [ClusterOperationV2ProvisionedTypeDef](./type_defs.md#clusteroperationv2provisionedtypedef)
+- [DescribeClusterResponseTypeDef](./type_defs.md#describeclusterresponsetypedef)
+- [ListClustersResponseTypeDef](./type_defs.md#listclustersresponsetypedef)
+- [CreateClusterV2RequestRequestTypeDef](./type_defs.md#createclusterv2requestrequesttypedef)
+- [ClusterTypeDef](./type_defs.md#clustertypedef)
+- [DescribeClusterOperationResponseTypeDef](./type_defs.md#describeclusteroperationresponsetypedef)
+- [ListClusterOperationsResponseTypeDef](./type_defs.md#listclusteroperationsresponsetypedef)
+- [ClusterOperationV2TypeDef](./type_defs.md#clusteroperationv2typedef)
+- [DescribeClusterV2ResponseTypeDef](./type_defs.md#describeclusterv2responsetypedef)
+- [ListClustersV2ResponseTypeDef](./type_defs.md#listclustersv2responsetypedef)
+- [DescribeClusterOperationV2ResponseTypeDef](./type_defs.md#describeclusteroperationv2responsetypedef)
+

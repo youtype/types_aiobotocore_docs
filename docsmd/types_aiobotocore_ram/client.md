@@ -1,0 +1,1451 @@
+# RAMClient
+
+> [Index](../README.md) > [RAM](./README.md) > RAMClient
+
+!!! note ""
+
+    Auto-generated documentation for [RAM](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM)
+    type annotations stubs module [types-aiobotocore-ram](https://pypi.org/project/types-aiobotocore-ram/).
+
+## RAMClient
+
+Type annotations and code completion for `#!python session.create_client("ram")`
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client)
+
+```python
+RAMClient usage example
+
+from aiobotocore.session import get_session
+from types_aiobotocore_ram.client import RAMClient
+
+session = get_session()
+async with session.create_client("ram") as client:
+    client: RAMClient
+```
+
+## Exceptions
+
+
+`aiobotocore` client exceptions are generated in runtime.
+This class provides code completion for `#!python session.create_client("ram").exceptions` structure.
+
+```python
+RAMClient.exceptions usage example
+
+async with session.create_client("ram") as client:
+    try:
+        do_something(client)
+    except (
+            client.ClientError,
+        client.IdempotentParameterMismatchException,
+        client.InvalidClientTokenException,
+        client.InvalidMaxResultsException,
+        client.InvalidNextTokenException,
+        client.InvalidParameterException,
+        client.InvalidPolicyException,
+        client.InvalidResourceTypeException,
+        client.InvalidStateTransitionException,
+        client.MalformedArnException,
+        client.MalformedPolicyTemplateException,
+        client.MissingRequiredParameterException,
+        client.OperationNotPermittedException,
+        client.PermissionAlreadyExistsException,
+        client.PermissionLimitExceededException,
+        client.PermissionVersionsLimitExceededException,
+        client.ResourceArnNotFoundException,
+        client.ResourceShareInvitationAlreadyAcceptedException,
+        client.ResourceShareInvitationAlreadyRejectedException,
+        client.ResourceShareInvitationArnNotFoundException,
+        client.ResourceShareInvitationExpiredException,
+        client.ResourceShareLimitExceededException,
+        client.ServerInternalException,
+        client.ServiceUnavailableException,
+        client.TagLimitExceededException,
+        client.TagPolicyViolationException,
+        client.ThrottlingException,
+        client.UnknownResourceException,
+        client.UnmatchedPolicyPermissionException,
+    ) as e:
+        print(e)
+```
+
+```python
+RAMClient usage type checking example
+
+from types_aiobotocore_ram.client import Exceptions
+
+def handle_error(exc: Exceptions.ClientError) -> None:
+    ...
+```
+
+
+## Methods
+
+
+### accept\_resource\_share\_invitation
+
+Accepts an invitation to a resource share from another Amazon Web Services
+account.
+
+Type annotations and code completion for `#!python session.create_client("ram").accept_resource_share_invitation` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.accept_resource_share_invitation)
+
+```python
+# accept_resource_share_invitation method definition
+
+await def accept_resource_share_invitation(
+    self,
+    *,
+    resourceShareInvitationArn: str,
+    clientToken: str = ...,
+) -> AcceptResourceShareInvitationResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: AcceptResourceShareInvitationResponseTypeDef](./type_defs.md#acceptresourceshareinvitationresponsetypedef) 
+
+
+```python
+# accept_resource_share_invitation method usage example with argument unpacking
+
+kwargs: AcceptResourceShareInvitationRequestRequestTypeDef = {  # (1)
+    "resourceShareInvitationArn": ...,
+}
+
+parent.accept_resource_share_invitation(**kwargs)
+```
+
+1. See [:material-code-braces: AcceptResourceShareInvitationRequestRequestTypeDef](./type_defs.md#acceptresourceshareinvitationrequestrequesttypedef) 
+
+### associate\_resource\_share
+
+Adds the specified list of principals and list of resources to a resource share.
+
+Type annotations and code completion for `#!python session.create_client("ram").associate_resource_share` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.associate_resource_share)
+
+```python
+# associate_resource_share method definition
+
+await def associate_resource_share(
+    self,
+    *,
+    resourceShareArn: str,
+    resourceArns: Sequence[str] = ...,
+    principals: Sequence[str] = ...,
+    clientToken: str = ...,
+    sources: Sequence[str] = ...,
+) -> AssociateResourceShareResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: AssociateResourceShareResponseTypeDef](./type_defs.md#associateresourceshareresponsetypedef) 
+
+
+```python
+# associate_resource_share method usage example with argument unpacking
+
+kwargs: AssociateResourceShareRequestRequestTypeDef = {  # (1)
+    "resourceShareArn": ...,
+}
+
+parent.associate_resource_share(**kwargs)
+```
+
+1. See [:material-code-braces: AssociateResourceShareRequestRequestTypeDef](./type_defs.md#associateresourcesharerequestrequesttypedef) 
+
+### associate\_resource\_share\_permission
+
+Adds or replaces the RAM permission for a resource type included in a resource
+share.
+
+Type annotations and code completion for `#!python session.create_client("ram").associate_resource_share_permission` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.associate_resource_share_permission)
+
+```python
+# associate_resource_share_permission method definition
+
+await def associate_resource_share_permission(
+    self,
+    *,
+    resourceShareArn: str,
+    permissionArn: str,
+    replace: bool = ...,
+    clientToken: str = ...,
+    permissionVersion: int = ...,
+) -> AssociateResourceSharePermissionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: AssociateResourceSharePermissionResponseTypeDef](./type_defs.md#associateresourcesharepermissionresponsetypedef) 
+
+
+```python
+# associate_resource_share_permission method usage example with argument unpacking
+
+kwargs: AssociateResourceSharePermissionRequestRequestTypeDef = {  # (1)
+    "resourceShareArn": ...,
+    "permissionArn": ...,
+}
+
+parent.associate_resource_share_permission(**kwargs)
+```
+
+1. See [:material-code-braces: AssociateResourceSharePermissionRequestRequestTypeDef](./type_defs.md#associateresourcesharepermissionrequestrequesttypedef) 
+
+### can\_paginate
+
+Check if an operation can be paginated.
+
+Type annotations and code completion for `#!python session.create_client("ram").can_paginate` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.can_paginate)
+
+```python
+# can_paginate method definition
+
+def can_paginate(
+    self,
+    operation_name: str,
+) -> bool:
+    ...
+```
+
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.create_client("ram").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.close)
+
+```python
+# close method definition
+
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
+### create\_permission
+
+Creates a customer managed permission for a specified resource type that you can
+attach to resource shares.
+
+Type annotations and code completion for `#!python session.create_client("ram").create_permission` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.create_permission)
+
+```python
+# create_permission method definition
+
+await def create_permission(
+    self,
+    *,
+    name: str,
+    resourceType: str,
+    policyTemplate: str,
+    clientToken: str = ...,
+    tags: Sequence[TagTypeDef] = ...,  # (1)
+) -> CreatePermissionResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+2. See [:material-code-braces: CreatePermissionResponseTypeDef](./type_defs.md#createpermissionresponsetypedef) 
+
+
+```python
+# create_permission method usage example with argument unpacking
+
+kwargs: CreatePermissionRequestRequestTypeDef = {  # (1)
+    "name": ...,
+    "resourceType": ...,
+    "policyTemplate": ...,
+}
+
+parent.create_permission(**kwargs)
+```
+
+1. See [:material-code-braces: CreatePermissionRequestRequestTypeDef](./type_defs.md#createpermissionrequestrequesttypedef) 
+
+### create\_permission\_version
+
+Creates a new version of the specified customer managed permission.
+
+Type annotations and code completion for `#!python session.create_client("ram").create_permission_version` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.create_permission_version)
+
+```python
+# create_permission_version method definition
+
+await def create_permission_version(
+    self,
+    *,
+    permissionArn: str,
+    policyTemplate: str,
+    clientToken: str = ...,
+) -> CreatePermissionVersionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: CreatePermissionVersionResponseTypeDef](./type_defs.md#createpermissionversionresponsetypedef) 
+
+
+```python
+# create_permission_version method usage example with argument unpacking
+
+kwargs: CreatePermissionVersionRequestRequestTypeDef = {  # (1)
+    "permissionArn": ...,
+    "policyTemplate": ...,
+}
+
+parent.create_permission_version(**kwargs)
+```
+
+1. See [:material-code-braces: CreatePermissionVersionRequestRequestTypeDef](./type_defs.md#createpermissionversionrequestrequesttypedef) 
+
+### create\_resource\_share
+
+Creates a resource share.
+
+Type annotations and code completion for `#!python session.create_client("ram").create_resource_share` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.create_resource_share)
+
+```python
+# create_resource_share method definition
+
+await def create_resource_share(
+    self,
+    *,
+    name: str,
+    resourceArns: Sequence[str] = ...,
+    principals: Sequence[str] = ...,
+    tags: Sequence[TagTypeDef] = ...,  # (1)
+    allowExternalPrincipals: bool = ...,
+    clientToken: str = ...,
+    permissionArns: Sequence[str] = ...,
+    sources: Sequence[str] = ...,
+) -> CreateResourceShareResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+2. See [:material-code-braces: CreateResourceShareResponseTypeDef](./type_defs.md#createresourceshareresponsetypedef) 
+
+
+```python
+# create_resource_share method usage example with argument unpacking
+
+kwargs: CreateResourceShareRequestRequestTypeDef = {  # (1)
+    "name": ...,
+}
+
+parent.create_resource_share(**kwargs)
+```
+
+1. See [:material-code-braces: CreateResourceShareRequestRequestTypeDef](./type_defs.md#createresourcesharerequestrequesttypedef) 
+
+### delete\_permission
+
+Deletes the specified customer managed permission in the Amazon Web Services
+Region in which you call this operation.
+
+Type annotations and code completion for `#!python session.create_client("ram").delete_permission` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.delete_permission)
+
+```python
+# delete_permission method definition
+
+await def delete_permission(
+    self,
+    *,
+    permissionArn: str,
+    clientToken: str = ...,
+) -> DeletePermissionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DeletePermissionResponseTypeDef](./type_defs.md#deletepermissionresponsetypedef) 
+
+
+```python
+# delete_permission method usage example with argument unpacking
+
+kwargs: DeletePermissionRequestRequestTypeDef = {  # (1)
+    "permissionArn": ...,
+}
+
+parent.delete_permission(**kwargs)
+```
+
+1. See [:material-code-braces: DeletePermissionRequestRequestTypeDef](./type_defs.md#deletepermissionrequestrequesttypedef) 
+
+### delete\_permission\_version
+
+Deletes one version of a customer managed permission.
+
+Type annotations and code completion for `#!python session.create_client("ram").delete_permission_version` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.delete_permission_version)
+
+```python
+# delete_permission_version method definition
+
+await def delete_permission_version(
+    self,
+    *,
+    permissionArn: str,
+    permissionVersion: int,
+    clientToken: str = ...,
+) -> DeletePermissionVersionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DeletePermissionVersionResponseTypeDef](./type_defs.md#deletepermissionversionresponsetypedef) 
+
+
+```python
+# delete_permission_version method usage example with argument unpacking
+
+kwargs: DeletePermissionVersionRequestRequestTypeDef = {  # (1)
+    "permissionArn": ...,
+    "permissionVersion": ...,
+}
+
+parent.delete_permission_version(**kwargs)
+```
+
+1. See [:material-code-braces: DeletePermissionVersionRequestRequestTypeDef](./type_defs.md#deletepermissionversionrequestrequesttypedef) 
+
+### delete\_resource\_share
+
+Deletes the specified resource share.
+
+Type annotations and code completion for `#!python session.create_client("ram").delete_resource_share` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.delete_resource_share)
+
+```python
+# delete_resource_share method definition
+
+await def delete_resource_share(
+    self,
+    *,
+    resourceShareArn: str,
+    clientToken: str = ...,
+) -> DeleteResourceShareResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DeleteResourceShareResponseTypeDef](./type_defs.md#deleteresourceshareresponsetypedef) 
+
+
+```python
+# delete_resource_share method usage example with argument unpacking
+
+kwargs: DeleteResourceShareRequestRequestTypeDef = {  # (1)
+    "resourceShareArn": ...,
+}
+
+parent.delete_resource_share(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteResourceShareRequestRequestTypeDef](./type_defs.md#deleteresourcesharerequestrequesttypedef) 
+
+### disassociate\_resource\_share
+
+Removes the specified principals or resources from participating in the
+specified resource share.
+
+Type annotations and code completion for `#!python session.create_client("ram").disassociate_resource_share` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.disassociate_resource_share)
+
+```python
+# disassociate_resource_share method definition
+
+await def disassociate_resource_share(
+    self,
+    *,
+    resourceShareArn: str,
+    resourceArns: Sequence[str] = ...,
+    principals: Sequence[str] = ...,
+    clientToken: str = ...,
+    sources: Sequence[str] = ...,
+) -> DisassociateResourceShareResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DisassociateResourceShareResponseTypeDef](./type_defs.md#disassociateresourceshareresponsetypedef) 
+
+
+```python
+# disassociate_resource_share method usage example with argument unpacking
+
+kwargs: DisassociateResourceShareRequestRequestTypeDef = {  # (1)
+    "resourceShareArn": ...,
+}
+
+parent.disassociate_resource_share(**kwargs)
+```
+
+1. See [:material-code-braces: DisassociateResourceShareRequestRequestTypeDef](./type_defs.md#disassociateresourcesharerequestrequesttypedef) 
+
+### disassociate\_resource\_share\_permission
+
+Removes a managed permission from a resource share.
+
+Type annotations and code completion for `#!python session.create_client("ram").disassociate_resource_share_permission` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.disassociate_resource_share_permission)
+
+```python
+# disassociate_resource_share_permission method definition
+
+await def disassociate_resource_share_permission(
+    self,
+    *,
+    resourceShareArn: str,
+    permissionArn: str,
+    clientToken: str = ...,
+) -> DisassociateResourceSharePermissionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DisassociateResourceSharePermissionResponseTypeDef](./type_defs.md#disassociateresourcesharepermissionresponsetypedef) 
+
+
+```python
+# disassociate_resource_share_permission method usage example with argument unpacking
+
+kwargs: DisassociateResourceSharePermissionRequestRequestTypeDef = {  # (1)
+    "resourceShareArn": ...,
+    "permissionArn": ...,
+}
+
+parent.disassociate_resource_share_permission(**kwargs)
+```
+
+1. See [:material-code-braces: DisassociateResourceSharePermissionRequestRequestTypeDef](./type_defs.md#disassociateresourcesharepermissionrequestrequesttypedef) 
+
+### enable\_sharing\_with\_aws\_organization
+
+Enables resource sharing within your organization in Organizations.
+
+Type annotations and code completion for `#!python session.create_client("ram").enable_sharing_with_aws_organization` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.enable_sharing_with_aws_organization)
+
+```python
+# enable_sharing_with_aws_organization method definition
+
+await def enable_sharing_with_aws_organization(
+    self,
+) -> EnableSharingWithAwsOrganizationResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: EnableSharingWithAwsOrganizationResponseTypeDef](./type_defs.md#enablesharingwithawsorganizationresponsetypedef) 
+
+### generate\_presigned\_url
+
+Generate a presigned url given a client, its method, and arguments.
+
+Type annotations and code completion for `#!python session.create_client("ram").generate_presigned_url` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.generate_presigned_url)
+
+```python
+# generate_presigned_url method definition
+
+await def generate_presigned_url(
+    self,
+    ClientMethod: str,
+    Params: Mapping[str, Any] = ...,
+    ExpiresIn: int = 3600,
+    HttpMethod: str = ...,
+) -> str:
+    ...
+```
+
+
+### get\_permission
+
+Retrieves the contents of a managed permission in JSON format.
+
+Type annotations and code completion for `#!python session.create_client("ram").get_permission` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.get_permission)
+
+```python
+# get_permission method definition
+
+await def get_permission(
+    self,
+    *,
+    permissionArn: str,
+    permissionVersion: int = ...,
+) -> GetPermissionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetPermissionResponseTypeDef](./type_defs.md#getpermissionresponsetypedef) 
+
+
+```python
+# get_permission method usage example with argument unpacking
+
+kwargs: GetPermissionRequestRequestTypeDef = {  # (1)
+    "permissionArn": ...,
+}
+
+parent.get_permission(**kwargs)
+```
+
+1. See [:material-code-braces: GetPermissionRequestRequestTypeDef](./type_defs.md#getpermissionrequestrequesttypedef) 
+
+### get\_resource\_policies
+
+Retrieves the resource policies for the specified resources that you own and
+have shared.
+
+Type annotations and code completion for `#!python session.create_client("ram").get_resource_policies` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.get_resource_policies)
+
+```python
+# get_resource_policies method definition
+
+await def get_resource_policies(
+    self,
+    *,
+    resourceArns: Sequence[str],
+    principal: str = ...,
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> GetResourcePoliciesResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetResourcePoliciesResponseTypeDef](./type_defs.md#getresourcepoliciesresponsetypedef) 
+
+
+```python
+# get_resource_policies method usage example with argument unpacking
+
+kwargs: GetResourcePoliciesRequestRequestTypeDef = {  # (1)
+    "resourceArns": ...,
+}
+
+parent.get_resource_policies(**kwargs)
+```
+
+1. See [:material-code-braces: GetResourcePoliciesRequestRequestTypeDef](./type_defs.md#getresourcepoliciesrequestrequesttypedef) 
+
+### get\_resource\_share\_associations
+
+Retrieves the lists of resources and principals that associated for resource
+shares that you own.
+
+Type annotations and code completion for `#!python session.create_client("ram").get_resource_share_associations` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.get_resource_share_associations)
+
+```python
+# get_resource_share_associations method definition
+
+await def get_resource_share_associations(
+    self,
+    *,
+    associationType: ResourceShareAssociationTypeType,  # (1)
+    resourceShareArns: Sequence[str] = ...,
+    resourceArn: str = ...,
+    principal: str = ...,
+    associationStatus: ResourceShareAssociationStatusType = ...,  # (2)
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> GetResourceShareAssociationsResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-brackets: ResourceShareAssociationTypeType](./literals.md#resourceshareassociationtypetype) 
+2. See [:material-code-brackets: ResourceShareAssociationStatusType](./literals.md#resourceshareassociationstatustype) 
+3. See [:material-code-braces: GetResourceShareAssociationsResponseTypeDef](./type_defs.md#getresourceshareassociationsresponsetypedef) 
+
+
+```python
+# get_resource_share_associations method usage example with argument unpacking
+
+kwargs: GetResourceShareAssociationsRequestRequestTypeDef = {  # (1)
+    "associationType": ...,
+}
+
+parent.get_resource_share_associations(**kwargs)
+```
+
+1. See [:material-code-braces: GetResourceShareAssociationsRequestRequestTypeDef](./type_defs.md#getresourceshareassociationsrequestrequesttypedef) 
+
+### get\_resource\_share\_invitations
+
+Retrieves details about invitations that you have received for resource shares.
+
+Type annotations and code completion for `#!python session.create_client("ram").get_resource_share_invitations` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.get_resource_share_invitations)
+
+```python
+# get_resource_share_invitations method definition
+
+await def get_resource_share_invitations(
+    self,
+    *,
+    resourceShareInvitationArns: Sequence[str] = ...,
+    resourceShareArns: Sequence[str] = ...,
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> GetResourceShareInvitationsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetResourceShareInvitationsResponseTypeDef](./type_defs.md#getresourceshareinvitationsresponsetypedef) 
+
+
+```python
+# get_resource_share_invitations method usage example with argument unpacking
+
+kwargs: GetResourceShareInvitationsRequestRequestTypeDef = {  # (1)
+    "resourceShareInvitationArns": ...,
+}
+
+parent.get_resource_share_invitations(**kwargs)
+```
+
+1. See [:material-code-braces: GetResourceShareInvitationsRequestRequestTypeDef](./type_defs.md#getresourceshareinvitationsrequestrequesttypedef) 
+
+### get\_resource\_shares
+
+Retrieves details about the resource shares that you own or that are shared with
+you.
+
+Type annotations and code completion for `#!python session.create_client("ram").get_resource_shares` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.get_resource_shares)
+
+```python
+# get_resource_shares method definition
+
+await def get_resource_shares(
+    self,
+    *,
+    resourceOwner: ResourceOwnerType,  # (1)
+    resourceShareArns: Sequence[str] = ...,
+    resourceShareStatus: ResourceShareStatusType = ...,  # (2)
+    name: str = ...,
+    tagFilters: Sequence[TagFilterTypeDef] = ...,  # (3)
+    nextToken: str = ...,
+    maxResults: int = ...,
+    permissionArn: str = ...,
+    permissionVersion: int = ...,
+) -> GetResourceSharesResponseTypeDef:  # (4)
+    ...
+```
+
+1. See [:material-code-brackets: ResourceOwnerType](./literals.md#resourceownertype) 
+2. See [:material-code-brackets: ResourceShareStatusType](./literals.md#resourcesharestatustype) 
+3. See [:material-code-braces: TagFilterTypeDef](./type_defs.md#tagfiltertypedef) 
+4. See [:material-code-braces: GetResourceSharesResponseTypeDef](./type_defs.md#getresourcesharesresponsetypedef) 
+
+
+```python
+# get_resource_shares method usage example with argument unpacking
+
+kwargs: GetResourceSharesRequestRequestTypeDef = {  # (1)
+    "resourceOwner": ...,
+}
+
+parent.get_resource_shares(**kwargs)
+```
+
+1. See [:material-code-braces: GetResourceSharesRequestRequestTypeDef](./type_defs.md#getresourcesharesrequestrequesttypedef) 
+
+### list\_pending\_invitation\_resources
+
+Lists the resources in a resource share that is shared with you but for which
+the invitation is still `PENDING`.
+
+Type annotations and code completion for `#!python session.create_client("ram").list_pending_invitation_resources` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.list_pending_invitation_resources)
+
+```python
+# list_pending_invitation_resources method definition
+
+await def list_pending_invitation_resources(
+    self,
+    *,
+    resourceShareInvitationArn: str,
+    nextToken: str = ...,
+    maxResults: int = ...,
+    resourceRegionScope: ResourceRegionScopeFilterType = ...,  # (1)
+) -> ListPendingInvitationResourcesResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: ResourceRegionScopeFilterType](./literals.md#resourceregionscopefiltertype) 
+2. See [:material-code-braces: ListPendingInvitationResourcesResponseTypeDef](./type_defs.md#listpendinginvitationresourcesresponsetypedef) 
+
+
+```python
+# list_pending_invitation_resources method usage example with argument unpacking
+
+kwargs: ListPendingInvitationResourcesRequestRequestTypeDef = {  # (1)
+    "resourceShareInvitationArn": ...,
+}
+
+parent.list_pending_invitation_resources(**kwargs)
+```
+
+1. See [:material-code-braces: ListPendingInvitationResourcesRequestRequestTypeDef](./type_defs.md#listpendinginvitationresourcesrequestrequesttypedef) 
+
+### list\_permission\_associations
+
+Lists information about the managed permission and its associations to any
+resource shares that use this managed permission.
+
+Type annotations and code completion for `#!python session.create_client("ram").list_permission_associations` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.list_permission_associations)
+
+```python
+# list_permission_associations method definition
+
+await def list_permission_associations(
+    self,
+    *,
+    permissionArn: str = ...,
+    permissionVersion: int = ...,
+    associationStatus: ResourceShareAssociationStatusType = ...,  # (1)
+    resourceType: str = ...,
+    featureSet: PermissionFeatureSetType = ...,  # (2)
+    defaultVersion: bool = ...,
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> ListPermissionAssociationsResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-brackets: ResourceShareAssociationStatusType](./literals.md#resourceshareassociationstatustype) 
+2. See [:material-code-brackets: PermissionFeatureSetType](./literals.md#permissionfeaturesettype) 
+3. See [:material-code-braces: ListPermissionAssociationsResponseTypeDef](./type_defs.md#listpermissionassociationsresponsetypedef) 
+
+
+```python
+# list_permission_associations method usage example with argument unpacking
+
+kwargs: ListPermissionAssociationsRequestRequestTypeDef = {  # (1)
+    "permissionArn": ...,
+}
+
+parent.list_permission_associations(**kwargs)
+```
+
+1. See [:material-code-braces: ListPermissionAssociationsRequestRequestTypeDef](./type_defs.md#listpermissionassociationsrequestrequesttypedef) 
+
+### list\_permission\_versions
+
+Lists the available versions of the specified RAM permission.
+
+Type annotations and code completion for `#!python session.create_client("ram").list_permission_versions` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.list_permission_versions)
+
+```python
+# list_permission_versions method definition
+
+await def list_permission_versions(
+    self,
+    *,
+    permissionArn: str,
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> ListPermissionVersionsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListPermissionVersionsResponseTypeDef](./type_defs.md#listpermissionversionsresponsetypedef) 
+
+
+```python
+# list_permission_versions method usage example with argument unpacking
+
+kwargs: ListPermissionVersionsRequestRequestTypeDef = {  # (1)
+    "permissionArn": ...,
+}
+
+parent.list_permission_versions(**kwargs)
+```
+
+1. See [:material-code-braces: ListPermissionVersionsRequestRequestTypeDef](./type_defs.md#listpermissionversionsrequestrequesttypedef) 
+
+### list\_permissions
+
+Retrieves a list of available RAM permissions that you can use for the supported
+resource types.
+
+Type annotations and code completion for `#!python session.create_client("ram").list_permissions` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.list_permissions)
+
+```python
+# list_permissions method definition
+
+await def list_permissions(
+    self,
+    *,
+    resourceType: str = ...,
+    nextToken: str = ...,
+    maxResults: int = ...,
+    permissionType: PermissionTypeFilterType = ...,  # (1)
+) -> ListPermissionsResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: PermissionTypeFilterType](./literals.md#permissiontypefiltertype) 
+2. See [:material-code-braces: ListPermissionsResponseTypeDef](./type_defs.md#listpermissionsresponsetypedef) 
+
+
+```python
+# list_permissions method usage example with argument unpacking
+
+kwargs: ListPermissionsRequestRequestTypeDef = {  # (1)
+    "resourceType": ...,
+}
+
+parent.list_permissions(**kwargs)
+```
+
+1. See [:material-code-braces: ListPermissionsRequestRequestTypeDef](./type_defs.md#listpermissionsrequestrequesttypedef) 
+
+### list\_principals
+
+Lists the principals that you are sharing resources with or that are sharing
+resources with you.
+
+Type annotations and code completion for `#!python session.create_client("ram").list_principals` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.list_principals)
+
+```python
+# list_principals method definition
+
+await def list_principals(
+    self,
+    *,
+    resourceOwner: ResourceOwnerType,  # (1)
+    resourceArn: str = ...,
+    principals: Sequence[str] = ...,
+    resourceType: str = ...,
+    resourceShareArns: Sequence[str] = ...,
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> ListPrincipalsResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: ResourceOwnerType](./literals.md#resourceownertype) 
+2. See [:material-code-braces: ListPrincipalsResponseTypeDef](./type_defs.md#listprincipalsresponsetypedef) 
+
+
+```python
+# list_principals method usage example with argument unpacking
+
+kwargs: ListPrincipalsRequestRequestTypeDef = {  # (1)
+    "resourceOwner": ...,
+}
+
+parent.list_principals(**kwargs)
+```
+
+1. See [:material-code-braces: ListPrincipalsRequestRequestTypeDef](./type_defs.md#listprincipalsrequestrequesttypedef) 
+
+### list\_replace\_permission\_associations\_work
+
+Retrieves the current status of the asynchronous tasks performed by RAM when you
+perform the  ReplacePermissionAssociationsWork operation.
+
+Type annotations and code completion for `#!python session.create_client("ram").list_replace_permission_associations_work` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.list_replace_permission_associations_work)
+
+```python
+# list_replace_permission_associations_work method definition
+
+await def list_replace_permission_associations_work(
+    self,
+    *,
+    workIds: Sequence[str] = ...,
+    status: ReplacePermissionAssociationsWorkStatusType = ...,  # (1)
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> ListReplacePermissionAssociationsWorkResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: ReplacePermissionAssociationsWorkStatusType](./literals.md#replacepermissionassociationsworkstatustype) 
+2. See [:material-code-braces: ListReplacePermissionAssociationsWorkResponseTypeDef](./type_defs.md#listreplacepermissionassociationsworkresponsetypedef) 
+
+
+```python
+# list_replace_permission_associations_work method usage example with argument unpacking
+
+kwargs: ListReplacePermissionAssociationsWorkRequestRequestTypeDef = {  # (1)
+    "workIds": ...,
+}
+
+parent.list_replace_permission_associations_work(**kwargs)
+```
+
+1. See [:material-code-braces: ListReplacePermissionAssociationsWorkRequestRequestTypeDef](./type_defs.md#listreplacepermissionassociationsworkrequestrequesttypedef) 
+
+### list\_resource\_share\_permissions
+
+Lists the RAM permissions that are associated with a resource share.
+
+Type annotations and code completion for `#!python session.create_client("ram").list_resource_share_permissions` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.list_resource_share_permissions)
+
+```python
+# list_resource_share_permissions method definition
+
+await def list_resource_share_permissions(
+    self,
+    *,
+    resourceShareArn: str,
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> ListResourceSharePermissionsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListResourceSharePermissionsResponseTypeDef](./type_defs.md#listresourcesharepermissionsresponsetypedef) 
+
+
+```python
+# list_resource_share_permissions method usage example with argument unpacking
+
+kwargs: ListResourceSharePermissionsRequestRequestTypeDef = {  # (1)
+    "resourceShareArn": ...,
+}
+
+parent.list_resource_share_permissions(**kwargs)
+```
+
+1. See [:material-code-braces: ListResourceSharePermissionsRequestRequestTypeDef](./type_defs.md#listresourcesharepermissionsrequestrequesttypedef) 
+
+### list\_resource\_types
+
+Lists the resource types that can be shared by RAM.
+
+Type annotations and code completion for `#!python session.create_client("ram").list_resource_types` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.list_resource_types)
+
+```python
+# list_resource_types method definition
+
+await def list_resource_types(
+    self,
+    *,
+    nextToken: str = ...,
+    maxResults: int = ...,
+    resourceRegionScope: ResourceRegionScopeFilterType = ...,  # (1)
+) -> ListResourceTypesResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: ResourceRegionScopeFilterType](./literals.md#resourceregionscopefiltertype) 
+2. See [:material-code-braces: ListResourceTypesResponseTypeDef](./type_defs.md#listresourcetypesresponsetypedef) 
+
+
+```python
+# list_resource_types method usage example with argument unpacking
+
+kwargs: ListResourceTypesRequestRequestTypeDef = {  # (1)
+    "nextToken": ...,
+}
+
+parent.list_resource_types(**kwargs)
+```
+
+1. See [:material-code-braces: ListResourceTypesRequestRequestTypeDef](./type_defs.md#listresourcetypesrequestrequesttypedef) 
+
+### list\_resources
+
+Lists the resources that you added to a resource share or the resources that are
+shared with you.
+
+Type annotations and code completion for `#!python session.create_client("ram").list_resources` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.list_resources)
+
+```python
+# list_resources method definition
+
+await def list_resources(
+    self,
+    *,
+    resourceOwner: ResourceOwnerType,  # (1)
+    principal: str = ...,
+    resourceType: str = ...,
+    resourceArns: Sequence[str] = ...,
+    resourceShareArns: Sequence[str] = ...,
+    nextToken: str = ...,
+    maxResults: int = ...,
+    resourceRegionScope: ResourceRegionScopeFilterType = ...,  # (2)
+) -> ListResourcesResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-brackets: ResourceOwnerType](./literals.md#resourceownertype) 
+2. See [:material-code-brackets: ResourceRegionScopeFilterType](./literals.md#resourceregionscopefiltertype) 
+3. See [:material-code-braces: ListResourcesResponseTypeDef](./type_defs.md#listresourcesresponsetypedef) 
+
+
+```python
+# list_resources method usage example with argument unpacking
+
+kwargs: ListResourcesRequestRequestTypeDef = {  # (1)
+    "resourceOwner": ...,
+}
+
+parent.list_resources(**kwargs)
+```
+
+1. See [:material-code-braces: ListResourcesRequestRequestTypeDef](./type_defs.md#listresourcesrequestrequesttypedef) 
+
+### promote\_permission\_created\_from\_policy
+
+When you attach a resource-based policy to a resource, RAM automatically creates
+a resource share of `featureSet`= `CREATED_FROM_POLICY` with a managed
+permission that has the same IAM permissions as the original resource-based
+policy.
+
+Type annotations and code completion for `#!python session.create_client("ram").promote_permission_created_from_policy` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.promote_permission_created_from_policy)
+
+```python
+# promote_permission_created_from_policy method definition
+
+await def promote_permission_created_from_policy(
+    self,
+    *,
+    permissionArn: str,
+    name: str,
+    clientToken: str = ...,
+) -> PromotePermissionCreatedFromPolicyResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: PromotePermissionCreatedFromPolicyResponseTypeDef](./type_defs.md#promotepermissioncreatedfrompolicyresponsetypedef) 
+
+
+```python
+# promote_permission_created_from_policy method usage example with argument unpacking
+
+kwargs: PromotePermissionCreatedFromPolicyRequestRequestTypeDef = {  # (1)
+    "permissionArn": ...,
+    "name": ...,
+}
+
+parent.promote_permission_created_from_policy(**kwargs)
+```
+
+1. See [:material-code-braces: PromotePermissionCreatedFromPolicyRequestRequestTypeDef](./type_defs.md#promotepermissioncreatedfrompolicyrequestrequesttypedef) 
+
+### promote\_resource\_share\_created\_from\_policy
+
+When you attach a resource-based policy to a resource, RAM automatically creates
+a resource share of `featureSet`= `CREATED_FROM_POLICY` with a managed
+permission that has the same IAM permissions as the original resource-based
+policy.
+
+Type annotations and code completion for `#!python session.create_client("ram").promote_resource_share_created_from_policy` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.promote_resource_share_created_from_policy)
+
+```python
+# promote_resource_share_created_from_policy method definition
+
+await def promote_resource_share_created_from_policy(
+    self,
+    *,
+    resourceShareArn: str,
+) -> PromoteResourceShareCreatedFromPolicyResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: PromoteResourceShareCreatedFromPolicyResponseTypeDef](./type_defs.md#promoteresourcesharecreatedfrompolicyresponsetypedef) 
+
+
+```python
+# promote_resource_share_created_from_policy method usage example with argument unpacking
+
+kwargs: PromoteResourceShareCreatedFromPolicyRequestRequestTypeDef = {  # (1)
+    "resourceShareArn": ...,
+}
+
+parent.promote_resource_share_created_from_policy(**kwargs)
+```
+
+1. See [:material-code-braces: PromoteResourceShareCreatedFromPolicyRequestRequestTypeDef](./type_defs.md#promoteresourcesharecreatedfrompolicyrequestrequesttypedef) 
+
+### reject\_resource\_share\_invitation
+
+Rejects an invitation to a resource share from another Amazon Web Services
+account.
+
+Type annotations and code completion for `#!python session.create_client("ram").reject_resource_share_invitation` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.reject_resource_share_invitation)
+
+```python
+# reject_resource_share_invitation method definition
+
+await def reject_resource_share_invitation(
+    self,
+    *,
+    resourceShareInvitationArn: str,
+    clientToken: str = ...,
+) -> RejectResourceShareInvitationResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: RejectResourceShareInvitationResponseTypeDef](./type_defs.md#rejectresourceshareinvitationresponsetypedef) 
+
+
+```python
+# reject_resource_share_invitation method usage example with argument unpacking
+
+kwargs: RejectResourceShareInvitationRequestRequestTypeDef = {  # (1)
+    "resourceShareInvitationArn": ...,
+}
+
+parent.reject_resource_share_invitation(**kwargs)
+```
+
+1. See [:material-code-braces: RejectResourceShareInvitationRequestRequestTypeDef](./type_defs.md#rejectresourceshareinvitationrequestrequesttypedef) 
+
+### replace\_permission\_associations
+
+Updates all resource shares that use a managed permission to a different managed
+permission.
+
+Type annotations and code completion for `#!python session.create_client("ram").replace_permission_associations` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.replace_permission_associations)
+
+```python
+# replace_permission_associations method definition
+
+await def replace_permission_associations(
+    self,
+    *,
+    fromPermissionArn: str,
+    toPermissionArn: str,
+    fromPermissionVersion: int = ...,
+    clientToken: str = ...,
+) -> ReplacePermissionAssociationsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ReplacePermissionAssociationsResponseTypeDef](./type_defs.md#replacepermissionassociationsresponsetypedef) 
+
+
+```python
+# replace_permission_associations method usage example with argument unpacking
+
+kwargs: ReplacePermissionAssociationsRequestRequestTypeDef = {  # (1)
+    "fromPermissionArn": ...,
+    "toPermissionArn": ...,
+}
+
+parent.replace_permission_associations(**kwargs)
+```
+
+1. See [:material-code-braces: ReplacePermissionAssociationsRequestRequestTypeDef](./type_defs.md#replacepermissionassociationsrequestrequesttypedef) 
+
+### set\_default\_permission\_version
+
+Designates the specified version number as the default version for the specified
+customer managed permission.
+
+Type annotations and code completion for `#!python session.create_client("ram").set_default_permission_version` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.set_default_permission_version)
+
+```python
+# set_default_permission_version method definition
+
+await def set_default_permission_version(
+    self,
+    *,
+    permissionArn: str,
+    permissionVersion: int,
+    clientToken: str = ...,
+) -> SetDefaultPermissionVersionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: SetDefaultPermissionVersionResponseTypeDef](./type_defs.md#setdefaultpermissionversionresponsetypedef) 
+
+
+```python
+# set_default_permission_version method usage example with argument unpacking
+
+kwargs: SetDefaultPermissionVersionRequestRequestTypeDef = {  # (1)
+    "permissionArn": ...,
+    "permissionVersion": ...,
+}
+
+parent.set_default_permission_version(**kwargs)
+```
+
+1. See [:material-code-braces: SetDefaultPermissionVersionRequestRequestTypeDef](./type_defs.md#setdefaultpermissionversionrequestrequesttypedef) 
+
+### tag\_resource
+
+Adds the specified tag keys and values to a resource share or managed
+permission.
+
+Type annotations and code completion for `#!python session.create_client("ram").tag_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.tag_resource)
+
+```python
+# tag_resource method definition
+
+await def tag_resource(
+    self,
+    *,
+    tags: Sequence[TagTypeDef],  # (1)
+    resourceShareArn: str = ...,
+    resourceArn: str = ...,
+) -> Dict[str, Any]:
+    ...
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+
+
+```python
+# tag_resource method usage example with argument unpacking
+
+kwargs: TagResourceRequestRequestTypeDef = {  # (1)
+    "tags": ...,
+}
+
+parent.tag_resource(**kwargs)
+```
+
+1. See [:material-code-braces: TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef) 
+
+### untag\_resource
+
+Removes the specified tag key and value pairs from the specified resource share
+or managed permission.
+
+Type annotations and code completion for `#!python session.create_client("ram").untag_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.untag_resource)
+
+```python
+# untag_resource method definition
+
+await def untag_resource(
+    self,
+    *,
+    tagKeys: Sequence[str],
+    resourceShareArn: str = ...,
+    resourceArn: str = ...,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python
+# untag_resource method usage example with argument unpacking
+
+kwargs: UntagResourceRequestRequestTypeDef = {  # (1)
+    "tagKeys": ...,
+}
+
+parent.untag_resource(**kwargs)
+```
+
+1. See [:material-code-braces: UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef) 
+
+### update\_resource\_share
+
+Modifies some of the properties of the specified resource share.
+
+Type annotations and code completion for `#!python session.create_client("ram").update_resource_share` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.update_resource_share)
+
+```python
+# update_resource_share method definition
+
+await def update_resource_share(
+    self,
+    *,
+    resourceShareArn: str,
+    name: str = ...,
+    allowExternalPrincipals: bool = ...,
+    clientToken: str = ...,
+) -> UpdateResourceShareResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: UpdateResourceShareResponseTypeDef](./type_defs.md#updateresourceshareresponsetypedef) 
+
+
+```python
+# update_resource_share method usage example with argument unpacking
+
+kwargs: UpdateResourceShareRequestRequestTypeDef = {  # (1)
+    "resourceShareArn": ...,
+}
+
+parent.update_resource_share(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateResourceShareRequestRequestTypeDef](./type_defs.md#updateresourcesharerequestrequesttypedef) 
+
+### \_\_aenter\_\_
+
+
+
+Type annotations and code completion for `#!python session.create_client("ram").__aenter__` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.__aenter__)
+
+```python
+# __aenter__ method definition
+
+await def __aenter__(
+    self,
+) -> RAMClient:
+    ...
+```
+
+
+### \_\_aexit\_\_
+
+
+
+Type annotations and code completion for `#!python session.create_client("ram").__aexit__` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.__aexit__)
+
+```python
+# __aexit__ method definition
+
+await def __aexit__(
+    self,
+    exc_type: Any,
+    exc_val: Any,
+    exc_tb: Any,
+) -> Any:
+    ...
+```
+
+
+
+
+### get_paginator
+
+Type annotations and code completion for `#!python session.create_client("ram").get_paginator` method with overloads.
+
+- `client.get_paginator("get_resource_policies")` -> [GetResourcePoliciesPaginator](./paginators.md#getresourcepoliciespaginator)
+- `client.get_paginator("get_resource_share_associations")` -> [GetResourceShareAssociationsPaginator](./paginators.md#getresourceshareassociationspaginator)
+- `client.get_paginator("get_resource_share_invitations")` -> [GetResourceShareInvitationsPaginator](./paginators.md#getresourceshareinvitationspaginator)
+- `client.get_paginator("get_resource_shares")` -> [GetResourceSharesPaginator](./paginators.md#getresourcesharespaginator)
+- `client.get_paginator("list_principals")` -> [ListPrincipalsPaginator](./paginators.md#listprincipalspaginator)
+- `client.get_paginator("list_resources")` -> [ListResourcesPaginator](./paginators.md#listresourcespaginator)
+
+
+

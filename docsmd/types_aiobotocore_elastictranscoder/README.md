@@ -1,0 +1,211 @@
+# ElasticTranscoder module
+
+> [Index](../README.md) > ElasticTranscoder
+
+
+!!! note ""
+
+    Auto-generated documentation for [ElasticTranscoder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder)
+    type annotations stubs module [types-aiobotocore-elastictranscoder](https://pypi.org/project/types-aiobotocore-elastictranscoder/).
+
+## How to install
+
+
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `ElasticTranscoder` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[elastictranscoder]'
+
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[elastictranscoder]'
+
+
+# standalone installation
+python -m pip install types-aiobotocore-elastictranscoder
+```
+
+
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-elastictranscoder
+```
+
+## Usage
+
+Code samples can be found in [Examples](./usage.md).
+
+## ElasticTranscoderClient
+
+Type annotations and code completion for  `#!python session.create_client("elastictranscoder")` as [ElasticTranscoderClient](./client.md)
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client)
+
+```python
+# ElasticTranscoderClient usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_elastictranscoder.client import ElasticTranscoderClient
+
+
+session = get_session()
+async with session.create_client("elastictranscoder") as client:
+    client: ElasticTranscoderClient
+```
+
+
+## Paginators
+
+Type annotations and code completion for
+[paginators](./paginators.md)
+from `#!python session.create_client("elastictranscoder").get_paginator("...")`.
+
+```python
+# ListJobsByPipelinePaginator usage example
+
+from types_aiobotocore_elastictranscoder.paginator import ListJobsByPipelinePaginator
+
+def get_list_jobs_by_pipeline_paginator() -> ListJobsByPipelinePaginator:
+    return client.get_paginator("list_jobs_by_pipeline"))
+```
+
+- [ListJobsByPipelinePaginator](./paginators.md#listjobsbypipelinepaginator)
+- [ListJobsByStatusPaginator](./paginators.md#listjobsbystatuspaginator)
+- [ListPipelinesPaginator](./paginators.md#listpipelinespaginator)
+- [ListPresetsPaginator](./paginators.md#listpresetspaginator)
+
+
+
+
+## Waiters
+
+Type annotations and code completion for
+[waiters](./waiters.md)
+from `#!python session.create_client("elastictranscoder").get_waiter("...")`.
+
+```python
+# JobCompleteWaiter usage example
+
+from types_aiobotocore_elastictranscoder.waiter import JobCompleteWaiter
+
+def get_job_complete_waiter() -> JobCompleteWaiter:
+    return Session().client("elastictranscoder").get_waiter("job_complete")
+```
+
+- [JobCompleteWaiter](./waiters.md#jobcompletewaiter)
+
+
+
+
+
+
+## Literals
+
+Type annotations for [literals](./literals.md) used in methods and schema.
+
+```python
+# JobCompleteWaiterName usage example
+
+from types_aiobotocore_elastictranscoder.literals import JobCompleteWaiterName
+
+def get_value() -> JobCompleteWaiterName:
+    return "job_complete"
+```
+
+- [JobCompleteWaiterName](./literals.md#jobcompletewaitername)
+- [ListJobsByPipelinePaginatorName](./literals.md#listjobsbypipelinepaginatorname)
+- [ListJobsByStatusPaginatorName](./literals.md#listjobsbystatuspaginatorname)
+- [ListPipelinesPaginatorName](./literals.md#listpipelinespaginatorname)
+- [ListPresetsPaginatorName](./literals.md#listpresetspaginatorname)
+- [ElasticTranscoderServiceName](./literals.md#elastictranscoderservicename)
+- [ServiceName](./literals.md#servicename)
+- [ResourceServiceName](./literals.md#resourceservicename)
+- [PaginatorName](./literals.md#paginatorname)
+- [WaiterName](./literals.md#waitername)
+- [RegionName](./literals.md#regionname)
+
+
+
+
+## Type definitions
+
+Type annotations for [type definitions](./type_defs.md) used in methods and schema.
+
+- [EncryptionTypeDef](./type_defs.md#encryptiontypedef)
+- [AudioCodecOptionsTypeDef](./type_defs.md#audiocodecoptionstypedef)
+- [CancelJobRequestRequestTypeDef](./type_defs.md#canceljobrequestrequesttypedef)
+- [TimeSpanTypeDef](./type_defs.md#timespantypedef)
+- [HlsContentProtectionTypeDef](./type_defs.md#hlscontentprotectiontypedef)
+- [PlayReadyDrmTypeDef](./type_defs.md#playreadydrmtypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [NotificationsTypeDef](./type_defs.md#notificationstypedef)
+- [WarningTypeDef](./type_defs.md#warningtypedef)
+- [ThumbnailsTypeDef](./type_defs.md#thumbnailstypedef)
+- [DeletePipelineRequestRequestTypeDef](./type_defs.md#deletepipelinerequestrequesttypedef)
+- [DeletePresetRequestRequestTypeDef](./type_defs.md#deletepresetrequestrequesttypedef)
+- [DetectedPropertiesTypeDef](./type_defs.md#detectedpropertiestypedef)
+- [TimingTypeDef](./type_defs.md#timingtypedef)
+- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+- [ListJobsByPipelineRequestRequestTypeDef](./type_defs.md#listjobsbypipelinerequestrequesttypedef)
+- [ListJobsByStatusRequestRequestTypeDef](./type_defs.md#listjobsbystatusrequestrequesttypedef)
+- [ListPipelinesRequestRequestTypeDef](./type_defs.md#listpipelinesrequestrequesttypedef)
+- [ListPresetsRequestRequestTypeDef](./type_defs.md#listpresetsrequestrequesttypedef)
+- [PermissionTypeDef](./type_defs.md#permissiontypedef)
+- [PresetWatermarkTypeDef](./type_defs.md#presetwatermarktypedef)
+- [WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef)
+- [ReadJobRequestRequestTypeDef](./type_defs.md#readjobrequestrequesttypedef)
+- [ReadPipelineRequestRequestTypeDef](./type_defs.md#readpipelinerequestrequesttypedef)
+- [ReadPresetRequestRequestTypeDef](./type_defs.md#readpresetrequestrequesttypedef)
+- [TestRoleRequestRequestTypeDef](./type_defs.md#testrolerequestrequesttypedef)
+- [UpdatePipelineStatusRequestRequestTypeDef](./type_defs.md#updatepipelinestatusrequestrequesttypedef)
+- [ArtworkTypeDef](./type_defs.md#artworktypedef)
+- [CaptionFormatTypeDef](./type_defs.md#captionformattypedef)
+- [CaptionSourceTypeDef](./type_defs.md#captionsourcetypedef)
+- [JobWatermarkTypeDef](./type_defs.md#jobwatermarktypedef)
+- [AudioParametersTypeDef](./type_defs.md#audioparameterstypedef)
+- [ClipTypeDef](./type_defs.md#cliptypedef)
+- [CreateJobPlaylistTypeDef](./type_defs.md#createjobplaylisttypedef)
+- [PlaylistTypeDef](./type_defs.md#playlisttypedef)
+- [TestRoleResponseTypeDef](./type_defs.md#testroleresponsetypedef)
+- [UpdatePipelineNotificationsRequestRequestTypeDef](./type_defs.md#updatepipelinenotificationsrequestrequesttypedef)
+- [ListJobsByPipelineRequestListJobsByPipelinePaginateTypeDef](./type_defs.md#listjobsbypipelinerequestlistjobsbypipelinepaginatetypedef)
+- [ListJobsByStatusRequestListJobsByStatusPaginateTypeDef](./type_defs.md#listjobsbystatusrequestlistjobsbystatuspaginatetypedef)
+- [ListPipelinesRequestListPipelinesPaginateTypeDef](./type_defs.md#listpipelinesrequestlistpipelinespaginatetypedef)
+- [ListPresetsRequestListPresetsPaginateTypeDef](./type_defs.md#listpresetsrequestlistpresetspaginatetypedef)
+- [PipelineOutputConfigTypeDef](./type_defs.md#pipelineoutputconfigtypedef)
+- [VideoParametersTypeDef](./type_defs.md#videoparameterstypedef)
+- [ReadJobRequestJobCompleteWaitTypeDef](./type_defs.md#readjobrequestjobcompletewaittypedef)
+- [JobAlbumArtTypeDef](./type_defs.md#jobalbumarttypedef)
+- [CaptionsTypeDef](./type_defs.md#captionstypedef)
+- [InputCaptionsTypeDef](./type_defs.md#inputcaptionstypedef)
+- [CreatePipelineRequestRequestTypeDef](./type_defs.md#createpipelinerequestrequesttypedef)
+- [PipelineTypeDef](./type_defs.md#pipelinetypedef)
+- [UpdatePipelineRequestRequestTypeDef](./type_defs.md#updatepipelinerequestrequesttypedef)
+- [CreatePresetRequestRequestTypeDef](./type_defs.md#createpresetrequestrequesttypedef)
+- [PresetTypeDef](./type_defs.md#presettypedef)
+- [CreateJobOutputTypeDef](./type_defs.md#createjoboutputtypedef)
+- [JobOutputTypeDef](./type_defs.md#joboutputtypedef)
+- [JobInputTypeDef](./type_defs.md#jobinputtypedef)
+- [CreatePipelineResponseTypeDef](./type_defs.md#createpipelineresponsetypedef)
+- [ListPipelinesResponseTypeDef](./type_defs.md#listpipelinesresponsetypedef)
+- [ReadPipelineResponseTypeDef](./type_defs.md#readpipelineresponsetypedef)
+- [UpdatePipelineNotificationsResponseTypeDef](./type_defs.md#updatepipelinenotificationsresponsetypedef)
+- [UpdatePipelineResponseTypeDef](./type_defs.md#updatepipelineresponsetypedef)
+- [UpdatePipelineStatusResponseTypeDef](./type_defs.md#updatepipelinestatusresponsetypedef)
+- [CreatePresetResponseTypeDef](./type_defs.md#createpresetresponsetypedef)
+- [ListPresetsResponseTypeDef](./type_defs.md#listpresetsresponsetypedef)
+- [ReadPresetResponseTypeDef](./type_defs.md#readpresetresponsetypedef)
+- [CreateJobRequestRequestTypeDef](./type_defs.md#createjobrequestrequesttypedef)
+- [JobTypeDef](./type_defs.md#jobtypedef)
+- [CreateJobResponseTypeDef](./type_defs.md#createjobresponsetypedef)
+- [ListJobsByPipelineResponseTypeDef](./type_defs.md#listjobsbypipelineresponsetypedef)
+- [ListJobsByStatusResponseTypeDef](./type_defs.md#listjobsbystatusresponsetypedef)
+- [ReadJobResponseTypeDef](./type_defs.md#readjobresponsetypedef)
+

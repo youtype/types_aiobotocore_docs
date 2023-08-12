@@ -1,0 +1,1256 @@
+# OpenSearchServiceServerlessClient
+
+> [Index](../README.md) > [OpenSearchServiceServerless](./README.md) > OpenSearchServiceServerlessClient
+
+!!! note ""
+
+    Auto-generated documentation for [OpenSearchServiceServerless](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless)
+    type annotations stubs module [types-aiobotocore-opensearchserverless](https://pypi.org/project/types-aiobotocore-opensearchserverless/).
+
+## OpenSearchServiceServerlessClient
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless")`
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client)
+
+```python
+OpenSearchServiceServerlessClient usage example
+
+from aiobotocore.session import get_session
+from types_aiobotocore_opensearchserverless.client import OpenSearchServiceServerlessClient
+
+session = get_session()
+async with session.create_client("opensearchserverless") as client:
+    client: OpenSearchServiceServerlessClient
+```
+
+## Exceptions
+
+
+`aiobotocore` client exceptions are generated in runtime.
+This class provides code completion for `#!python session.create_client("opensearchserverless").exceptions` structure.
+
+```python
+OpenSearchServiceServerlessClient.exceptions usage example
+
+async with session.create_client("opensearchserverless") as client:
+    try:
+        do_something(client)
+    except (
+            client.ClientError,
+        client.ConflictException,
+        client.InternalServerException,
+        client.OcuLimitExceededException,
+        client.ResourceNotFoundException,
+        client.ServiceQuotaExceededException,
+        client.ValidationException,
+    ) as e:
+        print(e)
+```
+
+```python
+OpenSearchServiceServerlessClient usage type checking example
+
+from types_aiobotocore_opensearchserverless.client import Exceptions
+
+def handle_error(exc: Exceptions.ClientError) -> None:
+    ...
+```
+
+
+## Methods
+
+
+### batch\_get\_collection
+
+Returns attributes for one or more collections, including the collection
+endpoint and the OpenSearch Dashboards endpoint.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").batch_get_collection` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.batch_get_collection)
+
+```python
+# batch_get_collection method definition
+
+await def batch_get_collection(
+    self,
+    *,
+    ids: Sequence[str] = ...,
+    names: Sequence[str] = ...,
+) -> BatchGetCollectionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: BatchGetCollectionResponseTypeDef](./type_defs.md#batchgetcollectionresponsetypedef) 
+
+
+```python
+# batch_get_collection method usage example with argument unpacking
+
+kwargs: BatchGetCollectionRequestRequestTypeDef = {  # (1)
+    "ids": ...,
+}
+
+parent.batch_get_collection(**kwargs)
+```
+
+1. See [:material-code-braces: BatchGetCollectionRequestRequestTypeDef](./type_defs.md#batchgetcollectionrequestrequesttypedef) 
+
+### batch\_get\_vpc\_endpoint
+
+Returns attributes for one or more VPC endpoints associated with the current
+account.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").batch_get_vpc_endpoint` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.batch_get_vpc_endpoint)
+
+```python
+# batch_get_vpc_endpoint method definition
+
+await def batch_get_vpc_endpoint(
+    self,
+    *,
+    ids: Sequence[str],
+) -> BatchGetVpcEndpointResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: BatchGetVpcEndpointResponseTypeDef](./type_defs.md#batchgetvpcendpointresponsetypedef) 
+
+
+```python
+# batch_get_vpc_endpoint method usage example with argument unpacking
+
+kwargs: BatchGetVpcEndpointRequestRequestTypeDef = {  # (1)
+    "ids": ...,
+}
+
+parent.batch_get_vpc_endpoint(**kwargs)
+```
+
+1. See [:material-code-braces: BatchGetVpcEndpointRequestRequestTypeDef](./type_defs.md#batchgetvpcendpointrequestrequesttypedef) 
+
+### can\_paginate
+
+Check if an operation can be paginated.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").can_paginate` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.can_paginate)
+
+```python
+# can_paginate method definition
+
+def can_paginate(
+    self,
+    operation_name: str,
+) -> bool:
+    ...
+```
+
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.close)
+
+```python
+# close method definition
+
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
+### create\_access\_policy
+
+Creates a data access policy for OpenSearch Serverless.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").create_access_policy` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.create_access_policy)
+
+```python
+# create_access_policy method definition
+
+await def create_access_policy(
+    self,
+    *,
+    name: str,
+    policy: str,
+    type: AccessPolicyTypeType,  # (1)
+    clientToken: str = ...,
+    description: str = ...,
+) -> CreateAccessPolicyResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: AccessPolicyTypeType](./literals.md#accesspolicytypetype) 
+2. See [:material-code-braces: CreateAccessPolicyResponseTypeDef](./type_defs.md#createaccesspolicyresponsetypedef) 
+
+
+```python
+# create_access_policy method usage example with argument unpacking
+
+kwargs: CreateAccessPolicyRequestRequestTypeDef = {  # (1)
+    "name": ...,
+    "policy": ...,
+    "type": ...,
+}
+
+parent.create_access_policy(**kwargs)
+```
+
+1. See [:material-code-braces: CreateAccessPolicyRequestRequestTypeDef](./type_defs.md#createaccesspolicyrequestrequesttypedef) 
+
+### create\_collection
+
+Creates a new OpenSearch Serverless collection.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").create_collection` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.create_collection)
+
+```python
+# create_collection method definition
+
+await def create_collection(
+    self,
+    *,
+    name: str,
+    clientToken: str = ...,
+    description: str = ...,
+    tags: Sequence[TagTypeDef] = ...,  # (1)
+    type: CollectionTypeType = ...,  # (2)
+) -> CreateCollectionResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+2. See [:material-code-brackets: CollectionTypeType](./literals.md#collectiontypetype) 
+3. See [:material-code-braces: CreateCollectionResponseTypeDef](./type_defs.md#createcollectionresponsetypedef) 
+
+
+```python
+# create_collection method usage example with argument unpacking
+
+kwargs: CreateCollectionRequestRequestTypeDef = {  # (1)
+    "name": ...,
+}
+
+parent.create_collection(**kwargs)
+```
+
+1. See [:material-code-braces: CreateCollectionRequestRequestTypeDef](./type_defs.md#createcollectionrequestrequesttypedef) 
+
+### create\_security\_config
+
+Specifies a security configuration for OpenSearch Serverless.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").create_security_config` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.create_security_config)
+
+```python
+# create_security_config method definition
+
+await def create_security_config(
+    self,
+    *,
+    name: str,
+    type: SecurityConfigTypeType,  # (1)
+    clientToken: str = ...,
+    description: str = ...,
+    samlOptions: SamlConfigOptionsTypeDef = ...,  # (2)
+) -> CreateSecurityConfigResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-brackets: SecurityConfigTypeType](./literals.md#securityconfigtypetype) 
+2. See [:material-code-braces: SamlConfigOptionsTypeDef](./type_defs.md#samlconfigoptionstypedef) 
+3. See [:material-code-braces: CreateSecurityConfigResponseTypeDef](./type_defs.md#createsecurityconfigresponsetypedef) 
+
+
+```python
+# create_security_config method usage example with argument unpacking
+
+kwargs: CreateSecurityConfigRequestRequestTypeDef = {  # (1)
+    "name": ...,
+    "type": ...,
+}
+
+parent.create_security_config(**kwargs)
+```
+
+1. See [:material-code-braces: CreateSecurityConfigRequestRequestTypeDef](./type_defs.md#createsecurityconfigrequestrequesttypedef) 
+
+### create\_security\_policy
+
+Creates a security policy to be used by one or more OpenSearch Serverless
+collections.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").create_security_policy` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.create_security_policy)
+
+```python
+# create_security_policy method definition
+
+await def create_security_policy(
+    self,
+    *,
+    name: str,
+    policy: str,
+    type: SecurityPolicyTypeType,  # (1)
+    clientToken: str = ...,
+    description: str = ...,
+) -> CreateSecurityPolicyResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: SecurityPolicyTypeType](./literals.md#securitypolicytypetype) 
+2. See [:material-code-braces: CreateSecurityPolicyResponseTypeDef](./type_defs.md#createsecuritypolicyresponsetypedef) 
+
+
+```python
+# create_security_policy method usage example with argument unpacking
+
+kwargs: CreateSecurityPolicyRequestRequestTypeDef = {  # (1)
+    "name": ...,
+    "policy": ...,
+    "type": ...,
+}
+
+parent.create_security_policy(**kwargs)
+```
+
+1. See [:material-code-braces: CreateSecurityPolicyRequestRequestTypeDef](./type_defs.md#createsecuritypolicyrequestrequesttypedef) 
+
+### create\_vpc\_endpoint
+
+Creates an OpenSearch Serverless-managed interface VPC endpoint.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").create_vpc_endpoint` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.create_vpc_endpoint)
+
+```python
+# create_vpc_endpoint method definition
+
+await def create_vpc_endpoint(
+    self,
+    *,
+    name: str,
+    subnetIds: Sequence[str],
+    vpcId: str,
+    clientToken: str = ...,
+    securityGroupIds: Sequence[str] = ...,
+) -> CreateVpcEndpointResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: CreateVpcEndpointResponseTypeDef](./type_defs.md#createvpcendpointresponsetypedef) 
+
+
+```python
+# create_vpc_endpoint method usage example with argument unpacking
+
+kwargs: CreateVpcEndpointRequestRequestTypeDef = {  # (1)
+    "name": ...,
+    "subnetIds": ...,
+    "vpcId": ...,
+}
+
+parent.create_vpc_endpoint(**kwargs)
+```
+
+1. See [:material-code-braces: CreateVpcEndpointRequestRequestTypeDef](./type_defs.md#createvpcendpointrequestrequesttypedef) 
+
+### delete\_access\_policy
+
+Deletes an OpenSearch Serverless access policy.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").delete_access_policy` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.delete_access_policy)
+
+```python
+# delete_access_policy method definition
+
+await def delete_access_policy(
+    self,
+    *,
+    name: str,
+    type: AccessPolicyTypeType,  # (1)
+    clientToken: str = ...,
+) -> Dict[str, Any]:
+    ...
+```
+
+1. See [:material-code-brackets: AccessPolicyTypeType](./literals.md#accesspolicytypetype) 
+
+
+```python
+# delete_access_policy method usage example with argument unpacking
+
+kwargs: DeleteAccessPolicyRequestRequestTypeDef = {  # (1)
+    "name": ...,
+    "type": ...,
+}
+
+parent.delete_access_policy(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteAccessPolicyRequestRequestTypeDef](./type_defs.md#deleteaccesspolicyrequestrequesttypedef) 
+
+### delete\_collection
+
+Deletes an OpenSearch Serverless collection.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").delete_collection` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.delete_collection)
+
+```python
+# delete_collection method definition
+
+await def delete_collection(
+    self,
+    *,
+    id: str,
+    clientToken: str = ...,
+) -> DeleteCollectionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DeleteCollectionResponseTypeDef](./type_defs.md#deletecollectionresponsetypedef) 
+
+
+```python
+# delete_collection method usage example with argument unpacking
+
+kwargs: DeleteCollectionRequestRequestTypeDef = {  # (1)
+    "id": ...,
+}
+
+parent.delete_collection(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteCollectionRequestRequestTypeDef](./type_defs.md#deletecollectionrequestrequesttypedef) 
+
+### delete\_security\_config
+
+Deletes a security configuration for OpenSearch Serverless.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").delete_security_config` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.delete_security_config)
+
+```python
+# delete_security_config method definition
+
+await def delete_security_config(
+    self,
+    *,
+    id: str,
+    clientToken: str = ...,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python
+# delete_security_config method usage example with argument unpacking
+
+kwargs: DeleteSecurityConfigRequestRequestTypeDef = {  # (1)
+    "id": ...,
+}
+
+parent.delete_security_config(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteSecurityConfigRequestRequestTypeDef](./type_defs.md#deletesecurityconfigrequestrequesttypedef) 
+
+### delete\_security\_policy
+
+Deletes an OpenSearch Serverless security policy.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").delete_security_policy` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.delete_security_policy)
+
+```python
+# delete_security_policy method definition
+
+await def delete_security_policy(
+    self,
+    *,
+    name: str,
+    type: SecurityPolicyTypeType,  # (1)
+    clientToken: str = ...,
+) -> Dict[str, Any]:
+    ...
+```
+
+1. See [:material-code-brackets: SecurityPolicyTypeType](./literals.md#securitypolicytypetype) 
+
+
+```python
+# delete_security_policy method usage example with argument unpacking
+
+kwargs: DeleteSecurityPolicyRequestRequestTypeDef = {  # (1)
+    "name": ...,
+    "type": ...,
+}
+
+parent.delete_security_policy(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteSecurityPolicyRequestRequestTypeDef](./type_defs.md#deletesecuritypolicyrequestrequesttypedef) 
+
+### delete\_vpc\_endpoint
+
+Deletes an OpenSearch Serverless-managed interface endpoint.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").delete_vpc_endpoint` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.delete_vpc_endpoint)
+
+```python
+# delete_vpc_endpoint method definition
+
+await def delete_vpc_endpoint(
+    self,
+    *,
+    id: str,
+    clientToken: str = ...,
+) -> DeleteVpcEndpointResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DeleteVpcEndpointResponseTypeDef](./type_defs.md#deletevpcendpointresponsetypedef) 
+
+
+```python
+# delete_vpc_endpoint method usage example with argument unpacking
+
+kwargs: DeleteVpcEndpointRequestRequestTypeDef = {  # (1)
+    "id": ...,
+}
+
+parent.delete_vpc_endpoint(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteVpcEndpointRequestRequestTypeDef](./type_defs.md#deletevpcendpointrequestrequesttypedef) 
+
+### generate\_presigned\_url
+
+Generate a presigned url given a client, its method, and arguments.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").generate_presigned_url` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.generate_presigned_url)
+
+```python
+# generate_presigned_url method definition
+
+await def generate_presigned_url(
+    self,
+    ClientMethod: str,
+    Params: Mapping[str, Any] = ...,
+    ExpiresIn: int = 3600,
+    HttpMethod: str = ...,
+) -> str:
+    ...
+```
+
+
+### get\_access\_policy
+
+Returns an OpenSearch Serverless access policy.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").get_access_policy` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.get_access_policy)
+
+```python
+# get_access_policy method definition
+
+await def get_access_policy(
+    self,
+    *,
+    name: str,
+    type: AccessPolicyTypeType,  # (1)
+) -> GetAccessPolicyResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: AccessPolicyTypeType](./literals.md#accesspolicytypetype) 
+2. See [:material-code-braces: GetAccessPolicyResponseTypeDef](./type_defs.md#getaccesspolicyresponsetypedef) 
+
+
+```python
+# get_access_policy method usage example with argument unpacking
+
+kwargs: GetAccessPolicyRequestRequestTypeDef = {  # (1)
+    "name": ...,
+    "type": ...,
+}
+
+parent.get_access_policy(**kwargs)
+```
+
+1. See [:material-code-braces: GetAccessPolicyRequestRequestTypeDef](./type_defs.md#getaccesspolicyrequestrequesttypedef) 
+
+### get\_account\_settings
+
+Returns account-level settings related to OpenSearch Serverless.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").get_account_settings` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.get_account_settings)
+
+```python
+# get_account_settings method definition
+
+await def get_account_settings(
+    self,
+) -> GetAccountSettingsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetAccountSettingsResponseTypeDef](./type_defs.md#getaccountsettingsresponsetypedef) 
+
+### get\_policies\_stats
+
+Returns statistical information about your OpenSearch Serverless access
+policies, security configurations, and security policies.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").get_policies_stats` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.get_policies_stats)
+
+```python
+# get_policies_stats method definition
+
+await def get_policies_stats(
+    self,
+) -> GetPoliciesStatsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetPoliciesStatsResponseTypeDef](./type_defs.md#getpoliciesstatsresponsetypedef) 
+
+### get\_security\_config
+
+Returns information about an OpenSearch Serverless security configuration.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").get_security_config` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.get_security_config)
+
+```python
+# get_security_config method definition
+
+await def get_security_config(
+    self,
+    *,
+    id: str,
+) -> GetSecurityConfigResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetSecurityConfigResponseTypeDef](./type_defs.md#getsecurityconfigresponsetypedef) 
+
+
+```python
+# get_security_config method usage example with argument unpacking
+
+kwargs: GetSecurityConfigRequestRequestTypeDef = {  # (1)
+    "id": ...,
+}
+
+parent.get_security_config(**kwargs)
+```
+
+1. See [:material-code-braces: GetSecurityConfigRequestRequestTypeDef](./type_defs.md#getsecurityconfigrequestrequesttypedef) 
+
+### get\_security\_policy
+
+Returns information about a configured OpenSearch Serverless security policy.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").get_security_policy` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.get_security_policy)
+
+```python
+# get_security_policy method definition
+
+await def get_security_policy(
+    self,
+    *,
+    name: str,
+    type: SecurityPolicyTypeType,  # (1)
+) -> GetSecurityPolicyResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: SecurityPolicyTypeType](./literals.md#securitypolicytypetype) 
+2. See [:material-code-braces: GetSecurityPolicyResponseTypeDef](./type_defs.md#getsecuritypolicyresponsetypedef) 
+
+
+```python
+# get_security_policy method usage example with argument unpacking
+
+kwargs: GetSecurityPolicyRequestRequestTypeDef = {  # (1)
+    "name": ...,
+    "type": ...,
+}
+
+parent.get_security_policy(**kwargs)
+```
+
+1. See [:material-code-braces: GetSecurityPolicyRequestRequestTypeDef](./type_defs.md#getsecuritypolicyrequestrequesttypedef) 
+
+### list\_access\_policies
+
+Returns information about a list of OpenSearch Serverless access policies.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").list_access_policies` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.list_access_policies)
+
+```python
+# list_access_policies method definition
+
+await def list_access_policies(
+    self,
+    *,
+    type: AccessPolicyTypeType,  # (1)
+    maxResults: int = ...,
+    nextToken: str = ...,
+    resource: Sequence[str] = ...,
+) -> ListAccessPoliciesResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: AccessPolicyTypeType](./literals.md#accesspolicytypetype) 
+2. See [:material-code-braces: ListAccessPoliciesResponseTypeDef](./type_defs.md#listaccesspoliciesresponsetypedef) 
+
+
+```python
+# list_access_policies method usage example with argument unpacking
+
+kwargs: ListAccessPoliciesRequestRequestTypeDef = {  # (1)
+    "type": ...,
+}
+
+parent.list_access_policies(**kwargs)
+```
+
+1. See [:material-code-braces: ListAccessPoliciesRequestRequestTypeDef](./type_defs.md#listaccesspoliciesrequestrequesttypedef) 
+
+### list\_collections
+
+Lists all OpenSearch Serverless collections.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").list_collections` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.list_collections)
+
+```python
+# list_collections method definition
+
+await def list_collections(
+    self,
+    *,
+    collectionFilters: CollectionFiltersTypeDef = ...,  # (1)
+    maxResults: int = ...,
+    nextToken: str = ...,
+) -> ListCollectionsResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: CollectionFiltersTypeDef](./type_defs.md#collectionfilterstypedef) 
+2. See [:material-code-braces: ListCollectionsResponseTypeDef](./type_defs.md#listcollectionsresponsetypedef) 
+
+
+```python
+# list_collections method usage example with argument unpacking
+
+kwargs: ListCollectionsRequestRequestTypeDef = {  # (1)
+    "collectionFilters": ...,
+}
+
+parent.list_collections(**kwargs)
+```
+
+1. See [:material-code-braces: ListCollectionsRequestRequestTypeDef](./type_defs.md#listcollectionsrequestrequesttypedef) 
+
+### list\_security\_configs
+
+Returns information about configured OpenSearch Serverless security
+configurations.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").list_security_configs` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.list_security_configs)
+
+```python
+# list_security_configs method definition
+
+await def list_security_configs(
+    self,
+    *,
+    type: SecurityConfigTypeType,  # (1)
+    maxResults: int = ...,
+    nextToken: str = ...,
+) -> ListSecurityConfigsResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: SecurityConfigTypeType](./literals.md#securityconfigtypetype) 
+2. See [:material-code-braces: ListSecurityConfigsResponseTypeDef](./type_defs.md#listsecurityconfigsresponsetypedef) 
+
+
+```python
+# list_security_configs method usage example with argument unpacking
+
+kwargs: ListSecurityConfigsRequestRequestTypeDef = {  # (1)
+    "type": ...,
+}
+
+parent.list_security_configs(**kwargs)
+```
+
+1. See [:material-code-braces: ListSecurityConfigsRequestRequestTypeDef](./type_defs.md#listsecurityconfigsrequestrequesttypedef) 
+
+### list\_security\_policies
+
+Returns information about configured OpenSearch Serverless security policies.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").list_security_policies` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.list_security_policies)
+
+```python
+# list_security_policies method definition
+
+await def list_security_policies(
+    self,
+    *,
+    type: SecurityPolicyTypeType,  # (1)
+    maxResults: int = ...,
+    nextToken: str = ...,
+    resource: Sequence[str] = ...,
+) -> ListSecurityPoliciesResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: SecurityPolicyTypeType](./literals.md#securitypolicytypetype) 
+2. See [:material-code-braces: ListSecurityPoliciesResponseTypeDef](./type_defs.md#listsecuritypoliciesresponsetypedef) 
+
+
+```python
+# list_security_policies method usage example with argument unpacking
+
+kwargs: ListSecurityPoliciesRequestRequestTypeDef = {  # (1)
+    "type": ...,
+}
+
+parent.list_security_policies(**kwargs)
+```
+
+1. See [:material-code-braces: ListSecurityPoliciesRequestRequestTypeDef](./type_defs.md#listsecuritypoliciesrequestrequesttypedef) 
+
+### list\_tags\_for\_resource
+
+Returns the tags for an OpenSearch Serverless resource.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").list_tags_for_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.list_tags_for_resource)
+
+```python
+# list_tags_for_resource method definition
+
+await def list_tags_for_resource(
+    self,
+    *,
+    resourceArn: str,
+) -> ListTagsForResourceResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef) 
+
+
+```python
+# list_tags_for_resource method usage example with argument unpacking
+
+kwargs: ListTagsForResourceRequestRequestTypeDef = {  # (1)
+    "resourceArn": ...,
+}
+
+parent.list_tags_for_resource(**kwargs)
+```
+
+1. See [:material-code-braces: ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef) 
+
+### list\_vpc\_endpoints
+
+Returns the OpenSearch Serverless-managed interface VPC endpoints associated
+with the current account.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").list_vpc_endpoints` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.list_vpc_endpoints)
+
+```python
+# list_vpc_endpoints method definition
+
+await def list_vpc_endpoints(
+    self,
+    *,
+    maxResults: int = ...,
+    nextToken: str = ...,
+    vpcEndpointFilters: VpcEndpointFiltersTypeDef = ...,  # (1)
+) -> ListVpcEndpointsResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: VpcEndpointFiltersTypeDef](./type_defs.md#vpcendpointfilterstypedef) 
+2. See [:material-code-braces: ListVpcEndpointsResponseTypeDef](./type_defs.md#listvpcendpointsresponsetypedef) 
+
+
+```python
+# list_vpc_endpoints method usage example with argument unpacking
+
+kwargs: ListVpcEndpointsRequestRequestTypeDef = {  # (1)
+    "maxResults": ...,
+}
+
+parent.list_vpc_endpoints(**kwargs)
+```
+
+1. See [:material-code-braces: ListVpcEndpointsRequestRequestTypeDef](./type_defs.md#listvpcendpointsrequestrequesttypedef) 
+
+### tag\_resource
+
+Associates tags with an OpenSearch Serverless resource.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").tag_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.tag_resource)
+
+```python
+# tag_resource method definition
+
+await def tag_resource(
+    self,
+    *,
+    resourceArn: str,
+    tags: Sequence[TagTypeDef],  # (1)
+) -> Dict[str, Any]:
+    ...
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+
+
+```python
+# tag_resource method usage example with argument unpacking
+
+kwargs: TagResourceRequestRequestTypeDef = {  # (1)
+    "resourceArn": ...,
+    "tags": ...,
+}
+
+parent.tag_resource(**kwargs)
+```
+
+1. See [:material-code-braces: TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef) 
+
+### untag\_resource
+
+Removes a tag or set of tags from an OpenSearch Serverless resource.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").untag_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.untag_resource)
+
+```python
+# untag_resource method definition
+
+await def untag_resource(
+    self,
+    *,
+    resourceArn: str,
+    tagKeys: Sequence[str],
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python
+# untag_resource method usage example with argument unpacking
+
+kwargs: UntagResourceRequestRequestTypeDef = {  # (1)
+    "resourceArn": ...,
+    "tagKeys": ...,
+}
+
+parent.untag_resource(**kwargs)
+```
+
+1. See [:material-code-braces: UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef) 
+
+### update\_access\_policy
+
+Updates an OpenSearch Serverless access policy.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").update_access_policy` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.update_access_policy)
+
+```python
+# update_access_policy method definition
+
+await def update_access_policy(
+    self,
+    *,
+    name: str,
+    policyVersion: str,
+    type: AccessPolicyTypeType,  # (1)
+    clientToken: str = ...,
+    description: str = ...,
+    policy: str = ...,
+) -> UpdateAccessPolicyResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: AccessPolicyTypeType](./literals.md#accesspolicytypetype) 
+2. See [:material-code-braces: UpdateAccessPolicyResponseTypeDef](./type_defs.md#updateaccesspolicyresponsetypedef) 
+
+
+```python
+# update_access_policy method usage example with argument unpacking
+
+kwargs: UpdateAccessPolicyRequestRequestTypeDef = {  # (1)
+    "name": ...,
+    "policyVersion": ...,
+    "type": ...,
+}
+
+parent.update_access_policy(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateAccessPolicyRequestRequestTypeDef](./type_defs.md#updateaccesspolicyrequestrequesttypedef) 
+
+### update\_account\_settings
+
+Update the OpenSearch Serverless settings for the current Amazon Web Services
+account.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").update_account_settings` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.update_account_settings)
+
+```python
+# update_account_settings method definition
+
+await def update_account_settings(
+    self,
+    *,
+    capacityLimits: CapacityLimitsTypeDef = ...,  # (1)
+) -> UpdateAccountSettingsResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: CapacityLimitsTypeDef](./type_defs.md#capacitylimitstypedef) 
+2. See [:material-code-braces: UpdateAccountSettingsResponseTypeDef](./type_defs.md#updateaccountsettingsresponsetypedef) 
+
+
+```python
+# update_account_settings method usage example with argument unpacking
+
+kwargs: UpdateAccountSettingsRequestRequestTypeDef = {  # (1)
+    "capacityLimits": ...,
+}
+
+parent.update_account_settings(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateAccountSettingsRequestRequestTypeDef](./type_defs.md#updateaccountsettingsrequestrequesttypedef) 
+
+### update\_collection
+
+Updates an OpenSearch Serverless collection.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").update_collection` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.update_collection)
+
+```python
+# update_collection method definition
+
+await def update_collection(
+    self,
+    *,
+    id: str,
+    clientToken: str = ...,
+    description: str = ...,
+) -> UpdateCollectionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: UpdateCollectionResponseTypeDef](./type_defs.md#updatecollectionresponsetypedef) 
+
+
+```python
+# update_collection method usage example with argument unpacking
+
+kwargs: UpdateCollectionRequestRequestTypeDef = {  # (1)
+    "id": ...,
+}
+
+parent.update_collection(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateCollectionRequestRequestTypeDef](./type_defs.md#updatecollectionrequestrequesttypedef) 
+
+### update\_security\_config
+
+Updates a security configuration for OpenSearch Serverless.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").update_security_config` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.update_security_config)
+
+```python
+# update_security_config method definition
+
+await def update_security_config(
+    self,
+    *,
+    configVersion: str,
+    id: str,
+    clientToken: str = ...,
+    description: str = ...,
+    samlOptions: SamlConfigOptionsTypeDef = ...,  # (1)
+) -> UpdateSecurityConfigResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: SamlConfigOptionsTypeDef](./type_defs.md#samlconfigoptionstypedef) 
+2. See [:material-code-braces: UpdateSecurityConfigResponseTypeDef](./type_defs.md#updatesecurityconfigresponsetypedef) 
+
+
+```python
+# update_security_config method usage example with argument unpacking
+
+kwargs: UpdateSecurityConfigRequestRequestTypeDef = {  # (1)
+    "configVersion": ...,
+    "id": ...,
+}
+
+parent.update_security_config(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateSecurityConfigRequestRequestTypeDef](./type_defs.md#updatesecurityconfigrequestrequesttypedef) 
+
+### update\_security\_policy
+
+Updates an OpenSearch Serverless security policy.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").update_security_policy` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.update_security_policy)
+
+```python
+# update_security_policy method definition
+
+await def update_security_policy(
+    self,
+    *,
+    name: str,
+    policyVersion: str,
+    type: SecurityPolicyTypeType,  # (1)
+    clientToken: str = ...,
+    description: str = ...,
+    policy: str = ...,
+) -> UpdateSecurityPolicyResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: SecurityPolicyTypeType](./literals.md#securitypolicytypetype) 
+2. See [:material-code-braces: UpdateSecurityPolicyResponseTypeDef](./type_defs.md#updatesecuritypolicyresponsetypedef) 
+
+
+```python
+# update_security_policy method usage example with argument unpacking
+
+kwargs: UpdateSecurityPolicyRequestRequestTypeDef = {  # (1)
+    "name": ...,
+    "policyVersion": ...,
+    "type": ...,
+}
+
+parent.update_security_policy(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateSecurityPolicyRequestRequestTypeDef](./type_defs.md#updatesecuritypolicyrequestrequesttypedef) 
+
+### update\_vpc\_endpoint
+
+Updates an OpenSearch Serverless-managed interface endpoint.
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").update_vpc_endpoint` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.update_vpc_endpoint)
+
+```python
+# update_vpc_endpoint method definition
+
+await def update_vpc_endpoint(
+    self,
+    *,
+    id: str,
+    addSecurityGroupIds: Sequence[str] = ...,
+    addSubnetIds: Sequence[str] = ...,
+    clientToken: str = ...,
+    removeSecurityGroupIds: Sequence[str] = ...,
+    removeSubnetIds: Sequence[str] = ...,
+) -> UpdateVpcEndpointResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: UpdateVpcEndpointResponseTypeDef](./type_defs.md#updatevpcendpointresponsetypedef) 
+
+
+```python
+# update_vpc_endpoint method usage example with argument unpacking
+
+kwargs: UpdateVpcEndpointRequestRequestTypeDef = {  # (1)
+    "id": ...,
+}
+
+parent.update_vpc_endpoint(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateVpcEndpointRequestRequestTypeDef](./type_defs.md#updatevpcendpointrequestrequesttypedef) 
+
+### \_\_aenter\_\_
+
+
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").__aenter__` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.__aenter__)
+
+```python
+# __aenter__ method definition
+
+await def __aenter__(
+    self,
+) -> OpenSearchServiceServerlessClient:
+    ...
+```
+
+
+### \_\_aexit\_\_
+
+
+
+Type annotations and code completion for `#!python session.create_client("opensearchserverless").__aexit__` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearchserverless.html#OpenSearchServiceServerless.Client.__aexit__)
+
+```python
+# __aexit__ method definition
+
+await def __aexit__(
+    self,
+    exc_type: Any,
+    exc_val: Any,
+    exc_tb: Any,
+) -> Any:
+    ...
+```
+
+
+
+
+

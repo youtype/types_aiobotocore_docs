@@ -1,0 +1,804 @@
+# Literals
+
+> [Index](../README.md) > [SSOAdmin](./README.md) > Literals
+
+!!! note ""
+
+    Auto-generated documentation for [SSOAdmin](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin)
+    type annotations stubs module [types-aiobotocore-sso-admin](https://pypi.org/project/types-aiobotocore-sso-admin/).
+
+## InstanceAccessControlAttributeConfigurationStatusType
+
+```python
+# InstanceAccessControlAttributeConfigurationStatusType usage example
+
+from types_aiobotocore_sso_admin.literals import InstanceAccessControlAttributeConfigurationStatusType
+
+def get_value() -> InstanceAccessControlAttributeConfigurationStatusType:
+    return "CREATION_FAILED"
+```
+
+```python
+# InstanceAccessControlAttributeConfigurationStatusType definition
+
+InstanceAccessControlAttributeConfigurationStatusType = Literal[
+    "CREATION_FAILED",
+    "CREATION_IN_PROGRESS",
+    "ENABLED",
+]
+```
+## ListAccountAssignmentCreationStatusPaginatorName
+
+```python
+# ListAccountAssignmentCreationStatusPaginatorName usage example
+
+from types_aiobotocore_sso_admin.literals import ListAccountAssignmentCreationStatusPaginatorName
+
+def get_value() -> ListAccountAssignmentCreationStatusPaginatorName:
+    return "list_account_assignment_creation_status"
+```
+
+```python
+# ListAccountAssignmentCreationStatusPaginatorName definition
+
+ListAccountAssignmentCreationStatusPaginatorName = Literal[
+    "list_account_assignment_creation_status",
+]
+```
+## ListAccountAssignmentDeletionStatusPaginatorName
+
+```python
+# ListAccountAssignmentDeletionStatusPaginatorName usage example
+
+from types_aiobotocore_sso_admin.literals import ListAccountAssignmentDeletionStatusPaginatorName
+
+def get_value() -> ListAccountAssignmentDeletionStatusPaginatorName:
+    return "list_account_assignment_deletion_status"
+```
+
+```python
+# ListAccountAssignmentDeletionStatusPaginatorName definition
+
+ListAccountAssignmentDeletionStatusPaginatorName = Literal[
+    "list_account_assignment_deletion_status",
+]
+```
+## ListAccountAssignmentsPaginatorName
+
+```python
+# ListAccountAssignmentsPaginatorName usage example
+
+from types_aiobotocore_sso_admin.literals import ListAccountAssignmentsPaginatorName
+
+def get_value() -> ListAccountAssignmentsPaginatorName:
+    return "list_account_assignments"
+```
+
+```python
+# ListAccountAssignmentsPaginatorName definition
+
+ListAccountAssignmentsPaginatorName = Literal[
+    "list_account_assignments",
+]
+```
+## ListAccountsForProvisionedPermissionSetPaginatorName
+
+```python
+# ListAccountsForProvisionedPermissionSetPaginatorName usage example
+
+from types_aiobotocore_sso_admin.literals import ListAccountsForProvisionedPermissionSetPaginatorName
+
+def get_value() -> ListAccountsForProvisionedPermissionSetPaginatorName:
+    return "list_accounts_for_provisioned_permission_set"
+```
+
+```python
+# ListAccountsForProvisionedPermissionSetPaginatorName definition
+
+ListAccountsForProvisionedPermissionSetPaginatorName = Literal[
+    "list_accounts_for_provisioned_permission_set",
+]
+```
+## ListCustomerManagedPolicyReferencesInPermissionSetPaginatorName
+
+```python
+# ListCustomerManagedPolicyReferencesInPermissionSetPaginatorName usage example
+
+from types_aiobotocore_sso_admin.literals import ListCustomerManagedPolicyReferencesInPermissionSetPaginatorName
+
+def get_value() -> ListCustomerManagedPolicyReferencesInPermissionSetPaginatorName:
+    return "list_customer_managed_policy_references_in_permission_set"
+```
+
+```python
+# ListCustomerManagedPolicyReferencesInPermissionSetPaginatorName definition
+
+ListCustomerManagedPolicyReferencesInPermissionSetPaginatorName = Literal[
+    "list_customer_managed_policy_references_in_permission_set",
+]
+```
+## ListInstancesPaginatorName
+
+```python
+# ListInstancesPaginatorName usage example
+
+from types_aiobotocore_sso_admin.literals import ListInstancesPaginatorName
+
+def get_value() -> ListInstancesPaginatorName:
+    return "list_instances"
+```
+
+```python
+# ListInstancesPaginatorName definition
+
+ListInstancesPaginatorName = Literal[
+    "list_instances",
+]
+```
+## ListManagedPoliciesInPermissionSetPaginatorName
+
+```python
+# ListManagedPoliciesInPermissionSetPaginatorName usage example
+
+from types_aiobotocore_sso_admin.literals import ListManagedPoliciesInPermissionSetPaginatorName
+
+def get_value() -> ListManagedPoliciesInPermissionSetPaginatorName:
+    return "list_managed_policies_in_permission_set"
+```
+
+```python
+# ListManagedPoliciesInPermissionSetPaginatorName definition
+
+ListManagedPoliciesInPermissionSetPaginatorName = Literal[
+    "list_managed_policies_in_permission_set",
+]
+```
+## ListPermissionSetProvisioningStatusPaginatorName
+
+```python
+# ListPermissionSetProvisioningStatusPaginatorName usage example
+
+from types_aiobotocore_sso_admin.literals import ListPermissionSetProvisioningStatusPaginatorName
+
+def get_value() -> ListPermissionSetProvisioningStatusPaginatorName:
+    return "list_permission_set_provisioning_status"
+```
+
+```python
+# ListPermissionSetProvisioningStatusPaginatorName definition
+
+ListPermissionSetProvisioningStatusPaginatorName = Literal[
+    "list_permission_set_provisioning_status",
+]
+```
+## ListPermissionSetsPaginatorName
+
+```python
+# ListPermissionSetsPaginatorName usage example
+
+from types_aiobotocore_sso_admin.literals import ListPermissionSetsPaginatorName
+
+def get_value() -> ListPermissionSetsPaginatorName:
+    return "list_permission_sets"
+```
+
+```python
+# ListPermissionSetsPaginatorName definition
+
+ListPermissionSetsPaginatorName = Literal[
+    "list_permission_sets",
+]
+```
+## ListPermissionSetsProvisionedToAccountPaginatorName
+
+```python
+# ListPermissionSetsProvisionedToAccountPaginatorName usage example
+
+from types_aiobotocore_sso_admin.literals import ListPermissionSetsProvisionedToAccountPaginatorName
+
+def get_value() -> ListPermissionSetsProvisionedToAccountPaginatorName:
+    return "list_permission_sets_provisioned_to_account"
+```
+
+```python
+# ListPermissionSetsProvisionedToAccountPaginatorName definition
+
+ListPermissionSetsProvisionedToAccountPaginatorName = Literal[
+    "list_permission_sets_provisioned_to_account",
+]
+```
+## ListTagsForResourcePaginatorName
+
+```python
+# ListTagsForResourcePaginatorName usage example
+
+from types_aiobotocore_sso_admin.literals import ListTagsForResourcePaginatorName
+
+def get_value() -> ListTagsForResourcePaginatorName:
+    return "list_tags_for_resource"
+```
+
+```python
+# ListTagsForResourcePaginatorName definition
+
+ListTagsForResourcePaginatorName = Literal[
+    "list_tags_for_resource",
+]
+```
+## PrincipalTypeType
+
+```python
+# PrincipalTypeType usage example
+
+from types_aiobotocore_sso_admin.literals import PrincipalTypeType
+
+def get_value() -> PrincipalTypeType:
+    return "GROUP"
+```
+
+```python
+# PrincipalTypeType definition
+
+PrincipalTypeType = Literal[
+    "GROUP",
+    "USER",
+]
+```
+## ProvisionTargetTypeType
+
+```python
+# ProvisionTargetTypeType usage example
+
+from types_aiobotocore_sso_admin.literals import ProvisionTargetTypeType
+
+def get_value() -> ProvisionTargetTypeType:
+    return "ALL_PROVISIONED_ACCOUNTS"
+```
+
+```python
+# ProvisionTargetTypeType definition
+
+ProvisionTargetTypeType = Literal[
+    "ALL_PROVISIONED_ACCOUNTS",
+    "AWS_ACCOUNT",
+]
+```
+## ProvisioningStatusType
+
+```python
+# ProvisioningStatusType usage example
+
+from types_aiobotocore_sso_admin.literals import ProvisioningStatusType
+
+def get_value() -> ProvisioningStatusType:
+    return "LATEST_PERMISSION_SET_NOT_PROVISIONED"
+```
+
+```python
+# ProvisioningStatusType definition
+
+ProvisioningStatusType = Literal[
+    "LATEST_PERMISSION_SET_NOT_PROVISIONED",
+    "LATEST_PERMISSION_SET_PROVISIONED",
+]
+```
+## StatusValuesType
+
+```python
+# StatusValuesType usage example
+
+from types_aiobotocore_sso_admin.literals import StatusValuesType
+
+def get_value() -> StatusValuesType:
+    return "FAILED"
+```
+
+```python
+# StatusValuesType definition
+
+StatusValuesType = Literal[
+    "FAILED",
+    "IN_PROGRESS",
+    "SUCCEEDED",
+]
+```
+## TargetTypeType
+
+```python
+# TargetTypeType usage example
+
+from types_aiobotocore_sso_admin.literals import TargetTypeType
+
+def get_value() -> TargetTypeType:
+    return "AWS_ACCOUNT"
+```
+
+```python
+# TargetTypeType definition
+
+TargetTypeType = Literal[
+    "AWS_ACCOUNT",
+]
+```
+## SSOAdminServiceName
+
+```python
+# SSOAdminServiceName usage example
+
+from types_aiobotocore_sso_admin.literals import SSOAdminServiceName
+
+def get_value() -> SSOAdminServiceName:
+    return "sso-admin"
+```
+
+```python
+# SSOAdminServiceName definition
+
+SSOAdminServiceName = Literal[
+    "sso-admin",
+]
+```
+## ServiceName
+
+```python
+# ServiceName usage example
+
+from types_aiobotocore_sso_admin.literals import ServiceName
+
+def get_value() -> ServiceName:
+    return "accessanalyzer"
+```
+
+```python
+# ServiceName definition
+
+ServiceName = Literal[
+    "accessanalyzer",
+    "account",
+    "acm",
+    "acm-pca",
+    "alexaforbusiness",
+    "amp",
+    "amplify",
+    "amplifybackend",
+    "amplifyuibuilder",
+    "apigateway",
+    "apigatewaymanagementapi",
+    "apigatewayv2",
+    "appconfig",
+    "appconfigdata",
+    "appfabric",
+    "appflow",
+    "appintegrations",
+    "application-autoscaling",
+    "application-insights",
+    "applicationcostprofiler",
+    "appmesh",
+    "apprunner",
+    "appstream",
+    "appsync",
+    "arc-zonal-shift",
+    "athena",
+    "auditmanager",
+    "autoscaling",
+    "autoscaling-plans",
+    "backup",
+    "backup-gateway",
+    "backupstorage",
+    "batch",
+    "billingconductor",
+    "braket",
+    "budgets",
+    "ce",
+    "chime",
+    "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
+    "chime-sdk-meetings",
+    "chime-sdk-messaging",
+    "chime-sdk-voice",
+    "cleanrooms",
+    "cloud9",
+    "cloudcontrol",
+    "clouddirectory",
+    "cloudformation",
+    "cloudfront",
+    "cloudhsm",
+    "cloudhsmv2",
+    "cloudsearch",
+    "cloudsearchdomain",
+    "cloudtrail",
+    "cloudtrail-data",
+    "cloudwatch",
+    "codeartifact",
+    "codebuild",
+    "codecatalyst",
+    "codecommit",
+    "codedeploy",
+    "codeguru-reviewer",
+    "codeguru-security",
+    "codeguruprofiler",
+    "codepipeline",
+    "codestar",
+    "codestar-connections",
+    "codestar-notifications",
+    "cognito-identity",
+    "cognito-idp",
+    "cognito-sync",
+    "comprehend",
+    "comprehendmedical",
+    "compute-optimizer",
+    "config",
+    "connect",
+    "connect-contact-lens",
+    "connectcampaigns",
+    "connectcases",
+    "connectparticipant",
+    "controltower",
+    "cur",
+    "customer-profiles",
+    "databrew",
+    "dataexchange",
+    "datapipeline",
+    "datasync",
+    "dax",
+    "detective",
+    "devicefarm",
+    "devops-guru",
+    "directconnect",
+    "discovery",
+    "dlm",
+    "dms",
+    "docdb",
+    "docdb-elastic",
+    "drs",
+    "ds",
+    "dynamodb",
+    "dynamodbstreams",
+    "ebs",
+    "ec2",
+    "ec2-instance-connect",
+    "ecr",
+    "ecr-public",
+    "ecs",
+    "efs",
+    "eks",
+    "elastic-inference",
+    "elasticache",
+    "elasticbeanstalk",
+    "elastictranscoder",
+    "elb",
+    "elbv2",
+    "emr",
+    "emr-containers",
+    "emr-serverless",
+    "entityresolution",
+    "es",
+    "events",
+    "evidently",
+    "finspace",
+    "finspace-data",
+    "firehose",
+    "fis",
+    "fms",
+    "forecast",
+    "forecastquery",
+    "frauddetector",
+    "fsx",
+    "gamelift",
+    "gamesparks",
+    "glacier",
+    "globalaccelerator",
+    "glue",
+    "grafana",
+    "greengrass",
+    "greengrassv2",
+    "groundstation",
+    "guardduty",
+    "health",
+    "healthlake",
+    "honeycode",
+    "iam",
+    "identitystore",
+    "imagebuilder",
+    "importexport",
+    "inspector",
+    "inspector2",
+    "internetmonitor",
+    "iot",
+    "iot-data",
+    "iot-jobs-data",
+    "iot-roborunner",
+    "iot1click-devices",
+    "iot1click-projects",
+    "iotanalytics",
+    "iotdeviceadvisor",
+    "iotevents",
+    "iotevents-data",
+    "iotfleethub",
+    "iotfleetwise",
+    "iotsecuretunneling",
+    "iotsitewise",
+    "iotthingsgraph",
+    "iottwinmaker",
+    "iotwireless",
+    "ivs",
+    "ivs-realtime",
+    "ivschat",
+    "kafka",
+    "kafkaconnect",
+    "kendra",
+    "kendra-ranking",
+    "keyspaces",
+    "kinesis",
+    "kinesis-video-archived-media",
+    "kinesis-video-media",
+    "kinesis-video-signaling",
+    "kinesis-video-webrtc-storage",
+    "kinesisanalytics",
+    "kinesisanalyticsv2",
+    "kinesisvideo",
+    "kms",
+    "lakeformation",
+    "lambda",
+    "lex-models",
+    "lex-runtime",
+    "lexv2-models",
+    "lexv2-runtime",
+    "license-manager",
+    "license-manager-linux-subscriptions",
+    "license-manager-user-subscriptions",
+    "lightsail",
+    "location",
+    "logs",
+    "lookoutequipment",
+    "lookoutmetrics",
+    "lookoutvision",
+    "m2",
+    "machinelearning",
+    "macie",
+    "macie2",
+    "managedblockchain",
+    "managedblockchain-query",
+    "marketplace-catalog",
+    "marketplace-entitlement",
+    "marketplacecommerceanalytics",
+    "mediaconnect",
+    "mediaconvert",
+    "medialive",
+    "mediapackage",
+    "mediapackage-vod",
+    "mediapackagev2",
+    "mediastore",
+    "mediastore-data",
+    "mediatailor",
+    "medical-imaging",
+    "memorydb",
+    "meteringmarketplace",
+    "mgh",
+    "mgn",
+    "migration-hub-refactor-spaces",
+    "migrationhub-config",
+    "migrationhuborchestrator",
+    "migrationhubstrategy",
+    "mobile",
+    "mq",
+    "mturk",
+    "mwaa",
+    "neptune",
+    "network-firewall",
+    "networkmanager",
+    "nimble",
+    "oam",
+    "omics",
+    "opensearch",
+    "opensearchserverless",
+    "opsworks",
+    "opsworkscm",
+    "organizations",
+    "osis",
+    "outposts",
+    "panorama",
+    "payment-cryptography",
+    "payment-cryptography-data",
+    "personalize",
+    "personalize-events",
+    "personalize-runtime",
+    "pi",
+    "pinpoint",
+    "pinpoint-email",
+    "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
+    "pipes",
+    "polly",
+    "pricing",
+    "privatenetworks",
+    "proton",
+    "qldb",
+    "qldb-session",
+    "quicksight",
+    "ram",
+    "rbin",
+    "rds",
+    "rds-data",
+    "redshift",
+    "redshift-data",
+    "redshift-serverless",
+    "rekognition",
+    "resiliencehub",
+    "resource-explorer-2",
+    "resource-groups",
+    "resourcegroupstaggingapi",
+    "robomaker",
+    "rolesanywhere",
+    "route53",
+    "route53-recovery-cluster",
+    "route53-recovery-control-config",
+    "route53-recovery-readiness",
+    "route53domains",
+    "route53resolver",
+    "rum",
+    "s3",
+    "s3control",
+    "s3outposts",
+    "sagemaker",
+    "sagemaker-a2i-runtime",
+    "sagemaker-edge",
+    "sagemaker-featurestore-runtime",
+    "sagemaker-geospatial",
+    "sagemaker-metrics",
+    "sagemaker-runtime",
+    "savingsplans",
+    "scheduler",
+    "schemas",
+    "sdb",
+    "secretsmanager",
+    "securityhub",
+    "securitylake",
+    "serverlessrepo",
+    "service-quotas",
+    "servicecatalog",
+    "servicecatalog-appregistry",
+    "servicediscovery",
+    "ses",
+    "sesv2",
+    "shield",
+    "signer",
+    "simspaceweaver",
+    "sms",
+    "sms-voice",
+    "snow-device-management",
+    "snowball",
+    "sns",
+    "sqs",
+    "ssm",
+    "ssm-contacts",
+    "ssm-incidents",
+    "ssm-sap",
+    "sso",
+    "sso-admin",
+    "sso-oidc",
+    "stepfunctions",
+    "storagegateway",
+    "sts",
+    "support",
+    "support-app",
+    "swf",
+    "synthetics",
+    "textract",
+    "timestream-query",
+    "timestream-write",
+    "tnb",
+    "transcribe",
+    "transfer",
+    "translate",
+    "verifiedpermissions",
+    "voice-id",
+    "vpc-lattice",
+    "waf",
+    "waf-regional",
+    "wafv2",
+    "wellarchitected",
+    "wisdom",
+    "workdocs",
+    "worklink",
+    "workmail",
+    "workmailmessageflow",
+    "workspaces",
+    "workspaces-web",
+    "xray",
+]
+```
+## ResourceServiceName
+
+```python
+# ResourceServiceName usage example
+
+from types_aiobotocore_sso_admin.literals import ResourceServiceName
+
+def get_value() -> ResourceServiceName:
+    return "cloudformation"
+```
+
+```python
+# ResourceServiceName definition
+
+ResourceServiceName = Literal[
+    "cloudformation",
+    "cloudwatch",
+    "dynamodb",
+    "ec2",
+    "glacier",
+    "iam",
+    "opsworks",
+    "s3",
+    "sns",
+    "sqs",
+]
+```
+## PaginatorName
+
+```python
+# PaginatorName usage example
+
+from types_aiobotocore_sso_admin.literals import PaginatorName
+
+def get_value() -> PaginatorName:
+    return "list_account_assignment_creation_status"
+```
+
+```python
+# PaginatorName definition
+
+PaginatorName = Literal[
+    "list_account_assignment_creation_status",
+    "list_account_assignment_deletion_status",
+    "list_account_assignments",
+    "list_accounts_for_provisioned_permission_set",
+    "list_customer_managed_policy_references_in_permission_set",
+    "list_instances",
+    "list_managed_policies_in_permission_set",
+    "list_permission_set_provisioning_status",
+    "list_permission_sets",
+    "list_permission_sets_provisioned_to_account",
+    "list_tags_for_resource",
+]
+```
+## RegionName
+
+```python
+# RegionName usage example
+
+from types_aiobotocore_sso_admin.literals import RegionName
+
+def get_value() -> RegionName:
+    return "af-south-1"
+```
+
+```python
+# RegionName definition
+
+RegionName = Literal[
+    "af-south-1",
+    "ap-east-1",
+    "ap-northeast-1",
+    "ap-northeast-2",
+    "ap-northeast-3",
+    "ap-south-1",
+    "ap-southeast-1",
+    "ap-southeast-2",
+    "ap-southeast-3",
+    "ca-central-1",
+    "eu-central-1",
+    "eu-north-1",
+    "eu-south-1",
+    "eu-west-1",
+    "eu-west-2",
+    "eu-west-3",
+    "me-south-1",
+    "sa-east-1",
+    "us-east-1",
+    "us-east-2",
+    "us-west-1",
+    "us-west-2",
+]
+```

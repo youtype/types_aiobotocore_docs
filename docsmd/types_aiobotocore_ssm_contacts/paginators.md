@@ -1,0 +1,647 @@
+# Paginators
+
+> [Index](../README.md) > [SSMContacts](./README.md) > Paginators
+
+!!! note ""
+
+    Auto-generated documentation for [SSMContacts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts)
+    type annotations stubs module [types-aiobotocore-ssm-contacts](https://pypi.org/project/types-aiobotocore-ssm-contacts/).
+
+## ListContactChannelsPaginator
+
+Type annotations and code completion for `#!python session.create_client("ssm-contacts").get_paginator("list_contact_channels")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Paginator.ListContactChannels)
+
+```python
+# ListContactChannelsPaginator usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_ssm_contacts.paginator import ListContactChannelsPaginator
+
+session = get_session()
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListContactChannelsPaginator = client.get_paginator("list_contact_channels")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListContactChannelsResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListContactChannelsPaginator](./paginators.md#listcontactchannelspaginator)
+3. item: [:material-code-braces: ListContactChannelsResultTypeDef](./type_defs.md#listcontactchannelsresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListContactChannelsPaginator.paginate` method.
+
+```python
+# paginate method definition
+
+def paginate(
+    self,
+    *,
+    ContactId: str,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListContactChannelsResultTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListContactChannelsResultTypeDef](./type_defs.md#listcontactchannelsresulttypedef) 
+
+
+```python
+# paginate method usage example with argument unpacking
+
+kwargs: ListContactChannelsRequestListContactChannelsPaginateTypeDef = {  # (1)
+    "ContactId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListContactChannelsRequestListContactChannelsPaginateTypeDef](./type_defs.md#listcontactchannelsrequestlistcontactchannelspaginatetypedef) 
+## ListContactsPaginator
+
+Type annotations and code completion for `#!python session.create_client("ssm-contacts").get_paginator("list_contacts")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Paginator.ListContacts)
+
+```python
+# ListContactsPaginator usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_ssm_contacts.paginator import ListContactsPaginator
+
+session = get_session()
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListContactsPaginator = client.get_paginator("list_contacts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListContactsResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListContactsPaginator](./paginators.md#listcontactspaginator)
+3. item: [:material-code-braces: ListContactsResultTypeDef](./type_defs.md#listcontactsresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListContactsPaginator.paginate` method.
+
+```python
+# paginate method definition
+
+def paginate(
+    self,
+    *,
+    AliasPrefix: str = ...,
+    Type: ContactTypeType = ...,  # (1)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[ListContactsResultTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-brackets: ContactTypeType](./literals.md#contacttypetype) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: ListContactsResultTypeDef](./type_defs.md#listcontactsresulttypedef) 
+
+
+```python
+# paginate method usage example with argument unpacking
+
+kwargs: ListContactsRequestListContactsPaginateTypeDef = {  # (1)
+    "AliasPrefix": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListContactsRequestListContactsPaginateTypeDef](./type_defs.md#listcontactsrequestlistcontactspaginatetypedef) 
+## ListEngagementsPaginator
+
+Type annotations and code completion for `#!python session.create_client("ssm-contacts").get_paginator("list_engagements")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Paginator.ListEngagements)
+
+```python
+# ListEngagementsPaginator usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_ssm_contacts.paginator import ListEngagementsPaginator
+
+session = get_session()
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListEngagementsPaginator = client.get_paginator("list_engagements")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEngagementsResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListEngagementsPaginator](./paginators.md#listengagementspaginator)
+3. item: [:material-code-braces: ListEngagementsResultTypeDef](./type_defs.md#listengagementsresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListEngagementsPaginator.paginate` method.
+
+```python
+# paginate method definition
+
+def paginate(
+    self,
+    *,
+    IncidentId: str = ...,
+    TimeRangeValue: TimeRangeTypeDef = ...,  # (1)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[ListEngagementsResultTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: TimeRangeTypeDef](./type_defs.md#timerangetypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: ListEngagementsResultTypeDef](./type_defs.md#listengagementsresulttypedef) 
+
+
+```python
+# paginate method usage example with argument unpacking
+
+kwargs: ListEngagementsRequestListEngagementsPaginateTypeDef = {  # (1)
+    "IncidentId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListEngagementsRequestListEngagementsPaginateTypeDef](./type_defs.md#listengagementsrequestlistengagementspaginatetypedef) 
+## ListPageReceiptsPaginator
+
+Type annotations and code completion for `#!python session.create_client("ssm-contacts").get_paginator("list_page_receipts")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Paginator.ListPageReceipts)
+
+```python
+# ListPageReceiptsPaginator usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_ssm_contacts.paginator import ListPageReceiptsPaginator
+
+session = get_session()
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListPageReceiptsPaginator = client.get_paginator("list_page_receipts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPageReceiptsResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListPageReceiptsPaginator](./paginators.md#listpagereceiptspaginator)
+3. item: [:material-code-braces: ListPageReceiptsResultTypeDef](./type_defs.md#listpagereceiptsresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListPageReceiptsPaginator.paginate` method.
+
+```python
+# paginate method definition
+
+def paginate(
+    self,
+    *,
+    PageId: str,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListPageReceiptsResultTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListPageReceiptsResultTypeDef](./type_defs.md#listpagereceiptsresulttypedef) 
+
+
+```python
+# paginate method usage example with argument unpacking
+
+kwargs: ListPageReceiptsRequestListPageReceiptsPaginateTypeDef = {  # (1)
+    "PageId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListPageReceiptsRequestListPageReceiptsPaginateTypeDef](./type_defs.md#listpagereceiptsrequestlistpagereceiptspaginatetypedef) 
+## ListPageResolutionsPaginator
+
+Type annotations and code completion for `#!python session.create_client("ssm-contacts").get_paginator("list_page_resolutions")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Paginator.ListPageResolutions)
+
+```python
+# ListPageResolutionsPaginator usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_ssm_contacts.paginator import ListPageResolutionsPaginator
+
+session = get_session()
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListPageResolutionsPaginator = client.get_paginator("list_page_resolutions")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPageResolutionsResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListPageResolutionsPaginator](./paginators.md#listpageresolutionspaginator)
+3. item: [:material-code-braces: ListPageResolutionsResultTypeDef](./type_defs.md#listpageresolutionsresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListPageResolutionsPaginator.paginate` method.
+
+```python
+# paginate method definition
+
+def paginate(
+    self,
+    *,
+    PageId: str,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListPageResolutionsResultTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListPageResolutionsResultTypeDef](./type_defs.md#listpageresolutionsresulttypedef) 
+
+
+```python
+# paginate method usage example with argument unpacking
+
+kwargs: ListPageResolutionsRequestListPageResolutionsPaginateTypeDef = {  # (1)
+    "PageId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListPageResolutionsRequestListPageResolutionsPaginateTypeDef](./type_defs.md#listpageresolutionsrequestlistpageresolutionspaginatetypedef) 
+## ListPagesByContactPaginator
+
+Type annotations and code completion for `#!python session.create_client("ssm-contacts").get_paginator("list_pages_by_contact")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Paginator.ListPagesByContact)
+
+```python
+# ListPagesByContactPaginator usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_ssm_contacts.paginator import ListPagesByContactPaginator
+
+session = get_session()
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListPagesByContactPaginator = client.get_paginator("list_pages_by_contact")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPagesByContactResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListPagesByContactPaginator](./paginators.md#listpagesbycontactpaginator)
+3. item: [:material-code-braces: ListPagesByContactResultTypeDef](./type_defs.md#listpagesbycontactresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListPagesByContactPaginator.paginate` method.
+
+```python
+# paginate method definition
+
+def paginate(
+    self,
+    *,
+    ContactId: str,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListPagesByContactResultTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListPagesByContactResultTypeDef](./type_defs.md#listpagesbycontactresulttypedef) 
+
+
+```python
+# paginate method usage example with argument unpacking
+
+kwargs: ListPagesByContactRequestListPagesByContactPaginateTypeDef = {  # (1)
+    "ContactId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListPagesByContactRequestListPagesByContactPaginateTypeDef](./type_defs.md#listpagesbycontactrequestlistpagesbycontactpaginatetypedef) 
+## ListPagesByEngagementPaginator
+
+Type annotations and code completion for `#!python session.create_client("ssm-contacts").get_paginator("list_pages_by_engagement")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Paginator.ListPagesByEngagement)
+
+```python
+# ListPagesByEngagementPaginator usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_ssm_contacts.paginator import ListPagesByEngagementPaginator
+
+session = get_session()
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListPagesByEngagementPaginator = client.get_paginator("list_pages_by_engagement")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPagesByEngagementResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListPagesByEngagementPaginator](./paginators.md#listpagesbyengagementpaginator)
+3. item: [:material-code-braces: ListPagesByEngagementResultTypeDef](./type_defs.md#listpagesbyengagementresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListPagesByEngagementPaginator.paginate` method.
+
+```python
+# paginate method definition
+
+def paginate(
+    self,
+    *,
+    EngagementId: str,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListPagesByEngagementResultTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListPagesByEngagementResultTypeDef](./type_defs.md#listpagesbyengagementresulttypedef) 
+
+
+```python
+# paginate method usage example with argument unpacking
+
+kwargs: ListPagesByEngagementRequestListPagesByEngagementPaginateTypeDef = {  # (1)
+    "EngagementId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListPagesByEngagementRequestListPagesByEngagementPaginateTypeDef](./type_defs.md#listpagesbyengagementrequestlistpagesbyengagementpaginatetypedef) 
+## ListPreviewRotationShiftsPaginator
+
+Type annotations and code completion for `#!python session.create_client("ssm-contacts").get_paginator("list_preview_rotation_shifts")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Paginator.ListPreviewRotationShifts)
+
+```python
+# ListPreviewRotationShiftsPaginator usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_ssm_contacts.paginator import ListPreviewRotationShiftsPaginator
+
+session = get_session()
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListPreviewRotationShiftsPaginator = client.get_paginator("list_preview_rotation_shifts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPreviewRotationShiftsResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListPreviewRotationShiftsPaginator](./paginators.md#listpreviewrotationshiftspaginator)
+3. item: [:material-code-braces: ListPreviewRotationShiftsResultTypeDef](./type_defs.md#listpreviewrotationshiftsresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListPreviewRotationShiftsPaginator.paginate` method.
+
+```python
+# paginate method definition
+
+def paginate(
+    self,
+    *,
+    EndTime: Union[datetime, str],
+    Members: Sequence[str],
+    TimeZoneId: str,
+    Recurrence: RecurrenceSettingsTypeDef,  # (1)
+    RotationStartTime: Union[datetime, str] = ...,
+    StartTime: Union[datetime, str] = ...,
+    Overrides: Sequence[PreviewOverrideTypeDef] = ...,  # (2)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (3)
+) -> AsyncIterator[ListPreviewRotationShiftsResultTypeDef]:  # (4)
+    ...
+```
+
+1. See [:material-code-braces: RecurrenceSettingsTypeDef](./type_defs.md#recurrencesettingstypedef) 
+2. See [:material-code-braces: PreviewOverrideTypeDef](./type_defs.md#previewoverridetypedef) 
+3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+4. See [:material-code-braces: ListPreviewRotationShiftsResultTypeDef](./type_defs.md#listpreviewrotationshiftsresulttypedef) 
+
+
+```python
+# paginate method usage example with argument unpacking
+
+kwargs: ListPreviewRotationShiftsRequestListPreviewRotationShiftsPaginateTypeDef = {  # (1)
+    "EndTime": ...,
+    "Members": ...,
+    "TimeZoneId": ...,
+    "Recurrence": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListPreviewRotationShiftsRequestListPreviewRotationShiftsPaginateTypeDef](./type_defs.md#listpreviewrotationshiftsrequestlistpreviewrotationshiftspaginatetypedef) 
+## ListRotationOverridesPaginator
+
+Type annotations and code completion for `#!python session.create_client("ssm-contacts").get_paginator("list_rotation_overrides")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Paginator.ListRotationOverrides)
+
+```python
+# ListRotationOverridesPaginator usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_ssm_contacts.paginator import ListRotationOverridesPaginator
+
+session = get_session()
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListRotationOverridesPaginator = client.get_paginator("list_rotation_overrides")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRotationOverridesResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListRotationOverridesPaginator](./paginators.md#listrotationoverridespaginator)
+3. item: [:material-code-braces: ListRotationOverridesResultTypeDef](./type_defs.md#listrotationoverridesresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListRotationOverridesPaginator.paginate` method.
+
+```python
+# paginate method definition
+
+def paginate(
+    self,
+    *,
+    RotationId: str,
+    StartTime: Union[datetime, str],
+    EndTime: Union[datetime, str],
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListRotationOverridesResultTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListRotationOverridesResultTypeDef](./type_defs.md#listrotationoverridesresulttypedef) 
+
+
+```python
+# paginate method usage example with argument unpacking
+
+kwargs: ListRotationOverridesRequestListRotationOverridesPaginateTypeDef = {  # (1)
+    "RotationId": ...,
+    "StartTime": ...,
+    "EndTime": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListRotationOverridesRequestListRotationOverridesPaginateTypeDef](./type_defs.md#listrotationoverridesrequestlistrotationoverridespaginatetypedef) 
+## ListRotationShiftsPaginator
+
+Type annotations and code completion for `#!python session.create_client("ssm-contacts").get_paginator("list_rotation_shifts")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Paginator.ListRotationShifts)
+
+```python
+# ListRotationShiftsPaginator usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_ssm_contacts.paginator import ListRotationShiftsPaginator
+
+session = get_session()
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListRotationShiftsPaginator = client.get_paginator("list_rotation_shifts")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRotationShiftsResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListRotationShiftsPaginator](./paginators.md#listrotationshiftspaginator)
+3. item: [:material-code-braces: ListRotationShiftsResultTypeDef](./type_defs.md#listrotationshiftsresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListRotationShiftsPaginator.paginate` method.
+
+```python
+# paginate method definition
+
+def paginate(
+    self,
+    *,
+    RotationId: str,
+    EndTime: Union[datetime, str],
+    StartTime: Union[datetime, str] = ...,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListRotationShiftsResultTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListRotationShiftsResultTypeDef](./type_defs.md#listrotationshiftsresulttypedef) 
+
+
+```python
+# paginate method usage example with argument unpacking
+
+kwargs: ListRotationShiftsRequestListRotationShiftsPaginateTypeDef = {  # (1)
+    "RotationId": ...,
+    "EndTime": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListRotationShiftsRequestListRotationShiftsPaginateTypeDef](./type_defs.md#listrotationshiftsrequestlistrotationshiftspaginatetypedef) 
+## ListRotationsPaginator
+
+Type annotations and code completion for `#!python session.create_client("ssm-contacts").get_paginator("list_rotations")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Paginator.ListRotations)
+
+```python
+# ListRotationsPaginator usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_ssm_contacts.paginator import ListRotationsPaginator
+
+session = get_session()
+async with session.create_client("ssm-contacts") as client:  # (1)
+    paginator: ListRotationsPaginator = client.get_paginator("list_rotations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListRotationsResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [SSMContactsClient](./client.md)
+2. paginator: [ListRotationsPaginator](./paginators.md#listrotationspaginator)
+3. item: [:material-code-braces: ListRotationsResultTypeDef](./type_defs.md#listrotationsresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListRotationsPaginator.paginate` method.
+
+```python
+# paginate method definition
+
+def paginate(
+    self,
+    *,
+    RotationNamePrefix: str = ...,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListRotationsResultTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListRotationsResultTypeDef](./type_defs.md#listrotationsresulttypedef) 
+
+
+```python
+# paginate method usage example with argument unpacking
+
+kwargs: ListRotationsRequestListRotationsPaginateTypeDef = {  # (1)
+    "RotationNamePrefix": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListRotationsRequestListRotationsPaginateTypeDef](./type_defs.md#listrotationsrequestlistrotationspaginatetypedef) 

@@ -1,0 +1,1063 @@
+# Literals
+
+> [Index](../README.md) > [IoTFleetWise](./README.md) > Literals
+
+!!! note ""
+
+    Auto-generated documentation for [IoTFleetWise](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotfleetwise.html#IoTFleetWise)
+    type annotations stubs module [types-aiobotocore-iotfleetwise](https://pypi.org/project/types-aiobotocore-iotfleetwise/).
+
+## CampaignStatusType
+
+```python
+# CampaignStatusType usage example
+
+from types_aiobotocore_iotfleetwise.literals import CampaignStatusType
+
+def get_value() -> CampaignStatusType:
+    return "CREATING"
+```
+
+```python
+# CampaignStatusType definition
+
+CampaignStatusType = Literal[
+    "CREATING",
+    "RUNNING",
+    "SUSPENDED",
+    "WAITING_FOR_APPROVAL",
+]
+```
+## CompressionType
+
+```python
+# CompressionType usage example
+
+from types_aiobotocore_iotfleetwise.literals import CompressionType
+
+def get_value() -> CompressionType:
+    return "OFF"
+```
+
+```python
+# CompressionType definition
+
+CompressionType = Literal[
+    "OFF",
+    "SNAPPY",
+]
+```
+## DataFormatType
+
+```python
+# DataFormatType usage example
+
+from types_aiobotocore_iotfleetwise.literals import DataFormatType
+
+def get_value() -> DataFormatType:
+    return "JSON"
+```
+
+```python
+# DataFormatType definition
+
+DataFormatType = Literal[
+    "JSON",
+    "PARQUET",
+]
+```
+## DiagnosticsModeType
+
+```python
+# DiagnosticsModeType usage example
+
+from types_aiobotocore_iotfleetwise.literals import DiagnosticsModeType
+
+def get_value() -> DiagnosticsModeType:
+    return "OFF"
+```
+
+```python
+# DiagnosticsModeType definition
+
+DiagnosticsModeType = Literal[
+    "OFF",
+    "SEND_ACTIVE_DTCS",
+]
+```
+## GetVehicleStatusPaginatorName
+
+```python
+# GetVehicleStatusPaginatorName usage example
+
+from types_aiobotocore_iotfleetwise.literals import GetVehicleStatusPaginatorName
+
+def get_value() -> GetVehicleStatusPaginatorName:
+    return "get_vehicle_status"
+```
+
+```python
+# GetVehicleStatusPaginatorName definition
+
+GetVehicleStatusPaginatorName = Literal[
+    "get_vehicle_status",
+]
+```
+## ListCampaignsPaginatorName
+
+```python
+# ListCampaignsPaginatorName usage example
+
+from types_aiobotocore_iotfleetwise.literals import ListCampaignsPaginatorName
+
+def get_value() -> ListCampaignsPaginatorName:
+    return "list_campaigns"
+```
+
+```python
+# ListCampaignsPaginatorName definition
+
+ListCampaignsPaginatorName = Literal[
+    "list_campaigns",
+]
+```
+## ListDecoderManifestNetworkInterfacesPaginatorName
+
+```python
+# ListDecoderManifestNetworkInterfacesPaginatorName usage example
+
+from types_aiobotocore_iotfleetwise.literals import ListDecoderManifestNetworkInterfacesPaginatorName
+
+def get_value() -> ListDecoderManifestNetworkInterfacesPaginatorName:
+    return "list_decoder_manifest_network_interfaces"
+```
+
+```python
+# ListDecoderManifestNetworkInterfacesPaginatorName definition
+
+ListDecoderManifestNetworkInterfacesPaginatorName = Literal[
+    "list_decoder_manifest_network_interfaces",
+]
+```
+## ListDecoderManifestSignalsPaginatorName
+
+```python
+# ListDecoderManifestSignalsPaginatorName usage example
+
+from types_aiobotocore_iotfleetwise.literals import ListDecoderManifestSignalsPaginatorName
+
+def get_value() -> ListDecoderManifestSignalsPaginatorName:
+    return "list_decoder_manifest_signals"
+```
+
+```python
+# ListDecoderManifestSignalsPaginatorName definition
+
+ListDecoderManifestSignalsPaginatorName = Literal[
+    "list_decoder_manifest_signals",
+]
+```
+## ListDecoderManifestsPaginatorName
+
+```python
+# ListDecoderManifestsPaginatorName usage example
+
+from types_aiobotocore_iotfleetwise.literals import ListDecoderManifestsPaginatorName
+
+def get_value() -> ListDecoderManifestsPaginatorName:
+    return "list_decoder_manifests"
+```
+
+```python
+# ListDecoderManifestsPaginatorName definition
+
+ListDecoderManifestsPaginatorName = Literal[
+    "list_decoder_manifests",
+]
+```
+## ListFleetsForVehiclePaginatorName
+
+```python
+# ListFleetsForVehiclePaginatorName usage example
+
+from types_aiobotocore_iotfleetwise.literals import ListFleetsForVehiclePaginatorName
+
+def get_value() -> ListFleetsForVehiclePaginatorName:
+    return "list_fleets_for_vehicle"
+```
+
+```python
+# ListFleetsForVehiclePaginatorName definition
+
+ListFleetsForVehiclePaginatorName = Literal[
+    "list_fleets_for_vehicle",
+]
+```
+## ListFleetsPaginatorName
+
+```python
+# ListFleetsPaginatorName usage example
+
+from types_aiobotocore_iotfleetwise.literals import ListFleetsPaginatorName
+
+def get_value() -> ListFleetsPaginatorName:
+    return "list_fleets"
+```
+
+```python
+# ListFleetsPaginatorName definition
+
+ListFleetsPaginatorName = Literal[
+    "list_fleets",
+]
+```
+## ListModelManifestNodesPaginatorName
+
+```python
+# ListModelManifestNodesPaginatorName usage example
+
+from types_aiobotocore_iotfleetwise.literals import ListModelManifestNodesPaginatorName
+
+def get_value() -> ListModelManifestNodesPaginatorName:
+    return "list_model_manifest_nodes"
+```
+
+```python
+# ListModelManifestNodesPaginatorName definition
+
+ListModelManifestNodesPaginatorName = Literal[
+    "list_model_manifest_nodes",
+]
+```
+## ListModelManifestsPaginatorName
+
+```python
+# ListModelManifestsPaginatorName usage example
+
+from types_aiobotocore_iotfleetwise.literals import ListModelManifestsPaginatorName
+
+def get_value() -> ListModelManifestsPaginatorName:
+    return "list_model_manifests"
+```
+
+```python
+# ListModelManifestsPaginatorName definition
+
+ListModelManifestsPaginatorName = Literal[
+    "list_model_manifests",
+]
+```
+## ListSignalCatalogNodesPaginatorName
+
+```python
+# ListSignalCatalogNodesPaginatorName usage example
+
+from types_aiobotocore_iotfleetwise.literals import ListSignalCatalogNodesPaginatorName
+
+def get_value() -> ListSignalCatalogNodesPaginatorName:
+    return "list_signal_catalog_nodes"
+```
+
+```python
+# ListSignalCatalogNodesPaginatorName definition
+
+ListSignalCatalogNodesPaginatorName = Literal[
+    "list_signal_catalog_nodes",
+]
+```
+## ListSignalCatalogsPaginatorName
+
+```python
+# ListSignalCatalogsPaginatorName usage example
+
+from types_aiobotocore_iotfleetwise.literals import ListSignalCatalogsPaginatorName
+
+def get_value() -> ListSignalCatalogsPaginatorName:
+    return "list_signal_catalogs"
+```
+
+```python
+# ListSignalCatalogsPaginatorName definition
+
+ListSignalCatalogsPaginatorName = Literal[
+    "list_signal_catalogs",
+]
+```
+## ListVehiclesInFleetPaginatorName
+
+```python
+# ListVehiclesInFleetPaginatorName usage example
+
+from types_aiobotocore_iotfleetwise.literals import ListVehiclesInFleetPaginatorName
+
+def get_value() -> ListVehiclesInFleetPaginatorName:
+    return "list_vehicles_in_fleet"
+```
+
+```python
+# ListVehiclesInFleetPaginatorName definition
+
+ListVehiclesInFleetPaginatorName = Literal[
+    "list_vehicles_in_fleet",
+]
+```
+## ListVehiclesPaginatorName
+
+```python
+# ListVehiclesPaginatorName usage example
+
+from types_aiobotocore_iotfleetwise.literals import ListVehiclesPaginatorName
+
+def get_value() -> ListVehiclesPaginatorName:
+    return "list_vehicles"
+```
+
+```python
+# ListVehiclesPaginatorName definition
+
+ListVehiclesPaginatorName = Literal[
+    "list_vehicles",
+]
+```
+## LogTypeType
+
+```python
+# LogTypeType usage example
+
+from types_aiobotocore_iotfleetwise.literals import LogTypeType
+
+def get_value() -> LogTypeType:
+    return "ERROR"
+```
+
+```python
+# LogTypeType definition
+
+LogTypeType = Literal[
+    "ERROR",
+    "OFF",
+]
+```
+## ManifestStatusType
+
+```python
+# ManifestStatusType usage example
+
+from types_aiobotocore_iotfleetwise.literals import ManifestStatusType
+
+def get_value() -> ManifestStatusType:
+    return "ACTIVE"
+```
+
+```python
+# ManifestStatusType definition
+
+ManifestStatusType = Literal[
+    "ACTIVE",
+    "DRAFT",
+]
+```
+## NetworkInterfaceTypeType
+
+```python
+# NetworkInterfaceTypeType usage example
+
+from types_aiobotocore_iotfleetwise.literals import NetworkInterfaceTypeType
+
+def get_value() -> NetworkInterfaceTypeType:
+    return "CAN_INTERFACE"
+```
+
+```python
+# NetworkInterfaceTypeType definition
+
+NetworkInterfaceTypeType = Literal[
+    "CAN_INTERFACE",
+    "OBD_INTERFACE",
+]
+```
+## NodeDataTypeType
+
+```python
+# NodeDataTypeType usage example
+
+from types_aiobotocore_iotfleetwise.literals import NodeDataTypeType
+
+def get_value() -> NodeDataTypeType:
+    return "BOOLEAN"
+```
+
+```python
+# NodeDataTypeType definition
+
+NodeDataTypeType = Literal[
+    "BOOLEAN",
+    "BOOLEAN_ARRAY",
+    "DOUBLE",
+    "DOUBLE_ARRAY",
+    "FLOAT",
+    "FLOAT_ARRAY",
+    "INT16",
+    "INT16_ARRAY",
+    "INT32",
+    "INT32_ARRAY",
+    "INT64",
+    "INT64_ARRAY",
+    "INT8",
+    "INT8_ARRAY",
+    "STRING",
+    "STRING_ARRAY",
+    "UINT16",
+    "UINT16_ARRAY",
+    "UINT32",
+    "UINT32_ARRAY",
+    "UINT64",
+    "UINT64_ARRAY",
+    "UINT8",
+    "UINT8_ARRAY",
+    "UNIX_TIMESTAMP",
+    "UNIX_TIMESTAMP_ARRAY",
+    "UNKNOWN",
+]
+```
+## RegistrationStatusType
+
+```python
+# RegistrationStatusType usage example
+
+from types_aiobotocore_iotfleetwise.literals import RegistrationStatusType
+
+def get_value() -> RegistrationStatusType:
+    return "REGISTRATION_FAILURE"
+```
+
+```python
+# RegistrationStatusType definition
+
+RegistrationStatusType = Literal[
+    "REGISTRATION_FAILURE",
+    "REGISTRATION_PENDING",
+    "REGISTRATION_SUCCESS",
+]
+```
+## SignalDecoderTypeType
+
+```python
+# SignalDecoderTypeType usage example
+
+from types_aiobotocore_iotfleetwise.literals import SignalDecoderTypeType
+
+def get_value() -> SignalDecoderTypeType:
+    return "CAN_SIGNAL"
+```
+
+```python
+# SignalDecoderTypeType definition
+
+SignalDecoderTypeType = Literal[
+    "CAN_SIGNAL",
+    "OBD_SIGNAL",
+]
+```
+## SpoolingModeType
+
+```python
+# SpoolingModeType usage example
+
+from types_aiobotocore_iotfleetwise.literals import SpoolingModeType
+
+def get_value() -> SpoolingModeType:
+    return "OFF"
+```
+
+```python
+# SpoolingModeType definition
+
+SpoolingModeType = Literal[
+    "OFF",
+    "TO_DISK",
+]
+```
+## StorageCompressionFormatType
+
+```python
+# StorageCompressionFormatType usage example
+
+from types_aiobotocore_iotfleetwise.literals import StorageCompressionFormatType
+
+def get_value() -> StorageCompressionFormatType:
+    return "GZIP"
+```
+
+```python
+# StorageCompressionFormatType definition
+
+StorageCompressionFormatType = Literal[
+    "GZIP",
+    "NONE",
+]
+```
+## TriggerModeType
+
+```python
+# TriggerModeType usage example
+
+from types_aiobotocore_iotfleetwise.literals import TriggerModeType
+
+def get_value() -> TriggerModeType:
+    return "ALWAYS"
+```
+
+```python
+# TriggerModeType definition
+
+TriggerModeType = Literal[
+    "ALWAYS",
+    "RISING_EDGE",
+]
+```
+## UpdateCampaignActionType
+
+```python
+# UpdateCampaignActionType usage example
+
+from types_aiobotocore_iotfleetwise.literals import UpdateCampaignActionType
+
+def get_value() -> UpdateCampaignActionType:
+    return "APPROVE"
+```
+
+```python
+# UpdateCampaignActionType definition
+
+UpdateCampaignActionType = Literal[
+    "APPROVE",
+    "RESUME",
+    "SUSPEND",
+    "UPDATE",
+]
+```
+## UpdateModeType
+
+```python
+# UpdateModeType usage example
+
+from types_aiobotocore_iotfleetwise.literals import UpdateModeType
+
+def get_value() -> UpdateModeType:
+    return "Merge"
+```
+
+```python
+# UpdateModeType definition
+
+UpdateModeType = Literal[
+    "Merge",
+    "Overwrite",
+]
+```
+## VehicleAssociationBehaviorType
+
+```python
+# VehicleAssociationBehaviorType usage example
+
+from types_aiobotocore_iotfleetwise.literals import VehicleAssociationBehaviorType
+
+def get_value() -> VehicleAssociationBehaviorType:
+    return "CreateIotThing"
+```
+
+```python
+# VehicleAssociationBehaviorType definition
+
+VehicleAssociationBehaviorType = Literal[
+    "CreateIotThing",
+    "ValidateIotThingExists",
+]
+```
+## VehicleStateType
+
+```python
+# VehicleStateType usage example
+
+from types_aiobotocore_iotfleetwise.literals import VehicleStateType
+
+def get_value() -> VehicleStateType:
+    return "CREATED"
+```
+
+```python
+# VehicleStateType definition
+
+VehicleStateType = Literal[
+    "CREATED",
+    "DELETING",
+    "HEALTHY",
+    "READY",
+    "SUSPENDED",
+]
+```
+## IoTFleetWiseServiceName
+
+```python
+# IoTFleetWiseServiceName usage example
+
+from types_aiobotocore_iotfleetwise.literals import IoTFleetWiseServiceName
+
+def get_value() -> IoTFleetWiseServiceName:
+    return "iotfleetwise"
+```
+
+```python
+# IoTFleetWiseServiceName definition
+
+IoTFleetWiseServiceName = Literal[
+    "iotfleetwise",
+]
+```
+## ServiceName
+
+```python
+# ServiceName usage example
+
+from types_aiobotocore_iotfleetwise.literals import ServiceName
+
+def get_value() -> ServiceName:
+    return "accessanalyzer"
+```
+
+```python
+# ServiceName definition
+
+ServiceName = Literal[
+    "accessanalyzer",
+    "account",
+    "acm",
+    "acm-pca",
+    "alexaforbusiness",
+    "amp",
+    "amplify",
+    "amplifybackend",
+    "amplifyuibuilder",
+    "apigateway",
+    "apigatewaymanagementapi",
+    "apigatewayv2",
+    "appconfig",
+    "appconfigdata",
+    "appfabric",
+    "appflow",
+    "appintegrations",
+    "application-autoscaling",
+    "application-insights",
+    "applicationcostprofiler",
+    "appmesh",
+    "apprunner",
+    "appstream",
+    "appsync",
+    "arc-zonal-shift",
+    "athena",
+    "auditmanager",
+    "autoscaling",
+    "autoscaling-plans",
+    "backup",
+    "backup-gateway",
+    "backupstorage",
+    "batch",
+    "billingconductor",
+    "braket",
+    "budgets",
+    "ce",
+    "chime",
+    "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
+    "chime-sdk-meetings",
+    "chime-sdk-messaging",
+    "chime-sdk-voice",
+    "cleanrooms",
+    "cloud9",
+    "cloudcontrol",
+    "clouddirectory",
+    "cloudformation",
+    "cloudfront",
+    "cloudhsm",
+    "cloudhsmv2",
+    "cloudsearch",
+    "cloudsearchdomain",
+    "cloudtrail",
+    "cloudtrail-data",
+    "cloudwatch",
+    "codeartifact",
+    "codebuild",
+    "codecatalyst",
+    "codecommit",
+    "codedeploy",
+    "codeguru-reviewer",
+    "codeguru-security",
+    "codeguruprofiler",
+    "codepipeline",
+    "codestar",
+    "codestar-connections",
+    "codestar-notifications",
+    "cognito-identity",
+    "cognito-idp",
+    "cognito-sync",
+    "comprehend",
+    "comprehendmedical",
+    "compute-optimizer",
+    "config",
+    "connect",
+    "connect-contact-lens",
+    "connectcampaigns",
+    "connectcases",
+    "connectparticipant",
+    "controltower",
+    "cur",
+    "customer-profiles",
+    "databrew",
+    "dataexchange",
+    "datapipeline",
+    "datasync",
+    "dax",
+    "detective",
+    "devicefarm",
+    "devops-guru",
+    "directconnect",
+    "discovery",
+    "dlm",
+    "dms",
+    "docdb",
+    "docdb-elastic",
+    "drs",
+    "ds",
+    "dynamodb",
+    "dynamodbstreams",
+    "ebs",
+    "ec2",
+    "ec2-instance-connect",
+    "ecr",
+    "ecr-public",
+    "ecs",
+    "efs",
+    "eks",
+    "elastic-inference",
+    "elasticache",
+    "elasticbeanstalk",
+    "elastictranscoder",
+    "elb",
+    "elbv2",
+    "emr",
+    "emr-containers",
+    "emr-serverless",
+    "entityresolution",
+    "es",
+    "events",
+    "evidently",
+    "finspace",
+    "finspace-data",
+    "firehose",
+    "fis",
+    "fms",
+    "forecast",
+    "forecastquery",
+    "frauddetector",
+    "fsx",
+    "gamelift",
+    "gamesparks",
+    "glacier",
+    "globalaccelerator",
+    "glue",
+    "grafana",
+    "greengrass",
+    "greengrassv2",
+    "groundstation",
+    "guardduty",
+    "health",
+    "healthlake",
+    "honeycode",
+    "iam",
+    "identitystore",
+    "imagebuilder",
+    "importexport",
+    "inspector",
+    "inspector2",
+    "internetmonitor",
+    "iot",
+    "iot-data",
+    "iot-jobs-data",
+    "iot-roborunner",
+    "iot1click-devices",
+    "iot1click-projects",
+    "iotanalytics",
+    "iotdeviceadvisor",
+    "iotevents",
+    "iotevents-data",
+    "iotfleethub",
+    "iotfleetwise",
+    "iotsecuretunneling",
+    "iotsitewise",
+    "iotthingsgraph",
+    "iottwinmaker",
+    "iotwireless",
+    "ivs",
+    "ivs-realtime",
+    "ivschat",
+    "kafka",
+    "kafkaconnect",
+    "kendra",
+    "kendra-ranking",
+    "keyspaces",
+    "kinesis",
+    "kinesis-video-archived-media",
+    "kinesis-video-media",
+    "kinesis-video-signaling",
+    "kinesis-video-webrtc-storage",
+    "kinesisanalytics",
+    "kinesisanalyticsv2",
+    "kinesisvideo",
+    "kms",
+    "lakeformation",
+    "lambda",
+    "lex-models",
+    "lex-runtime",
+    "lexv2-models",
+    "lexv2-runtime",
+    "license-manager",
+    "license-manager-linux-subscriptions",
+    "license-manager-user-subscriptions",
+    "lightsail",
+    "location",
+    "logs",
+    "lookoutequipment",
+    "lookoutmetrics",
+    "lookoutvision",
+    "m2",
+    "machinelearning",
+    "macie",
+    "macie2",
+    "managedblockchain",
+    "managedblockchain-query",
+    "marketplace-catalog",
+    "marketplace-entitlement",
+    "marketplacecommerceanalytics",
+    "mediaconnect",
+    "mediaconvert",
+    "medialive",
+    "mediapackage",
+    "mediapackage-vod",
+    "mediapackagev2",
+    "mediastore",
+    "mediastore-data",
+    "mediatailor",
+    "medical-imaging",
+    "memorydb",
+    "meteringmarketplace",
+    "mgh",
+    "mgn",
+    "migration-hub-refactor-spaces",
+    "migrationhub-config",
+    "migrationhuborchestrator",
+    "migrationhubstrategy",
+    "mobile",
+    "mq",
+    "mturk",
+    "mwaa",
+    "neptune",
+    "network-firewall",
+    "networkmanager",
+    "nimble",
+    "oam",
+    "omics",
+    "opensearch",
+    "opensearchserverless",
+    "opsworks",
+    "opsworkscm",
+    "organizations",
+    "osis",
+    "outposts",
+    "panorama",
+    "payment-cryptography",
+    "payment-cryptography-data",
+    "personalize",
+    "personalize-events",
+    "personalize-runtime",
+    "pi",
+    "pinpoint",
+    "pinpoint-email",
+    "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
+    "pipes",
+    "polly",
+    "pricing",
+    "privatenetworks",
+    "proton",
+    "qldb",
+    "qldb-session",
+    "quicksight",
+    "ram",
+    "rbin",
+    "rds",
+    "rds-data",
+    "redshift",
+    "redshift-data",
+    "redshift-serverless",
+    "rekognition",
+    "resiliencehub",
+    "resource-explorer-2",
+    "resource-groups",
+    "resourcegroupstaggingapi",
+    "robomaker",
+    "rolesanywhere",
+    "route53",
+    "route53-recovery-cluster",
+    "route53-recovery-control-config",
+    "route53-recovery-readiness",
+    "route53domains",
+    "route53resolver",
+    "rum",
+    "s3",
+    "s3control",
+    "s3outposts",
+    "sagemaker",
+    "sagemaker-a2i-runtime",
+    "sagemaker-edge",
+    "sagemaker-featurestore-runtime",
+    "sagemaker-geospatial",
+    "sagemaker-metrics",
+    "sagemaker-runtime",
+    "savingsplans",
+    "scheduler",
+    "schemas",
+    "sdb",
+    "secretsmanager",
+    "securityhub",
+    "securitylake",
+    "serverlessrepo",
+    "service-quotas",
+    "servicecatalog",
+    "servicecatalog-appregistry",
+    "servicediscovery",
+    "ses",
+    "sesv2",
+    "shield",
+    "signer",
+    "simspaceweaver",
+    "sms",
+    "sms-voice",
+    "snow-device-management",
+    "snowball",
+    "sns",
+    "sqs",
+    "ssm",
+    "ssm-contacts",
+    "ssm-incidents",
+    "ssm-sap",
+    "sso",
+    "sso-admin",
+    "sso-oidc",
+    "stepfunctions",
+    "storagegateway",
+    "sts",
+    "support",
+    "support-app",
+    "swf",
+    "synthetics",
+    "textract",
+    "timestream-query",
+    "timestream-write",
+    "tnb",
+    "transcribe",
+    "transfer",
+    "translate",
+    "verifiedpermissions",
+    "voice-id",
+    "vpc-lattice",
+    "waf",
+    "waf-regional",
+    "wafv2",
+    "wellarchitected",
+    "wisdom",
+    "workdocs",
+    "worklink",
+    "workmail",
+    "workmailmessageflow",
+    "workspaces",
+    "workspaces-web",
+    "xray",
+]
+```
+## ResourceServiceName
+
+```python
+# ResourceServiceName usage example
+
+from types_aiobotocore_iotfleetwise.literals import ResourceServiceName
+
+def get_value() -> ResourceServiceName:
+    return "cloudformation"
+```
+
+```python
+# ResourceServiceName definition
+
+ResourceServiceName = Literal[
+    "cloudformation",
+    "cloudwatch",
+    "dynamodb",
+    "ec2",
+    "glacier",
+    "iam",
+    "opsworks",
+    "s3",
+    "sns",
+    "sqs",
+]
+```
+## PaginatorName
+
+```python
+# PaginatorName usage example
+
+from types_aiobotocore_iotfleetwise.literals import PaginatorName
+
+def get_value() -> PaginatorName:
+    return "get_vehicle_status"
+```
+
+```python
+# PaginatorName definition
+
+PaginatorName = Literal[
+    "get_vehicle_status",
+    "list_campaigns",
+    "list_decoder_manifest_network_interfaces",
+    "list_decoder_manifest_signals",
+    "list_decoder_manifests",
+    "list_fleets",
+    "list_fleets_for_vehicle",
+    "list_model_manifest_nodes",
+    "list_model_manifests",
+    "list_signal_catalog_nodes",
+    "list_signal_catalogs",
+    "list_vehicles",
+    "list_vehicles_in_fleet",
+]
+```
+## RegionName
+
+```python
+# RegionName usage example
+
+from types_aiobotocore_iotfleetwise.literals import RegionName
+
+def get_value() -> RegionName:
+    return "eu-central-1"
+```
+
+```python
+# RegionName definition
+
+RegionName = Literal[
+    "eu-central-1",
+    "us-east-1",
+]
+```

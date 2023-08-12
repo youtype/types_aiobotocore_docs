@@ -1,0 +1,1404 @@
+# SFNClient
+
+> [Index](../README.md) > [SFN](./README.md) > SFNClient
+
+!!! note ""
+
+    Auto-generated documentation for [SFN](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN)
+    type annotations stubs module [types-aiobotocore-stepfunctions](https://pypi.org/project/types-aiobotocore-stepfunctions/).
+
+## SFNClient
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions")`
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client)
+
+```python
+SFNClient usage example
+
+from aiobotocore.session import get_session
+from types_aiobotocore_stepfunctions.client import SFNClient
+
+session = get_session()
+async with session.create_client("stepfunctions") as client:
+    client: SFNClient
+```
+
+## Exceptions
+
+
+`aiobotocore` client exceptions are generated in runtime.
+This class provides code completion for `#!python session.create_client("stepfunctions").exceptions` structure.
+
+```python
+SFNClient.exceptions usage example
+
+async with session.create_client("stepfunctions") as client:
+    try:
+        do_something(client)
+    except (
+            client.ActivityDoesNotExist,
+        client.ActivityLimitExceeded,
+        client.ActivityWorkerLimitExceeded,
+        client.ClientError,
+        client.ConflictException,
+        client.ExecutionAlreadyExists,
+        client.ExecutionDoesNotExist,
+        client.ExecutionLimitExceeded,
+        client.InvalidArn,
+        client.InvalidDefinition,
+        client.InvalidExecutionInput,
+        client.InvalidLoggingConfiguration,
+        client.InvalidName,
+        client.InvalidOutput,
+        client.InvalidToken,
+        client.InvalidTracingConfiguration,
+        client.MissingRequiredParameter,
+        client.ResourceNotFound,
+        client.ServiceQuotaExceededException,
+        client.StateMachineAlreadyExists,
+        client.StateMachineDeleting,
+        client.StateMachineDoesNotExist,
+        client.StateMachineLimitExceeded,
+        client.StateMachineTypeNotSupported,
+        client.TaskDoesNotExist,
+        client.TaskTimedOut,
+        client.TooManyTags,
+        client.ValidationException,
+    ) as e:
+        print(e)
+```
+
+```python
+SFNClient usage type checking example
+
+from types_aiobotocore_stepfunctions.client import Exceptions
+
+def handle_error(exc: Exceptions.ActivityDoesNotExist) -> None:
+    ...
+```
+
+
+## Methods
+
+
+### can\_paginate
+
+Check if an operation can be paginated.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").can_paginate` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.can_paginate)
+
+```python
+# can_paginate method definition
+
+def can_paginate(
+    self,
+    operation_name: str,
+) -> bool:
+    ...
+```
+
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.close)
+
+```python
+# close method definition
+
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
+### create\_activity
+
+Creates an activity.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").create_activity` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.create_activity)
+
+```python
+# create_activity method definition
+
+await def create_activity(
+    self,
+    *,
+    name: str,
+    tags: Sequence[TagTypeDef] = ...,  # (1)
+) -> CreateActivityOutputTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+2. See [:material-code-braces: CreateActivityOutputTypeDef](./type_defs.md#createactivityoutputtypedef) 
+
+
+```python
+# create_activity method usage example with argument unpacking
+
+kwargs: CreateActivityInputRequestTypeDef = {  # (1)
+    "name": ...,
+}
+
+parent.create_activity(**kwargs)
+```
+
+1. See [:material-code-braces: CreateActivityInputRequestTypeDef](./type_defs.md#createactivityinputrequesttypedef) 
+
+### create\_state\_machine
+
+Creates a state machine.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").create_state_machine` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.create_state_machine)
+
+```python
+# create_state_machine method definition
+
+await def create_state_machine(
+    self,
+    *,
+    name: str,
+    definition: str,
+    roleArn: str,
+    type: StateMachineTypeType = ...,  # (1)
+    loggingConfiguration: LoggingConfigurationTypeDef = ...,  # (2)
+    tags: Sequence[TagTypeDef] = ...,  # (3)
+    tracingConfiguration: TracingConfigurationTypeDef = ...,  # (4)
+    publish: bool = ...,
+    versionDescription: str = ...,
+) -> CreateStateMachineOutputTypeDef:  # (5)
+    ...
+```
+
+1. See [:material-code-brackets: StateMachineTypeType](./literals.md#statemachinetypetype) 
+2. See [:material-code-braces: LoggingConfigurationTypeDef](./type_defs.md#loggingconfigurationtypedef) 
+3. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+4. See [:material-code-braces: TracingConfigurationTypeDef](./type_defs.md#tracingconfigurationtypedef) 
+5. See [:material-code-braces: CreateStateMachineOutputTypeDef](./type_defs.md#createstatemachineoutputtypedef) 
+
+
+```python
+# create_state_machine method usage example with argument unpacking
+
+kwargs: CreateStateMachineInputRequestTypeDef = {  # (1)
+    "name": ...,
+    "definition": ...,
+    "roleArn": ...,
+}
+
+parent.create_state_machine(**kwargs)
+```
+
+1. See [:material-code-braces: CreateStateMachineInputRequestTypeDef](./type_defs.md#createstatemachineinputrequesttypedef) 
+
+### create\_state\_machine\_alias
+
+Creates an [alias](https://docs.aws.amazon.com/step-
+functions/latest/dg/concepts-state-machine-alias.html)_ for a state machine that
+points to one or two [versions](https://docs.aws.amazon.com/step-
+functions/latest/dg/concepts-state-machine-version.html)_ of the same state
+machine.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").create_state_machine_alias` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.create_state_machine_alias)
+
+```python
+# create_state_machine_alias method definition
+
+await def create_state_machine_alias(
+    self,
+    *,
+    name: str,
+    routingConfiguration: Sequence[RoutingConfigurationListItemTypeDef],  # (1)
+    description: str = ...,
+) -> CreateStateMachineAliasOutputTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: RoutingConfigurationListItemTypeDef](./type_defs.md#routingconfigurationlistitemtypedef) 
+2. See [:material-code-braces: CreateStateMachineAliasOutputTypeDef](./type_defs.md#createstatemachinealiasoutputtypedef) 
+
+
+```python
+# create_state_machine_alias method usage example with argument unpacking
+
+kwargs: CreateStateMachineAliasInputRequestTypeDef = {  # (1)
+    "name": ...,
+    "routingConfiguration": ...,
+}
+
+parent.create_state_machine_alias(**kwargs)
+```
+
+1. See [:material-code-braces: CreateStateMachineAliasInputRequestTypeDef](./type_defs.md#createstatemachinealiasinputrequesttypedef) 
+
+### delete\_activity
+
+Deletes an activity.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").delete_activity` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.delete_activity)
+
+```python
+# delete_activity method definition
+
+await def delete_activity(
+    self,
+    *,
+    activityArn: str,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python
+# delete_activity method usage example with argument unpacking
+
+kwargs: DeleteActivityInputRequestTypeDef = {  # (1)
+    "activityArn": ...,
+}
+
+parent.delete_activity(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteActivityInputRequestTypeDef](./type_defs.md#deleteactivityinputrequesttypedef) 
+
+### delete\_state\_machine
+
+Deletes a state machine.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").delete_state_machine` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.delete_state_machine)
+
+```python
+# delete_state_machine method definition
+
+await def delete_state_machine(
+    self,
+    *,
+    stateMachineArn: str,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python
+# delete_state_machine method usage example with argument unpacking
+
+kwargs: DeleteStateMachineInputRequestTypeDef = {  # (1)
+    "stateMachineArn": ...,
+}
+
+parent.delete_state_machine(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteStateMachineInputRequestTypeDef](./type_defs.md#deletestatemachineinputrequesttypedef) 
+
+### delete\_state\_machine\_alias
+
+Deletes a state machine [alias](https://docs.aws.amazon.com/step-
+functions/latest/dg/concepts-state-machine-alias.html)_.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").delete_state_machine_alias` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.delete_state_machine_alias)
+
+```python
+# delete_state_machine_alias method definition
+
+await def delete_state_machine_alias(
+    self,
+    *,
+    stateMachineAliasArn: str,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python
+# delete_state_machine_alias method usage example with argument unpacking
+
+kwargs: DeleteStateMachineAliasInputRequestTypeDef = {  # (1)
+    "stateMachineAliasArn": ...,
+}
+
+parent.delete_state_machine_alias(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteStateMachineAliasInputRequestTypeDef](./type_defs.md#deletestatemachinealiasinputrequesttypedef) 
+
+### delete\_state\_machine\_version
+
+Deletes a state machine [version](https://docs.aws.amazon.com/step-
+functions/latest/dg/concepts-state-machine-version.html)_.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").delete_state_machine_version` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.delete_state_machine_version)
+
+```python
+# delete_state_machine_version method definition
+
+await def delete_state_machine_version(
+    self,
+    *,
+    stateMachineVersionArn: str,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python
+# delete_state_machine_version method usage example with argument unpacking
+
+kwargs: DeleteStateMachineVersionInputRequestTypeDef = {  # (1)
+    "stateMachineVersionArn": ...,
+}
+
+parent.delete_state_machine_version(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteStateMachineVersionInputRequestTypeDef](./type_defs.md#deletestatemachineversioninputrequesttypedef) 
+
+### describe\_activity
+
+Describes an activity.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").describe_activity` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.describe_activity)
+
+```python
+# describe_activity method definition
+
+await def describe_activity(
+    self,
+    *,
+    activityArn: str,
+) -> DescribeActivityOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DescribeActivityOutputTypeDef](./type_defs.md#describeactivityoutputtypedef) 
+
+
+```python
+# describe_activity method usage example with argument unpacking
+
+kwargs: DescribeActivityInputRequestTypeDef = {  # (1)
+    "activityArn": ...,
+}
+
+parent.describe_activity(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeActivityInputRequestTypeDef](./type_defs.md#describeactivityinputrequesttypedef) 
+
+### describe\_execution
+
+Provides information about a state machine execution, such as the state machine
+associated with the execution, the execution input and output, and relevant
+execution metadata.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").describe_execution` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.describe_execution)
+
+```python
+# describe_execution method definition
+
+await def describe_execution(
+    self,
+    *,
+    executionArn: str,
+) -> DescribeExecutionOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DescribeExecutionOutputTypeDef](./type_defs.md#describeexecutionoutputtypedef) 
+
+
+```python
+# describe_execution method usage example with argument unpacking
+
+kwargs: DescribeExecutionInputRequestTypeDef = {  # (1)
+    "executionArn": ...,
+}
+
+parent.describe_execution(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeExecutionInputRequestTypeDef](./type_defs.md#describeexecutioninputrequesttypedef) 
+
+### describe\_map\_run
+
+Provides information about a Map Run's configuration, progress, and results.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").describe_map_run` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.describe_map_run)
+
+```python
+# describe_map_run method definition
+
+await def describe_map_run(
+    self,
+    *,
+    mapRunArn: str,
+) -> DescribeMapRunOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DescribeMapRunOutputTypeDef](./type_defs.md#describemaprunoutputtypedef) 
+
+
+```python
+# describe_map_run method usage example with argument unpacking
+
+kwargs: DescribeMapRunInputRequestTypeDef = {  # (1)
+    "mapRunArn": ...,
+}
+
+parent.describe_map_run(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeMapRunInputRequestTypeDef](./type_defs.md#describemapruninputrequesttypedef) 
+
+### describe\_state\_machine
+
+Provides information about a state machine's definition, its IAM role Amazon
+Resource Name (ARN), and configuration.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").describe_state_machine` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.describe_state_machine)
+
+```python
+# describe_state_machine method definition
+
+await def describe_state_machine(
+    self,
+    *,
+    stateMachineArn: str,
+) -> DescribeStateMachineOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DescribeStateMachineOutputTypeDef](./type_defs.md#describestatemachineoutputtypedef) 
+
+
+```python
+# describe_state_machine method usage example with argument unpacking
+
+kwargs: DescribeStateMachineInputRequestTypeDef = {  # (1)
+    "stateMachineArn": ...,
+}
+
+parent.describe_state_machine(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeStateMachineInputRequestTypeDef](./type_defs.md#describestatemachineinputrequesttypedef) 
+
+### describe\_state\_machine\_alias
+
+Returns details about a state machine [alias](https://docs.aws.amazon.com/step-
+functions/latest/dg/concepts-state-machine-alias.html)_.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").describe_state_machine_alias` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.describe_state_machine_alias)
+
+```python
+# describe_state_machine_alias method definition
+
+await def describe_state_machine_alias(
+    self,
+    *,
+    stateMachineAliasArn: str,
+) -> DescribeStateMachineAliasOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DescribeStateMachineAliasOutputTypeDef](./type_defs.md#describestatemachinealiasoutputtypedef) 
+
+
+```python
+# describe_state_machine_alias method usage example with argument unpacking
+
+kwargs: DescribeStateMachineAliasInputRequestTypeDef = {  # (1)
+    "stateMachineAliasArn": ...,
+}
+
+parent.describe_state_machine_alias(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeStateMachineAliasInputRequestTypeDef](./type_defs.md#describestatemachinealiasinputrequesttypedef) 
+
+### describe\_state\_machine\_for\_execution
+
+Provides information about a state machine's definition, its execution role ARN,
+and configuration.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").describe_state_machine_for_execution` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.describe_state_machine_for_execution)
+
+```python
+# describe_state_machine_for_execution method definition
+
+await def describe_state_machine_for_execution(
+    self,
+    *,
+    executionArn: str,
+) -> DescribeStateMachineForExecutionOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DescribeStateMachineForExecutionOutputTypeDef](./type_defs.md#describestatemachineforexecutionoutputtypedef) 
+
+
+```python
+# describe_state_machine_for_execution method usage example with argument unpacking
+
+kwargs: DescribeStateMachineForExecutionInputRequestTypeDef = {  # (1)
+    "executionArn": ...,
+}
+
+parent.describe_state_machine_for_execution(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeStateMachineForExecutionInputRequestTypeDef](./type_defs.md#describestatemachineforexecutioninputrequesttypedef) 
+
+### generate\_presigned\_url
+
+Generate a presigned url given a client, its method, and arguments.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").generate_presigned_url` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.generate_presigned_url)
+
+```python
+# generate_presigned_url method definition
+
+await def generate_presigned_url(
+    self,
+    ClientMethod: str,
+    Params: Mapping[str, Any] = ...,
+    ExpiresIn: int = 3600,
+    HttpMethod: str = ...,
+) -> str:
+    ...
+```
+
+
+### get\_activity\_task
+
+Used by workers to retrieve a task (with the specified activity ARN) which has
+been scheduled for execution by a running state machine.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").get_activity_task` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.get_activity_task)
+
+```python
+# get_activity_task method definition
+
+await def get_activity_task(
+    self,
+    *,
+    activityArn: str,
+    workerName: str = ...,
+) -> GetActivityTaskOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetActivityTaskOutputTypeDef](./type_defs.md#getactivitytaskoutputtypedef) 
+
+
+```python
+# get_activity_task method usage example with argument unpacking
+
+kwargs: GetActivityTaskInputRequestTypeDef = {  # (1)
+    "activityArn": ...,
+}
+
+parent.get_activity_task(**kwargs)
+```
+
+1. See [:material-code-braces: GetActivityTaskInputRequestTypeDef](./type_defs.md#getactivitytaskinputrequesttypedef) 
+
+### get\_execution\_history
+
+Returns the history of the specified execution as a list of events.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").get_execution_history` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.get_execution_history)
+
+```python
+# get_execution_history method definition
+
+await def get_execution_history(
+    self,
+    *,
+    executionArn: str,
+    maxResults: int = ...,
+    reverseOrder: bool = ...,
+    nextToken: str = ...,
+    includeExecutionData: bool = ...,
+) -> GetExecutionHistoryOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetExecutionHistoryOutputTypeDef](./type_defs.md#getexecutionhistoryoutputtypedef) 
+
+
+```python
+# get_execution_history method usage example with argument unpacking
+
+kwargs: GetExecutionHistoryInputRequestTypeDef = {  # (1)
+    "executionArn": ...,
+}
+
+parent.get_execution_history(**kwargs)
+```
+
+1. See [:material-code-braces: GetExecutionHistoryInputRequestTypeDef](./type_defs.md#getexecutionhistoryinputrequesttypedef) 
+
+### list\_activities
+
+Lists the existing activities.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").list_activities` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.list_activities)
+
+```python
+# list_activities method definition
+
+await def list_activities(
+    self,
+    *,
+    maxResults: int = ...,
+    nextToken: str = ...,
+) -> ListActivitiesOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListActivitiesOutputTypeDef](./type_defs.md#listactivitiesoutputtypedef) 
+
+
+```python
+# list_activities method usage example with argument unpacking
+
+kwargs: ListActivitiesInputRequestTypeDef = {  # (1)
+    "maxResults": ...,
+}
+
+parent.list_activities(**kwargs)
+```
+
+1. See [:material-code-braces: ListActivitiesInputRequestTypeDef](./type_defs.md#listactivitiesinputrequesttypedef) 
+
+### list\_executions
+
+Lists all executions of a state machine or a Map Run.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").list_executions` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.list_executions)
+
+```python
+# list_executions method definition
+
+await def list_executions(
+    self,
+    *,
+    stateMachineArn: str = ...,
+    statusFilter: ExecutionStatusType = ...,  # (1)
+    maxResults: int = ...,
+    nextToken: str = ...,
+    mapRunArn: str = ...,
+) -> ListExecutionsOutputTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: ExecutionStatusType](./literals.md#executionstatustype) 
+2. See [:material-code-braces: ListExecutionsOutputTypeDef](./type_defs.md#listexecutionsoutputtypedef) 
+
+
+```python
+# list_executions method usage example with argument unpacking
+
+kwargs: ListExecutionsInputRequestTypeDef = {  # (1)
+    "stateMachineArn": ...,
+}
+
+parent.list_executions(**kwargs)
+```
+
+1. See [:material-code-braces: ListExecutionsInputRequestTypeDef](./type_defs.md#listexecutionsinputrequesttypedef) 
+
+### list\_map\_runs
+
+Lists all Map Runs that were started by a given state machine execution.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").list_map_runs` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.list_map_runs)
+
+```python
+# list_map_runs method definition
+
+await def list_map_runs(
+    self,
+    *,
+    executionArn: str,
+    maxResults: int = ...,
+    nextToken: str = ...,
+) -> ListMapRunsOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListMapRunsOutputTypeDef](./type_defs.md#listmaprunsoutputtypedef) 
+
+
+```python
+# list_map_runs method usage example with argument unpacking
+
+kwargs: ListMapRunsInputRequestTypeDef = {  # (1)
+    "executionArn": ...,
+}
+
+parent.list_map_runs(**kwargs)
+```
+
+1. See [:material-code-braces: ListMapRunsInputRequestTypeDef](./type_defs.md#listmaprunsinputrequesttypedef) 
+
+### list\_state\_machine\_aliases
+
+Lists [aliases](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-
+state-machine-alias.html)_ for a specified state machine ARN.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").list_state_machine_aliases` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.list_state_machine_aliases)
+
+```python
+# list_state_machine_aliases method definition
+
+await def list_state_machine_aliases(
+    self,
+    *,
+    stateMachineArn: str,
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> ListStateMachineAliasesOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListStateMachineAliasesOutputTypeDef](./type_defs.md#liststatemachinealiasesoutputtypedef) 
+
+
+```python
+# list_state_machine_aliases method usage example with argument unpacking
+
+kwargs: ListStateMachineAliasesInputRequestTypeDef = {  # (1)
+    "stateMachineArn": ...,
+}
+
+parent.list_state_machine_aliases(**kwargs)
+```
+
+1. See [:material-code-braces: ListStateMachineAliasesInputRequestTypeDef](./type_defs.md#liststatemachinealiasesinputrequesttypedef) 
+
+### list\_state\_machine\_versions
+
+Lists [versions](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-
+state-machine-version.html)_ for the specified state machine Amazon Resource
+Name (ARN).
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").list_state_machine_versions` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.list_state_machine_versions)
+
+```python
+# list_state_machine_versions method definition
+
+await def list_state_machine_versions(
+    self,
+    *,
+    stateMachineArn: str,
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> ListStateMachineVersionsOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListStateMachineVersionsOutputTypeDef](./type_defs.md#liststatemachineversionsoutputtypedef) 
+
+
+```python
+# list_state_machine_versions method usage example with argument unpacking
+
+kwargs: ListStateMachineVersionsInputRequestTypeDef = {  # (1)
+    "stateMachineArn": ...,
+}
+
+parent.list_state_machine_versions(**kwargs)
+```
+
+1. See [:material-code-braces: ListStateMachineVersionsInputRequestTypeDef](./type_defs.md#liststatemachineversionsinputrequesttypedef) 
+
+### list\_state\_machines
+
+Lists the existing state machines.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").list_state_machines` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.list_state_machines)
+
+```python
+# list_state_machines method definition
+
+await def list_state_machines(
+    self,
+    *,
+    maxResults: int = ...,
+    nextToken: str = ...,
+) -> ListStateMachinesOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListStateMachinesOutputTypeDef](./type_defs.md#liststatemachinesoutputtypedef) 
+
+
+```python
+# list_state_machines method usage example with argument unpacking
+
+kwargs: ListStateMachinesInputRequestTypeDef = {  # (1)
+    "maxResults": ...,
+}
+
+parent.list_state_machines(**kwargs)
+```
+
+1. See [:material-code-braces: ListStateMachinesInputRequestTypeDef](./type_defs.md#liststatemachinesinputrequesttypedef) 
+
+### list\_tags\_for\_resource
+
+List tags for a given resource.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").list_tags_for_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.list_tags_for_resource)
+
+```python
+# list_tags_for_resource method definition
+
+await def list_tags_for_resource(
+    self,
+    *,
+    resourceArn: str,
+) -> ListTagsForResourceOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListTagsForResourceOutputTypeDef](./type_defs.md#listtagsforresourceoutputtypedef) 
+
+
+```python
+# list_tags_for_resource method usage example with argument unpacking
+
+kwargs: ListTagsForResourceInputRequestTypeDef = {  # (1)
+    "resourceArn": ...,
+}
+
+parent.list_tags_for_resource(**kwargs)
+```
+
+1. See [:material-code-braces: ListTagsForResourceInputRequestTypeDef](./type_defs.md#listtagsforresourceinputrequesttypedef) 
+
+### publish\_state\_machine\_version
+
+Creates a [version](https://docs.aws.amazon.com/step-
+functions/latest/dg/concepts-state-machine-version.html)_ from the current
+revision of a state machine.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").publish_state_machine_version` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.publish_state_machine_version)
+
+```python
+# publish_state_machine_version method definition
+
+await def publish_state_machine_version(
+    self,
+    *,
+    stateMachineArn: str,
+    revisionId: str = ...,
+    description: str = ...,
+) -> PublishStateMachineVersionOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: PublishStateMachineVersionOutputTypeDef](./type_defs.md#publishstatemachineversionoutputtypedef) 
+
+
+```python
+# publish_state_machine_version method usage example with argument unpacking
+
+kwargs: PublishStateMachineVersionInputRequestTypeDef = {  # (1)
+    "stateMachineArn": ...,
+}
+
+parent.publish_state_machine_version(**kwargs)
+```
+
+1. See [:material-code-braces: PublishStateMachineVersionInputRequestTypeDef](./type_defs.md#publishstatemachineversioninputrequesttypedef) 
+
+### send\_task\_failure
+
+Used by activity workers and task states using the
+[callback](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-
+resource.html#connect-wait-token)_ pattern to report that the task identified by
+the `taskToken` failed.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").send_task_failure` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.send_task_failure)
+
+```python
+# send_task_failure method definition
+
+await def send_task_failure(
+    self,
+    *,
+    taskToken: str,
+    error: str = ...,
+    cause: str = ...,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python
+# send_task_failure method usage example with argument unpacking
+
+kwargs: SendTaskFailureInputRequestTypeDef = {  # (1)
+    "taskToken": ...,
+}
+
+parent.send_task_failure(**kwargs)
+```
+
+1. See [:material-code-braces: SendTaskFailureInputRequestTypeDef](./type_defs.md#sendtaskfailureinputrequesttypedef) 
+
+### send\_task\_heartbeat
+
+Used by activity workers and task states using the
+[callback](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-
+resource.html#connect-wait-token)_ pattern to report to Step Functions that the
+task represented by the specified `taskToken` is still making progress.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").send_task_heartbeat` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.send_task_heartbeat)
+
+```python
+# send_task_heartbeat method definition
+
+await def send_task_heartbeat(
+    self,
+    *,
+    taskToken: str,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python
+# send_task_heartbeat method usage example with argument unpacking
+
+kwargs: SendTaskHeartbeatInputRequestTypeDef = {  # (1)
+    "taskToken": ...,
+}
+
+parent.send_task_heartbeat(**kwargs)
+```
+
+1. See [:material-code-braces: SendTaskHeartbeatInputRequestTypeDef](./type_defs.md#sendtaskheartbeatinputrequesttypedef) 
+
+### send\_task\_success
+
+Used by activity workers and task states using the
+[callback](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-
+resource.html#connect-wait-token)_ pattern to report that the task identified by
+the `taskToken` completed successfully.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").send_task_success` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.send_task_success)
+
+```python
+# send_task_success method definition
+
+await def send_task_success(
+    self,
+    *,
+    taskToken: str,
+    output: str,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python
+# send_task_success method usage example with argument unpacking
+
+kwargs: SendTaskSuccessInputRequestTypeDef = {  # (1)
+    "taskToken": ...,
+    "output": ...,
+}
+
+parent.send_task_success(**kwargs)
+```
+
+1. See [:material-code-braces: SendTaskSuccessInputRequestTypeDef](./type_defs.md#sendtasksuccessinputrequesttypedef) 
+
+### start\_execution
+
+Starts a state machine execution.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").start_execution` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.start_execution)
+
+```python
+# start_execution method definition
+
+await def start_execution(
+    self,
+    *,
+    stateMachineArn: str,
+    name: str = ...,
+    input: str = ...,
+    traceHeader: str = ...,
+) -> StartExecutionOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: StartExecutionOutputTypeDef](./type_defs.md#startexecutionoutputtypedef) 
+
+
+```python
+# start_execution method usage example with argument unpacking
+
+kwargs: StartExecutionInputRequestTypeDef = {  # (1)
+    "stateMachineArn": ...,
+}
+
+parent.start_execution(**kwargs)
+```
+
+1. See [:material-code-braces: StartExecutionInputRequestTypeDef](./type_defs.md#startexecutioninputrequesttypedef) 
+
+### start\_sync\_execution
+
+Starts a Synchronous Express state machine execution.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").start_sync_execution` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.start_sync_execution)
+
+```python
+# start_sync_execution method definition
+
+await def start_sync_execution(
+    self,
+    *,
+    stateMachineArn: str,
+    name: str = ...,
+    input: str = ...,
+    traceHeader: str = ...,
+) -> StartSyncExecutionOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: StartSyncExecutionOutputTypeDef](./type_defs.md#startsyncexecutionoutputtypedef) 
+
+
+```python
+# start_sync_execution method usage example with argument unpacking
+
+kwargs: StartSyncExecutionInputRequestTypeDef = {  # (1)
+    "stateMachineArn": ...,
+}
+
+parent.start_sync_execution(**kwargs)
+```
+
+1. See [:material-code-braces: StartSyncExecutionInputRequestTypeDef](./type_defs.md#startsyncexecutioninputrequesttypedef) 
+
+### stop\_execution
+
+Stops an execution.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").stop_execution` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.stop_execution)
+
+```python
+# stop_execution method definition
+
+await def stop_execution(
+    self,
+    *,
+    executionArn: str,
+    error: str = ...,
+    cause: str = ...,
+) -> StopExecutionOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: StopExecutionOutputTypeDef](./type_defs.md#stopexecutionoutputtypedef) 
+
+
+```python
+# stop_execution method usage example with argument unpacking
+
+kwargs: StopExecutionInputRequestTypeDef = {  # (1)
+    "executionArn": ...,
+}
+
+parent.stop_execution(**kwargs)
+```
+
+1. See [:material-code-braces: StopExecutionInputRequestTypeDef](./type_defs.md#stopexecutioninputrequesttypedef) 
+
+### tag\_resource
+
+Add a tag to a Step Functions resource.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").tag_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.tag_resource)
+
+```python
+# tag_resource method definition
+
+await def tag_resource(
+    self,
+    *,
+    resourceArn: str,
+    tags: Sequence[TagTypeDef],  # (1)
+) -> Dict[str, Any]:
+    ...
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+
+
+```python
+# tag_resource method usage example with argument unpacking
+
+kwargs: TagResourceInputRequestTypeDef = {  # (1)
+    "resourceArn": ...,
+    "tags": ...,
+}
+
+parent.tag_resource(**kwargs)
+```
+
+1. See [:material-code-braces: TagResourceInputRequestTypeDef](./type_defs.md#tagresourceinputrequesttypedef) 
+
+### untag\_resource
+
+Remove a tag from a Step Functions resource See also: [AWS API
+Documentation](https://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UntagResource).
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").untag_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.untag_resource)
+
+```python
+# untag_resource method definition
+
+await def untag_resource(
+    self,
+    *,
+    resourceArn: str,
+    tagKeys: Sequence[str],
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python
+# untag_resource method usage example with argument unpacking
+
+kwargs: UntagResourceInputRequestTypeDef = {  # (1)
+    "resourceArn": ...,
+    "tagKeys": ...,
+}
+
+parent.untag_resource(**kwargs)
+```
+
+1. See [:material-code-braces: UntagResourceInputRequestTypeDef](./type_defs.md#untagresourceinputrequesttypedef) 
+
+### update\_map\_run
+
+Updates an in-progress Map Run's configuration to include changes to the
+settings that control maximum concurrency and Map Run failure.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").update_map_run` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.update_map_run)
+
+```python
+# update_map_run method definition
+
+await def update_map_run(
+    self,
+    *,
+    mapRunArn: str,
+    maxConcurrency: int = ...,
+    toleratedFailurePercentage: float = ...,
+    toleratedFailureCount: int = ...,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python
+# update_map_run method usage example with argument unpacking
+
+kwargs: UpdateMapRunInputRequestTypeDef = {  # (1)
+    "mapRunArn": ...,
+}
+
+parent.update_map_run(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateMapRunInputRequestTypeDef](./type_defs.md#updatemapruninputrequesttypedef) 
+
+### update\_state\_machine
+
+Updates an existing state machine by modifying its `definition`, `roleArn`, or
+`loggingConfiguration`.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").update_state_machine` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.update_state_machine)
+
+```python
+# update_state_machine method definition
+
+await def update_state_machine(
+    self,
+    *,
+    stateMachineArn: str,
+    definition: str = ...,
+    roleArn: str = ...,
+    loggingConfiguration: LoggingConfigurationTypeDef = ...,  # (1)
+    tracingConfiguration: TracingConfigurationTypeDef = ...,  # (2)
+    publish: bool = ...,
+    versionDescription: str = ...,
+) -> UpdateStateMachineOutputTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: LoggingConfigurationTypeDef](./type_defs.md#loggingconfigurationtypedef) 
+2. See [:material-code-braces: TracingConfigurationTypeDef](./type_defs.md#tracingconfigurationtypedef) 
+3. See [:material-code-braces: UpdateStateMachineOutputTypeDef](./type_defs.md#updatestatemachineoutputtypedef) 
+
+
+```python
+# update_state_machine method usage example with argument unpacking
+
+kwargs: UpdateStateMachineInputRequestTypeDef = {  # (1)
+    "stateMachineArn": ...,
+}
+
+parent.update_state_machine(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateStateMachineInputRequestTypeDef](./type_defs.md#updatestatemachineinputrequesttypedef) 
+
+### update\_state\_machine\_alias
+
+Updates the configuration of an existing state machine
+[alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-
+machine-alias.html)_ by modifying its `description` or `routingConfiguration`.
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").update_state_machine_alias` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.update_state_machine_alias)
+
+```python
+# update_state_machine_alias method definition
+
+await def update_state_machine_alias(
+    self,
+    *,
+    stateMachineAliasArn: str,
+    description: str = ...,
+    routingConfiguration: Sequence[RoutingConfigurationListItemTypeDef] = ...,  # (1)
+) -> UpdateStateMachineAliasOutputTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: RoutingConfigurationListItemTypeDef](./type_defs.md#routingconfigurationlistitemtypedef) 
+2. See [:material-code-braces: UpdateStateMachineAliasOutputTypeDef](./type_defs.md#updatestatemachinealiasoutputtypedef) 
+
+
+```python
+# update_state_machine_alias method usage example with argument unpacking
+
+kwargs: UpdateStateMachineAliasInputRequestTypeDef = {  # (1)
+    "stateMachineAliasArn": ...,
+}
+
+parent.update_state_machine_alias(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateStateMachineAliasInputRequestTypeDef](./type_defs.md#updatestatemachinealiasinputrequesttypedef) 
+
+### \_\_aenter\_\_
+
+
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").__aenter__` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.__aenter__)
+
+```python
+# __aenter__ method definition
+
+await def __aenter__(
+    self,
+) -> SFNClient:
+    ...
+```
+
+
+### \_\_aexit\_\_
+
+
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").__aexit__` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.__aexit__)
+
+```python
+# __aexit__ method definition
+
+await def __aexit__(
+    self,
+    exc_type: Any,
+    exc_val: Any,
+    exc_tb: Any,
+) -> Any:
+    ...
+```
+
+
+
+
+### get_paginator
+
+Type annotations and code completion for `#!python session.create_client("stepfunctions").get_paginator` method with overloads.
+
+- `client.get_paginator("get_execution_history")` -> [GetExecutionHistoryPaginator](./paginators.md#getexecutionhistorypaginator)
+- `client.get_paginator("list_activities")` -> [ListActivitiesPaginator](./paginators.md#listactivitiespaginator)
+- `client.get_paginator("list_executions")` -> [ListExecutionsPaginator](./paginators.md#listexecutionspaginator)
+- `client.get_paginator("list_map_runs")` -> [ListMapRunsPaginator](./paginators.md#listmaprunspaginator)
+- `client.get_paginator("list_state_machines")` -> [ListStateMachinesPaginator](./paginators.md#liststatemachinespaginator)
+
+
+

@@ -1,0 +1,251 @@
+# BillingConductor module
+
+> [Index](../README.md) > BillingConductor
+
+
+!!! note ""
+
+    Auto-generated documentation for [BillingConductor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/billingconductor.html#BillingConductor)
+    type annotations stubs module [types-aiobotocore-billingconductor](https://pypi.org/project/types-aiobotocore-billingconductor/).
+
+## How to install
+
+
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `BillingConductor` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[billingconductor]'
+
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[billingconductor]'
+
+
+# standalone installation
+python -m pip install types-aiobotocore-billingconductor
+```
+
+
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-billingconductor
+```
+
+## Usage
+
+Code samples can be found in [Examples](./usage.md).
+
+## BillingConductorClient
+
+Type annotations and code completion for  `#!python session.create_client("billingconductor")` as [BillingConductorClient](./client.md)
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/billingconductor.html#BillingConductor.Client)
+
+```python
+# BillingConductorClient usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_billingconductor.client import BillingConductorClient
+
+
+session = get_session()
+async with session.create_client("billingconductor") as client:
+    client: BillingConductorClient
+```
+
+
+## Paginators
+
+Type annotations and code completion for
+[paginators](./paginators.md)
+from `#!python session.create_client("billingconductor").get_paginator("...")`.
+
+```python
+# ListAccountAssociationsPaginator usage example
+
+from types_aiobotocore_billingconductor.paginator import ListAccountAssociationsPaginator
+
+def get_list_account_associations_paginator() -> ListAccountAssociationsPaginator:
+    return client.get_paginator("list_account_associations"))
+```
+
+- [ListAccountAssociationsPaginator](./paginators.md#listaccountassociationspaginator)
+- [ListBillingGroupCostReportsPaginator](./paginators.md#listbillinggroupcostreportspaginator)
+- [ListBillingGroupsPaginator](./paginators.md#listbillinggroupspaginator)
+- [ListCustomLineItemVersionsPaginator](./paginators.md#listcustomlineitemversionspaginator)
+- [ListCustomLineItemsPaginator](./paginators.md#listcustomlineitemspaginator)
+- [ListPricingPlansPaginator](./paginators.md#listpricingplanspaginator)
+- [ListPricingPlansAssociatedWithPricingRulePaginator](./paginators.md#listpricingplansassociatedwithpricingrulepaginator)
+- [ListPricingRulesPaginator](./paginators.md#listpricingrulespaginator)
+- [ListPricingRulesAssociatedToPricingPlanPaginator](./paginators.md#listpricingrulesassociatedtopricingplanpaginator)
+- [ListResourcesAssociatedToCustomLineItemPaginator](./paginators.md#listresourcesassociatedtocustomlineitempaginator)
+
+
+
+
+
+
+
+
+## Literals
+
+Type annotations for [literals](./literals.md) used in methods and schema.
+
+```python
+# AssociateResourceErrorReasonType usage example
+
+from types_aiobotocore_billingconductor.literals import AssociateResourceErrorReasonType
+
+def get_value() -> AssociateResourceErrorReasonType:
+    return "ILLEGAL_CUSTOMLINEITEM"
+```
+
+- [AssociateResourceErrorReasonType](./literals.md#associateresourceerrorreasontype)
+- [BillingGroupStatusType](./literals.md#billinggroupstatustype)
+- [CurrencyCodeType](./literals.md#currencycodetype)
+- [CustomLineItemRelationshipType](./literals.md#customlineitemrelationshiptype)
+- [CustomLineItemTypeType](./literals.md#customlineitemtypetype)
+- [ListAccountAssociationsPaginatorName](./literals.md#listaccountassociationspaginatorname)
+- [ListBillingGroupCostReportsPaginatorName](./literals.md#listbillinggroupcostreportspaginatorname)
+- [ListBillingGroupsPaginatorName](./literals.md#listbillinggroupspaginatorname)
+- [ListCustomLineItemVersionsPaginatorName](./literals.md#listcustomlineitemversionspaginatorname)
+- [ListCustomLineItemsPaginatorName](./literals.md#listcustomlineitemspaginatorname)
+- [ListPricingPlansAssociatedWithPricingRulePaginatorName](./literals.md#listpricingplansassociatedwithpricingrulepaginatorname)
+- [ListPricingPlansPaginatorName](./literals.md#listpricingplanspaginatorname)
+- [ListPricingRulesAssociatedToPricingPlanPaginatorName](./literals.md#listpricingrulesassociatedtopricingplanpaginatorname)
+- [ListPricingRulesPaginatorName](./literals.md#listpricingrulespaginatorname)
+- [ListResourcesAssociatedToCustomLineItemPaginatorName](./literals.md#listresourcesassociatedtocustomlineitempaginatorname)
+- [PricingRuleScopeType](./literals.md#pricingrulescopetype)
+- [PricingRuleTypeType](./literals.md#pricingruletypetype)
+- [BillingConductorServiceName](./literals.md#billingconductorservicename)
+- [ServiceName](./literals.md#servicename)
+- [ResourceServiceName](./literals.md#resourceservicename)
+- [PaginatorName](./literals.md#paginatorname)
+
+
+
+
+## Type definitions
+
+Type annotations for [type definitions](./type_defs.md) used in methods and schema.
+
+- [AccountAssociationsListElementTypeDef](./type_defs.md#accountassociationslistelementtypedef)
+- [AccountGroupingTypeDef](./type_defs.md#accountgroupingtypedef)
+- [AssociateAccountsInputRequestTypeDef](./type_defs.md#associateaccountsinputrequesttypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [AssociatePricingRulesInputRequestTypeDef](./type_defs.md#associatepricingrulesinputrequesttypedef)
+- [AssociateResourceErrorTypeDef](./type_defs.md#associateresourceerrortypedef)
+- [CustomLineItemBillingPeriodRangeTypeDef](./type_defs.md#customlineitembillingperiodrangetypedef)
+- [BillingGroupCostReportElementTypeDef](./type_defs.md#billinggroupcostreportelementtypedef)
+- [ComputationPreferenceTypeDef](./type_defs.md#computationpreferencetypedef)
+- [ListBillingGroupAccountGroupingTypeDef](./type_defs.md#listbillinggroupaccountgroupingtypedef)
+- [CreateFreeTierConfigTypeDef](./type_defs.md#createfreetierconfigtypedef)
+- [CreatePricingPlanInputRequestTypeDef](./type_defs.md#createpricingplaninputrequesttypedef)
+- [CustomLineItemFlatChargeDetailsTypeDef](./type_defs.md#customlineitemflatchargedetailstypedef)
+- [CustomLineItemPercentageChargeDetailsTypeDef](./type_defs.md#customlineitempercentagechargedetailstypedef)
+- [DeleteBillingGroupInputRequestTypeDef](./type_defs.md#deletebillinggroupinputrequesttypedef)
+- [DeletePricingPlanInputRequestTypeDef](./type_defs.md#deletepricingplaninputrequesttypedef)
+- [DeletePricingRuleInputRequestTypeDef](./type_defs.md#deletepricingruleinputrequesttypedef)
+- [DisassociateAccountsInputRequestTypeDef](./type_defs.md#disassociateaccountsinputrequesttypedef)
+- [DisassociatePricingRulesInputRequestTypeDef](./type_defs.md#disassociatepricingrulesinputrequesttypedef)
+- [FreeTierConfigTypeDef](./type_defs.md#freetierconfigtypedef)
+- [ListAccountAssociationsFilterTypeDef](./type_defs.md#listaccountassociationsfiltertypedef)
+- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+- [ListBillingGroupCostReportsFilterTypeDef](./type_defs.md#listbillinggroupcostreportsfiltertypedef)
+- [ListBillingGroupsFilterTypeDef](./type_defs.md#listbillinggroupsfiltertypedef)
+- [ListCustomLineItemFlatChargeDetailsTypeDef](./type_defs.md#listcustomlineitemflatchargedetailstypedef)
+- [ListCustomLineItemPercentageChargeDetailsTypeDef](./type_defs.md#listcustomlineitempercentagechargedetailstypedef)
+- [ListCustomLineItemVersionsBillingPeriodRangeFilterTypeDef](./type_defs.md#listcustomlineitemversionsbillingperiodrangefiltertypedef)
+- [ListCustomLineItemsFilterTypeDef](./type_defs.md#listcustomlineitemsfiltertypedef)
+- [ListPricingPlansAssociatedWithPricingRuleInputRequestTypeDef](./type_defs.md#listpricingplansassociatedwithpricingruleinputrequesttypedef)
+- [ListPricingPlansFilterTypeDef](./type_defs.md#listpricingplansfiltertypedef)
+- [PricingPlanListElementTypeDef](./type_defs.md#pricingplanlistelementtypedef)
+- [ListPricingRulesAssociatedToPricingPlanInputRequestTypeDef](./type_defs.md#listpricingrulesassociatedtopricingplaninputrequesttypedef)
+- [ListPricingRulesFilterTypeDef](./type_defs.md#listpricingrulesfiltertypedef)
+- [ListResourcesAssociatedToCustomLineItemFilterTypeDef](./type_defs.md#listresourcesassociatedtocustomlineitemfiltertypedef)
+- [ListResourcesAssociatedToCustomLineItemResponseElementTypeDef](./type_defs.md#listresourcesassociatedtocustomlineitemresponseelementtypedef)
+- [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
+- [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
+- [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
+- [UpdateBillingGroupAccountGroupingTypeDef](./type_defs.md#updatebillinggroupaccountgroupingtypedef)
+- [UpdateCustomLineItemFlatChargeDetailsTypeDef](./type_defs.md#updatecustomlineitemflatchargedetailstypedef)
+- [UpdateCustomLineItemPercentageChargeDetailsTypeDef](./type_defs.md#updatecustomlineitempercentagechargedetailstypedef)
+- [UpdateFreeTierConfigTypeDef](./type_defs.md#updatefreetierconfigtypedef)
+- [UpdatePricingPlanInputRequestTypeDef](./type_defs.md#updatepricingplaninputrequesttypedef)
+- [AssociateAccountsOutputTypeDef](./type_defs.md#associateaccountsoutputtypedef)
+- [AssociatePricingRulesOutputTypeDef](./type_defs.md#associatepricingrulesoutputtypedef)
+- [CreateBillingGroupOutputTypeDef](./type_defs.md#createbillinggroupoutputtypedef)
+- [CreateCustomLineItemOutputTypeDef](./type_defs.md#createcustomlineitemoutputtypedef)
+- [CreatePricingPlanOutputTypeDef](./type_defs.md#createpricingplanoutputtypedef)
+- [CreatePricingRuleOutputTypeDef](./type_defs.md#createpricingruleoutputtypedef)
+- [DeleteBillingGroupOutputTypeDef](./type_defs.md#deletebillinggroupoutputtypedef)
+- [DeleteCustomLineItemOutputTypeDef](./type_defs.md#deletecustomlineitemoutputtypedef)
+- [DeletePricingPlanOutputTypeDef](./type_defs.md#deletepricingplanoutputtypedef)
+- [DeletePricingRuleOutputTypeDef](./type_defs.md#deletepricingruleoutputtypedef)
+- [DisassociateAccountsOutputTypeDef](./type_defs.md#disassociateaccountsoutputtypedef)
+- [DisassociatePricingRulesOutputTypeDef](./type_defs.md#disassociatepricingrulesoutputtypedef)
+- [ListAccountAssociationsOutputTypeDef](./type_defs.md#listaccountassociationsoutputtypedef)
+- [ListPricingPlansAssociatedWithPricingRuleOutputTypeDef](./type_defs.md#listpricingplansassociatedwithpricingruleoutputtypedef)
+- [ListPricingRulesAssociatedToPricingPlanOutputTypeDef](./type_defs.md#listpricingrulesassociatedtopricingplanoutputtypedef)
+- [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
+- [UpdatePricingPlanOutputTypeDef](./type_defs.md#updatepricingplanoutputtypedef)
+- [AssociateResourceResponseElementTypeDef](./type_defs.md#associateresourceresponseelementtypedef)
+- [DisassociateResourceResponseElementTypeDef](./type_defs.md#disassociateresourceresponseelementtypedef)
+- [BatchAssociateResourcesToCustomLineItemInputRequestTypeDef](./type_defs.md#batchassociateresourcestocustomlineiteminputrequesttypedef)
+- [BatchDisassociateResourcesFromCustomLineItemInputRequestTypeDef](./type_defs.md#batchdisassociateresourcesfromcustomlineiteminputrequesttypedef)
+- [DeleteCustomLineItemInputRequestTypeDef](./type_defs.md#deletecustomlineiteminputrequesttypedef)
+- [ListBillingGroupCostReportsOutputTypeDef](./type_defs.md#listbillinggroupcostreportsoutputtypedef)
+- [CreateBillingGroupInputRequestTypeDef](./type_defs.md#createbillinggroupinputrequesttypedef)
+- [BillingGroupListElementTypeDef](./type_defs.md#billinggrouplistelementtypedef)
+- [CreateTieringInputTypeDef](./type_defs.md#createtieringinputtypedef)
+- [CustomLineItemChargeDetailsTypeDef](./type_defs.md#customlineitemchargedetailstypedef)
+- [TieringTypeDef](./type_defs.md#tieringtypedef)
+- [ListAccountAssociationsInputRequestTypeDef](./type_defs.md#listaccountassociationsinputrequesttypedef)
+- [ListAccountAssociationsInputListAccountAssociationsPaginateTypeDef](./type_defs.md#listaccountassociationsinputlistaccountassociationspaginatetypedef)
+- [ListPricingPlansAssociatedWithPricingRuleInputListPricingPlansAssociatedWithPricingRulePaginateTypeDef](./type_defs.md#listpricingplansassociatedwithpricingruleinputlistpricingplansassociatedwithpricingrulepaginatetypedef)
+- [ListPricingRulesAssociatedToPricingPlanInputListPricingRulesAssociatedToPricingPlanPaginateTypeDef](./type_defs.md#listpricingrulesassociatedtopricingplaninputlistpricingrulesassociatedtopricingplanpaginatetypedef)
+- [ListBillingGroupCostReportsInputListBillingGroupCostReportsPaginateTypeDef](./type_defs.md#listbillinggroupcostreportsinputlistbillinggroupcostreportspaginatetypedef)
+- [ListBillingGroupCostReportsInputRequestTypeDef](./type_defs.md#listbillinggroupcostreportsinputrequesttypedef)
+- [ListBillingGroupsInputListBillingGroupsPaginateTypeDef](./type_defs.md#listbillinggroupsinputlistbillinggroupspaginatetypedef)
+- [ListBillingGroupsInputRequestTypeDef](./type_defs.md#listbillinggroupsinputrequesttypedef)
+- [ListCustomLineItemChargeDetailsTypeDef](./type_defs.md#listcustomlineitemchargedetailstypedef)
+- [ListCustomLineItemVersionsFilterTypeDef](./type_defs.md#listcustomlineitemversionsfiltertypedef)
+- [ListCustomLineItemsInputListCustomLineItemsPaginateTypeDef](./type_defs.md#listcustomlineitemsinputlistcustomlineitemspaginatetypedef)
+- [ListCustomLineItemsInputRequestTypeDef](./type_defs.md#listcustomlineitemsinputrequesttypedef)
+- [ListPricingPlansInputListPricingPlansPaginateTypeDef](./type_defs.md#listpricingplansinputlistpricingplanspaginatetypedef)
+- [ListPricingPlansInputRequestTypeDef](./type_defs.md#listpricingplansinputrequesttypedef)
+- [ListPricingPlansOutputTypeDef](./type_defs.md#listpricingplansoutputtypedef)
+- [ListPricingRulesInputListPricingRulesPaginateTypeDef](./type_defs.md#listpricingrulesinputlistpricingrulespaginatetypedef)
+- [ListPricingRulesInputRequestTypeDef](./type_defs.md#listpricingrulesinputrequesttypedef)
+- [ListResourcesAssociatedToCustomLineItemInputListResourcesAssociatedToCustomLineItemPaginateTypeDef](./type_defs.md#listresourcesassociatedtocustomlineiteminputlistresourcesassociatedtocustomlineitempaginatetypedef)
+- [ListResourcesAssociatedToCustomLineItemInputRequestTypeDef](./type_defs.md#listresourcesassociatedtocustomlineiteminputrequesttypedef)
+- [ListResourcesAssociatedToCustomLineItemOutputTypeDef](./type_defs.md#listresourcesassociatedtocustomlineitemoutputtypedef)
+- [UpdateBillingGroupInputRequestTypeDef](./type_defs.md#updatebillinggroupinputrequesttypedef)
+- [UpdateBillingGroupOutputTypeDef](./type_defs.md#updatebillinggroupoutputtypedef)
+- [UpdateCustomLineItemChargeDetailsTypeDef](./type_defs.md#updatecustomlineitemchargedetailstypedef)
+- [UpdateTieringInputTypeDef](./type_defs.md#updatetieringinputtypedef)
+- [BatchAssociateResourcesToCustomLineItemOutputTypeDef](./type_defs.md#batchassociateresourcestocustomlineitemoutputtypedef)
+- [BatchDisassociateResourcesFromCustomLineItemOutputTypeDef](./type_defs.md#batchdisassociateresourcesfromcustomlineitemoutputtypedef)
+- [ListBillingGroupsOutputTypeDef](./type_defs.md#listbillinggroupsoutputtypedef)
+- [CreatePricingRuleInputRequestTypeDef](./type_defs.md#createpricingruleinputrequesttypedef)
+- [CreateCustomLineItemInputRequestTypeDef](./type_defs.md#createcustomlineiteminputrequesttypedef)
+- [PricingRuleListElementTypeDef](./type_defs.md#pricingrulelistelementtypedef)
+- [CustomLineItemListElementTypeDef](./type_defs.md#customlineitemlistelementtypedef)
+- [CustomLineItemVersionListElementTypeDef](./type_defs.md#customlineitemversionlistelementtypedef)
+- [UpdateCustomLineItemOutputTypeDef](./type_defs.md#updatecustomlineitemoutputtypedef)
+- [ListCustomLineItemVersionsInputListCustomLineItemVersionsPaginateTypeDef](./type_defs.md#listcustomlineitemversionsinputlistcustomlineitemversionspaginatetypedef)
+- [ListCustomLineItemVersionsInputRequestTypeDef](./type_defs.md#listcustomlineitemversionsinputrequesttypedef)
+- [UpdateCustomLineItemInputRequestTypeDef](./type_defs.md#updatecustomlineiteminputrequesttypedef)
+- [UpdatePricingRuleInputRequestTypeDef](./type_defs.md#updatepricingruleinputrequesttypedef)
+- [UpdatePricingRuleOutputTypeDef](./type_defs.md#updatepricingruleoutputtypedef)
+- [ListPricingRulesOutputTypeDef](./type_defs.md#listpricingrulesoutputtypedef)
+- [ListCustomLineItemsOutputTypeDef](./type_defs.md#listcustomlineitemsoutputtypedef)
+- [ListCustomLineItemVersionsOutputTypeDef](./type_defs.md#listcustomlineitemversionsoutputtypedef)
+
