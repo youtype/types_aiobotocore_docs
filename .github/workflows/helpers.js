@@ -85,8 +85,7 @@ async function getStubsVersions(boto3Version) {
 }
 
 function getBotocoreVersion(version) {
-    const minor = parseInt(version.match(/\d+\.(\d+)\./)[1]) + 3
-    return version.replace(/\.\d+/, `.${minor}`)
+    return version
 }
 
 async function extractVersions() {
@@ -108,7 +107,9 @@ async function extractVersions() {
     const extraFlags = []
 
     const skipPublished = context.payload.inputs ? context.payload.inputs.skip_published !== 'false' : true
+    const noSmartVersion = context.payload.inputs ? context.payload.inputs.no_smart_version !== 'false' : true
     if (skipPublished) extraFlags.push('--skip-published')
+    if (noSmartVersion) extraFlags.push('--no-smart-version')
 
     core.info(`Extra flags = ${extraFlags}`)
     core.setOutput('extra-flags', extraFlags.join(' '))
@@ -181,7 +182,9 @@ async function extractAioBotocoreVersions() {
     const extraFlags = []
 
     const skipPublished = context.payload.inputs ? context.payload.inputs.skip_published !== 'false' : false
+    const noSmartVersion = context.payload.inputs ? context.payload.inputs.no_smart_version !== 'false' : true
     if (skipPublished) extraFlags.push('--skip-published')
+    if (noSmartVersion) extraFlags.push('--no-smart-version')
 
     core.info(`Extra flags = ${extraFlags}`)
     core.setOutput('extra-flags', extraFlags.join(' '))
@@ -295,7 +298,6 @@ module.exports = {
     extractVersions,
     extractDownloadLinks,
     extractAioBotocoreVersions,
-    getAioBoto3Version,
     getAioBotocoreVersion,
     getTypesAioBotocoreVersions,
     extractAioBotocoreDownloadLinks,
