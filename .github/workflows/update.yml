@@ -21,10 +21,10 @@ jobs:
       current-version: ${{ steps.vars.outputs.current-version }}
       aiobotocore-version: ${{ steps.vars.outputs.aiobotocore-version }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Extract versions
         id: vars
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs')
@@ -56,7 +56,7 @@ jobs:
       VERSION: ${{ needs.check-version.outputs.version }}
       AIOBOTOCORE_VERSION: ${{ needs.check-version.outputs.aiobotocore-version }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: docs
       - name: Setup git
@@ -70,7 +70,7 @@ jobs:
           git rebase main
       - name: Get boto3 download links
         id: links
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const { setupGlobals, extractAioBotocoreDownloadLinks } = require('./.github/workflows/helpers.js')
@@ -78,9 +78,9 @@ jobs:
 
             await extractAioBotocoreDownloadLinks()
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
           cache: "pip"
       - name: Install aiobotocore
         run: |
@@ -124,7 +124,7 @@ jobs:
     env:
       VERSION: ${{ needs.check-version.outputs.version }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup git
         run: |
           git config --global user.email "github-actions@github.com"
