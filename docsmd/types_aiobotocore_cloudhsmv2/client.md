@@ -1,0 +1,803 @@
+# CloudHSMV2Client
+
+> [Index](../README.md) > [CloudHSMV2](./README.md) > CloudHSMV2Client
+
+!!! note ""
+
+    Auto-generated documentation for [CloudHSMV2](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2)
+    type annotations stubs module [types-aiobotocore-cloudhsmv2](https://pypi.org/project/types-aiobotocore-cloudhsmv2/).
+
+## CloudHSMV2Client
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2")`
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client)
+
+```python
+# CloudHSMV2Client usage example
+
+from aiobotocore.session import get_session
+from types_aiobotocore_cloudhsmv2.client import CloudHSMV2Client
+
+session = get_session()
+async with session.create_client("cloudhsmv2") as client:
+    client: CloudHSMV2Client
+```
+
+## Exceptions
+
+
+`aiobotocore` client exceptions are generated in runtime.
+This class provides code completion for `#!python session.create_client("cloudhsmv2").exceptions` structure.
+
+```python
+# CloudHSMV2Client.exceptions usage example
+
+async with session.create_client("cloudhsmv2") as client:
+    try:
+        do_something(client)
+    except (
+            client.ClientError,
+        client.CloudHsmAccessDeniedException,
+        client.CloudHsmInternalFailureException,
+        client.CloudHsmInvalidRequestException,
+        client.CloudHsmResourceNotFoundException,
+        client.CloudHsmServiceException,
+        client.CloudHsmTagException,
+    ) as e:
+        print(e)
+```
+
+```python
+# CloudHSMV2Client usage type checking example
+
+from types_aiobotocore_cloudhsmv2.client import Exceptions
+
+def handle_error(exc: Exceptions.ClientError) -> None:
+    ...
+```
+
+
+## Methods
+
+
+### can\_paginate
+
+Check if an operation can be paginated.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").can_paginate` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.can_paginate)
+
+```python
+# can_paginate method definition
+
+def can_paginate(
+    self,
+    operation_name: str,
+) -> bool:
+    ...
+```
+
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.close)
+
+```python
+# close method definition
+
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
+### copy\_backup\_to\_region
+
+Copy an CloudHSM cluster backup to a different region.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").copy_backup_to_region` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.copy_backup_to_region)
+
+```python
+# copy_backup_to_region method definition
+
+await def copy_backup_to_region(
+    self,
+    *,
+    DestinationRegion: str,
+    BackupId: str,
+    TagList: Sequence[TagTypeDef] = ...,  # (1)
+) -> CopyBackupToRegionResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+2. See [:material-code-braces: CopyBackupToRegionResponseTypeDef](./type_defs.md#copybackuptoregionresponsetypedef) 
+
+
+```python
+# copy_backup_to_region method usage example with argument unpacking
+
+kwargs: CopyBackupToRegionRequestRequestTypeDef = {  # (1)
+    "DestinationRegion": ...,
+    "BackupId": ...,
+}
+
+parent.copy_backup_to_region(**kwargs)
+```
+
+1. See [:material-code-braces: CopyBackupToRegionRequestRequestTypeDef](./type_defs.md#copybackuptoregionrequestrequesttypedef) 
+
+### create\_cluster
+
+Creates a new CloudHSM cluster.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").create_cluster` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.create_cluster)
+
+```python
+# create_cluster method definition
+
+await def create_cluster(
+    self,
+    *,
+    HsmType: str,
+    SubnetIds: Sequence[str],
+    BackupRetentionPolicy: BackupRetentionPolicyTypeDef = ...,  # (1)
+    SourceBackupId: str = ...,
+    TagList: Sequence[TagTypeDef] = ...,  # (2)
+    Mode: ClusterModeType = ...,  # (3)
+) -> CreateClusterResponseTypeDef:  # (4)
+    ...
+```
+
+1. See [:material-code-braces: BackupRetentionPolicyTypeDef](./type_defs.md#backupretentionpolicytypedef) 
+2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+3. See [:material-code-brackets: ClusterModeType](./literals.md#clustermodetype) 
+4. See [:material-code-braces: CreateClusterResponseTypeDef](./type_defs.md#createclusterresponsetypedef) 
+
+
+```python
+# create_cluster method usage example with argument unpacking
+
+kwargs: CreateClusterRequestRequestTypeDef = {  # (1)
+    "HsmType": ...,
+    "SubnetIds": ...,
+}
+
+parent.create_cluster(**kwargs)
+```
+
+1. See [:material-code-braces: CreateClusterRequestRequestTypeDef](./type_defs.md#createclusterrequestrequesttypedef) 
+
+### create\_hsm
+
+Creates a new hardware security module (HSM) in the specified CloudHSM cluster.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").create_hsm` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.create_hsm)
+
+```python
+# create_hsm method definition
+
+await def create_hsm(
+    self,
+    *,
+    ClusterId: str,
+    AvailabilityZone: str,
+    IpAddress: str = ...,
+) -> CreateHsmResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: CreateHsmResponseTypeDef](./type_defs.md#createhsmresponsetypedef) 
+
+
+```python
+# create_hsm method usage example with argument unpacking
+
+kwargs: CreateHsmRequestRequestTypeDef = {  # (1)
+    "ClusterId": ...,
+    "AvailabilityZone": ...,
+}
+
+parent.create_hsm(**kwargs)
+```
+
+1. See [:material-code-braces: CreateHsmRequestRequestTypeDef](./type_defs.md#createhsmrequestrequesttypedef) 
+
+### delete\_backup
+
+Deletes a specified CloudHSM backup.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").delete_backup` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.delete_backup)
+
+```python
+# delete_backup method definition
+
+await def delete_backup(
+    self,
+    *,
+    BackupId: str,
+) -> DeleteBackupResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DeleteBackupResponseTypeDef](./type_defs.md#deletebackupresponsetypedef) 
+
+
+```python
+# delete_backup method usage example with argument unpacking
+
+kwargs: DeleteBackupRequestRequestTypeDef = {  # (1)
+    "BackupId": ...,
+}
+
+parent.delete_backup(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteBackupRequestRequestTypeDef](./type_defs.md#deletebackuprequestrequesttypedef) 
+
+### delete\_cluster
+
+Deletes the specified CloudHSM cluster.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").delete_cluster` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.delete_cluster)
+
+```python
+# delete_cluster method definition
+
+await def delete_cluster(
+    self,
+    *,
+    ClusterId: str,
+) -> DeleteClusterResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DeleteClusterResponseTypeDef](./type_defs.md#deleteclusterresponsetypedef) 
+
+
+```python
+# delete_cluster method usage example with argument unpacking
+
+kwargs: DeleteClusterRequestRequestTypeDef = {  # (1)
+    "ClusterId": ...,
+}
+
+parent.delete_cluster(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteClusterRequestRequestTypeDef](./type_defs.md#deleteclusterrequestrequesttypedef) 
+
+### delete\_hsm
+
+Deletes the specified HSM.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").delete_hsm` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.delete_hsm)
+
+```python
+# delete_hsm method definition
+
+await def delete_hsm(
+    self,
+    *,
+    ClusterId: str,
+    HsmId: str = ...,
+    EniId: str = ...,
+    EniIp: str = ...,
+) -> DeleteHsmResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DeleteHsmResponseTypeDef](./type_defs.md#deletehsmresponsetypedef) 
+
+
+```python
+# delete_hsm method usage example with argument unpacking
+
+kwargs: DeleteHsmRequestRequestTypeDef = {  # (1)
+    "ClusterId": ...,
+}
+
+parent.delete_hsm(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteHsmRequestRequestTypeDef](./type_defs.md#deletehsmrequestrequesttypedef) 
+
+### delete\_resource\_policy
+
+Deletes an CloudHSM resource policy.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").delete_resource_policy` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.delete_resource_policy)
+
+```python
+# delete_resource_policy method definition
+
+await def delete_resource_policy(
+    self,
+    *,
+    ResourceArn: str = ...,
+) -> DeleteResourcePolicyResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DeleteResourcePolicyResponseTypeDef](./type_defs.md#deleteresourcepolicyresponsetypedef) 
+
+
+```python
+# delete_resource_policy method usage example with argument unpacking
+
+kwargs: DeleteResourcePolicyRequestRequestTypeDef = {  # (1)
+    "ResourceArn": ...,
+}
+
+parent.delete_resource_policy(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteResourcePolicyRequestRequestTypeDef](./type_defs.md#deleteresourcepolicyrequestrequesttypedef) 
+
+### describe\_backups
+
+Gets information about backups of CloudHSM clusters.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").describe_backups` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.describe_backups)
+
+```python
+# describe_backups method definition
+
+await def describe_backups(
+    self,
+    *,
+    NextToken: str = ...,
+    MaxResults: int = ...,
+    Filters: Mapping[str, Sequence[str]] = ...,
+    Shared: bool = ...,
+    SortAscending: bool = ...,
+) -> DescribeBackupsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DescribeBackupsResponseTypeDef](./type_defs.md#describebackupsresponsetypedef) 
+
+
+```python
+# describe_backups method usage example with argument unpacking
+
+kwargs: DescribeBackupsRequestRequestTypeDef = {  # (1)
+    "NextToken": ...,
+}
+
+parent.describe_backups(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeBackupsRequestRequestTypeDef](./type_defs.md#describebackupsrequestrequesttypedef) 
+
+### describe\_clusters
+
+Gets information about CloudHSM clusters.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").describe_clusters` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.describe_clusters)
+
+```python
+# describe_clusters method definition
+
+await def describe_clusters(
+    self,
+    *,
+    Filters: Mapping[str, Sequence[str]] = ...,
+    NextToken: str = ...,
+    MaxResults: int = ...,
+) -> DescribeClustersResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DescribeClustersResponseTypeDef](./type_defs.md#describeclustersresponsetypedef) 
+
+
+```python
+# describe_clusters method usage example with argument unpacking
+
+kwargs: DescribeClustersRequestRequestTypeDef = {  # (1)
+    "Filters": ...,
+}
+
+parent.describe_clusters(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeClustersRequestRequestTypeDef](./type_defs.md#describeclustersrequestrequesttypedef) 
+
+### generate\_presigned\_url
+
+Generate a presigned url given a client, its method, and arguments.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").generate_presigned_url` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.generate_presigned_url)
+
+```python
+# generate_presigned_url method definition
+
+await def generate_presigned_url(
+    self,
+    ClientMethod: str,
+    Params: Mapping[str, Any] = ...,
+    ExpiresIn: int = 3600,
+    HttpMethod: str = ...,
+) -> str:
+    ...
+```
+
+
+### get\_resource\_policy
+
+Retrieves the resource policy document attached to a given resource.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").get_resource_policy` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.get_resource_policy)
+
+```python
+# get_resource_policy method definition
+
+await def get_resource_policy(
+    self,
+    *,
+    ResourceArn: str = ...,
+) -> GetResourcePolicyResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetResourcePolicyResponseTypeDef](./type_defs.md#getresourcepolicyresponsetypedef) 
+
+
+```python
+# get_resource_policy method usage example with argument unpacking
+
+kwargs: GetResourcePolicyRequestRequestTypeDef = {  # (1)
+    "ResourceArn": ...,
+}
+
+parent.get_resource_policy(**kwargs)
+```
+
+1. See [:material-code-braces: GetResourcePolicyRequestRequestTypeDef](./type_defs.md#getresourcepolicyrequestrequesttypedef) 
+
+### initialize\_cluster
+
+Claims an CloudHSM cluster by submitting the cluster certificate issued by your
+issuing certificate authority (CA) and the CA's root
+certificate.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").initialize_cluster` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.initialize_cluster)
+
+```python
+# initialize_cluster method definition
+
+await def initialize_cluster(
+    self,
+    *,
+    ClusterId: str,
+    SignedCert: str,
+    TrustAnchor: str,
+) -> InitializeClusterResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: InitializeClusterResponseTypeDef](./type_defs.md#initializeclusterresponsetypedef) 
+
+
+```python
+# initialize_cluster method usage example with argument unpacking
+
+kwargs: InitializeClusterRequestRequestTypeDef = {  # (1)
+    "ClusterId": ...,
+    "SignedCert": ...,
+    "TrustAnchor": ...,
+}
+
+parent.initialize_cluster(**kwargs)
+```
+
+1. See [:material-code-braces: InitializeClusterRequestRequestTypeDef](./type_defs.md#initializeclusterrequestrequesttypedef) 
+
+### list\_tags
+
+Gets a list of tags for the specified CloudHSM cluster.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").list_tags` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.list_tags)
+
+```python
+# list_tags method definition
+
+await def list_tags(
+    self,
+    *,
+    ResourceId: str,
+    NextToken: str = ...,
+    MaxResults: int = ...,
+) -> ListTagsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListTagsResponseTypeDef](./type_defs.md#listtagsresponsetypedef) 
+
+
+```python
+# list_tags method usage example with argument unpacking
+
+kwargs: ListTagsRequestRequestTypeDef = {  # (1)
+    "ResourceId": ...,
+}
+
+parent.list_tags(**kwargs)
+```
+
+1. See [:material-code-braces: ListTagsRequestRequestTypeDef](./type_defs.md#listtagsrequestrequesttypedef) 
+
+### modify\_backup\_attributes
+
+Modifies attributes for CloudHSM backup.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").modify_backup_attributes` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.modify_backup_attributes)
+
+```python
+# modify_backup_attributes method definition
+
+await def modify_backup_attributes(
+    self,
+    *,
+    BackupId: str,
+    NeverExpires: bool,
+) -> ModifyBackupAttributesResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ModifyBackupAttributesResponseTypeDef](./type_defs.md#modifybackupattributesresponsetypedef) 
+
+
+```python
+# modify_backup_attributes method usage example with argument unpacking
+
+kwargs: ModifyBackupAttributesRequestRequestTypeDef = {  # (1)
+    "BackupId": ...,
+    "NeverExpires": ...,
+}
+
+parent.modify_backup_attributes(**kwargs)
+```
+
+1. See [:material-code-braces: ModifyBackupAttributesRequestRequestTypeDef](./type_defs.md#modifybackupattributesrequestrequesttypedef) 
+
+### modify\_cluster
+
+Modifies CloudHSM cluster.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").modify_cluster` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.modify_cluster)
+
+```python
+# modify_cluster method definition
+
+await def modify_cluster(
+    self,
+    *,
+    BackupRetentionPolicy: BackupRetentionPolicyTypeDef,  # (1)
+    ClusterId: str,
+) -> ModifyClusterResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: BackupRetentionPolicyTypeDef](./type_defs.md#backupretentionpolicytypedef) 
+2. See [:material-code-braces: ModifyClusterResponseTypeDef](./type_defs.md#modifyclusterresponsetypedef) 
+
+
+```python
+# modify_cluster method usage example with argument unpacking
+
+kwargs: ModifyClusterRequestRequestTypeDef = {  # (1)
+    "BackupRetentionPolicy": ...,
+    "ClusterId": ...,
+}
+
+parent.modify_cluster(**kwargs)
+```
+
+1. See [:material-code-braces: ModifyClusterRequestRequestTypeDef](./type_defs.md#modifyclusterrequestrequesttypedef) 
+
+### put\_resource\_policy
+
+Creates or updates an CloudHSM resource policy.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").put_resource_policy` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.put_resource_policy)
+
+```python
+# put_resource_policy method definition
+
+await def put_resource_policy(
+    self,
+    *,
+    ResourceArn: str = ...,
+    Policy: str = ...,
+) -> PutResourcePolicyResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: PutResourcePolicyResponseTypeDef](./type_defs.md#putresourcepolicyresponsetypedef) 
+
+
+```python
+# put_resource_policy method usage example with argument unpacking
+
+kwargs: PutResourcePolicyRequestRequestTypeDef = {  # (1)
+    "ResourceArn": ...,
+}
+
+parent.put_resource_policy(**kwargs)
+```
+
+1. See [:material-code-braces: PutResourcePolicyRequestRequestTypeDef](./type_defs.md#putresourcepolicyrequestrequesttypedef) 
+
+### restore\_backup
+
+Restores a specified CloudHSM backup that is in the `PENDING_DELETION` state.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").restore_backup` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.restore_backup)
+
+```python
+# restore_backup method definition
+
+await def restore_backup(
+    self,
+    *,
+    BackupId: str,
+) -> RestoreBackupResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: RestoreBackupResponseTypeDef](./type_defs.md#restorebackupresponsetypedef) 
+
+
+```python
+# restore_backup method usage example with argument unpacking
+
+kwargs: RestoreBackupRequestRequestTypeDef = {  # (1)
+    "BackupId": ...,
+}
+
+parent.restore_backup(**kwargs)
+```
+
+1. See [:material-code-braces: RestoreBackupRequestRequestTypeDef](./type_defs.md#restorebackuprequestrequesttypedef) 
+
+### tag\_resource
+
+Adds or overwrites one or more tags for the specified CloudHSM cluster.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").tag_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.tag_resource)
+
+```python
+# tag_resource method definition
+
+await def tag_resource(
+    self,
+    *,
+    ResourceId: str,
+    TagList: Sequence[TagTypeDef],  # (1)
+) -> Dict[str, Any]:
+    ...
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+
+
+```python
+# tag_resource method usage example with argument unpacking
+
+kwargs: TagResourceRequestRequestTypeDef = {  # (1)
+    "ResourceId": ...,
+    "TagList": ...,
+}
+
+parent.tag_resource(**kwargs)
+```
+
+1. See [:material-code-braces: TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef) 
+
+### untag\_resource
+
+Removes the specified tag or tags from the specified CloudHSM cluster.
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").untag_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.untag_resource)
+
+```python
+# untag_resource method definition
+
+await def untag_resource(
+    self,
+    *,
+    ResourceId: str,
+    TagKeyList: Sequence[str],
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python
+# untag_resource method usage example with argument unpacking
+
+kwargs: UntagResourceRequestRequestTypeDef = {  # (1)
+    "ResourceId": ...,
+    "TagKeyList": ...,
+}
+
+parent.untag_resource(**kwargs)
+```
+
+1. See [:material-code-braces: UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef) 
+
+### \_\_aenter\_\_
+
+
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").__aenter__` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.__aenter__)
+
+```python
+# __aenter__ method definition
+
+await def __aenter__(
+    self,
+) -> "CloudHSMV2Client":
+    ...
+```
+
+
+### \_\_aexit\_\_
+
+
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").__aexit__` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.__aexit__)
+
+```python
+# __aexit__ method definition
+
+await def __aexit__(
+    self,
+    exc_type: Any,
+    exc_val: Any,
+    exc_tb: Any,
+) -> Any:
+    ...
+```
+
+
+
+
+### get_paginator
+
+Type annotations and code completion for `#!python session.create_client("cloudhsmv2").get_paginator` method with overloads.
+
+- `client.get_paginator("describe_backups")` -> [DescribeBackupsPaginator](./paginators.md#describebackupspaginator)
+- `client.get_paginator("describe_clusters")` -> [DescribeClustersPaginator](./paginators.md#describeclusterspaginator)
+- `client.get_paginator("list_tags")` -> [ListTagsPaginator](./paginators.md#listtagspaginator)
+
+
+

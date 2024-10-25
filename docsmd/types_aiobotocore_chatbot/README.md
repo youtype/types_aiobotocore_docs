@@ -1,0 +1,186 @@
+# Chatbot module
+
+> [Index](../README.md) > Chatbot
+
+
+!!! note ""
+
+    Auto-generated documentation for [Chatbot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chatbot.html#Chatbot)
+    type annotations stubs module [types-aiobotocore-chatbot](https://pypi.org/project/types-aiobotocore-chatbot/).
+
+## How to install
+
+
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `Chatbot` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[chatbot]'
+
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[chatbot]'
+
+
+# standalone installation
+python -m pip install types-aiobotocore-chatbot
+```
+
+
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-chatbot
+```
+
+## Usage
+
+Code samples can be found in [Examples](./usage.md).
+
+## ChatbotClient
+
+Type annotations and code completion for  `#!python session.create_client("chatbot")` as [ChatbotClient](./client.md)
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chatbot.html#Chatbot.Client)
+
+```python
+# ChatbotClient usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_chatbot.client import ChatbotClient
+
+
+session = get_session()
+async with session.create_client("chatbot") as client:
+    client: ChatbotClient
+```
+
+
+## Paginators
+
+Type annotations and code completion for
+[paginators](./paginators.md)
+from `#!python session.create_client("chatbot").get_paginator("...")`.
+
+```python
+# DescribeChimeWebhookConfigurationsPaginator usage example
+
+from types_aiobotocore_chatbot.paginator import DescribeChimeWebhookConfigurationsPaginator
+
+def get_describe_chime_webhook_configurations_paginator() -> DescribeChimeWebhookConfigurationsPaginator:
+    return client.get_paginator("describe_chime_webhook_configurations"))
+```
+
+- [DescribeChimeWebhookConfigurationsPaginator](./paginators.md#describechimewebhookconfigurationspaginator)
+- [DescribeSlackChannelConfigurationsPaginator](./paginators.md#describeslackchannelconfigurationspaginator)
+- [DescribeSlackUserIdentitiesPaginator](./paginators.md#describeslackuseridentitiespaginator)
+- [DescribeSlackWorkspacesPaginator](./paginators.md#describeslackworkspacespaginator)
+- [ListMicrosoftTeamsChannelConfigurationsPaginator](./paginators.md#listmicrosoftteamschannelconfigurationspaginator)
+- [ListMicrosoftTeamsConfiguredTeamsPaginator](./paginators.md#listmicrosoftteamsconfiguredteamspaginator)
+- [ListMicrosoftTeamsUserIdentitiesPaginator](./paginators.md#listmicrosoftteamsuseridentitiespaginator)
+
+
+
+
+
+
+
+
+## Literals
+
+Type annotations for [literals](./literals.md) used in methods and schema.
+
+```python
+# DescribeChimeWebhookConfigurationsPaginatorName usage example
+
+from types_aiobotocore_chatbot.literals import DescribeChimeWebhookConfigurationsPaginatorName
+
+def get_value() -> DescribeChimeWebhookConfigurationsPaginatorName:
+    return "describe_chime_webhook_configurations"
+```
+
+- [DescribeChimeWebhookConfigurationsPaginatorName](./literals.md#describechimewebhookconfigurationspaginatorname)
+- [DescribeSlackChannelConfigurationsPaginatorName](./literals.md#describeslackchannelconfigurationspaginatorname)
+- [DescribeSlackUserIdentitiesPaginatorName](./literals.md#describeslackuseridentitiespaginatorname)
+- [DescribeSlackWorkspacesPaginatorName](./literals.md#describeslackworkspacespaginatorname)
+- [ListMicrosoftTeamsChannelConfigurationsPaginatorName](./literals.md#listmicrosoftteamschannelconfigurationspaginatorname)
+- [ListMicrosoftTeamsConfiguredTeamsPaginatorName](./literals.md#listmicrosoftteamsconfiguredteamspaginatorname)
+- [ListMicrosoftTeamsUserIdentitiesPaginatorName](./literals.md#listmicrosoftteamsuseridentitiespaginatorname)
+- [ChatbotServiceName](./literals.md#chatbotservicename)
+- [ServiceName](./literals.md#servicename)
+- [ResourceServiceName](./literals.md#resourceservicename)
+- [PaginatorName](./literals.md#paginatorname)
+
+
+
+
+## Type definitions
+
+Type annotations for [type definitions](./type_defs.md) used in methods and schema.
+
+- [AccountPreferencesTypeDef](./type_defs.md#accountpreferencestypedef)
+- [TagTypeDef](./type_defs.md#tagtypedef)
+- [ConfiguredTeamTypeDef](./type_defs.md#configuredteamtypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [DeleteChimeWebhookConfigurationRequestRequestTypeDef](./type_defs.md#deletechimewebhookconfigurationrequestrequesttypedef)
+- [DeleteMicrosoftTeamsUserIdentityRequestRequestTypeDef](./type_defs.md#deletemicrosoftteamsuseridentityrequestrequesttypedef)
+- [DeleteSlackChannelConfigurationRequestRequestTypeDef](./type_defs.md#deleteslackchannelconfigurationrequestrequesttypedef)
+- [DeleteSlackUserIdentityRequestRequestTypeDef](./type_defs.md#deleteslackuseridentityrequestrequesttypedef)
+- [DeleteSlackWorkspaceAuthorizationRequestRequestTypeDef](./type_defs.md#deleteslackworkspaceauthorizationrequestrequesttypedef)
+- [DeleteTeamsChannelConfigurationRequestRequestTypeDef](./type_defs.md#deleteteamschannelconfigurationrequestrequesttypedef)
+- [DeleteTeamsConfiguredTeamRequestRequestTypeDef](./type_defs.md#deleteteamsconfiguredteamrequestrequesttypedef)
+- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+- [DescribeChimeWebhookConfigurationsRequestRequestTypeDef](./type_defs.md#describechimewebhookconfigurationsrequestrequesttypedef)
+- [DescribeSlackChannelConfigurationsRequestRequestTypeDef](./type_defs.md#describeslackchannelconfigurationsrequestrequesttypedef)
+- [DescribeSlackUserIdentitiesRequestRequestTypeDef](./type_defs.md#describeslackuseridentitiesrequestrequesttypedef)
+- [SlackUserIdentityTypeDef](./type_defs.md#slackuseridentitytypedef)
+- [DescribeSlackWorkspacesRequestRequestTypeDef](./type_defs.md#describeslackworkspacesrequestrequesttypedef)
+- [SlackWorkspaceTypeDef](./type_defs.md#slackworkspacetypedef)
+- [GetTeamsChannelConfigurationRequestRequestTypeDef](./type_defs.md#getteamschannelconfigurationrequestrequesttypedef)
+- [ListMicrosoftTeamsConfiguredTeamsRequestRequestTypeDef](./type_defs.md#listmicrosoftteamsconfiguredteamsrequestrequesttypedef)
+- [ListMicrosoftTeamsUserIdentitiesRequestRequestTypeDef](./type_defs.md#listmicrosoftteamsuseridentitiesrequestrequesttypedef)
+- [TeamsUserIdentityTypeDef](./type_defs.md#teamsuseridentitytypedef)
+- [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
+- [ListTeamsChannelConfigurationsRequestRequestTypeDef](./type_defs.md#listteamschannelconfigurationsrequestrequesttypedef)
+- [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
+- [UpdateAccountPreferencesRequestRequestTypeDef](./type_defs.md#updateaccountpreferencesrequestrequesttypedef)
+- [UpdateChimeWebhookConfigurationRequestRequestTypeDef](./type_defs.md#updatechimewebhookconfigurationrequestrequesttypedef)
+- [UpdateSlackChannelConfigurationRequestRequestTypeDef](./type_defs.md#updateslackchannelconfigurationrequestrequesttypedef)
+- [UpdateTeamsChannelConfigurationRequestRequestTypeDef](./type_defs.md#updateteamschannelconfigurationrequestrequesttypedef)
+- [ChimeWebhookConfigurationTypeDef](./type_defs.md#chimewebhookconfigurationtypedef)
+- [CreateChimeWebhookConfigurationRequestRequestTypeDef](./type_defs.md#createchimewebhookconfigurationrequestrequesttypedef)
+- [CreateSlackChannelConfigurationRequestRequestTypeDef](./type_defs.md#createslackchannelconfigurationrequestrequesttypedef)
+- [CreateTeamsChannelConfigurationRequestRequestTypeDef](./type_defs.md#createteamschannelconfigurationrequestrequesttypedef)
+- [SlackChannelConfigurationTypeDef](./type_defs.md#slackchannelconfigurationtypedef)
+- [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
+- [TeamsChannelConfigurationTypeDef](./type_defs.md#teamschannelconfigurationtypedef)
+- [GetAccountPreferencesResultTypeDef](./type_defs.md#getaccountpreferencesresulttypedef)
+- [ListMicrosoftTeamsConfiguredTeamsResultTypeDef](./type_defs.md#listmicrosoftteamsconfiguredteamsresulttypedef)
+- [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
+- [UpdateAccountPreferencesResultTypeDef](./type_defs.md#updateaccountpreferencesresulttypedef)
+- [DescribeChimeWebhookConfigurationsRequestDescribeChimeWebhookConfigurationsPaginateTypeDef](./type_defs.md#describechimewebhookconfigurationsrequestdescribechimewebhookconfigurationspaginatetypedef)
+- [DescribeSlackChannelConfigurationsRequestDescribeSlackChannelConfigurationsPaginateTypeDef](./type_defs.md#describeslackchannelconfigurationsrequestdescribeslackchannelconfigurationspaginatetypedef)
+- [DescribeSlackUserIdentitiesRequestDescribeSlackUserIdentitiesPaginateTypeDef](./type_defs.md#describeslackuseridentitiesrequestdescribeslackuseridentitiespaginatetypedef)
+- [DescribeSlackWorkspacesRequestDescribeSlackWorkspacesPaginateTypeDef](./type_defs.md#describeslackworkspacesrequestdescribeslackworkspacespaginatetypedef)
+- [ListMicrosoftTeamsConfiguredTeamsRequestListMicrosoftTeamsConfiguredTeamsPaginateTypeDef](./type_defs.md#listmicrosoftteamsconfiguredteamsrequestlistmicrosoftteamsconfiguredteamspaginatetypedef)
+- [ListMicrosoftTeamsUserIdentitiesRequestListMicrosoftTeamsUserIdentitiesPaginateTypeDef](./type_defs.md#listmicrosoftteamsuseridentitiesrequestlistmicrosoftteamsuseridentitiespaginatetypedef)
+- [ListTeamsChannelConfigurationsRequestListMicrosoftTeamsChannelConfigurationsPaginateTypeDef](./type_defs.md#listteamschannelconfigurationsrequestlistmicrosoftteamschannelconfigurationspaginatetypedef)
+- [DescribeSlackUserIdentitiesResultTypeDef](./type_defs.md#describeslackuseridentitiesresulttypedef)
+- [DescribeSlackWorkspacesResultTypeDef](./type_defs.md#describeslackworkspacesresulttypedef)
+- [ListMicrosoftTeamsUserIdentitiesResultTypeDef](./type_defs.md#listmicrosoftteamsuseridentitiesresulttypedef)
+- [CreateChimeWebhookConfigurationResultTypeDef](./type_defs.md#createchimewebhookconfigurationresulttypedef)
+- [DescribeChimeWebhookConfigurationsResultTypeDef](./type_defs.md#describechimewebhookconfigurationsresulttypedef)
+- [UpdateChimeWebhookConfigurationResultTypeDef](./type_defs.md#updatechimewebhookconfigurationresulttypedef)
+- [CreateSlackChannelConfigurationResultTypeDef](./type_defs.md#createslackchannelconfigurationresulttypedef)
+- [DescribeSlackChannelConfigurationsResultTypeDef](./type_defs.md#describeslackchannelconfigurationsresulttypedef)
+- [UpdateSlackChannelConfigurationResultTypeDef](./type_defs.md#updateslackchannelconfigurationresulttypedef)
+- [CreateTeamsChannelConfigurationResultTypeDef](./type_defs.md#createteamschannelconfigurationresulttypedef)
+- [GetTeamsChannelConfigurationResultTypeDef](./type_defs.md#getteamschannelconfigurationresulttypedef)
+- [ListTeamsChannelConfigurationsResultTypeDef](./type_defs.md#listteamschannelconfigurationsresulttypedef)
+- [UpdateTeamsChannelConfigurationResultTypeDef](./type_defs.md#updateteamschannelconfigurationresulttypedef)
+

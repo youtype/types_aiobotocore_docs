@@ -1,0 +1,262 @@
+# XRay module
+
+> [Index](../README.md) > XRay
+
+
+!!! note ""
+
+    Auto-generated documentation for [XRay](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay)
+    type annotations stubs module [types-aiobotocore-xray](https://pypi.org/project/types-aiobotocore-xray/).
+
+## How to install
+
+
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `XRay` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[xray]'
+
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[xray]'
+
+
+# standalone installation
+python -m pip install types-aiobotocore-xray
+```
+
+
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-xray
+```
+
+## Usage
+
+Code samples can be found in [Examples](./usage.md).
+
+## XRayClient
+
+Type annotations and code completion for  `#!python session.create_client("xray")` as [XRayClient](./client.md)
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client)
+
+```python
+# XRayClient usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_xray.client import XRayClient
+
+
+session = get_session()
+async with session.create_client("xray") as client:
+    client: XRayClient
+```
+
+
+## Paginators
+
+Type annotations and code completion for
+[paginators](./paginators.md)
+from `#!python session.create_client("xray").get_paginator("...")`.
+
+```python
+# BatchGetTracesPaginator usage example
+
+from types_aiobotocore_xray.paginator import BatchGetTracesPaginator
+
+def get_batch_get_traces_paginator() -> BatchGetTracesPaginator:
+    return client.get_paginator("batch_get_traces"))
+```
+
+- [BatchGetTracesPaginator](./paginators.md#batchgettracespaginator)
+- [GetGroupsPaginator](./paginators.md#getgroupspaginator)
+- [GetSamplingRulesPaginator](./paginators.md#getsamplingrulespaginator)
+- [GetSamplingStatisticSummariesPaginator](./paginators.md#getsamplingstatisticsummariespaginator)
+- [GetServiceGraphPaginator](./paginators.md#getservicegraphpaginator)
+- [GetTimeSeriesServiceStatisticsPaginator](./paginators.md#gettimeseriesservicestatisticspaginator)
+- [GetTraceGraphPaginator](./paginators.md#gettracegraphpaginator)
+- [GetTraceSummariesPaginator](./paginators.md#gettracesummariespaginator)
+- [ListResourcePoliciesPaginator](./paginators.md#listresourcepoliciespaginator)
+- [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
+
+
+
+
+
+
+
+
+## Literals
+
+Type annotations for [literals](./literals.md) used in methods and schema.
+
+```python
+# BatchGetTracesPaginatorName usage example
+
+from types_aiobotocore_xray.literals import BatchGetTracesPaginatorName
+
+def get_value() -> BatchGetTracesPaginatorName:
+    return "batch_get_traces"
+```
+
+- [BatchGetTracesPaginatorName](./literals.md#batchgettracespaginatorname)
+- [EncryptionStatusType](./literals.md#encryptionstatustype)
+- [EncryptionTypeType](./literals.md#encryptiontypetype)
+- [GetGroupsPaginatorName](./literals.md#getgroupspaginatorname)
+- [GetSamplingRulesPaginatorName](./literals.md#getsamplingrulespaginatorname)
+- [GetSamplingStatisticSummariesPaginatorName](./literals.md#getsamplingstatisticsummariespaginatorname)
+- [GetServiceGraphPaginatorName](./literals.md#getservicegraphpaginatorname)
+- [GetTimeSeriesServiceStatisticsPaginatorName](./literals.md#gettimeseriesservicestatisticspaginatorname)
+- [GetTraceGraphPaginatorName](./literals.md#gettracegraphpaginatorname)
+- [GetTraceSummariesPaginatorName](./literals.md#gettracesummariespaginatorname)
+- [InsightCategoryType](./literals.md#insightcategorytype)
+- [InsightStateType](./literals.md#insightstatetype)
+- [ListResourcePoliciesPaginatorName](./literals.md#listresourcepoliciespaginatorname)
+- [ListTagsForResourcePaginatorName](./literals.md#listtagsforresourcepaginatorname)
+- [SamplingStrategyNameType](./literals.md#samplingstrategynametype)
+- [TimeRangeTypeType](./literals.md#timerangetypetype)
+- [XRayServiceName](./literals.md#xrayservicename)
+- [ServiceName](./literals.md#servicename)
+- [ResourceServiceName](./literals.md#resourceservicename)
+- [PaginatorName](./literals.md#paginatorname)
+- [RegionName](./literals.md#regionname)
+
+
+
+
+## Type definitions
+
+Type annotations for [type definitions](./type_defs.md) used in methods and schema.
+
+- [AliasTypeDef](./type_defs.md#aliastypedef)
+- [AnnotationValueTypeDef](./type_defs.md#annotationvaluetypedef)
+- [ServiceIdTypeDef](./type_defs.md#serviceidtypedef)
+- [AvailabilityZoneDetailTypeDef](./type_defs.md#availabilityzonedetailtypedef)
+- [BackendConnectionErrorsTypeDef](./type_defs.md#backendconnectionerrorstypedef)
+- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+- [BatchGetTracesRequestRequestTypeDef](./type_defs.md#batchgettracesrequestrequesttypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [InsightsConfigurationTypeDef](./type_defs.md#insightsconfigurationtypedef)
+- [TagTypeDef](./type_defs.md#tagtypedef)
+- [SamplingRuleTypeDef](./type_defs.md#samplingruletypedef)
+- [DeleteGroupRequestRequestTypeDef](./type_defs.md#deletegrouprequestrequesttypedef)
+- [DeleteResourcePolicyRequestRequestTypeDef](./type_defs.md#deleteresourcepolicyrequestrequesttypedef)
+- [DeleteSamplingRuleRequestRequestTypeDef](./type_defs.md#deletesamplingrulerequestrequesttypedef)
+- [ErrorStatisticsTypeDef](./type_defs.md#errorstatisticstypedef)
+- [FaultStatisticsTypeDef](./type_defs.md#faultstatisticstypedef)
+- [HistogramEntryTypeDef](./type_defs.md#histogramentrytypedef)
+- [EncryptionConfigTypeDef](./type_defs.md#encryptionconfigtypedef)
+- [RootCauseExceptionTypeDef](./type_defs.md#rootcauseexceptiontypedef)
+- [ForecastStatisticsTypeDef](./type_defs.md#forecaststatisticstypedef)
+- [GetGroupRequestRequestTypeDef](./type_defs.md#getgrouprequestrequesttypedef)
+- [GetGroupsRequestRequestTypeDef](./type_defs.md#getgroupsrequestrequesttypedef)
+- [GetInsightEventsRequestRequestTypeDef](./type_defs.md#getinsighteventsrequestrequesttypedef)
+- [TimestampTypeDef](./type_defs.md#timestamptypedef)
+- [GetInsightRequestRequestTypeDef](./type_defs.md#getinsightrequestrequesttypedef)
+- [GetSamplingRulesRequestRequestTypeDef](./type_defs.md#getsamplingrulesrequestrequesttypedef)
+- [GetSamplingStatisticSummariesRequestRequestTypeDef](./type_defs.md#getsamplingstatisticsummariesrequestrequesttypedef)
+- [SamplingStatisticSummaryTypeDef](./type_defs.md#samplingstatisticsummarytypedef)
+- [SamplingTargetDocumentTypeDef](./type_defs.md#samplingtargetdocumenttypedef)
+- [UnprocessedStatisticsTypeDef](./type_defs.md#unprocessedstatisticstypedef)
+- [GetTraceGraphRequestRequestTypeDef](./type_defs.md#gettracegraphrequestrequesttypedef)
+- [SamplingStrategyTypeDef](./type_defs.md#samplingstrategytypedef)
+- [HttpTypeDef](./type_defs.md#httptypedef)
+- [RequestImpactStatisticsTypeDef](./type_defs.md#requestimpactstatisticstypedef)
+- [InsightImpactGraphEdgeTypeDef](./type_defs.md#insightimpactgraphedgetypedef)
+- [InstanceIdDetailTypeDef](./type_defs.md#instanceiddetailtypedef)
+- [ListResourcePoliciesRequestRequestTypeDef](./type_defs.md#listresourcepoliciesrequestrequesttypedef)
+- [ResourcePolicyTypeDef](./type_defs.md#resourcepolicytypedef)
+- [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
+- [PutEncryptionConfigRequestRequestTypeDef](./type_defs.md#putencryptionconfigrequestrequesttypedef)
+- [PutResourcePolicyRequestRequestTypeDef](./type_defs.md#putresourcepolicyrequestrequesttypedef)
+- [PutTraceSegmentsRequestRequestTypeDef](./type_defs.md#puttracesegmentsrequestrequesttypedef)
+- [UnprocessedTraceSegmentTypeDef](./type_defs.md#unprocessedtracesegmenttypedef)
+- [ResourceARNDetailTypeDef](./type_defs.md#resourcearndetailtypedef)
+- [ResponseTimeRootCauseEntityTypeDef](./type_defs.md#responsetimerootcauseentitytypedef)
+- [SamplingRuleOutputTypeDef](./type_defs.md#samplingruleoutputtypedef)
+- [SamplingRuleUpdateTypeDef](./type_defs.md#samplingruleupdatetypedef)
+- [SegmentTypeDef](./type_defs.md#segmenttypedef)
+- [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
+- [AnomalousServiceTypeDef](./type_defs.md#anomalousservicetypedef)
+- [TraceUserTypeDef](./type_defs.md#traceusertypedef)
+- [ValueWithServiceIdsTypeDef](./type_defs.md#valuewithserviceidstypedef)
+- [BatchGetTracesRequestBatchGetTracesPaginateTypeDef](./type_defs.md#batchgettracesrequestbatchgettracespaginatetypedef)
+- [GetGroupsRequestGetGroupsPaginateTypeDef](./type_defs.md#getgroupsrequestgetgroupspaginatetypedef)
+- [GetSamplingRulesRequestGetSamplingRulesPaginateTypeDef](./type_defs.md#getsamplingrulesrequestgetsamplingrulespaginatetypedef)
+- [GetSamplingStatisticSummariesRequestGetSamplingStatisticSummariesPaginateTypeDef](./type_defs.md#getsamplingstatisticsummariesrequestgetsamplingstatisticsummariespaginatetypedef)
+- [GetTraceGraphRequestGetTraceGraphPaginateTypeDef](./type_defs.md#gettracegraphrequestgettracegraphpaginatetypedef)
+- [ListResourcePoliciesRequestListResourcePoliciesPaginateTypeDef](./type_defs.md#listresourcepoliciesrequestlistresourcepoliciespaginatetypedef)
+- [ListTagsForResourceRequestListTagsForResourcePaginateTypeDef](./type_defs.md#listtagsforresourcerequestlisttagsforresourcepaginatetypedef)
+- [GroupSummaryTypeDef](./type_defs.md#groupsummarytypedef)
+- [GroupTypeDef](./type_defs.md#grouptypedef)
+- [UpdateGroupRequestRequestTypeDef](./type_defs.md#updategrouprequestrequesttypedef)
+- [CreateGroupRequestRequestTypeDef](./type_defs.md#creategrouprequestrequesttypedef)
+- [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
+- [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
+- [CreateSamplingRuleRequestRequestTypeDef](./type_defs.md#createsamplingrulerequestrequesttypedef)
+- [EdgeStatisticsTypeDef](./type_defs.md#edgestatisticstypedef)
+- [ServiceStatisticsTypeDef](./type_defs.md#servicestatisticstypedef)
+- [GetEncryptionConfigResultTypeDef](./type_defs.md#getencryptionconfigresulttypedef)
+- [PutEncryptionConfigResultTypeDef](./type_defs.md#putencryptionconfigresulttypedef)
+- [ErrorRootCauseEntityTypeDef](./type_defs.md#errorrootcauseentitytypedef)
+- [FaultRootCauseEntityTypeDef](./type_defs.md#faultrootcauseentitytypedef)
+- [GetInsightImpactGraphRequestRequestTypeDef](./type_defs.md#getinsightimpactgraphrequestrequesttypedef)
+- [GetInsightSummariesRequestRequestTypeDef](./type_defs.md#getinsightsummariesrequestrequesttypedef)
+- [GetServiceGraphRequestGetServiceGraphPaginateTypeDef](./type_defs.md#getservicegraphrequestgetservicegraphpaginatetypedef)
+- [GetServiceGraphRequestRequestTypeDef](./type_defs.md#getservicegraphrequestrequesttypedef)
+- [GetTimeSeriesServiceStatisticsRequestGetTimeSeriesServiceStatisticsPaginateTypeDef](./type_defs.md#gettimeseriesservicestatisticsrequestgettimeseriesservicestatisticspaginatetypedef)
+- [GetTimeSeriesServiceStatisticsRequestRequestTypeDef](./type_defs.md#gettimeseriesservicestatisticsrequestrequesttypedef)
+- [SamplingStatisticsDocumentTypeDef](./type_defs.md#samplingstatisticsdocumenttypedef)
+- [TelemetryRecordTypeDef](./type_defs.md#telemetryrecordtypedef)
+- [GetSamplingStatisticSummariesResultTypeDef](./type_defs.md#getsamplingstatisticsummariesresulttypedef)
+- [GetSamplingTargetsResultTypeDef](./type_defs.md#getsamplingtargetsresulttypedef)
+- [GetTraceSummariesRequestGetTraceSummariesPaginateTypeDef](./type_defs.md#gettracesummariesrequestgettracesummariespaginatetypedef)
+- [GetTraceSummariesRequestRequestTypeDef](./type_defs.md#gettracesummariesrequestrequesttypedef)
+- [InsightImpactGraphServiceTypeDef](./type_defs.md#insightimpactgraphservicetypedef)
+- [ListResourcePoliciesResultTypeDef](./type_defs.md#listresourcepoliciesresulttypedef)
+- [PutResourcePolicyResultTypeDef](./type_defs.md#putresourcepolicyresulttypedef)
+- [PutTraceSegmentsResultTypeDef](./type_defs.md#puttracesegmentsresulttypedef)
+- [ResponseTimeRootCauseServiceTypeDef](./type_defs.md#responsetimerootcauseservicetypedef)
+- [SamplingRuleRecordTypeDef](./type_defs.md#samplingrulerecordtypedef)
+- [UpdateSamplingRuleRequestRequestTypeDef](./type_defs.md#updatesamplingrulerequestrequesttypedef)
+- [TraceTypeDef](./type_defs.md#tracetypedef)
+- [InsightEventTypeDef](./type_defs.md#insighteventtypedef)
+- [InsightSummaryTypeDef](./type_defs.md#insightsummarytypedef)
+- [InsightTypeDef](./type_defs.md#insighttypedef)
+- [GetGroupsResultTypeDef](./type_defs.md#getgroupsresulttypedef)
+- [CreateGroupResultTypeDef](./type_defs.md#creategroupresulttypedef)
+- [GetGroupResultTypeDef](./type_defs.md#getgroupresulttypedef)
+- [UpdateGroupResultTypeDef](./type_defs.md#updategroupresulttypedef)
+- [EdgeTypeDef](./type_defs.md#edgetypedef)
+- [TimeSeriesServiceStatisticsTypeDef](./type_defs.md#timeseriesservicestatisticstypedef)
+- [ErrorRootCauseServiceTypeDef](./type_defs.md#errorrootcauseservicetypedef)
+- [FaultRootCauseServiceTypeDef](./type_defs.md#faultrootcauseservicetypedef)
+- [GetSamplingTargetsRequestRequestTypeDef](./type_defs.md#getsamplingtargetsrequestrequesttypedef)
+- [PutTelemetryRecordsRequestRequestTypeDef](./type_defs.md#puttelemetryrecordsrequestrequesttypedef)
+- [GetInsightImpactGraphResultTypeDef](./type_defs.md#getinsightimpactgraphresulttypedef)
+- [ResponseTimeRootCauseTypeDef](./type_defs.md#responsetimerootcausetypedef)
+- [CreateSamplingRuleResultTypeDef](./type_defs.md#createsamplingruleresulttypedef)
+- [DeleteSamplingRuleResultTypeDef](./type_defs.md#deletesamplingruleresulttypedef)
+- [GetSamplingRulesResultTypeDef](./type_defs.md#getsamplingrulesresulttypedef)
+- [UpdateSamplingRuleResultTypeDef](./type_defs.md#updatesamplingruleresulttypedef)
+- [BatchGetTracesResultTypeDef](./type_defs.md#batchgettracesresulttypedef)
+- [GetInsightEventsResultTypeDef](./type_defs.md#getinsighteventsresulttypedef)
+- [GetInsightSummariesResultTypeDef](./type_defs.md#getinsightsummariesresulttypedef)
+- [GetInsightResultTypeDef](./type_defs.md#getinsightresulttypedef)
+- [ServiceTypeDef](./type_defs.md#servicetypedef)
+- [GetTimeSeriesServiceStatisticsResultTypeDef](./type_defs.md#gettimeseriesservicestatisticsresulttypedef)
+- [ErrorRootCauseTypeDef](./type_defs.md#errorrootcausetypedef)
+- [FaultRootCauseTypeDef](./type_defs.md#faultrootcausetypedef)
+- [GetServiceGraphResultTypeDef](./type_defs.md#getservicegraphresulttypedef)
+- [GetTraceGraphResultTypeDef](./type_defs.md#gettracegraphresulttypedef)
+- [TraceSummaryTypeDef](./type_defs.md#tracesummarytypedef)
+- [GetTraceSummariesResultTypeDef](./type_defs.md#gettracesummariesresulttypedef)
+

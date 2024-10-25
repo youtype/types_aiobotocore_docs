@@ -1,0 +1,1010 @@
+# AppRegistryClient
+
+> [Index](../README.md) > [AppRegistry](./README.md) > AppRegistryClient
+
+!!! note ""
+
+    Auto-generated documentation for [AppRegistry](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry)
+    type annotations stubs module [types-aiobotocore-servicecatalog-appregistry](https://pypi.org/project/types-aiobotocore-servicecatalog-appregistry/).
+
+## AppRegistryClient
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry")`
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client)
+
+```python
+# AppRegistryClient usage example
+
+from aiobotocore.session import get_session
+from types_aiobotocore_servicecatalog_appregistry.client import AppRegistryClient
+
+session = get_session()
+async with session.create_client("servicecatalog-appregistry") as client:
+    client: AppRegistryClient
+```
+
+## Exceptions
+
+
+`aiobotocore` client exceptions are generated in runtime.
+This class provides code completion for `#!python session.create_client("servicecatalog-appregistry").exceptions` structure.
+
+```python
+# AppRegistryClient.exceptions usage example
+
+async with session.create_client("servicecatalog-appregistry") as client:
+    try:
+        do_something(client)
+    except (
+            client.ClientError,
+        client.ConflictException,
+        client.InternalServerException,
+        client.ResourceNotFoundException,
+        client.ServiceQuotaExceededException,
+        client.ThrottlingException,
+        client.ValidationException,
+    ) as e:
+        print(e)
+```
+
+```python
+# AppRegistryClient usage type checking example
+
+from types_aiobotocore_servicecatalog_appregistry.client import Exceptions
+
+def handle_error(exc: Exceptions.ClientError) -> None:
+    ...
+```
+
+
+## Methods
+
+
+### associate\_attribute\_group
+
+Associates an attribute group with an application to augment the application's
+metadata with the group's
+attributes.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").associate_attribute_group` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.associate_attribute_group)
+
+```python
+# associate_attribute_group method definition
+
+await def associate_attribute_group(
+    self,
+    *,
+    application: str,
+    attributeGroup: str,
+) -> AssociateAttributeGroupResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: AssociateAttributeGroupResponseTypeDef](./type_defs.md#associateattributegroupresponsetypedef) 
+
+
+```python
+# associate_attribute_group method usage example with argument unpacking
+
+kwargs: AssociateAttributeGroupRequestRequestTypeDef = {  # (1)
+    "application": ...,
+    "attributeGroup": ...,
+}
+
+parent.associate_attribute_group(**kwargs)
+```
+
+1. See [:material-code-braces: AssociateAttributeGroupRequestRequestTypeDef](./type_defs.md#associateattributegrouprequestrequesttypedef) 
+
+### associate\_resource
+
+Associates a resource with an application.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").associate_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.associate_resource)
+
+```python
+# associate_resource method definition
+
+await def associate_resource(
+    self,
+    *,
+    application: str,
+    resourceType: ResourceTypeType,  # (1)
+    resource: str,
+    options: Sequence[AssociationOptionType] = ...,  # (2)
+) -> AssociateResourceResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-brackets: ResourceTypeType](./literals.md#resourcetypetype) 
+2. See [:material-code-brackets: AssociationOptionType](./literals.md#associationoptiontype) 
+3. See [:material-code-braces: AssociateResourceResponseTypeDef](./type_defs.md#associateresourceresponsetypedef) 
+
+
+```python
+# associate_resource method usage example with argument unpacking
+
+kwargs: AssociateResourceRequestRequestTypeDef = {  # (1)
+    "application": ...,
+    "resourceType": ...,
+    "resource": ...,
+}
+
+parent.associate_resource(**kwargs)
+```
+
+1. See [:material-code-braces: AssociateResourceRequestRequestTypeDef](./type_defs.md#associateresourcerequestrequesttypedef) 
+
+### can\_paginate
+
+Check if an operation can be paginated.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").can_paginate` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.can_paginate)
+
+```python
+# can_paginate method definition
+
+def can_paginate(
+    self,
+    operation_name: str,
+) -> bool:
+    ...
+```
+
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.close)
+
+```python
+# close method definition
+
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
+### create\_application
+
+Creates a new application that is the top-level node in a hierarchy of related
+cloud resource
+abstractions.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").create_application` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.create_application)
+
+```python
+# create_application method definition
+
+await def create_application(
+    self,
+    *,
+    name: str,
+    clientToken: str,
+    description: str = ...,
+    tags: Mapping[str, str] = ...,
+) -> CreateApplicationResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: CreateApplicationResponseTypeDef](./type_defs.md#createapplicationresponsetypedef) 
+
+
+```python
+# create_application method usage example with argument unpacking
+
+kwargs: CreateApplicationRequestRequestTypeDef = {  # (1)
+    "name": ...,
+    "clientToken": ...,
+}
+
+parent.create_application(**kwargs)
+```
+
+1. See [:material-code-braces: CreateApplicationRequestRequestTypeDef](./type_defs.md#createapplicationrequestrequesttypedef) 
+
+### create\_attribute\_group
+
+Creates a new attribute group as a container for user-defined attributes.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").create_attribute_group` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.create_attribute_group)
+
+```python
+# create_attribute_group method definition
+
+await def create_attribute_group(
+    self,
+    *,
+    name: str,
+    attributes: str,
+    clientToken: str,
+    description: str = ...,
+    tags: Mapping[str, str] = ...,
+) -> CreateAttributeGroupResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: CreateAttributeGroupResponseTypeDef](./type_defs.md#createattributegroupresponsetypedef) 
+
+
+```python
+# create_attribute_group method usage example with argument unpacking
+
+kwargs: CreateAttributeGroupRequestRequestTypeDef = {  # (1)
+    "name": ...,
+    "attributes": ...,
+    "clientToken": ...,
+}
+
+parent.create_attribute_group(**kwargs)
+```
+
+1. See [:material-code-braces: CreateAttributeGroupRequestRequestTypeDef](./type_defs.md#createattributegrouprequestrequesttypedef) 
+
+### delete\_application
+
+Deletes an application that is specified either by its application ID, name, or
+ARN.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").delete_application` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.delete_application)
+
+```python
+# delete_application method definition
+
+await def delete_application(
+    self,
+    *,
+    application: str,
+) -> DeleteApplicationResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DeleteApplicationResponseTypeDef](./type_defs.md#deleteapplicationresponsetypedef) 
+
+
+```python
+# delete_application method usage example with argument unpacking
+
+kwargs: DeleteApplicationRequestRequestTypeDef = {  # (1)
+    "application": ...,
+}
+
+parent.delete_application(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteApplicationRequestRequestTypeDef](./type_defs.md#deleteapplicationrequestrequesttypedef) 
+
+### delete\_attribute\_group
+
+Deletes an attribute group, specified either by its attribute group ID, name,
+or
+ARN.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").delete_attribute_group` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.delete_attribute_group)
+
+```python
+# delete_attribute_group method definition
+
+await def delete_attribute_group(
+    self,
+    *,
+    attributeGroup: str,
+) -> DeleteAttributeGroupResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DeleteAttributeGroupResponseTypeDef](./type_defs.md#deleteattributegroupresponsetypedef) 
+
+
+```python
+# delete_attribute_group method usage example with argument unpacking
+
+kwargs: DeleteAttributeGroupRequestRequestTypeDef = {  # (1)
+    "attributeGroup": ...,
+}
+
+parent.delete_attribute_group(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteAttributeGroupRequestRequestTypeDef](./type_defs.md#deleteattributegrouprequestrequesttypedef) 
+
+### disassociate\_attribute\_group
+
+Disassociates an attribute group from an application to remove the extra
+attributes contained in the attribute group from the application's
+metadata.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").disassociate_attribute_group` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.disassociate_attribute_group)
+
+```python
+# disassociate_attribute_group method definition
+
+await def disassociate_attribute_group(
+    self,
+    *,
+    application: str,
+    attributeGroup: str,
+) -> DisassociateAttributeGroupResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DisassociateAttributeGroupResponseTypeDef](./type_defs.md#disassociateattributegroupresponsetypedef) 
+
+
+```python
+# disassociate_attribute_group method usage example with argument unpacking
+
+kwargs: DisassociateAttributeGroupRequestRequestTypeDef = {  # (1)
+    "application": ...,
+    "attributeGroup": ...,
+}
+
+parent.disassociate_attribute_group(**kwargs)
+```
+
+1. See [:material-code-braces: DisassociateAttributeGroupRequestRequestTypeDef](./type_defs.md#disassociateattributegrouprequestrequesttypedef) 
+
+### disassociate\_resource
+
+Disassociates a resource from application.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").disassociate_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.disassociate_resource)
+
+```python
+# disassociate_resource method definition
+
+await def disassociate_resource(
+    self,
+    *,
+    application: str,
+    resourceType: ResourceTypeType,  # (1)
+    resource: str,
+) -> DisassociateResourceResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: ResourceTypeType](./literals.md#resourcetypetype) 
+2. See [:material-code-braces: DisassociateResourceResponseTypeDef](./type_defs.md#disassociateresourceresponsetypedef) 
+
+
+```python
+# disassociate_resource method usage example with argument unpacking
+
+kwargs: DisassociateResourceRequestRequestTypeDef = {  # (1)
+    "application": ...,
+    "resourceType": ...,
+    "resource": ...,
+}
+
+parent.disassociate_resource(**kwargs)
+```
+
+1. See [:material-code-braces: DisassociateResourceRequestRequestTypeDef](./type_defs.md#disassociateresourcerequestrequesttypedef) 
+
+### generate\_presigned\_url
+
+Generate a presigned url given a client, its method, and arguments.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").generate_presigned_url` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.generate_presigned_url)
+
+```python
+# generate_presigned_url method definition
+
+await def generate_presigned_url(
+    self,
+    ClientMethod: str,
+    Params: Mapping[str, Any] = ...,
+    ExpiresIn: int = 3600,
+    HttpMethod: str = ...,
+) -> str:
+    ...
+```
+
+
+### get\_application
+
+Retrieves metadata information about one of your applications.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").get_application` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.get_application)
+
+```python
+# get_application method definition
+
+await def get_application(
+    self,
+    *,
+    application: str,
+) -> GetApplicationResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetApplicationResponseTypeDef](./type_defs.md#getapplicationresponsetypedef) 
+
+
+```python
+# get_application method usage example with argument unpacking
+
+kwargs: GetApplicationRequestRequestTypeDef = {  # (1)
+    "application": ...,
+}
+
+parent.get_application(**kwargs)
+```
+
+1. See [:material-code-braces: GetApplicationRequestRequestTypeDef](./type_defs.md#getapplicationrequestrequesttypedef) 
+
+### get\_associated\_resource
+
+Gets the resource associated with the application.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").get_associated_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.get_associated_resource)
+
+```python
+# get_associated_resource method definition
+
+await def get_associated_resource(
+    self,
+    *,
+    application: str,
+    resourceType: ResourceTypeType,  # (1)
+    resource: str,
+    nextToken: str = ...,
+    resourceTagStatus: Sequence[ResourceItemStatusType] = ...,  # (2)
+    maxResults: int = ...,
+) -> GetAssociatedResourceResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-brackets: ResourceTypeType](./literals.md#resourcetypetype) 
+2. See [:material-code-brackets: ResourceItemStatusType](./literals.md#resourceitemstatustype) 
+3. See [:material-code-braces: GetAssociatedResourceResponseTypeDef](./type_defs.md#getassociatedresourceresponsetypedef) 
+
+
+```python
+# get_associated_resource method usage example with argument unpacking
+
+kwargs: GetAssociatedResourceRequestRequestTypeDef = {  # (1)
+    "application": ...,
+    "resourceType": ...,
+    "resource": ...,
+}
+
+parent.get_associated_resource(**kwargs)
+```
+
+1. See [:material-code-braces: GetAssociatedResourceRequestRequestTypeDef](./type_defs.md#getassociatedresourcerequestrequesttypedef) 
+
+### get\_attribute\_group
+
+Retrieves an attribute group by its ARN, ID, or name.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").get_attribute_group` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.get_attribute_group)
+
+```python
+# get_attribute_group method definition
+
+await def get_attribute_group(
+    self,
+    *,
+    attributeGroup: str,
+) -> GetAttributeGroupResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetAttributeGroupResponseTypeDef](./type_defs.md#getattributegroupresponsetypedef) 
+
+
+```python
+# get_attribute_group method usage example with argument unpacking
+
+kwargs: GetAttributeGroupRequestRequestTypeDef = {  # (1)
+    "attributeGroup": ...,
+}
+
+parent.get_attribute_group(**kwargs)
+```
+
+1. See [:material-code-braces: GetAttributeGroupRequestRequestTypeDef](./type_defs.md#getattributegrouprequestrequesttypedef) 
+
+### get\_configuration
+
+Retrieves a `TagKey` configuration from an account.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").get_configuration` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.get_configuration)
+
+```python
+# get_configuration method definition
+
+await def get_configuration(
+    self,
+) -> GetConfigurationResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetConfigurationResponseTypeDef](./type_defs.md#getconfigurationresponsetypedef) 
+
+### list\_applications
+
+Retrieves a list of all of your applications.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").list_applications` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.list_applications)
+
+```python
+# list_applications method definition
+
+await def list_applications(
+    self,
+    *,
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> ListApplicationsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListApplicationsResponseTypeDef](./type_defs.md#listapplicationsresponsetypedef) 
+
+
+```python
+# list_applications method usage example with argument unpacking
+
+kwargs: ListApplicationsRequestRequestTypeDef = {  # (1)
+    "nextToken": ...,
+}
+
+parent.list_applications(**kwargs)
+```
+
+1. See [:material-code-braces: ListApplicationsRequestRequestTypeDef](./type_defs.md#listapplicationsrequestrequesttypedef) 
+
+### list\_associated\_attribute\_groups
+
+Lists all attribute groups that are associated with specified application.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").list_associated_attribute_groups` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.list_associated_attribute_groups)
+
+```python
+# list_associated_attribute_groups method definition
+
+await def list_associated_attribute_groups(
+    self,
+    *,
+    application: str,
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> ListAssociatedAttributeGroupsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListAssociatedAttributeGroupsResponseTypeDef](./type_defs.md#listassociatedattributegroupsresponsetypedef) 
+
+
+```python
+# list_associated_attribute_groups method usage example with argument unpacking
+
+kwargs: ListAssociatedAttributeGroupsRequestRequestTypeDef = {  # (1)
+    "application": ...,
+}
+
+parent.list_associated_attribute_groups(**kwargs)
+```
+
+1. See [:material-code-braces: ListAssociatedAttributeGroupsRequestRequestTypeDef](./type_defs.md#listassociatedattributegroupsrequestrequesttypedef) 
+
+### list\_associated\_resources
+
+Lists all of the resources that are associated with the specified application.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").list_associated_resources` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.list_associated_resources)
+
+```python
+# list_associated_resources method definition
+
+await def list_associated_resources(
+    self,
+    *,
+    application: str,
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> ListAssociatedResourcesResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListAssociatedResourcesResponseTypeDef](./type_defs.md#listassociatedresourcesresponsetypedef) 
+
+
+```python
+# list_associated_resources method usage example with argument unpacking
+
+kwargs: ListAssociatedResourcesRequestRequestTypeDef = {  # (1)
+    "application": ...,
+}
+
+parent.list_associated_resources(**kwargs)
+```
+
+1. See [:material-code-braces: ListAssociatedResourcesRequestRequestTypeDef](./type_defs.md#listassociatedresourcesrequestrequesttypedef) 
+
+### list\_attribute\_groups
+
+Lists all attribute groups which you have access to.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").list_attribute_groups` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.list_attribute_groups)
+
+```python
+# list_attribute_groups method definition
+
+await def list_attribute_groups(
+    self,
+    *,
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> ListAttributeGroupsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListAttributeGroupsResponseTypeDef](./type_defs.md#listattributegroupsresponsetypedef) 
+
+
+```python
+# list_attribute_groups method usage example with argument unpacking
+
+kwargs: ListAttributeGroupsRequestRequestTypeDef = {  # (1)
+    "nextToken": ...,
+}
+
+parent.list_attribute_groups(**kwargs)
+```
+
+1. See [:material-code-braces: ListAttributeGroupsRequestRequestTypeDef](./type_defs.md#listattributegroupsrequestrequesttypedef) 
+
+### list\_attribute\_groups\_for\_application
+
+Lists the details of all attribute groups associated with a specific
+application.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").list_attribute_groups_for_application` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.list_attribute_groups_for_application)
+
+```python
+# list_attribute_groups_for_application method definition
+
+await def list_attribute_groups_for_application(
+    self,
+    *,
+    application: str,
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> ListAttributeGroupsForApplicationResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListAttributeGroupsForApplicationResponseTypeDef](./type_defs.md#listattributegroupsforapplicationresponsetypedef) 
+
+
+```python
+# list_attribute_groups_for_application method usage example with argument unpacking
+
+kwargs: ListAttributeGroupsForApplicationRequestRequestTypeDef = {  # (1)
+    "application": ...,
+}
+
+parent.list_attribute_groups_for_application(**kwargs)
+```
+
+1. See [:material-code-braces: ListAttributeGroupsForApplicationRequestRequestTypeDef](./type_defs.md#listattributegroupsforapplicationrequestrequesttypedef) 
+
+### list\_tags\_for\_resource
+
+Lists all of the tags on the resource.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").list_tags_for_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.list_tags_for_resource)
+
+```python
+# list_tags_for_resource method definition
+
+await def list_tags_for_resource(
+    self,
+    *,
+    resourceArn: str,
+) -> ListTagsForResourceResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef) 
+
+
+```python
+# list_tags_for_resource method usage example with argument unpacking
+
+kwargs: ListTagsForResourceRequestRequestTypeDef = {  # (1)
+    "resourceArn": ...,
+}
+
+parent.list_tags_for_resource(**kwargs)
+```
+
+1. See [:material-code-braces: ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef) 
+
+### put\_configuration
+
+Associates a `TagKey` configuration to an account.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").put_configuration` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.put_configuration)
+
+```python
+# put_configuration method definition
+
+await def put_configuration(
+    self,
+    *,
+    configuration: AppRegistryConfigurationTypeDef,  # (1)
+) -> EmptyResponseMetadataTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: AppRegistryConfigurationTypeDef](./type_defs.md#appregistryconfigurationtypedef) 
+2. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
+
+
+```python
+# put_configuration method usage example with argument unpacking
+
+kwargs: PutConfigurationRequestRequestTypeDef = {  # (1)
+    "configuration": ...,
+}
+
+parent.put_configuration(**kwargs)
+```
+
+1. See [:material-code-braces: PutConfigurationRequestRequestTypeDef](./type_defs.md#putconfigurationrequestrequesttypedef) 
+
+### sync\_resource
+
+Syncs the resource with current AppRegistry records.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").sync_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.sync_resource)
+
+```python
+# sync_resource method definition
+
+await def sync_resource(
+    self,
+    *,
+    resourceType: ResourceTypeType,  # (1)
+    resource: str,
+) -> SyncResourceResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: ResourceTypeType](./literals.md#resourcetypetype) 
+2. See [:material-code-braces: SyncResourceResponseTypeDef](./type_defs.md#syncresourceresponsetypedef) 
+
+
+```python
+# sync_resource method usage example with argument unpacking
+
+kwargs: SyncResourceRequestRequestTypeDef = {  # (1)
+    "resourceType": ...,
+    "resource": ...,
+}
+
+parent.sync_resource(**kwargs)
+```
+
+1. See [:material-code-braces: SyncResourceRequestRequestTypeDef](./type_defs.md#syncresourcerequestrequesttypedef) 
+
+### tag\_resource
+
+Assigns one or more tags (key-value pairs) to the specified resource.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").tag_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.tag_resource)
+
+```python
+# tag_resource method definition
+
+await def tag_resource(
+    self,
+    *,
+    resourceArn: str,
+    tags: Mapping[str, str],
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python
+# tag_resource method usage example with argument unpacking
+
+kwargs: TagResourceRequestRequestTypeDef = {  # (1)
+    "resourceArn": ...,
+    "tags": ...,
+}
+
+parent.tag_resource(**kwargs)
+```
+
+1. See [:material-code-braces: TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef) 
+
+### untag\_resource
+
+Removes tags from a resource.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").untag_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.untag_resource)
+
+```python
+# untag_resource method definition
+
+await def untag_resource(
+    self,
+    *,
+    resourceArn: str,
+    tagKeys: Sequence[str],
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python
+# untag_resource method usage example with argument unpacking
+
+kwargs: UntagResourceRequestRequestTypeDef = {  # (1)
+    "resourceArn": ...,
+    "tagKeys": ...,
+}
+
+parent.untag_resource(**kwargs)
+```
+
+1. See [:material-code-braces: UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef) 
+
+### update\_application
+
+Updates an existing application with new attributes.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").update_application` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.update_application)
+
+```python
+# update_application method definition
+
+await def update_application(
+    self,
+    *,
+    application: str,
+    name: str = ...,
+    description: str = ...,
+) -> UpdateApplicationResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: UpdateApplicationResponseTypeDef](./type_defs.md#updateapplicationresponsetypedef) 
+
+
+```python
+# update_application method usage example with argument unpacking
+
+kwargs: UpdateApplicationRequestRequestTypeDef = {  # (1)
+    "application": ...,
+}
+
+parent.update_application(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateApplicationRequestRequestTypeDef](./type_defs.md#updateapplicationrequestrequesttypedef) 
+
+### update\_attribute\_group
+
+Updates an existing attribute group with new details.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").update_attribute_group` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.update_attribute_group)
+
+```python
+# update_attribute_group method definition
+
+await def update_attribute_group(
+    self,
+    *,
+    attributeGroup: str,
+    name: str = ...,
+    description: str = ...,
+    attributes: str = ...,
+) -> UpdateAttributeGroupResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: UpdateAttributeGroupResponseTypeDef](./type_defs.md#updateattributegroupresponsetypedef) 
+
+
+```python
+# update_attribute_group method usage example with argument unpacking
+
+kwargs: UpdateAttributeGroupRequestRequestTypeDef = {  # (1)
+    "attributeGroup": ...,
+}
+
+parent.update_attribute_group(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateAttributeGroupRequestRequestTypeDef](./type_defs.md#updateattributegrouprequestrequesttypedef) 
+
+### \_\_aenter\_\_
+
+
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").__aenter__` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.__aenter__)
+
+```python
+# __aenter__ method definition
+
+await def __aenter__(
+    self,
+) -> "AppRegistryClient":
+    ...
+```
+
+
+### \_\_aexit\_\_
+
+
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").__aexit__` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.__aexit__)
+
+```python
+# __aexit__ method definition
+
+await def __aexit__(
+    self,
+    exc_type: Any,
+    exc_val: Any,
+    exc_tb: Any,
+) -> Any:
+    ...
+```
+
+
+
+
+### get_paginator
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").get_paginator` method with overloads.
+
+- `client.get_paginator("list_applications")` -> [ListApplicationsPaginator](./paginators.md#listapplicationspaginator)
+- `client.get_paginator("list_associated_attribute_groups")` -> [ListAssociatedAttributeGroupsPaginator](./paginators.md#listassociatedattributegroupspaginator)
+- `client.get_paginator("list_associated_resources")` -> [ListAssociatedResourcesPaginator](./paginators.md#listassociatedresourcespaginator)
+- `client.get_paginator("list_attribute_groups")` -> [ListAttributeGroupsPaginator](./paginators.md#listattributegroupspaginator)
+- `client.get_paginator("list_attribute_groups_for_application")` -> [ListAttributeGroupsForApplicationPaginator](./paginators.md#listattributegroupsforapplicationpaginator)
+
+
+

@@ -1,0 +1,539 @@
+# Waiters
+
+> [Index](../README.md) > [Proton](./README.md) > Waiters
+
+!!! note ""
+
+    Auto-generated documentation for [Proton](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton)
+    type annotations stubs module [types-aiobotocore-proton](https://pypi.org/project/types-aiobotocore-proton/).
+
+## ComponentDeletedWaiter
+
+Type annotations and code completion for `#!python session.create_client("proton").get_waiter("component_deleted")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Waiter.ComponentDeleted)
+
+```python
+# ComponentDeletedWaiter usage example
+
+from aiobotocore.session import Session
+
+from types_aiobotocore_proton.waiter import ComponentDeletedWaiter
+
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: ComponentDeletedWaiter = client.get_waiter("component_deleted")  # (2)
+    await waiter.wait()
+```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [ComponentDeletedWaiter](./waiters.md#componentdeletedwaiter)
+
+
+### wait
+
+Type annotations and code completion for `#!python ComponentDeletedWaiter.wait` method.
+
+```python
+# wait method definition
+
+await def wait(
+    self,
+    *,
+    name: str,
+    WaiterConfig: WaiterConfigTypeDef = ...,  # (1)
+) -> None:
+    ...
+```
+
+1. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
+
+
+```python
+# wait method usage example with argument unpacking
+
+kwargs: GetComponentInputComponentDeletedWaitTypeDef = {  # (1)
+    "name": ...,
+}
+
+parent.wait(**kwargs)
+```
+
+1. See [:material-code-braces: GetComponentInputComponentDeletedWaitTypeDef](./type_defs.md#getcomponentinputcomponentdeletedwaittypedef) 
+## ComponentDeployedWaiter
+
+Type annotations and code completion for `#!python session.create_client("proton").get_waiter("component_deployed")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Waiter.ComponentDeployed)
+
+```python
+# ComponentDeployedWaiter usage example
+
+from aiobotocore.session import Session
+
+from types_aiobotocore_proton.waiter import ComponentDeployedWaiter
+
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: ComponentDeployedWaiter = client.get_waiter("component_deployed")  # (2)
+    await waiter.wait()
+```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [ComponentDeployedWaiter](./waiters.md#componentdeployedwaiter)
+
+
+### wait
+
+Type annotations and code completion for `#!python ComponentDeployedWaiter.wait` method.
+
+```python
+# wait method definition
+
+await def wait(
+    self,
+    *,
+    name: str,
+    WaiterConfig: WaiterConfigTypeDef = ...,  # (1)
+) -> None:
+    ...
+```
+
+1. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
+
+
+```python
+# wait method usage example with argument unpacking
+
+kwargs: GetComponentInputComponentDeployedWaitTypeDef = {  # (1)
+    "name": ...,
+}
+
+parent.wait(**kwargs)
+```
+
+1. See [:material-code-braces: GetComponentInputComponentDeployedWaitTypeDef](./type_defs.md#getcomponentinputcomponentdeployedwaittypedef) 
+## EnvironmentDeployedWaiter
+
+Type annotations and code completion for `#!python session.create_client("proton").get_waiter("environment_deployed")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Waiter.EnvironmentDeployed)
+
+```python
+# EnvironmentDeployedWaiter usage example
+
+from aiobotocore.session import Session
+
+from types_aiobotocore_proton.waiter import EnvironmentDeployedWaiter
+
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: EnvironmentDeployedWaiter = client.get_waiter("environment_deployed")  # (2)
+    await waiter.wait()
+```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [EnvironmentDeployedWaiter](./waiters.md#environmentdeployedwaiter)
+
+
+### wait
+
+Type annotations and code completion for `#!python EnvironmentDeployedWaiter.wait` method.
+
+```python
+# wait method definition
+
+await def wait(
+    self,
+    *,
+    name: str,
+    WaiterConfig: WaiterConfigTypeDef = ...,  # (1)
+) -> None:
+    ...
+```
+
+1. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
+
+
+```python
+# wait method usage example with argument unpacking
+
+kwargs: GetEnvironmentInputEnvironmentDeployedWaitTypeDef = {  # (1)
+    "name": ...,
+}
+
+parent.wait(**kwargs)
+```
+
+1. See [:material-code-braces: GetEnvironmentInputEnvironmentDeployedWaitTypeDef](./type_defs.md#getenvironmentinputenvironmentdeployedwaittypedef) 
+## EnvironmentTemplateVersionRegisteredWaiter
+
+Type annotations and code completion for `#!python session.create_client("proton").get_waiter("environment_template_version_registered")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Waiter.EnvironmentTemplateVersionRegistered)
+
+```python
+# EnvironmentTemplateVersionRegisteredWaiter usage example
+
+from aiobotocore.session import Session
+
+from types_aiobotocore_proton.waiter import EnvironmentTemplateVersionRegisteredWaiter
+
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: EnvironmentTemplateVersionRegisteredWaiter = client.get_waiter("environment_template_version_registered")  # (2)
+    await waiter.wait()
+```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [EnvironmentTemplateVersionRegisteredWaiter](./waiters.md#environmenttemplateversionregisteredwaiter)
+
+
+### wait
+
+Type annotations and code completion for `#!python EnvironmentTemplateVersionRegisteredWaiter.wait` method.
+
+```python
+# wait method definition
+
+await def wait(
+    self,
+    *,
+    majorVersion: str,
+    minorVersion: str,
+    templateName: str,
+    WaiterConfig: WaiterConfigTypeDef = ...,  # (1)
+) -> None:
+    ...
+```
+
+1. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
+
+
+```python
+# wait method usage example with argument unpacking
+
+kwargs: GetEnvironmentTemplateVersionInputEnvironmentTemplateVersionRegisteredWaitTypeDef = {  # (1)
+    "majorVersion": ...,
+    "minorVersion": ...,
+    "templateName": ...,
+}
+
+parent.wait(**kwargs)
+```
+
+1. See [:material-code-braces: GetEnvironmentTemplateVersionInputEnvironmentTemplateVersionRegisteredWaitTypeDef](./type_defs.md#getenvironmenttemplateversioninputenvironmenttemplateversionregisteredwaittypedef) 
+## ServiceCreatedWaiter
+
+Type annotations and code completion for `#!python session.create_client("proton").get_waiter("service_created")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Waiter.ServiceCreated)
+
+```python
+# ServiceCreatedWaiter usage example
+
+from aiobotocore.session import Session
+
+from types_aiobotocore_proton.waiter import ServiceCreatedWaiter
+
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: ServiceCreatedWaiter = client.get_waiter("service_created")  # (2)
+    await waiter.wait()
+```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [ServiceCreatedWaiter](./waiters.md#servicecreatedwaiter)
+
+
+### wait
+
+Type annotations and code completion for `#!python ServiceCreatedWaiter.wait` method.
+
+```python
+# wait method definition
+
+await def wait(
+    self,
+    *,
+    name: str,
+    WaiterConfig: WaiterConfigTypeDef = ...,  # (1)
+) -> None:
+    ...
+```
+
+1. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
+
+
+```python
+# wait method usage example with argument unpacking
+
+kwargs: GetServiceInputServiceCreatedWaitTypeDef = {  # (1)
+    "name": ...,
+}
+
+parent.wait(**kwargs)
+```
+
+1. See [:material-code-braces: GetServiceInputServiceCreatedWaitTypeDef](./type_defs.md#getserviceinputservicecreatedwaittypedef) 
+## ServiceDeletedWaiter
+
+Type annotations and code completion for `#!python session.create_client("proton").get_waiter("service_deleted")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Waiter.ServiceDeleted)
+
+```python
+# ServiceDeletedWaiter usage example
+
+from aiobotocore.session import Session
+
+from types_aiobotocore_proton.waiter import ServiceDeletedWaiter
+
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: ServiceDeletedWaiter = client.get_waiter("service_deleted")  # (2)
+    await waiter.wait()
+```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [ServiceDeletedWaiter](./waiters.md#servicedeletedwaiter)
+
+
+### wait
+
+Type annotations and code completion for `#!python ServiceDeletedWaiter.wait` method.
+
+```python
+# wait method definition
+
+await def wait(
+    self,
+    *,
+    name: str,
+    WaiterConfig: WaiterConfigTypeDef = ...,  # (1)
+) -> None:
+    ...
+```
+
+1. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
+
+
+```python
+# wait method usage example with argument unpacking
+
+kwargs: GetServiceInputServiceDeletedWaitTypeDef = {  # (1)
+    "name": ...,
+}
+
+parent.wait(**kwargs)
+```
+
+1. See [:material-code-braces: GetServiceInputServiceDeletedWaitTypeDef](./type_defs.md#getserviceinputservicedeletedwaittypedef) 
+## ServiceInstanceDeployedWaiter
+
+Type annotations and code completion for `#!python session.create_client("proton").get_waiter("service_instance_deployed")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Waiter.ServiceInstanceDeployed)
+
+```python
+# ServiceInstanceDeployedWaiter usage example
+
+from aiobotocore.session import Session
+
+from types_aiobotocore_proton.waiter import ServiceInstanceDeployedWaiter
+
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: ServiceInstanceDeployedWaiter = client.get_waiter("service_instance_deployed")  # (2)
+    await waiter.wait()
+```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [ServiceInstanceDeployedWaiter](./waiters.md#serviceinstancedeployedwaiter)
+
+
+### wait
+
+Type annotations and code completion for `#!python ServiceInstanceDeployedWaiter.wait` method.
+
+```python
+# wait method definition
+
+await def wait(
+    self,
+    *,
+    name: str,
+    serviceName: str,
+    WaiterConfig: WaiterConfigTypeDef = ...,  # (1)
+) -> None:
+    ...
+```
+
+1. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
+
+
+```python
+# wait method usage example with argument unpacking
+
+kwargs: GetServiceInstanceInputServiceInstanceDeployedWaitTypeDef = {  # (1)
+    "name": ...,
+    "serviceName": ...,
+}
+
+parent.wait(**kwargs)
+```
+
+1. See [:material-code-braces: GetServiceInstanceInputServiceInstanceDeployedWaitTypeDef](./type_defs.md#getserviceinstanceinputserviceinstancedeployedwaittypedef) 
+## ServicePipelineDeployedWaiter
+
+Type annotations and code completion for `#!python session.create_client("proton").get_waiter("service_pipeline_deployed")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Waiter.ServicePipelineDeployed)
+
+```python
+# ServicePipelineDeployedWaiter usage example
+
+from aiobotocore.session import Session
+
+from types_aiobotocore_proton.waiter import ServicePipelineDeployedWaiter
+
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: ServicePipelineDeployedWaiter = client.get_waiter("service_pipeline_deployed")  # (2)
+    await waiter.wait()
+```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [ServicePipelineDeployedWaiter](./waiters.md#servicepipelinedeployedwaiter)
+
+
+### wait
+
+Type annotations and code completion for `#!python ServicePipelineDeployedWaiter.wait` method.
+
+```python
+# wait method definition
+
+await def wait(
+    self,
+    *,
+    name: str,
+    WaiterConfig: WaiterConfigTypeDef = ...,  # (1)
+) -> None:
+    ...
+```
+
+1. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
+
+
+```python
+# wait method usage example with argument unpacking
+
+kwargs: GetServiceInputServicePipelineDeployedWaitTypeDef = {  # (1)
+    "name": ...,
+}
+
+parent.wait(**kwargs)
+```
+
+1. See [:material-code-braces: GetServiceInputServicePipelineDeployedWaitTypeDef](./type_defs.md#getserviceinputservicepipelinedeployedwaittypedef) 
+## ServiceTemplateVersionRegisteredWaiter
+
+Type annotations and code completion for `#!python session.create_client("proton").get_waiter("service_template_version_registered")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Waiter.ServiceTemplateVersionRegistered)
+
+```python
+# ServiceTemplateVersionRegisteredWaiter usage example
+
+from aiobotocore.session import Session
+
+from types_aiobotocore_proton.waiter import ServiceTemplateVersionRegisteredWaiter
+
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: ServiceTemplateVersionRegisteredWaiter = client.get_waiter("service_template_version_registered")  # (2)
+    await waiter.wait()
+```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [ServiceTemplateVersionRegisteredWaiter](./waiters.md#servicetemplateversionregisteredwaiter)
+
+
+### wait
+
+Type annotations and code completion for `#!python ServiceTemplateVersionRegisteredWaiter.wait` method.
+
+```python
+# wait method definition
+
+await def wait(
+    self,
+    *,
+    majorVersion: str,
+    minorVersion: str,
+    templateName: str,
+    WaiterConfig: WaiterConfigTypeDef = ...,  # (1)
+) -> None:
+    ...
+```
+
+1. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
+
+
+```python
+# wait method usage example with argument unpacking
+
+kwargs: GetServiceTemplateVersionInputServiceTemplateVersionRegisteredWaitTypeDef = {  # (1)
+    "majorVersion": ...,
+    "minorVersion": ...,
+    "templateName": ...,
+}
+
+parent.wait(**kwargs)
+```
+
+1. See [:material-code-braces: GetServiceTemplateVersionInputServiceTemplateVersionRegisteredWaitTypeDef](./type_defs.md#getservicetemplateversioninputservicetemplateversionregisteredwaittypedef) 
+## ServiceUpdatedWaiter
+
+Type annotations and code completion for `#!python session.create_client("proton").get_waiter("service_updated")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Waiter.ServiceUpdated)
+
+```python
+# ServiceUpdatedWaiter usage example
+
+from aiobotocore.session import Session
+
+from types_aiobotocore_proton.waiter import ServiceUpdatedWaiter
+
+session = get_session()
+async with session.create_client("proton") as client:  # (1)
+    waiter: ServiceUpdatedWaiter = client.get_waiter("service_updated")  # (2)
+    await waiter.wait()
+```
+
+1. client: [ProtonClient](./client.md)
+2. waiter: [ServiceUpdatedWaiter](./waiters.md#serviceupdatedwaiter)
+
+
+### wait
+
+Type annotations and code completion for `#!python ServiceUpdatedWaiter.wait` method.
+
+```python
+# wait method definition
+
+await def wait(
+    self,
+    *,
+    name: str,
+    WaiterConfig: WaiterConfigTypeDef = ...,  # (1)
+) -> None:
+    ...
+```
+
+1. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
+
+
+```python
+# wait method usage example with argument unpacking
+
+kwargs: GetServiceInputServiceUpdatedWaitTypeDef = {  # (1)
+    "name": ...,
+}
+
+parent.wait(**kwargs)
+```
+
+1. See [:material-code-braces: GetServiceInputServiceUpdatedWaitTypeDef](./type_defs.md#getserviceinputserviceupdatedwaittypedef) 
