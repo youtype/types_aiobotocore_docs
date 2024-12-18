@@ -1,0 +1,293 @@
+# AuditManager module
+
+> [Index](../README.md) > AuditManager
+
+
+!!! note ""
+
+    Auto-generated documentation for [AuditManager](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#auditmanager)
+    type annotations stubs module [types-aiobotocore-auditmanager](https://pypi.org/project/types-aiobotocore-auditmanager/).
+
+## How to install
+
+### Generate locally (recommended)
+
+You can generate type annotations for `aiobotocore` package locally with `mypy_boto3_builder`.
+Use [uv](https://docs.astral.sh/uv/getting-started/installation/) for build isolation.
+
+1. Run mypy-boto3-builder in your package root directory: `uvx --with 'aiobotocore==2.16.0' mypy_boto3_builder`
+1. Select `aiobotocore` AWS SDK.
+1. Add `AuditManager` service.
+1. Use provided commands to install generated packages.
+
+
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `AuditManager` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[auditmanager]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[auditmanager]'
+
+# standalone installation
+python -m pip install types-aiobotocore-auditmanager
+```
+
+
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-auditmanager
+```
+
+## Usage
+
+Code samples can be found in [Examples](./usage.md).
+
+## AuditManagerClient
+
+Type annotations and code completion for  `#!python session.create_client("auditmanager")` as [AuditManagerClient](./client.md)
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client)
+
+```python
+# AuditManagerClient usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_auditmanager.client import AuditManagerClient
+
+
+session = get_session()
+async with session.create_client("auditmanager") as client:
+    client: AuditManagerClient
+```
+
+
+
+
+
+
+
+
+## Literals
+
+Type annotations for [literals](./literals.md) used in methods and schema.
+
+```python
+# AccountStatusType usage example
+
+from types_aiobotocore_auditmanager.literals import AccountStatusType
+
+def get_value() -> AccountStatusType:
+    return "ACTIVE"
+```
+
+- [AccountStatusType](./literals.md#accountstatustype)
+- [ActionEnumType](./literals.md#actionenumtype)
+- [AssessmentReportDestinationTypeType](./literals.md#assessmentreportdestinationtypetype)
+- [AssessmentReportStatusType](./literals.md#assessmentreportstatustype)
+- [AssessmentStatusType](./literals.md#assessmentstatustype)
+- [ControlResponseType](./literals.md#controlresponsetype)
+- [ControlSetStatusType](./literals.md#controlsetstatustype)
+- [ControlStateType](./literals.md#controlstatetype)
+- [ControlStatusType](./literals.md#controlstatustype)
+- [ControlTypeType](./literals.md#controltypetype)
+- [DataSourceTypeType](./literals.md#datasourcetypetype)
+- [DelegationStatusType](./literals.md#delegationstatustype)
+- [DeleteResourcesType](./literals.md#deleteresourcestype)
+- [EvidenceFinderBackfillStatusType](./literals.md#evidencefinderbackfillstatustype)
+- [EvidenceFinderEnablementStatusType](./literals.md#evidencefinderenablementstatustype)
+- [ExportDestinationTypeType](./literals.md#exportdestinationtypetype)
+- [FrameworkTypeType](./literals.md#frameworktypetype)
+- [KeywordInputTypeType](./literals.md#keywordinputtypetype)
+- [ObjectTypeEnumType](./literals.md#objecttypeenumtype)
+- [RoleTypeType](./literals.md#roletypetype)
+- [SettingAttributeType](./literals.md#settingattributetype)
+- [ShareRequestActionType](./literals.md#sharerequestactiontype)
+- [ShareRequestStatusType](./literals.md#sharerequeststatustype)
+- [ShareRequestTypeType](./literals.md#sharerequesttypetype)
+- [SourceFrequencyType](./literals.md#sourcefrequencytype)
+- [SourceSetUpOptionType](./literals.md#sourcesetupoptiontype)
+- [SourceTypeType](./literals.md#sourcetypetype)
+- [AuditManagerServiceName](./literals.md#auditmanagerservicename)
+- [ServiceName](./literals.md#servicename)
+- [ResourceServiceName](./literals.md#resourceservicename)
+- [RegionName](./literals.md#regionname)
+
+
+
+
+## Type definitions
+
+Type annotations for [type definitions](./type_defs.md) used in methods and schema.
+
+- [AWSAccountTypeDef](./type_defs.md#awsaccounttypedef)
+- [AWSServiceTypeDef](./type_defs.md#awsservicetypedef)
+- [DelegationTypeDef](./type_defs.md#delegationtypedef)
+- [RoleTypeDef](./type_defs.md#roletypedef)
+- [ControlCommentTypeDef](./type_defs.md#controlcommenttypedef)
+- [AssessmentEvidenceFolderTypeDef](./type_defs.md#assessmentevidencefoldertypedef)
+- [AssessmentFrameworkMetadataTypeDef](./type_defs.md#assessmentframeworkmetadatatypedef)
+- [AssessmentFrameworkShareRequestTypeDef](./type_defs.md#assessmentframeworksharerequesttypedef)
+- [FrameworkMetadataTypeDef](./type_defs.md#frameworkmetadatatypedef)
+- [AssessmentReportsDestinationTypeDef](./type_defs.md#assessmentreportsdestinationtypedef)
+- [AssessmentReportEvidenceErrorTypeDef](./type_defs.md#assessmentreportevidenceerrortypedef)
+- [AssessmentReportMetadataTypeDef](./type_defs.md#assessmentreportmetadatatypedef)
+- [AssessmentReportTypeDef](./type_defs.md#assessmentreporttypedef)
+- [AssociateAssessmentReportEvidenceFolderRequestRequestTypeDef](./type_defs.md#associateassessmentreportevidencefolderrequestrequesttypedef)
+- [BatchAssociateAssessmentReportEvidenceRequestRequestTypeDef](./type_defs.md#batchassociateassessmentreportevidencerequestrequesttypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [CreateDelegationRequestTypeDef](./type_defs.md#createdelegationrequesttypedef)
+- [BatchDeleteDelegationByAssessmentErrorTypeDef](./type_defs.md#batchdeletedelegationbyassessmenterrortypedef)
+- [BatchDeleteDelegationByAssessmentRequestRequestTypeDef](./type_defs.md#batchdeletedelegationbyassessmentrequestrequesttypedef)
+- [BatchDisassociateAssessmentReportEvidenceRequestRequestTypeDef](./type_defs.md#batchdisassociateassessmentreportevidencerequestrequesttypedef)
+- [ManualEvidenceTypeDef](./type_defs.md#manualevidencetypedef)
+- [ChangeLogTypeDef](./type_defs.md#changelogtypedef)
+- [EvidenceInsightsTypeDef](./type_defs.md#evidenceinsightstypedef)
+- [SourceKeywordTypeDef](./type_defs.md#sourcekeywordtypedef)
+- [ControlMetadataTypeDef](./type_defs.md#controlmetadatatypedef)
+- [CreateAssessmentFrameworkControlTypeDef](./type_defs.md#createassessmentframeworkcontroltypedef)
+- [CreateAssessmentReportRequestRequestTypeDef](./type_defs.md#createassessmentreportrequestrequesttypedef)
+- [DefaultExportDestinationTypeDef](./type_defs.md#defaultexportdestinationtypedef)
+- [DelegationMetadataTypeDef](./type_defs.md#delegationmetadatatypedef)
+- [DeleteAssessmentFrameworkRequestRequestTypeDef](./type_defs.md#deleteassessmentframeworkrequestrequesttypedef)
+- [DeleteAssessmentFrameworkShareRequestRequestTypeDef](./type_defs.md#deleteassessmentframeworksharerequestrequesttypedef)
+- [DeleteAssessmentReportRequestRequestTypeDef](./type_defs.md#deleteassessmentreportrequestrequesttypedef)
+- [DeleteAssessmentRequestRequestTypeDef](./type_defs.md#deleteassessmentrequestrequesttypedef)
+- [DeleteControlRequestRequestTypeDef](./type_defs.md#deletecontrolrequestrequesttypedef)
+- [DeregisterOrganizationAdminAccountRequestRequestTypeDef](./type_defs.md#deregisterorganizationadminaccountrequestrequesttypedef)
+- [DeregistrationPolicyTypeDef](./type_defs.md#deregistrationpolicytypedef)
+- [DisassociateAssessmentReportEvidenceFolderRequestRequestTypeDef](./type_defs.md#disassociateassessmentreportevidencefolderrequestrequesttypedef)
+- [EvidenceFinderEnablementTypeDef](./type_defs.md#evidencefinderenablementtypedef)
+- [ResourceTypeDef](./type_defs.md#resourcetypedef)
+- [GetAssessmentFrameworkRequestRequestTypeDef](./type_defs.md#getassessmentframeworkrequestrequesttypedef)
+- [GetAssessmentReportUrlRequestRequestTypeDef](./type_defs.md#getassessmentreporturlrequestrequesttypedef)
+- [URLTypeDef](./type_defs.md#urltypedef)
+- [GetAssessmentRequestRequestTypeDef](./type_defs.md#getassessmentrequestrequesttypedef)
+- [GetChangeLogsRequestRequestTypeDef](./type_defs.md#getchangelogsrequestrequesttypedef)
+- [GetControlRequestRequestTypeDef](./type_defs.md#getcontrolrequestrequesttypedef)
+- [GetDelegationsRequestRequestTypeDef](./type_defs.md#getdelegationsrequestrequesttypedef)
+- [GetEvidenceByEvidenceFolderRequestRequestTypeDef](./type_defs.md#getevidencebyevidencefolderrequestrequesttypedef)
+- [GetEvidenceFileUploadUrlRequestRequestTypeDef](./type_defs.md#getevidencefileuploadurlrequestrequesttypedef)
+- [GetEvidenceFolderRequestRequestTypeDef](./type_defs.md#getevidencefolderrequestrequesttypedef)
+- [GetEvidenceFoldersByAssessmentControlRequestRequestTypeDef](./type_defs.md#getevidencefoldersbyassessmentcontrolrequestrequesttypedef)
+- [GetEvidenceFoldersByAssessmentRequestRequestTypeDef](./type_defs.md#getevidencefoldersbyassessmentrequestrequesttypedef)
+- [GetEvidenceRequestRequestTypeDef](./type_defs.md#getevidencerequestrequesttypedef)
+- [GetInsightsByAssessmentRequestRequestTypeDef](./type_defs.md#getinsightsbyassessmentrequestrequesttypedef)
+- [InsightsByAssessmentTypeDef](./type_defs.md#insightsbyassessmenttypedef)
+- [InsightsTypeDef](./type_defs.md#insightstypedef)
+- [ServiceMetadataTypeDef](./type_defs.md#servicemetadatatypedef)
+- [GetSettingsRequestRequestTypeDef](./type_defs.md#getsettingsrequestrequesttypedef)
+- [ListAssessmentControlInsightsByControlDomainRequestRequestTypeDef](./type_defs.md#listassessmentcontrolinsightsbycontroldomainrequestrequesttypedef)
+- [ListAssessmentFrameworkShareRequestsRequestRequestTypeDef](./type_defs.md#listassessmentframeworksharerequestsrequestrequesttypedef)
+- [ListAssessmentFrameworksRequestRequestTypeDef](./type_defs.md#listassessmentframeworksrequestrequesttypedef)
+- [ListAssessmentReportsRequestRequestTypeDef](./type_defs.md#listassessmentreportsrequestrequesttypedef)
+- [ListAssessmentsRequestRequestTypeDef](./type_defs.md#listassessmentsrequestrequesttypedef)
+- [ListControlDomainInsightsByAssessmentRequestRequestTypeDef](./type_defs.md#listcontroldomaininsightsbyassessmentrequestrequesttypedef)
+- [ListControlDomainInsightsRequestRequestTypeDef](./type_defs.md#listcontroldomaininsightsrequestrequesttypedef)
+- [ListControlInsightsByControlDomainRequestRequestTypeDef](./type_defs.md#listcontrolinsightsbycontroldomainrequestrequesttypedef)
+- [ListControlsRequestRequestTypeDef](./type_defs.md#listcontrolsrequestrequesttypedef)
+- [ListKeywordsForDataSourceRequestRequestTypeDef](./type_defs.md#listkeywordsfordatasourcerequestrequesttypedef)
+- [ListNotificationsRequestRequestTypeDef](./type_defs.md#listnotificationsrequestrequesttypedef)
+- [NotificationTypeDef](./type_defs.md#notificationtypedef)
+- [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
+- [RegisterAccountRequestRequestTypeDef](./type_defs.md#registeraccountrequestrequesttypedef)
+- [RegisterOrganizationAdminAccountRequestRequestTypeDef](./type_defs.md#registerorganizationadminaccountrequestrequesttypedef)
+- [StartAssessmentFrameworkShareRequestRequestTypeDef](./type_defs.md#startassessmentframeworksharerequestrequesttypedef)
+- [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
+- [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
+- [UpdateAssessmentControlRequestRequestTypeDef](./type_defs.md#updateassessmentcontrolrequestrequesttypedef)
+- [UpdateAssessmentControlSetStatusRequestRequestTypeDef](./type_defs.md#updateassessmentcontrolsetstatusrequestrequesttypedef)
+- [UpdateAssessmentFrameworkShareRequestRequestTypeDef](./type_defs.md#updateassessmentframeworksharerequestrequesttypedef)
+- [UpdateAssessmentStatusRequestRequestTypeDef](./type_defs.md#updateassessmentstatusrequestrequesttypedef)
+- [ValidateAssessmentReportIntegrityRequestRequestTypeDef](./type_defs.md#validateassessmentreportintegrityrequestrequesttypedef)
+- [ScopeOutputTypeDef](./type_defs.md#scopeoutputtypedef)
+- [ScopeTypeDef](./type_defs.md#scopetypedef)
+- [AssessmentMetadataItemTypeDef](./type_defs.md#assessmentmetadataitemtypedef)
+- [AssessmentControlTypeDef](./type_defs.md#assessmentcontroltypedef)
+- [BatchAssociateAssessmentReportEvidenceResponseTypeDef](./type_defs.md#batchassociateassessmentreportevidenceresponsetypedef)
+- [BatchDisassociateAssessmentReportEvidenceResponseTypeDef](./type_defs.md#batchdisassociateassessmentreportevidenceresponsetypedef)
+- [CreateAssessmentReportResponseTypeDef](./type_defs.md#createassessmentreportresponsetypedef)
+- [DeregisterAccountResponseTypeDef](./type_defs.md#deregisteraccountresponsetypedef)
+- [GetAccountStatusResponseTypeDef](./type_defs.md#getaccountstatusresponsetypedef)
+- [GetEvidenceFileUploadUrlResponseTypeDef](./type_defs.md#getevidencefileuploadurlresponsetypedef)
+- [GetEvidenceFolderResponseTypeDef](./type_defs.md#getevidencefolderresponsetypedef)
+- [GetEvidenceFoldersByAssessmentControlResponseTypeDef](./type_defs.md#getevidencefoldersbyassessmentcontrolresponsetypedef)
+- [GetEvidenceFoldersByAssessmentResponseTypeDef](./type_defs.md#getevidencefoldersbyassessmentresponsetypedef)
+- [GetOrganizationAdminAccountResponseTypeDef](./type_defs.md#getorganizationadminaccountresponsetypedef)
+- [ListAssessmentFrameworkShareRequestsResponseTypeDef](./type_defs.md#listassessmentframeworksharerequestsresponsetypedef)
+- [ListAssessmentFrameworksResponseTypeDef](./type_defs.md#listassessmentframeworksresponsetypedef)
+- [ListAssessmentReportsResponseTypeDef](./type_defs.md#listassessmentreportsresponsetypedef)
+- [ListKeywordsForDataSourceResponseTypeDef](./type_defs.md#listkeywordsfordatasourceresponsetypedef)
+- [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
+- [RegisterAccountResponseTypeDef](./type_defs.md#registeraccountresponsetypedef)
+- [RegisterOrganizationAdminAccountResponseTypeDef](./type_defs.md#registerorganizationadminaccountresponsetypedef)
+- [StartAssessmentFrameworkShareResponseTypeDef](./type_defs.md#startassessmentframeworkshareresponsetypedef)
+- [UpdateAssessmentFrameworkShareResponseTypeDef](./type_defs.md#updateassessmentframeworkshareresponsetypedef)
+- [ValidateAssessmentReportIntegrityResponseTypeDef](./type_defs.md#validateassessmentreportintegrityresponsetypedef)
+- [BatchCreateDelegationByAssessmentErrorTypeDef](./type_defs.md#batchcreatedelegationbyassessmenterrortypedef)
+- [BatchCreateDelegationByAssessmentRequestRequestTypeDef](./type_defs.md#batchcreatedelegationbyassessmentrequestrequesttypedef)
+- [BatchDeleteDelegationByAssessmentResponseTypeDef](./type_defs.md#batchdeletedelegationbyassessmentresponsetypedef)
+- [BatchImportEvidenceToAssessmentControlErrorTypeDef](./type_defs.md#batchimportevidencetoassessmentcontrolerrortypedef)
+- [BatchImportEvidenceToAssessmentControlRequestRequestTypeDef](./type_defs.md#batchimportevidencetoassessmentcontrolrequestrequesttypedef)
+- [GetChangeLogsResponseTypeDef](./type_defs.md#getchangelogsresponsetypedef)
+- [ControlDomainInsightsTypeDef](./type_defs.md#controldomaininsightstypedef)
+- [ControlInsightsMetadataByAssessmentItemTypeDef](./type_defs.md#controlinsightsmetadatabyassessmentitemtypedef)
+- [ControlInsightsMetadataItemTypeDef](./type_defs.md#controlinsightsmetadataitemtypedef)
+- [ControlMappingSourceTypeDef](./type_defs.md#controlmappingsourcetypedef)
+- [CreateControlMappingSourceTypeDef](./type_defs.md#createcontrolmappingsourcetypedef)
+- [ListControlsResponseTypeDef](./type_defs.md#listcontrolsresponsetypedef)
+- [CreateAssessmentFrameworkControlSetTypeDef](./type_defs.md#createassessmentframeworkcontrolsettypedef)
+- [UpdateAssessmentFrameworkControlSetTypeDef](./type_defs.md#updateassessmentframeworkcontrolsettypedef)
+- [GetDelegationsResponseTypeDef](./type_defs.md#getdelegationsresponsetypedef)
+- [UpdateSettingsRequestRequestTypeDef](./type_defs.md#updatesettingsrequestrequesttypedef)
+- [SettingsTypeDef](./type_defs.md#settingstypedef)
+- [EvidenceTypeDef](./type_defs.md#evidencetypedef)
+- [GetAssessmentReportUrlResponseTypeDef](./type_defs.md#getassessmentreporturlresponsetypedef)
+- [GetInsightsByAssessmentResponseTypeDef](./type_defs.md#getinsightsbyassessmentresponsetypedef)
+- [GetInsightsResponseTypeDef](./type_defs.md#getinsightsresponsetypedef)
+- [GetServicesInScopeResponseTypeDef](./type_defs.md#getservicesinscoperesponsetypedef)
+- [ListNotificationsResponseTypeDef](./type_defs.md#listnotificationsresponsetypedef)
+- [AssessmentMetadataTypeDef](./type_defs.md#assessmentmetadatatypedef)
+- [CreateAssessmentRequestRequestTypeDef](./type_defs.md#createassessmentrequestrequesttypedef)
+- [UpdateAssessmentRequestRequestTypeDef](./type_defs.md#updateassessmentrequestrequesttypedef)
+- [ListAssessmentsResponseTypeDef](./type_defs.md#listassessmentsresponsetypedef)
+- [AssessmentControlSetTypeDef](./type_defs.md#assessmentcontrolsettypedef)
+- [UpdateAssessmentControlResponseTypeDef](./type_defs.md#updateassessmentcontrolresponsetypedef)
+- [BatchCreateDelegationByAssessmentResponseTypeDef](./type_defs.md#batchcreatedelegationbyassessmentresponsetypedef)
+- [BatchImportEvidenceToAssessmentControlResponseTypeDef](./type_defs.md#batchimportevidencetoassessmentcontrolresponsetypedef)
+- [ListControlDomainInsightsByAssessmentResponseTypeDef](./type_defs.md#listcontroldomaininsightsbyassessmentresponsetypedef)
+- [ListControlDomainInsightsResponseTypeDef](./type_defs.md#listcontroldomaininsightsresponsetypedef)
+- [ListAssessmentControlInsightsByControlDomainResponseTypeDef](./type_defs.md#listassessmentcontrolinsightsbycontroldomainresponsetypedef)
+- [ListControlInsightsByControlDomainResponseTypeDef](./type_defs.md#listcontrolinsightsbycontroldomainresponsetypedef)
+- [ControlTypeDef](./type_defs.md#controltypedef)
+- [UpdateControlRequestRequestTypeDef](./type_defs.md#updatecontrolrequestrequesttypedef)
+- [CreateControlRequestRequestTypeDef](./type_defs.md#createcontrolrequestrequesttypedef)
+- [CreateAssessmentFrameworkRequestRequestTypeDef](./type_defs.md#createassessmentframeworkrequestrequesttypedef)
+- [UpdateAssessmentFrameworkRequestRequestTypeDef](./type_defs.md#updateassessmentframeworkrequestrequesttypedef)
+- [GetSettingsResponseTypeDef](./type_defs.md#getsettingsresponsetypedef)
+- [UpdateSettingsResponseTypeDef](./type_defs.md#updatesettingsresponsetypedef)
+- [GetEvidenceByEvidenceFolderResponseTypeDef](./type_defs.md#getevidencebyevidencefolderresponsetypedef)
+- [GetEvidenceResponseTypeDef](./type_defs.md#getevidenceresponsetypedef)
+- [AssessmentFrameworkTypeDef](./type_defs.md#assessmentframeworktypedef)
+- [UpdateAssessmentControlSetStatusResponseTypeDef](./type_defs.md#updateassessmentcontrolsetstatusresponsetypedef)
+- [ControlSetTypeDef](./type_defs.md#controlsettypedef)
+- [CreateControlResponseTypeDef](./type_defs.md#createcontrolresponsetypedef)
+- [GetControlResponseTypeDef](./type_defs.md#getcontrolresponsetypedef)
+- [UpdateControlResponseTypeDef](./type_defs.md#updatecontrolresponsetypedef)
+- [AssessmentTypeDef](./type_defs.md#assessmenttypedef)
+- [FrameworkTypeDef](./type_defs.md#frameworktypedef)
+- [CreateAssessmentResponseTypeDef](./type_defs.md#createassessmentresponsetypedef)
+- [GetAssessmentResponseTypeDef](./type_defs.md#getassessmentresponsetypedef)
+- [UpdateAssessmentResponseTypeDef](./type_defs.md#updateassessmentresponsetypedef)
+- [UpdateAssessmentStatusResponseTypeDef](./type_defs.md#updateassessmentstatusresponsetypedef)
+- [CreateAssessmentFrameworkResponseTypeDef](./type_defs.md#createassessmentframeworkresponsetypedef)
+- [GetAssessmentFrameworkResponseTypeDef](./type_defs.md#getassessmentframeworkresponsetypedef)
+- [UpdateAssessmentFrameworkResponseTypeDef](./type_defs.md#updateassessmentframeworkresponsetypedef)
+

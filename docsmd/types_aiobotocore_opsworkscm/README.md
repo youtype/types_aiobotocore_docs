@@ -1,0 +1,201 @@
+# OpsWorksCM module
+
+> [Index](../README.md) > OpsWorksCM
+
+
+!!! note ""
+
+    Auto-generated documentation for [OpsWorksCM](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworkscm.html#opsworkscm)
+    type annotations stubs module [types-aiobotocore-opsworkscm](https://pypi.org/project/types-aiobotocore-opsworkscm/).
+
+## How to install
+
+### Generate locally (recommended)
+
+You can generate type annotations for `aiobotocore` package locally with `mypy_boto3_builder`.
+Use [uv](https://docs.astral.sh/uv/getting-started/installation/) for build isolation.
+
+1. Run mypy-boto3-builder in your package root directory: `uvx --with 'aiobotocore==2.16.0' mypy_boto3_builder`
+1. Select `aiobotocore` AWS SDK.
+1. Add `OpsWorksCM` service.
+1. Use provided commands to install generated packages.
+
+
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `OpsWorksCM` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[opsworkscm]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[opsworkscm]'
+
+# standalone installation
+python -m pip install types-aiobotocore-opsworkscm
+```
+
+
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-opsworkscm
+```
+
+## Usage
+
+Code samples can be found in [Examples](./usage.md).
+
+## OpsWorksCMClient
+
+Type annotations and code completion for  `#!python session.create_client("opsworkscm")` as [OpsWorksCMClient](./client.md)
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworkscm.html#OpsWorksCM.Client)
+
+```python
+# OpsWorksCMClient usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_opsworkscm.client import OpsWorksCMClient
+
+
+session = get_session()
+async with session.create_client("opsworkscm") as client:
+    client: OpsWorksCMClient
+```
+
+
+## Paginators
+
+Type annotations and code completion for
+[paginators](./paginators.md)
+from `#!python session.create_client("opsworkscm").get_paginator("...")`.
+
+```python
+# DescribeBackupsPaginator usage example
+
+from types_aiobotocore_opsworkscm.paginator import DescribeBackupsPaginator
+
+def get_describe_backups_paginator() -> DescribeBackupsPaginator:
+    return client.get_paginator("describe_backups"))
+```
+
+- [DescribeBackupsPaginator](./paginators.md#describebackupspaginator)
+- [DescribeEventsPaginator](./paginators.md#describeeventspaginator)
+- [DescribeServersPaginator](./paginators.md#describeserverspaginator)
+- [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
+
+
+
+
+## Waiters
+
+Type annotations and code completion for
+[waiters](./waiters.md)
+from `#!python session.create_client("opsworkscm").get_waiter("...")`.
+
+```python
+# NodeAssociatedWaiter usage example
+
+from types_aiobotocore_opsworkscm.waiter import NodeAssociatedWaiter
+
+def get_node_associated_waiter() -> NodeAssociatedWaiter:
+    return Session().client("opsworkscm").get_waiter("node_associated")
+```
+
+- [NodeAssociatedWaiter](./waiters.md#nodeassociatedwaiter)
+
+
+
+
+
+
+## Literals
+
+Type annotations for [literals](./literals.md) used in methods and schema.
+
+```python
+# BackupStatusType usage example
+
+from types_aiobotocore_opsworkscm.literals import BackupStatusType
+
+def get_value() -> BackupStatusType:
+    return "DELETING"
+```
+
+- [BackupStatusType](./literals.md#backupstatustype)
+- [BackupTypeType](./literals.md#backuptypetype)
+- [DescribeBackupsPaginatorName](./literals.md#describebackupspaginatorname)
+- [DescribeEventsPaginatorName](./literals.md#describeeventspaginatorname)
+- [DescribeServersPaginatorName](./literals.md#describeserverspaginatorname)
+- [ListTagsForResourcePaginatorName](./literals.md#listtagsforresourcepaginatorname)
+- [MaintenanceStatusType](./literals.md#maintenancestatustype)
+- [NodeAssociatedWaiterName](./literals.md#nodeassociatedwaitername)
+- [NodeAssociationStatusType](./literals.md#nodeassociationstatustype)
+- [ServerStatusType](./literals.md#serverstatustype)
+- [OpsWorksCMServiceName](./literals.md#opsworkscmservicename)
+- [ServiceName](./literals.md#servicename)
+- [ResourceServiceName](./literals.md#resourceservicename)
+- [PaginatorName](./literals.md#paginatorname)
+- [WaiterName](./literals.md#waitername)
+- [RegionName](./literals.md#regionname)
+
+
+
+
+## Type definitions
+
+Type annotations for [type definitions](./type_defs.md) used in methods and schema.
+
+- [AccountAttributeTypeDef](./type_defs.md#accountattributetypedef)
+- [EngineAttributeTypeDef](./type_defs.md#engineattributetypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [BackupTypeDef](./type_defs.md#backuptypedef)
+- [TagTypeDef](./type_defs.md#tagtypedef)
+- [DeleteBackupRequestRequestTypeDef](./type_defs.md#deletebackuprequestrequesttypedef)
+- [DeleteServerRequestRequestTypeDef](./type_defs.md#deleteserverrequestrequesttypedef)
+- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+- [DescribeBackupsRequestRequestTypeDef](./type_defs.md#describebackupsrequestrequesttypedef)
+- [DescribeEventsRequestRequestTypeDef](./type_defs.md#describeeventsrequestrequesttypedef)
+- [ServerEventTypeDef](./type_defs.md#servereventtypedef)
+- [WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef)
+- [DescribeNodeAssociationStatusRequestRequestTypeDef](./type_defs.md#describenodeassociationstatusrequestrequesttypedef)
+- [DescribeServersRequestRequestTypeDef](./type_defs.md#describeserversrequestrequesttypedef)
+- [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
+- [RestoreServerRequestRequestTypeDef](./type_defs.md#restoreserverrequestrequesttypedef)
+- [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
+- [UpdateServerEngineAttributesRequestRequestTypeDef](./type_defs.md#updateserverengineattributesrequestrequesttypedef)
+- [UpdateServerRequestRequestTypeDef](./type_defs.md#updateserverrequestrequesttypedef)
+- [AssociateNodeRequestRequestTypeDef](./type_defs.md#associatenoderequestrequesttypedef)
+- [DisassociateNodeRequestRequestTypeDef](./type_defs.md#disassociatenoderequestrequesttypedef)
+- [ExportServerEngineAttributeRequestRequestTypeDef](./type_defs.md#exportserverengineattributerequestrequesttypedef)
+- [ServerTypeDef](./type_defs.md#servertypedef)
+- [StartMaintenanceRequestRequestTypeDef](./type_defs.md#startmaintenancerequestrequesttypedef)
+- [AssociateNodeResponseTypeDef](./type_defs.md#associatenoderesponsetypedef)
+- [DescribeAccountAttributesResponseTypeDef](./type_defs.md#describeaccountattributesresponsetypedef)
+- [DescribeNodeAssociationStatusResponseTypeDef](./type_defs.md#describenodeassociationstatusresponsetypedef)
+- [DisassociateNodeResponseTypeDef](./type_defs.md#disassociatenoderesponsetypedef)
+- [ExportServerEngineAttributeResponseTypeDef](./type_defs.md#exportserverengineattributeresponsetypedef)
+- [CreateBackupResponseTypeDef](./type_defs.md#createbackupresponsetypedef)
+- [DescribeBackupsResponseTypeDef](./type_defs.md#describebackupsresponsetypedef)
+- [CreateBackupRequestRequestTypeDef](./type_defs.md#createbackuprequestrequesttypedef)
+- [CreateServerRequestRequestTypeDef](./type_defs.md#createserverrequestrequesttypedef)
+- [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
+- [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
+- [DescribeBackupsRequestDescribeBackupsPaginateTypeDef](./type_defs.md#describebackupsrequestdescribebackupspaginatetypedef)
+- [DescribeEventsRequestDescribeEventsPaginateTypeDef](./type_defs.md#describeeventsrequestdescribeeventspaginatetypedef)
+- [DescribeServersRequestDescribeServersPaginateTypeDef](./type_defs.md#describeserversrequestdescribeserverspaginatetypedef)
+- [ListTagsForResourceRequestListTagsForResourcePaginateTypeDef](./type_defs.md#listtagsforresourcerequestlisttagsforresourcepaginatetypedef)
+- [DescribeEventsResponseTypeDef](./type_defs.md#describeeventsresponsetypedef)
+- [DescribeNodeAssociationStatusRequestNodeAssociatedWaitTypeDef](./type_defs.md#describenodeassociationstatusrequestnodeassociatedwaittypedef)
+- [CreateServerResponseTypeDef](./type_defs.md#createserverresponsetypedef)
+- [DescribeServersResponseTypeDef](./type_defs.md#describeserversresponsetypedef)
+- [RestoreServerResponseTypeDef](./type_defs.md#restoreserverresponsetypedef)
+- [StartMaintenanceResponseTypeDef](./type_defs.md#startmaintenanceresponsetypedef)
+- [UpdateServerEngineAttributesResponseTypeDef](./type_defs.md#updateserverengineattributesresponsetypedef)
+- [UpdateServerResponseTypeDef](./type_defs.md#updateserverresponsetypedef)
+
