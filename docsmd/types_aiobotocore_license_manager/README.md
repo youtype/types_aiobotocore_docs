@@ -1,0 +1,289 @@
+# LicenseManager module
+
+> [Index](../README.md) > LicenseManager
+
+
+!!! note ""
+
+    Auto-generated documentation for [LicenseManager](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#licensemanager)
+    type annotations stubs module [types-aiobotocore-license-manager](https://pypi.org/project/types-aiobotocore-license-manager/).
+
+## How to install
+
+### Generate locally (recommended)
+
+You can generate type annotations for `aiobotocore` package locally with `mypy_boto3_builder`.
+Use [uv](https://docs.astral.sh/uv/getting-started/installation/) for build isolation.
+
+1. Run mypy-boto3-builder in your package root directory: `uvx --with 'aiobotocore==2.19.0' mypy_boto3_builder`
+1. Select `aiobotocore` AWS SDK.
+1. Add `LicenseManager` service.
+1. Use provided commands to install generated packages.
+
+
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `LicenseManager` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[license-manager]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[license-manager]'
+
+# standalone installation
+python -m pip install types-aiobotocore-license-manager
+```
+
+
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-license-manager
+```
+
+## Usage
+
+Code samples can be found in [Examples](./usage.md).
+
+## LicenseManagerClient
+
+Type annotations and code completion for  `#!python session.create_client("license-manager")` as [LicenseManagerClient](./client.md)
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client)
+
+```python
+# LicenseManagerClient usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_license_manager.client import LicenseManagerClient
+
+
+session = get_session()
+async with session.create_client("license-manager") as client:
+    client: LicenseManagerClient
+```
+
+
+## Paginators
+
+Type annotations and code completion for
+[paginators](./paginators.md)
+from `#!python session.create_client("license-manager").get_paginator("...")`.
+
+```python
+# ListAssociationsForLicenseConfigurationPaginator usage example
+
+from types_aiobotocore_license_manager.paginator import ListAssociationsForLicenseConfigurationPaginator
+
+def get_list_associations_for_license_configuration_paginator() -> ListAssociationsForLicenseConfigurationPaginator:
+    return client.get_paginator("list_associations_for_license_configuration"))
+```
+
+- [ListAssociationsForLicenseConfigurationPaginator](./paginators.md#listassociationsforlicenseconfigurationpaginator)
+- [ListLicenseConfigurationsPaginator](./paginators.md#listlicenseconfigurationspaginator)
+- [ListLicenseSpecificationsForResourcePaginator](./paginators.md#listlicensespecificationsforresourcepaginator)
+- [ListResourceInventoryPaginator](./paginators.md#listresourceinventorypaginator)
+- [ListUsageForLicenseConfigurationPaginator](./paginators.md#listusageforlicenseconfigurationpaginator)
+
+
+
+
+
+
+
+
+## Literals
+
+Type annotations for [literals](./literals.md) used in methods and schema.
+
+```python
+# ActivationOverrideBehaviorType usage example
+
+from types_aiobotocore_license_manager.literals import ActivationOverrideBehaviorType
+
+def get_value() -> ActivationOverrideBehaviorType:
+    return "ALL_GRANTS_PERMITTED_BY_ISSUER"
+```
+
+- [ActivationOverrideBehaviorType](./literals.md#activationoverridebehaviortype)
+- [AllowedOperationType](./literals.md#allowedoperationtype)
+- [CheckoutTypeType](./literals.md#checkouttypetype)
+- [DigitalSignatureMethodType](./literals.md#digitalsignaturemethodtype)
+- [EntitlementDataUnitType](./literals.md#entitlementdataunittype)
+- [EntitlementUnitType](./literals.md#entitlementunittype)
+- [GrantStatusType](./literals.md#grantstatustype)
+- [InventoryFilterConditionType](./literals.md#inventoryfilterconditiontype)
+- [LicenseConfigurationStatusType](./literals.md#licenseconfigurationstatustype)
+- [LicenseConversionTaskStatusType](./literals.md#licenseconversiontaskstatustype)
+- [LicenseCountingTypeType](./literals.md#licensecountingtypetype)
+- [LicenseDeletionStatusType](./literals.md#licensedeletionstatustype)
+- [LicenseStatusType](./literals.md#licensestatustype)
+- [ListAssociationsForLicenseConfigurationPaginatorName](./literals.md#listassociationsforlicenseconfigurationpaginatorname)
+- [ListLicenseConfigurationsPaginatorName](./literals.md#listlicenseconfigurationspaginatorname)
+- [ListLicenseSpecificationsForResourcePaginatorName](./literals.md#listlicensespecificationsforresourcepaginatorname)
+- [ListResourceInventoryPaginatorName](./literals.md#listresourceinventorypaginatorname)
+- [ListUsageForLicenseConfigurationPaginatorName](./literals.md#listusageforlicenseconfigurationpaginatorname)
+- [ReceivedStatusType](./literals.md#receivedstatustype)
+- [RenewTypeType](./literals.md#renewtypetype)
+- [ReportFrequencyTypeType](./literals.md#reportfrequencytypetype)
+- [ReportTypeType](./literals.md#reporttypetype)
+- [ResourceTypeType](./literals.md#resourcetypetype)
+- [TokenTypeType](./literals.md#tokentypetype)
+- [LicenseManagerServiceName](./literals.md#licensemanagerservicename)
+- [ServiceName](./literals.md#servicename)
+- [ResourceServiceName](./literals.md#resourceservicename)
+- [PaginatorName](./literals.md#paginatorname)
+- [RegionName](./literals.md#regionname)
+
+
+
+
+## Type definitions
+
+Type annotations for [type definitions](./type_defs.md) used in methods and schema.
+
+- [AcceptGrantRequestRequestTypeDef](./type_defs.md#acceptgrantrequestrequesttypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [AutomatedDiscoveryInformationTypeDef](./type_defs.md#automateddiscoveryinformationtypedef)
+- [BorrowConfigurationTypeDef](./type_defs.md#borrowconfigurationtypedef)
+- [CheckInLicenseRequestRequestTypeDef](./type_defs.md#checkinlicenserequestrequesttypedef)
+- [EntitlementDataTypeDef](./type_defs.md#entitlementdatatypedef)
+- [MetadataTypeDef](./type_defs.md#metadatatypedef)
+- [ConsumedLicenseSummaryTypeDef](./type_defs.md#consumedlicensesummarytypedef)
+- [ProvisionalConfigurationTypeDef](./type_defs.md#provisionalconfigurationtypedef)
+- [CreateGrantRequestRequestTypeDef](./type_defs.md#creategrantrequestrequesttypedef)
+- [OptionsTypeDef](./type_defs.md#optionstypedef)
+- [TagTypeDef](./type_defs.md#tagtypedef)
+- [LicenseConversionContextTypeDef](./type_defs.md#licenseconversioncontexttypedef)
+- [ReportContextTypeDef](./type_defs.md#reportcontexttypedef)
+- [ReportFrequencyTypeDef](./type_defs.md#reportfrequencytypedef)
+- [DatetimeRangeTypeDef](./type_defs.md#datetimerangetypedef)
+- [EntitlementTypeDef](./type_defs.md#entitlementtypedef)
+- [IssuerTypeDef](./type_defs.md#issuertypedef)
+- [CreateTokenRequestRequestTypeDef](./type_defs.md#createtokenrequestrequesttypedef)
+- [DeleteGrantRequestRequestTypeDef](./type_defs.md#deletegrantrequestrequesttypedef)
+- [DeleteLicenseConfigurationRequestRequestTypeDef](./type_defs.md#deletelicenseconfigurationrequestrequesttypedef)
+- [DeleteLicenseManagerReportGeneratorRequestRequestTypeDef](./type_defs.md#deletelicensemanagerreportgeneratorrequestrequesttypedef)
+- [DeleteLicenseRequestRequestTypeDef](./type_defs.md#deletelicenserequestrequesttypedef)
+- [DeleteTokenRequestRequestTypeDef](./type_defs.md#deletetokenrequestrequesttypedef)
+- [EntitlementUsageTypeDef](./type_defs.md#entitlementusagetypedef)
+- [ExtendLicenseConsumptionRequestRequestTypeDef](./type_defs.md#extendlicenseconsumptionrequestrequesttypedef)
+- [FilterTypeDef](./type_defs.md#filtertypedef)
+- [GetAccessTokenRequestRequestTypeDef](./type_defs.md#getaccesstokenrequestrequesttypedef)
+- [GetGrantRequestRequestTypeDef](./type_defs.md#getgrantrequestrequesttypedef)
+- [GetLicenseConfigurationRequestRequestTypeDef](./type_defs.md#getlicenseconfigurationrequestrequesttypedef)
+- [ManagedResourceSummaryTypeDef](./type_defs.md#managedresourcesummarytypedef)
+- [GetLicenseConversionTaskRequestRequestTypeDef](./type_defs.md#getlicenseconversiontaskrequestrequesttypedef)
+- [GetLicenseManagerReportGeneratorRequestRequestTypeDef](./type_defs.md#getlicensemanagerreportgeneratorrequestrequesttypedef)
+- [GetLicenseRequestRequestTypeDef](./type_defs.md#getlicenserequestrequesttypedef)
+- [GetLicenseUsageRequestRequestTypeDef](./type_defs.md#getlicenseusagerequestrequesttypedef)
+- [OrganizationConfigurationTypeDef](./type_defs.md#organizationconfigurationtypedef)
+- [IssuerDetailsTypeDef](./type_defs.md#issuerdetailstypedef)
+- [ReceivedMetadataTypeDef](./type_defs.md#receivedmetadatatypedef)
+- [InventoryFilterTypeDef](./type_defs.md#inventoryfiltertypedef)
+- [LicenseConfigurationAssociationTypeDef](./type_defs.md#licenseconfigurationassociationtypedef)
+- [LicenseConfigurationUsageTypeDef](./type_defs.md#licenseconfigurationusagetypedef)
+- [LicenseSpecificationTypeDef](./type_defs.md#licensespecificationtypedef)
+- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+- [ListAssociationsForLicenseConfigurationRequestRequestTypeDef](./type_defs.md#listassociationsforlicenseconfigurationrequestrequesttypedef)
+- [ListFailuresForLicenseConfigurationOperationsRequestRequestTypeDef](./type_defs.md#listfailuresforlicenseconfigurationoperationsrequestrequesttypedef)
+- [ListLicenseSpecificationsForResourceRequestRequestTypeDef](./type_defs.md#listlicensespecificationsforresourcerequestrequesttypedef)
+- [ListLicenseVersionsRequestRequestTypeDef](./type_defs.md#listlicenseversionsrequestrequesttypedef)
+- [ResourceInventoryTypeDef](./type_defs.md#resourceinventorytypedef)
+- [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
+- [TokenDataTypeDef](./type_defs.md#tokendatatypedef)
+- [ProductInformationFilterOutputTypeDef](./type_defs.md#productinformationfilteroutputtypedef)
+- [ProductInformationFilterTypeDef](./type_defs.md#productinformationfiltertypedef)
+- [RejectGrantRequestRequestTypeDef](./type_defs.md#rejectgrantrequestrequesttypedef)
+- [ReportContextOutputTypeDef](./type_defs.md#reportcontextoutputtypedef)
+- [S3LocationTypeDef](./type_defs.md#s3locationtypedef)
+- [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
+- [AcceptGrantResponseTypeDef](./type_defs.md#acceptgrantresponsetypedef)
+- [CreateGrantResponseTypeDef](./type_defs.md#creategrantresponsetypedef)
+- [CreateGrantVersionResponseTypeDef](./type_defs.md#creategrantversionresponsetypedef)
+- [CreateLicenseConfigurationResponseTypeDef](./type_defs.md#createlicenseconfigurationresponsetypedef)
+- [CreateLicenseConversionTaskForResourceResponseTypeDef](./type_defs.md#createlicenseconversiontaskforresourceresponsetypedef)
+- [CreateLicenseManagerReportGeneratorResponseTypeDef](./type_defs.md#createlicensemanagerreportgeneratorresponsetypedef)
+- [CreateLicenseResponseTypeDef](./type_defs.md#createlicenseresponsetypedef)
+- [CreateLicenseVersionResponseTypeDef](./type_defs.md#createlicenseversionresponsetypedef)
+- [CreateTokenResponseTypeDef](./type_defs.md#createtokenresponsetypedef)
+- [DeleteGrantResponseTypeDef](./type_defs.md#deletegrantresponsetypedef)
+- [DeleteLicenseResponseTypeDef](./type_defs.md#deletelicenseresponsetypedef)
+- [ExtendLicenseConsumptionResponseTypeDef](./type_defs.md#extendlicenseconsumptionresponsetypedef)
+- [GetAccessTokenResponseTypeDef](./type_defs.md#getaccesstokenresponsetypedef)
+- [RejectGrantResponseTypeDef](./type_defs.md#rejectgrantresponsetypedef)
+- [CheckoutLicenseRequestRequestTypeDef](./type_defs.md#checkoutlicenserequestrequesttypedef)
+- [CheckoutLicenseResponseTypeDef](./type_defs.md#checkoutlicenseresponsetypedef)
+- [CheckoutBorrowLicenseRequestRequestTypeDef](./type_defs.md#checkoutborrowlicenserequestrequesttypedef)
+- [CheckoutBorrowLicenseResponseTypeDef](./type_defs.md#checkoutborrowlicenseresponsetypedef)
+- [LicenseOperationFailureTypeDef](./type_defs.md#licenseoperationfailuretypedef)
+- [ConsumptionConfigurationTypeDef](./type_defs.md#consumptionconfigurationtypedef)
+- [CreateGrantVersionRequestRequestTypeDef](./type_defs.md#creategrantversionrequestrequesttypedef)
+- [GrantTypeDef](./type_defs.md#granttypedef)
+- [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
+- [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
+- [CreateLicenseConversionTaskForResourceRequestRequestTypeDef](./type_defs.md#createlicenseconversiontaskforresourcerequestrequesttypedef)
+- [GetLicenseConversionTaskResponseTypeDef](./type_defs.md#getlicenseconversiontaskresponsetypedef)
+- [LicenseConversionTaskTypeDef](./type_defs.md#licenseconversiontasktypedef)
+- [CreateLicenseManagerReportGeneratorRequestRequestTypeDef](./type_defs.md#createlicensemanagerreportgeneratorrequestrequesttypedef)
+- [UpdateLicenseManagerReportGeneratorRequestRequestTypeDef](./type_defs.md#updatelicensemanagerreportgeneratorrequestrequesttypedef)
+- [LicenseUsageTypeDef](./type_defs.md#licenseusagetypedef)
+- [ListDistributedGrantsRequestRequestTypeDef](./type_defs.md#listdistributedgrantsrequestrequesttypedef)
+- [ListLicenseConfigurationsRequestRequestTypeDef](./type_defs.md#listlicenseconfigurationsrequestrequesttypedef)
+- [ListLicenseConversionTasksRequestRequestTypeDef](./type_defs.md#listlicenseconversiontasksrequestrequesttypedef)
+- [ListLicenseManagerReportGeneratorsRequestRequestTypeDef](./type_defs.md#listlicensemanagerreportgeneratorsrequestrequesttypedef)
+- [ListLicensesRequestRequestTypeDef](./type_defs.md#listlicensesrequestrequesttypedef)
+- [ListReceivedGrantsForOrganizationRequestRequestTypeDef](./type_defs.md#listreceivedgrantsfororganizationrequestrequesttypedef)
+- [ListReceivedGrantsRequestRequestTypeDef](./type_defs.md#listreceivedgrantsrequestrequesttypedef)
+- [ListReceivedLicensesForOrganizationRequestRequestTypeDef](./type_defs.md#listreceivedlicensesfororganizationrequestrequesttypedef)
+- [ListReceivedLicensesRequestRequestTypeDef](./type_defs.md#listreceivedlicensesrequestrequesttypedef)
+- [ListTokensRequestRequestTypeDef](./type_defs.md#listtokensrequestrequesttypedef)
+- [ListUsageForLicenseConfigurationRequestRequestTypeDef](./type_defs.md#listusageforlicenseconfigurationrequestrequesttypedef)
+- [GetServiceSettingsResponseTypeDef](./type_defs.md#getservicesettingsresponsetypedef)
+- [UpdateServiceSettingsRequestRequestTypeDef](./type_defs.md#updateservicesettingsrequestrequesttypedef)
+- [ListResourceInventoryRequestRequestTypeDef](./type_defs.md#listresourceinventoryrequestrequesttypedef)
+- [ListAssociationsForLicenseConfigurationResponseTypeDef](./type_defs.md#listassociationsforlicenseconfigurationresponsetypedef)
+- [ListUsageForLicenseConfigurationResponseTypeDef](./type_defs.md#listusageforlicenseconfigurationresponsetypedef)
+- [ListLicenseSpecificationsForResourceResponseTypeDef](./type_defs.md#listlicensespecificationsforresourceresponsetypedef)
+- [UpdateLicenseSpecificationsForResourceRequestRequestTypeDef](./type_defs.md#updatelicensespecificationsforresourcerequestrequesttypedef)
+- [ListAssociationsForLicenseConfigurationRequestPaginateTypeDef](./type_defs.md#listassociationsforlicenseconfigurationrequestpaginatetypedef)
+- [ListLicenseConfigurationsRequestPaginateTypeDef](./type_defs.md#listlicenseconfigurationsrequestpaginatetypedef)
+- [ListLicenseSpecificationsForResourceRequestPaginateTypeDef](./type_defs.md#listlicensespecificationsforresourcerequestpaginatetypedef)
+- [ListResourceInventoryRequestPaginateTypeDef](./type_defs.md#listresourceinventoryrequestpaginatetypedef)
+- [ListUsageForLicenseConfigurationRequestPaginateTypeDef](./type_defs.md#listusageforlicenseconfigurationrequestpaginatetypedef)
+- [ListResourceInventoryResponseTypeDef](./type_defs.md#listresourceinventoryresponsetypedef)
+- [ListTokensResponseTypeDef](./type_defs.md#listtokensresponsetypedef)
+- [ProductInformationOutputTypeDef](./type_defs.md#productinformationoutputtypedef)
+- [ProductInformationFilterUnionTypeDef](./type_defs.md#productinformationfilteruniontypedef)
+- [ReportGeneratorTypeDef](./type_defs.md#reportgeneratortypedef)
+- [ListFailuresForLicenseConfigurationOperationsResponseTypeDef](./type_defs.md#listfailuresforlicenseconfigurationoperationsresponsetypedef)
+- [CreateLicenseRequestRequestTypeDef](./type_defs.md#createlicenserequestrequesttypedef)
+- [CreateLicenseVersionRequestRequestTypeDef](./type_defs.md#createlicenseversionrequestrequesttypedef)
+- [GrantedLicenseTypeDef](./type_defs.md#grantedlicensetypedef)
+- [LicenseTypeDef](./type_defs.md#licensetypedef)
+- [GetGrantResponseTypeDef](./type_defs.md#getgrantresponsetypedef)
+- [ListDistributedGrantsResponseTypeDef](./type_defs.md#listdistributedgrantsresponsetypedef)
+- [ListReceivedGrantsForOrganizationResponseTypeDef](./type_defs.md#listreceivedgrantsfororganizationresponsetypedef)
+- [ListReceivedGrantsResponseTypeDef](./type_defs.md#listreceivedgrantsresponsetypedef)
+- [ListLicenseConversionTasksResponseTypeDef](./type_defs.md#listlicenseconversiontasksresponsetypedef)
+- [GetLicenseUsageResponseTypeDef](./type_defs.md#getlicenseusageresponsetypedef)
+- [GetLicenseConfigurationResponseTypeDef](./type_defs.md#getlicenseconfigurationresponsetypedef)
+- [LicenseConfigurationTypeDef](./type_defs.md#licenseconfigurationtypedef)
+- [ProductInformationTypeDef](./type_defs.md#productinformationtypedef)
+- [GetLicenseManagerReportGeneratorResponseTypeDef](./type_defs.md#getlicensemanagerreportgeneratorresponsetypedef)
+- [ListLicenseManagerReportGeneratorsResponseTypeDef](./type_defs.md#listlicensemanagerreportgeneratorsresponsetypedef)
+- [ListReceivedLicensesForOrganizationResponseTypeDef](./type_defs.md#listreceivedlicensesfororganizationresponsetypedef)
+- [ListReceivedLicensesResponseTypeDef](./type_defs.md#listreceivedlicensesresponsetypedef)
+- [GetLicenseResponseTypeDef](./type_defs.md#getlicenseresponsetypedef)
+- [ListLicenseVersionsResponseTypeDef](./type_defs.md#listlicenseversionsresponsetypedef)
+- [ListLicensesResponseTypeDef](./type_defs.md#listlicensesresponsetypedef)
+- [ListLicenseConfigurationsResponseTypeDef](./type_defs.md#listlicenseconfigurationsresponsetypedef)
+- [ProductInformationUnionTypeDef](./type_defs.md#productinformationuniontypedef)
+- [UpdateLicenseConfigurationRequestRequestTypeDef](./type_defs.md#updatelicenseconfigurationrequestrequesttypedef)
+- [CreateLicenseConfigurationRequestRequestTypeDef](./type_defs.md#createlicenseconfigurationrequestrequesttypedef)
+
