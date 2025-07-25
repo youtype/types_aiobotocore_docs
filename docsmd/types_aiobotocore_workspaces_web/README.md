@@ -1,0 +1,299 @@
+# WorkSpacesWeb module
+
+> [Index](../README.md) > WorkSpacesWeb
+
+
+!!! note ""
+
+    Auto-generated documentation for [WorkSpacesWeb](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#workspacesweb)
+    type annotations stubs module [types-aiobotocore-workspaces-web](https://pypi.org/project/types-aiobotocore-workspaces-web/).
+
+## How to install
+
+### Generate locally (recommended)
+
+You can generate type annotations for `aiobotocore` package locally with `mypy-boto3-builder`.
+Use [uv](https://docs.astral.sh/uv/getting-started/installation/) for build isolation.
+
+1. Run mypy-boto3-builder in your package root directory: `uvx --with 'aiobotocore==2.23.2' mypy-boto3-builder`
+1. Select `aiobotocore` AWS SDK.
+1. Add `WorkSpacesWeb` service.
+1. Use provided commands to install generated packages.
+
+
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `WorkSpacesWeb` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[workspaces-web]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[workspaces-web]'
+
+# standalone installation
+python -m pip install types-aiobotocore-workspaces-web
+```
+
+
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-workspaces-web
+```
+
+## Usage
+
+Code samples can be found in [Examples](./usage.md).
+
+## WorkSpacesWebClient
+
+Type annotations and code completion for  `#!python session.create_client("workspaces-web")` as [WorkSpacesWebClient](./client.md)
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client)
+
+```python
+# WorkSpacesWebClient usage example
+
+from aiobotocore.session import get_session
+
+from types_aiobotocore_workspaces_web.client import WorkSpacesWebClient
+
+
+session = get_session()
+async with session.create_client("workspaces-web") as client:
+    client: WorkSpacesWebClient
+```
+
+
+## Paginators
+
+Type annotations and code completion for
+[paginators](./paginators.md)
+from `#!python session.create_client("workspaces-web").get_paginator("...")`.
+
+```python
+# ListDataProtectionSettingsPaginator usage example
+
+from types_aiobotocore_workspaces_web.paginator import ListDataProtectionSettingsPaginator
+
+def get_list_data_protection_settings_paginator() -> ListDataProtectionSettingsPaginator:
+    return client.get_paginator("list_data_protection_settings"))
+```
+
+- [ListDataProtectionSettingsPaginator](./paginators.md#listdataprotectionsettingspaginator)
+- [ListSessionsPaginator](./paginators.md#listsessionspaginator)
+
+
+
+
+
+
+
+
+## Literals
+
+Type annotations for [literals](./literals.md) used in methods and schema.
+
+```python
+# AuthenticationTypeType usage example
+
+from types_aiobotocore_workspaces_web.literals import AuthenticationTypeType
+
+def get_value() -> AuthenticationTypeType:
+    return "IAM_Identity_Center"
+```
+
+- [AuthenticationTypeType](./literals.md#authenticationtypetype)
+- [BrowserTypeType](./literals.md#browsertypetype)
+- [EnabledTypeType](./literals.md#enabledtypetype)
+- [IdentityProviderTypeType](./literals.md#identityprovidertypetype)
+- [InstanceTypeType](./literals.md#instancetypetype)
+- [ListDataProtectionSettingsPaginatorName](./literals.md#listdataprotectionsettingspaginatorname)
+- [ListSessionsPaginatorName](./literals.md#listsessionspaginatorname)
+- [MaxDisplayResolutionType](./literals.md#maxdisplayresolutiontype)
+- [PortalStatusType](./literals.md#portalstatustype)
+- [RedactionPlaceHolderTypeType](./literals.md#redactionplaceholdertypetype)
+- [RendererTypeType](./literals.md#renderertypetype)
+- [SessionSortByType](./literals.md#sessionsortbytype)
+- [SessionStatusType](./literals.md#sessionstatustype)
+- [ToolbarItemType](./literals.md#toolbaritemtype)
+- [ToolbarTypeType](./literals.md#toolbartypetype)
+- [VisualModeType](./literals.md#visualmodetype)
+- [WorkSpacesWebServiceName](./literals.md#workspaceswebservicename)
+- [ServiceName](./literals.md#servicename)
+- [ResourceServiceName](./literals.md#resourceservicename)
+- [PaginatorName](./literals.md#paginatorname)
+- [RegionName](./literals.md#regionname)
+
+
+
+
+## Type definitions
+
+Type annotations for [type definitions](./type_defs.md) used in methods and schema.
+
+- [AssociateBrowserSettingsRequestTypeDef](./type_defs.md#associatebrowsersettingsrequesttypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [AssociateDataProtectionSettingsRequestTypeDef](./type_defs.md#associatedataprotectionsettingsrequesttypedef)
+- [AssociateIpAccessSettingsRequestTypeDef](./type_defs.md#associateipaccesssettingsrequesttypedef)
+- [AssociateNetworkSettingsRequestTypeDef](./type_defs.md#associatenetworksettingsrequesttypedef)
+- [AssociateTrustStoreRequestTypeDef](./type_defs.md#associatetruststorerequesttypedef)
+- [AssociateUserAccessLoggingSettingsRequestTypeDef](./type_defs.md#associateuseraccessloggingsettingsrequesttypedef)
+- [AssociateUserSettingsRequestTypeDef](./type_defs.md#associateusersettingsrequesttypedef)
+- [BlobTypeDef](./type_defs.md#blobtypedef)
+- [BrowserSettingsSummaryTypeDef](./type_defs.md#browsersettingssummarytypedef)
+- [BrowserSettingsTypeDef](./type_defs.md#browsersettingstypedef)
+- [CertificateSummaryTypeDef](./type_defs.md#certificatesummarytypedef)
+- [CertificateTypeDef](./type_defs.md#certificatetypedef)
+- [CookieSpecificationTypeDef](./type_defs.md#cookiespecificationtypedef)
+- [TagTypeDef](./type_defs.md#tagtypedef)
+- [IpRuleTypeDef](./type_defs.md#ipruletypedef)
+- [CustomPatternTypeDef](./type_defs.md#custompatterntypedef)
+- [DataProtectionSettingsSummaryTypeDef](./type_defs.md#dataprotectionsettingssummarytypedef)
+- [DeleteBrowserSettingsRequestTypeDef](./type_defs.md#deletebrowsersettingsrequesttypedef)
+- [DeleteDataProtectionSettingsRequestTypeDef](./type_defs.md#deletedataprotectionsettingsrequesttypedef)
+- [DeleteIdentityProviderRequestTypeDef](./type_defs.md#deleteidentityproviderrequesttypedef)
+- [DeleteIpAccessSettingsRequestTypeDef](./type_defs.md#deleteipaccesssettingsrequesttypedef)
+- [DeleteNetworkSettingsRequestTypeDef](./type_defs.md#deletenetworksettingsrequesttypedef)
+- [DeletePortalRequestTypeDef](./type_defs.md#deleteportalrequesttypedef)
+- [DeleteTrustStoreRequestTypeDef](./type_defs.md#deletetruststorerequesttypedef)
+- [DeleteUserAccessLoggingSettingsRequestTypeDef](./type_defs.md#deleteuseraccessloggingsettingsrequesttypedef)
+- [DeleteUserSettingsRequestTypeDef](./type_defs.md#deleteusersettingsrequesttypedef)
+- [DisassociateBrowserSettingsRequestTypeDef](./type_defs.md#disassociatebrowsersettingsrequesttypedef)
+- [DisassociateDataProtectionSettingsRequestTypeDef](./type_defs.md#disassociatedataprotectionsettingsrequesttypedef)
+- [DisassociateIpAccessSettingsRequestTypeDef](./type_defs.md#disassociateipaccesssettingsrequesttypedef)
+- [DisassociateNetworkSettingsRequestTypeDef](./type_defs.md#disassociatenetworksettingsrequesttypedef)
+- [DisassociateTrustStoreRequestTypeDef](./type_defs.md#disassociatetruststorerequesttypedef)
+- [DisassociateUserAccessLoggingSettingsRequestTypeDef](./type_defs.md#disassociateuseraccessloggingsettingsrequesttypedef)
+- [DisassociateUserSettingsRequestTypeDef](./type_defs.md#disassociateusersettingsrequesttypedef)
+- [ExpireSessionRequestTypeDef](./type_defs.md#expiresessionrequesttypedef)
+- [GetBrowserSettingsRequestTypeDef](./type_defs.md#getbrowsersettingsrequesttypedef)
+- [GetDataProtectionSettingsRequestTypeDef](./type_defs.md#getdataprotectionsettingsrequesttypedef)
+- [GetIdentityProviderRequestTypeDef](./type_defs.md#getidentityproviderrequesttypedef)
+- [IdentityProviderTypeDef](./type_defs.md#identityprovidertypedef)
+- [GetIpAccessSettingsRequestTypeDef](./type_defs.md#getipaccesssettingsrequesttypedef)
+- [GetNetworkSettingsRequestTypeDef](./type_defs.md#getnetworksettingsrequesttypedef)
+- [NetworkSettingsTypeDef](./type_defs.md#networksettingstypedef)
+- [GetPortalRequestTypeDef](./type_defs.md#getportalrequesttypedef)
+- [PortalTypeDef](./type_defs.md#portaltypedef)
+- [GetPortalServiceProviderMetadataRequestTypeDef](./type_defs.md#getportalserviceprovidermetadatarequesttypedef)
+- [GetSessionRequestTypeDef](./type_defs.md#getsessionrequesttypedef)
+- [SessionTypeDef](./type_defs.md#sessiontypedef)
+- [GetTrustStoreCertificateRequestTypeDef](./type_defs.md#gettruststorecertificaterequesttypedef)
+- [GetTrustStoreRequestTypeDef](./type_defs.md#gettruststorerequesttypedef)
+- [TrustStoreTypeDef](./type_defs.md#truststoretypedef)
+- [GetUserAccessLoggingSettingsRequestTypeDef](./type_defs.md#getuseraccessloggingsettingsrequesttypedef)
+- [UserAccessLoggingSettingsTypeDef](./type_defs.md#useraccessloggingsettingstypedef)
+- [GetUserSettingsRequestTypeDef](./type_defs.md#getusersettingsrequesttypedef)
+- [IdentityProviderSummaryTypeDef](./type_defs.md#identityprovidersummarytypedef)
+- [RedactionPlaceHolderTypeDef](./type_defs.md#redactionplaceholdertypedef)
+- [IpAccessSettingsSummaryTypeDef](./type_defs.md#ipaccesssettingssummarytypedef)
+- [ListBrowserSettingsRequestTypeDef](./type_defs.md#listbrowsersettingsrequesttypedef)
+- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+- [ListDataProtectionSettingsRequestTypeDef](./type_defs.md#listdataprotectionsettingsrequesttypedef)
+- [ListIdentityProvidersRequestTypeDef](./type_defs.md#listidentityprovidersrequesttypedef)
+- [ListIpAccessSettingsRequestTypeDef](./type_defs.md#listipaccesssettingsrequesttypedef)
+- [ListNetworkSettingsRequestTypeDef](./type_defs.md#listnetworksettingsrequesttypedef)
+- [NetworkSettingsSummaryTypeDef](./type_defs.md#networksettingssummarytypedef)
+- [ListPortalsRequestTypeDef](./type_defs.md#listportalsrequesttypedef)
+- [PortalSummaryTypeDef](./type_defs.md#portalsummarytypedef)
+- [ListSessionsRequestTypeDef](./type_defs.md#listsessionsrequesttypedef)
+- [SessionSummaryTypeDef](./type_defs.md#sessionsummarytypedef)
+- [ListTagsForResourceRequestTypeDef](./type_defs.md#listtagsforresourcerequesttypedef)
+- [ListTrustStoreCertificatesRequestTypeDef](./type_defs.md#listtruststorecertificatesrequesttypedef)
+- [ListTrustStoresRequestTypeDef](./type_defs.md#listtruststoresrequesttypedef)
+- [TrustStoreSummaryTypeDef](./type_defs.md#truststoresummarytypedef)
+- [ListUserAccessLoggingSettingsRequestTypeDef](./type_defs.md#listuseraccessloggingsettingsrequesttypedef)
+- [UserAccessLoggingSettingsSummaryTypeDef](./type_defs.md#useraccessloggingsettingssummarytypedef)
+- [ListUserSettingsRequestTypeDef](./type_defs.md#listusersettingsrequesttypedef)
+- [ToolbarConfigurationOutputTypeDef](./type_defs.md#toolbarconfigurationoutputtypedef)
+- [ToolbarConfigurationTypeDef](./type_defs.md#toolbarconfigurationtypedef)
+- [UntagResourceRequestTypeDef](./type_defs.md#untagresourcerequesttypedef)
+- [UpdateBrowserSettingsRequestTypeDef](./type_defs.md#updatebrowsersettingsrequesttypedef)
+- [UpdateIdentityProviderRequestTypeDef](./type_defs.md#updateidentityproviderrequesttypedef)
+- [UpdateNetworkSettingsRequestTypeDef](./type_defs.md#updatenetworksettingsrequesttypedef)
+- [UpdatePortalRequestTypeDef](./type_defs.md#updateportalrequesttypedef)
+- [UpdateUserAccessLoggingSettingsRequestTypeDef](./type_defs.md#updateuseraccessloggingsettingsrequesttypedef)
+- [AssociateBrowserSettingsResponseTypeDef](./type_defs.md#associatebrowsersettingsresponsetypedef)
+- [AssociateDataProtectionSettingsResponseTypeDef](./type_defs.md#associatedataprotectionsettingsresponsetypedef)
+- [AssociateIpAccessSettingsResponseTypeDef](./type_defs.md#associateipaccesssettingsresponsetypedef)
+- [AssociateNetworkSettingsResponseTypeDef](./type_defs.md#associatenetworksettingsresponsetypedef)
+- [AssociateTrustStoreResponseTypeDef](./type_defs.md#associatetruststoreresponsetypedef)
+- [AssociateUserAccessLoggingSettingsResponseTypeDef](./type_defs.md#associateuseraccessloggingsettingsresponsetypedef)
+- [AssociateUserSettingsResponseTypeDef](./type_defs.md#associateusersettingsresponsetypedef)
+- [CreateBrowserSettingsResponseTypeDef](./type_defs.md#createbrowsersettingsresponsetypedef)
+- [CreateDataProtectionSettingsResponseTypeDef](./type_defs.md#createdataprotectionsettingsresponsetypedef)
+- [CreateIdentityProviderResponseTypeDef](./type_defs.md#createidentityproviderresponsetypedef)
+- [CreateIpAccessSettingsResponseTypeDef](./type_defs.md#createipaccesssettingsresponsetypedef)
+- [CreateNetworkSettingsResponseTypeDef](./type_defs.md#createnetworksettingsresponsetypedef)
+- [CreatePortalResponseTypeDef](./type_defs.md#createportalresponsetypedef)
+- [CreateTrustStoreResponseTypeDef](./type_defs.md#createtruststoreresponsetypedef)
+- [CreateUserAccessLoggingSettingsResponseTypeDef](./type_defs.md#createuseraccessloggingsettingsresponsetypedef)
+- [CreateUserSettingsResponseTypeDef](./type_defs.md#createusersettingsresponsetypedef)
+- [GetPortalServiceProviderMetadataResponseTypeDef](./type_defs.md#getportalserviceprovidermetadataresponsetypedef)
+- [UpdateTrustStoreResponseTypeDef](./type_defs.md#updatetruststoreresponsetypedef)
+- [UpdateTrustStoreRequestTypeDef](./type_defs.md#updatetruststorerequesttypedef)
+- [ListBrowserSettingsResponseTypeDef](./type_defs.md#listbrowsersettingsresponsetypedef)
+- [GetBrowserSettingsResponseTypeDef](./type_defs.md#getbrowsersettingsresponsetypedef)
+- [UpdateBrowserSettingsResponseTypeDef](./type_defs.md#updatebrowsersettingsresponsetypedef)
+- [ListTrustStoreCertificatesResponseTypeDef](./type_defs.md#listtruststorecertificatesresponsetypedef)
+- [GetTrustStoreCertificateResponseTypeDef](./type_defs.md#gettruststorecertificateresponsetypedef)
+- [CookieSynchronizationConfigurationOutputTypeDef](./type_defs.md#cookiesynchronizationconfigurationoutputtypedef)
+- [CookieSynchronizationConfigurationTypeDef](./type_defs.md#cookiesynchronizationconfigurationtypedef)
+- [CreateBrowserSettingsRequestTypeDef](./type_defs.md#createbrowsersettingsrequesttypedef)
+- [CreateIdentityProviderRequestTypeDef](./type_defs.md#createidentityproviderrequesttypedef)
+- [CreateNetworkSettingsRequestTypeDef](./type_defs.md#createnetworksettingsrequesttypedef)
+- [CreatePortalRequestTypeDef](./type_defs.md#createportalrequesttypedef)
+- [CreateTrustStoreRequestTypeDef](./type_defs.md#createtruststorerequesttypedef)
+- [CreateUserAccessLoggingSettingsRequestTypeDef](./type_defs.md#createuseraccessloggingsettingsrequesttypedef)
+- [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
+- [TagResourceRequestTypeDef](./type_defs.md#tagresourcerequesttypedef)
+- [CreateIpAccessSettingsRequestTypeDef](./type_defs.md#createipaccesssettingsrequesttypedef)
+- [IpAccessSettingsTypeDef](./type_defs.md#ipaccesssettingstypedef)
+- [UpdateIpAccessSettingsRequestTypeDef](./type_defs.md#updateipaccesssettingsrequesttypedef)
+- [ListDataProtectionSettingsResponseTypeDef](./type_defs.md#listdataprotectionsettingsresponsetypedef)
+- [GetIdentityProviderResponseTypeDef](./type_defs.md#getidentityproviderresponsetypedef)
+- [UpdateIdentityProviderResponseTypeDef](./type_defs.md#updateidentityproviderresponsetypedef)
+- [GetNetworkSettingsResponseTypeDef](./type_defs.md#getnetworksettingsresponsetypedef)
+- [UpdateNetworkSettingsResponseTypeDef](./type_defs.md#updatenetworksettingsresponsetypedef)
+- [GetPortalResponseTypeDef](./type_defs.md#getportalresponsetypedef)
+- [UpdatePortalResponseTypeDef](./type_defs.md#updateportalresponsetypedef)
+- [GetSessionResponseTypeDef](./type_defs.md#getsessionresponsetypedef)
+- [GetTrustStoreResponseTypeDef](./type_defs.md#gettruststoreresponsetypedef)
+- [GetUserAccessLoggingSettingsResponseTypeDef](./type_defs.md#getuseraccessloggingsettingsresponsetypedef)
+- [UpdateUserAccessLoggingSettingsResponseTypeDef](./type_defs.md#updateuseraccessloggingsettingsresponsetypedef)
+- [ListIdentityProvidersResponseTypeDef](./type_defs.md#listidentityprovidersresponsetypedef)
+- [InlineRedactionPatternOutputTypeDef](./type_defs.md#inlineredactionpatternoutputtypedef)
+- [InlineRedactionPatternTypeDef](./type_defs.md#inlineredactionpatterntypedef)
+- [ListIpAccessSettingsResponseTypeDef](./type_defs.md#listipaccesssettingsresponsetypedef)
+- [ListDataProtectionSettingsRequestPaginateTypeDef](./type_defs.md#listdataprotectionsettingsrequestpaginatetypedef)
+- [ListSessionsRequestPaginateTypeDef](./type_defs.md#listsessionsrequestpaginatetypedef)
+- [ListNetworkSettingsResponseTypeDef](./type_defs.md#listnetworksettingsresponsetypedef)
+- [ListPortalsResponseTypeDef](./type_defs.md#listportalsresponsetypedef)
+- [ListSessionsResponseTypeDef](./type_defs.md#listsessionsresponsetypedef)
+- [ListTrustStoresResponseTypeDef](./type_defs.md#listtruststoresresponsetypedef)
+- [ListUserAccessLoggingSettingsResponseTypeDef](./type_defs.md#listuseraccessloggingsettingsresponsetypedef)
+- [ToolbarConfigurationUnionTypeDef](./type_defs.md#toolbarconfigurationuniontypedef)
+- [UserSettingsSummaryTypeDef](./type_defs.md#usersettingssummarytypedef)
+- [UserSettingsTypeDef](./type_defs.md#usersettingstypedef)
+- [CookieSynchronizationConfigurationUnionTypeDef](./type_defs.md#cookiesynchronizationconfigurationuniontypedef)
+- [GetIpAccessSettingsResponseTypeDef](./type_defs.md#getipaccesssettingsresponsetypedef)
+- [UpdateIpAccessSettingsResponseTypeDef](./type_defs.md#updateipaccesssettingsresponsetypedef)
+- [InlineRedactionConfigurationOutputTypeDef](./type_defs.md#inlineredactionconfigurationoutputtypedef)
+- [InlineRedactionConfigurationTypeDef](./type_defs.md#inlineredactionconfigurationtypedef)
+- [ListUserSettingsResponseTypeDef](./type_defs.md#listusersettingsresponsetypedef)
+- [GetUserSettingsResponseTypeDef](./type_defs.md#getusersettingsresponsetypedef)
+- [UpdateUserSettingsResponseTypeDef](./type_defs.md#updateusersettingsresponsetypedef)
+- [CreateUserSettingsRequestTypeDef](./type_defs.md#createusersettingsrequesttypedef)
+- [UpdateUserSettingsRequestTypeDef](./type_defs.md#updateusersettingsrequesttypedef)
+- [DataProtectionSettingsTypeDef](./type_defs.md#dataprotectionsettingstypedef)
+- [InlineRedactionConfigurationUnionTypeDef](./type_defs.md#inlineredactionconfigurationuniontypedef)
+- [GetDataProtectionSettingsResponseTypeDef](./type_defs.md#getdataprotectionsettingsresponsetypedef)
+- [UpdateDataProtectionSettingsResponseTypeDef](./type_defs.md#updatedataprotectionsettingsresponsetypedef)
+- [CreateDataProtectionSettingsRequestTypeDef](./type_defs.md#createdataprotectionsettingsrequesttypedef)
+- [UpdateDataProtectionSettingsRequestTypeDef](./type_defs.md#updatedataprotectionsettingsrequesttypedef)
+
